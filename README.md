@@ -8,4 +8,4 @@ Ablauf der Implementierung:
 - Automatisch in Zotero importieren über Titel und DOI unter Verwendung von https://anystyle.io/
 - Auto-Download der PDFs über Zotero, falls nicht gefunden manuell überprüfen
     - Für einige PDF kein Institutional Access (dann über Google, sci-hub gesucht)
-    - Einige PDFs sind retracted (TODO: Check, dass alle Zeilen richtig als retracted markiert über Python Skript + Check, dass verfügbar von ihnen mit meiner Spalte übereinstimmt)
+    - Einige PDFs sind retracted 
