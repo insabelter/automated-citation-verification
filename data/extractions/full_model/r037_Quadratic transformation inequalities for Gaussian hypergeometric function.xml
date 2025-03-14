@@ -1,0 +1,1401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Quadratic transformation inequalities for Gaussian hypergeometric function</title>
+				<funder ref="#_wXNuY5e">
+					<orgName type="full">Science and Technology Research Program of Zhejiang Educational Committee</orgName>
+				</funder>
+				<funder ref="#_D5xEbK4 #_We3b8yp #_yDudYSu">
+					<orgName type="full">Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Tie-Hong</forename><surname>Zhao</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Hangzhou Normal University</orgName>
+								<address>
+									<settlement>Hangzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Miao-Kun</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Huzhou University</orgName>
+								<address>
+									<settlement>Huzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Huzhou University</orgName>
+								<address>
+									<settlement>Huzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wen</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Friedman Brain Institute</orgName>
+								<orgName type="department" key="dep2">Icahn School of Medicine</orgName>
+								<orgName type="institution">at Mount Sinai</orgName>
+								<address>
+									<settlement>New York</settlement>
+									<region>New York</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yu-Ming</forename><surname>Chu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Huzhou University</orgName>
+								<address>
+									<settlement>Huzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Huzhou University</orgName>
+								<address>
+									<settlement>Huzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Quadratic transformation inequalities for Gaussian hypergeometric function</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">020CBF54D4CACFBB71AD1737C6DF140A</idno>
+					<idno type="DOI">10.1186/s13660-018-1848-y</idno>
+					<note type="submission">Received: 20 May 2018 Accepted: 10 September 2018</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:00+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>33C05</term>
+					<term>26D20 Hypergeometric function</term>
+					<term>Quadratic transformation</term>
+					<term>Generalized Grötzsch ring function</term>
+					<term>Duplication inequality</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In the article, we present several quadratic transformation inequalities for Gaussian hypergeometric function and find the analogs of duplication inequalities for the generalized Grötzsch ring function.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>The Gaussian hypergeometric function 2 F 1 (a, b; c; x) with real parameters a, b, and c (c = 0, -1, -2, . . . ) is defined by <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b3">4,</ref><ref type="bibr" target="#b23">24</ref> where (x) = ∞ 0 t x-1 e -t dt <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b46">47]</ref> and B(p, q) = [ (p) (q)]/[ (p + q)] are the classical gamma and beta functions, respectively, and</p><formula xml:id="formula_0">R(a, b) = -ψ(a) -ψ(b) -2γ , R 1 4 , 3 4 = log 64,<label>(1.2)</label></formula><p>ψ(z) = (z)/ (z)), and γ = lim n→∞ ( n k=1 1/k -log n) = 0.577 . . . is the Euler-Mascheroni constant <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b49">50]</ref>.</p><p>As is well known, making use of the hypergeometric function, Branges proved the famous Bieberbach conjecture in 1984. Since then, F(a, b; c; x) and its special cases and gen-eralizations have attracted attention of many researchers, and was studied deeply in various fields <ref type="bibr">[2, 5, 9, 11-18, 20, 22, 23, 26, 30, 31, 35-37, 40, 45, 46, 48]</ref>. A lot of geometrical and analytic properties, and inequalities of the Gaussian hypergeometric function have been obtained <ref type="bibr">[3, 6-8, 19, 29, 32, 34, 38, 49]</ref>.</p><p>Recently, in order to investigate the Ramanujan's generalized modular equation in number theory, Landen inequalities, Ramanujan cubic transformation inequalities, and several other quadratic transformation inequalities for zero-balanced hypergeometric function have been proved in <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b41">42]</ref>. For instance, using the quadratic transformation formula <ref type="bibr">[24, (15.8.15)</ref>, <ref type="bibr">(15.8.21)</ref>]</p><formula xml:id="formula_1">F 1 4 , 3 4 ; 1; 8r(1 + r) (1 + 3r) 2 = √ 1 + 3rF 1 4 , 3 4 ; 1; r 2 ,<label>(1.3)</label></formula><p>Wang and Chu <ref type="bibr" target="#b31">[32]</ref> found the maximal regions of the (a, b)-plane in the first quadrant such that inequality</p><formula xml:id="formula_2">F a, b; a + b; 8r(1 + r) (1 + 3r) 2 ≤ √ 1 + 3rF a, b; a + b; r 2 (1.4)</formula><p>or its reversed inequality</p><formula xml:id="formula_3">F a, b; a + b; 8r(1 + r) (1 + 3r) 2 ≥ √ 1 + 3rF a, b; a + b; r 2 (1.5)</formula><p>holds for each r ∈ (0, 1). Moreover, very recently in <ref type="bibr" target="#b32">[33]</ref>, some Landen-type inequalities for a class of Gaussian hypergeometric function 2 F 1 (a, b; (a + b + 1)/2; x) (a, b &gt; 0), which can be viewed as a generalization of Landen identities of the complete elliptic integrals of the first kind</p><formula xml:id="formula_4">F 1 2 , 1 2 ; 1; 4r (1 + r) 2 = (1 + r)F 1 2 , 1 2 ; 1; r 2 ,</formula><p>have also been proved. As an application, the analogs of duplication inequalities for the generalized Grötzsch ring function with two parameters <ref type="bibr" target="#b32">[33]</ref> </p><formula xml:id="formula_5">μ a,b (r) = B(a, b) 2 F(a, b; (a + b + 1)/2; 1 -r 2 ) F(a, b; (a + b + 1)/2; r 2 ) , r ∈ (0, 1),<label>(1.6)</label></formula><p>have been derived. In fact, the authors have proved</p><formula xml:id="formula_6">Theorem 1.1 For (a, b) ∈ {(a, b)|a, b &gt; 0, ab ≥ a+b-10/9, a+b ≥ 2}, let x = x(r) = 2 √ r/(1+ r), then the Landen-type inequality xx (a+b-1)/2 F a, b; a + b + 1 2 ; x 2 &gt; (1 + r) rr (a+b-1)/2 F a, b; a + b + 1 2 ; r 2 (1.7)</formula><p>holds for all r ∈ (0, 1).</p><formula xml:id="formula_7">Theorem 1.2 For (a, b) ∈ {(a, b)|a, b &gt; 0, ab ≥ a + b -10/9, a + b ≥ 2}, define the function g on (0, 1) by g(r) = 2μ a,b 2 √ r 1 + r -μ a,b (r).</formula><p>Then g is strictly increasing from (0, 1) onto (-∞, 0). In particular, the inequality</p><formula xml:id="formula_8">2μ a,b 2 √ r 1 + r &lt; μ a,b (r) holds for each r ∈ (0, 1) with (a, b) ∈ {(a, b)|a, b &gt; 0, ab ≥ a + b -10/9, a + b ≥ 2}.</formula><p>The purpose of this paper is to establish several quadratic transformation inequalities for Gaussian hypergeometric function 2 F 1 (a, b; (a + b + 1)/2; x) (a, b &gt; 0), such as inequalities (1.4), (1.5) and (1.7), and thereby prove the analogs of Theorem 1.2.</p><p>We recall some basic facts about μ a,b (r) (see <ref type="bibr" target="#b32">[33]</ref>). The limiting values of μ a,b (r) at 0 and 1 are</p><formula xml:id="formula_9">μ a,b 0 + = lim r→0 + B(a, b) 2 F a, b; a + b + 1 2 ; 1 -r 2 = ⎧ ⎨ ⎩ B(a,b) 2 H(a, b), a + b &lt; 1, +∞, a + b ≥ 1,<label>(1.8</label></formula><p>)</p><formula xml:id="formula_10">μ a,b 1 -= lim r→1 - B(a, b) 2F(a, b; a+b+1 2 ; r 2 ) = ⎧ ⎨ ⎩ B(a,b) 2H(a,b) , a + b &lt; 1, 0, a + b ≥ 1,<label>(1.9)</label></formula><p>and the derivative formula of μ a,b (r) is Here and in what follows,</p><formula xml:id="formula_11">dμ a,b (r) dr = - (<label>a+b+1 2 ) 2 (a</label></formula><formula xml:id="formula_12">H(a, b) = B( a+b+1 2 , 1-a-b 2 ) B( 1+b-a 2 , 1+a-b 2 )</formula><p>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Lemmas</head><p>In order to prove our main results, we need several lemmas, which we present in this section. Throughout this section, we denote</p><formula xml:id="formula_13">F(x) = F a, b, a + b + 1 2 ; x , G(x) = F a + 1, b + 1; a + b + 3 2 ; x (2.1)</formula><p>for (a, b) ∈ (0, +∞) × (0, +∞) \ {p, q} with p = (1/4, 3/4) and q = (3/4, 1/4), and</p><formula xml:id="formula_14">F(x) = 1 4 , 3 4 ; 1; x , G(x) = F 5 4 ,<label>7 4</label></formula><p>; 2; x .</p><p>(2.2) </p><formula xml:id="formula_15">D 1 = (a, b) a, b &gt; 0, a + b ≤ 1, ab - 3(a + b + 1) 32 ≤ 0 , D 2 = (a, b) a, b &gt; 0, a + b ≥ 1, ab - 3(a + b + 1) 32 ≥ 0 , D 3 = (a, b) a, b &gt; 0, a + b &lt; 1, ab - 3(a + b + 1) 32 &gt; 0 , D 4 = (a, b) a, b &gt; 0, a + b &gt; 1, ab - 3(a + b + 1) 32 &lt; 0 , E 1 = (a, b) a, b &gt; 0, a + b ≤ 1, 2ab + 29(a + b) -41 32 ≤ 0 , E 2 = (a, b) a, b &gt; 0, a + b ≥ 1, 2ab + 29(a + b) -41 32 ≥ 0 . Obviously, 4 i=1 D i = (0, +∞) × (0, +∞) and D i ∩ D j = ∅ for i = j ∈ {1, 2, 3, 4} except that D 1 ∩ D 2 = {p, q}. Moreover, D 1 ⊂ E 1 and D 2 ⊂ E 2 . Lemma 2.1 ([42, Theorem 2.1]) Suppose that the power series f (x) = ∞ n=0 a n x n and g(x) = ∞ n=0 b n x n have the radius of convergence r &gt; 0 with b n &gt; 0 for all n ∈ {0, 1, 2, . . . }. Let h(x) = f (x)/g(x)</formula><p>and H f ,g = (f /g )gf , then the following statements hold true:</p><formula xml:id="formula_16">1. If the non-constant sequence {a n /b n } ∞ n=0 is increasing (decreasing) for all n &gt; 0, then h(x) is strictly increasing (decreasing) on (0, r); 2. If the non-constant sequence {a n /b n } ∞</formula><p>n=0 is increasing (decreasing) for 0 &lt; n ≤ n 0 and decreasing (increasing) for n &gt; n 0 , then h(x) is strictly increasing (decreasing) on (0, r) if and only if H f ,g (r -) ≥ (≤)0. Moreover, if H f ,g (r -) &lt; (&gt;)0, then there exists an x 0 ∈ (0, r) such that h(x) is strictly increasing (decreasing) on (0, x 0 ) and strictly decreasing (increasing) on (x 0 , r).</p><formula xml:id="formula_17">Lemma 2.2 1. The function η(x) = F(x)/ F(x) is strictly decreasing on (0, 1) if (a, b) ∈ D 1 \ {p, q} and strictly increasing on (0, 1) if (a, b) ∈ D 2 \ {p, q}. Moreover, if (a, b) ∈ D 3 (or D 4 )</formula><p>, then there exists δ 0 ∈ (0, 1) such that η(x) is strictly increasing (decreasing) on (0, δ 0 ) and strictly decreasing (increasing) on (δ 0 , 1).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">The function η</head><formula xml:id="formula_18">(x) = G(x)/ G(x) is strictly decreasing on (0, 1) if (a, b) ∈ E 1 \ {p, q} and strictly increasing on (0, 1) if (a, b) ∈ E 2 \ {p, q}. In the remaining case, namely for x ∈ (0, +∞) × (0, +∞) \ (E 1 ∪ E 2 ), η(x) is piecewise monotone on (0, 1).</formula><p>Proof Suppose that</p><formula xml:id="formula_19">A n = (a, n)(b, n) ( a+b+1 2 , n)n! , A * n = ( 1 4 , n)( 3 4 , n) (1, n)n! , then we have η(x) = F(x) F(x) = ∞ n=0 A n x n ∞ n=0 A * n x n .</formula><p>(2.</p><p>3)</p><p>It suffices to take into account the monotonicity of</p><formula xml:id="formula_20">{A n /A * n } ∞ n=0 .</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>By simple calculations, one has</head><formula xml:id="formula_21">A n+1 A * n+1 - A n A * n = A n • n A * n ( a+b+1 2 )( 1 4 + n)( 3 4 + n) ,<label>(2.4)</label></formula><p>where</p><formula xml:id="formula_22">n = a + b -1 2 n 2 + ab + a + b 2 - 11 16 n + ab - 3(a + b + 1) 32 .</formula><p>(2.5)</p><p>We divide the proof into four cases. Case 1 (a, b) ∈ D 1 \ {p, q}. Then it follows easily that a + b ≤ 1, ab -3(a+b+1) 32 ≤ 0 and ab + a+b 2 -11 16 &lt; 0. This, in conjunction with (2.4) and (2.5), implies that {A n /A * n } ∞ n=0 is strictly decreasing for all n &gt; 0. Therefore, (2.3) and Lemma 2.1(1) lead to the conclusion that η(x) is strictly decreasing on (0, 1).</p><p>Case 2 (a, b) ∈ D 2 \ {p, q}. Then a similar argument as in Case 1 yields n &gt; 0 and this implies that η(x) is strictly increasing on (0, 1) from (2.3), (2.4) and Lemma 2.1 <ref type="bibr" target="#b0">(1)</ref>.</p><p>Case 3 (a, b) ∈ D 3 . It follows from (2.4) and (2.5) that the sequence {A n /A * n } is increasing for 0 ≤ n ≤ n 0 and decreasing for n ≥ n 0 for some integer n 0 . Furthermore, making use of the derivative formula for Gaussian hypergeometric function</p><formula xml:id="formula_23">dF(a, b; c; x) dx = ab c F(a + 1, b + 1; c + 1; x),</formula><p>and in conjunction with (1.1) and a + b &lt; 1, we obtain</p><formula xml:id="formula_24">H F, F (x) = 32ab 3(a + b + 1) F(a + 1, b + 1; a+b+3 2 ; x) F( 3 4 , 1 4 ; 2; x) (1 -x) F(x) -F(x) → -H(a, b) &lt; 0 (2.6)</formula><p>as x → 1 -. Combing with (2.3), (2.6) and Lemma 2.1(2), we conclude that there exists an x 1 ∈ (0, 1) such that η(x) is strictly increasing on (0, x 1 ) and strictly decreasing on (x 1 , 1). Case 4 (a, b) ∈ D 4 . In this case, we follow a similar argument as in Case 3 and use the fact that</p><formula xml:id="formula_25">H F, F (x) = 32ab 3(a + b + 1) (1 -x) F(a + 1, b + 1; a+b+3 2 ; x) F( 3 4 , 1 4 ; 2; x) F(x) -F(x) = 32ab 3(a + b + 1) (1 -x) 1-a-b<label>2</label></formula><p>F( b-a+1 2 , a-b+1 2 ; a+b+3 2 ; x) F( <ref type="formula" target="#formula_35">3</ref>4 , 1 4 ; 2; x)</p><formula xml:id="formula_26">F 1 4 , 3 4 ; 1; x -F b -a + 1 2 , a -b + 1 2 ; a + b + 1 2 ; x → + ∞ (2.7) as x → 1 -since a + b &gt; 1.</formula><p>Therefore, (2.3), (2.7) and Lemma 2.1(2) lead to the conclusion that there exists an x 2 ∈ (0, 1) such that η(x) is strictly decreasing on (0, x 2 ) and strictly increasing on (x 2 , 1). Let</p><formula xml:id="formula_27">B n = (a + 1, n)(b + 1, n) ( a+b+3 2 , n)n! , B * n = ( 5 4 , n)( 7 4 , n) (2, n)n! ,</formula><p>then we can write</p><formula xml:id="formula_28">η(x) = G(x) G(x) = ∞ n=0 B n x n ∞ n=0 B * n x n .</formula><p>(2.8)</p><p>Easy calculations lead to the conclusion that the monotonicity of {B n /B * n } ∞ n=0 depends on the sign of</p><formula xml:id="formula_29">n = a + b -1 2 n 2 + ab + 3(a + b) 2 - 27 16 n + 2ab + 29(a + b) -41 32 .</formula><p>(2.9)</p><p>Notice that  </p><formula xml:id="formula_30">H G, G (x) = 2(a + 1)(b + 1) (a + b + 3) • 32F(a + 2, b + 2; a+b+5 2 ; x) 35F( 9 4 , 11 4 ; 3; x) G(x) -G(x) = (1 -x) -1+a+b 2 ω(a, b; x), (<label>2</label></formula><formula xml:id="formula_31">F( b-a+1 2 , a-b+1 2 ; a+b+5 2 ; x) F( 3 4 , 1 4 ; 3; x) F 3 4 , 1 4 ; 2; x -F b -a + 1 2 , a -b + 1 2 ; a + b + 3 2 ; x . (<label>2</label></formula><formula xml:id="formula_32">( a+b+5 2 ) ( a+b+3 2 ) (a + 2) (b + 2) ( 9 4 ) ( 11 4 ) (3) (2) (2) (1) ( 5 4 ) ( 7 4 ) - ( a+b+3 2 ) ( a+b+1 2 ) (a + 1) (b + 1) = a + b -1 2 ( a+b+3 2 ) ( a+b+1 2 ) (a + 1) (b + 1) = ⎧ ⎨ ⎩ &lt; 0, a + b &lt; 1, &gt; 0, a + b &gt; 1.</formula><p>(2.12)</p><p>Employing similar arguments mentioned in part (1), we obtain the desired assertions easily from (2.8)-(2.12).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lemma 2.3 Let D</head><formula xml:id="formula_33">0 = {(a, b)|a, b &gt; 0, a + b ≥ 7/4, ab ≥ a + b -31/28} and x = √ 1 -x 2 for 0 &lt; x &lt; 1, then the function f (x) = (xx ) a+b-1 2 F(a, b; a+b+1 2 ; x 2 ) F( 1 4 , 3 4 ; 1; x 2 ) (2.13) is strictly increasing on (0, 1) if (a, b) ∈ D 0 .</formula><p>Proof Taking the derivative of f (x) yields</p><formula xml:id="formula_34">f (x) = (xx ) a+b-3 2 x F( 1 4 , 3 4 ; 1; x 2 ) 2 f 1 (x),<label>(2.14)</label></formula><p>where for 0 &lt; x &lt; 1. This implies, in conjunction with (2.15), that</p><formula xml:id="formula_35">f 1 (x) = a + b -1 2 1 -2x 2 F a, b; a + b + 1 2 ; x 2 + 4ab a + b + 1 x 2 x 2 F a + 1, b + 1; a + b + 3 2 ; x 2 F 1 4 ,<label>3</label></formula><formula xml:id="formula_36">f 1 (x) ≥ F 1 4 , 3 4 ; 1; x 2 f 2 (x),<label>(2.16)</label></formula><p>where</p><formula xml:id="formula_37">f 2 (x) = a + b -1 2 -a + b - 5 8 x 2 F a, b; a + b + 1 2 ; x 2 + 4ab a + b + 1 x 2 1 -x 2 F a + 1, b + 1; a + b + 3 2 ; x 2 .</formula><p>It follows from the definition of hypergeometric function that</p><formula xml:id="formula_38">f 2 (x) = a + b -1 2 ∞ n=0 (a, n)(b, n) ( a+b+1 2 , n) x 2n n! -a + b - 5 8 ∞ n=0 (a, n)(b, n) ( a+b+1 2 , n) x 2n+2 n! + 4ab a + b + 1 ∞ n=0 (a + 1, n)(b + 1, n) ( a+b+3 2 , n) x 2n+2 n! - ∞ n=0 (a + 1, n)(b + 1, n) ( a+b+3 2 , n) x 2n+4 n! = a + b -1 2 + ab(a + b -1) a + b + 1 -a + b - 5 8 + 4ab a + b + 1 x 2 + a + b -1 2 ∞ n=0 (a, n + 2)(b, n + 2) ( a+b+1 2 , n + 2) x 2n+4 (n + 2)! -a + b - 5 8 ∞ n=0 (a, n + 1)(b, n + 1) ( a+b+1 2 , n + 1) x 2n+4 (n + 1)! + 2 ∞ n=0 (a, n + 2)(b, n + 2) ( a+b+1 2 , n + 2) x 2n+4 (n + 1)! - ∞ n=0 (a, n + 1)(b, n + 1) ( a+b+1 2 , n + 1)</formula><formula xml:id="formula_39">x 2n+4 n! = a + b -1 2 1 - 3x 2 4(a + b + 1) + 4ab(a + b -1) -4(a -b) 2 + 1 4(a + b + 1) x 2 + ∞ n=0 (a, n + 1)(b, n + 1) ( a+b+1 2 , n + 2) C n (n + 2)! x 2n+4 ,<label>(2.17)</label></formula><p>where This, in conjunction with (2.17) and (2.18), implies that f 2 (x) &gt; 0 for 0 &lt; x &lt; 1. Therefore, f (x) is strictly increasing on (0, 1), which follows from (2. </p><formula xml:id="formula_40">C n = a + b -1 2 (a + n + 1)(b + n + 1) -a + b - 5 8 a + b + 1 2 + n + 1 (n + 2) + 2(a + n + 1)(b + n + 1)(n + 2) -2 a + b + 1 2 + n + 1 (n + 1)(n + 2) = 4a + 4b -7 8 n 2 + 32ab + 5(a + b) -29 16 n + 4ab(a + b + 3) -4(a -b) 2 -(3a + 3b + 5) 8 . (<label>2</label></formula><formula xml:id="formula_41">+ b &lt; 1, since lim x→0 + f (x) = lim x→1 -f (x) = +∞ and Lemma 2.1(1)</formula><p>shows the monotonicity of f (x) on (0, 1) if a + b = 1. In the remaining case a + b &gt; 1, it follows from (2.15) that f 1 (0 + ) = (a + b -1)/2 &gt; 0. This, in conjunction with (2.14), implies that f (x) is strictly increasing on (0, x * ) for a sufficiently small x * &gt; 0. This enables us to find a sufficient condition for a, b with a + b &gt; 1 such that f (x) is strictly increasing on (0, 1) in Lemma 2.3.</p><p>The following corollary can be derived immediately from the monotonicity of f (x) in Lemma 2.3 and the quadratic transformation equality (1.3).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Corollary 2.5 Let</head><formula xml:id="formula_42">x = x(r) = √ 8r(1 + r)/(1 + 3r), if (a, b) ∈ D 0 , then the inequality xx a+b-1 2 F a, b; a + b + 1 2 ; x 2 &gt; √ 1 + 3r rr a+b-1 2 F a, b; a + b + 1 2 ; r 2 (2.19)</formula><p>holds for all r ∈ (0, 1).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Main results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Theorem 3.1 The quadratic transformation inequality</head><formula xml:id="formula_43">F a, b; a + b + 1 2 ; 8r(1 + r) (1 + 3r) 2 ≤ √ 1 + 3rF a, b; a + b + 1 2 ; r 2 (3.1)</formula><p>holds for all r ∈ (0, 1) with a, b &gt; 0 if and only if (a, b) ∈ D 1 and the reversed inequality</p><formula xml:id="formula_44">F a, b; a + b + 1 2 ; 8r(1 + r) (1 + 3r) 2 ≥ √ 1 + 3rF a, b; a + b + 1 2 ; r 2 (3.2)</formula><p>takes place for all r ∈ (0, 1) if and only if (a, b) ∈ D 2 , with equality only for (a, b) = p or q. In the remaining case (a, b) ∈ D 3 ∪ D 4 , neither of the above inequalities holds for all r ∈ (0, 1).</p><p>Proof Suppose that x(r) = [8r(1 + r)]/(1 + 3r) 2 , then we clearly see that x(r) &gt; r 2 for 0 &lt; r &lt; 1. It follows from Lemma 2.1(1) that η(x(r)) &lt; η(r 2 ) for (a, b) ∈ D 1 \ {p, q} and η(x(r)) &gt; η(r 2 ) for (a, b) ∈ D 2 \ {p, q}. This, in conjunction with the quadratic transformation formula (1.3), implies</p><formula xml:id="formula_45">F x(r) &lt; F(x(r)) F(r 2 ) F r 2 = √ 1 + 3rF r 2</formula><p>for (a, b) ∈ D 1 \ {p, q}, and it degenerates to the quadratic transformation equality for (a, b) = p(orq). This completes the proof of (3.1). Inequality (3.2) can be derived analogously, and the remaining case follows easily from Lemma 2.2(1). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Theorem 3.2 We define the function</head><formula xml:id="formula_46">ϕ(r) = 1 + 3 √ rF a, b, ; a + b + 1 2 ; r -F a, b; a + b + 1 2 ; 8 √ r(1 + √ r) (1 + 3 √ r) 2 for r ∈ (0, 1) with a, b &gt; 0 and (a, b) = p, q. Let L 1 = {(a, b)|a + b = 1, 0 &lt; a &lt; 1 4 or 3 4 &lt; a &lt; 1} and L 2 = {(a, b)|a + b = 1,</formula><formula xml:id="formula_47">; 8r(1 + r) (1 + 3r) 2 ≤ √ 1 + 3rF a, b, ; a + b + 1 2 ; r 2 ≤ F a, b; a + b + 1 2 ; 8r(1 + r) (1 + 3r) 2 + H(a, b) (3.3)</formula><p>holds for all r ∈ (0, 1) if (a, b) ∈ D 1 \ L 1 , and the following inequality is valid for all r ∈ (0, 1): 2 , then we clearly see that</p><formula xml:id="formula_48">F a, b; a + b + 1 2 ; 8r(1 + r) (1 + 3r) 2 ≤ (≥) √ 1 + 3rF a, b, ; a + b + 1 2 ; r 2 ≤ (≥)F a, b; a + b + 1 2 ; 8r(1 + r) (1 + 3r) 2 + R(a, b) -log 64 B(a, b) (3.4) if (a, b) ∈ L 1 (resp., L 2 ). Proof Let z = z(r) = [8 √ r(1 + √ r)]/(1 + 3 √ r)</formula><formula xml:id="formula_49">dz dr = 4(1 - √ r) √ r(1 + 3 √ r) 3 = 4(1 -z) √ r(1 - √ r)(1 + 3 √ r) . (3.5)</formula><p>Taking the derivative of ϕ(r) with respect to r and using (3.5) yields</p><formula xml:id="formula_50">√ r(1 + 3 √ r)ϕ (r) = 3 1 + 3 √ r 4 F(r) + √ r( 1 + 3 √ r) 3 2ab a + b + 1 G(r) - 2ab a + b + 1 4(1 -z) 1 - √ r G(z). (3.6)</formula><p>We substitute √ r for r in the quadratic transformation equality (1.3), then differentiate it with respect to r to obtain</p><formula xml:id="formula_51">4(1 -z) 1 - √ r G(z) = 4 1 + 3 √ r F(r) + √ r( 1 + 3 √ r) 3 G(r),</formula><p>in other words,</p><formula xml:id="formula_52">4(1 -z) 1 - √ r G(z) G(r) = 4 1 + 3 √ r F(r) G(r) + √ r( 1 + 3 √ r) 3 . (3.7)</formula><p>If (a, b) ∈ D 1 \ {p, q}, then it follows from Lemma 2.2(2) that G(x)/ G(x) is strictly decreasing on (0, 1). This, in conjunction with z &gt; r, implies that</p><formula xml:id="formula_53">G(z)/ G(z) &lt; G(r)/ G(r), that is, G(z) &lt; G(z) G(r) G(r). (<label>3.8)</label></formula><p>Combing (3.6), (3.7) with the inequality (3.8), we clearly see that</p><formula xml:id="formula_54">√ r(1 + 3 √ r)ϕ (r) = 3 1 + 3 √ r 4 F(r) + √ r( 1 + 3 √ r) 3 2ab a + b + 1 G(r) - 2ab a + b + 1 4(1 -z) 1 - √ r G(z) &gt; 3 1 + 3 √ r 4 F(r) + √ r( 1 + 3 √ r) 3 2ab a + b + 1 G(r) - 2ab a + b + 1 4(1 -z) 1 - √ r G(z) G(r) G(r) = 3 1 + 3 √ r 4 F(r) + √ r( 1 + 3 √ r) 3 2ab a + b + 1 G(r) - 2ab a + b + 1 4 1 + 3 √ r F(r) G(r) + √ r( 1 + 3 √ r) 3 G(r) = 4 1 + 3 √ r 3 16 F(r) - 2ab a + b + 1 F(r) G(r) G(r) = 4 1 + 3 √ r F(r) 2 G(r) F(r) F(r) . (<label>3.9)</label></formula><p>It follows from Lemma 2.2(1) that F(r)/F(r) is strictly increasing on (0, 1) if (a, b) ∈ D 1 \ {p, q}. This, in conjunction with (3.9), implies that ϕ(r) is strictly increasing on (0, 1) if</p><formula xml:id="formula_55">(a, b) ∈ D 1 .</formula><p>Analogously, if (a, b) ∈ D 2 \ {p, q}, then we obtain the following inequality:</p><formula xml:id="formula_56">G(z) &gt; G(z) G(r) G(r).</formula><p>By using a similar argument as above, we have Notice that ϕ(0 + ) = 0 and</p><formula xml:id="formula_57">√ rϕ (r) &lt; 4F 2 (r) G(r) F(r) F(r) &lt; 0, since F(r)/ F(</formula><formula xml:id="formula_58">lim r→1 -ϕ(r) = ⎧ ⎪ ⎪ ⎨ ⎪ ⎪ ⎩ H(a, b), a + b &lt; 1, R(a,b)-log 64 B(a,b) , a + b = 1, -∞, a + b &gt; 1.</formula><p>(3.10) Therefore, we obtain the desired assertion from (3.10).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Theorem 3.3 If we define the function</head><formula xml:id="formula_59">φ(r) = 2μ a,b √ 8r(1 + r) 1 + 3r -μ a,b (r),</formula><p>for (a, b) ∈ D 0 , then φ(r) is strictly increasing from (0, 1) onto (-∞, 0). As a consequence, the inequality Taking the derivative of φ(r) and using (3.12) leads to φ (r) = -2 ( a+b+1 2 ) 2 (a + b) 1</p><p>x a+b x a+b+1 F(a, b; a+b+1 2 ; x 2 ) 2 Therefore, the monotonicity of φ(r) follows immediately from (2.19) and <ref type="bibr">(3.13)</ref>. This, in conjunction with <ref type="bibr">(3.11)</ref>, gives rise to the desired result.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Results and discussion</head><p>In the article, we establish several quadratic transformation inequalities for Gaussian hypergeometric function 2 F 1 (a, b; (a + b + 1)/2; x) (0 &lt; x &lt; 1). As applications, we provide the analogs of duplication inequalities for the generalized Grötzsch ring function </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusion</head><p>We find several quadratic transformation inequalities for the Gaussian hypergeometric function and Grötzsch ring function. Our approach may have further applications in the theory of special functions.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>, 41 ]F</head><label>41</label><figDesc>F(a, b; c; x) = 2 F 1 (a, b; c; x) = ∞ n=0 (a, n)(b, n) (c, n) x n n! for x ∈ (-1, 1), where (a, n) = a(a + 1)(a + 2) • • • (a + n -1) for n = 1, 2, . . . , and (a, 0) = 1 for a = 0. The function F(a, b; c; x) is called zero-balanced if c = a + b. The asymptotical behavior for F(a, b; c; x) as x → 1 is as follows (see [4, Theorems 1.19 and 1.48]) (a, b; c; 1) = (c) (cab)/[ (ca) (cb)], a + b &lt; c, B(a, b)F(a, b; c; z) + log(1z) = R(a, b) + O((1z) log(1z)), a + b = c, F(a, b; c; z) = (1z) c-a-b F(ca, cb; c; z), a + b &gt; c, (1.1)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>+ b) 1 r</head><label>1</label><figDesc>a+b r a+b+1 F(a, b; (a + b + 1)/2; r 2 ) 2 .(1.10)    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 1</head><label>1</label><figDesc>Figure 1 The regions D i for i = 1, 2, 3, 4, E 1 , E 2 and their boundary curves</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>. 11 )</head><label>11</label><figDesc>It follows easily from (1.1) and (2.11) that lim x→1 -ω(a, b; x) = 64(a + 1)(b + 1) 35(a + b + 3)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>. 18 ) 1 ≥ 4</head><label>1814</label><figDesc>If (a, b) ∈ D 0 , namely, a + b ≥ 7/4 and ab ≥ a + b -31/28, we can verify (i) 4ab(a + b -1) -4(ab) 2 + 32ab + 5(a + b) -29 ≥ 32 a + b -31 28 + 5(a + b) b) -7) ≥ 0.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>1 4 &lt;</head><label>4</label><figDesc>a &lt;3  4 }. Then the following statements hold true:1. If (a, b) ∈ L 1 (or L 2 ), then ϕ(r) is strictly increasing (resp., decreasing) from (0, 1) onto (0, [R(a, b) -log 64]/B(a, b)) (resp., ([R(a, b) -log 64]/B(a, b), 0)); 2. If (a, b) ∈ D 1 \ L 1 , then ϕ(r) is strictly increasing from (0, 1) onto (0, H(a, b)); 3. If (a, b) ∈ D 2 \ L 2 , then ϕ(r) is strictly decreasing from (0, 1) onto (-∞, 0). As a consequence, the inequality F a, b; a + b + 1 2</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>11 )</head><label>11</label><figDesc>&lt; μ a,b (r) holds for all r ∈ (0, 1) if (a, b) ∈ D 0 .Proof Remark 2.4 enables us to consider the case for a + b &gt; 1. Note that φ(1 -) = 0 andlim r→0 + φ(r) Let x = x(r) = √ 8r(1 + r)/(1 + 3r) and x = √ 1x 2 .Thendx dr = √ 2(1r) √ r(1 + r)(1 + 3r) 2 =x (1 + 3x ) 2 4x .(3.12)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>2 F</head><label>2</label><figDesc>μ a,b (r) = B(a, b) (a, b; (a + b + 1)/2; 1r 2 ) F(a, b; (a + b + 1)/2; r 2 )introduced in<ref type="bibr" target="#b32">[33]</ref>.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><head>Funding</head><p>This work was supported by the <rs type="funder">Natural Science Foundation of China</rs> (Grant Nos. <rs type="grantNumber">11701176</rs>, <rs type="grantNumber">11626101</rs>, <rs type="grantNumber">11601485</rs>), the <rs type="funder">Science and Technology Research Program of Zhejiang Educational Committee</rs> (Grant no. <rs type="grantNumber">Y201635325</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_D5xEbK4">
+					<idno type="grant-number">11701176</idno>
+				</org>
+				<org type="funding" xml:id="_We3b8yp">
+					<idno type="grant-number">11626101</idno>
+				</org>
+				<org type="funding" xml:id="_yDudYSu">
+					<idno type="grant-number">11601485</idno>
+				</org>
+				<org type="funding" xml:id="_wXNuY5e">
+					<idno type="grant-number">Y201635325</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare that they have no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Authors' contributions</head><p>All authors contributed equally to the writing of this paper. All authors read and approved the final manuscript.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abramowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Stegun</surname></persName>
+		</author>
+		<ptr target="http://people.math.sfu.ca/~cbm/aands/" />
+		<title level="m">Handbook of Mathematical Functions with Formulas, Graphs and Mathematical Tables</title>
+		<meeting><address><addrLine>Dover, New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Generalized elliptic integrals and modular equations</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<ptr target="https://msp.org/pjm/2000/192-1/pjm-v192-n1-p01-s.pdf" />
+	</analytic>
+	<monogr>
+		<title level="j">Pac. J. Math</title>
+		<imprint>
+			<biblScope unit="volume">192</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="37" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Hypergeometric functions and elliptic integrals</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1142/1628</idno>
+		<ptr target="https://doi.org/10.1142/1628" />
+	</analytic>
+	<monogr>
+		<title level="m">Current Topics in Analytic Function Theory</title>
+		<editor>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Srivastava</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Owa</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>World Scientific</publisher>
+			<date type="published" when="1992">1992</date>
+			<biblScope unit="page" from="48" to="85" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Conformal Invariants, Inequalities, and Quasiconformal Maps</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<ptr target="https://www.isbns.net/isbn/9780471594864/" />
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<publisher>John Wiley &amp; Sons</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Topics in special functions</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<ptr target="http://cn.arxiv.org/abs/0712.3856" />
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="5" to="26" />
+		</imprint>
+	</monogr>
+	<note>in papers on analysis: a volume dedicated to Olli Martio on the occasion of his 60th birthday. Report. Univ. Jyväskylä</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Topics in special functions II</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1090/S1088-4173-07-00168-3</idno>
+		<ptr target="https://doi.org/10.1090/S1088-4173-07-00168-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Conform. Geom. Dyn</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="250" to="270" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">An inequality involving the generalized hypergeometric function and the arc length of an ellipse</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Barnard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pearce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Richards</surname></persName>
+		</author>
+		<idno type="DOI">10.1137/S0036141098341575</idno>
+		<ptr target="https://doi.org/10.1137/S0036141098341575" />
+	</analytic>
+	<monogr>
+		<title level="j">SIAM J. Math. Anal</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="693" to="699" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">On generalized complete elliptic integrals and modular functions</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Bhayo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0013091511000356</idno>
+		<ptr target="https://doi.org/10.1017/S0013091511000356" />
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Edinb. Math. Soc. (2)</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="591" to="611" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Borwein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Borwein</surname></persName>
+		</author>
+		<ptr target="http://ww1.openisbn.com/download/0471831387.pdf" />
+		<title level="m">Pi and AGM</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Some properties of functions related to the gamma and psi functions</title>
+		<author>
+			<persName><forename type="first">C.-P</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Srivastava</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/10652460903064216</idno>
+		<ptr target="https://doi.org/10.1080/10652460903064216" />
+	</analytic>
+	<monogr>
+		<title level="j">Integral Transforms Spec. Funct</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="153" to="164" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Sharp inequalities involving the power mean and complete elliptic integral of the first kind</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1216/RMJ-2013-43-5-1489</idno>
+		<ptr target="https://doi.org/10.1216/RMJ-2013-43-5-1489" />
+	</analytic>
+	<monogr>
+		<title level="j">Rocky Mt. J. Math</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1489" to="1496" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Hölder mean inequalities for the complete elliptic integrals</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-F</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/10652469.2011.609482</idno>
+		<ptr target="https://doi.org/10.1080/10652469.2011.609482" />
+	</analytic>
+	<monogr>
+		<title level="j">Integral Transforms Spec. Funct</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="521" to="527" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Optimal Lehmer mean bounds for the Toader mean</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00025-010-0090-9</idno>
+		<ptr target="https://doi.org/10.1007/s00025-010-0090-9" />
+	</analytic>
+	<monogr>
+		<title level="j">Results Math</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="223" to="229" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Concavity of the complete elliptic integrals of the second kind with respect to Hölder mean</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-P</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2012.05.083</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2012.05.083" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">395</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="637" to="642" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Sharp bounds for Toader mean in terms of contraharmonic mean with applications</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-Y</forename><surname>Ma</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/jmi-07-15</idno>
+		<ptr target="https://doi.org/10.7153/jmi-07-15" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Inequal</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="161" to="166" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Optimal combinations bounds of root-square and arithmetic means for Toader mean</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<ptr target="https://link.springer.com/article/10.1007" />
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Indian Acad. Sci. Math. Sci</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="41" to="51" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Bounds for complete integrals of the second kind with applications</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-P</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.camwa.2011.12.038</idno>
+		<ptr target="https://doi.org/10.1016/j.camwa.2011.12.038" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Appl</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1177" to="1184" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Sharp generalized Seiffert mean bounds for Toader mean</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-F</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2011/605259</idno>
+		<ptr target="https://doi.org/10.1155/2011/605259" />
+	</analytic>
+	<monogr>
+		<title level="j">Abstr. Appl. Anal</title>
+		<imprint>
+			<biblScope unit="page">605259</biblScope>
+			<date type="published" when="2011">2011. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Generalized elliptic integrals</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Heikkala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Vamanamurthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF0332171</idno>
+		<ptr target="https://doi.org/10.1007/BF0332171" />
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Methods Funct. Theory</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="75" to="109" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">The best bounds for Toader mean in terms of the centroidal and arithmetic means</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+		<idno type="DOI">10.2298/FIL1404775H</idno>
+		<ptr target="https://doi.org/10.2298/FIL1404775H" />
+	</analytic>
+	<monogr>
+		<title level="j">Filomat</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="775" to="780" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Optimal bounds for the generalized Euler-Mascheroni constant</title>
+		<author>
+			<persName><forename type="first">T.-R</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B.-W</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13660-018-1711-1</idno>
+		<ptr target="https://doi.org/10.1186/s13660-018-1711-1" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="page">118</biblScope>
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A double inequality for the combination of Toader mean and the arithmetic mean in terms of the contraharmonic mean</title>
+		<author>
+			<persName><forename type="first">W.-D</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+		<idno type="DOI">10.2298/PIM141026009J</idno>
+		<ptr target="https://doi.org/10.2298/PIM141026009J" />
+	</analytic>
+	<monogr>
+		<title level="j">Publ. Inst. Math</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="issue">113</biblScope>
+			<biblScope unit="page" from="237" to="242" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<author>
+			<persName><forename type="first">O</forename><surname>Lehto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">I</forename><surname>Virtanen</surname></persName>
+		</author>
+		<title level="m">Quasiconformal Mappings in the Plane, 2nd edn</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1973">1973</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">W J</forename><surname>Olver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Lozier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Boisvert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Clark</surname></persName>
+		</author>
+		<title level="m">NIST Handbook of Mathematical Functions</title>
+		<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Bounds for the ratio of two gamma functions</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2010/493058</idno>
+		<ptr target="https://doi.org/10.1155/2010/493058" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="page">493058</biblScope>
+			<date type="published" when="2010">2010. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Sharp bounds for a special quasi-arithmetic mean in terms of arithmetic and geometric means with two parameters</title>
+		<author>
+			<persName><forename type="first">W.-M</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13660-017-1550-5</idno>
+		<ptr target="https://doi.org/10.1186/s13660-017-1550-5" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="page">274</biblScope>
+			<date type="published" when="2017">2017. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Landen inequalities for hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0027763000025290</idno>
+		<ptr target="https://doi.org/10.1017/S0027763000025290" />
+	</analytic>
+	<monogr>
+		<title level="j">Nagoya Math. J</title>
+		<imprint>
+			<biblScope unit="volume">154</biblScope>
+			<biblScope unit="page" from="31" to="56" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Landen inequalities for zero-balanced hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Simić</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2012/932061</idno>
+		<ptr target="https://doi.org/10.1155/2012/932061" />
+	</analytic>
+	<monogr>
+		<title level="j">Abstr. Appl. Anal</title>
+		<imprint>
+			<biblScope unit="page">932061</biblScope>
+			<date type="published" when="2012">2012. 2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Inequalities for the Gaussian hypergeometric function</title>
+		<author>
+			<persName><forename type="first">Y.-Q</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P.-G</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11425-014-4858-3</idno>
+		<ptr target="https://doi.org/10.1007/s11425-014-4858-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Sci. China Math</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2369" to="2380" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Spirallikeness of shifted hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sugawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-M</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.5186/aasfm.2017.4257</idno>
+		<ptr target="https://doi.org/10.5186/aasfm.2017.4257" />
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Acad. Sci. Fenn., Math</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="963" to="977" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">A power mean inequality involving the complete elliptic integrals</title>
+		<author>
+			<persName><forename type="first">G.-D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1216/RMJ-2014-44-5-1661</idno>
+		<ptr target="https://doi.org/10.1216/RMJ-2014-44-5-1661" />
+	</analytic>
+	<monogr>
+		<title level="j">Rocky Mt. J. Math</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1661" to="1667" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Refinements of transformation inequalities for zero-balanced hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0252-9602(17)30026-7</idno>
+		<ptr target="https://doi.org/10.1016/S0252-9602(17)30026-7" />
+	</analytic>
+	<monogr>
+		<title level="j">Acta Math. Sci</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="607" to="622" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Landen inequalities for a class of hypergeometric functions with applications</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-2018-21-38</idno>
+		<ptr target="https://doi.org/10.7153/mia-2018-21-38" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="521" to="537" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Ramanujan&apos;s cubic transformation inequalities for zero-balanced hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-P</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="DOI">10.1216/RMJ-2016-46-2-679</idno>
+		<ptr target="https://doi.org/10.1216/RMJ-2016-46-2-679" />
+	</analytic>
+	<monogr>
+		<title level="j">Rocky Mt. J. Math</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="679" to="691" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Some monotonicity properties of generalized elliptic integrals with applications</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-16-50</idno>
+		<ptr target="https://doi.org/10.7153/mia-16-50" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="671" to="677" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Sharp bounds for generalized elliptic integrals of the first kind</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2015.04.035</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2015.04.035" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">429</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="744" to="757" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">An optimal power mean inequality for the complete elliptic integrals</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-F</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.aml.2010.12.044</idno>
+		<ptr target="https://doi.org/10.1016/j.aml.2010.12.044" />
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Lett</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="887" to="890" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Asymptotical formulas for Gaussian and generalized hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-Q</forename><surname>Song</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.amc.2015.11.088</idno>
+		<ptr target="https://doi.org/10.1016/j.amc.2015.11.088" />
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">276</biblScope>
+			<biblScope unit="page" from="44" to="60" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Inequalities and infinite product formula for Ramanujan generalized modular equation function</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11139-017-9888-3</idno>
+		<ptr target="https://doi.org/10.1007/s11139-017-9888-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Ramanujan J</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="189" to="200" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Infinite series for Hübner upper bounds function with applications to Hersch-Pfluger distortion function</title>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-2018-21-46</idno>
+		<ptr target="https://doi.org/10.7153/mia-2018-21-46" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="629" to="648" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A monotonicity property involving the generalized elliptic integral of the first kind</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-20-46</idno>
+		<ptr target="https://doi.org/10.7153/mia-20-46" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="729" to="735" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Monotonicity criterion for the quotient of power series with applications</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-K</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2015.03.043</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2015.03.043" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">428</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="587" to="604" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">On rational bounds for the gamma function</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-M</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13660-017-1484-y</idno>
+		<ptr target="https://doi.org/10.1186/s13660-017-1484-y" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="page">210</biblScope>
+			<date type="published" when="2017">2017. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">On approximating the error function</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-M</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-2018-2</idno>
+		<ptr target="https://doi.org/10.7153/mia-2018-2" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="469" to="479" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">On approximating the arithmetic-geometric mean and complete elliptic integral of the first kind</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-M</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2018.03.005</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2018.03.005" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">462</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1714" to="1726" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A comparison theorem for two divided differences and applications to special functions</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Tian</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2018.04.024</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2018.04.024" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">464</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="580" to="595" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Sharp Gautschi inequality for parameter 0 &lt; p &lt; 1 with applications</title>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/mia-201720-71</idno>
+		<ptr target="https://doi.org/10.7153/mia-201720-71" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1107" to="1120" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Landen type inequality for generalized elliptic integrals</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-F</forename><surname>Mi</surname></persName>
+		</author>
+		<ptr target="http://www.jangjeon.or.kr/etc/view.html?id=1924" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Stud. Contemp. Math</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="717" to="722" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Convexity with respect to Hölder mean involving zero-balanced hypergeometric functions</title>
+		<author>
+			<persName><forename type="first">X.-H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G.-D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmaa.2008.11.068</idno>
+		<ptr target="https://doi.org/10.1016/j.jmaa.2008.11.068" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">353</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="256" to="259" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Logarithmically complete monotonicity properties relating to the gamma function</title>
+		<author>
+			<persName><forename type="first">T.-H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2011/896483</idno>
+		<ptr target="https://doi.org/10.1155/2011/896483" />
+	</analytic>
+	<monogr>
+		<title level="j">Abstr. Appl. Anal</title>
+		<imprint>
+			<biblScope unit="page">896483</biblScope>
+			<date type="published" when="2011">2011. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

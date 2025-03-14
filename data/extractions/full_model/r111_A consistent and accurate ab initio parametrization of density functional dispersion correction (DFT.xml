@@ -1,0 +1,2805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+				<funder ref="#_htrKvSj">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_FPugEsU">
+					<orgName type="full">Deutsche Forschungsgemeinschaft</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">61DBD5C511C439759EA58409617780A8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:01+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A consistent and accurate ab initio parametrization of density functional dispersion correction "DFT-D… for the 94 elements H-Pu</head><p>The method of dispersion correction as an add-on to standard Kohn-Sham density functional theory ͑DFT-D͒ has been refined regarding higher accuracy, broader range of applicability, and less empiricism. The main new ingredients are atom-pairwise specific dispersion coefficients and cutoff radii that are both computed from first principles. The coefficients for new eighth-order dispersion terms are computed using established recursion relations. System ͑geometry͒ dependent information is used for the first time in a DFT-D type approach by employing the new concept of fractional coordination numbers ͑CN͒. They are used to interpolate between dispersion coefficients of atoms in different chemical environments. The method only requires adjustment of two global parameters for each density functional, is asymptotically exact for a gas of weakly interacting neutral atoms, and easily allows the computation of atomic forces. Three-body nonadditivity terms are considered. The method has been assessed on standard benchmark sets for inter-and intramolecular noncovalent interactions with a particular emphasis on a consistent description of light and heavy element systems. The mean absolute deviations for the S22 benchmark set of noncovalent interactions for 11 standard density functionals decrease by 15%-40% compared to the previous ͑already accurate͒ DFT-D version. Spectacular improvements are found for a tripeptide-folding model and all tested metallic systems. The rectification of the long-range behavior and the use of more accurate C 6 coefficients also lead to a much better description of large ͑infinite͒ systems as shown for graphene sheets and the adsorption of benzene on an Ag͑111͒ surface. For graphene it is found that the inclusion of three-body terms substantially ͑by about 10%͒ weakens the interlayer binding. We propose the revised DFT-D method as a general tool for the computation of the dispersion energy in molecules and solids of any kind with DFT and related ͑low-cost͒ electronic structure methods for large systems. © 2010 American Institute of Physics. ͓doi:10.1063/1.3382344͔</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>The development of approximate density functional theory ͑DFT͒ approaches that accurately model the physically and chemically very important London dispersion interactions <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b1">2</ref> is a very active field of research ͑for recent papers with some review character, see Refs. 3-6͒. It has now become very clear especially for the chemistry and physics of large systems as, e.g., in bio-or nanoarchitectures, that these interactions are indispensable in order to reach the so-called chemical accuracy. The various approaches currently in use are given and characterized in Table <ref type="table" target="#tab_1">I</ref>. This overview includes the DFT-D method ͑atom pairwise sum over C 6 R -6 potentials 7-9 ͒, the nonlocal van der Waals functional ͑vdW-DF <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref> ͒, dispersion-corrected atom-centered potentials ͓DCACPs, <ref type="bibr" target="#b12">13</ref> in a variant called localized atomic potentials ͑LAP͒ <ref type="bibr" target="#b13">14</ref> ͔ and "pure" density functionals ͑DFs͒ which are highly parametrized forms of standard metahybrid approximations. <ref type="bibr" target="#b14">15</ref> We have not included the rigorous symmetry-adapted perturbation theory ͑SAPT͒ based on a DFT description of monomers ͑Refs. 16 and 17͒ because this approach ͑although being very accurate for weakly interact-ing molecular or atomic fragments͒ cannot account also for intramolecular interactions as the other methods ͑for a related method based on perturbation theory, see also Ref. 18͒. Special virtual orbital dependent DF methods are also not discussed in detail because of their significantly higher computational cost.</p><p>The methods in Table <ref type="table" target="#tab_1">I</ref> clearly have their pros and cons. They all claim to provide an accuracy of about 5%-20% for the typical dissociation energy of a noncovalently bound molecular complex. However, only the DFT-D method really can be considered as "robust" as it has been tested thoroughly and applied successfully now on thousands of different systems including inter-as well as intramolecular cases ranging from rare gas dimers to huge graphene sheets. The method is also more and more used successfully in surface science and for solid state problems ͑see, e.g., Refs. 19-21͒. As shown recently, high accuracy is potentially also accessible with the vdW-DF method and its successors. <ref type="bibr" target="#b21">22,</ref><ref type="bibr" target="#b22">23</ref> While this might also hold for DCACP and pure DF methods for small systems, both do not show the correct asymptotic R -6 potential for large intermolecular ͑interfragment͒ distances. This leads to problems for large ͑infinite͒ systems with many long-range interactions for which these methods are expected to underbind ͑for a recent example, see Ref. 24͒. Highly parametrized DFs sometimes also exhibit problems of numerical stability. <ref type="bibr" target="#b24">25</ref> The DFT-D method furthermore has the very nice properties of minor numerical complexity, that the "normal" thermochemistry ͑intramolecular dispersion͒ is also improved significantly compared to many "dispersion blind" standard functionals and that the results can easily be analyzed. Because it combines the best properties of all other approaches, it can be anticipated that some kind of DFT-D will remain the most widely used approach to the dispersion problem for at least the next 5-10 years. This is the main reason to develop it further in this work. Our main goal is to obtain with a minimum of empiricism ͑that is also not avoidable in most of the other methods͒ in an almost ab initio fashion consistent parameters ͑atom pairwise cutoff distances R 0 AB and dispersion coefficients C n AB ͒ for the entire set of chemically relevant elements. However, its most serious drawback ͑that is also not lifted in this work͒ is that the correction is not dependent on and does not affect the electronic structure. Although we think that these effects are small in the majority of practical applications ͑and often negligible compared to many other sources of error͒, this restriction ultimately limits the accuracy, in particular, for chemically very unusual cases. Thus, very high accuracy like, e.g., with perturbatively corrected coupled-cluster methods such as CCSD͑T͒ together with complete basis set ͑CBS͒ extrapolations can never be reached although in practice typically small deviations of 5%-10% from this "gold standard" for dissociation or ͑relative͒ conformational energies are possible and often adequate ͑for recent reviews of wave function based techniques for noncovalent interactions, see Refs. 26  and 27͒.  In this context it should be noted that a large part of the residual error is attributed to the underlying DF approximation used in DFT-D. Furthermore, it has been designed from the very beginning as a correction for common functionals ͑such as B3LYP, PBE, or TPSS͒ that may be not optimal for noncovalent interactions ͑for an interesting new idea in this context, see Ref. 28͒ but perform well for other important properties. This is a clear advantage over other approaches ͑such as vdW-DF or Becke's approach mentioned below͒ that have proven good performance only with specially designed or selected functionals. We here present results for a wide variety of standard functionals ͑BLYP, <ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30</ref> BP86, <ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b31">32</ref> PBE, <ref type="bibr" target="#b32">33</ref> revPBE, 34 B97-D, <ref type="bibr" target="#b34">35</ref> TPSS, 36 B3LYP, <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b37">38</ref> PBE0, 39 PW6B95, <ref type="bibr" target="#b39">40</ref> and B2PLYP 41 ͒. We also test TPSS0 which is a hybrid meta-generalized gradient approximation ͑hybrid meta-GGA͒ in which the Fock-exchange mixing parameter a x is set to 1/4 as in PBE0 and that performs better than TPSSh ͑with a x = 0.1͒ for thermochemical problems. <ref type="bibr" target="#b41">42</ref> The extension to other ͑future͒ DFs is straightforward.</p><p>The almost ab initio version of the DFT-D method as proposed here seems to be most similar to the work of Becke and Johnson, <ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b43">44</ref> Sato and Nakai, <ref type="bibr" target="#b5">6</ref> and Tkatchenko and Scheffler. <ref type="bibr" target="#b44">45</ref> The first authors calculated the C 6 dispersion coefficients specifically for the system under investigation from the dipole moment of the exchange hole <ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b43">44</ref> ͑see also Ref. 46͒, distributed these coefficients between the atoms, and also used an empirical damping function. It was subsequently extended to include C 8 and C 10 coefficients as well. <ref type="bibr" target="#b46">47</ref> Calculations with this method and a specially chosen functional for 45 complexes resulted in remarkably accurate binding energies compared to high-level reference data. <ref type="bibr" target="#b47">48,</ref><ref type="bibr" target="#b48">49</ref> Sato and Nakai 6 used a similar strategy that mainly differs in the computation of dispersion coefficients of the atoms in the molecule and an asymptotic correction of the exchangecorrelation part. Their so-called LC-BOP+ LRD method provides high accuracy for the standard benchmark set of noncovalent interactions ͑S22 50 ͒. Tkatchenko and Scheffler 45 also computed system-dependent C 6 coefficients for atoms in molecules by a scaling of free atom values by a densityderived, Hirschfeld-partitioned effective atomic volume. These values are then used in a standard ͑damped͒ DFT-Dtype treatment and good results have been reported with the PBE functional for the S22 set. The most serious drawback of the two latter models compared to "conventional" DFT-D is that analytical gradients ͑atomic forces͒ are not readily available ͑for an implementation in the exchange-hole dipole moment method, see Ref. 51͒ so that structure optimizations ͑the major area of application of "low-cost" DFT methods͒ cannot routinely be performed. Extensive testing on intramolecular cases, heavier systems, or thermochemical problems has not been reported yet with these methods.</p><p>Compared to our previous <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b34">35</ref> and other recent DFT-D implementations and variants, <ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref><ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref> the current version has the following properties and advantages.</p><p>͑1͒ It is less empirical, i.e., the most important parameters are computed from first principles by standard Kohn-Sham ͑KS͒-͑TD͒DFT. ͑2͒ The approach is asymptotically correct with all DFs for finite systems ͑molecules͒ or nonmetallic infinite systems. It gives the almost exact dispersion energy for a gas of weakly interacting neutral atoms and smoothly interpolates to molecular ͑bulk͒ regions. ͑3͒ It provides a consistent description of all chemically relevant elements of the periodic system ͑nuclear charge Z =1-94͒. ͑4͒ Atom pair-specific dispersion coefficients and cutoff radii are explicitly computed. ͑5͒ Coordination number ͑geometry͒ dependent dispersion coefficients are used that do not rely on atom connec- Due to the nonlocality of the potential a small system dependency is included.</p><p>tivity information ͑differentiable energy expression͒. ͑6͒ It provides similar or better accuracy for "light" molecules and a strongly improved description of metallic and "heavier" systems.</p><p>Inclusion of dispersion nonadditivity by three-body ͑di-polar͒ terms is also tested but finally at this stage of knowledge not recommended as a default ͑see Secs. II C and III B͒. From a physical and conceptual perspective the widest change compared to our previous DFT-D versions is the fifth point as hitherto the ͑atomic͒ dispersion parameters were completely system independent. This is a very drastic restriction as these values depend, e.g., on the hybridization state of the atom in the molecule. We here present for the first time a simple account for this effect, that is, however, only geometry but not electronic structure dependent in order to keep the numerical complexity low. In contrast to other methods, for DFT-D the electronic KS-DFT computation ͑including forces͒ by far dominates the overall computation time. This new idea enables us to describe in a seamless and physically reasonable fashion the change in dispersion energy in many chemical transformation processes.</p><p>After a general outline of the theory in Sec. II A we discuss in detail the computation of the pairwise dispersion coefficients, cutoff radii, and the approach to system dependency. After some technical details of the KS-DFT calculations, results for a wide range of benchmark systems ͑noncovalently bound complexes and conformational energies, graphene sheets, metallic systems, and vdW complexes of heavier elements͒ are presented. From now on we will refer to our previous versions of the approach as DFT-D1 ͑Ref. 8͒ or DFT-D2, <ref type="bibr" target="#b34">35</ref> respectively, and label the new method as DFT-D3 ͑or with "-D3" appended to a functional name͒.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. THEORY</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. General</head><p>The total DFT-D3 energy is given by</p><formula xml:id="formula_0">E DFT-D3 = E KS-DFT -E disp , ͑1͒</formula><p>where E KS-DFT is the usual self-consistent KS energy as obtained from the chosen DF and E disp is the dispersion correction as a sum of two-and three-body ͑see Sec. II C͒ energies,</p><formula xml:id="formula_1">E disp = E ͑2͒ + E ͑3͒ , ͑2͒</formula><p>with the most important two-body term given by</p><formula xml:id="formula_2">E ͑2͒ = ͚ AB ͚ n=6,8,10,. . . s n C n AB r AB n f d,n ͑r AB ͒. ͑3͒</formula><p>Here, the first sum is over all atom pairs in the system, C n AB denotes the averaged ͑isotropic͒ nth-order dispersion coefficient ͑orders n =6,8,10,...͒ for atom pair AB, and r AB is their internuclear distance. If not mentioned otherwise, atomic units are used throughout our work. Global ͑DF de-pendent͒ scaling factors s n are adjusted only for n Ͼ 6 to ensure asymptotic exactness which is fulfilled when the C 6</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AB</head><p>are exact. This is a fundamental difference to DFT-D1 and DFT-D2, where, in general, s 6 was not equal to unity and only a scaled asymptotic value is obtained. However, for DFs that inherently account for parts of the long-range dispersion energy ͑e.g., for double-hybrid DFs such as B2PLYP <ref type="bibr" target="#b57">58</ref> ͒, it is physically reasonable to set s 6 Ͻ 1. Note that the contribution of the higher-ranked multipole terms n Ͼ 6 is more short ranged and rather strongly interferes with the ͑short-ranged͒ DF description of electron correlation. In DFT-D3 in which the C 6 terms are no longer scaled, the higher C n terms are necessary to adapt the potential specifically to the chosen DF in this midrange region. After some testing it was found out that the terms n Ͼ 8 ͑in particular, for n Ͼ 10͒ make the method somewhat unstable in more complicated situations and also do not improve the results considerably for "normal" molecules. In the spirit of Ockham's razor we make the simplest choice and therefore truncate after n = 8. Compared to DFT-D1/2 only the eighth-order term is included as a new ingredient. Note that compared to an ab initio SAPT description of intermolecular interactions even the eighth-order contributions do not have a real physical meaning in a supermolecular DFT treatment due to their short-ranged character. The scale factor s 8 is the first ͑DF dependent͒ empirical parameter of the method.</p><p>In order to avoid near singularities for small r AB and ͑mid-range͒ double-counting effects of correlation at intermediate distances, damping functions f d,n are used which determine the range of the dispersion correction. After a lot of testing and careful consideration of other more general functions, <ref type="bibr" target="#b58">59</ref> we came to the conclusion that the effect and importance of their choice are overemphasized in some of the previous studies. <ref type="bibr" target="#b53">54,</ref><ref type="bibr" target="#b58">59</ref> When results are averaged over a wide range of systems and DFs, the overall performance of the DFT-D model is only weakly dependent on its choice. We have chosen a variant proposed by Chai and Head-Gordon <ref type="bibr" target="#b59">60</ref> which turns out to be numerically stable and convenient also for higher dispersion orders. It is given by</p><formula xml:id="formula_3">f d,n ͑r AB ͒ = 1 1 + 6͑r AB /͑s r,n R 0 AB ͒͒ -␣ n , ͑4͒</formula><p>where s r,n is the order-dependent scaling factor of the cutoff radii R 0 AB . This type of scaling has been first introduced by Jurečka et al. <ref type="bibr" target="#b8">9</ref> to adapt the correction at small and medium range distances to the specific form of the chosen DF. It replaces s 6 -scaling in DFT-D1/2 and is the main and most important parameter that has to be adjusted for each DF.</p><p>After some testing we propose to optimize only s r,6 by a standard least-squares error fitting procedure as described below and fix s r,8 for all DFs to unity. The "steepness" parameters ␣ n are also not fitted but adjusted manually such that the dispersion correction is Ͻ1% of max͉͑E disp ͉͒͒ for typical covalent bond distances. This is achieved by setting ␣ 6 =14 ͑which is slightly larger than the previously used value <ref type="bibr" target="#b59">60</ref> of ␣ 6 =12͒ and by taking ␣ n+2 = ␣ n +2.</p><p>As an example we show the dispersion energy computed for two carbon atoms with the BLYP and TPSS functionals in Fig. <ref type="figure" target="#fig_0">1</ref>. The correction is largest at the typical vdW distance between the atoms ͑3.3-3.4 Å for carbon͒. It is larger ͑smaller s r,6 value͒ for more "repulsive" DFs such as BLYP, BP86 or revPBE that have a stronger dependence on the gradient-enhancement factor in low-density regions. For these DFs also the relative value of the higher-order terms is larger than for DFs such as PBE or TPSS. Note the very similar energies starting at about 6 Å for both DFs that mark the asymptotic region as determined by C 6 alone. Compared to DFT-D2 the new potential is less binding for small distances but more attractive in the typical vdW region. It provides a more clear-cut separation between short-range ͑in the intramolecular context this has first been termed overlap dispersive and later medium-range correlation, see the original Refs. 61 and 62͒ and long-range dispersion effects. This is a main reason for the improved description of "weak" interactions but also responsible for a slightly deteriorated performance ͑compared to DFT-D2͒ for dispersion-sensitive thermochemical problems of organic molecules ͑see Sec. III E͒.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Dispersion coefficients</head><p>Instead of using an empirically derived interpolation formula as in DFT-D2, the dispersion coefficients are now computed ab initio by time-dependent ͑TD͒DFT employing known recursion relations for the higher-multipole terms. The starting point is the well-known Casimir-Polder formula, 2,63</p><formula xml:id="formula_4">C 6 AB = 3 ͵ 0 ϱ ␣ A ͑i͒␣ B ͑i͒d, ͑5͒</formula><p>where ␣͑i͒ is the averaged dipole polarizability at imaginary frequency . This description of long-range dispersion by DFT has been pioneered by Gross et al. <ref type="bibr" target="#b63">64</ref> ͑for a recent application, see, e.g., Ref. 65͒. The higher-order coefficients are computed recursively <ref type="bibr" target="#b65">[66]</ref><ref type="bibr" target="#b66">[67]</ref><ref type="bibr" target="#b67">[68]</ref> according to</p><formula xml:id="formula_5">C 8 AB = 3C 6 AB ͱ Q A Q B ,<label>͑6͒</label></formula><formula xml:id="formula_6">C 10 AB = 49<label>40</label></formula><formula xml:id="formula_7">͑C 8 AB ͒ 2 C 6 AB ,<label>͑7͒</label></formula><p>and</p><formula xml:id="formula_8">C n+4 = C n-2 ͩ C n+2 C n ͪ 3 , ͑8͒</formula><p>with</p><formula xml:id="formula_9">Q A = s 42 ͱ Z A ͗r 4 ͘ A ͗r 2 ͘ A . ͑9͒</formula><p>In Eq. ͑9͒ ͗r 4 ͘ and ͗r 2 ͘ are simple multipole-type expectation values derived from atomic densities which are averaged geometrically to get the pair coefficients ͑for another recent approach to compute the higher multipole coefficients, see Ref. 69͒. This seems to be sufficiently accurate because the C 6 value in Eq. ͑6͒ is computed explicitly for the pair AB ͑see below͒. The ad hoc nuclear charge dependent factor ͱ Z A in Eq. ͑9͒ is found to be necessary in order to get consistent interaction energies also for the heavier elements. The factor s 42 is redundant because the higher-order contributions in Eq. ͑3͒ are scaled individually for each DF. Its value has been chosen for convenience such that reasonable C 8 AA values for He, Ne, and Ar are obtained. According to detailed tests, the ͱ Z A dependence tends to disappear when very high multipole ranks ͑up to n =14͒ are included. This, however, amplifies errors in C 6 and makes the correction "unstable" in situations when this value changes considerably ͑see below͒. We thus decided to include only C 8 and account for the higher importance of the n Ͼ 8 terms for heavier systems in this empirical manner. Note that from a physical point of view it also does not make much sense to include highly ranked terms derived from multipole-based perturbation theory that becomes inappropriate at short interatomic distances anyway in a DFT-D approach.</p><p>Although the C 6 AB values can be computed easily for any pair of free atoms by using Eq. ͑5͒ in principle, this would lead to a rather inconsistent treatment of dispersion in and between molecules. The polarizabilities of many atoms are strongly influenced by energetically low-lying atomic states ͑open valence shells͒ which leads to very large dispersion coefficients. This is mostly quenched in molecules by bond formation or electron transfer ͑see also Sec. II E͒. If the focus is on the interactions in "dense" materials, it thus seems reasonable not to compute the ␣͑i͒ values for free atoms but for simple molecules with a preferably well-defined electronic structure. Because ͑except for the rare gases͒ every element in the Periodic Table forms a stable hydride, we decided to base these calculations on separate computations for A m H n and B k H l reference molecules and remove the contribution of the hydrogens, i.e.,</p><formula xml:id="formula_10">C 6 AB = 3 ͵ 0 ϱ d 1 m ͫ ␣ A m H n ͑i͒ -n 2 ␣ H 2 ͑i͒ ͬ ϫ 1 k ͫ ␣ B k H l ͑i͒ -l 2 ␣ H 2 ͑i͒ ͬ ,</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>͑10͒</head><p>where ␣ H 2 ͑i͒ is the corresponding value for the dihydrogen molecule, m , n , k , l are stoichiometric factors, and ␣ A m H n ͑i͒ corresponds to the reference molecule A m H n ͑and analogously for B k H l ͒. Note that Eq. ͑10͒ becomes identical to Eq. ͑5͒ for m , k = 1 and n , l = 0. At first sight this new approach seems to be a disadvantage because it leads to reference molecule dependent ͑ambiguous͒ coefficients. However, as will be discussed in detail below ͑Sec. II E͒, it opens a route to system ͓coordination number ͑CN͔͒ dependent "atomic" C 6 ͑CN͒ coefficients. Table <ref type="table" target="#tab_2">II</ref> shows a comparison of com- puted and accurate reference C 6 values for simple systems taken from the literature. The agreement for the rare gases can be considered as being excellent and, in fact, is close to the uncertainty of the reference data ͑about Ϯ1%, see Ref.</p><p>70͒. For the TDDFT computations we employ a hybrid DF based on PBE in which the amount of Fock exchange has been increased from a fraction of a x =1/ 4 in PBE0 ͑Ref. 39͒ to a x =3/ 8. This is known to yield much better electronic excitation energies <ref type="bibr" target="#b70">71</ref> which improves ͑decreases͒ the computed polarizabilities and C 6 coefficients. Together with the extended basis set used ͑for details see Sec. II G͒, this efficiently yields very accurate coefficients for our reference molecules with a conservatively estimated error of less than 5%-10% ͑a comparison with experimental values for molecules is given in Sec. III A͒. This is in any case better than the remaining deficiencies of standard DFs for the description of the other terms in noncovalent interactions ͑e.g., of electrostatics and induction͒. Note also the good reproduction of the hybridization-dependent values for carbon as derived from ethane, ethene, and ethyne as A m H n molecules. The change in the C 6 for carbon between the very common sp 3 and sp 2 electronic situations of about 25% seems to be very important for the accuracy of DFT-D3 in bio-organic systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Three-body term</head><p>The long-range part of the interaction between three ground-state atoms is not exactly equal to the interaction energies taken in pairs. To the best of our knowledge we are not aware of any consideration of this effect in a DFT-D-type framework. The leading nonadditive ͑called Axilrod-Teller-Muto or triple dipole͒ dispersion term as derived from the third-order perturbation theory for three atoms ABC is 1,72,73</p><formula xml:id="formula_11">E ABC = C 9 ABC ͑3 cos a cos b cos c + 1͒ ͑r AB r BC r CA ͒ 3 , ͑11͒</formula><p>where a , b , and c are the internal angles of the triangle formed by r AB , r BC and r CA , and C 9 ABC is the triple-dipole constant defined by</p><formula xml:id="formula_12">C 9 ABC = 3 ͵ 0 ϱ ␣ A ͑i͒␣ B ͑i͒␣ C ͑i͒d. ͑12͒</formula><p>Because the total three-body contribution is typically Ͻ5 -10% of E disp , it seems reasonable to approximate the coefficients by a geometric mean as</p><formula xml:id="formula_13">C 9 ABC Ϸ -ͱ C 6 AB C 6 AC C 6 BC . ͑13͒</formula><p>The accuracy of this simplification has been tested for various element combinations and deviations from Eq. ͑12͒ are found to be mostly less than 10%-20% ͑see Table <ref type="table" target="#tab_3">III͒</ref>. For various rare gas trimers, the accuracy compared to recent experimental data <ref type="bibr" target="#b69">70</ref> is on average 10%, while TDDFT without further approximations ͓Eq. ͑12͔͒ yields excellent results ͑mean percentage deviation of 1.4%͒. By applying the concept of short-range damping analogously as for the pairwise term, we arrive at the finally used formula for the nonadditive energy contribution,</p><formula xml:id="formula_14">E ͑3͒ = ͚ ABC f d,͑3͒ ͑r ¯ABC ͒E ABC , ͑14͒</formula><p>where the sum is over all atom triples ABC in the system and Eq. ͑4͒ with ␣ = 16, s r =4/ 3, and geometrically averaged radii r ¯ABC is used as a damping function. As recommended in Ref.</p><p>1 this contribution is made less short ranged than the pair contribution. Due to the geometrical factor in Eq. ͑11͒ and because of the negative sign of the C 9 coefficient, the correction is repulsive in densely packed systems in which many "atomic triangles" with angles Ͻ90°are present. The contribution becomes negative, although much smaller, for more linear arrangements. In general, the three-body energy is insignificant for small ͑Ͻ10 atoms͒ molecules and can be neglected but might be substantial for larger complexes. Although inclusion of the three-body energy increases the formal scaling behavior of the computational effort with system size from O͑N atoms 2 ͒ to O͑N atoms 3 ͒, this investment may be worthwhile in a DFT framework in which the computation time for the KS-DFT part is still at least two to three orders of magnitude larger. The result of this cost/ performance analysis, however, might change when our approach is coupled with inherently less accurate but much faster semiempirical or force-field treatments. Currently little is known how E ͑3͒ in overlapping density regions is treated  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Cutoff radii</head><p>The damping function in Eq. ͑4͒ requires the specification of an atom pairwise cutoff radius R 0 AB which determines in which interatomic distance region the dispersion energy is decreasing ͑in absolute value͒ and eventually vanishing. Physically it describes the beginning of the DFT description of the exchange-correlation energy. These quantities are often termed vdW radii ͑R vdW ͒ which is misleading because they do not describe the minimum of a potential energy curve. In DFT-D1/2 their values were determined as simple average of ͑density contour derived͒ atomic radii. We here propose a more sophisticated approach in which they are specifically computed for all atom pairs AB leading in total to 4465 values for all 94 elements considered here.</p><p>The values are derived from the distance for which the first-order ͑E 1 ͒ DFT interaction energy between the atoms A and B equals a cutoff energy. This is illustrated for C-C, C-N, and C-O pairs in Fig. <ref type="figure">2</ref>. The value of the cutoff energy is chosen for convenience such that for carbon the same R 0 CC value as in the DFT-D2 method ͑2.91 Å͒ is obtained. Because the radii are scaled for each DF anyway ͓Eq. ͑4͔͒, there is practically no influence of this choice on the results ͑for reasonable values between 2 and 10 kcal/mol͒. The E 1 values are computed by adding properly antisymmetrized, spherical ground state atomic KS determinants to build the diatomic A-B. The KS energy of this system without electronic relaxation of the orbitals minus the energies of separate A and B equals E 1 . It differs from the true interaction energy by charge-transfer and polarization effects. If the atoms contain open shells, these are coupled to a high-spin state. In this way, chemical bond formation is avoided and repulsive potential curves are computed specifically for all 4465 pairs. In Fig. <ref type="figure">3</ref> we compare the R 0 AA values for Z =1-94 to recently revised <ref type="bibr" target="#b74">75</ref> atomic R vdW values. It is seen that across the entire Periodic Table both data sets show similar trends. Further support of our approach comes from the observation that the sum of E 1 and E disp yields typical vdW potentials for, e.g., rare gas dimers ͑not shown͒ with approximately the right depth and position of the minima. This opens a route to compute ab initio vdW radii not only for the atoms but specifically for all element pairs ͑that is, however, not followed further here͒. We also compared the new with the old <ref type="bibr" target="#b34">35</ref> cutoff radii and observed significant differences, in particular, for metals and when A and B are very different in "size." We strongly believe that our new values physically come closest to the concept of an atomic cutoff radius. The choice of the DF in the computation of E 1 has only a minor impact on the results and becomes negligible when the scaling factors s r,n are considered. In passing we note that our new pair-specific R 0 AB values may be beneficial also in other recent approaches that require a damping function ͑e.g., Refs. 6, 9, 43, and 45͒.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Coordination number dependent dispersion coefficients</head><p>The contribution of an atom to the total dispersion coefficient of a molecule depends on its "chemical" environment. Two main electronic effects can be identified. First, the atom can change its oxidation state by electron transfer. This is generally considered as being important and was a major criticism to the simple DFT-D1/2 method. However, its relevance for typical applications is probably overemphasized as the electrons obviously do not disappear in the process. Although the C 6 value of the formally oxidized atom normally decreases, this is compensated at least partially by an accompanied increase in the C 6 value for the reduced atom. Because any attempt to account accurately for such effects would lead to a complicated dependence on the electronic density ͑or on the orbitals in more sophisticated approaches͒, we neglect this also in DFT-D3. Thus, if oxidation/reduction processes with charge transfer over long distances and the accompanied change in dispersion energy are of primary interest, one should keep this fundamental limitation of all current DFT-D methods in mind.</p><p>The second effect is induced by ͑covalent͒ bond formation which drastically changes the electronic structure. Fractionally occupied atomic orbitals become mostly doubly occupied, energetically lower-lying molecular orbitals. Because this typically increases the electronic excitation energies, the resulting atomic polarizabilities and derived C 6 coefficients are often much smaller in molecules than in free atoms ͑in particular, for metals͒. This quenching of the atomic states is more effective for valence saturated compared to unsaturated structures. Empirically this is well known and already in the early DFTB-D implementation <ref type="bibr" target="#b6">7</ref> and other DFT-D versions, <ref type="bibr" target="#b53">54</ref> different coefficients, e.g., for the different hybridization states of carbon had been used. As Table <ref type="table" target="#tab_2">II</ref> shows, this effect is significant. Note that such changes are not included in the DCACP ͑Ref. 13͒ method which ͑similar to DFT-D1/2͒ employs the same ͑fixed͒ parameters for each element in a system.</p><p>The picture of hybridization-dependent dispersion coefficients has never been generalized nor has the assignment problem ͑when is a carbon atom in a molecule in an sp 3 hybridization state?͒ and the problem of differentiability ͑e.g., during a chemical reaction͒ been solved. We propose here a radically new "geometric" approach that is based on the concept of a fractional coordination number. The key idea is that not the hybridization state ͑an anyway not very well-defined concept͒ is responsible for the change in the dispersion coefficient but the above mentioned atomic state "quenching" induced by the bond partners. We base our ansatz on a fractional CN for an atom A, that is a sum of a "counting" function over all atoms in the system,</p><formula xml:id="formula_15">CN A = ͚ B A N at 1 1 + e -k 1 ͑k 2 ͑R A,cov +R B,cov ͒/r AB -1͒ , ͑15͒</formula><p>where R A,cov is a scaled covalent ͑single-bond͒ radius of atom A ͑and analogously for R B,cov ͒. We take the recently proposed consistent values of Pyykkö and Atsumi <ref type="bibr" target="#b75">76</ref> and use a scale factor of k 2 =4/ 3 to adapt these to our purpose. This yields chemically very reasonable CN values for normally bonded molecules ͑e.g., of about 2, 3, and 4 for the carbon atoms in ethyne, ethene, and ethane, respectively͒ but yields too large CNs for metallic systems. It was thus decided to decrease all covalent radii for metals by 10%. The other parameter k 1 = 16 has been chosen by taking the following points into consideration: first, for many chemical reactions involving carbon it is known that a C-C covalent single bond is broken between r͑C-C͒ 1.5-3 Å ͑for which CN should be in a range of 0-1͒. Second, k 1 must be large enough that very distant atoms are not "counted" so that the CN does not significantly depend on the size of the system. We tested this for graphene sheets of increasing size ͑from 24 to 150 carbon atoms͒ and found changes in the computed C 6 CC coefficients by Ͻ1% ͓see Eq. ͑16͒ below͔.</p><p>Figure <ref type="figure">4</ref> shows CN values for a hypothetical molecule with a variety of different atoms and bonding situations. The values are close to integer for normal bonding situations and in perfect agreement with chemical intuition ͑including transition metals as demonstrated in the example͒. Significant differences from integer values are found in transition states of chemical reactions ͓e.g., CN͑C͒ = 4.1 and in particular CN͑F͒ = 0.57 in the S N 2 reaction of F ¯CH 3 ¯F-͔ and for metals. In any dissociation reaction, the computed CN of an initially bonded atom exponentially decays to zero as it is physically plausible from the exponential decay of the ͑frag-ment͒ wave function overlap.</p><p>Turning back to the dispersion coefficients we propose the following general approach. For each element in the Periodic Table, at least one reference molecule is used to compute ␣͑i͒ values in Eq. ͑10͒. Inclusion of the free atom values makes our approach exact for a "gas" of neutral atoms at large interatomic distances. If an element is commonly investigated and/or often found in different chemical environments, we suggest to use several representatives for which values are computed. In the case of carbon for example, ethyne, ethene, and ethane can be used for CNs between 2 and 4. Values computed for C-H and the carbon atom complete the set. For the atom of interest in any of the reference systems also the CN is calculated and stored. Using Eq. ͑10͒ the C 6,ref AB ͑CN A ,CN B ͒ values are computed for this pair with the two atoms in their specific environments. These serve as supporting points in an interpolation procedure to derive the coefficient for any combination of fractional CN values. Because we base our approach on pair-specific coefficients C 6 AB , a two-dimensional ͑2D͒ interpolation scheme must be used. After extensive testing we propose a simple Gaussian-distance ͑L͒ weighted average,</p><formula xml:id="formula_16">C 6 AB ͑CN A ,CN B ͒ = Z W , Z = ͚ i N A ͚ j N B C 6,ref AB ͑CN i A ,CN j B ͒L ij , ͑16͒ W = ͚ i N A ͚ j N B L ij , L ij = e -k 3 ͓͑CN A -CN i A ͒ 2 +͑CN B -CN j B ͒ 2 ͔ ,</formula><p>where N A and N B are the number of supporting points ͑=number of reference molecules͒ for atoms A and B, respec- tively. The CN A and CN B are coordination numbers for the atom pair AB in the system of interest, and the CN i A and CN j B are those for the two reference systems i and j, for which</p><formula xml:id="formula_17">C 6,ref AB ͑CN i A ,CN j B ͒</formula><p>is the precomputed value. The basic idea is outlined schematically in Fig. <ref type="figure" target="#fig_3">5</ref> where interpolation curves for carbon, nitrogen, and oxygen are also shown. The choice of the parameter k 3 was guided by the basic requirement to get smooth curves that avoid "sharp" parts in the resulting potential and concomitantly display clear plateaus close to integer CN values. Reasonable choices for this value ͑between 3 and 5͒ do not significantly affect the results and we finally took k 3 =4.</p><p>For most of the elements only two reference values are necessary to cover the typical bonding situations. For "important" elements such as carbon, however, more values ͑5 in this case͒ seem appropriate. Currently we have computed in total 227 reference systems for the elements up to Z =94 ͑see Sec. II G͒ which leads to about 2.6ϫ 10 4 different values C 6,ref AB ͑CN i A ,CN j B ͒. They are computed once and read at the beginning of any computation. This list is continuously updated on our homepage. <ref type="bibr" target="#b76">77</ref> For further details, see the supporting information. <ref type="bibr">78</ref> A very challenging test for the proposed model are ͑earth͒alkaline metal complexes and clusters in which the dispersion coefficients as well as the CNs vary by large amounts ͑see Sec. III F͒. In this regard it is important to mention that for the chosen value of k 3 the steepness of the C 6 AB ͑CN A ,CN B ͒ function in between integer values does not pose problems for the calculation of smooth energy surfaces. These changes typically occur at interatomic distances much smaller than the cutoff radii so that "sudden" changes in the dispersion energy by a change in the C 6 value are effectively damped out. Some "bumps" in potential curves can been observed for metals in the midrange region when in addition to the free atom only one supporting point is used ͑e.g., the natural choice MH 2 with CNϷ 2 for earth alkaline metals͒.</p><p>The problem disappears when in this case a point for CN Ϸ 1 ͑i.e., MH͒ is included. While this does not pose any problem for most molecule/bulk situations, one should keep it in mind when dissociating systems are investigated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Discussion</head><p>Because some authors <ref type="bibr" target="#b77">79</ref> discredit the DFT-D approach as a "molecular mechanics" ͑MM͒-type correction ͑which have the common flavor of being rather inaccurate͒ we want to clarify some general aspects at this point.</p><p>Concerning empiricism ͑which is very high in typical MM methods͒ we have all in all only two adjustable parameters that are specific for each DF ͑s r,6 and s 8 ͒. This is an order of magnitude less compared to the highly parametrized DF and DCACP methods that have been mentioned in Sec. I. Both parameters affect only the medium distance range and are necessary to merge two different correlation contributions in a seamless fashion. As shown below ͑see Sec. III B͒ their values reflect construction principles of the underlying DF. All other important input data of the method ͑͗r n ͘, R 0 AB , and C n AB ͒ are computed from first principles. The interpolation of the coordination number dependent C 6 coefficients requires three further global ad hoc parameters that are adjusted by chemical reasoning and not by fitting. The covalent single-bond radii used in Eq. ͑15͒ could also be computed fully ab initio but have been taken from a standard compilation for convenience. The square-root scaling in Eq. ͑9͒ results from the prescription to avoid very highly ranked multipole terms which makes the approach robust. The damping function, Eq. ͑4͒, uses an additional exponent ␣ n for each order. No other ͑hidden͒ parameters are required and the only remaining "freedom" is the choice of the reference molecules to compute the C 6,ref AB ͑CN A ,CN B ͒ values. As long as chemically meaningful structures are used we expect systematically improved results. With only one value per element the new approach becomes identical to DFT-D1/2 in this respect.</p><p>In principle, all input data for DFT-D3 could be computed specifically for each DF. We decided not to do so for the following reasons. First, all semilocal DF approximations yield too large C 6 coefficients because this property is mainly determined by the excitation spectrum which at this level is energetically too low compared to, e.g., that of hybrid functionals. This would introduce an ͑unnecessary͒ error and we thus decided to use the same rather accurate set of C 6 coefficients. The R 0 AB values from different DFs differ merely by a constant factor, and because these values are scaled anyway, the use of different data sets is not justified and furthermore would hamper the comparability of results from different DFs.</p><p>The accuracy of some functionals could be improved slightly when s 6 in Eq. ͑3͒ is allowed to vary. Because this would deteriorate the long-range description it is not recommended. However, s 6 values smaller than unity are physically reasonable for double-hybrid functionals <ref type="bibr" target="#b40">41</ref> that asymptotically account for parts of the dispersion energy by virtual orbital dependent terms. For semiempirical methods that need more "variational freedom," or when very large systems are not of interest, it may be sensible to vary s 6 as the restriction of asymptotic exactness may limit the achievable accuracy for ͑midrange sensitive͒ molecular complexes. Considering the uncertainty in the C 6 coefficients used, deviations of s 6 from unity of about Ϯ10% would be tolerable.</p><p>In summary we consider DFT-D3 as an approach to interpolate between two regions: the asymptotic part that is described very accurately by TDDFT ͑for atomic or molecular fragments͒ and the short-range regime for which standard DF approximations often yield a rather accurate description of the exchange-correlation problem. The method is of MM type in the sense that it is very fast and only geometric ͑structure͒ information is employed.</p><p>The asymptotic correctness of DFT-D3 also leads to a nice "universal" feature: if the distant vdW energy is computed by a sum of R -6 contributions between microscopic elements ͑e.g., atoms͒, "standard" power laws E ϰ -D -p for the interaction energy between various macroscopic bodies separated by distance D are obtained ͑e.g., p = 4 for 2D layers and p = 5 for one-dimensional insulators͒. Note also that the practically important case of thick metal slabs is correctly described by an R -6 sum. <ref type="bibr" target="#b78">80</ref> Small modifications of these power laws that are not covered by the DFT-D approach ͑and that are of special electronic origin͒ have recently been derived for metals and zero-gap insulators. <ref type="bibr" target="#b78">80</ref> This minor problem, however, is in sharp contrast to the complete failure of standard DFs ͑that are recommended in Ref. 79 for many practical purposes͒ for which the decay of the interaction with D is always incorrectly exponential.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>G. Technical details</head><p>We here only give a summary of the computational details, for a complete description, see supplementary material. <ref type="bibr">78</ref> The DFT calculations and most of the MP2 calculations used to obtain reference data have been performed with the TURBOMOLE 5.9 or TURBOMOLE 6.0 ͑Ref. 81͒ programs. The coupled-cluster results were obtained with the ORCA ͑Ref. 82͒ or MOLPRO packages. <ref type="bibr" target="#b81">83</ref> If not mentioned otherwise the DFT results refer to calculations using the very large def2-QZVP Gaussian AO basis <ref type="bibr" target="#b82">84,</ref><ref type="bibr" target="#b83">85</ref> ͓for the lanthanides, francium, radium, and the actinides only def2-TZVP ͑Refs. 85 and 86͒ was available͔ and are based for open-shell systems on unrestricted ͑symmetry broken͒ KS-wave functions. The def2-QZVP sets are, e.g., for the first-row atoms of ͓7s4p͔ quality and are augmented with polarization functions typically taken from Dunnings quadruple-zeta sets leading finally to ͓7s4p3d2f1g͔ sets. They provide results quite close to the KS limit for many properties and are also essentially free of basis set superposition error ͑BSSE͒. The exponents of the outmost primitive Gaussian functions in these sets can be considered as being semidiffuse so that def2-QZVP can be used for large systems without risking linear dependencies and concomitantly yield acceptable polarizabilities with most GGA functionals. For the heavier elements ͑Z Ͼ 36͒ small core effective pseudopotentials of the Stuttgart/Cologne groups <ref type="bibr" target="#b85">87,</ref><ref type="bibr" target="#b86">88</ref> were used. Except for the systems in the already established benchmark sets, the molecular geometries were optimized with the PBE0 ͑Ref. 39͒ hybrid functional. Numerical quadrature grids of size m4 or m5 ͑in TURBOMOLE notation͒ were generally employed. In order to speed up the calculations, the RI approximation for the SCF-part ͓RI-J or RI-JK ͑Refs. 89 and 90͔͒ and the perturbation part of the double-hybrid functional <ref type="bibr" target="#b89">91</ref> was used. Matching auxiliary basis functions <ref type="bibr" target="#b90">[92]</ref><ref type="bibr" target="#b91">[93]</ref><ref type="bibr" target="#b92">[94]</ref> were taken from the TURBOMOLE basis set library. For the calculations of DFT-D3 parameters ͑C 6 and R 0 ͒ RI was not used.</p><p>Reference structures of hydrides A m H n and computation of ␣ A m H n ͑i͒: For most elements, commonly known hydride structures were taken. Additionally d-block hydrides were generated in two different ways. The first was to saturate the heavy atom with hydrogens up to the 18-electron rule by placing hydrogen atoms spherically around it and subsequent energy optimization. In the second approach we keep the d-electrons unpaired which results in high-spin complexes of the stoichiometry AH 2 . For the f-block elements, a similar technique was employed by keeping the f-electrons unpaired which results in structures of AH 3 type.</p><p>The calculations of the dynamic polarizabilities are based on TDDFT employing the PBE38 functional ͑a x =3/ 8͒, a doubly augmented ͑diffuse 2s2p/2s2pd/2s2pdf set for helium and hydrogen/main group/d-block elements, re-spectively͒ def2-QZVP basis ͑termed daug-def2-QZVP͒, and the TURBOMOLE program escf. <ref type="bibr" target="#b93">95</ref> The numerical integration in Eq. ͑10͒ is based on a spline-interpolation of typically 10-15 supporting points in a frequency range of up to 10E h and exponential extrapolation to higher frequencies. The estimated numerical accuracy is better than 0.1%. The calculations of the cutoff radii and the atomic expectation values in Eq. ͑9͒ are based on ͑spherical atom͒ PBE0/def2-QZVP treatments.</p><p>As reference data for the determination of the s r,6 and s 8 parameters standard benchmark sets were used. Most of these data are based on estimated CCSD͑T͒/CBS results by assuming a standard additivity relation for higher-order correlation effects of the form est. CCSD͑T͒ large basis = MP2 large basis + ͑CCSD͑T͒ -MP2͒ small basis as suggested by Hobza ͑see, e.g., Ref. 96͒ and Klopper et al., <ref type="bibr" target="#b95">97</ref> where large basis usually refers to an extrapolated CBS value. The accuracy is typically better than 1%-2% of the reference energy.</p><p>In the fitting procedure, the following sets were taken: noncovalent interactions ͓S22 ͑Ref. 50͔͒, tripeptide ͑PCONF͒, sugar ͑SCONF͒, alkane ͑ACONF͒, and cysteine ͑CCONF͒ conformers ͑see Ref. 98 and references therein͒, the S22+ set introduced here, alkane ͓ADIM6 ͑Ref. 99͔͒, and rare gas dimers ͓RG6 ͑Refs. 100 and 101͔͒. The S22+ set contains the same systems as S22 but each complex at three larger intermolecular distances. ADIM6 contains the six dimerization energies of the alkanes ethane to heptane. The RG6 set includes the five homonuclear rare gas dimers from Ne to Rn and Xe-Rn. Their reference energies are weighted by a factor of 20 in the fitting procedure.</p><p>As cross validation the following test sets were considered: the newly generated HEAVY28 benchmark set of noncovalently bound complexes of heavy element hydrides, the WATER27 ͑water clusters͒, DARC ͑Diels-Alder reactions͒, and AL2X </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Molecular C 6 coefficients</head><p>Molecular C 6 coefficients are experimentally known from dipole oscillator strength distributions ͑DOSDs͒ and a set of 174 pair coefficients for common molecules ͑with a size ranging from dihydrogen to octane but including also species like O 2 or SF 6 being difficult for our approach͒ has already been used in Refs. 45 and 49 to benchmark approximate theoretical procedures for their computation. We take the same set and compare DFT-D3 results as obtained by summing the computed C 6 AB values ͓Eq. ͑16͔͒ over all intermolecular atom pairs. The results are shown graphically in Fig. <ref type="figure">6</ref>. It is seen that our method provides very reliable coefficients over the entire range with a mean percentage deviation of only 8.4% which is better than for the data reported in Ref. 49. Note that even for diatomic molecules such as N 2 or O 2 ͑which are some kind of worst case because the atomic values have been derived from the very "different" molecules H 2 O and NH 3 , respectively͒, the results are not in error by more than 20%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Noncovalent interactions and conformational energies</head><p>The two empirical parameters for each DF have been determined by a least-squares fit to ͑relative͒ reference energies in the benchmark sets described above ͑S22, S22+, PCONF, SCONF, ACONF, CCONF, ADIM6, RG6͒. A total of 130 reference data values were included in the fit.</p><p>The optimized DFT-D3 parameters as well as mean absolute deviation ͑MAD͒ values for the different functionals are given in Table <ref type="table" target="#tab_6">IV</ref> and are also graphically shown in comparison with DFT and DFT-D2 statistical data in Fig. <ref type="figure" target="#fig_4">7</ref> ͑for a complete list for all benchmarks, see the supporting information 78 ͒. Because these data are based on calculations with the very large def2-QZVP AO basis sets, the resulting parameters are essentially free of BSSE and other significant incompleteness effects and thus directly applicable, e.g., for typical plane wave basis set calculations. We also optimized corresponding values using Ahlrichs' TZVPP AO basis <ref type="bibr" target="#b83">85,</ref><ref type="bibr" target="#b84">86</ref> that would be more appropriate for an efficient treatment of very large molecular systems and that accounts implicitly for the then more relevant BSSE effects ͑see supporting information 78 ͒. Before we want to discuss these data a remark on the three-body terms ͓Eq. ͑14͔͒ is necessary. First we note that their inclusion has only a minor impact on the optimized parameter values so that these terms can simply be switched on and off without changing the pairwise correction ͑e.g., for analysis reasons or for very large systems because of computational considerations͒. The reason for this is that E ͑3͒ makes an almost negligible contribution to small-and medium-sized systems as contained in the fit set. In fact, for important parts of it ͑e.g., S22͒ the performance for the majority of DFs deteriorated slightly ͑increase in MAD by about 0.02 kcal/mol͒. This may be attributed to an inherent overestimation of three-body effects in overlapping density regions with current DFs. <ref type="bibr" target="#b73">74</ref>   given above and in the following refer to Eq. ͑2͒ without E ͑3͒ . The importance of the long-range part of the three-body energy, however, is expected to be larger for infinite systems, and numerical evidence for this is given in Sec. III D. We therefore propose to study its effect carefully in the future by the current ͑pairwise͒ additive DFT-D3 and to simply add then E ͑3͒ as calculated here or by future versions of Eq. ͑14͒.</p><p>Turning now back to the fit set, it is first noted that the MAD values without any dispersion correction are about one order of magnitude larger than for DFT-D2 and DFT-D3, i.e., ranging from 3.3 kcal/mol for B97-D and revPBE to 1.2 and 1.4 kcal/mol for PW6B95 and B2PLYP, respectively ͑see Fig. <ref type="figure" target="#fig_4">7</ref> left͒. This demonstrates the importance of the correction for our test systems and underlines how well already the old DFT-D2 performs.</p><p>The enhancement of DFT-D3 over DFT-D2 without any exception is evident from Fig. <ref type="figure" target="#fig_4">7</ref>. The MAD decreases in a range from about 15% ͑for B2PLYP͒ to 40% ͑for TPSS͒. According to Table <ref type="table" target="#tab_6">IV</ref>, the two best functionals are B2PLYP and PW6B95 followed by a group of five functionals that perform very similarly. Although the MAD values of about 0.6 kcal/mol for PBE and BP86 cannot be considered as bad, we cannot recommend these two functionals because much better semilocal alternatives ͑e.g., revPBE or BLYP͒ are available. The comparison of BP86 and BLYP also underlines the ͑often overlooked͒ effect of the correlation functional, i.e., the LYP variant, in general, performs very well for noncovalent interactions. There seems to be no relation of the overall functional performance to the value of the two empirical parameters. This, however, is different for the performance in thermochemical studies for which less repulsive DFs ͑large s r,6 , small s 8 values͒ seem to be better ͑see Sec. III E͒.</p><p>It is striking that DFT-D3 also works much better than DFT-D2 for the B97-D functional for which the electronic part has been parametrized explicitly in the presence of the old dispersion correction. This very clearly demonstrates that the new approach does not simply represent a more sophisticated empirical fitting procedure but contains new and im-portant physical ingredients. This also suggests further possible improvements by functional parametrization together with the new correction.</p><p>The Table IV also compares the overall performance of the different DFs for the important S22 benchmark of noncovalent interactions that has become the de facto standard test. A comparison of "best so far" values from the literature are given in Table <ref type="table" target="#tab_7">V</ref>.</p><p>The MAD ͑for the full fit set͒ and the MAD͑S22͒ values show only a rather rough correlation with each other. Similar observations have been made for other subsets. This in essence means that one can always find a better performing functional for a particular property ͑e.g., hydrogen bonding or -stacking͒, but when the problem is not so well defined it is advisable to use a more general good performer. The best DFs for S22 with very small MADs of 0.23 and 0.29 kcal/ mol, respectively, are BLYP and B2PLYP followed by PW6B95. Although MAD values slightly below 0.2 kcal/mol could be achieved by special parametrization to this set, we think that values of about 0.2-0.25 kcal/mol mark some kind of limit that is achievable for general purpose methods. This  is also rather close to the estimated accuracy of the CCSD͑T͒ reference data. We thus consider the first six methods in Table <ref type="table" target="#tab_7">V</ref> as giving the same very high accuracy for this set. Pure wave function based methods that have a perspective of being applicable to large systems are not competitive. Note also the bad performance of the nonempirical vdW-DF method when used together with a standard GGA ͑last compared to the fourth entry of Table <ref type="table" target="#tab_7">V͒</ref>. This in essence means that also with a formally nonempirical vdW functional similarly good results compared to DFT-D3 can only be obtained with a similar amount of empiricism. Figure <ref type="figure" target="#fig_4">7</ref> also displays a comparison of the performance of all functionals considered ͑averaged MADs͒ for each of the subsets. In all cases ͑except S22+͒ DFT-D3 is significantly better than DFT-D2. The by far largest enhancements are found for the peptide and alkane conformers and the rare gas dimer binding energies. This is clearly related to the use of C 6 ͑CN͒ values ͑which is of particular importance for car-bon͒ and much more accurate parameters for the heavier elements in RG6 ͑up to Z =86͒.</p><p>As a cross validation we furthermore considered the socalled WATER27 benchmark set ͑Fig. 8, for details, see Ref. 98͒. It consists of 27 neutral ͑H 2 O͒ n , positively charged H + ͑H 2 O͒ n and negatively charged OH -͑H 2 O͒ n clusters. It can be regarded as a tough test for the description of strong hydrogen bonds and is sensitive to the midrange ͑due to the small intermolecular distances͒ as well as the asymptotic region ͑due to the large size of the clusters up to n =20͒. For this set the def2-QZVP basis was augmented with diffuse sp-functions on the oxygen atoms, as recommended in Ref. 98. If one considers the large average binding energy of 82.0 kcal/mol, the DFT-D3 results can be regarded as mostly very accurate and an MAD value of about 2 kcal/mol for PW6B95 is close to the accuracy of the reference values ͑and to remaining basis set incompleteness effects͒. For all 11 DFs the average MAD decreases from 7.8 ͑DFT͒ to 5.2 ͑DFT-D2͒ and 4.3 kcal/mol for DFT-D3. Only for PBE and PBE0 which have a clear overbinding tendency already without any correction, ͑both͒ versions worsen the results. Note, however, that these two DFs without correction do not give the right answer for the right reason: they simulate the effects of dispersion ͑that become more important as the size of the system increases͒ by overbinding of each hydrogen bond. This eventually will lead to wrong results in the bulk and we strongly recommend all other DFs ͑in particular, BLYP, revPBE, and B97-D at the semi-local level͒ together with DFT-D3 for water-related problems.</p><p>The most striking conclusion from the analysis of the statistical benchmark data is the enhanced accuracy of the new version for the very important and difficult tripeptide folding test set ͑PCONF, see Refs. 98, 112, and 113͒ with all DFs. In Fig. <ref type="figure" target="#fig_6">9</ref> we compare ten conformational energies with the old and new methods for selected DFs and note in passing that deviations for most uncorrected functionals are so large ͑MAD=2-5 kcal/ mol͒ that the curves would not fit within the chosen energy scale. As pointed out previously, <ref type="bibr" target="#b57">58</ref> theoretical peptide folding without dispersion corrections makes absolutely no sense! Generally, the MAD values for DFT-D3 are about a factor of 1/2 lower compared to DFT-D2 ͑see also Fig. <ref type="figure" target="#fig_4">7͒</ref> which can be considered as a big step toward an accurate modeling of such folding processes. Even for B2PLYP ͑which is already rather accurate with DFT-D2͒, the new correction improves and the remaining deviation ͑MAD= 0.16 kcal/ mol͒ is now definitely within the error of the estimated CCSD͑T͒/CBS reference values. While previously such high accuracy seemed to be limited to more costly double-hybrid DFs, good accuracy can now be obtained also with hybrid DFs ͓e.g., MAD͑B3LYP-D3͒ = 0.32 kcal/ mol͔ or even computationally inexpensive DFs ͓e.g., MAD͑BLYP-D3͒ = 0.51 kcal/ mol͔. This opens the efficient and accurate treatment of ͑large͒ protein-folding models as a new field to DFT. Although all functionals strongly benefit from the improved dispersion description, it is again noted that the PBE/TPSS-type functionals perform worse compared to LYP based methods ͓MAD͑TPSS-D3͒ = 1.10 kcal/ mol, MAD͑PBE-D3͒ = 1.51 kcal/ mol͔. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Noncovalently bound complexes of molecules with heavier elements</head><p>Neither the DFT-D1/2 methods nor any of the other DFT approaches to the dispersion problem have hitherto been thoroughly tested for complexes of molecules involving heavier elements. Here we want to improve this situation and propose a new benchmark set of noncovalently bound complexes of simple hydrides involving the elements Pb, N, Sb, Bi, O, S, Te, Cl, Br, and I in various combinations. The complexes and reference dissociation energies ͓est. CCSD͑T͒/CBS//MP2/def2-QZVP͔ together with results for selected DFs are given in Table <ref type="table" target="#tab_8">VI</ref>. Note that we cannot be sure that in all cases the global minimum structure of the complex has been found ͑although the structures are in any case close by͒. This, however, should not influence the assessment as the same fixed geometries are used for all methods. The deviations from the reference data with the new correction are remarkably small. The MAD values are typically only between 0.1 and 0.2 kcal/mol compared to 0.2-0.5 kcal/mol with DFT-D2 ͑see Fig. <ref type="figure" target="#fig_5">8͒</ref>. The errors for pure DFT are an order of magnitude larger with MAD values in the range 0.6-1.5 kcal/mol which is of the same size as the average dissociation energy. The very small remaining errors are randomly distributed and no bias in favor of particular combinations of light and heavier elements are observed. Note that none of these complexes has been included in the fitting set. One should, however, keep in mind that the hydrides considered are the reference molecules for the determination of the dispersion coefficients which might limit the significance of this benchmark. The best of the tested DFs for this set are B2PLYP, PW6B95, and TPSS0.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Binding energy between graphene sheets and in large aromatic complexes</head><p>Recently, <ref type="bibr">102</ref> DFT-D2 at the B97-D/TZVP level has been applied to graphene sheet model dimers of increasing size ͓up to ͑C 216 H 36 ͒ 2 ͔. The interaction energies have been extrapolated to infinite lateral size of the sheets. The value of 66 meV/atom obtained for the dissociation energy of two sheets supports the most recent experimental estimate for the exfoliation energy of graphite ͓52Ϯ 5 meV/ atom ͑Ref. 114͔͒ but clearly is too large mainly due to an inaccurate treatment of the asymptotic region ͑s 6 = 1.25 in DFT-D2͒. Because this as well as related systems and the problem of asymptotic behavior are so important, we reconsidered it  The overbinding tendency of DFT-D2 for large carbon systems is in part also observable for large molecular complexes as shown for the two examples of the porphine dimer ͑structure F, for details, see Ref. 103͒ and a "bucky-ball catcher" complex with C 60 ͑Ref. 104͒ as shown in Fig. <ref type="figure" target="#fig_7">10</ref>. While for the porphine dimer the old and new versions yield similar binding energies of about 20 kcal/mol with BLYP, for the much larger fullerene complex, we notice a significant reduction of about 15%-25% with DFT-D3 compared to DFT-D2. The new values for the "catcher" complex of 32-34 kcal/mol are in better agreement with estimates from dispersion-uncorrected M05-2X and M06-2X treatments 117,118 that yield smaller dissociation energies of 20.7 and 26.4 kcal/mol, respectively, probably due to the neglect of the long-range dispersion energy which is included in the DFT-D3 values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Thermochemistry</head><p>A detailed study of the effects of the dispersion correction on chemical reaction energies is beyond the scope of the present work. However, because this aspect is important for many practical problems in chemistry we want to discuss the topic briefly using two examples. The first is the so-called DARC set ͑taken from the GMTKN24 database <ref type="bibr" target="#b96">98</ref> ͒ in which 14 typical bimolecular Diels-Alder reactions are considered. Reference values are based on CCSD͑T͒/CBS calculations and the average reaction energy is 32.2 kcal/mol. In order to see if effects are related to the presence of carbon in addition, the so-called AL2X set <ref type="bibr" target="#b96">98,</ref><ref type="bibr">119</ref> is investigated which contains covalent dimerization energies of seven aluminum compounds of the type AlX 3 ͑X=H,CH 3 ,F,Cl,Br͒. The average reaction energy is similar as for DARC ͑33.9 kcal/mol͒. The statistical data are presented in Fig. <ref type="figure" target="#fig_0">11</ref>. The MAD values given in Fig. <ref type="figure" target="#fig_0">11</ref> mostly represent the mean ͑signed͒ deviations meaning that the exothermicity of the reactions is underestimated without dispersion correction. This is clear because a bimolecular addition product has a larger amount of intramolecular dispersion energy which is mostly neglected in standard DFs. Inspection of the statistical data reveals that for the dimerization of the AlX 3 compounds the old and new DFT-D versions provide almost the same accuracy and that both strongly improve upon pure DFT for all functionals. The new version seems to perform better for the more "attractive" functionals that are already best without correction ͑e.g., PBE, TPSS, and PW6B95͒ and which better account for medium-range correlation effects. The opposite holds for the more repulsive functionals such as BLYP, revPBE, B97-D, or B3LYP.</p><p>The picture is a bit different for the Diels-Alder reactions for which DFT-D3 is worse than DFT-D2 for all functionals except PBE0 and TPSS0. The effect is, in particular, significant for the combinations of Becke exchange with LYP correlation. However, in any case DFT-D3 provides still much better results than pure DFT so that there is no reason to abandon the new correction for such thermochemical problems. The fact that there is a significant worsening of the results with DFT-D3 only for the organic reactions underlines the conclusion from Sec. III C that the "wrong" C 6 coefficient for carbon in DFT-D2 compensates for deficiencies in the functionals. Even though the results for DARC are apparently worse than before we find it encouraging that the  ab initio design of DFT-D3 uncovers such ͑uncontrollable͒ error compensations and more strictly separates long-and short-range correlation effects. As discussed in detail in Ref. 119, part of the remaining deviations can be attributed to the self-interaction error ͑SIE͒.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. Metallic systems</head><p>In general, the DFT-D2 parameters are not very well defined for metal compounds, and in part this is related to the typically less clear bonding situations. For example, in a recent attempt to redetermine consistent R vdW values for large parts of the Periodic Table, Mantina et al. <ref type="bibr" target="#b74">75</ref> reported a very strong dependence of the optimum radius on the type of "probe" molecule to compute the noncovalent interaction energy ͑from which R vdW can be derived͒, in particular, for the alkaline metals. Problems also arise for the strongly varying C 6 values which are fixed in DFT-D2, and, in fact, this is one of the oldest and most basic criticisms of the DFT-D1/2 methods.</p><p>In this section we want to show using three examples how much these problems have been overcome. This study was also motivated by observations of K. Baldridge 120 who found significant overbinding of DFT-D2 for alkaline metal cation-benzene complexes ͑BzM + ͒. We consider the dissociation energies of these complexes here and take neutral, three-dimensional ͑3D͒ metal clusters with eight atoms in which dispersion effects show up significantly as the other extreme. Aromatic cation complexes are very important also in many biological systems and for the most recent study on this and related problems with many references see Ref.  <ref type="table" target="#tab_11">VIII</ref>. The dissociation energies decrease very significantly ͑by almost a factor of 1/2͒ when going from M = Li to Na and less from Na to K. The absolute errors for cations with the two uncorrected DFs are small ͑0.4-2.6 kcal/mol͒, while they have a span of almost 16 kcal/ mol for the neutral systems. For these, TPSS is close to the reference while B2PLYP significantly underbinds. Both functionals increasingly underbind for Na and K. These results qualitatively indicate that dispersion effects are small ͑quenched͒ for the cationic complexes, while they are more  important for the heavier element clusters. However, also for BzK + the importance of dispersion is clear from our data, which is in agreement with SAPT results. <ref type="bibr">121</ref> With DFT-D2 all BzM + complexes are overbound and the different metals are inconsistently described ͑increasing error from K to Li͒. For the neutral clusters, DFT-D2 improves upon DFT for B2PLYP ͑and similarly for BLYP, B97-D, and B3LYP͒ but TPSS ͑and also PBE͒ are apparently overcorrected. Again, an inconsistency for the heavier metals is observed, i.e., the correction is largest for M = Li and very small for M = K. This disturbing behavior cannot be explained by system independent C 6 coefficients alone but also inaccurate R 0 AB values seem to be responsible. Our modifications have a dramatic impact on the quality of the results. The MAD for B2PLYP-D3 is only 1.9 kcal/ mol compared to 4.4 kcal/mol for DFT-D2. Most notably, the neutral and ionic systems are described almost equally well and the strong overbinding tendency for the cations is not observed anymore. Similar results are found for other repulsive DFs such as B3LYP or revPBE. For TPSS which performs much worse with DFT-D2 than without any correction the situation is also improved. The BzM + complexes are now described slightly better than uncorrected and the neutral clusters are relatively consistently overbound ͑which is known from other metal systems 123 ͒ but not as strong as with DFT-D2. The overall MAD value for TPSS-D3 of 3.3 kcal/ mol is acceptable.</p><p>The main reason for the improved description are the larger cutoff radii that strongly influence the distance range of the dispersion correction through the damping function. The increased values in DFT-D3 ͑and this holds for many metals͒ reduce the overbinding for the cation complexes because of their rather short M-C distances ͑2.33-3.10 Å͒ but this does not affect the neutral systems much because their M-M distances ͑in particular, for Na and K͒ are much larger on average ͑bond lengths are 3.48 and 4.57 Å for Na 8 and K 8 , respectively͒.</p><p>Similar good accuracy can also be obtained for transition metal clusters, and in Fig. <ref type="figure" target="#fig_9">12</ref> we show as an example energies for the 2D-3D transition in Au 8 ͑for details see Ref. 105͒. While uncorrected DFT underestimates the stability of the 3D structures by 6-8 kcal/mol due to missing intramolecular dispersion effects, DFT-D2 slightly overcorrects one of the systems. The new method yields accurate results that are within the estimated error of the reference values.</p><p>Our third example is concerned with the asymptotic behavior of the method. We take the dissociation of Li 2 in its lowest triplet state ͑in order to avoid multireference state problems͒ as an example. The asymptotic region of the interatomic potential ͑the covalent Li-Li bond length is about 2.7 Å͒ is shown in Fig. <ref type="figure" target="#fig_10">13</ref>. As can be clearly seen, DFT-D3 dramatically improves the description. For all DFs a very good agreement with the CCSD͑T͒ reference data is observed while the DFT-D2 dispersion energy ͑the dashed curve͒ is close to zero. The reason for this is the constant ͑and small͒ C 6 coefficient for Li-Li that is appropriate for molecules/bulk but not for the weakly interacting situation. On the contrary, DFT-D3 smoothly interpolates between the very large value of the free atoms ͑1169 a.u.͒ and the typical value for lithium in molecules ͑89 a.u. as derived from LiH͒. This smaller value, however, is not relevant at these large distances far away from the covalent bonding region and thus the DFT-D3 description becomes almost exact as long as the C 6 coefficient of the free atom is ͑close͒ to exact. Note, however, that this strictly holds only for neutral systems and, e.g., in the dissociation of the BzM + complexes, DFT-D3 would asymptotically use the incorrect dispersion coefficient of the neutral metal atom instead of that of M + .</p><p>As the last example we investigate the interaction of a transition metal ͑silver͒ surface ͑conveniently modeled by a cluster composed of 56 atoms͒ with benzene. Experimentally, the adsorption enthalpy of benzene on Ag͑111͒ is about 13 kcal/mol. <ref type="bibr">124</ref> As can be seen from Fig. <ref type="figure" target="#fig_11">14</ref>, the adsorption is essentially "dispersion driven" as the two uncorrected DFs ͑revPBE and TPSS as examples͒ provide almost no binding. Similar to the case of the alkaline metal systems, also here DFT-D2 strongly overbinds yielding adsorption energies of 28-30 kcal/mol and relatively short interplane distances Ͻ2.9 Å. This is at least in part corrected with DFT-D3 and both functionals yield more realistic distances ͑which unfortunately is experimentally not known͒ and a binding energy of about 22 kcal/mol which compares better with the experimental value of 13 kcal/mol. Consideration of vibrational zero-point energies would bring theory and experiment in even closer agreement. Note also that the differences between the two functionals nicely diminish with DFT-D3  compared to DFT-D2 which has been also observed for other test systems. The correctly reduced dispersion energy in DFT-D3 compared to DFT-D2 results from both, the increased cutoff radius of Ag ͑1.665 versus 1.49 Å͒ and a reduced C 6 coefficient ͑269 versus 428 a.u.͒. Note, that neither a silver containing system nor any metal surface-related problem has been included in the fit set for the determination of the DF specific parameters. The question if the remaining substantial differences between theory and experiment are due to errors of the latter, an inadequateness of the GGA functionals ͑e.g., overpolarization effects͒, finite cluster size effects, or deficiencies of DFT-D for extended metals, in general, will be an interesting topic for future research. Preliminary work on this problem indicates already that the effective C 6 coefficient of Ag in the bulk is only slightly different from that derived from the AgH molecule with CN= 1 and that finite cluster size effects are the most likely source of error.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. SUMMARY AND CONCLUSION</head><p>It is very likely that the DFT-D method in its present form is close to the limit of what can be achieved in the framework of a "nonelectronic" approach to the computation of the dispersion energy. The new DFT-D3 method can be coupled with any standard DF, is applicable to all elements of the Periodic Table, to molecules and solids, and achieves ͑within about 10% typically͒ CCSD͑T͒ accuracy. This holds for van der Waals complexes as well as for intramolecular noncovalent interactions that very often occur in conformational problems. It seems as if with the new version of DFT-D at least in principle accurate simulations of proteinfolding with standard functionals are possible. The method is furthermore robust, numerically stable, easily programmable, very fast, and allows for the straightforward computation of analytical gradients ͑forces͒. All necessary input parameters ͑cutoff radii and dispersion coefficients͒ are computed ab initio by KS-DFT/TDDFT methods using extended AO basis sets close to the limit. The main conceptual advantage that is mostly responsible for the increased accuracy, is the use of structure ͑coordination number͒ dependent dispersion coefficients that are based on accurate first-principles ͑TDDFT͒ calculations. Previously observed problems for metallic systems are remedied by a more consistent calculation of pairspecific cutoff radii.</p><p>One of the very big advantages of the present approach is that structural data are used but no atom connectivity information is required and everything is computed solely from Cartesian coordinates and atomic numbers. The apparent disadvantage of DFT-D that no electronic information is used is less problematic in typical applications than often assumed. This ͑computationally motivated͒ simplification turns into an advantage when the method is used to compute the dispersion energy accurately in, e.g., semiempirical or even sophisticated force-field methods. This is not possible with pure density ͑or orbital based͒ approaches. Another strong point ͑that is often ignored͒ is the ease in which the dispersion contributions can be analyzed in order to get qualitative insight and understanding, e.g., regarding the contributions from parts of a system ͑for a recent example, see, e.g., Ref. 125͒ or with respect to a range partitioning of the dispersion energy.</p><p>The new method has been thoroughly tested not only on common organic, noncovalently bound complexes but also large, infinite, "heavy", and metallic systems have been considered. In all cases tested, high accuracy and no "outliers" have been obtained. Typically, the MADs decrease by 0%-30% compared to the previous ͑already accurate͒ DFT-D2 version. For the S22 benchmark set, the MAD averaged over nine different DFs decreases from 0.5 to 0.4 kcal/mol. The two best functionals B2PLYP and BLYP yield very small MADs for S22 of 0.29 and 0.23 kcal/mol, respectively, which is competitive with results from the best other DFT approaches reported so far in the literature.</p><p>Notable exceptions of the generally increased accuracy are related to the dispersion corrections for some chemical reaction energies, in particular, those involving many carbon atoms. We attribute this to an ͑mostly͒ accidental compensation of errors in the old DFT-D2 treatment ͑overestimation of midrange dispersion͒ and a respective "undercorrelation" of typical DFs. We nevertheless think that the new DFT-D method provides a more clear and physically sound separation of mid-and long-range effects. It is expected that DFT-D3 will be also superior for such thermochemical, intramolecular dispersion effects by using specially adapted electronic parts. Work along this line is in progress.</p><p>The method has been implemented in a FORTRAN program that is freely available on our web page <ref type="bibr" target="#b76">77</ref> where we also keep a continuously updated file with available C 6 coefficients ready. It can easily be interfaced with any electronic structure or molecular modeling software package. We hope that the new dispersion correction ͑which represents our "last" major revision of this method͒ serves as an accurate computational tool for many purposes in theoretical chemistry and physics. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG.1. Total dispersion energy and eighth-order contribution for two ͑threefold coordinated͒ carbon atoms with BLYP and TPSS. For comparison the corresponding curve with DFT-D2 is also given.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 2 .FIG. 3 .</head><label>23</label><figDesc>FIG.2. First-order ͑E 1 ͒ energies ͑PBE0/def2-QZVP͒ for C-C, C-N, and C-O interactions. The cutoff distance is determined as the distance for which the energy equals the cutoff energy ͑4.5 kcal/mol͒.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fe 4 FIG. 4 .</head><label>44</label><figDesc>FIG. 4. Structure of a hypothetical molecule ͑PBE/TZVP optimized͒ to illustrate the concept of fractional coordination numbers.</figDesc><graphic coords="8,334.44,49.33,203.18,196.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIG. 5 .</head><label>5</label><figDesc>FIG. 5. 2D interpolation scheme for the dispersion coefficients ͑top͒ and cut through the surface for CC, NN, and OO atom pairs with CN A =CN B = CN. Note the mentioned increase in the C 6 value for decreasing CN.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIG. 7 .</head><label>7</label><figDesc>FIG. 7. Left: Comparison of MAD values for different functionals without dispersion correction ͑DFT͒, with the old ͑DFT-D2͒, and new ͑DFT-D3͒ versions. Right: MAD values averaged over nine DFs ͑excluding BP86 and PBE͒ for the different subsets.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIG. 8 .</head><label>8</label><figDesc>FIG. 8. Comparison of MAD values for different functionals without dispersion correction ͑DFT͒, with the old ͑DFT-D2͒, and new ͑DFT-D3͒ versions. Left: WATER27 benchmark set. Right: HEAVY28 benchmark set.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIG. 9 .</head><label>9</label><figDesc>FIG. 9. Comparison of relative energies for tripeptide conformations ͑PCONF benchmark set͒ with different functionals. Left: old ͑DFT-D2͒ and right, new versions of DFT-D. The lines are just drawn to guide the eye.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>FIG. 10 .</head><label>10</label><figDesc>FIG. 10. Dissociation energies ͓TZV͑2d,p͒ AO basis͔ for the porphine dimer ͑left͒ and a bucky-ball catcher complex with C 60 for two DFs and DFT-D3. Values for DFT-D2 in parentheses.</figDesc><graphic coords="15,334.44,49.49,203.18,103.99" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head></head><label></label><figDesc>121. In order to minimize effects of SIE the closed-shell reaction M 8 → 4M 2 ͑instead of atomization͒ is investigated. The reference dissociation energies ͓est. CCSD͑T͒/CBS which are for BzM + in very close agreement to those of Feller 122 ͔ and deviations for TPSS and B2PLYP as two examples are shown in Table</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>FIG. 12 .</head><label>12</label><figDesc>FIG.12. Relative energies ͑in kcal/mol, def2-QZVP-ECP60 for DFT͒ in comparison to CCSD͑T͒ reference values for 2D ͑left͒ and 3D ͑middle and right͒ forms of the Au 8 cluster with and without dispersion correction and the PBE functional.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>FIG. 13 .</head><label>13</label><figDesc>FIG.13. Asymptotic region of the potential energy curves for dissociation of Li 2 ͑ 3 ⌺ u ͒. We compare the dispersion energy of the DFT-D methods with the correlation energy contribution in the CCSD͑T͒ treatment which is E disp to a very good approximation at these distances.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>FIG. 14 .</head><label>14</label><figDesc>FIG.14. Potential energy curves ͑def2-TZVP-ECP28͒ for dissociation of benzene from an Ag͑111͒ surface with and without dispersion corrections. The inset shows the cluster model composed of 56 Ag atoms. Unrelaxed monomer structures using the experimental lattice constant a = 4.09 Å for bulk Ag are taken.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="1,0.00,-0.00,116.21,852.41" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="1,130.00,645.29,435.00,116.71" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Stefan Grimme, a͒ Jens Antony, Stephan Ehrlich, and Helge Krieg Theoretische Organische Chemie, Organisch-Chemisches Institut, Universität Münster, Corrensstrasse 40, D-48149 Münster, Germany ͑Received 18 January 2010; accepted 16 March 2010; published online 16 April 2010͒</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE I .</head><label>I</label><figDesc>Overview of current DFT methods to account for London dispersion interactions.</figDesc><table><row><cell>Property</cell><cell>DFT-D</cell><cell cols="2">vdW-DF DCACP</cell><cell>DF a</cell></row><row><cell>Correct R -6</cell><cell>Yes</cell><cell>Yes</cell><cell>No</cell><cell>No</cell></row><row><cell>Good thermochemistry</cell><cell>Yes</cell><cell>?</cell><cell>?</cell><cell>Yes</cell></row><row><cell>Numerical complexity</cell><cell>Low</cell><cell>High</cell><cell>Low</cell><cell>Medium</cell></row><row><cell>Simple forces</cell><cell>Yes</cell><cell>No</cell><cell>Yes</cell><cell>Yes</cell></row><row><cell>System dependency</cell><cell>No ͑yes b ͒</cell><cell>Yes</cell><cell>No c</cell><cell>Yes</cell></row><row><cell>Electronic effect</cell><cell>No</cell><cell>Yes</cell><cell>Yes</cell><cell>Yes</cell></row><row><cell>Empiricism</cell><cell>Medium ͑low b ͒</cell><cell>No</cell><cell>High</cell><cell>Medium</cell></row><row><cell>Analysis/insight</cell><cell>Good</cell><cell>?</cell><cell>?</cell><cell>No</cell></row><row><cell cols="5">a Specially developed functionals that recover medium-range correlation ef-</cell></row><row><cell>fects.</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table><note><p><p>b</p>Revised version presented here. c</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE II .</head><label>II</label><figDesc>Computed C 6 coefficients ͑in a.u.͒.</figDesc><table><row><cell>Atom pair</cell><cell>Reference value a</cell><cell>TDDFT b</cell></row><row><cell>He-He</cell><cell>1.46</cell><cell>1.54</cell></row><row><cell>He-Ne</cell><cell>3.03</cell><cell>3.05</cell></row><row><cell>Ne-Ne</cell><cell>6.35</cell><cell>6.14</cell></row><row><cell>Ar-Ar</cell><cell>64.4</cell><cell>64.2</cell></row><row><cell>Kr-Kr</cell><cell>130.1</cell><cell>129.7</cell></row><row><cell>Xe-Xe</cell><cell>287.5</cell><cell>288.6</cell></row><row><cell>Rn-Rn</cell><cell>420.6</cell><cell>410.5</cell></row><row><cell>C-C ͑sp 3 ͒</cell><cell>22.4</cell><cell>18.1</cell></row><row><cell>C-C ͑sp 2 ͒</cell><cell>27.4</cell><cell>25.7</cell></row><row><cell>C-C ͑sp͒</cell><cell>29.7</cell><cell>29.3</cell></row><row><cell>a From Refs. 54, 64, and 70.</cell><cell></cell><cell></cell></row></table><note><p><p>b</p>PBE38/daug-def2-QZVP, for details, see Sec. II G. The C-C values have been computed using Eq. ͑10͒ by using ethane, ethene, and ethyne as reference molecules.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>TABLE III .</head><label>III</label><figDesc>Comparison of computed ͑PBE38/daug-def2-QZVP͒ and experimental C 9 coefficients ͑in a.u., -C 9 is given͒ for rare gas trimers.</figDesc><table><row><cell>154104-5</cell><cell>Density functional dispersion correction</cell><cell></cell><cell></cell></row><row><cell></cell><cell cols="2">Atoms</cell><cell>DFT-D3 ͓Eq. ͑13͔͒</cell><cell>TDDFT ͓Eq. ͑12͔͒</cell><cell>Expt. a</cell></row><row><cell></cell><cell cols="2">Ne Ne Ne</cell><cell>15.8</cell><cell>11.6</cell><cell>11.9</cell></row><row><cell></cell><cell cols="2">Ne Ar Kr</cell><cell>219.1</cell><cell>203.5</cell><cell>204.8</cell></row><row><cell></cell><cell cols="2">Ar Ar Ar</cell><cell>519.8</cell><cell>523.0</cell><cell>519</cell></row><row><cell></cell><cell cols="2">Ar Kr Kr</cell><cell>1047</cell><cell>1100</cell><cell>1087</cell></row><row><cell></cell><cell cols="2">Kr Kr Kr</cell><cell>1489</cell><cell>1600</cell><cell>1577</cell></row><row><cell></cell><cell cols="2">Ar Kr Xe</cell><cell>1554</cell><cell>1669</cell><cell>1647</cell></row><row><cell></cell><cell cols="2">Kr Xe Xe</cell><cell>3306</cell><cell>3716</cell><cell>3656</cell></row><row><cell></cell><cell cols="2">Xe Xe Xe</cell><cell>4944</cell><cell>5694</cell><cell>5595</cell></row><row><cell></cell><cell>a</cell><cell>Reference 70.</cell><cell></cell></row></table><note><p>J. Chem. Phys. 132, 154104 ͑2010͒ by standard DFs ͑for an intriguing recent report on DFT problems for this property, see Ref. 74͒. We will further comment on this in Sec. III B.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head></head><label></label><figDesc>͑dimerization energies of aluminum compounds͒ test sets ͑see Ref. 98͒, graphene sheet dimers from Ref. 102, the porphyrine dimer structure F from Ref. 103, a "buckyball catcher" complex with C 60 ͑for experimental work, see Ref. 104͒, the ALK6 set of alkaline metal complexes and clusters introduced in this work, a cluster model for a benzene-Ag͑111͒ surface adsorbate composed of 56 Ag atoms described below ͑in Sec. III F͒, and Au 8 clusters. 105</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head></head><label></label><figDesc>Because little is currently known about this problem ͑and how to avoid it͒ and because of missing accurate reference data for larger systems ͑an attempt has been made recently by us, see Ref. 106͒, we finally decided to switch off this term by default. Thus, all data FIG. 6. Comparison of molecular C 6 coefficients from DFT-D3 results and from Ref. 49 with experimental DOSD values. The solid line has a slope of unity and an intercept of zero.</figDesc><table><row><cell></cell><cell></cell><cell>DFT-D3, MAD=8.4 %</cell></row><row><cell></cell><cell></cell><cell cols="2">Becke &amp; Johnson, MAD=12.2 %</cell></row><row><cell></cell><cell>1000</cell><cell></cell></row><row><cell>C 6 (calc.) [au]</cell><cell>100</cell><cell></cell></row><row><cell></cell><cell>10 10</cell><cell>100</cell><cell>1000</cell></row><row><cell></cell><cell></cell><cell>C 6 (exp.) [au]</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>TABLE IV .</head><label>IV</label><figDesc>Optimized DFT-D3 parameter values and MAD for the fit set and for the S22 benchmark set ͑values for DFT-D2 in parentheses͒. The entries are ordered according to increasing MAD.</figDesc><table><row><cell>154104-10</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Functional</cell><cell>s r,6</cell><cell>s 8</cell><cell>MAD</cell><cell>MAD for S22</cell></row><row><cell>B2PLYP a</cell><cell>1.332</cell><cell>1.000</cell><cell>0.21</cell><cell>0.29͑0.40͒</cell></row><row><cell>PW6B95</cell><cell>1.532</cell><cell>0.862</cell><cell>0.32</cell><cell>0.42͑0.36͒</cell></row><row><cell>B97-D</cell><cell>0.892</cell><cell>0.909</cell><cell>0.37</cell><cell>0.43͑0.41͒</cell></row><row><cell>revPBE b</cell><cell>0.923</cell><cell>1.010</cell><cell>0.37</cell><cell>0.45͑0.45͒</cell></row><row><cell>B3LYP</cell><cell>1.261</cell><cell>1.703</cell><cell>0.37</cell><cell>0.46͑0.57͒</cell></row><row><cell>BLYP</cell><cell>1.094</cell><cell>1.682</cell><cell>0.38</cell><cell>0.23͑0.29͒</cell></row><row><cell>TPSS0 c</cell><cell>1.252</cell><cell>1.242</cell><cell>0.39</cell><cell>0.56͑0.62͒</cell></row><row><cell>PBE0</cell><cell>1.287</cell><cell>0.928</cell><cell>0.45</cell><cell>0.70͑0.77͒</cell></row><row><cell>TPSS</cell><cell>1.166</cell><cell>1.105</cell><cell>0.48</cell><cell>0.46͑0.56͒</cell></row><row><cell>PBE</cell><cell>1.217</cell><cell>0.722</cell><cell>0.56</cell><cell>0.62͑0.66͒</cell></row><row><cell>BP86</cell><cell>1.139</cell><cell>1.683</cell><cell>0.65</cell><cell>0.62͑0.45͒</cell></row><row><cell cols="5">a b Global scaling factor of s 6 = 0.5 similar to that of Ref. 58 is used. s 6 = 1.25 for DFT-D2 as determined by optimization for the S22 set. c s 6 = 0.85 for DFT-D2 as determined by optimization for the S22 set.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>TABLE V .</head><label>V</label><figDesc>Comparison of "best" MADs for the S22 benchmark set with DFT ͑and for comparison͒ some wave function ͑WF͒ based methods.</figDesc><table><row><cell>Method</cell><cell>Type</cell><cell>MAD ͑S22͒</cell><cell>Ref.</cell></row><row><cell>BLYP-D3</cell><cell>GGA</cell><cell>0.23</cell><cell>This work</cell></row><row><cell>B2PLYP-D3</cell><cell>Double hybrid</cell><cell>0.29</cell><cell>This work</cell></row><row><cell>B97X-D</cell><cell>Hybrid GGA</cell><cell>0.22</cell><cell>60</cell></row><row><cell>vdW-DF͑optB88͒ a</cell><cell>GGA</cell><cell>0.23</cell><cell>23</cell></row><row><cell>B97X-2</cell><cell>Double hybrid</cell><cell>0.26</cell><cell>107</cell></row><row><cell>LC-BOP+ LRD</cell><cell>Hybrid GGA</cell><cell>0.27</cell><cell>6</cell></row><row><cell>M06-2X</cell><cell>Metahybrid GGA</cell><cell>0.41</cell><cell>108</cell></row><row><cell>DFT͑revPBE͒ + LAP</cell><cell>GGA</cell><cell>0.57</cell><cell>14</cell></row><row><cell>FN-DMC</cell><cell>WF</cell><cell>0.68</cell><cell>109</cell></row><row><cell>MP2/CBS</cell><cell>WF</cell><cell>0.78</cell><cell>110</cell></row><row><cell>vdW-DF͑PBE͒</cell><cell>GGA</cell><cell>1.19</cell><cell>111</cell></row></table><note><p>a Used with an empirically adjusted ͑for the S22 set͒ Becke88 exchange functional ͑optB88͒.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>TABLE VI .</head><label>VI</label><figDesc>Results for a benchmark set of 28 complexes containing heavy nuclei ͑termed HEAVY28͒. Reference dissociation energies ͑CCSD͑T͒/CBS with counterpoise correction͒ and deviations for three different DFs with DFT-D3 are given in kcal/mol. the dissociation energies for the previously used structures ͑but with a better basis set, see TableVII͒. All uncorrected DFs do not yield bound graphene sheets. Except for PBE the old dispersion correction overbinds considerably which can also be traced back to a too large C 6 value for carbon ͑30.4 versus 25.7 a.u. for CN = 3 in DFT-D3͒. For recommended DFs ͑i.e., except PBE͒ the dissociation energies with DFT-D3 are lower ͑by 5%-20%͒ and much closer to the experimental value. Remaining basis set incompleteness effects are expected to be 1-2 meV/ atom. If the effect of more graphene layers is considered, an experimental value slightly less than 50 meV/atom for two sheets seems reasonable ͑which is also consistent with the vdW-DF value of 50 meV/atom͒. Because most of the functionals still provide larger values, we also included E ͑3͒ in our treatment. As can be seen in TableVII͑rightmost col-umn͒, its effect on the dissociation energy is rather large ͑5 meV/atom or about 10%͒. This correction brings the B97-D, revPBE, and TPPS values in very close agreement with the experimental estimate for a two sheet interaction.</figDesc><table><row><cell>here and computed</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Reference</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Complex</cell><cell>value</cell><cell>B2PLYP</cell><cell>B3LYP</cell><cell>revPBE</cell></row><row><cell>BiH 3 ¯BiH 3</cell><cell>1.29</cell><cell>Ϫ0.01</cell><cell>Ϫ0.13</cell><cell>0.02</cell></row><row><cell>BiH 3 ¯H2 O</cell><cell>2.42</cell><cell>0.28</cell><cell>0.22</cell><cell>0.01</cell></row><row><cell>BiH 3 ¯H2 S</cell><cell>1.40</cell><cell>Ϫ0.02</cell><cell>Ϫ0.16</cell><cell>Ϫ0.04</cell></row><row><cell>BiH 3 ¯HBr</cell><cell>1.16</cell><cell>0.05</cell><cell>0.03</cell><cell>0.05</cell></row><row><cell>BiH 3 ¯HCl</cell><cell>0.85</cell><cell>Ϫ0.04</cell><cell>Ϫ0.06</cell><cell>Ϫ0.08</cell></row><row><cell>BiH 3 ¯HI</cell><cell>1.42</cell><cell>Ϫ0.13</cell><cell>Ϫ0.47</cell><cell>Ϫ0.42</cell></row><row><cell>BiH 3 ¯NH 3</cell><cell>0.69</cell><cell>Ϫ0.02</cell><cell>0.04</cell><cell>0.25</cell></row><row><cell>PbH 4 ¯PbH 4</cell><cell>1.32</cell><cell>Ϫ0.07</cell><cell>Ϫ0.38</cell><cell>Ϫ0.25</cell></row><row><cell>PbH 4 ¯BiH 3</cell><cell>0.68</cell><cell>0.06</cell><cell>0.08</cell><cell>0.14</cell></row><row><cell>PbH 4 ¯H2 O</cell><cell>0.44</cell><cell>Ϫ0.12</cell><cell>Ϫ0.14</cell><cell>Ϫ0.15</cell></row><row><cell>PbH 4 ¯HBr</cell><cell>1.04</cell><cell>0.10</cell><cell>0.14</cell><cell>0.14</cell></row><row><cell>PbH 4 ¯HCl</cell><cell>0.80</cell><cell>0.16</cell><cell>0.27</cell><cell>0.23</cell></row><row><cell>PbH 4 ¯HI</cell><cell>1.29</cell><cell>0.25</cell><cell>0.15</cell><cell>0.17</cell></row><row><cell>PbH 4 ¯TeH 2</cell><cell>0.70</cell><cell>0.23</cell><cell>0.22</cell><cell>0.23</cell></row><row><cell>SbH 3 ¯SbH 3</cell><cell>1.30</cell><cell>Ϫ0.19</cell><cell>Ϫ0.61</cell><cell>Ϫ0.39</cell></row><row><cell>SbH 3 ¯H2 O</cell><cell>1.70</cell><cell>Ϫ0.03</cell><cell>Ϫ0.17</cell><cell>Ϫ0.20</cell></row><row><cell>SbH 3 ¯H2 S</cell><cell>1.14</cell><cell>Ϫ0.05</cell><cell>Ϫ0.15</cell><cell>Ϫ0.00</cell></row><row><cell>SbH 3 ¯HBr</cell><cell>2.07</cell><cell>0.03</cell><cell>Ϫ0.10</cell><cell>0.03</cell></row><row><cell>SbH 3 ¯HCl</cell><cell>2.20</cell><cell>0.08</cell><cell>0.01</cell><cell>0.15</cell></row><row><cell>SbH 3 ¯HI</cell><cell>1.64</cell><cell>0.16</cell><cell>0.02</cell><cell>0.22</cell></row><row><cell>SbH 3 ¯NH 3</cell><cell>2.80</cell><cell>0.08</cell><cell>Ϫ0.11</cell><cell>Ϫ0.12</cell></row><row><cell>TeH 2 ¯TeH 2</cell><cell>0.58</cell><cell>0.15</cell><cell>0.02</cell><cell>0.13</cell></row><row><cell>TeH 2 ¯H2 O</cell><cell>0.68</cell><cell>0.06</cell><cell>0.02</cell><cell>0.04</cell></row><row><cell>TeH 2 ¯H2 S</cell><cell>0.50</cell><cell>Ϫ0.04</cell><cell>Ϫ0.15</cell><cell>Ϫ0.03</cell></row><row><cell>TeH 2 ¯HBr</cell><cell>1.24</cell><cell>Ϫ0.01</cell><cell>Ϫ0.17</cell><cell>Ϫ0.15</cell></row><row><cell>TeH 2 ¯HCl</cell><cell>1.24</cell><cell>0.02</cell><cell>Ϫ0.12</cell><cell>Ϫ0.12</cell></row><row><cell>TeH 2 ¯HI</cell><cell>0.84</cell><cell>0.18</cell><cell>0.20</cell><cell>0.33</cell></row><row><cell>TeH 2 ¯NH 3</cell><cell>3.29</cell><cell>0.27</cell><cell>0.16</cell><cell>0.19</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>TABLE VII .</head><label>VII</label><figDesc>Computed interlayer dissociation energy of two graphene sheets in meV/atom with different DFs. Structures with fixed interlayer distance. Extrapolated to infinite sheet size from graphene models with 24, 54, 96, and 150 carbon atoms in one sheet using the TZV͑2d,p͒ AO basis. The estimated numerical ͑extrapolation͒ accuracy is Ϯ2%. For details, see Ref. 102. Exfoliation energy for graphite from extrapolation of PAH adsorption energies, see Ref. 114 This value should be about 5% larger than the graphene sheet interlayer dissociation energy ͑Refs. 102 and 116͒.</figDesc><table><row><cell>͑meta͒GGA</cell><cell></cell><cell></cell><cell></cell><cell>DFT-D3</cell></row><row><cell>functional</cell><cell>DFT a</cell><cell>DFT-D2</cell><cell></cell><cell>With E ͑3͒</cell></row><row><cell>BLYP</cell><cell>Ϫ29</cell><cell>62</cell><cell>59</cell><cell>54</cell></row><row><cell>B97-D</cell><cell>Ϫ32</cell><cell>63</cell><cell>52</cell><cell>46</cell></row><row><cell>revPBE</cell><cell>Ϫ31</cell><cell>65</cell><cell>55</cell><cell>49</cell></row><row><cell>PBE</cell><cell>Ϫ1</cell><cell>4 7</cell><cell>4 1</cell><cell>3 5</cell></row><row><cell>TPSS</cell><cell>Ϫ16</cell><cell>59</cell><cell>48</cell><cell>43</cell></row><row><cell>vdW-DF b</cell><cell></cell><cell>50</cell><cell></cell><cell></cell></row><row><cell>Expt c</cell><cell></cell><cell>52Ϯ 5</cell><cell></cell><cell></cell></row></table><note><p><p>a The negative sign indicates unbound layers. b Reference 115.</p>c</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head></head><label></label><figDesc>Comparison of MAD values for two thermochemical benchmarks without dispersion correction ͑DFT͒, with the old ͑DFT-D2͒ and new DFT-D3 versions. Left: Diels-Alder reaction energies ͑DARC set͒; right: dimerization energies of AlX 3 molecules.</figDesc><table><row><cell></cell><cell>24</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>13</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>22 20</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">DFT DFT-D2 DFT-D3</cell><cell></cell><cell>10 11 12</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">DFT DFT-D2 DFT-D3</cell></row><row><cell></cell><cell>18</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>MAD [kcal/mol]</cell><cell>8 10 12 14 16</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>MAD [kcal/mol]</cell><cell>4 5 6 7 8 9</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>6</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>3</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>4</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>BLYP</cell><cell>BP86</cell><cell>B97-D</cell><cell>revPBE</cell><cell>PBE</cell><cell>TPSS</cell><cell>B3LYP</cell><cell>PBE0</cell><cell>PW6B95</cell><cell>TPSS0</cell><cell>B2PLYP</cell><cell>BLYP</cell><cell>BP86</cell><cell>B97-D</cell><cell>revPBE</cell><cell>PBE</cell><cell>TPSS</cell><cell>B3LYP</cell><cell>PBE0</cell><cell>PW6B95</cell><cell>TPSS0</cell><cell>B2PLYP</cell></row><row><cell>FIG. 11.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11"><head>TABLE VIII .</head><label>VIII</label><figDesc>Reference ͓est. CCSD͑T͒/CBS͔ dissociation energies for alkaline metal complexes and clusters and deviations ͑including mean values͒ for B2PLYP and TPSS functionals ͑all data in kcal/mol͒. Negative values indicate underbinding.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell>DFT</cell><cell></cell><cell>DFT-D2</cell><cell></cell><cell>DFT-D3</cell></row><row><cell>System</cell><cell>Reference</cell><cell>TPSS</cell><cell>B2PLYP</cell><cell>TPSS</cell><cell>B2PLYP</cell><cell>TPSS</cell><cell>B2PLYP</cell></row><row><cell>BzLi +</cell><cell>38.4</cell><cell>1.0</cell><cell>0.8</cell><cell>11.0</cell><cell>6.3</cell><cell>1.1</cell><cell>0.9</cell></row><row><cell>BzNa +</cell><cell>25.0</cell><cell>Ϫ0.8</cell><cell>0.4</cell><cell>7.7</cell><cell>5.1</cell><cell>Ϫ0.1</cell><cell>1.1</cell></row><row><cell>BzK +</cell><cell>19.2</cell><cell>Ϫ2.6</cell><cell>Ϫ1.1</cell><cell>2.9</cell><cell>1.9</cell><cell>Ϫ1.4</cell><cell>Ϫ0.1</cell></row><row><cell>Li 8</cell><cell>83.2</cell><cell>4.9</cell><cell>Ϫ4.1</cell><cell>13.7</cell><cell>0.8</cell><cell>7.1</cell><cell>Ϫ2.5</cell></row><row><cell>Na 8</cell><cell>54.6</cell><cell>Ϫ1.7</cell><cell>Ϫ7.7</cell><cell>7.0</cell><cell>Ϫ2.9</cell><cell>4.2</cell><cell>Ϫ2.9</cell></row><row><cell>K 8</cell><cell>47.1</cell><cell>Ϫ2.6</cell><cell>Ϫ10.9</cell><cell>0.6</cell><cell>Ϫ9.1</cell><cell>6.0</cell><cell>Ϫ3.5</cell></row><row><cell>MD</cell><cell></cell><cell>Ϫ0.3</cell><cell>Ϫ3.8</cell><cell>7.2</cell><cell>0.4</cell><cell>2.8</cell><cell>Ϫ1.2</cell></row><row><cell>MAD</cell><cell></cell><cell>2.7</cell><cell>4.2</cell><cell>7.2</cell><cell>4.4</cell><cell>3.3</cell><cell>1.9</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>This work was supported by the <rs type="funder">Deutsche Forschungsgemeinschaft</rs> in the framework of the <rs type="grantNumber">SFB 858</rs> and by Grant No. <rs type="grantNumber">AN 793/1-1</rs>. The authors thank <rs type="person">C. Mück-Lichtenfeld</rs> for valuable discussions, <rs type="person">T. Bredow ͑University</rs> of <rs type="affiliation">Bonn͒</rs> for kindly providing us the Bz-Ag͑111͒ structures, and <rs type="person">K. Baldridge ͑University</rs> of Zürich͒ for bringing the problem of alkaline metal complexes to our attention.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_FPugEsU">
+					<idno type="grant-number">SFB 858</idno>
+				</org>
+				<org type="funding" xml:id="_htrKvSj">
+					<idno type="grant-number">AN 793/1-1</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Stone</surname></persName>
+		</author>
+		<title level="m">The Theory of Intermolecular Forces ͑Oxford</title>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>University Press</publisher>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">G</forename><surname>Kaplan</surname></persName>
+		</author>
+		<title level="m">Intermolecular Interactions ͑Wiley</title>
+		<imprint>
+			<publisher>Chichester</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Antony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schwabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mück-Lichtenfeld</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b615319b</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Org. Biomol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="741" to="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gräfenstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Cremer</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3079822</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">130</biblScope>
+			<biblScope unit="page" from="124105" to="122009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">D</forename><surname>Mackie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dilabio</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/poc.1606</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Org. Chem</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1127" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Nakai</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3269802</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="224104" to="222009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elstner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Frauenheim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Suhai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kaxiras</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1329889</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="5149" to="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jcc.20078</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="1463" to="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Jurečka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Černý</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Salahub</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jcc.20570</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="555" to="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Andersson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Langreth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">I</forename><surname>Lundqvist</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.76.102</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="102" to="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Langreth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dion</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rydberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schröder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hyldgaard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">I</forename><surname>Lundqvist</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qua.20315</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="599" to="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tsuneda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hirao</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/00268970412331333474</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Phys</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="1151" to="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Von Lilienfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Tavernelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Röthlisberger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Sebastiani</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.93.153004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="153004" to="152004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2992078</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="154102" to="152008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ar700111a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acc. Chem. Res</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="157" to="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">B</forename><surname>Jeziorski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Szalewicz</surname></persName>
+		</author>
+		<title level="m">Encyclopedia of Computational Chemisty</title>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Von Rague-Schleyer ͑wiley</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">1376</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Heßelmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp0112774</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="11156" to="12001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pitoňák</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Heßelmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct9005882</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="168" to="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tuma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sauer</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b608262a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="3955" to="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Yousaf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">N</forename><surname>Brothers</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct900536n</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="864" to="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Shimojo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nakano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Kalia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vashishta</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3336452</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">132</biblScope>
+			<biblScope unit="page" from="94106" to="092010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Vydrov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Van Voorhis</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.103.063004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="63004" to="062009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Klimeš</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Bowler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Michaelides</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/0953-8984/22/2/022201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="22201" to="022010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Marom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tkatchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scheffler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kronik</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct900410j</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="81" to="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">G</forename><surname>Hohenstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Chill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Sherrill</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct800308k</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<date>1996 ͑2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Sherrill</surname></persName>
+		</author>
+		<title level="m">Reviews in Computational Chemistry</title>
+		<editor>
+			<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>Lipkowitz</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Boyd ͑wiley-</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>VCH</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="1" to="38" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Tschumper</surname></persName>
+		</author>
+		<title level="m">Reviews in Computational Chemistry</title>
+		<editor>
+			<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>Lipkowitz</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Boyd ͑wiley-Vch</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="39" to="90" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pernal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Podeszwa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Patkowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Szalewicz</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.103.263201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="263201" to="262009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevA.38.3098</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="3098" to="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Parr</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.37.785</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="785" to="1988" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.33.8822</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="8822" to="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.34.7406</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="7406" to="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Burke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ernzerhof</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.77.3865</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="3865" to="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.80.890</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="890" to="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jcc.20495</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="1787" to="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Staroverov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.91.146401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="146401" to="142003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.464913</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="5648" to="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Stephens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Devlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Chabalowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Frisch</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/j100096a001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="11623" to="11994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Adamo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Barone</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.478522</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page" from="6158" to="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp050536c</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="5656" to="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2148954</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page" from="34108" to="032006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp050036j</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="3067" to="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1884601</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="page" from="154104" to="152005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2065267</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page" from="154101" to="152005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tkatchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scheffler</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.102.073005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="73005" to="072009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Ayers</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10910-008-9451-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Chem</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="86" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2139668</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page" from="14104" to="012006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2190220</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page" from="174104" to="172006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1949201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page" from="24101" to="022005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Jurečka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Šponer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Černý</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b600027d</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">2006</biblScope>
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Gan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Proynov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Freindorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Furlani</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevA.79.042510</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="42510" to="042009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Gianturco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Paesani</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1287055</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="3011" to="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Vargas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nayak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lotrich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Scoles</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1412004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page" from="8748" to="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1424928</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page" from="515" to="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">U</forename><surname>Zimmerli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Koumoutsakos</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1637034</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page">2004</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Murdachaew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>De Gironcoli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Scoles</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp800974k</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">2008</biblScope>
+			<date type="published" when="9993">9993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Steinmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Csonka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Corminboeuf</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct9002509</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">2009</biblScope>
+			<date type="published" when="2950">2950</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schwabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b704725h</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="3397" to="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Goddard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Iii</forename></persName>
+		</author>
+		<idno type="DOI">10.2320/matertrans.MF200911</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Trans</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="1664" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J.-D</forename><surname>Chai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Head-Gordon</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b810189b</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="6615" to="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/chem.200400091</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem.-Eur. J</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="3423" to="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/anie.200600448</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem., Int. Ed</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="4460" to="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Casimir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Polder</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRev.73.360</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="360" to="1948" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Dobson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K U</forename><surname>Gross</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/(SICI)1096-987X(19990115)20:1&lt;12::AID-JCC4&gt;3.0.CO;2-U</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="12" to="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kamal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Ghanty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Banerjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Chakrabarti</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3256238</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="164708" to="162009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Starkschall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gordon</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1677610</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="2801" to="1972" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Thakkar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hettema</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Wormer</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.463012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="3252" to="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">T</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Toennies</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.447150</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="3726" to="1984" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Delima</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3282265</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">132</biblScope>
+			<biblScope unit="page" from="14110" to="012010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Thakkar</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3315418</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">132</biblScope>
+			<biblScope unit="page" from="74301" to="072010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dierksen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp047289h</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="10225" to="12004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Axilrod</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Teller</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1723844</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="299" to="1943" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Muto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Phys. Math. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="629" to="1943" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tkatchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Lilienfeld</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.78.045116</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="45116" to="042008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mantina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Chamberlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Valero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp8111556</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="5806" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pyykkö</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Atsumi</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/chem.200800987</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem.-Eur. J</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="186" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<monogr>
+		<title/>
+		<idno type="DOI">10.1063/1.3382344</idno>
+		<ptr target="http://dx.doi.org/10.1063/1.3382344foroptimizedDFT-D3parametervaluesfortriple-zeta" />
+		<imprint/>
+	</monogr>
+	<note>DFT-D3 method and a file with available C 6 coefficients. 78 See supplementary. calculations, computational details, and details on the benchmark sets</note>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b907148b</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="10757" to="12009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Dobson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>White</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rubio</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.96.073201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page" from="73201" to="072006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Furche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hättig</surname></persName>
+		</author>
+		<ptr target="http://www.turbomole.com" />
+		<title level="m">TURBOMOLE, version 6.0</title>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+		<respStmt>
+			<orgName>Universität Karlsruhe</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<monogr>
+		<author>
+			<persName><forename type="first">F</forename><surname>Neese</surname></persName>
+		</author>
+		<title level="m">ORCA-An Ab Initio, Density Functional and Semiempirical Program Package ͑University of Bonn</title>
+		<meeting><address><addrLine>Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<monogr>
+		<author>
+			<persName><forename type="first">H.-J</forename><surname>Werner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Knowles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Lindh</surname></persName>
+		</author>
+		<ptr target="http://www.molpro.net" />
+		<title level="m">MOLPRO, version 2006.1, a package of ab initio programs</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Weigend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Furche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1627293</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="12753" to="12003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Weigend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b508541a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="3297" to="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Schäfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.467146</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="5829" to="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Metz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stoll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dolg</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1305880</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="2563" to="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Peterson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Figgen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Goll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stoll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dolg</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1622924</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="11113" to="12003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><surname>Vahtras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Almlöf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Feyereisen</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0009-2614(93)89151-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">213</biblScope>
+			<biblScope unit="page" from="514" to="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Weigend</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b204199p</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="4285" to="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Weigend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Häser</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s002140050269</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Chem. Acc</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="331" to="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Weigend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Häser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Patzelt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0009-2614(98)00862-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">294</biblScope>
+			<biblScope unit="page" from="143" to="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Eichkorn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Treutler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Öhm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Häser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ahlrichs</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0009-2614(95)00621-A</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">240</biblScope>
+			<biblScope unit="page" from="283" to="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hellweg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hättig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Höfener</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Klopper</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00214-007-0250-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Theor. Chem. Acc</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="587" to="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<monogr>
+		<author>
+			<persName><forename type="first">F</forename><surname>Furche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Rappoport</surname></persName>
+		</author>
+		<title level="m">Theoretical and Computational Chemistry</title>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Olivucci ͑elsevier</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Amsterdam</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="volume">16</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pitoňak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Janowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Neogrády</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pulay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct900126q</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="1761" to="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Klopper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>Lüthi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Phys</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page" from="559" to="1999" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Goerigk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct900489g</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="107" to="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tsuzuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Honda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Uchimaru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mikami</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2178795</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page">100</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Goll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-J</forename><surname>Werner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stoll</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b509242f</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">101</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Runeberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pyykkö</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/(SICI)1097-461X(1998)66:2&lt;131::AID-QUA4&gt;3.0.CO;2-W</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">102</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mück-Lichtenfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Antony</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp0720791</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. C</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page">103</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mück-Lichtenfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/00268970701635543</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Phys</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">104</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sygula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">R</forename><surname>Fronczek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sygula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Rabideau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Olmstead</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ja070616p</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">105</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schwabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ar700208h</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acc. Chem. Res</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">106</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Antony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brüske</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b907260h</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">107</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J.-D</forename><surname>Chai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Head-Gordon</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3244209</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page">108</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp710918f</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. C</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">109</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Korth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ct800511q</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">110</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Antony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp070589p</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page">111</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gulans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Puska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Nieminen</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.79.201105</idno>
+		<idno>͑2009͒. 112</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">201105</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Řeha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Valdés</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vondrášek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abu-Riziq</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Crews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>De Vries</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/chem.200500465</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem.-Eur. J</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">113</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Černý</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Jurečka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hobza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Valdés</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp066504m</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page">114</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zacharia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ulbricht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hertel</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.69.155406</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page">115</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ziambaras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kleis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schröder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hyldgaard</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.76.155425</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">116</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Donchev</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.74.235401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">117</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Wong</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jcc.21022</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">118</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b717744e</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="2813" to="2119" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mori-Sánchez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3021474</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">120</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b118">
+	<monogr>
+		<title level="m" type="main">Baldrigde ͑private communication͒</title>
+		<author>
+			<persName><forename type="first">K</forename></persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">121</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b119">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Marshall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Steele</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Thanthiriwatte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Sherrill</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp906086x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">122</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b120">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Feller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Dixon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Nicholas</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp002631l</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">123</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b121">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ruzsinszky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">I</forename><surname>Csonka</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp053905d</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page">124</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b122">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Rockey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-L</forename><surname>Dai</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp062225n</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">125</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b123">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grimme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mück-Lichtenfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Antony</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b803508c</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="3327" to="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,2457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">voom: precision weights unlock linear model analysis tools for RNA-seq read counts</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2014-02-03">3 February 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Charity</forename><forename type="middle">W</forename><surname>Law</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Medical Biology</orgName>
+								<orgName type="institution">The University of Melbourne</orgName>
+								<address>
+									<postCode>3010</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yunshun</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Medical Biology</orgName>
+								<orgName type="institution">The University of Melbourne</orgName>
+								<address>
+									<postCode>3010</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wei</forename><surname>Shi</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Computing and Information Systems</orgName>
+								<orgName type="institution">The University of Melbourne</orgName>
+								<address>
+									<postCode>3010</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Gordon</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+							<email>smyth@wehi.edu.au</email>
+							<affiliation key="aff0">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mathematics and Statistics</orgName>
+								<orgName type="institution">The University of Melbourne</orgName>
+								<address>
+									<postCode>3010</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Bioinformatics Division</orgName>
+								<orgName type="institution">The Walter and Eliza Hall Institute of Medical Research</orgName>
+								<address>
+									<addrLine>1G Royal Parade</addrLine>
+									<postCode>3052</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff5">
+								<orgName type="department">Department of Mathematics and Statistics</orgName>
+								<orgName type="institution">The University of Melbourne</orgName>
+								<address>
+									<postCode>3010</postCode>
+									<settlement>Parkville</settlement>
+									<region>Victoria</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">voom: precision weights unlock linear model analysis tools for RNA-seq read counts</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-02-03">3 February 2014</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B2179787D892C062FFC681AA7584E201</idno>
+					<note type="submission">Received: 25 September 2013 Accepted: 3 February 2014</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:47+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>New normal linear modeling strategies are presented for analyzing read counts from RNA-seq experiments. The voom method estimates the mean-variance relationship of the log-counts, generates a precision weight for each observation and enters these into the limma empirical Bayes analysis pipeline. This opens access for RNA-seq analysts to a large body of methodology developed for microarrays. Simulation studies show that voom performs as well or better than count-based RNA-seq methods even when the data are generated according to the assumptions of the earlier methods. Two case studies illustrate the use of linear modeling and gene set testing methods.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Background</head><p>Gene expression profiling is one of the most commonly used genomic techniques in biological research. For most of the past 16 years or more, DNA microarrays have been the premier technology for genome-wide gene expression experiments, and a large body of mature statistical methods and tools has been developed to analyze intensity data from microarrays. This includes methods for differential expression analysis <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>, random effects <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>, gene set enrichment <ref type="bibr" target="#b5">[6]</ref>, gene set testing <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref> and so on. One popular differential expression pipeline is that provided by the limma software package <ref type="bibr" target="#b8">[9]</ref>. The limma pipeline includes linear modeling to analyze complex experiments with multiple treatment factors, quantitative weights to account for variations in precision between different observations, and empirical Bayes statistical methods to borrow strength between genes.</p><p>Borrowing information between genes is a crucial feature of the genome-wide statistical methods, as it allows for gene-specific variation while still providing reliable inference with small sample sizes. The normal-based empirical Bayes statistical procedures can adapt to different types of datasets and can provide exact type I error rate control even for experiments with a small number of replicate samples <ref type="bibr" target="#b2">[3]</ref>.</p><p>In the past few years, RNA-seq has emerged as a revolutionary new technology for expression profiling <ref type="bibr" target="#b9">[10]</ref>. One common approach to summarize RNA-seq data is to count the number of sequence reads mapping to each gene or genomic feature of interest <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. RNAseq profiles consist therefore of integer counts, unlike microarrays, which yield intensities that are essentially continuous numerical measurements. A number of early RNA-seq publications applied statistical methods developed for microarrays to analyze RNA-seq read counts. For example, the limma package has been used to analyze log-counts after normalization by sequencing depth <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>.</p><p>Later statistical publications argued that RNA-seq data should be analyzed by statistical methods designed specifically for counts. Much interest has focused on the negative binomial (NB) distribution as a model for read counts, and especially on the problem of estimating biological variability for experiments with small numbers of replicates. One approach is to fit a global value or global trend to the NB dispersions <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b17">18,</ref><ref type="bibr" target="#b18">19]</ref>, although this has the limitation of not allowing for gene-specific variation. A number of empirical Bayes procedures have been proposed to estimate the gene-wise dispersions <ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>. Alternatively, Lund et al. <ref type="bibr" target="#b22">[23]</ref> proposed that the residual deviances from NB generalized linear models be entered into limma's empirical Bayes procedure to enable quasi-likelihood testing. Other methods based on over-dispersed Poisson models have also been proposed <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref>.</p><p>Unfortunately, the mathematical theory of count distributions is less tractable than that of the normal distribution, <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref> and this tends to limit both the performance and the usefulness of the RNA-seq analysis methods. One problem relates to error rate control with small sample sizes. Despite the use of probabilistic distributions, all the statistical methods developed for RNA-seq counts rely on approximations of various kinds. Many rely on the statistical tests that are only asymptotically valid or are theoretically accurate only when the dispersion is small. All the differential expression methods currently available based on the NB distribution treat the estimated dispersions as if they were known parameters, without allowing for the uncertainty of estimation, and this leads to statistical tests that are overly liberal in some situations <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b27">28]</ref>. This is true even of the NB exact test <ref type="bibr" target="#b17">[18]</ref>, which gives exact type I error rate control when the dispersion is known but which becomes liberal when an imprecise dispersion estimator is inserted for the known value. Quasi-likelihood methods <ref type="bibr" target="#b22">[23]</ref> account for uncertainty in the dispersion by using an F-test in place of the usual likelihood ratio test, but this relies on other approximations, in particular that the residual deviances are analogous to residual sums of squares from a normal analysis of variance.</p><p>A related issue is the ability to adapt to different types of data with high or low dispersion heterogeneity. None of the empirical Bayes methods based on the NB distribution achieve the same adaptability, robustness or small sample properties as the corresponding methods for microarrays, due to the mathematical intractability of count distributions compared to the normal distribution.</p><p>The most serious limitation though is the reduced range of statistical tools associated with count distributions compared to the normal distribution. This is more fundamental than the other problems because it limits the types of analyses that can be done. Much of the statistical methodology that has been developed for microarray data relies on use of the normal distribution. For example, we often find it useful in our own microarray gene expression studies to estimate empirical quality weights to downweight poor quality RNA samples <ref type="bibr" target="#b28">[29]</ref>, to use random effects to allow for repeated measures on the same experimental units <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref> or to conduct gene set tests for expression signatures while allowing for intergene correlations <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. These techniques broaden the range of experimental designs that can be analyzed or offer improved interpretation for differential expression results in terms of higher level molecular processes. None of these techniques are currently available for RNA-seq analysis using count distributions.</p><p>For these reasons, the purpose of this article is to revisit the idea of applying normal-based microarray-like statistical methods to RNA-seq read counts. An obstacle to applying normal-based statistical methods to read counts is that the counts have markedly unequal variabilities, even after log-transformation. Large counts have much larger standard deviations than small counts. While a logarithmic transformation counteracts this, it overdoes the adjustment somewhat so that large log-counts now have smaller standard deviations than small log-counts. We explore the idea that it is more important to model the mean-variance relationship correctly than it is to specify the exact probabilistic distribution of the counts. There is a body of theory in the statistical literature showing that correct modeling of the mean-variance relationship inherent in a data generating process is the key to designing statistically powerful methods of analysis <ref type="bibr" target="#b29">[30]</ref>. Such variance modeling may in fact take precedence over identifying the exact probability law that the data values follow <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref>. We therefore take the view that it is crucial to understand the way in which the variability of RNA-seq read counts depends on the size of the counts. Our work is in the spirit of pseudo-likelihoods <ref type="bibr" target="#b31">[32]</ref> whereby statistical methods based on the normal distribution are applied after estimating a mean-variance function for the data at hand.</p><p>Our approach is to estimate the mean-variance relationship robustly and non-parametrically from the data. We work with log-counts normalized for sequence depth, specifically with log-counts per million (log-cpm). The mean-variance is fitted to the gene-wise standard deviations of the log-cpm as a function of average log-count. We explore two ways to incorporate the mean-variance relationship into the differential expression analysis. The first is to modify limma's empirical Bayes procedure to incorporate a mean-variance trend. The second method incorporates the mean-variance trend into a precision weight for each individual normalized observation. The normalized log-counts and associated precision weights can then be entered into the limma analysis pipeline, or indeed into any statistical pipeline for microarray data that is precision weight aware. We call the first method limma-trend and the second method voom, an acronym for 'variance modeling at the observational level' . limmatrend applies the mean-variance relationship at the gene level whereas voom applies it at the level of individual observations. This article compares the performance of the limmabased pipelines to edgeR <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b33">34]</ref>, DESeq <ref type="bibr" target="#b12">[13]</ref>, baySeq <ref type="bibr" target="#b20">[21]</ref>, TSPM <ref type="bibr" target="#b24">[25]</ref>, PoissonSeq <ref type="bibr" target="#b25">[26]</ref> and DSS <ref type="bibr" target="#b21">[22]</ref>, all of which are based on NB or over-dispersed Poisson distributions. Simulation studies show that the limma pipelines perform at least as well in terms of power and error rate control as the NB or Poisson methods even when the data is generated according to the probabilistic assumptions of the earlier methods. A key advantage of the limma pipelines is that they provide accurate type I error rate control even when the number of RNA-seq samples is small. The NB and Poisson based methods either fail to control the error correctly or are excessively conservative. limma-trend and voom perform almost equally well when the sequencing depths are the same for each RNA sample. When the sequencing depths are different, voom is the clear best performer.</p><p>Either voom or limma-trend give RNA-seq analysts immediate access to many techniques developed for microarrays that are not otherwise available for RNAseq, including all the quality weighting, random effects and gene set testing techniques mentioned above. This article presents two case studies that demonstrate how voom can handle heterogeneous data and complex experiments as well as facilitating pathway analysis and gene set testing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Counts per million: a simple interpretable scale for assessing differential expression</head><p>We suppose that RNA-seq profiles (or libraries) are available for a set of n RNA samples. Each profile records the number of sequence reads from that sample that have been mapped to each one of G genomic features. A genomic feature can be any predefined subset of the transcriptome, for example a transcript, an exon or a gene. For simplicity, we will assume throughout this article that reads have been summarized by gene, so that the RNA-seq profiles give the number of reads from each sample that have been mapped to each gene. Typically G is large, in the tens of thousands or more, whereas n can be as low as three. The total number of mapped reads (library size) for each sample might vary from a few hundred thousand to hundreds of millions. This is the same context as assumed by a number of previous articles <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b17">18,</ref><ref type="bibr" target="#b19">20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b33">34]</ref>.</p><p>The number of reads observed for a given gene is proportional not just to the expression level of the gene but also to its gene transcript length and to the sequencing depth of the library. Dividing each read count by the corresponding library size (in millions) yields counts per million (cpm), a simple measure of read abundance that can be compared across libraries of different sizes. Standardizing further by transcript length (in kilobases) gives rise to reads per kilobase per million (rpkm), a well-accepted measure of gene expression <ref type="bibr" target="#b34">[35]</ref>. In this article we will work with the simpler cpm rather than rpkm, because we are interested in relative changes in expression between conditions rather than absolute expression.</p><p>This article treats log-cpm as analogous to log-intensity values from a microarray experiment, with the difference that log-cpm values cannot be treated as having constant variances. Differences in log-cpm between samples can be interpreted as log-fold-changes of expression. The counts are augmented by a small positive value (a half of one read) to avoid taking the logarithm of zero. This ensures no missing log-cpm values and reduces the variability at low count values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Log-cpms have stabilized variances at high counts</head><p>Probability distributions for counts are naturally heteroscedastic, with larger variances for larger counts. It has previously been argued that the mean-variance relationship for RNA-seq counts should be approximately quadratic <ref type="bibr" target="#b33">[34]</ref>. This leads to the conclusion that the coefficient of variation (CV) of RNA-seq counts should be a decreasing function of count size for small to moderate counts but for larger counts should asymptote to a value that depends on biological variability. Specifically, the squared CV of the counts should be roughly</p><formula xml:id="formula_0">1/λ + φ</formula><p>where λ is the expected size of the count and φ is a measure of biological variation <ref type="bibr" target="#b33">[34]</ref>. The first term arises from the technical variability associated with sequencing, and gradually decreases with expected count size, while biological variation remains roughly constant. For large counts, the CV is determined mainly by biological variation.</p><p>A simple linearization calculation suggests that the standard deviation of the log-cpm should be approximately equal to the CV of the counts (see Materials and methods). Examination of a wide range of real datasets confirms these expectations. For studies where the replicates are entirely technical in nature, the standard deviation of the log-cpm decreases steadily as a function of the mean (Figure <ref type="figure" target="#fig_0">1a</ref>). For studies where the replicates are genetically identical mice, the standard deviation asymptotes at a moderate level corresponding to a biological CV of about 10% (Figure <ref type="figure" target="#fig_0">1b</ref>). Studies where the replicates are unrelated human individuals show greater biological variation. For these studies, the standard deviation asymptotes early and at a relatively high level (Figure <ref type="figure" target="#fig_0">1d</ref>).</p><p>We conclude that log-cpm values generally show a smoothly decreasing mean-variance trend with count size, and that the log-cpm transformation roughly de-trends the variance of the RNA-seq counts as a function of count size for genes with larger counts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Using log-cpm in a limma pipeline</head><p>A simple approach to analyzing RNA-seq data would be to input the log-cpm values into a well-established microarray analysis pipeline such as that provided by the limma software package <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b8">9]</ref>. This would be expected to behave well if the counts were all reasonably large, but it ignores the mean-variance trend for lower counts. The microarray pipeline should behave better if modified to include a mean-variance trend as part of the variance modeling. We have therefore modified the empirical Bayes procedure of the limma package so that the gene-wise variances are squeezed towards a global mean-variance trend curve instead of towards a constant pooled variance. This is similar in principle to the procedure proposed by Sartor et al. <ref type="bibr" target="#b35">[36]</ref> for microarray data, except that we model the trend using a regression spline and our implementation allows for the possibility of missing values or differing residual degrees of freedom between genes. We call this strategy limma-trend, whereby the log-cpm values are analyzed as for microarray data but with a trended prior variance. For comparison, the more naive approach without the mean-variance trend will be called limma-notrend.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom: variance modeling at the observation-level</head><p>The limma-trend pipeline models the variance at the gene level. However, in RNA-seq applications, the count sizes may vary considerably from sample to sample for the same gene. Different samples may be sequenced to different depths, so different count sizes may be quite different even if the cpm values are the same. For this reason, we wish to model the mean-variance trend of the log-cpm values at the individual observation level, instead of applying a gene-level variability estimate to all observations from the same gene.</p><p>Our strategy is to estimate non-parametrically the mean-variance trend of the logged read counts and to use this mean-variance relationship to predict the variance of each log-cpm value. The predicted variance is then encapsulated as an inverse weight for the log-cpm value. When the weights are incorporated into a linear modeling procedure, the mean-variance relationship in the log-cpm values is effectively eliminated.</p><p>A technical difficulty is that we want to predict the variances of individual observations although there is, by definition, no replication at the observational level from which variances could be estimated. We work around this inconvenience by estimating the mean-variance trend at the gene level, then interpolating this trend to predict the variances of individual observations (Figure <ref type="figure" target="#fig_1">2</ref>).</p><p>The algorithm proceeds as follows. First, gene-wise linear models are fitted to the normalized log-cpm values, taking into account the experimental design, treatment conditions, replicates and so on. This generates a residual standard deviation for each gene (Figure <ref type="figure" target="#fig_1">2a</ref>). A robust trend is then fitted to the residual standard deviations as a function of the average log-count for each gene (Figure <ref type="figure" target="#fig_1">2b</ref>).</p><p>Also available from the linear models is a fitted value for each log-cpm observation. Taking the library sizes into account, the fitted log-cpm for each observation is converted into a predicted count. The standard deviation trend is then interpolated to predict the standard deviation of each individual observation based on its predicted count size (Figure <ref type="figure" target="#fig_1">2c</ref>). Finally, the inverse squared predicted standard deviation for each observation becomes the weight for that observation.</p><p>The log-cpm values and associated weights are then input into limma's standard differential expression pipeline. Most limma functions are designed to accept quantitative weights, providing the ability to perform microarray-like analyses while taking account of the <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref>  mean-variance relationship of the log-cpm values at the observation level.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom and limma-trend control the type I error rate correctly</head><p>We have found that voom and limma-trend, especially voom, perform well and produce P values that control error rates correctly over a wide range of simulation scenarios. For illustration, we present results from simulations in which read counts were generated under the same NB model as assumed by a number of existing RNAseq analysis methods. These simulations should represent the ideal for the NB-based methods. If the normal-based methods can give performance comparable to or better than count-based methods in these simulations, then this is strong evidence that they will be competitive across a wide range of data types. Six RNA-seq count libraries were simulated with counts for 10,000 genes. The first three libraries were treated as group 1 and the others as group 2. The distribution of cpm values for each library was simulated to match the distribution that we observed for a real RNA-seq dataset from our own practice. The NB dispersion φ was set to decrease on average with expected count size, asymptoting to 0.2 squared for large counts. This degree of biological variation is representative of what we observe for real RNA-seq data, being larger than we typically observe between genetically identical laboratory mice but less than we typically see between unrelated human subjects (Figure <ref type="figure" target="#fig_0">1</ref>). An individual dispersion φ was generated for each gene around the trend according to an inverse chi-square distribution with 40 degrees of freedom. The voom mean-variance trend for one such simulated dataset is shown in Figure <ref type="figure" target="#fig_0">1c</ref>. It can be seen from Figure <ref type="figure" target="#fig_0">1</ref> that the simulated dataset is intermediate between the mouse data (Figure <ref type="figure" target="#fig_0">1b</ref>) and the human data (Figure <ref type="figure" target="#fig_0">1d</ref>) both in terms of the absolute size of the dispersions and in terms of heterogeneity of the dispersions between genes.</p><p>We found that variation in sequencing depth between libraries had a noticeable impact on some RNA-seq analysis methods. Hence all the simulations were repeated under two library size scenarios, one with the same sequencing depth for all six libraries and one with substantial variation in sequencing depth. In the equal size scenario, all libraries were simulated to contain 11 million reads. In the unequal size scenario, the odd-numbered libraries were simulated to have a sequence depth of 20 million reads while the even-numbered libraries had a sequence depth of 2 million reads. Hence the same total number of reads was simulated in this scenario but distributed unevenly between the libraries.</p><p>In the first set of simulations, we examined the ability of voom and limma-trend to control the type I error rate correctly in the absence of any genuine differential expression between the groups. When there are no truly differentially expressed genes, the gene-wise P values should follow an approximate uniform distribution. If the type I error rate is controlled correctly, then the expected proportion of P values below any cutoff should be less than or equal to the cutoff value. A number of popular RNA-seq analysis methods based on the NB or Poisson distributions were included for comparison. Figure <ref type="figure" target="#fig_2">3</ref>   conservative. voom produces results very close to the nominal type I error rate for both library size scenarios. limma-trend is similar to voom when the library sizes are equal but somewhat conservative when the library sizes are unequal. baySeq was not included in the type I error rate comparison because it does not return P values. However, the results presented in the next section show that it is relatively conservative in terms of the false discovery rate (FDR) (Figure <ref type="figure" target="#fig_3">4</ref>).</p><p>To check voom's conservativeness on real data, we used a set of four replicate libraries from the SEQC Project <ref type="bibr" target="#b36">[37]</ref>. All four libraries were Illumina HiSeq 2000 RNA-seq profiles of samples of Ambion's Human Brain Reference RNA (HBRR) <ref type="bibr" target="#b37">[38]</ref>. We split the four libraries into two groups in all possible ways, and tested for differential expression between the two groups for each partition. voom returned no differentially expressed (DE) genes at 5% FDR for six out of the seven possible partitions, indicating good error rate control. The voom mean-variance trend for the SEQC data, using all the libraries rather than the HBRR samples only, is shown in Figure <ref type="figure" target="#fig_0">1a</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom has the best power of methods that control the type I error rate</head><p>Next we examined the power to detect true differential expression. For the following simulations, 100 randomly selected genes were twofold upregulated in the first group and another 100 were twofold upregulated in the second group. This represents a typical scenario for a functional genomics experiment in which the differential expression effects are large enough to be biologically important but nevertheless sufficiently subtle as to challenge many analysis methods. Figure <ref type="figure" target="#fig_3">4</ref> shows the number of true and false discoveries made by various analysis methods at significance cutoff FDR &lt; 0.1. When the library sizes are equal, voom and limma-trend have the next best power after edgeR and PoissonSeq. However, both edgeR and PoissonSeq give empirical FDRs greater than 0.1, confirming the results of the previous section that these methods are somewhat liberal. limma-trend gives an empirical FDR slightly greater than voom but still less than 0.1. With unequal library sizes, voom has the best power except for edgeR while still maintaining a low FDR. TSPM declares by far the most DE genes, but these are mostly false discoveries. DSS also gives a worryingly high rate of false discoveries when the library sizes are unequal. Figures <ref type="figure" target="#fig_2">3</ref> and<ref type="figure" target="#fig_3">4</ref> together show that voom has the best power of those methods that correctly control the type I and FDR error rates.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom has the lowest false discovery rate</head><p>Next we compared methods from a gene ranking point of view, comparing methods in terms of the number of false discoveries for any given number of genes selected as DE. Methods that perform well will rank the truly DE genes in the simulation ahead of non-DE genes. Genes were ranked by posterior likelihood for baySeq and by P value for the other methods. The results show that voom has the lowest FDR at any cutoff (Figure <ref type="figure">5</ref>). When the library sizes are equal, limma-trend and PoissonSeq are very close competitors (Figure <ref type="figure">5a</ref>). When the library sizes are unequal, limma-trend and edgeR are the closest competitors (Figure <ref type="figure">5b</ref>). Next we compared FDRs using spike-in control transcripts from the SEQC project <ref type="bibr" target="#b38">[39]</ref>. The data consists of eight RNA-seq libraries, in two groups of four. A total of 92 artificial control transcripts were spiked-in at different concentrations in such a way that three quarters of the transcripts were truly DE and the remaining quarter were not. To make the spike-ins more like a realistic dataset, we replicated the counts for each of the 23 non-DE transcripts three times. That is, we treated each non-DE transcript as three different transcripts. This resulted in a dataset of 138 transcripts with half DE and half non-DE. Figure <ref type="figure">6</ref> is analogous to Figure <ref type="figure">5</ref> but using the spike-in data instead of simulated data. voom again achieved the lowest FDR, with edgeR and the other limma methods again being the closest competitors (Figure <ref type="figure">6</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom and limma-trend are faster than specialist RNA-seq methods</head><p>The different statistical methods compared varied considerably in computational time required, with DESeq, TSPM and baySeq being slow enough to limit the number of simulations that were done. voom is easily the fastest of the methods compared, with edgeR-classic next fastest (Figure <ref type="figure" target="#fig_4">7</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RNA-seq profiles of male and female Nigerian individuals</head><p>So far we have demonstrated the performance of voom on RNA-seq datasets with small numbers of replicate libraries. To demonstrate the performance of voom on a heterogeneous dataset with a relatively large number of replicates and a high level of biological variability, we compared males to females using RNA-seq profiles of lymphoblastoid cell lines from 29 male and 40 female unrelated Nigerian individuals <ref type="bibr" target="#b39">[40]</ref>. Summarized read counts and gene annotation are provided by the Bioconductor tweeDEseqCountData package <ref type="bibr" target="#b40">[41]</ref>. Figure <ref type="figure" target="#fig_0">1d</ref> shows the voom mean-variance trend of this dataset.</p><p>voom yielded 16 genes upregulated in males and 43 upregulated in females at 5% FDR. As expected, most of the top differentially expressed genes belonged to the X or Y sex chromosomes (Table <ref type="table" target="#tab_2">1</ref>  which is a key player in X inactivation and is known to be expressed at meaningful levels only in females. We examined 12 particular genes that are known to belong to the male-specific region of chromosome Y <ref type="bibr" target="#b41">[42,</ref><ref type="bibr" target="#b42">43]</ref>. A ROAST gene set test confirmed that these genes collectively are significantly upregulated in males (P = 0.0001). A CAMERA gene set test was even more convincing, confirming that these genes are significantly more upregulated in males than are other genes in the genome (P = 2 × 10 -28 ).</p><p>We also examined 46 X chromosome genes that have been reported to escape X inactivation <ref type="bibr" target="#b42">[43,</ref><ref type="bibr" target="#b43">44]</ref>. These genes were significantly upregulated in females (ROAST P = 0.0001, CAMERA P = 10 -10 ). The log-fold-changes for the X and Y chromosome genes involved in the gene set tests are highlighted on an MA plot (Figure <ref type="figure">8</ref>).</p><p>Note that these gene set testing approaches are not available for any of the count-based approaches to differential expression. If a count-based method had been used to assess differential expression, we could still have examined whether sex-linked genes were highly ranked among the differentially expressed genes, but we could not have undertaken any formal statistical test for enrichment of this signature while accounting for inter-gene correlation. On the other hand, the voom expression values and weights are suitable for input into the ROAST and CAMERA procedures without any further processing.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Development stages of Drosophila melanogaster</head><p>Like edgeR-glm, but unlike most other analysis tools, voom and limma-trend offer full-featured linear modeling for RNA-seq data, meaning that they can analyze arbitrary complex experiments. The possibilities of linear modeling are so rich that it is impossible to select a representative example. voom and limma could be used to analyze any gene-level RNA-seq differential expression experiment, including those with multiple experimental factors <ref type="bibr" target="#b33">[34]</ref>. Here we give a novel analysis illustrating the use of quadratic regression to analyze a time-course study.</p><p>RNA-seq was used to explore the developmental transcriptome of Drosophila melanogaster <ref type="bibr" target="#b44">[45]</ref>. RNA-seq libraries were formed from whole-animal samples to represent a large number of distinct developmental stages. In particular, samples were collected from embryonic animals at equi-spaced development stages from 2 hours to 24 hours in 2-hour intervals. Here we analyze the 12 RNA-seq libraries from these embryonic stages. We sought to identify those genes that are characteristic of each embryonic stage. In particular we wished to identify, for each embryonic stage, those genes that achieve their peak expression level during that stage.</p><p>As all the samples are from distinct stages, there are no replicate libraries in this study. To estimate variances we utilized the fact that gene expression should for most <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref>  The table shows output from the limma topTable function. As well as gene ID and symbol, columns give chromosome location (Chr), log 2 -fold-change (logFC), average log 2 expression (AveExpr), moderated t, P value, false discovery rate and B-statistic for each gene. The B-statistic is the posterior log-odds of differential expression. Figure <ref type="figure">8</ref> MA plot of male vs female comparison with male-and female-specific genes highlighted. The MA plot was produced by the limma plotMA function, and is a scatterplot of log-fold-change versus average log-cpm for each gene. Genes on the male-specific region of the Y chromosome genes are highlighted blue and are consistently upregulated in males, while genes on the X chromosome reported to escape X inactivation are highlighted red and are generally down in males. log-cpm, log-counts per million.</p><p>genes vary smoothly over time. A multidimensional scaling plot of log-cpm values shows the gradual change in gene expression during embryonic development, with each stage intermediate in expression profile between the stages before and after (Figure <ref type="figure" target="#fig_6">9</ref>). We used gene-wise linear models to fit a quadratic trend with time to the log-cpm values for each gene. These quadratic trends will not match all the intricacies of gene expression changes over time but are sufficient to model the major trends. The voom mean-variance trend for this data is shown in Figure <ref type="figure" target="#fig_0">1e</ref>. Out of 14,869 genes that were expressed during embryonic development, 8,366 showed a statistically significant trend at 5% FDR using empirical Bayes F-tests. For each differentially expressed gene, we identified the embryonic stage at which the fitted quadratic trend achieved its maximum value. This allowed us to associate each significant gene with a particular development stage (Figure <ref type="figure" target="#fig_7">10</ref>). Most genes peaked at the first or last stage (Figure <ref type="figure" target="#fig_7">10</ref>), indicating smoothly decreasing or increasing trends over time (Figure <ref type="figure" target="#fig_0">11</ref>, panels 1 and 12). Genes peaking at the first embryonic stage tended to be associated with the cell cycle. Genes peaking at the last stage tended to be associated with precursor metabolites and energy, the oxidation-reduction process and with metabolic pathways.</p><p>Genes peaking at intermediate stages have expression trends with an inverse-U shape (Figure <ref type="figure" target="#fig_0">11</ref>, panels 2-11). There was a substantial set of genes with peak <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref>  activity between 12-16 hours of embryonic development (Figure <ref type="figure" target="#fig_7">10</ref>), suggesting some important developmental change occurring during this period requiring the action of special-purpose genes. Indeed, gene ontology analysis of the genes associated with this period showed that anatomical structure morphogenesis was the most significantly enriched biological process. Other leading terms were organ morphogenesis and neuron differentiation. This analysis demonstrates a simple but effective means of identifying genes that have a particular role at each developmental stage.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>This article follows the common practice of examining differential expression on a gene-wise basis. Our preferred practice is to count the total number of reads overlapping annotated exons for each genes. While this approach does not allow for the possibility that different isoforms of the same gene may be differentially expressed in different directions, it does provide a statistically robust gene-level analysis even when the sequencing depths are quite modest. The relevance of gene-level analyses is also supported by recent surveys of transcription, which have shown that each gene tends to have a dominant isoform that accounts for far more of the total expression for that gene than any of the remaining isoforms <ref type="bibr" target="#b46">[46,</ref><ref type="bibr" target="#b47">47]</ref>. The voom analysis can also be conducted at the exon level instead of at the gene level as an aid to detecting alternative splicing between the treatment groups.</p><p>In this article, voom has been applied to log-cpm values. voom can work, however, just as easily with logged rpkm values in place of log-cpm, because the precision weights are the same for both measures. If the genomic length of each gene is known, then the log-cpm values output by voom can be converted to log-rpkm by subtracting the log 2 gene length in kilobases. The downstream analysis is unchanged and will yield identical results in terms of differentially expressed genes and estimated fold-changes.</p><p>This article has shown that a normal-based analysis of RNA-seq read count data performs surprisingly well relative to methods that use special-purpose count distributions. The motivation for examining normal-based methods was to open up access to a range of microarraylike analysis tools based on the normal distribution. From this point of view, the normal-based methods only need to perform comparably to the count-based methods in terms of power and FDR control in order to be a success. Our comparisons suggest not only that this is so, but that the normal-based methods actually have a performance advantage. We found voom to be the best performer across our simulations and comparisons, and even the simpler limma-trend method performed equal or better than the count-based methods. voom and limma-trend perform almost equally when the library sizes are equal, but voom has the advantage when the library sizes are unequal. The best performing count-based methods were edgeR and PoissonSeq, although neither of those methods controlled the type I error rate at the nominal level, both being somewhat liberal. The performance advantage of voom over many of the count-based methods was quite substantial in our simulations, despite the simulations being conducted under the same NB distributional <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref>   <ref type="formula">12</ref>) correspond to the 12 successive developmental stages. Each panel displays the fitted expression trends for the top ten genes that achieve their peak expression during that stage. In particular, panel (1) shows genes that are most highly expressed at the first stage and panel (12) shows genes most highly expressed at the last stage. Panels (7) and (8) are notable because they show genes with marked peaks at 12-14 hours and 14-16 hours respectively. assumptions as made by a number of existing methods. Other simulation scenarios would tend to increase voom's advantage. For example, it would be at least as scientifically reasonable to assume that the true expression levels for each gene follow a log-normal distribution between replicates instead of a gamma distribution, and such an assumption would tend to improve the performance of voom relative to edgeR, DESeq, baySeq and DSS. In general, voom makes fewer distributional assumptions than do competing methods and can therefore be expected to perform robustly across a range of scenarios. This study presented simulations with equal library sizes between replicates, and also explored the sensitivity of the methods to unequal library sizes. In our experience markedly unequal library sizes can arise in real RNA-seq experiments for a variety of reasons. One scenario is when an experiment is conducted in stages and samples sequenced at a later time have a much higher sequencing depth. Other possible scenarios occur when technical replicates are combined for a subset of samples or when DNA samples are multiplexed onto a sequencing lane in unequal quantities. Some of the NB-based analysis methods become very conservative or showed very poor FDR control when the library sizes were unequal. In contrast, voom shows consistent performance in all scenarios.</p><p>The worst performer in our simulation was TSPM, presumably because we have simulated from NB distributions, which have quadratic mean-variance relationships, whereas TSPM assumes a linear mean-variance relationship <ref type="bibr" target="#b24">[25]</ref>. The second worst performer was the ordinary t-test. This shows that traditional statistical methods cannot be reliably applied to genomic data without borrowing strength between genes. The third worst performer was limma-notrend, showing that the mean-variance trend in the log-cpm values cannot be ignored.</p><p>To examine sensitivity of the results to the shape of the dispersion distribution, we repeated all the simulations using a log-normal distribution for the gene-wise dispersions instead of an inverse chi-square distribution. The two distributions were chosen to have the same mean and variance on the log-scale. The results were virtually unchanged from those shown in Figures <ref type="figure" target="#fig_3">3, 4</ref> and<ref type="figure">5</ref>, showing that the shape of the dispersion distribution is not a major determination of performance. This agrees with a similar conclusion in Wu et al. <ref type="bibr" target="#b21">[22]</ref>.</p><p>It may seem surprising at first that voom should perform so well even though it ignores the discrete integer nature of the counts. We think there are several possible reasons for this. First, the parametric advantages of the Poisson or NB distributions are mitigated by the fact that the observed mean-variance relationship of RNA-seq data <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref> does not perfectly match the theoretical mean-variance relationships inherent in these distributions. While the quadratic mean-variance relationship of the NB distribution captures most of the mean-variance trend, the NB dispersion still shows a non-ignorable trend with gene abundance <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b33">34]</ref>. This means that the mean-variance relationship still has to be estimated non-parametrically, at least in part.</p><p>Second, voom is more precise than previous methods in terms of its treatment of the mean-variance trend. While several previous methods fit a semi-parametric trend to the variances or to the NB dispersions <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b33">34]</ref>, the trend has always been used to estimate gene-level model parameters. This ignores the fact that different counts for the same gene may vary substantially in size, meaning that the trend should be applied differently to different observations. This consideration becomes more critical when different RNA samples are sequenced to different depths.</p><p>Third, the use of normal models gives voom access to tractable empirical Bayes distribution theory <ref type="bibr" target="#b2">[3]</ref>, facilitating reliable estimation of the Bayesian hyperparameters and exact small sample distributions for the test statistics. Amongst other things this facilitates accurate estimate of the prior degrees of freedom determining the optimal amount of squeezing to be applied to the variances.</p><p>Fourth, the use of normal distribution approximations in conjunction with variance modeling is partly supported by generalized linear model theory. Rao's score test <ref type="bibr" target="#b48">[48]</ref> for a covariate in a generalized linear model is essentially equivalent to the normal theory test statistic, provided that the mean-variance function is correctly estimated and incorporated into appropriate precision weights <ref type="bibr" target="#b49">[49]</ref>. Score tests have similar performance to likelihood ratio tests when the null hypothesis is true or when the changes being detected are relatively small. Some of the count-based methods have been criticized as being sensitive to outlier counts <ref type="bibr" target="#b27">[28]</ref>. The voom and limma-trend methods inherit good robustness properties from the normal-based procedures in limma <ref type="bibr" target="#b27">[28]</ref>. If necessary, they can be made extremely robust to outliers and hypervariable genes using the robust empirical Bayes options of the limma package <ref type="bibr" target="#b50">[50]</ref>.</p><p>In addition to performance results, voom has a number of qualitative advantages over the count-based methods. It is fast and convenient. It allows RNA-seq and microarray data to be analyzed in closely comparable ways, which may be an attraction for analysts comparing results from the two technologies. It gives access to a wealth of statistical methods developed for microarrays, including for example the gene set testing methods demonstrated on the Nigerian dataset.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>voom performs as well or better than existing RNA-seq methods, especially when the library sizes are unequal. It is moreover faster and more convenient, and converts RNA-seq data into a form that can be analyzed using similar tools as for microarrays.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Log-counts per million</head><p>We assume that an experiment has been conducted to generate a set of n RNA samples. Each RNA sample has been sequenced, and the sequence reads have been summarized by recording the number mapping to each gene. The RNA-seq data consist therefore of a matrix of read counts r gi , for RNA samples i = 1 to n, and genes g = 1 to G. Write R i for the total number of mapped reads for sample i:</p><formula xml:id="formula_1">R i = G g=1 r gi</formula><p>We define the log-counts per million (log-cpm) value for each count as:</p><formula xml:id="formula_2">y gi = log 2 r gi + 0.5 R i + 1.0 × 10 6</formula><p>The counts are offset away from zero by 0.5 to avoid taking the log of zero, and to reduce the variability of log-cpm for low expression genes. The library size is offset by 1 to ensure that (r gi + 0.5)/(R i + 1) is strictly less than 1 as well as strictly greater than zero.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Delta rule for log-cpm</head><p>Write λ = E(r) for the expected value of a read count given the experimental conditions, and suppose that:</p><formula xml:id="formula_3">var(r) = λ + φλ 2</formula><p>where φ is a dispersion parameter. If r is large, then the log-cpm value of the observation is: <ref type="bibr" target="#b9">(10)</ref> where R is the library size. Note that the analysis is conditional on R, so R is treated as a constant. It follows that var( y) ≈ var(log 2 (r). If λ also is large, then: log 2 (r) ≈ λ + r -λ λ by Taylor's theorem <ref type="bibr" target="#b51">[51]</ref>, so: var( y) ≈ var(r)</p><formula xml:id="formula_4">y ≈ log 2 (r) -log 2 (R) + 6 log 2</formula><formula xml:id="formula_5">λ 2 = 1 λ + φ.</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Linear models</head><p>This article develops differential expression methods for RNA-seq experiments of arbitrary complexity, for example experiments with multiple treatment factors, batch <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref> effects or numerical covariates. As has been done previously <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b33">34]</ref>, we use linear models to describe how the treatment factors are assigned to the different RNA samples. We assume that:</p><p>E( y gi ) = μ gi = x T i β g where x i is a vector of covariates and β g is a vector of unknown coefficients representing log 2 -fold-changes between experimental conditions. In matrix terms:</p><formula xml:id="formula_6">E( y g ) = Xβ g</formula><p>where y g is the vector of log-cpm values for gene g and X is the design matrix with the x i as rows. Interest centers on testing whether one or more of the β gj are equal to zero,</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>voom variance modeling</head><p>The above linear model is fitted, by ordinary least squares, to the log-cpm values y gi for each gene. This yields regression coefficient estimates βg , fitted values μgi = x T i βg and residual standard deviations s g . Also computed is the average log-cpm ȳg for each gene. The average log-cpm is converted to an average log-count value by:</p><formula xml:id="formula_7">r = ȳg + log 2 ( R) -log 2 (10 6 )</formula><p>where R is the geometric mean of the library sizes plus one.</p><p>To obtain a smooth mean-variance trend, a LOWESS curve is fitted to square-root standard deviations s 1/2 g as a function of mean log-counts r (Figure <ref type="figure" target="#fig_1">2a,</ref><ref type="figure">b</ref>). Square-root standard deviations are used because they are roughly symmetrically distributed. The LOWESS curve <ref type="bibr" target="#b52">[52]</ref> is statistically robust <ref type="bibr" target="#b53">[53]</ref> and provides a trend line through the majority of the standard deviations. The LOWESS curve is used to define a piecewise linear function lo() by interpolating the curve between ordered values of r.</p><p>Next the fitted log-cpm values μgi are converted to fitted counts by: λgi = μgi + log 2 (R i + 1)log 2 (10 6 ).</p><p>The function value lo( λgi ) is then the predicted squareroot standard deviation of y gi .</p><p>Finally, the voom precision weights are the inverse variances w gi = lo( λgi ) -4 (Figure <ref type="figure" target="#fig_1">2c</ref>). The log-cpm values y gi and associated weights w gj are then input into limma's standard linear modeling and empirical Bayes differential expression analysis pipeline.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene set testing methods</head><p>ROAST <ref type="bibr" target="#b6">[7]</ref> and CAMERA <ref type="bibr" target="#b7">[8]</ref> are gene set testing procedures that assess changes in the overall expression signature defined by a set of genes. ROAST <ref type="bibr" target="#b6">[7]</ref> is a selfcontained test that assesses differential expression of the gene set without regard to genes not in the set. CAMERA <ref type="bibr" target="#b7">[8]</ref> is a competitive test that assesses differential expression of the gene set relative to all other genes on the array. Both procedures offer considerable flexibility as they have the ability to test the association of a genomic pathway or gene set signature with quite general treatment comparisons or contrasts defined in the context of a microarray linear model. We have adapted both methods to make use of quantitative weights as output by voom. The revised methods are implemented in the functions roast() and camera() of the limma software package.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Normalization</head><p>The log-cpm values are by definition normalized for sequencing depth. Other normalization steps can optionally be done. The library sizes R i can be scale normalized to adjust for compositional differences between the RNA-seq libraries <ref type="bibr" target="#b54">[54]</ref>. This produces normalized library sizes R * i that can be used in place of R i in the voom pipeline. Alternatively, between-array normalization methods developed for single channel microarray data, such as quantile or cyclic LOESS, can be are applied to the log-cpm values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Simulations</head><p>The simulations were designed to generate data with characteristics similar to real data that we analyze in our own practice. First a set of baseline expression values was generated representing the relative proportion of counts expected to arise from each gene. These proportions were translated into expected count sizes by multiplying by library size, and then multiplied by true fold-changes as appropriate. Counts were then generated following a NB distribution with the specified mean and dispersion for each observation.</p><p>The distribution of baseline values was chosen to match that from RNA-seq experiments conducted at our institution. Specifically we used the goodTuringProportions function of the edgeR package <ref type="bibr" target="#b11">[12]</ref>, which implements the Good-Turing algorithm <ref type="bibr" target="#b55">[55]</ref>, to predict the true proportion of total RNA attributable to each gene. We ran this function on a number of different libraries, pooled the predicted proportions and formed a smoothed distribution function. The baseline proportions for the simulations were then generated to follow this distribution.</p><p>The NB dispersions were generated as follows. The trend in the dispersions was set to be ψ gi with:</p><formula xml:id="formula_8">ψ 1/2 gi = 0.2 + λ -1/2 gi</formula><p>where λ gi is the expected count size. A modest amount of gene-wise biological variation was generated from an inverse chi-square distribution with 40 degrees of freedom. The individual dispersions were set to be φ gi = ψ gi δ g where 40/δ g ∼ χ 2  40 . <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref> </p><p>In an alternative simulation, to investigate sensitivity to the distribution of gene-wise dispersions, the δ g were simulated as log-normal with mean 0 and standard deviation 0.25 on the log-scale. This produces a distribution with a similar CV as for the inverse chi-square simulation.</p><p>For each simulated dataset, genes with less than ten reads across all samples were filtered from the analysis. PoissonSeq resets the seed of the random number generator in R, so it was necessary to save and restore the state of the random number generator before and after each call of the main PoissonSeq function.</p><p>Complete runnable code that reproduces all the simulations is provided as Additional file 1. See also the voom website <ref type="bibr" target="#b56">[56]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SEQC data</head><p>The SEQC project, also known as MAQC-III, aims to provide a comprehensive study of next-generation sequencing technologies <ref type="bibr" target="#b36">[37]</ref>. We analyze here a pilot SEQC dataset consisting of 16 RNA-seq libraries in four groups. The full SEQC data including the 16 libraries analyzed here will become available as GEO series [GEO:GSE47792] when the main SEQC article is published in 2014. In the meantime, the aligned and summarized read counts for the pilot libraries needed to repeat the analyses in this article are available from the voom webpage <ref type="bibr" target="#b56">[56]</ref>.</p><p>The groups are labeled A-D and are closely analogous to the similarly labeled RNA samples used in the earlier microarray quality control study <ref type="bibr" target="#b57">[57]</ref>. Libraries in group A are profiles of Stratagene's Universal Human Reference RNA (UHRR) with the addition of RNA from Ambion's ERCC ExFold RNA spike-in mix 1 (Mix 1). Libraries in group B are profiles of Ambion's Human Brain Reference RNA (HBRR) with added RNA from Ambion's ERCC ExFold RNA spike-in mix 2 (Mix 2). RNA samples in groups C and D are mixtures of A and B in the proportions 75:25 and 25:75, respectively. An Illumina HiSeq 2000 was used to create a FastQ file of paired-end sequence reads for each sample. The library size for each sample varied from 5.4 to 8.0 million read pairs. Fragments were mapped to the National Center for Biotechnology Information's Build 37.2 of the human genome using the Subread aligner <ref type="bibr" target="#b58">[58]</ref>. Fragment counts were summarized by Entrez Gene ID using the featureCounts function <ref type="bibr" target="#b59">[59]</ref> of version 1.8.2 of the Bioconductor package Rsubread <ref type="bibr" target="#b60">[60]</ref>. Fragments with both end reads mapped successfully contributed one count if the fragment overlapped any annotated exon for that gene. Fragments for which only one read mapped successfully contributed half a count if that read overlapped an exon. The summarized read count data is available from the voom webpage <ref type="bibr" target="#b56">[56]</ref>.</p><p>The voom mean-variance trend shown in Figure <ref type="figure" target="#fig_0">1a</ref> was obtained from all 16 libraries, treated as four groups.</p><p>Genes were filtered out if they failed to achieve cpm &gt; 1 in at least four libraries, and the remaining log-cpm values were quantile normalized between libraries <ref type="bibr" target="#b61">[61]</ref>.</p><p>The comparison between technical replicates to check the type I error rate control used only the four group B libraries. Genes were filtered out if they failed to achieve a cpm &gt; 1 in at least two libraries and the log-cpm values for the 16,745 remaining genes were quantile normalized. Samples were separated into all possible two-versus-two and three-versus-one combinations and a limma analysis using voom weights was carried out for each partition.</p><p>The false discovery rate analysis was conducted on the spike-in transcripts only. ERCC Mixes 1 and 2 contain 92 transcripts spiked in at different concentrations. For this analysis, fragments were mapped to the known sequences of the spiked-in transcripts using Subread. The experiment is designed so that 23 transcripts have the same concentration in Mix 1 and Mix 2. The remaining transcripts were spiked-in in such a way that 23 transcripts are fourfold more abundant in Mix 1, 23 are 1.5 higher in Mix 2 and 23 are twofold higher in Mix 2. A majority of the spike-in transcripts data are DE. We replicated the counts for each of the 23 non-DE transcripts three times, so that each non-DE transcript was treated as three different transcripts. This resulted in a dataset of 138 transcripts, half DE and half non-DE. Our analysis used read counts for the spike-in transcripts only. TMM-scale normalization <ref type="bibr" target="#b54">[54]</ref> was used for all the analysis methods, except for DESeq and PoissonSeq, which have their own builtin normalization methods. No transcripts were filtered, except by PoissonSeq as its standard analysis includes the removal of probes with low counts. The genes that were filtered out by PoissonSeq were re-introduced to the end of the gene ranking, ordered from largest mean count to lowest mean count.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lymphoblastoid cell lines from Nigerian individuals</head><p>As part of the International HapMap Project, RNA samples were obtained from lymphoblastoid cell lines derived from 69 unrelated Nigerian individuals including 29 males and 40 females <ref type="bibr" target="#b39">[40]</ref>. Sequencing was performed using an Illumina Genome Analyzer II. Read counts, summarized by Ensembl gene, and transcript annotations were obtained from version 1.0.9 of the tweeDEseq-CountData Bioconductor package <ref type="bibr" target="#b42">[43]</ref>, specifically from the data objects pickrell1, annotEnsembl63 and genderGenes. Genes were filtered if they failed to achieve a cpm value of 1 in at least 20 libraries. Library sizes were scale-normalized by the TMM method <ref type="bibr" target="#b54">[54]</ref> using edgeR software <ref type="bibr" target="#b11">[12]</ref> prior to the voom analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Development stages of Drosophila melanogaster</head><p>RNA-seq was used to explore the developmental transcriptome of D. melanogaster <ref type="bibr" target="#b44">[45]</ref>. Mapped read counts <ref type="url" target="http://genomebiology.com/2014/15/2/R29">http://genomebiology.com/2014/15/2/R29</ref> are available from the ReCount project <ref type="bibr" target="#b62">[62]</ref>. Specifically the pooled version of the modencodefly dataset from the ReCount website <ref type="bibr" target="#b63">[63]</ref> provides read counts summarized by Ensembl 61 gene IDs for 30 whole-animal biological samples. We discarded the larval, pupal and adult stages and kept only the 12 embryonic samples. Genes were retained in the analysis if they achieved cpm &gt; 1 for any embryonic stage. Effective library sizes were estimated by TMM scale-normalization <ref type="bibr" target="#b54">[54]</ref> using edgeR software <ref type="bibr" target="#b11">[12]</ref> prior to the voom analysis.</p><p>Gene ontology analysis used the GOstats software package <ref type="bibr" target="#b64">[64]</ref> and version 2.9.0 of the org.Dm.eg.db annotation package <ref type="bibr" target="#b65">[65]</ref>. All GO terms mentioned in the Results section had Fisher's exact test P values less than 10 -10 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C57BL/6J and DBA/2J inbred mouse strains</head><p>An RNA-seq experiment was carried out to detect differential striatal gene expression between the C57BL/6J (B6) and DBA/2J (D2) inbred mouse strains <ref type="bibr" target="#b66">[66]</ref>. Profiles were made for 10 B6 and 11 D2 mice. Mapped read counts summarized by Ensembl 61 gene IDs were downloaded as the bottomly dataset from the ReCount website <ref type="bibr" target="#b63">[63]</ref>. Genes were filtered out if they failed to achieve cpm &gt; 1 in at least four libraries and the remaining log-cpm values were quantile normalized. The limma-voom analysis compared the two strains and included a batch effect correction for the Illumina flow cell in which each sample was sequenced. The voom mean-variance trend is shown in Figure <ref type="figure" target="#fig_0">1b</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Software</head><p>The results presented in this article were obtained using R version 3.0.0 and the software packages limma 3.16.2, edgeR 3.2.3, baySeq 1.14.1, DESeq 1.12.0, DSS 1.4.0, Pois-sonSeq 1.1.2 and tweeDEseqCountData 1.0.8. All of these packages are part of the Bioconductor project <ref type="bibr" target="#b67">[67,</ref><ref type="bibr" target="#b68">68]</ref>, except for PoissonSeq, which is part of the Comprehensive R Archive Network <ref type="bibr" target="#b69">[69]</ref>. The TSPM function, dated February 2011, was downloaded in March 2013 from the author's webpage <ref type="bibr" target="#b70">[70]</ref>.</p><p>The voom methodology proposed in the article is implemented in the voom function of the limma package. The limma-trend method was implemented by inputting the log-cpm values from voom into limma's standard pipeline, with trend=TRUE for the eBayes function. Hence the limma-trend pipeline was the same as that for voom except that weights were not used in the linear modeling step and the trend option was turned on for the empirical Bayes step. The limma package can be installed from the Bioconductor project repository <ref type="bibr" target="#b71">[71]</ref>.</p><p>All the count-based packages were used with the default differential expression pipelines as recommended in the software for each package. For edgeR 3.2.3 the default prior degrees of freedom for squeezing the genewise dispersions is 10. Note that this is a change from versions 3.0.X and earlier for which the default had been 20. For DSS the Wald test was used as recommended in the documentation. The DESeq defaults have changed considerably since the original publication. We used the DESeq function estimateDispersions with sharingMode="maximum" and fitType="local" and conducted tests using nbinomTest.</p><p>The different count-based packages implement different methods of compositional normalization <ref type="bibr" target="#b54">[54]</ref>. For our simulations, there are no compositional differences between the libraries so there should be no need to estimate compositional normalization factors. For this reason we did not use the calcNormFactors function with edgeR or estimateSizeFactors with DESeq or estNormFactors with DSS. This should tend to improve the performance of the packages and to make them more comparable, as any differences between the packages can be attributed to the statistical procedures rather than to differences between the normalization strategies.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figure 1 Mean-variance relationships. Gene-wise means and variances of RNA-seq data are represented by black points with a LOWESS trend. Plots are ordered by increasing levels of biological variation in datasets. (a) voom trend for HBRR and UHRR genes for Samples A, B, C and D of the SEQC project; technical variation only. (b) C57BL/6J and DBA mouse experiment; low-level biological variation. (c) Simulation study in the presence of 100 upregulating genes and 100 downregulating genes; moderate-level biological variation. (d) Nigerian lymphoblastoid cell lines; high-level biological variation. (e) Drosophila melanogaster embryonic developmental stages; very high biological variation due to systematic differences between samples. (f) LOWESS voom trends for datasets (a)-(e). HBRR, Ambion's Human Brain Reference RNA; LOWESS, locally weighted regression; UHRR, Stratagene's Universal Human Reference RNA.</figDesc><graphic coords="4,155.28,94.50,283.45,192.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2</head><label>2</label><figDesc>Figure 2 voom mean-variance modeling. (a) Gene-wise square-root residual standard deviations are plotted against average log-count. (b) A functional relation between gene-wise means and variances is given by a robust LOWESS fit to the points. (c) The mean-variance trend enables each observation to map to a square-root standard deviation value using its fitted value for log-count. LOWESS, locally weighted regression.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3</head><label>3</label><figDesc>Figure 3 Type I error rates in the absence of true differential expression. The bar plots show the proportion of genes with P &lt; 0.01 for each method (a) when the library sizes are equal and (b) when the library sizes are unequal. The red line shows the nominal type I error rate of 0.01. Results are averaged over 100 simulations. Methods that control the type I error at or below the nominal level should lie below the red line.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4</head><label>4</label><figDesc>Figure 4 Power to detect true differential expression. Bars show the total number of genes that are detected as statistically significant (FDR &lt; 0.1) (a) with equal library sizes and (b) with unequal library sizes. The blue segments show the number of true positives while the red segments show false positives. 200 genes are genuinely differentially expressed. Results are averaged over 100 simulations. Height of the blue bars shows empirical power. The ratio of the red to blue segments shows empirical FDR. FDR, false discovery rate.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 7</head><label>7</label><figDesc>Figure 7 Computing times of RNA-seq methods. Bars show time in seconds required for the analysis of one simulated dataset on a MacBook laptop. Methods are ordered from quickest to most expensive.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 9</head><label>9</label><figDesc>Figure 9 Multidimensional scaling plot of Drosophila melanogaster embryonic stages. Distances are computed from the log-cpm values. The 12 successive embryonic developmental stages are labeled 1 to 12, from earliest to latest.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Number of genes associated with each Drosophila melanogaster embryonic stage. The number of genes whose peak estimated expression occurs at each of the stages is recorded.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>12 Figure 11</head><label>1211</label><figDesc>Figure 11Expression trends for genes that peak at each Drosophila melanogaster embryonic stage. Panels (1) to (12) correspond to the 12 successive developmental stages. Each panel displays the fitted expression trends for the top ten genes that achieve their peak expression during that stage. In particular, panel (1) shows genes that are most highly expressed at the first stage and panel (12) shows genes most highly expressed at the last stage. Panels (7) and (8) are notable because they show genes with marked peaks at 12-14 hours and 14-16 hours respectively.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>shows results for a P value cutoff of 0.01. Results for other cutoffs are qualitatively similar. None of the NB-or Poisson-based methods were found to control the type I error rate very accurately. When the library sizes are equal, the NB and Poisson methods were overly liberal, except for DESeq which is very conservative. When the library sizes are unequal, DSS and DESeq became extremely conservative. By contrast, all the normal-based methods were slightly http://genomebiology.com/2014/15/2/R29</figDesc><table><row><cell></cell><cell></cell><cell>0.05</cell><cell></cell><cell cols="8">(a) Equal library sizes</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Prooportion of genes</cell><cell>with p-value &lt; 0.01</cell><cell>0.01 0.02 0.03 0.04</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>0.00</cell><cell>voom</cell><cell>limma trend</cell><cell>limma notrend</cell><cell>t-test</cell><cell>edgeR classic</cell><cell>edgeR glm</cell><cell>DESeq</cell><cell>PoissonSeq</cell><cell>DSS</cell><cell>TSPM</cell><cell>voom</cell><cell>limma trend</cell><cell>limma notrend</cell><cell>t-test</cell><cell>edgeR classic</cell><cell>edgeR glm</cell><cell>DESeq</cell><cell>PoissonSeq</cell><cell>DSS</cell><cell>TSPM</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>6 False discovery rates evaluated from SEQC spike-in data.</head><label></label><figDesc>). The top gene is XIST, The number of false discoveries is plotted for each method versus the number of genes selected as differentially expressed. voom has the lowest false discovery rate overall.</figDesc><table><row><cell>False discoveries</cell><cell>10 20 30 40 50 60 70</cell><cell cols="2">voom limma trend limma notrend t-test edgeR glm edgeR classic PoissonSeq baySeq DESeq TSPM</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell>20</cell><cell>40</cell><cell>60</cell><cell>80</cell><cell>100</cell><cell>120</cell><cell>140</cell></row><row><cell></cell><cell></cell><cell></cell><cell cols="3">Genes chosen</cell><cell></cell><cell></cell></row><row><cell cols="2">Figure</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="4">(a) Equal library sizes</cell><cell>(b) Unequal library sizes</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>6 0</cell><cell>voom</cell><cell></cell><cell></cell><cell>voom</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>limma trend</cell><cell></cell><cell></cell><cell>limma trend</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>PoissonSeq</cell><cell></cell><cell></cell><cell>edgeR glm</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>edgeR classic</cell><cell></cell><cell></cell><cell>edgeR classic</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>edgeR glm</cell><cell></cell><cell></cell><cell>PoissonSeq</cell></row><row><cell></cell><cell></cell><cell></cell><cell>False discoveries</cell><cell>2 0 4 0</cell><cell>DESeq DSS baySeq limma notrend t-test TSPM</cell><cell></cell><cell></cell><cell>baySeq DESeq limma notrend t-test DSS TSPM</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell><cell cols="2">40</cell><cell>80</cell><cell>120</cell><cell>0</cell><cell>40</cell><cell>80</cell><cell>120</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="3">Genes chosen</cell><cell>Genes chosen</cell></row></table><note><p><p>Figure 5</p>False discovery rates. The number of false discoveries is plotted for each method versus the number of genes selected as differentially expressed. Results are averaged over 100 simulations (a) with equal library sizes and (b) with unequal library sizes. voom has the lowest FDR at any cutoff in either scenario. FDR, false discovery rate. http://genomebiology.com/2014/15/2/R29</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 1 Top 16 genes differentially expressed between males and females in the Nigerian data</head><label>1</label><figDesc></figDesc><table><row><cell>Ensembl ID</cell><cell>Symbol</cell><cell>Chr</cell><cell>logFC</cell><cell>AveExpr</cell><cell>t</cell><cell>P value</cell><cell>FDR</cell><cell>B</cell></row><row><cell>ENSG00000229807</cell><cell>XIST</cell><cell>X</cell><cell>-9.815</cell><cell>3.8084</cell><cell>-36.4</cell><cell>7.03e-48</cell><cell>1.19e-43</cell><cell>74.8</cell></row><row><cell>ENSG00000099749</cell><cell>CYorf15A</cell><cell>Y</cell><cell>4.251</cell><cell>0.3146</cell><cell>28.3</cell><cell>1.25e-40</cell><cell>1.05e-36</cell><cell>68.2</cell></row><row><cell>ENSG00000157828</cell><cell>RPS4Y2</cell><cell>Y</cell><cell>3.281</cell><cell>3.3081</cell><cell>26.5</cell><cell>9.38e-39</cell><cell>5.27e-35</cell><cell>72.6</cell></row><row><cell>ENSG00000233864</cell><cell>TTTY15</cell><cell>Y</cell><cell>4.897</cell><cell>-0.5538</cell><cell>25.9</cell><cell>4.31e-38</cell><cell>1.82e-34</cell><cell>64.0</cell></row><row><cell>ENSG00000131002</cell><cell>CYorf15B</cell><cell>Y</cell><cell>5.440</cell><cell>-0.1710</cell><cell>23.2</cell><cell>4.81e-35</cell><cell>1.62e-31</cell><cell>60.0</cell></row><row><cell>ENSG00000198692</cell><cell>EIF1AY</cell><cell>Y</cell><cell>2.398</cell><cell>2.6806</cell><cell>20.5</cell><cell>1.09e-31</cell><cell>3.07e-28</cell><cell>58.6</cell></row><row><cell>ENSG00000165246</cell><cell>NLGN4Y</cell><cell>Y</cell><cell>5.330</cell><cell>-0.4916</cell><cell>19.7</cell><cell>1.26e-30</cell><cell>3.03e-27</cell><cell>52.4</cell></row><row><cell>ENSG00000213318</cell><cell>RP11-331F4.1</cell><cell>16</cell><cell>4.293</cell><cell>2.2654</cell><cell>19.3</cell><cell>4.44e-30</cell><cell>9.34e-27</cell><cell>54.1</cell></row><row><cell>ENSG00000129824</cell><cell>RPS4Y1</cell><cell>Y</cell><cell>2.781</cell><cell>4.7118</cell><cell>17.6</cell><cell>9.28e-28</cell><cell>1.74e-24</cell><cell>51.5</cell></row><row><cell>ENSG00000183878</cell><cell>UTY</cell><cell>Y</cell><cell>1.878</cell><cell>2.7430</cell><cell>16.6</cell><cell>2.88e-26</cell><cell>4.85e-23</cell><cell>47.7</cell></row><row><cell>ENSG00000012817</cell><cell>KDM5D</cell><cell>Y</cell><cell>1.470</cell><cell>4.7046</cell><cell>14.9</cell><cell>1.45e-23</cell><cell>2.22e-20</cell><cell>42.6</cell></row><row><cell>ENSG00000146938</cell><cell>NLGN4X</cell><cell>X</cell><cell>4.472</cell><cell>-0.7801</cell><cell>14.8</cell><cell>2.09e-23</cell><cell>2.94e-20</cell><cell>38.9</cell></row><row><cell>ENSG00000243209</cell><cell>AC010889.1</cell><cell>Y</cell><cell>2.528</cell><cell>-0.0179</cell><cell>14.5</cell><cell>5.48e-23</cell><cell>7.11e-20</cell><cell>37.9</cell></row><row><cell>ENSG00000067048</cell><cell>DDX3Y</cell><cell>Y</cell><cell>1.671</cell><cell>5.3077</cell><cell>13.4</cell><cell>3.05e-21</cell><cell>3.67e-18</cell><cell>37.5</cell></row><row><cell>ENSG00000006757</cell><cell>PNPLA4</cell><cell>X</cell><cell>-0.988</cell><cell>2.5341</cell><cell>-10.4</cell><cell>4.78e-16</cell><cell>5.38e-13</cell><cell>25.7</cell></row><row><cell>ENSG00000232928</cell><cell>RP13-204A15.4</cell><cell>X</cell><cell>1.434</cell><cell>3.2506</cell><cell>10.3</cell><cell>1.02e-15</cell><cell>1.08e-12</cell><cell>25.2</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>The authors are grateful to <rs type="person">Charles Wang</rs> and <rs type="person">Leming Shi</rs> for the preliminary SEQC data and to <rs type="person">Stephen Nutt</rs> for the RNA-seq mouse data used to motivate aspects of the simulation study.</p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Additional file</head><p>Additional file 1: Simulation code. R code to reproduce the simulations presented in Figures <ref type="figure">3, 4</ref> and<ref type="figure">5</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Abbreviations</head><p>CV: coefficient of variation; DE: differentially expressed; FDR: false discovery rate; HBRR: Ambion's Human Brain Reference RNA; log-cpm: log-counts per million; LOWESS: locally weighted regression; NB: negative binomial; rpkm: reads per kilobase per million; UHRR: Stratagene's Universal Human Reference RNA.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare that they do not have any competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Authors' contributions</head><p>CL and GS developed the method and wrote the manuscript. GS implemented the method and CL performed the analyses. YC contributed to the comparative simulation studies and carried out the gene ontology analysis. WS performed read alignment and summarized the SEQC and mouse RNA-seq datasets. All authors read and approved the final manuscript.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Significance analysis of microarrays applied to the ionizing radiation response</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">G</forename><surname>Tusher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tibshirani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chu</surname></persName>
+		</author>
+		<ptr target="http://genomebiology.com/2014/15/2/R29" />
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="5116" to="5121" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A random variance model for detection of differential gene expression in small microarray experiments</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Wright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Simon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="2448" to="2455" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Linear models and empirical Bayes methods for assessing differential expression in microarray experiments</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stat Appl Genet Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+	<note>Article 3</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Improved statistical tests for differential gene expression by shrinking variance components estimates</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Hwang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Blades</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Churchill</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biostatistics</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="59" to="75" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Use of within-array replicate spots for assessing differential expression in microarray experiments</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Michaud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="2067" to="2075" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Subramanian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tamayo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Mootha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Ebert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gillette</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paulovich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Pomeroy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Golub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Lander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Mesirov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="15545" to="15550" />
+			<date type="published" when="2005">2005</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">ROAST rotation gene set tests for complex microarray experiments</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Lim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Vaillant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Asselin-Labat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Visvader</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="2176" to="2182" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Camera: a competitive gene set test accounting for inter-gene correlation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="133" to="e133" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Limma: linear models for microarray data</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Bioinformatics and Computational Biology Solutions using R and Bioconductor</title>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Gentleman</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">V</forename><surname>Carey</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Dudoit</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Irizarry</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">W</forename><surname>Huber</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="397" to="420" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">RNA-Seq: a revolutionary tool for transcriptomics</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gerstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Genet</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="57" to="63" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Stem cell transcriptome profiling via massive-scale mRNA sequencing</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Cloonan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Arr</forename><surname>Forrest</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kolle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bba</forename><surname>Gardiner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Faulkner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Taylor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Steptoe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bethel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Robertson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Perkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Bruce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Ranade</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Peckham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Manning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Mckernan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Grimmond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Methods</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="613" to="619" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">edgeR: a Bioconductor package for differential expression analysis of digital gene expression data</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mccarthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="139" to="140" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Differential expression analysis for sequence count data</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Anders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Huber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">R106</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">From RNA-seq reads to differential expression results</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oshlack</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Young</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">220</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A strand-specific RNA-seq analysis of the transcriptome of the typhoid bacillus Salmonella Typhi</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T</forename><surname>Perkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Kingsley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Fookes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Gardner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Assefa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Croucher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Maskell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Parkhill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Choudhary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Thomson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Dougan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Genet</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">e1000569</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Transcriptome of embryonic and neonatal mouse cortex by high-throughput RNA sequencing</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nekrutenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Altman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="1" to="12746" />
+			<date type="published" when="1274">1274</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Conserved developmental transcriptomes in evolutionarily divergent species</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Parikh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Miranda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Katoh-Kurasawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Fuller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zagar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Curk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sucgang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zupan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Loomis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kuspa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Shaulsky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">R35</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Small-sample estimation of negative binomial dispersion, with applications to SAGE data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biostatistics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="321" to="332" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">A powerful and flexible approach to the analysis of RNA sequence count data</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Wright</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="2672" to="2678" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Moderated statistical tests for assessing differences in tag abundance</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2881" to="2887" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">baySeq: empirical Bayesian methods for identifying differential expression in sequence count data</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Hardcastle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Kelly</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">422</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A new shrinkage estimator for dispersion improves differential expression detection in RNA-seq data</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biostatistics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="232" to="243" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Detecting differential expression in RNA-sequence data using quasi-likelihood with shrunken dispersion estimates</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Nettleton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mccarthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stat Appl Genet Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+	<note>Article 8</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A two-parameter generalized Poisson model to improve the analysis of RNA-seq data</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Srivastava</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page">e170</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A two-stage Poisson model for testing RNA-seq data</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Auer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Doerge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stat Appl Genet Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">26</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Normalization, testing, and false discovery rate estimation for RNA-sequencing data</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Witten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Johnstone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tibshirani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biostatistics</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="523" to="538" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Efficient experimental design and analysis strategies for the detection of differential expression using RNA-Sequencing</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Robles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Qureshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Stephen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Burden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Taylor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">484</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A comparison of methods for differential expression analysis of RNA-seq data</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Soneson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Delorenzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">91</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Empirical array quality weights in the analysis of microarray data</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ritchie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Diyagama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Neilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Van Laar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dobrovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Holloway</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">261</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Generalized Linear Models</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mccullagh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Nelder</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+			<publisher>Chapman &amp; Hall/CRC</publisher>
+			<pubPlace>Boca Raton</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Quasi-likelihood functions, generalized linear models, and the Gauss-Newton method</title>
+		<author>
+			<persName><forename type="first">Rwm</forename><surname>Wedderburn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biometrika</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="439" to="447" />
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">A comparison between maximum likelihood and generalized least squares in a heteroscedastic linear model</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Carroll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ruppert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Stat Assoc</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="878" to="882" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">An extended quasi-likelihood function</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Nelder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pregibon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biometrika</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="221" to="232" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Differential expression analysis of multifactor RNA-Seq experiments with respect to biological variation</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Mccarthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="4288" to="4297" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Mapping and quantifying mammalian transcriptomes by RNA-Seq</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mortazavi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mccue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Schaeffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wold</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Methods</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="621" to="628" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Intensity-based hierarchical Bayes method improves testing for differentially expressed genes in microarray experiments</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Sartor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Tomlinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Wesselkamper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sivaganesan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Leikauf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Medvedovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">538</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<ptr target="http://www.fda.gov/MicroArrayQC" />
+		<title level="m">Sequencing Quality Control (SEQC) Project</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Ambion FirstChoice Human Brain Reference RNA</title>
+		<ptr target="http://products.invitrogen.com/ivgn/product/AM6050" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">The external RNA controls consortium: a progress report</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Beyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Brenton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bromley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Burrill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Causton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Conley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Elespuru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Foy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fuscoe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Gerhold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Gilles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Goodsaid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hackett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Hockett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ikonomi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Irizarry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kawasaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kaysser-Kranich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kerr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kiser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Koch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lucas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Methods</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="731" to="734" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Understanding mechanisms underlying human gene expression variation with RNA sequencing</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Pickrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Marioni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Pai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Degner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">E</forename><surname>Engelhardt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Nkadori</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Veyrieras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stephens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gilad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Pritchard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">464</biblScope>
+			<biblScope unit="page" from="768" to="772" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A flexible count data model to fit the wide diversity of expression profiles arising from extensively replicated RNA-seq experiments</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Esnaola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Puig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Castelo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Gonzalez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">254</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">The male-specific region of the human Y chromosome is a mosaic of discrete sequence classes</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Skaletsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kuroda-Kawaguchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Minx</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Cordum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hillier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">G</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Repping</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pyntikova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bieri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Chinwalla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Delehaunty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Delehaunty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Fewell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fulton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Fulton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Graves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-F</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Latrielle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Leonard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mardis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Maupin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcpherson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Miner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Nash</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ozersky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pepin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">423</biblScope>
+			<biblScope unit="page" from="825" to="837" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Esnaola</surname></persName>
+		</author>
+		<ptr target="http://www.bioconductor.org" />
+		<title level="m">tweeDEseqCountData: RNA-seq count data employed in the vignette of the tweeDEseq package</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">X-inactivation profile reveals extensive variability in X-linked gene expression in females</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Carrel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Willard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">434</biblScope>
+			<biblScope unit="page" from="400" to="404" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Graveley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Brooks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Carlson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">O</forename><surname>Duff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Landolin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Artieri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Van Baren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Boley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Booth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cherbas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dobin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Malone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Mattiuzzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Sturgill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Tuch</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Zaleski</surname></persName>
+		</author>
+		<ptr target="http://genomebiology.com/2014/15/2/R29" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">The developmental transcriptome of Drosophila melanogaster</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Blanchette</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dudoit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">471</biblScope>
+			<biblScope unit="page" from="473" to="479" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Landscape of transcription in human cells</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Djebali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Merkel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dobin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lassmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mortazavi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tanzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lagarde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Schlesinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Marinov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Khatun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zaleski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rozowsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Röder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Kokocinski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Abdelhamid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Alioto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Antoshechkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Baer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Bar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Batut</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Bell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Bell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chakrabortty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chrast</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Curado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">489</biblScope>
+			<biblScope unit="page" from="101" to="108" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Transcriptome analysis of human tissues and cell lines reveals one dominant transcript per gene</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gonzalez-Porta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Frankish</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Harrow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brazma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">R70</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Rao&apos;s score, Neyman&apos;s Cα and Silvey&apos;s LM tests: an essay on historical developments and some new results</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Bera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bilias</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Stat Plann Inference</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="9" to="44" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Score tests in GLIM with applications</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pregibon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">GLIM 82 Proceedings of the International Conference on Generalised Linear Models</title>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Gilchrist</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1982">1982</date>
+			<biblScope unit="page" from="87" to="97" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m" type="main">Empirical Bayes in the presence of exceptional cases, with application to microarray data</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Phipson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">J</forename><surname>Majewski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Alexander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+		<ptr target="http://www.statsci.org/smyth/pubs/RobustEBayesPreprint.pdf" />
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A note on the delta method</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Oehlert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am Statistician</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="27" to="29" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Robust locally weighted regression and smoothing scatterplots</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Cleveland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Stat Assoc</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="829" to="836" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Normalization of boutique two-color microarrays with a high proportion of differentially expressed probes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oshlack</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Emslie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Corcoran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Smyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">R2</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">A scaling normalization method for differential expression analysis of RNA-seq data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oshlack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">R25</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Good-Turing frequency estimation without tears</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Gale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sampson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Quant Linguist</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="217" to="237" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">Supplementary information for &apos;Voom: precision weights unlock linear model analysis tools for RNA-seq read counts</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Law</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+		<ptr target="http://bioinf.wehi.edu.au/voom" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">The MicroArray Quality Control (MAQC) project shows inter-and intraplatform reproducibility of gene expression measurements</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Reid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">D</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shippy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Warrington</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Collins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>De Longueville</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kawasaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">A</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Willey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Setterquist</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Tong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">P</forename><surname>Dragan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Dix</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">W</forename><surname>Frueh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Goodsaid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Herman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">V</forename><surname>Jensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K</forename><surname>Lobenhofer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Puri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Scherf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Thierry-Mieg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">K</forename><surname>Wolber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="1151" to="1161" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">e108</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">featureCounts: an efficient general-purpose read summarization program</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shi</surname></persName>
+		</author>
+		<ptr target="http://bioinformatics.oxfordjournals.org/content/early/2013/11/30/bioinformatics.btt656" />
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<monogr>
+		<title level="m" type="main">Rsubread: a super fast, sensitive and accurate read aligner for mapping next-generation sequencing reads</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liao</surname></persName>
+		</author>
+		<ptr target="http://www.bioconductor.org" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">A comparison of normalization methods for high density oligonucleotide array data based on variance and bias</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Bolstad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Irizarry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Åstrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Speed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="185" to="193" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">ReCount: a multi-experiment resource of analysis-ready RNA-seq gene count datasets</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Frazee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Langmead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Leek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">449</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title level="m" type="main">ReCount: a multi-experiment resource of analysis-ready RNA-seq gene count datasets</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Frazee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Langmead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leek</surname></persName>
+		</author>
+		<ptr target="http://bowtie-bio.sourceforge.net/recount" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Using GOstats to test gene lists for GO term association</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Falcon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gentleman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="257" to="258" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Carlson</surname></persName>
+		</author>
+		<ptr target="http://www.bioconductor.org" />
+		<title level="m">Genome wide annotation for Fly</title>
+		<imprint/>
+	</monogr>
+	<note>Dm.eg</note>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Evaluating gene expression in C57BL/6J and DBA/2J mouse striatum using RNA-Seq and microarrays</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bottomly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Walter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Hunter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Darakjian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kawane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Buck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Searles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mooney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S K</forename><surname>Mcweeney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hitzemann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">e17820</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Bioconductor: open software development for computational biology and bioinformatics</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gentleman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Carey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bates</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bolstad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dettling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dudoit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ellis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gautier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gentry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hothorn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Iacus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Irizarry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Leisch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Maechler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Rossini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sawitzki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Smyth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Tierney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">R80</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<monogr>
+		<ptr target="http://www.bioconductor.org" />
+		<title level="m">Bioconductor: open source software for bioinformatics</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<ptr target="http://www.r-project.org" />
+		<title level="m">Comprehensive R Archive Network</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<monogr>
+		<title level="m" type="main">R: R code for a two-stage Poisson model for testing RNA-seq data</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Auer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Doerge</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Tspm</surname></persName>
+		</author>
+		<ptr target="http://www.stat.purdue.edu/~doerge/software/TSPM.R" />
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">voom: precision weights unlock linear model analysis tools for RNA-seq read counts</title>
+		<author>
+			<persName><forename type="first">Gk ;</forename><surname>Smyth</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Law</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/gb-2014-15-2</idno>
+		<ptr target="http://www.bioconductor.org/packages/release/bioc/html/limma.html]doi:10.1186/gb-2014-15-2" />
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biology</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">R29</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note>limma: Linear Models for Microarray Data</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

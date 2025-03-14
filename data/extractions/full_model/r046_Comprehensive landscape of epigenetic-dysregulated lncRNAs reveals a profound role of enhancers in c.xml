@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Comprehensive landscape of epigeneticdysregulated lncRNAs reveals a profound role of enhancers in carcinogenesis in BC subtypes</title>
+				<funder ref="#_xKhGZkv #_v35f5SK">
+					<orgName type="full">Hei Long Jiang Postdoctoral Foundation</orgName>
+				</funder>
+				<funder ref="#_kh4u6vR">
+					<orgName type="full">Hei Long Jiang Postdoctoral Special Foundation</orgName>
+				</funder>
+				<funder ref="#_s6n8rsM #_5wdjHBM">
+					<orgName type="full">China Postdoctoral Science Foundation</orgName>
+				</funder>
+				<funder ref="#_6RugctD #_3W4Yqgs">
+					<orgName type="full">China Postdoctoral Science Special Foundation</orgName>
+				</funder>
+				<funder ref="#_YBFayZG">
+					<orgName type="full">Heilongjiang Provincial Planning Office Key Subjects</orgName>
+				</funder>
+				<funder ref="#_DFX47qe #_uxVcfdm">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Hongying</forename><surname>Zhao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaoqin</forename><surname>Liu</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">School of Life Sciences</orgName>
+								<orgName type="institution">Westlake University</orgName>
+								<address>
+									<postCode>310024</postCode>
+									<settlement>Hangzhou</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lei</forename><surname>Yu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Shihua</forename><surname>Lin</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Caiyu</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Haotian</forename><surname>Xu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhijun</forename><surname>Leng</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Waidong</forename><surname>Huang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Junjie</forename><surname>Lei</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Tengyue</forename><surname>Li</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Jing</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Ultrasonic Medicine</orgName>
+								<orgName type="department" key="dep2">The 1st Affiliated Hospital</orgName>
+								<orgName type="institution">of Heilongjiang University of Chinese Medicine</orgName>
+								<address>
+									<postCode>150040</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Fan</forename><surname>Yang</surname></persName>
+							<email>yangfan@hrbmu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Department of Pharmacology</orgName>
+								<orgName type="department" key="dep2">Province Key Laboratories of Biomedicine-Pharmaceutics of China</orgName>
+								<orgName type="department" key="dep3">Ministry of Education)</orgName>
+								<orgName type="department" key="dep4">College of Pharmacy</orgName>
+								<orgName type="laboratory">Key Laboratory of Cardiovascular Research</orgName>
+								<orgName type="institution" key="instit1">The State</orgName>
+								<orgName type="institution" key="instit2">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Li</forename><surname>Wang</surname></persName>
+							<email>wangli@hrbmu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country>China;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="department">College of Bioinformatics Science and Technology</orgName>
+								<orgName type="institution">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff5">
+								<orgName type="department" key="dep1">Department of Pharmacology</orgName>
+								<orgName type="department" key="dep2">Province Key Laboratories of Biomedicine-Pharmaceutics of China</orgName>
+								<orgName type="department" key="dep3">Ministry of Education)</orgName>
+								<orgName type="department" key="dep4">College of Pharmacy</orgName>
+								<orgName type="laboratory">Key Laboratory of Cardiovascular Research</orgName>
+								<orgName type="institution" key="instit1">The State</orgName>
+								<orgName type="institution" key="instit2">Harbin Medical University</orgName>
+								<address>
+									<postCode>150081</postCode>
+									<settlement>Harbin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff6">
+								<orgName type="department" key="dep1">Department of Ultrasonic Medicine</orgName>
+								<orgName type="department" key="dep2">The 1st Affiliated Hospital</orgName>
+								<orgName type="institution">of Heilongjiang University of Chinese Medicine</orgName>
+								<address>
+									<postCode>150040</postCode>
+									<settlement>Harbin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Comprehensive landscape of epigeneticdysregulated lncRNAs reveals a profound role of enhancers in carcinogenesis in BC subtypes</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">629380129B38FFBB10AD96B6F87B1D51</idno>
+					<idno type="DOI">10.1016/j.omtn.2020.12.024</idno>
+					<note type="submission">Received 25 April 2020; accepted 19 December 2020;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:57+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Aberrant expression of long non-coding RNAs (lncRNA) is associated with altered DNA methylation and histone modifications during carcinogenesis. However, identifying epigenetically dysregulated lncRNAs and characterizing their functional mechanisms in different cancer subtypes are still major challenges for cancer studies. In this study, we systematically analyzed the epigenetic alterations of lncRNAs at important regulatory elements in three breast cancer subtypes. We identified 87, 691, and 1,197 epigenetically dysregulated lncRNAs in luminal, basal, and claudin-low subtypes of breast cancer, respectively. The landscape of epigenetically dysregulated lncRNAs at enhancer elements revealed that epigenetic changes of the majority of lncRNAs occurred in a subtype-specific manner and contributed to subtype-specific biological functions. We identified six acetylation of lysine 27 on histone H3 (H3K27ac)-dysregulated lncRNAs and three DNA methylation-dysregulated lncRNAs (CTC-303L1.2, RP11-738B7.1, and SLC26A4-AS1) as prognostic biomarkers of basal subtype. These lncRNAs were involved in immune response-related biological functions. Treatment of the basal breast cancer cell line MDA-MB-468 with CREBBP/EP300 bromodomain inhibitors downregulated H3K27 acetylation levels and caused a decrease in the expression of five H3K27ac-dysregulated lncRNAs (LINC00393, KB-1836B5.1, RP1-140K8.5, AC005162.1, and AC020916.2) and inhibition of the growth of breast cancer cells. One epigenetically dysregulated lncRNA (LINC01983) and four lncRNA regulators (UCA1, RP11-221J22.2, RP11-221J22.1, and RP1-212P9.3) were identified as prognostic biomarkers of the luminal molecular subtype of breast cancer by controlling the tumor necrosis factor (TNF) signaling pathway, T helper (Th)17 cell differentiation, and T cell migration. Finally, our results highlighted a profound role of enhancer-related H3K27ac-dysregulated lncRNAs, DNA methylation-dysregulated lncRNAs, and lncRNA regulators in breast cancer subtype carcinogenesis and their potential prognostic value.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Long non-coding RNA (lncRNA) has been linked to many human cancers, including genetically heterogeneous breast cancers. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b1">2</ref> Distinct breast cancer molecular subtypes (luminal, basal, human epidermal growth factor receptor 2 [HER2], and claudin-low) have been characterized based on gene expression, clinical, and prognostic features of breast cancer. <ref type="bibr" target="#b2">3</ref> lncRNAs are frequently differentially expressed in breast cancer subtypes. <ref type="bibr" target="#b3">4</ref> Aberrant lncRNA expression could be caused by alteration of epigenetic patterns, such as changes in DNA methylation and post-translational histone modifications. For example, loss of expression of lncRNA LOC554202 in triple-negative breast cancer (TNBC) can be explained by increased DNA methylation of its promoter-associated CpG island. <ref type="bibr" target="#b4">5</ref> lncRNA Esrp2-as, which is regulated by DNA methylation at enhancers, acts as a prognostic biomarker for breast cancer. <ref type="bibr" target="#b5">6</ref> Analyses of associations between expression of lncRNAs and their promoter histone modifications showed an important role of trimethylation of lysine 27 on histone H3 (H3K27me3) in lncRNA silencing. <ref type="bibr" target="#b6">7</ref> Although global epigenetic abnormalities have been identified as prominent cancer hallmarks, attempts to characterize the relationship between epigenetic alterations and expression of lncRNAs and their prognostic value in breast cancer subtypes have been limited. This study aims to analyze the relationship between lncRNA expression and epigenetic alterations. It also explores the prognostic value of these findings in patients with breast cancer subtypes. We identified a large number of epigenetic-dysregulated lncRNAs in luminal, basal, and claudin-low subtypes of breast cancer. This was achieved by comparing the alterations of the following histone modifications at the promoter and enhancer elements of lncRNAs: lysine H3K27 acetylation (H3K27ac), H3K27me3, trimethylation of Lys36 in histone H3 (H3K36me3), monomethylation of histone H3 at lysine 4 (H3K4me1), trimethylation of histone H3 at lysine 4 (H3K4me3), and histone H3 lysine 9 trimethylation (H3K9me3). Epigenetic-dysregulated lncRNAs at enhancer elements play an important role in controlling subtype-specific biological functions. We identified six lncRNAs with differential histone modifications at enhancers (LINC00393, KB-1836B5.1, CASC11, RP1-140K8.5, AC005162.1, and AC020916.2) and three lncRNAs with differential DNA methylation at enhancers or promoters (CTC-303L1.2, RP11-738B7.1, and SLC26A4-AS1) as prognostic biomarkers of the basal subtype of breast cancer. DNA methylation-dysregulated lncRNA LINC01983 and four lncRNA regulators (UCA1, RP11-221J22.2, RP11-221J22.1, and RP1-212P9.3) were identified as prognostic biomarkers of luminal subtype. Our results help provide a better understanding of the aberrant epigenetic regulation of lncRNA expression in breast cancer subtypes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head><p>Identifying epigenetically dysregulated lncRNAs and proteincoding genes (PCGs) in breast cancer subtypes</p><p>Our goal was to analyze the relationship between lncRNA expression and epigenetic alterations in breast cancer subtypes. We focused on differentially expressed lncRNAs and looked for differences in three breast cancer subtypes compared with normal breast tissue or cell lines using DESeq2. 318 (2.50%), 2,493 (19.59%), and 3,414 (24.62%) lncRNAs were differentially expressed in luminal, basal, and claudin-low subtypes, respectively (false discovery rate [FDR] &lt; 0.05). We also identified 2,141 (11.54%), 7,582 (40.85%), and 9,851 (51.87%) differentially expressed PCGs in luminal, basal, and claudin-low subtypes, respectively. Epigenetic changes have been reported in a number of PCGs in breast cancer subtypes. <ref type="bibr" target="#b7">8</ref> We hypothesized that aberrant epigenetic modifications might play a crucial role in regulating lncRNAs in breast cancer. We systematically analyzed differential histone modification regions (DHMRs; H3K4me1, H3K4me3, H3K36me3, H3K27ac, H3K27me3, and H3K9me3) and DNA methylation between breast cancer subtypes and normal samples to determine whether epigenetic changes are involved in differential expression of lncRNAs. The genome-wide epigenetic alterations within the lncRNA promoter and enhancer regions were dissected. An epigenetically dysregulated lncRNA (termed epi-lncRNA) was identified when at least one DHMR or differentially methylated region (DMR) was located in the promoter or enhancer of differentially expressed lncRNAs and when the dysregulated pattern of active (or repressive) epigenetic marks contributed to transcriptional dysregulation in the same (or reverse) direction (Figure <ref type="figure" target="#fig_0">1A</ref>). As a result, we identified 65, 553, and 1,197 epi-lncRNAs with differential histone modification in luminal, basal, and claudin-low subtypes, respectively. There were 196 and 36 epi-lncRNAs with differential DNA methylation in basal and luminal subtypes, respectively. Similarly, 370, 884, and 4,139 epi-PCGs were identified in luminal, basal, and claudin-low subtypes, respectively. lncRNAs (12.16%) exhibited a much lower aberrant frequency than did PCGs (26.23%) in breast cancer (Figure <ref type="figure" target="#fig_0">1B</ref>). This result is consistent with previous studies that have shown that overall occupancy of histone marks across the transcriptional start sites of protein-coding and lncRNA genes is in the range 65%-73% and 27%-38%, respectively, for a particular tissue or cell type. <ref type="bibr" target="#b8">9</ref> Notably, epigenetically dysregulated lncRNAs were significantly enriched for known cancer lncRNAs when analyzed using Lnc2Cancer v2.0 (p = 0.02; hypergeometric test). <ref type="bibr" target="#b9">10</ref> More specifically, 13 (p = 7.53 Â 10 À4 ), 69 (p = 1.80 Â 10 À5 ), and 96 (p = 3.47 Â 10 À5 ) epigenetically dysregulated lncRNAs in luminal, basal, and claudin-low subtypes, respectively, are known lncRNAs associated with human cancers (Figure <ref type="figure" target="#fig_0">1C</ref>). These lncRNAs include RMST, CASC8, and RP11-65J3.1 in the luminal subtype, SNHG12, CASC11, and HOTAIRM1 in the basal subtype, and GAS5, HOTTIP, HAS2-AS1, and HOXD-AS1 in the claudin-low subtype. For example, LINC01016 in the luminal subtype has been reported to be a known prognostic marker of breast cancer. <ref type="bibr" target="#b10">11</ref> We observed significant increases in H3K27ac, H3K4me1, and H3K4me3 levels in the LINC01016 proximal enhancer region, which resulted in a significant upregulation of LINC01016 (fold change [FC] = 3.68, FDR = 5.74 Â 10 À5 ; Figures <ref type="figure" target="#fig_0">1D</ref> and<ref type="figure" target="#fig_0">1E</ref>). As another example, a significant enhancement of the H3K4me3 signal was observed in the enhancer region of SNHG12 in the basal subtype, which resulted in a significant upregulation of SNHG12 (FC = 1.74, FDR = 5.61 Â 10 À6 ; Figures <ref type="figure" target="#fig_0">1D</ref> and<ref type="figure" target="#fig_0">1E</ref>). The overexpression of SNHG12 has been previously reported to be involved in the proliferation, apoptosis, and invasion of triple-negative breast cancer. <ref type="bibr" target="#b11">12</ref> These observations suggested that several breast cancer lncRNAs are subject to epigenetic dysregulation in their enhancer regions.</p><p>Additionally, we explored the regulation of lncRNA to lncRNA expression using partial least-squares regression. We identified 98, 25, and 87 lncRNA regulators in luminal, basal, and claudin-low subtypes, respectively. Several lncRNA regulators are known cancer genes. For example, taurine-upregulated gene 1 (TUG1) is significantly upregulated in the basal subtype (FC = 1.21, FDR = 3.18 Â 10 À2 ). TUG1 knockdown was reported to be significantly associated with decreased cell proliferation and promoted apoptosis of breast cancer cells. <ref type="bibr" target="#b12">13</ref> A lncRNA regulator MALAT1 was significantly downregulated in the claudin-low subtype (FC = 0.20, FDR = 1.22 Â 10 À3 ). It has been reported that MALAT1 suppresses breast cancer progression and metastasis. <ref type="bibr" target="#b13">14</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Characterizing genomic signatures of epigenetically dysregulated lncRNAs</head><p>We compared the number and length of genes, exons, introns, and isoforms of epi-lncRNAs and other lncRNAs (non-epi-lncRNAs) to characterize genomic signatures of epigenetically dysregulated lncRNAs. epi-lncRNAs harbored longer exon (p = 1.1 Â 10 À11 ),  Molecular Therapy: Nucleic Acids intron (p = 1.3 Â 10 À4 ), and gene lengths (p = 1.3 Â 10 À14 ), and higher exon, intron, and isoform numbers (p &lt; 2.2 Â 10 À16 , Wilcoxon rank sum test; Figure <ref type="figure" target="#fig_0">S1A</ref>), regardless of different aberrant epigenetic modifications. epi-PCGs exhibited similar structural features to epi-lncRNAs with the exception of exon and intron length. Furthermore, we found that H3K4me1-dysregulated lncRNAs had a higher exon number and longer intron and gene length (p &lt; 0.05; Figure <ref type="figure" target="#fig_0">S1B</ref>) compared with lncRNAs that have different aberrant epigenetic modifications. epi-lncRNAs were classified into five categories on the basis of their relationship with PCGs: intergenic, overlapping, partially overlapping, intronic, or exonic.  <ref type="figure" target="#fig_2">S2A</ref>). These results suggest that lncRNAs with complex splicing patterns are more likely regulated by aberrant epigenetic modifications.</p><p>In addition, we compared the expression level and expression variation of epi-lncRNAs with other lncRNAs to characterize the expression pattern of epigenetically dysregulated lncRNAs. The coefficient of variation (CV) was used to assess expression variation of genes among patients with breast cancer. lncRNAs showed substantially lower expression levels than did PCGs in all three breast cancer subtypes, which has been described in previous studies. <ref type="bibr" target="#b16">17</ref> Interestingly, epigenetically dysregulated lncRNAs displayed substantially higher expression levels and lower expression variation compared with other lncRNAs in all three breast cancer subtypes (p &lt; 0.05). Consistently, we observed higher expression levels and lower expression variation of epigenetically dysregulated PCGs compared with other PCGs in the basal and claudin-low subtypes (p &lt; 0.05; Figure <ref type="figure" target="#fig_2">S2B</ref>). These results suggest that epigenetically dysregulated lncRNAs are stably expressed in breast cancer subtypes and may be suitable as potential biomarkers for breast cancer. <ref type="bibr" target="#b17">18</ref> Epigenetically dysregulated lncRNAs at enhancer elements contributing to cancer subtype-specific functions</p><p>The genomic distribution of epi-lncRNAs showed that abnormal histone modifications H3K27ac (47.91%), H3K4me3 (25.95%), and H3K4me1 (15.11%) within enhancers (77.77%) mainly contribute to dysregulation of lncRNAs in the basal subtype. Both H3K27ac-dysregulated lncRNAs and H3K4me1-dysregulated lncRNAs in the enhancer region are associated with regulation of cell cycle, immune system process, and cell communication based on guilt by association (Figure <ref type="figure" target="#fig_2">2A</ref>). epi-lncRNAs in the luminal subtype were mainly associated with H3K27ac (26.41%), H3K36me3 (25.90%), and H3K4me3 (19.49%) dysregulation at enhancer elements (53.46%), which mainly affected ripoptosome assembly involved in the necroptotic process (Figure <ref type="figure" target="#fig_2">2B</ref>). epi-lncRNAs in the claudin-low subtype were mainly regulated by H3K27ac (78.27%) and H3K27me3 (14.98%) at enhancer elements (60.85%), which affected a large number of basic biological functions, including macromolecule metabolism, cellular macromolecule biosynthesis, and cellular protein modification processes (Figure <ref type="figure" target="#fig_2">2C</ref>). Overall, epi-lncRNAs in breast cancer subtypes were mainly associated with H3K27ac dysregulation (67.16%) within enhancer elements (Figure <ref type="figure" target="#fig_2">2D</ref>). However, lncRNAs with H3K27ac dysregulation affected different biological functions in different breast cancer subtypes, such as the necroptotic process in the luminal subtype, cell communication, cell proliferation, and immune system processes in the basal subtype, and macromolecule biosynthetic and protein modification processes in the claudin-low subtype (Figure <ref type="figure" target="#fig_2">2D</ref>).</p><p>We performed unsupervised hierarchical clustering analysis using Euclidean distance for breast cancer samples based on the expression of these lncRNAs to further characterize the important role of epigenetically dysregulated lncRNAs at enhancer elements. We found that expression of these lncRNAs, especially for H3K4me1-, H3K4me3-, and H3K27me3-dysregulated lncRNAs, can be used to distinguish the breast cancer samples by PAM50 subtypes, which suggests that epi-lncRNAs at enhancer elements may contribute to the distinct biology of these subtypes. These epi-lncRNAs could not be used to distinguish between estrogen receptor (ER)-driven luminal A and luminal B subtypes. However, H3K4me1-, H3K4me3-, and H3K27me3-dysregulated lncRNAs at enhancer elements are able to distinguish luminal subtypes from basal and claudin-low subtypes (Figure <ref type="figure" target="#fig_2">2E</ref>). In summary, epigenetically dysregulated lncRNAs at enhancer elements play an important role in the pathogenesis of breast cancer subtypes by affecting distinct subtype-specific biological functions.</p><p>The landscape of epigenetically dysregulated lncRNAs reveals a subtype-specific pattern for cancer</p><p>Next, we systematically analyzed the epigenetically dysregulated lncRNAs in different breast cancer subtypes and revealed the landscape of enhancer-associated epigenetically dysregulated lncRNAs. 92.59% of epi-lncRNAs showed a subtype-specific pattern (Figures <ref type="figure" target="#fig_3">3A</ref> and<ref type="figure" target="#fig_3">3B</ref>; Figure <ref type="figure" target="#fig_3">S3</ref>). Specifically, 75.38% of epi-lncRNAs in the luminal subtype showed a subtype-specific pattern. For example, the known breast cancer lncRNA RMST showed elevated H3K27ac, H3K4me1, and H3K4me3 and decreased H3K27me3 at distal enhancer elements (Figure <ref type="figure" target="#fig_3">3C</ref>), which contributed to its upregulation (FC = 3.87, FDR = 1.05 Â 10 À4 ). RMST is reported to be involved in cell proliferation and apoptosis of breast cancer. <ref type="bibr" target="#b18">19</ref> 79.02% of epi-lncRNAs in the basal subtype showed a subtype-specific pattern. For example, known breast cancer lncRNAs TUG1, SNHG12, and Molecular Therapy: Nucleic Acids SOX2-OT were specifically epigenetically dysregulated in the basal subtype. A significant enhancement of the H3K4me3 signal was observed at the enhancer element of SNHG12, which contributed to its upregulation (FC = 1.74, FDR = 5.61 Â 10 À6 ). SNHG12 has been reported to regulate triple-negative breast cancer cell proliferation, apoptosis, and migration. <ref type="bibr" target="#b11">12</ref> We observed decreased H3K36me3 in the enhancer region of SOX2-OT, which resulted in its significant downregulation (FC = 4.34, FDR = 3.99 Â 10 À9 ). A previous study has shown that ectopic expression of SOX2-OT could reduce proliferation and increase breast cancer cell growth. <ref type="bibr" target="#b19">20</ref> 89.81% of epi-lncRNAs in the claudin-low subtype showed a subtype-specific pattern. lncRNAs LINC00152, AFAP1-AS1, NNT-AS1, and SNHG15, which are known breast cancer lncRNAs, were specifically epigenetically dysregulated in the claudin-low subtype. We observed elevated H3K27ac at distal enhancer elements of LINC00152 (FC = 4.07, FDR = 3.78 Â 10 À12 ). LINC00152 was reported to be significantly upregulated in MDA-MB-231 and MCF-7 cell lines, and it is thought to be involved in the epithelial-to-mesenchymal transition (EMT) and chemoresistance in breast cancer cells. <ref type="bibr" target="#b20">21</ref> Additionally, a small number of lncRNAs are epigenetically dysregulated in multiple breast cancer subtypes, which suggests that some molecular mechanisms are shared by these three subtypes. However, the same lncRNAs in the three subtypes were altered by different types of epigenetic regulations in a subtype-specific manner. The basal and claudin-low subtypes had the most epi-lncRNAs in common (Figure <ref type="figure" target="#fig_3">3A</ref>). This result is consistent with previous studies that the claudin-low subtype is similar to basal-like breast cancer. For example, lncRNAs AC006262.5, LINC00704, and LUCAT1 are shared by basal and claudin-low subtypes. AC006262.5 is an lncRNA associated with the risk of breast cancer. It was downregulated in the claudin-low subtype, and it regulated cell migration by downregulating IGFL1. In the present study, we observed elevated H3K27me3 in its promoter region, which results in its significant downregulation in the claudin-low subtype (FC = 19.61, FDR = 3.37 Â 10 À14 ; Figures <ref type="figure" target="#fig_4">S4A</ref> and<ref type="figure" target="#fig_4">S4B</ref>). However, we observed elevated H3K27ac and decreased H3K27me3 in its enhancer region in the basal subtype, resulting in its upregulation (FC = 2.58, FDR = 1.10 Â 10 À2 ). In another example, RP11-395G23.3, CASC8, APCDD1L-AS1, and RP11-154D17.1 are common lncRNAs in three cancer subtypes. We observed downregulated expression and decreased H3K27ac and H3K36me3 at the promoter element in the luminal subtype, but upregulated expression and elevated H3K27ac, H3K4me1, and H3K4me3 at enhancer elements in the basal subtype, and upregulated expression and elevated H3K27ac and decreased H3K27me3 at enhancer elements in the claudinlow subtype (Figures <ref type="figure" target="#fig_4">S4B</ref> and<ref type="figure" target="#fig_4">S4C</ref>). Although the role of CASC8 in breast cancer has not been studied, CASC8 is a known protective factor of bladder cancer. <ref type="bibr" target="#b21">22</ref> CASC8 was reported to be significantly downregulated in bladder cancer, and it reduced glycolysis and inhibited cell proliferation. <ref type="bibr" target="#b21">22</ref> Taken together, a large number of epigenetic-dysregulated lncRNAs, including many known breast cancer lncRNAs, show distinct epigenetically dysregulated patterns in different breast cancer subtypes. Investigation of these lncRNAs might provide approaches for the subtype-specific treatment of breast cancer.</p><p>Epigenetically dysregulated lncRNAs at enhancer elements are associated with disease prognosis in breast cancer subtypes</p><p>To gain insights into the potential prognostic value of dysregulated H3K27ac at enhancer elements, DNA methylation-associated lncRNAs and lncRNA regulators were analyzed using multivariate Cox regression analysis (see Materials and methods). We found six enhancer-related epi-lncRNAs with differential histone modification in the basal subtype (LINC00393, KB-1836B5.1, CASC11, RP1-140K8.5, AC005162.1, and AC020916.2) and were able to significantly distinguish patients in high-risk groups from those in lowrisk groups in terms of overall survival (Table <ref type="table" target="#tab_1">1</ref>). We observed elevated H3K27ac and H3K4me1 at enhancer elements of LINC00393 and KB-1836B5.1, which contributed to their upregulated expression (FC = 20.49, FDR = 8.07 Â 10 À11 for LINC00393; FC = 2.46, FDR = 1.02 Â 10 À4 for KB-1836B5.1; Figures <ref type="figure" target="#fig_4">4A-4D</ref>). High KB-1836B5.1 expression was associated with advanced tumor stage (p = 0.01; Fisher's exact test). The higher expression group of LINC00393 or KB-1836B5.1 had significantly shorter survival times in the basal subtype (FDR = 3.87 Â 10 À2 for LINC00393; FDR = 3.87 Â 10 À2 for KB-1836B5.1; Figure <ref type="figure" target="#fig_4">4C</ref>). These results are consistent with those of previous studies where upregulation of LINC00393 was proposed as a biomarker of the basal subtype. 23 KB-1836B5.1 was reported to be significantly upregulated in glioma. <ref type="bibr" target="#b23">24</ref> Significant enhancement of H3K27ac, H3K4me1, and H3K4me3 signals in the enhancer region of CASC11 were observed, which resulted in significant CASC11 upregulation (FC = 2.21, FDR = 6.84 Â 10 À4 ; Figures <ref type="figure" target="#fig_4">4B-4D</ref>). The higher expression group of CASC11 had shorter survival time than did the lower expression group (FDR = 4.15 Â 10 À2 ; Figure <ref type="figure" target="#fig_4">4C</ref>). Previous evidence has shown that CASC11 is a risk lncRNA of colorectal cancer and hepatocellular carcinoma. In colorectal cancer, c-MYC binds to the promoter of CASC11 and increases the H3K27ac signal to enhance CASC11 expression. Increased CASC11 expression in colorectal cancer is associated with tumor size, serosal invasion, lymph metastasis, and the tumor-node-metastasis (TNM) stage. <ref type="bibr" target="#b24">25</ref> In hepatocellular carcinoma, higher expression of CASC11 is associated with a worse prognosis in hepatocellular carcinoma patients. <ref type="bibr" target="#b25">26</ref> In addition, we identified three biomarkers for the basal subtype, which include protective factor RP1-140K8.5, AC005162.1, and risk factor AC020916.2. We observed elevated H3K27ac and H3K4me1 at enhancer elements of RP1-140K8.5 and AC005162.1, which contributed to their upregulation (FC = 5.82, FDR = 4.92 Â 10 À9 for RP1-140K8.5; FC = 3.89, FDR = 2.00 Â 10 À6 for AC005162.1; Figures <ref type="figure" target="#fig_4">4B-4D</ref>). Lower expression of RP1-140K8.5 or AC005162.1 was associated with poor prognosis in the basal subtype (FDR = 3.87 Â 10 À2 ; Figure <ref type="figure" target="#fig_4">4C</ref>). Functional analysis showed that RP1-140K8.5 was involved in the T cell-mediated immune response and defense response by regulating interleukin (IL)-12A, ADAM15, and IL-5. AC005162.1 was involved in the regulation of the immune system process, the T cell receptor signaling pathway, and tumor necrosis factor (TNF) production by regulating CD6, CD47, and GSTP1. We observed elevated H3K27ac and H3K4me3 in the enhancer region of AC020916.2, which resulted in its significant upregulation (FC = 2.63, FDR = 7.49 Â 10 À4 ; Figures <ref type="figure" target="#fig_4">4B-4D</ref>).</p><p>A log-rank test showed that higher expression of AC020916.2 indicated poorer prognosis (FDR = 4.15 Â 10 À2 ; Figure <ref type="figure" target="#fig_4">4C</ref>). Functional analysis showed that AC020916.2 was involved in the immune system process and apoptotic process by regulating, for example, PARP1, CD44, and CD48. These observations may suggest a heavy immune infiltration in basal breast cancer. This is supported by previous studies that showed that a considerable number of immune response-related genes exhibit significant variable expression across the basal cell subtype. Targeting these enhancer-related epi-lncRNAs in the basal subtype may help to achieve a more favorable response to immune therapy. We further investigated the effects of C646 treatment in the expression of six H3K27ac-dysregulated lncRNAs in human breast cancer (MDA-MB-468) cells. C646 is a histone acetyltransferase CREBBP/EP300 inhibitor. As expected, inhibition of CREBBP/EP300 histone acetyltransferase activity resulted in a significant loss of active enhancer mark H3K27ac (Figure <ref type="figure" target="#fig_4">4E</ref>). The results of real-time polymerase chain reaction (PCR) showed that treatment with 20 mM C646 in MDA-MB-468 cells for 24 h significantly decreased expression levels of LINC00393, KB-1836B5.1, RP1-140K8.5, AC005162.1, and AC020916.2 compared with untreated cells (p &lt; 0.01, Student's t test; Figure <ref type="figure" target="#fig_4">4F</ref>). CREBBP/EP300 knockdown resulted in significant inhibition of the growth of MDA-MB-468 cells in a dose-dependent manner (Figure <ref type="figure" target="#fig_4">4G</ref>; p &lt; 0.001). These results indicate that active enhancer mark H3K27ac takes part in modulating the enhancer-related lncRNA transcription of LINC00393, KB-1836B5.1, RP1-140K8.5, AC005162.1, and AC020916.2, which have potential tumor-promoting activities in the breast cancer basal subtype. Additionally, we identified three epi-lncRNAs (SLC26A4-AS1, CTC-303L1.2, and RP11-738B7.1) with differential DNA methylation that can significantly affect the survival of patients with basal subtype breast cancer (Table <ref type="table" target="#tab_1">1</ref>; Figures <ref type="figure" target="#fig_4">4B</ref> and<ref type="figure" target="#fig_4">4C</ref>). Upregulation of SLC26A4-AS1 is associated with its promoter hypermethylation (FC = 2.36, FDR = 0.02), and high SLC26A4-AS1 expression had significantly longer overall survival (FDR = 7.14 Â 10 À4 ). SLC26A4-AS1 has been reported to be significantly associated with papillary thyroid cancer patient disease-free survival and overall survival for gastric cancer patients. 27 RP11-738B7.1 enhancer hypomethylation increases its expression (FC = 2.13, FDR = 1.2 Â 10 À3 ), and high levels of RP11-738B7.1 expression were correlated with poor outcome (FDR = 0.02). DNA hypermethylation at CTC-303L1.2 enhancer regions decreased its expression (FC = 0.53, FDR = 7.3 Â 10 À3 ), and low CTC-303L1.2 expression had significantly shorter overall survival (FDR = 0.03). Functional analysis showed that SLC26A4-AS1, CTC-303L1.2, and RP11-738B7.1 were related to the chemokine signaling pathway, IL-15mediated signaling pathway, and transcriptional misregulation in cancer, respectively. We obtained an RNA sequencing (RNA-seq) dataset of 42 triple-negative breast cancer clinical samples and 21 adjacent non-tumor tissues (Gene Expression Omnibus [GEO]: GSE58135) to further validate the pattern of lncRNA expression in independent clinical samples. The expression changes for 77.8% (seven out of nine) epi-lncRNAs were validated (FDR &lt; 0.05; Figure <ref type="figure" target="#fig_5">S5A</ref>). In the luminal subtype, we identified one epi-lncRNA (LINC01983) with differential DNA methylation and four lncRNA regulators (UCA1, RP11-221J22.2, RP11-221J22.1, and RP1-212P9.3) that significantly affected the survival of patients (Table <ref type="table" target="#tab_1">1</ref>; Figures <ref type="figure" target="#fig_5">5A</ref> and<ref type="figure" target="#fig_5">5B</ref>). Upregulation of LINC01983 is associated with its promoter hypomethylation (FC = 2.56, FDR = 0.04), and high LINC01983 expression had a significantly poorer overall survival (FDR = 0.03). LINC01983 was involved in lymphocyte chemotaxis, T cell migration, and the chemokine-mediated signaling pathway. UCA1 was downregulated in the luminal subtype (FC = 0.18; FDR = 3.51 Â 10 À8 ) and associated with the TNF signaling pathway through regulating CXCL6 and MAP3K8, which can mediate the inflammatory immune response. Low UCA1 expression is an independent prognostic factor for poor overall survival (FDR = 7.70 Â 10 À3 ). UCA1 has been found to be differentially expressed in many cancer types, such as breast cancer. <ref type="bibr" target="#b3">4</ref> Low expression of RP11-221J22.1 and RP11-221J22.2 is independently correlated with decreased overall survival (FDR = 2.56 Â 10 À2 and FDR = 1.94 Â 10 À2 , respectively). Functional analysis showed that both RP11-221J22.1 and RP11-221J22.2 were related to T helper (Th)1 and Th2 cell differentiation, the mitogen-activated protein kinase (MAPK) signaling pathway, and Th17 cell differentiation by regulating STAT6, MAPK10, and STAT3. High expression of RP1-212P9.3 is independently correlated with decreased overall survival (FDR = 2.56 Â 10 À2 ). Additionally, in the luminal subtype, we did not identify any survival-related epi-lncRNAs with differential histone modification. We set out to explore the prognostic values of these epi-lncRNA-related modules. We identified three modules, including epi-lncRNAs (KCNC4-AS1 and APCDD1L-AS1), as prognostic biomarkers of the luminal subtype (Table <ref type="table" target="#tab_2">2</ref>). Module 1 consists of two epi-lncRNAs (KCNC4-AS1 and APCDD1L-AS1) and 33 PCGs. Module 2 consists of KCNC4-AS1 and 34 PCGs. Module 3 consists of APCDD1L-AS1 and 74 PCGs. Functional analysis showed that these two lncRNAs are involved in the regulation of inflammatory response, apoptosis, cell division, cell communication, and nuclear factor kB (NF-kB) signaling by regulating genes such as STAG2, JAG2, VAMP8, HMGB1, and LITAF (Figure <ref type="figure" target="#fig_5">5C</ref>). APCCD1L-AS1 is reported to significantly distinguish the highexpression group from the low-expression group in lung squamous cell carcinoma. <ref type="bibr" target="#b27">28</ref> Each of these modules was able to significantly distinguish patients in high-risk groups from those in low-risk groups in terms of overall survival in the luminal subtype (Figure <ref type="figure" target="#fig_5">5D</ref>). We obtained an RNA-seq dataset of 42 ER-positive (ER + ) breast cancer primary tumors and 30 adjacent breast tissues (GEO: GSE58135) to further validate the pattern of lncRNA expression in independent clinical samples. The expression changes for 66.7% (four out of six) detected lncRNAs were validated (FDR &lt; 0.05; Figure <ref type="figure" target="#fig_5">S5B</ref>). Taken together, these results confirm the reproducibility of lncRNA biomarkers in independent samples.</p><p>Collectively, our findings underline the crucial roles of H3K27ac-dysregulated lncRNAs, DNA methylation-dysregulated lncRNAs, and lncRNA regulators in basal and luminal breast cancer carcinogenesis and their potential prognostic value. In addition, the inhibition of enhancer-related H3K27ac-dysregulated lncRNAs by histone acetyltransferase CREBBP/EP300 inhibitors offers a potential way to inhibit breast cancer growth and warrants further investigation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>In this study, we systematically analyzed epigenetically dysregulated lncRNAs in luminal, basal, and claudin-low breast cancer subtypes.</p><p>A large number of epigenetically dysregulated lncRNAs were identified in each of the three breast cancer subtypes, which included many known cancer lncRNAs. Epigenetically dysregulated lncRNAs showed complex splicing patterns and stable expression in breast cancer subtypes. Epigenetic alterations in a subtype-specific manner were shown by 92.6% of lncRNAs. A small number of common epi-lncRNAs shared by different subtypes showed differences in epigenetic dysregulation patterns. Functional analysis revealed that epigenetic-dysregulated lncRNAs at enhancer elements could control breast cancer subtype-specific biological functions. For the same histone modification mark H3K27ac, which accounts for 67.16% epi-lncRNAs in the three subtypes, H3K27ac-dysregulated lncRNAs at enhancer elements contributed to breast cancer subtype-specific biological functions. We thus present a landscape of epigenetic-dysregulated lncRNAs at enhancer elements as a valuable resource for studies of breast cancer subtypes and highlight a crucial role of enhancer-related epi-lncRNAs in the development of breast cancer subtypes.</p><p>We identified six H3K27ac-dysregulated lncRNAs at enhancer elements and three DNA methylated-dysregulated lncRNAs as independent prognostic biomarkers of the basal subtype of breast cancer. Three of these lncRNAs (LINC00393, KB-1836B5.1, and CASC11) have been identified as risk factors in many cancers, such as glioma, liver cancer, and colorectal cancer. SLC26A4-AS1 has been reported to be a protective factor of gastric cancer and papillary thyroid cancer. Five lncRNAs (RP1-140K8.5, AC005162.1, AC020916.2, CTC-303L1.2, and RP11-738B7.1) were identified as biomarkers in the basal subtype. RP1-140K8.5, AC005162.1, and CTC-303L1.2 act as protective factors, while AC020916.2 and RP11-738B7.1 are risk factors in the basal subtype. In the breast cancer MDA-MB-468 cell line, CREBBP/EP300 bromodomain inhibitors downregulated the  expression of lncRNAs associated with enhancers and inhibition of tumor growth. This observation underlined that LINC00393, KB-1836B5.1, RP1-140K8.5, AC005162.1, and AC020916.2 were modulated by the active enhancer mark H3K27ac and that they have potential tumor-promoting activities. They may therefore be candidates for gene therapy approaches to breast cancer. In the luminal subtype, DNA methylation-deregulated lncRNA LINC01983 and lncRNA regulators (UCA1, RP11-221J22.2, RP11-221J22.1, and RP1-212P9.3) were identified as prognostic biomarkers. UCA1 has been reported to promote the EMT of breast cancer. LINC01983, RP11-221J22.2, RP11-221J22.1, and RP1-212P9.3 were identified as biomarkers in the luminal subtype. Currently, large-scale multi-dimensional omics and clinical data on breast cancer subtypes, especially for the claudin-low subtype, are scarce. The predictive capacities of our approach could be further improved as more large-scale multidimensional omics and clinical data of breast cancer subtypes become available.</p><p>In summary, our study analyzes the relationship between lncRNA expression and epigenetic alterations and explores their prognostic value in patients with breast cancer subtypes. We report that six enhancer-related H3K27ac-dysregulated lncRNAs, four DNA methylation-dysregulated lncRNAs, and four lncRNA regulators could serve as prognostic biomarkers for breast cancer subtypes.</p><p>The expression levels of enhancer-related H3K27ac-dysregulated lncRNAs were downregulated after inhibition of histone acetyltransferases CREBBP and EP300. The inhibition of the expression of these lncRNAs has potential as a long-term treatment for breast cancer, but further studies are needed in this direction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Histone modification and expression data on breast cancer subtypes</head><p>We downloaded six types of histone modification data (including H3K27ac, H3K27me3, H3K36me3, H3K4me1, H3K4me3, and H3K9me3) in breast cancer cell lines (MCF-7, HCC1954 and MDA-MB-231) from the Encyclopedia of DNA Elements (ENCODE) and the GEO from the National Center for Biotechnology Information (GEO: GSE29069 and GSE85158). These cell lines represent luminal (MCF-7), basal (HCC1954), and claudin-low (MDA-MB-231) subtypes. Human mammary epithelial cells (HMECs) were used as a control cell line. Transcriptomic data for breast cancer were obtained from The Cancer Genome Atlas (TCGA). Samples of breast cancer subtypes were classified by PAM50 subtyping as described by Niknafs et al. <ref type="bibr" target="#b28">29</ref> We obtained 351 luminal subtype samples, 93 basal subtype samples, and 29 normal samples. We collected RNA-seq data for 23 claudin-low subtype samples (MDA-MB-231 cell line) and 25 control samples (HMEC cell line) from the GEO (GEO: GSE37918, GSE58135, GSE72141, GSE59335, GSE68248, GSE72524, GSE80409, GSE84577, GSE85579, and GSE91395). Raw reads for RNA-seq data were uniquely mapped to human reference genome versions of hg19/GRCh37 using Bowtie 2 (version 2.0.6). The value of reads per kilobase transcript per million mapped reads (RPKM) was calculated as the expression of the University of California Santa Cruz (UCSC) known genes and lncRNAs of GENCODE (release 35). DNA methylation data from 565 luminal subtype samples, 137 basal breast cancers, and 34 normal tissues using the Illumina human methylation 450K array were obtained from TCGA. We also obtained survival data of luminal and basal subtype patients from TCGA.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of epigenetically dysregulated lncRNAs and PCGs</head><p>First, we identified differentially expressed lncRNAs and PCGs by comparing gene expression of three breast cancer subtypes with normal cells using DESeq2. <ref type="bibr" target="#b29">30</ref> The p values were determined by the Benjamini-Hochberg method. lncRNAs or PCGs with an FC greater than 2 and an FDR less than 0.05 were considered significant. Second, reads from chromatin immunoprecipitation combined with highthroughput sequencing (ChIP-seq) data were mapped to hg19/ GRCh37 assembly of the human genome using Bowtie 2. <ref type="bibr" target="#b30">31</ref> Peak detection was run using MACS2 with a threshold of q less than 0.05. <ref type="bibr" target="#b31">32</ref> H3K27ac peaks observed for breast cancer subtypes are considered to be active or potentially active enhancer regions. The promoter of a gene was defined as 0.5 kb upstream and downstream of the transcriptional start site (TSS). <ref type="bibr" target="#b32">33,</ref><ref type="bibr" target="#b33">34</ref> DHMRs of different histone modifications were identified using MACS2 bdgdiff using default parameters in three breast cancer cell lines; HMECs were used as a control. We used the DMRcate R package to identify DMRs. <ref type="bibr" target="#b34">35</ref> A region was called significant when the Benjamini-Hochberg adjusted p value was less than 1 Â 10 À3 . Finally, lncRNAs and PCGs were defined as epigenetically dysregulated lncRNAs or PCGs according to the following criteria: (1) lncRNAs and PCGs were differentially expressed in the breast cancer subtype; (2) their promoters or enhancers overlapped at least one DHMR or DMR; and (3) the histone modification and DNA methylation alteration at regulatory elements corresponded with expression changes of genes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of lncRNA regulators</head><p>We used partial least-squares regression to determine the regulation of lncRNA to lncRNA expression. For each differentially expressed lncRNA, a partial least-squares regression model was constructed using the pls package to explain lncRNA expression changes using other differentially expressed lncRNAs as covariates. lncRNAs with significant coefficients (FDR &lt; 0.05) were identified as lncRNA regulators.</p><p>Co-expression networks and functional enrichment analysis of epigenetic-dysregulated lncRNAs</p><p>A lncRNA-PCG co-expression network was constructed for each breast cancer subtype using the normalized signal intensity of individual genes based on guilt by association. <ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b35">36</ref> For each lncRNA-PCG pair, we calculated the Pearson correlation coefficient (PCC). We chose lncRNA-PCG pairs with significant correlations (PCC &gt; 0.7 and FDR &lt; 0.05) to construct the co-expression network. Functional enrichment analysis based on Gene Ontology (GO) annotation terms was carried out for each of the epigenetic-dysregulated lncRNAs using its co-expressed PCGs with the R package clusterProfiler. <ref type="bibr" target="#b36">37</ref> The significance threshold was FDR less than 0.05.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification of lncRNA biomarkers</head><p>Multivariable Cox proportional hazard regression analysis was performed considering the pathologic stage, ER status, progesterone receptor (PR) status, HER2 status, and lymph node number as covariates. We estimated the expression median of the selected lncRNAs (p &lt; 0.05) and divided the patients with a specific breast cancer subtype into two groups. A log-rank test was used to assess the differences in survival times between different groups of patients. <ref type="bibr" target="#b37">38</ref> We identified modules as lncRNA-related modules based on lncRNA-PCG co-expressed networks using the R package biclique. <ref type="bibr" target="#b38">39</ref> Univariate Cox regression analyses were carried out for individual PCGs and lncRNAs in the modules with their expression values as variables. A risk score was computed for every patient according to a linear combination of the expression values weighted by coefficients from univariate Cox regression analysis. The risk score was computed as follows:</p><formula xml:id="formula_0">risk score = X n i = 1 b i Â Exp i ;<label>(1)</label></formula><p>where n is the number of genes in the module, b i represents the coefficient of univariate Cox regression analysis of the ith gene in the module, and Exp i represents the expression of the ith gene in the module. All patients were classified into two groups for each module according to the median of the risk scores. The Kaplan-Meier method and log-rank test were used to estimate the difference in survival time between the two groups.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell culture and treatment</head><p>The human breast cancer cell line MDA-MB-468 was obtained from the Cell Bank of the Chinese Academy of Sciences (Shanghai, China). Cells were cultured in Roswell Park Memorial Institute 1640 (RPMI 1640) medium (Gibco, USA), which contained 10% fetal bovine serum (Gibco) and 1% penicillin-streptomycin (100 U/mL penicillin, 0.1 mg/ mL streptomycin; C0222, Beyotime, China) at 37 C with 95% air and 5% carbon dioxide. The cells were seeded into 6-, 12-, and 96-well plates and incubated in RPMI 1640 medium for 12 h followed by incubation with different concentrations of C646 or dimethyl sulfoxide (DMSO, Sigma-Aldrich) as a negative control (NC). C646 was purchased from MedChemExpress (HY-13823, MedChemExpress, China).</p><p>Cell Counting Kit-8 (CCK-8) assay</p><p>The cells were seeded into 96-well plates for 24 h at a density of 1 Â 10 3 cells/well. C646 was diluted to different concentrations (0, 5, 10, 20, and 40 mM) and subsequently added to the plates for another 24-h treatment. After 24 h, the cell viability was measured using a CCK-8 proliferation assay (Beijing Solarbio Science &amp; Technology, Beijing, China). The cells were incubated in 100 mL of RPMI 1640 medium mixed with 10 mL of CCK-8 solution/well for an additional 2 h at 37 C. The optical density (OD) of each well was measured at 450 nm with a microplate reader (Bio-Rad, USA) to determine the cell viability of MDA-MB-468.</p><p>Total RNA extraction and quantitative reverse-transcriptase PCR (qRT-PCR)</p><p>Total RNA from different groups of the MDA-MB-468 cell line was extracted with TRIzol reagent (Invitrogen, USA) according to the instructions of the manufacturer. The concentration and purity of RNA were determined using a NanoDrop 8000 spectrophotometer (Thermo Fisher Scientific, USA). cDNA was prepared using a highcapacity cDNA reverse transcription kit (Applied Biosystems, USA) following the protocol of the manufacturer. qRT-PCR was performed on an ABI 7500 Fast real-time PCR system (Applied Biosystems, USA). The conditions used were as follows: hold stage was 95 C for 10 min, and cycling was 40 cycles of 95 C for 30 s, 60 C for 30 s, and 72 C for 30 s. Expression levels of the following lncRNAs were examined: AC005162, AC020916, RP1-140K8.5, KB-1836B5.1, LINC00393, and CASC11. The expression level of the b-actin gene served as the reference. The forward and reverse primer sequences used are listed in Table <ref type="table" target="#tab_1">S1</ref>. Each qRT-PCR was processed in triplicate. The threshold cycle (Ct) value was subsequently determined, and the relative quantification of lncRNA expression was calculated using the comparative Ct method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Western blot</head><p>The cells in six-well plates were washed with phosphate-buffered saline (PBS, pH 7.4) three times on ice. Cells were subsequently lysed for 10 min using radioimmunoprecipitation assay (RIPA) buffer (Sigma-Aldrich) and centrifuged at 10,000 Â g for 10 min at 4 C. The supernatants were collected. The total protein in lysates was measured using the bicinchoninic acid (BCA) protein assay kit (Beyotime, China). Cell lysates (60 mg) were electrophoresed using SDS-PAGE on a 12.5% polyacrylamide gel and transferred onto nitrocellulose membranes by semi-dry electroblotting using the Trans-Blot Turbo system (Bio-Rad). Membranes were blocked with 5% non-fat milk and 0.1% Tween 20 (Thermo Fisher Scientific, USA) for 60 min at room temperature, and subsequently probed at 4 C for 12 h with the following primary antibodies: anti-histone H3 (1:500, YT2163, Immunoway, China), acetyl-histone H3 (1:500, YK0010, Im-munoway, China), and b-actin (1:1,000, Abcam, UK). The membranes were washed and incubated with horseradish peroxidase (HRP)-labeled secondary antibodies (goat anti-rabbit-HRP or goat anti-mouse-HRP) (Abcam) and diluted 1:10,000 for 1 h at room temperature on a rocker. Lastly, membranes were washed three times with PBST (PBS with 0.05% Tween 20, pH 7.4) followed by scanning and analysis using Odyssey version 1.2 software (LI-COR Biosciences, USA). The b-actin was used as the internal control. All blots were performed in three or more biological replicates.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Epigenetically dysregulated lncRNAs in breast cancer subtypes (A) Identifying epigenetically dysregulated lncRNAs in different breast cancer subtypes. (B) Percentage of epi-lncRNAs and epi-PCGs among all lncRNAs and PCGs on the genome. (C) Overlapping of epi-lncRNAs in three breast cancer subtypes with cancer-lncRNAs from Lnc2Cancer 2.0. (D) Expression distribution of LINC01016 (left) in the claudin-low subtype and HMEC and expression distribution of SNHG12 (right) in the basal subtype and normal samples. (E) Histone modification profile of LINC01016 (left) and SNHG12 (right). Histone modification data were visualized using the Integrative Genomics Viewer (IGV) tool.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Subtype-specific functions of epi-lncRNAs (A-C) Distribution and function analysis of epi-lncRNAs in the basal (A), luminal (B), and claudin-low (C) subtypes. Distribution and function analysis of epi-lncRNAs in breast cancer subtypes are shown. (D) Distribution of epi-lncRNAs of all three breast cancer subtypes and function analysis of epi-lncRNAs, which are associated with H3K27ac dysregulation. (E) Unsupervised clustering was performed using epigenetically dysregulated lncRNAs at enhancer elements. PAM50 classification, ER, PR, and HER2 status are shown above the heatmap.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Landscape of lncRNAs with differential histone modifications reveals a highly cancer subtype-specific pattern (A) Subtype specificity distribution of epi-lncRNAs. Some epi-lncRNAs that are cancer-lncRNAs are shown on the left. (B) Landscape of lncRNAs with differential histone modifications at enhancer elements in three breast cancer subtypes. (C) Histone modification profile of RMST in the luminal subtype and LINC00152 in the claudin-low subtype.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Epigenetically dysregulated lncRNAs at enhancer elements are associated with prognosis in basal subtypes (A) Forest plot according to the result of multivariate Cox regression analysis of epigenetically dysregulated lncRNAs at enhancer elements. (B) Expression distribution of epigenetically dysregulated lncRNAs in basal and normal samples. (C) Kaplan-Meier survival curves according to the expression of epigenetically dysregulated lncRNAs. (D) Histone modification profile of epigenetically dysregulated lncRNAs in basal subtype. (E) Western blot analysis with H3K27ac after adding CREBBP/EP300 bromodomain inhibitor C646 (20 mM) to the MDA-MB-468 cell line. Cells were treated with C646 for 12 h. (F) qRT-PCR analyses of H3K27ac-dysregulated lncRNAs following its suppression. n = 6; mean ± SD. *p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001 by Student's t test. (G) CCK-8 assays of the viability of the MDA-MB-468 cell line following C646 treatment (5, 10, 20, and 40 mM) for 12 h.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Epigenetically dysregulated lncRNAs at enhancer elements are associated with prognosis in luminal subtypes (A) Expression distribution and Kaplan-Meier survival curves of lncRNA regulators in the luminal subtype. (B) Kaplan-Meier survival curves of an lncRNA with differential DNA methylation and epi-lncRNA-related modules in the luminal subtype. (C) The lncRNA-PCG co-expression networks showed the epi-lncRNAs-related modules in the luminal subtype.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>The information of epi-lncRNAs associated with survival in breast cancer subtypes</figDesc><table><row><cell cols="3">Subtype lncRNA name Alteration of epigenetics</cell><cell cols="5">Regulatory elements Epigenetic alteration Expression Multiple Cox HR model(p) Log-rank test(FDR)</cell></row><row><cell>Basal</cell><cell>LINC00393</cell><cell>H3K27ac, H3K4me1</cell><cell>enhancer</cell><cell>up</cell><cell>Up</cell><cell>7.61 Â 10 -3</cell><cell>3.87 Â 10 -2</cell></row><row><cell>Basal</cell><cell>KB-1836B5.1</cell><cell>H3K27ac, H3K4me1</cell><cell>enhancer</cell><cell>up</cell><cell>Up</cell><cell>1.86 Â 10 -3</cell><cell>3.87 Â 10 -2</cell></row><row><cell>Basal</cell><cell>CASC11</cell><cell cols="2">H3K27ac, H3K4me1, H3K4me3 enhancer</cell><cell>up</cell><cell>Up</cell><cell>7.50 Â 10 -3</cell><cell>4.15 Â 10 -2</cell></row><row><cell>Basal</cell><cell>RP1-140K8.5</cell><cell>H3K27ac, H3K4me1</cell><cell>enhancer</cell><cell>up</cell><cell>Up</cell><cell>3.74 Â 10 -2</cell><cell>3.87 Â 10 -2</cell></row><row><cell>Basal</cell><cell>AC005162.1</cell><cell>H3K27ac, H3K4me1</cell><cell>enhancer</cell><cell>up</cell><cell>Up</cell><cell>1.80 Â 10 -2</cell><cell>3.87 Â 10 -2</cell></row><row><cell>Basal</cell><cell>AC020916.2</cell><cell cols="2">H3K27ac, H3K4me1, H3K4me3 enhancer</cell><cell>up</cell><cell>Up</cell><cell>3.96 Â 10 -3</cell><cell>4.15 Â 10 -2</cell></row><row><cell>Basal</cell><cell>CTC-303L1.2</cell><cell>DNA methylation</cell><cell>enhancer</cell><cell>up</cell><cell>down</cell><cell>2.45 Â 10 -2</cell><cell>3.14 Â 10 -2</cell></row><row><cell>Basal</cell><cell cols="2">RP11-738B7.1 DNA methylation</cell><cell>enhancer</cell><cell>down</cell><cell>Up</cell><cell>6.25 Â 10 -4</cell><cell>2.45 Â 10 -2</cell></row><row><cell>Basal</cell><cell cols="2">SLC26A4-AS1 DNA methylation</cell><cell>promoter</cell><cell>down</cell><cell>Up</cell><cell>0 Â 10 0</cell><cell>7.15 Â 10 -4</cell></row><row><cell cols="2">Luminal LINC01983</cell><cell>DNA methylation</cell><cell>promoter</cell><cell>down</cell><cell>Up</cell><cell>2.53 Â 10 -2</cell><cell>3.25 Â 10 -2</cell></row><row><cell cols="2">Luminal UCA1</cell><cell>lncRNA regulator</cell><cell>-</cell><cell>-</cell><cell>down</cell><cell>5.14 Â 10 -3</cell><cell>7.70 Â 10 -3</cell></row><row><cell cols="3">Luminal RP11-221J22.2 lncRNA regulator</cell><cell>-</cell><cell>-</cell><cell>Up</cell><cell>4.81 Â 10 -2</cell><cell>1.94 Â 10 -2</cell></row><row><cell cols="3">Luminal RP11-221J22.1 lncRNA regulator</cell><cell>-</cell><cell>-</cell><cell>Up</cell><cell>4.66 Â 10 -2</cell><cell>2.56 Â 10 -2</cell></row><row><cell cols="2">Luminal RP1-212P9.3</cell><cell>lncRNA regulator</cell><cell>-</cell><cell>-</cell><cell>up</cell><cell>2.25 Â 10 -2</cell><cell>2.56 Â 10 -2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 2 .</head><label>2</label><figDesc>Modules of epi-lncRNAs associated with survival in the luminal subtype</figDesc><table><row><cell>Modules</cell><cell>lncRNAs</cell><cell>PCGs</cell></row><row><cell></cell><cell></cell><cell>IRS1, ABHD2, HMGB1, CALML3, SLC4A7,</cell></row><row><cell></cell><cell></cell><cell>ADAM23, TBXA2R, CFB, VDAC3, EVI2A,</cell></row><row><cell></cell><cell></cell><cell>BUB1B, GPR65, ADAMTS2, TNFRSF10A,</cell></row><row><cell>1</cell><cell>KCNC4-AS1, APCDD1L-AS1</cell><cell>RIN1, TPP1, ABCD2, IFIT3, SCN4B, ZNF256,</cell></row><row><cell></cell><cell></cell><cell>CPB1, RBM4, NPIPA1, LIG4, DGKQ, GRINA,</cell></row><row><cell></cell><cell></cell><cell>LITAF, ADAM20, VAMP8, CHRNA3, URI1,</cell></row><row><cell></cell><cell></cell><cell>STXBP5L, ZKSCAN1</cell></row><row><cell></cell><cell></cell><cell>IRS1, ABHD2, HMGB1, CALML3, SLC4A7,</cell></row><row><cell></cell><cell></cell><cell>ADAM23, TBXA2R, CFB, VDAC3, EVI2A,</cell></row><row><cell></cell><cell></cell><cell>BUB1B, GPR65, ADAMTS2, TNFRSF10A,</cell></row><row><cell>2</cell><cell>KCNC4-AS1</cell><cell>RIN1, TPP1, ABCD2, IFIT3, SCN4B, ZNF256,</cell></row><row><cell></cell><cell></cell><cell>CPB1, RBM4, NPIPA1, LIG4, DGKQ, GRINA,</cell></row><row><cell></cell><cell></cell><cell>LITAF, ADAM20, VAMP8, CHRNA3, URI1,</cell></row><row><cell></cell><cell></cell><cell>STXBP5L, ZKSCAN1, GBF1</cell></row><row><cell></cell><cell></cell><cell>IRS1, ABHD2, HMGB1, CALML3, SLC4A7,</cell></row><row><cell></cell><cell></cell><cell>ADAM23, TBXA2R, CFB, VDAC3, EVI2A,</cell></row><row><cell></cell><cell></cell><cell>BUB1B, GPR65, ADAMTS2, TNFRSF10A,</cell></row><row><cell></cell><cell></cell><cell>RIN1, TPP1, ABCD2, IFIT3, SCN4B, ZNF256,</cell></row><row><cell></cell><cell></cell><cell>CPB1, RBM4, NPIPA1, LIG4, DGKQ, GRINA,</cell></row><row><cell></cell><cell></cell><cell>LITAF, ADAM20, VAMP8, CHRNA3, URI1,</cell></row><row><cell></cell><cell></cell><cell>STXBP5L, ZKSCAN1, KCND2, ETV6, ITPR2,</cell></row><row><cell>3</cell><cell>APCDD1L-AS1</cell><cell>JAG2, APOA1, LIG3, SNRPG, WASF3, MC3R,</cell></row><row><cell></cell><cell></cell><cell>LAMA3, NPC1, NDUFA10, TCEA2, C11orf58,</cell></row><row><cell></cell><cell></cell><cell>SCGB1D1, B2M, GPX5, SSTR2, SSTR5, C8A,</cell></row><row><cell></cell><cell></cell><cell>SLC16A6, NKTR, TNFRSF1A, ABCA2, MADD,</cell></row><row><cell></cell><cell></cell><cell>NOL4, GEM, CCNB2, COL8A2, MGAM, ORC5,</cell></row><row><cell></cell><cell></cell><cell>IDH3G, PPP1R10, KIF20B, DHX16, TSHR,</cell></row><row><cell></cell><cell></cell><cell>STAG2,</cell></row><row><cell></cell><cell></cell><cell>RPS13, FGF3, HIST1H1C, GRIN2A</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Molecular Therapy: Nucleic Acids Vol. 23 March 2021</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>Molecular Therapy: Nucleic Acids Vol.<ref type="bibr" target="#b22">23</ref> March 2021</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>www.moleculartherapy.org Molecular Therapy: Nucleic Acids Vol. 23 March 2021</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>This work was supported by the <rs type="funder">National Natural Science Foundation of China</rs> (<rs type="grantNumber">31801115</rs> and <rs type="grantNumber">61803129</rs>); the <rs type="funder">China Postdoctoral Science Foundation</rs> (<rs type="grantNumber">2018M631943</rs> and <rs type="grantNumber">2018M641860</rs>), the <rs type="funder">China Postdoctoral Science Special Foundation</rs> (<rs type="grantNumber">2019T120280</rs> and <rs type="grantNumber">2020T130161</rs>); the <rs type="funder">Hei Long Jiang Postdoctoral Special Foundation</rs> (<rs type="grantNumber">LBH-TZ1018</rs>); the <rs type="funder">Hei Long Jiang Postdoctoral Foundation</rs> (<rs type="grantNumber">LBH-Z17110</rs>, and <rs type="grantNumber">LBH-Z17218</rs>); and by the <rs type="funder">Heilongjiang Provincial Planning Office Key Subjects</rs> (<rs type="grantNumber">GBB1318066</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_DFX47qe">
+					<idno type="grant-number">31801115</idno>
+				</org>
+				<org type="funding" xml:id="_uxVcfdm">
+					<idno type="grant-number">61803129</idno>
+				</org>
+				<org type="funding" xml:id="_s6n8rsM">
+					<idno type="grant-number">2018M631943</idno>
+				</org>
+				<org type="funding" xml:id="_5wdjHBM">
+					<idno type="grant-number">2018M641860</idno>
+				</org>
+				<org type="funding" xml:id="_6RugctD">
+					<idno type="grant-number">2019T120280</idno>
+				</org>
+				<org type="funding" xml:id="_3W4Yqgs">
+					<idno type="grant-number">2020T130161</idno>
+				</org>
+				<org type="funding" xml:id="_kh4u6vR">
+					<idno type="grant-number">LBH-TZ1018</idno>
+				</org>
+				<org type="funding" xml:id="_xKhGZkv">
+					<idno type="grant-number">LBH-Z17110</idno>
+				</org>
+				<org type="funding" xml:id="_v35f5SK">
+					<idno type="grant-number">LBH-Z17218</idno>
+				</org>
+				<org type="funding" xml:id="_YBFayZG">
+					<idno type="grant-number">GBB1318066</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTAL INFORMATION</head><p>Supplemental Information can be found online at <ref type="url" target="https://doi.org/10.1016/j.omtn.2020.12.024">https://doi.org/10. 1016/j.omtn.2020.12.024</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>AUTHOR CONTRIBUTIONS</head><p>H.Z., X.L., and L.W. designed the study, implemented the algorithm, and performed the analysis. H.Z., X.L., J.L., and L.W. wrote and revised the manuscript. L.Y., S.L., C.Z., H.X., Z.L., W.H., J.L., and T.L. help to collect the data and prepare the figures and tables. Y.F. helped to perform some experiments. All authors read, reviewed, and approved the final manuscript.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DECLARATION OF INTERESTS</head><p>The authors declare no competing interests.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Traffic light rules&quot;: chromatin states direct miRNA-mediated network motifs running by integrating epigenome and regulatome</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biochim. Biophys. Acta</title>
+		<imprint>
+			<biblScope unit="volume">1860</biblScope>
+			<biblScope unit="page" from="1475" to="1488" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Systematic identification of lincRNA-based prognostic biomarkers by integrating lincRNA expression and copy number variation in lung adenocarcinoma</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Cancer</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="page" from="1723" to="1734" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Phenotypic and molecular characterization of the claudin-low intrinsic subtype of breast cancer</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Prat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Parker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Karginova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Livasy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">I</forename><surname>Herschkowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Perou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Breast Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">68</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">LncTarD: a database of experimentally-supported functional lncRNA-target regulations in human diseases</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Leng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">D1</biblScope>
+			<biblScope unit="page" from="118" to="D126" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">miR-31 and its host gene lncRNA LOC554202 are regulated promoter hypermethylation in triplenegative breast cancer</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Augoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mccue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Plow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sossey-Alaoui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cancer</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">5</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Genome-wide screen for differentially methylated long noncoding RNAs identifies Esrp2 and lncRNA Esrp2-as regulated by enhancer DNA methylation with prognostic relevance for human breast cancer</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Heilmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Toth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bossmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Klimo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Plass</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gerhauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="6446" to="6461" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Role of H3K27 methylation in the regulation of lncRNA expression</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Kallin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="1109" to="1116" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Comparative epigenetic analyses reveal distinct patterns of oncogenic pathways activation in breast cancer subtypes</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Shao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mol. Genet</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="5378" to="5393" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Genome-wide analysis reveals distinct patterns of epigenetic features in long non-coding RNA loci</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ghosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Scaria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sengupta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="10018" to="10031" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Lnc2Cancer v2.0: updated database of experimentally supported long non-coding RNAs in human cancers</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">D1</biblScope>
+			<biblScope unit="page" from="1028" to="D1033" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Single-molecule sequencing reveals estrogen-regulated clinically relevant lncRNAs in breast cancer</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Jonsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Coarfa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mesmar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Raz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rajapakshe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Thompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Gunaratne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Williams</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Endocrinol</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1634" to="1645" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">upregulation of lncRNA SNHG12 regulates cell proliferation, apoptosis and migration in triple-negative breast cancer</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Xia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am. J. Transl. Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="533" to="545" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">lncRNA taurine-upregulated gene 1 promotes cell proliferation by inhibiting microRNA-9 in MCF-7 cells</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">B</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Ren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Breast Cancer</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="349" to="357" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Long noncoding RNA MALAT1 suppresses breast cancer metastasis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Piao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Siverly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Lawhon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">N</forename><surname>Ton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Genet</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="1705" to="1715" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">GENCODE reference annotation for the human and mouse genomes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Frankish</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Diekhans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Ferreira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Jungreis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Loveland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mudge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sisu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Armstrong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">D1</biblScope>
+			<biblScope unit="page" from="766" to="D773" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Integrative genomic analyses reveal clinically relevant long noncoding RNAs in human cancer</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Fei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Verhaak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">S</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Struct. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="908" to="913" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The GENCODE v7 catalog of human long noncoding RNAs: analysis of their gene structure, evolution, and expression</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Derrien</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bussotti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tanzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Djebali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tilgner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Guernec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Martin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Merkel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Knowles</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1775" to="1789" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Circular RNA is enriched and stable in exosomes: a promising biomarker for cancer diagnosis</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="981" to="984" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Long non-coding RNA (lncRNA) RMST in triple-negative breast cancer (TNBC): expression analysis and biological roles research</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell. Physiol</title>
+		<imprint>
+			<biblScope unit="volume">233</biblScope>
+			<biblScope unit="page" from="6603" to="6612" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Emerging role of long non-coding RNA SOX2OT in SOX2 regulation in breast cancer</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Askarian-Amiri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Seyfoddin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Smart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hansji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Baguley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Finlay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">Y</forename><surname>Leung</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">102140</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Down-regulation of lncRNA Linc00152 suppressed cell viability, invasion, migration, and epithelial to mesenchymal transition, and reversed chemo-resistance in breast cancer cells</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">L</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Q</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Rev. Med. Pharmacol. Sci</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="3074" to="3084" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Long noncoding RNA cancer susceptibility candidate 8 suppresses the proliferation of bladder cancer cells via regulating glycolysis</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Duan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">DNA Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="767" to="774" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Consensus analysis of whole transcriptome profiles from two breast cancer patient cohorts reveals long non-coding RNAs associated with intrinsic subtype and the tumour microenvironment</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Bradford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bernard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Camp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">163238</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Expression of LOC285758, a potential long non-coding biomarker, is methylation-dependent and correlates with glioma malignancy grade</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Matjasic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Popovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Matos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Glavac</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Radiol. Oncol</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="331" to="341" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Long non-coding RNA CASC11 interacts with hnRNP-K and activates the WNT/b-catenin pathway to promote growth and metastasis in colorectal cancer</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Lett</title>
+		<imprint>
+			<biblScope unit="volume">376</biblScope>
+			<biblScope unit="page" from="62" to="73" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Identification of long noncoding RNA expression profile in oxaliplatin-resistant hepatocellular carcinoma cells</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Ren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gene</title>
+		<imprint>
+			<biblScope unit="volume">596</biblScope>
+			<biblScope unit="page" from="53" to="88" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Integrated analysis of long non-coding RNA competing interactions reveals the potential role in progression of human gastric cancer</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Y</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Z</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Oncol</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="1965" to="1976" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Long non-coding RNAs RP5-821D11.7, APCDD1L-AS1 and RP11-277P12.9 were associated with the prognosis of lung squamous cell carcinoma</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Med. Rep</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="7238" to="7248" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">The lncRNA landscape of breast cancer reveals a role for DSCAM-AS1 in breast cancer progression</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Niknafs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Speers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wilder-Romans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Iyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pitchiaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Malik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hosono</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">12791</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Love</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Anders</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">550</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Fast gapped-read alignment with Bowtie 2</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Langmead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Salzberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Methods</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="357" to="359" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Model-based analysis of ChIP-Seq (MACS)</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Meyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Eeckhoute</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">E</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Nusbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Myers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">S</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">137</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">The hierarchy of transcriptional activation: from enhancer to promoter</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vernimmen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Bickmore</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Genet</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="696" to="708" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Identifying functions and prognostic biomarkers of network motifs marked by diverse chromatin states in human cell lines</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Y</forename><surname>Du</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="677" to="689" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">De novo identification of differentially methylated regions in the human genome</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Peters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Buckley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Statham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pidsley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Samaras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Lord</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Molloy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Epigenetics Chromatin</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">6</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Chromatin signature reveals over a thousand highly conserved large non-coding RNAs in mammals</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Guttman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Amit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Garber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>French</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Feldser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Huarte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Zuk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Carey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Cassady</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">458</biblScope>
+			<biblScope unit="page" from="223" to="227" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">DOSE: an R/Bioconductor package for disease ontology semantic and enrichment analysis</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">G</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><forename type="middle">Y</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="608" to="609" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A Myc activity signature predicts poor clinical outcomes in Myc-Associated Cancers</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>George</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Defazio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Bowtell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oberthuer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>London</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="971" to="981" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Combinatorial epigenetic regulation of non-coding RNAs has profound effects on oncogenic pathways in breast cancer subtypes</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brief. Bioinform</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="52" to="64" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

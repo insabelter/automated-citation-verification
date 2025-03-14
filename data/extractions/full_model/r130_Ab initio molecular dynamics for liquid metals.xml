@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Ab initio molecular dynamics for liquid metals</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Institut fiir Theoretische Physik</orgName>
+								<orgName type="institution">Technische Universitiit Wien</orgName>
+								<address>
+									<addrLine>Wiedner Hauptstrasse 8-10</addrLine>
+									<postCode>A-1040</postCode>
+									<settlement>Vienna</settlement>
+									<country key="AT">Austria</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Ab initio molecular dynamics for liquid metals</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">38C9D232344C669AB1896FB28BEA6595</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In recent years, ab initio molecular dynamics (MD) techniques have made a profound impact on the investigation of the structure of the electronic and dynamic properties of liquid and amorphous materials. In this paper, recent developments in this field are reviewed and it is shown that the exact calculation of the electronic groundstate at each MD timestep is feasible using modem iterative matrix diagonalization algorithms. Together with the use of ultrasoft pseudopotentials, ab initio MD simulations can be extended to open-shell transition metals with a high density of states at the Fermi-level. The technique is applied to a number of interesting cases: (a) liquid simple metals (Li, Na, AI, Ge), (b) liquid transition metals (Cu, V), and (c) the transition from a liquid metal to an amorphous semiconductor by the rapid quenching of Ge.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>In recent years, ab initio calculations based on the local density approximation (LDA) (for a recent review see, for example, Ref. <ref type="bibr" target="#b0">[1]</ref>) have been of increased interest. The reasons for this development are evident: LDA offers a reasonable compromise between accuracy and efficiency in treating electronic many-body effects, is completely parameterfree, and with the enormous increase in computer power complex calculations are now feasible. Using the Hellmann-Feynman theorem <ref type="bibr" target="#b1">[2]</ref>, the calculation of forces is in principle straight forward and, for a basis set such as plane waves, relatively simple. The forces offer the possibility of relaxing atoms into their ground-state or of performing ab initio molecular dynamics (MD) simulations. With the computers now available, calculations for systems containing more than 100 particles are practicable, and the development of faster parallel computers offers a bright future for ab initio techniques.</p><p>We have recently implemented a powerful LDA plane wave program (Vienna ab initio molecular dynamics simulation package (VAMP) -for a detailed description see Ref. <ref type="bibr" target="#b2">[3]</ref>) which can be used to perform complex calculations for many problems (i.e., bulk, surfaces, liquid systems, molecules). In this paper we give a short review of existing methods, describe our approach and present new results for liquid Li, Na and A1. We also discuss the application of our method to liquid transition metals and to the transition from a liquid metal to an amorphous semiconductor by the rapid quenching of Ge.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Theory</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">General</head><p>* Corresponding author. Tel: +43-1 58801 5684. Telefax: +43-1 586 7760. E-mail: kresse@tph20.tuwien.ac.at.</p><p>The basic quantity for an ab initio calculation of the structural and cohesive properties is the Kohn-Sham (KS) energy functional <ref type="bibr" target="#b3">[4]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EKS[{~On},(RN}] = E fn(6n [Tq-gi°n 16n)</head><p>n</p><formula xml:id="formula_0">-[-1EH[ [] -'b EXC[ p] "[-~Ewald,<label>(1)</label></formula><p>where p(r) = E fn 16,(r) 1 2, (2) n and fn = 1 for occupied bands and fn = 0 for unoccupied bands. This functional depends on the position of the ions, R N, and the electronic wavefunctions, qS~, only. E H is the Hartree-energy, E xc is the exchange-correlation energy, V i°n is the ionic pseudopotential, T is the kinetic energy operator and YEwald is the Madelung energy of the ions. The most important property of the KS functional is that it is extremal in the groundstate with respect to arbitrary variations of the wavefunctions. Under the constraint of orthonormalization, variation with respect to the wavefunctions leads to the well known KS eigenequations. To calculate the electronic groundstate, several techniques were proposed. Among these the most elegant algorithms try a direct minimization of the functional: i.e., (a) the Car-Parrinello (CP) simulated annealing approach <ref type="bibr" target="#b4">[5]</ref>, especially well suited for a simultaneous update of ions and electrons;</p><p>(b) steepest descent techniques and (c) conjugate gradient techniques, performing a minimization of the total energy; and (d) band by band methods optimizing a single band at a time. The essential characteristics of the different methods are:</p><p>(a) Car and Parrinello <ref type="bibr" target="#b4">[5]</ref> proposed a simulated annealing approach in which the electrons posses a fictitious classical kinetic energy. This makes it possible to follow simultaneously the time-evolution of the ionic coordinates R u and of the the electron eigenstates, by integrating the quasiclassical equations of motion derived from the CP-Lagrangian L=tx ~.,f~((b,l(b,)+ E ½MNRZu-EKs .</p><p>(3) n N</p><p>The mass, /x, controls the kinetics of the electronic degrees of freedom. The CP approach works well if the ionic and electronic frequencies are well separated, leading to an adiabatic decoupling of the electrons and ions. This is the case for insulators and semiconductors, but not for metals. In metals, energy is transferred irreversibly from the ions to the electrons causing the electrons to drift away from their groundstate <ref type="bibr" target="#b5">[6]</ref>. A solution to this problem is the attachment of two Nos6 thermostats <ref type="bibr" target="#b6">[7]</ref> to the system, one for the ions and the other one for the electrons. The electronic thermostat reduces the kinetic energy of the electrons and causes the electrons to closely follow their exact groundstate. (b) It is now rather well established that at fixed ionic coordinates the KS functional has only one well defined global minimum. Therefore, it is not necessary to use global search algorithms -such as simulated annealing -to find the electronic groundstate. In general, steepest descent methods, in which the wavefunctions are changed along a (possibly preconditioned) gradient Ig,) =n14~,) -~ h,,,14'm), (4) m are better suited to solve such problems <ref type="bibr" target="#b7">[8]</ref>.</p><p>(c) The convergence can be further improved using conjugate gradient techniques. The main difficulty arises from the orthonormality constraint for the wavefunctions, i.e., the wavefunctions must remain orthonormal during the optimization process. Conjugate gradient techniques do not allow such a constrained minimization. An elegant solution to the problem was first proposed by <ref type="bibr">Stich et al. [9]</ref>, and elaborated in Ref. <ref type="bibr" target="#b9">[10]</ref>.</p><p>(d) A different technique in which each band is optimized separately was previously developed by Teter and co-workers <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>. Relaxing one band at a time saves computer memory; nevertheless the scheme is relatively time consuming because the charge density and potentials must be recalculated after each update of a single band.</p><p>All the methods mentioned above work well for insulating and semiconducting systems. Since the bands above the Fermi level give no contribution to the total energy, only the n lowest bands, which are necessary to hold all electrons (i.e., n = nelect//2), must be generated within the minimization procedure. Methods (a) and (b) can be easily adapted to metallic systems (see for instance Refs. <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b12">13]</ref>), but sometimes the convergence remains slow. For method (c), a generalization to metals was given in Ref. <ref type="bibr" target="#b9">[10]</ref>, but the algorithm is rather complicated (in addition, no solution was presented to the problem how to treat partial occupancies consistently during the optimization process). Method (d) cannot be generalized to metals.</p><p>To treat metals more efficiently, we have implemented a different approach, which is similar to the traditional strategy for the solution of the KS equations by repeated diagonalization of the Hamiltonian, but where the direct diagonalization is replaced by an iterative optimization of the KS one-electron states <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b14">15]</ref>. We start with a set of trial wavefunctions and a good initial guess for the charge density, Pin, (for instance the charge density of the free atoms) and set up the Hamiltonian for/kin. Then we improve the wavefunctions using an iterative matrix-diagonalization scheme. After optimization of all the bands, the new Fermi-energy, partial occupancies of the bands and a new charge density p (Eq. ( <ref type="formula">2</ref>)) are calculated. The old Pin and the new charge density p are mixed, and a new effective one-electron potential is calculated. The iterative scheme is repeated until self-consistency is achieved (i.e., Pin = P)" This approach is perhaps less elegant than a direct minimization of the KS functional, but it is very reliable and leads to a stable solution, even for metallic systems with a high density of states at the Fermi level. It is especially efficient if used in conjunction with a finite-temperature LDA.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Finite-temperature density functional theory</head><p>At finite temperature, the proper variational quantity is the free energy, which is defined as <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref> F=E-Eo-S[{f,}], cr=k,T, <ref type="bibr" target="#b4">(5)</ref> t~ where S is the Fermi-Dirac entropy of non-interacting electrons. At the groundstate, the free energy is a minimum with respect to variations of the wavefunctions and the occupancies, f,, of the oneelectron states. This results in a simple Fermi-Dirac occupation probability for the one-electron states. In the most cases, we found it more convenient to use a form for the entropy, S, which results in a Gaussian distribution of the occupancies around the Fermi level <ref type="bibr" target="#b17">[18]</ref>: a Gaussian decays much faster than the simple exponential Fermi-Dirac function, therefore it is possible to include less orbitals in the calculation. We should point out that the temperature of the electron gas and the width of the Gaussian are not always determined by the actual temperature of the system. For an ab initio MD, partial occupancies are mainly a tool to avoid problems connected with level crossing: At zero temperature, a crossing of two levels at the Fermi-edge causes a jump in the related occupancies from 0 to 1 and vice versa, resulting in a discontinuity in the total energy. In addition, a large smearing parameter o" (or a large T) can help to reduce the number of k-points in the irreducible wedge of the Brillouin zone which are necessary to get a well converged total energy for a metallic system. This is possible by extrapolating from finite-temperature to zero-temperature results <ref type="bibr" target="#b17">[18]</ref>, using E(T~ O) = (E+F)/2. In this case, the smearing parameter can be increased by an order of magnitude (for instance up to 1 eV for A1).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Iteratice diagonalization</head><p>Within each self-consistency loop, the wavefunctions are improved using an iterative matrix diagonalization scheme. We have tested the Davidson block-iteration scheme <ref type="bibr" target="#b19">[19]</ref> and a method based on the band-by-band conjugate gradient techniques <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b20">20]</ref> and have found that the conjugate gradient scheme is of superior efficiency. In addition, it requires less storage than the Davidson block-iteration scheme. In our implementation we closely follow Bylander et al. <ref type="bibr" target="#b20">[20]</ref>: starting from the lowest band, the expectation value of the Hamiltonian (4'. I HI ~)n)/(~) n I~n) is minimized sequentially for each band n under the usual orthonormality constraint with two or three standard conjugate gradient steps (more steps are not efficient, because the update of the charge density changes the Hamiltonian). We use a special preconditioning function, which accounts for the fact that the kinetic energy operator dominates the Hamiltonian for plane waves with a large q-vector <ref type="bibr" target="#b10">[11]</ref>. After a single sweep over all bands, the improved wavefunctions are transformed so that the Hamiltonian matrix is diagonal in the subspace spanned by the transformed wavefunctions. This step is critical for the calculation of the exact KS eigenstates and a correct determination of the new partial occupancies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Charge-mixing</head><p>For bulk solids and liquids, we have found that a simple mixing scheme proposed by Kerker <ref type="bibr" target="#b21">[21]</ref> resuits in an excellent convergence. For surfaces and molecules, this mixing is not sufficient. Therefore, we have recently implemented a more efficient Broyden scheme (For an excellent description of different mixing algorithms, see Ref. <ref type="bibr" target="#b22">[22]</ref>; the actual implementation closely follows Refs. <ref type="bibr" target="#b22">[22,</ref><ref type="bibr" target="#b23">23]</ref>.). The Broyden scheme results in very stable convergence cycles. Even in critical cases, such as surfaces, not more than 20 mixing steps are necessary to converge the total energy to within 10 -6 eV/atom. A selfconsistent calculation takes approximately two to three times as long as an evaluation of the KS eigenvectors for a fixed non-self-consistent Hamiltonian (same accuracy assumed).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Ultrasofi pseudopotentials</head><p>The first row elements (C, O, N, etc.) and the transition metals are hard to treat using standard pseudopotentials because they require a rather high energy-cutoff and a large number of plane waves (PW) per atom (PW &gt; 300) to obtain accurate results. This problem can be solved by adapting the ultrasoft (US) pseudopotentials proposed by Vanderbilt <ref type="bibr" target="#b24">[24]</ref>. The new scheme is characterized by two main points. (i) It is possible to include more than one reference energy, E, per quantum state, l, guaranteeing an improved transferability over a wide energy range. (ii) US-pseudopotentials are no longer norm-conserving (NC). Both points together allow the use of large cut-off radii for the pseudowavefunctions and the 'softer' pseudowavefunctions make it possible to reduce the number of PW. Nevertheless, relaxing the norm-conservation constraint results in a charge-deficit between the pseudo-and the exact all-electron wavefunctions, which must be described using localized augmentation functions Qji(r). Second, an overlap operator has to be included in the orthonormality constraint and the KS eigenequations. Explicit formulas for the KS functional, the Hamiltonian, the forces and the stress tensor can be found in Refs. <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b25">25]</ref>. Our pseudopotentials (NC as well as US) are constructed using a modified Rappe scheme <ref type="bibr" target="#b26">[26]</ref>. Details can be found in Refs. <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b27">27]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6.">Forces, relaxation and ab initio MD</head><p>Using forces and stresses, the relaxation into the instantaneous ionic groundstate is simple and is performed by applying conjugate gradient techniques or quasi-Newton algorithms <ref type="bibr" target="#b28">[28]</ref>. Ab initio MD simulations are possible as well. Due to our efficient minimization techniques, the exact evaluation of the finite temperature LDA groundstate is possible at each timestep, allowing us to use a much larger timestep than in CP calculations (the timestep within the CP-framework is restricted by the electronic kinetics). The effectiveness of a MD simulation can be further improved by extrapolating the wavefunctions and the charge density from old ionic positions to new configurations <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b29">29]</ref>. Using this extrapolation technique, the efficiency of our program is comparable to a conventional Car-Parrinello simulation. In addition we do not have problems treating metallic systems, which tend to be difficult within the CP approach (see Section 2). To allow the simulation of canonical ensembles, we include a Nos~ thermostat coupled to the ions. The mass of this thermostat is a critical parameter <ref type="bibr" target="#b30">[30]</ref> and should be chosen such that the typical frequency induced by the heat bath is similar to the characteristic ionic frequencies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Results</head><p>Since pair potentials give an excellent description of simple metals <ref type="bibr" target="#b32">[32]</ref>, nothing new can be expected from an ab initio MD simulation for these materials. Nevertheless, it is interesting to do such calculations (i) to test the accuracy of the LDA and its finite temperature extension and (ii) to see whether our technique (i.e., exact evaluation of the groundstate at each timestep) works fast and reliably. This is not clear per se and the first CP calculations for metals had to face serious problems (see Section 2).</p><p>We have performed ab initio MD simulations for three typical free-electron metals, Na, A1 and liquid Ge, and also for Li. The electronic density of states (DOS) for Li shows a significant deviation from a a Using modified RRKJ scheme <ref type="bibr" target="#b27">[27,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b14">15]</ref>. b Using Vanderbilt scheme <ref type="bibr" target="#b31">[31]</ref>. c Using ultrasoft pseudopotential <ref type="bibr" target="#b27">[27,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b14">15]</ref>.</p><p>free electron parabola and therefore our results might serve as a critical benchmark for calculations using classical pairpotentials. Technical parameters for each simulation can be found in Table <ref type="table" target="#tab_0">1</ref>. The F point only was used for the Brillouin-zone (BZ) sampling, resulting in a rather inaccurate description of the differential DOS (i.e., pseudogaps in the DOS), but it seems to be sufficient for a good description of the interatomic forces. Li, Na and Ge were initially equilibrated using simple pair potentials <ref type="bibr" target="#b32">[32,</ref><ref type="bibr" target="#b33">33]</ref>; AI was melted from a simple cubic phase. For Na we have performed two model calculations, differing in the number of atoms. For the 54-atom ensemble, the Fermi-level falls into a pseudogap separating the highest occupied and the lowest unoccupied band at the F-point. Therefore, the characteristic difficulties in handling metallic systems do not appear. The 60-atom ensemble on the other hand is metallic. We found no differences in the conservation of the free energy, demonstrating that our techniques works equally well in both situations. In addition, the comparison demonstrates that the influence of the boundary conditions is small.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Discussion</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Simple metals</head><p>In Fig. <ref type="figure" target="#fig_0">1</ref> we compare the pair correlation (PC) functions for Li, Na and AI with experimental data <ref type="bibr" target="#b34">[34]</ref>, and it may be seen that the agreement is in general very good.</p><p>For Li, small differences between experiment and theoretical predictions are visible, but the accuracy (a)  </p><formula xml:id="formula_1">, t,I ,i i iI~tlil li, t,Ii t i1! i i i i i L i iii ili ~ 0 2 4 6 8 R c~) or" ran Itlllltllll~d~ 0 2 [b) %/ rllllltal,,<label>,Ill ,,,ltlltlnllllillt 4 6 8</label></formula><formula xml:id="formula_2">R c~) C~ 2 [c] 0 "ll J lllllil~ ill ,, ,I, ,iLlllltl h Jilllltt 0 2 4 6 8</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>R c~</head><formula xml:id="formula_3">;, , ~' J ;i 1 ~ .6 i i ,<label>7,, :&gt; }', : ,, q] cn .2 ;</label></formula><formula xml:id="formula_4">; /t 1 ; l ~- -4 -3 -2 -1 E leV)</formula><p>Fig. <ref type="figure">2</ref>. Electronic density of states for 1-Li and bcc-Li. ---crystalline DOS; ...... , liquid DOS calculated from the eigenvalues at the F-point with Gaussian broadening; --, liquid DOS calculated on a 6 X 6 X 6 grid of k-points. of the experiment is not as good as for Na. Fig. <ref type="figure">2</ref> shows the DOS for Li. To improve the accuracy of the k-point sampling, we have also carried out calculations for a small number of configurations on a 6 X 6 X 6 grid in the irreducible wedge of the simple cubic-BZ (10 k-points). The resulting DOS is smooth and shows the narrowing of the occupied part of the band and the structure induced DOS-minimum just above E r. Our calculation also leads to a good description of the dynamical properties, e.g., the self-diffusion constant D = 0.7 X 10 -4 cm 2 s -1 is in excellent agreement with experimental data D = 0.65 X 10 -4 cm 2 s -1 <ref type="bibr" target="#b35">[35]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Transition metals</head><p>The simulation of transition metals is a challenging task <ref type="bibr" target="#b36">[36]</ref>, and calculations are feasible using the US pseudopotentials, discussed in Section 2.5. Applying these potentials, the number of PW per atom is approximately the same as for simple metals (i.e., = 50-100 PW/atom), but due to the large number of bands the computational effort remains massive and an o(N 3) scaling is found even for relatively small systems (&gt; 50 atoms).</p><p>Exact parameters for calculations for liquid Copper and liquid Vanadium are compiled in Table <ref type="table" target="#tab_0">1</ref>; the results were published elsewhere (see Ref. <ref type="bibr" target="#b14">[15]</ref>). For l-Cu we found an excellent agreement between experiment and theory, whereas the the agreement was less spectacular for V. Compared with the exper-iment, the positions of all peaks were shifted inward by approximately 6%. The shift is partly due to errors in the LDA. (The error in the equilibrium volume is almost 10% for V.) Second, the experimental data for V are of limited accuracy, due to difficulties arising from the high temperatures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Liquid-metal to amorphous-semiconductor transition in Ge</head><p>The simulation of the transition from a metallic to a semiconducting phase requires accurate forces for very different conditions. Pair potentials are not sufficient to reproduce the transition <ref type="bibr" target="#b38">[37]</ref>. Quite successful calculations for Si using the CP approach were previously published by Stich and co-workers <ref type="bibr" target="#b39">[38]</ref>. We have decided to study the transition for Ge, applying our new MD technique (details were published in Ref. <ref type="bibr" target="#b43">[39]</ref>). The cooling process, which took approximately 8 ps, was started from a well equilibrated liquid model system (T = 1250 K). The final temperature was T = 300 K. After quenching, we obtained a structure with a relatively large number of defects. Therefore, we tried to improve our model by reannealing the system (i.e., heating up to 600 K for 3 ps). To investigate the inherent defects, we also calculated two T= 0 configurations, using local search algorithms (see Section 2.6).</p><p>In Figs. <ref type="figure" target="#fig_2">3</ref> and<ref type="figure">4</ref> we show theoretical and, if available, experimental results for the pair correlation functions and angular distribution functions for the liquid and the annealed amorphous state. From the analysis of the DOS, we found 1-Ge to be metallic. The structure of l-Ge is rather open (coordination number N c = 6.0). Beyond the first peak, almost no oscillations are visible in the pair correlation function; similarly, the angular distribution shows only weak structure other than the excluded volume peak at 60 ° and a flat maximum close to the tetrahedral bond-angle (random packing would correspond to a straight line in the angular distribution function). These results are an indication that only short range correlations exist in the liquid phase.</p><p>Our amorphous structure (Fig. <ref type="figure">4</ref>) agrees well with experimental data, but the number of defects is larger than inferred from the diffraction experiment. The coordination number is close to 4 and the bond angle distribution is peaked around 108 ° , corresponding to a tetrahedral packing. The DOS shows -as expected a gap at the Fermi edge.</p><p>In addition to the static properties, we have calculated some dynamical properties. The diffusion constant is approximately D = 1.0 X 10 .4 cm 2 s 1 for the liquid state and drops to less than 5% of its initial value for T = 650 K. We have also calculated the spectrum of the velocity-autocorrelation function for the amorphous state and found an excellent agreement with availible experimental data.</p><p>The analysis of defects is probably the most interesting topic. At T = 300 K, the number of threeand fivefold sites (T3 and T5) changes during the simulation. We have tried to improve the analysis by calculating T = 0 structures. Nevertheless, the analysis based on geometric arguments (i.e., bond length) alone remains controversial, because the minimum in r~ ~o <ref type="bibr">(a]</ref> I n i i i I i i~ i i I i , , i I i i i ~ ] i i i i i i i i i i i h r i  Fig. <ref type="figure">4</ref>. Same as Fig. <ref type="figure" target="#fig_2">3</ref>, but for annealed amorphous Oe at T = 300 K (neutron diffraction -Ref. <ref type="bibr" target="#b44">[40]</ref> for g(R)). g(R) is not sharply defined even at zero temperature.</p><p>Visualization of the charge density around a central atom resulted in a clearer characterization of 'bonding' defects. We found T 3 (sometimes called dangling bonds sites) and T 5 sites. T 5 sites tend to have three or four strong and two or one weak bonds: if an additional atom is squeezed into a tetrahedral configuration other bonds are weakened.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusion</head><p>The calculations presented in this paper show that MD simulations for most liquid systems -including liquid transition metals -are feasible using modern ab initio MD codes. The finite temperature LDA helps to avoid band crossing problems during an ab initio MD simulation. In conjunction with the exact evaluation of the electronic groundstate at each timestep, even metals with a high density of states at the fermi-level can be treated without the difficulties existing within the CP approach. US pseudopotentials offer for the first time the possibility of treating transition metals and first row elements on the same basis as simple metals. Using all refinements, the efficiency of our code is at least comparable to a conventional CP-program.</p><p>Currently, several calculations for surfaces, molecules, molecular crystals and liquid and amorphous alloys are under progress. Despite the advantages of the LDA-PW approach, there still remains one unsolved problem, i.e., the o(N 3) scaling with the number of atoms, N. Using PWs no solution to this problem seems to be possible. At the moment, only simple non-self-consistent tight-binding calculations promise to show an o(N)-scaling in the density-matrix formulation <ref type="bibr" target="#b45">[41]</ref>. Nevertheless, in terms of accuracy and because there are several ambiguous parameters these techniques are not comparable with LDA-PW calculations.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Pair correlation function, g(R), for liquid gi (a), Na (b) and AI (c). --, ab initio MD; D, experimental data taken from Ref. [34]. Na: --, 60 atom ensemble; .... ,54 atom ensemble.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>o</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. (a) Pair correlation function, g(R), and (b) bond-angle distribution function, g(3)((9, Rna), for liquid Ge at T = 1250 K, taking into account bonds up to a bond length R m. --, ab initio MD; El, experiment (neutron diffraction -Ref. [34] for g(R)).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Parameters for ab initio MD</figDesc><table><row><cell></cell><cell>Li</cell><cell>Na</cell><cell>A1</cell><cell>Cu</cell><cell>V</cell><cell>Ge</cell></row><row><cell>Natoms :</cell><cell>64</cell><cell cols="2">54/60 64</cell><cell>50</cell><cell>50</cell><cell>64</cell></row><row><cell>p (~-3):</cell><cell cols="6">0.0444 0.0243 0.0531 0.0756 0.0811 0.0438</cell></row><row><cell>T (K):</cell><cell cols="3">470 378 953</cell><cell cols="3">1500 2200 1250-300</cell></row><row><cell>At (fs):</cell><cell>1.5</cell><cell>3</cell><cell>3</cell><cell>1.5</cell><cell>1.5</cell><cell>3</cell></row><row><cell>t (ps):</cell><cell>10</cell><cell>3</cell><cell>3</cell><cell>2</cell><cell>3</cell><cell>25</cell></row><row><cell>Rcut (a.u.):</cell><cell cols="6">3.4 a 2.0 b 2.6 a 2.7 c 2.6 c 1.5 b</cell></row><row><cell>Ecu t (eV):</cell><cell cols="2">100 80</cell><cell>150</cell><cell>150</cell><cell>150</cell><cell>163</cell></row><row><cell cols="2">CPU-time/At: 150</cell><cell cols="2">100 300</cell><cell cols="3">1000 600 450</cell></row><row><cell cols="7">Natoms, the number of atoms; p, the number density, T, tempera-</cell></row><row><cell cols="7">ture, At, the timestep; t, total simulation time; Rcut, radial cutoff</cell></row><row><cell cols="7">for pseudopotential, Ecut, PW energy-cutoff; CPU-time/At, the</cell></row><row><cell cols="7">time necessary to perform one timestep on an IBM RS6000 model</cell></row><row><cell cols="7">590. The calculations were carried out with a full complex code.</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">O</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gunnarsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page">689</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Feynman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">340</biblScope>
+			<date type="published" when="1939">1939</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+		<respStmt>
+			<orgName>Technische Universit~it Wien</orgName>
+		</respStmt>
+	</monogr>
+	<note>thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys Rev</title>
+		<imprint>
+			<biblScope unit="volume">140</biblScope>
+			<biblScope unit="page">133</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">2471</biblScope>
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pastore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Smargiassi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Buda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">6334</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nos&amp;</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">511</biblScope>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Fernando</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Guo-Xin Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Weinert</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Davenport</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">7985</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Stich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Parrinello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">4262</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Arias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Joannopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page">1077</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Teter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Allan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">12255</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Teter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Allan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Arias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Joannopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">1045</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yamamoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Fujiwara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">13596</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">558</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page">13115</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Weinert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Davenport</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">13709</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Wentzcovitch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Martins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Allen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">11372</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">De</forename><surname>Vita</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+		<respStmt>
+			<orgName>Keele University</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">De</forename><surname>Vita</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Gillan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992-08">Aug. 1992</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Wood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zunger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">1343</biblScope>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Bylander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kleinman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">1394</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Kerker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page">3082</biblScope>
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bliigel</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+		<respStmt>
+			<orgName>RWTH Aachen</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page">12087</biblScope>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vanderbilt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">7892</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Laasonen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pasquarello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vanderbilt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">10142</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Rappe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Rabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kaxiras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Joannopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page">1227</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Furthmiiller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">8245</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Press</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">P</forename><surname>Flannery</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teukolsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Vetterling</surname></persName>
+		</author>
+		<title level="m">Numerical Recipes</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University</publisher>
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Arias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Joannopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">1538</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Bylander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kleinman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">13756</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vanderbilt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">8412</biblScope>
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+		<title level="m">From Hamiltonians to Phase Diagrams</title>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">7451</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Waseda</surname></persName>
+		</author>
+		<title level="m">The Structure of Non-Crystalline Materials -Liquids and Amorphous Solids</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Murday</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Cotts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Naturforsch</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">85</biblScope>
+			<date type="published" when="1971">1971</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><surname>Ch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hausleitner</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">128</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">B</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">5689</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+	<note>and further references cited therein</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arnold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mauser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">965</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Stich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">2240</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">4262</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Buda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Chiarotti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Stich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Non-Cryst. Solids</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">7</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Stich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">11092</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">14251</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Etherington</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Wright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Wenzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Dore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Clarke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">N</forename><surname>Sinclair</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Non-Cryst. Solids</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page">265</biblScope>
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">P</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Nunes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vanderbilt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">10891</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

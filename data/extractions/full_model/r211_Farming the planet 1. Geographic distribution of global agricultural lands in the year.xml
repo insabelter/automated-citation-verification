@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Farming the planet: 1. Geographic distribution of global agricultural lands in the year 2000</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2008-01-17">17 January 2008.</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Navin</forename><surname>Ramankutty</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Geography and Earth System Science Program</orgName>
+								<orgName type="institution">McGill University</orgName>
+								<address>
+									<settlement>Montreal</settlement>
+									<region>Quebec</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Amato</forename><forename type="middle">T</forename><surname>Evan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Cooperative Institute for Meteorological Satellite Studies</orgName>
+								<orgName type="institution">University of Wisconsin-Madison</orgName>
+								<address>
+									<settlement>Madison</settlement>
+									<region>Wisconsin</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Chad</forename><surname>Monfreda</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Center for Sustainability and the Global Environment (SAGE)</orgName>
+								<orgName type="institution" key="instit1">Nelson Institute for Environmental Studies</orgName>
+								<orgName type="institution" key="instit2">University of Wisconsin-Madison</orgName>
+								<address>
+									<settlement>Madison</settlement>
+									<region>Wisconsin</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jonathan</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Center for Sustainability and the Global Environment (SAGE)</orgName>
+								<orgName type="institution" key="instit1">Nelson Institute for Environmental Studies</orgName>
+								<orgName type="institution" key="instit2">University of Wisconsin-Madison</orgName>
+								<address>
+									<settlement>Madison</settlement>
+									<region>Wisconsin</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Farming the planet: 1. Geographic distribution of global agricultural lands in the year 2000</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2008-01-17">17 January 2008.</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">0320F306967FE67C07B7C1EDFB630EC3</idno>
+					<idno type="DOI">10.1029/2007GB002952</idno>
+					<note type="submission">Received 5 February 2007; revised 12 June 2007; accepted 14 August 2007;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:02+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Agricultural activities have dramatically altered our planet's land surface. To understand the extent and spatial distribution of these changes, we have developed a new global data set of croplands and pastures circa 2000 by combining agricultural inventory data and satellite-derived land cover data. The agricultural inventory data, with much greater spatial detail than previously available, is used to train a land cover classification data set obtained by merging two different satellite-derived products (Boston University's MODIS-derived land cover product and the GLC2000 data set). Our data are presented at 5 min ($10 km) spatial resolution in longitude by longitude, have greater accuracy than previously available, and for the first time include statistical confidence intervals on the estimates. According to the data, there were 15.0 (90% confidence range of 12.2-17.1) million km 2 of cropland (12% of the Earth's ice-free land surface) and 28.0 (90% confidence range of 23.6-30.0) million km 2 of pasture (22%) in the year 2000.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>1. Introduction <ref type="bibr" target="#b1">[2]</ref> Human land use activities are a force of global significance <ref type="bibr" target="#b18">[Foley et al., 2005]</ref>. Humans have extensively modified the Earth's land surface, altering ecosystem structure and functioning, and diminishing the ability of ecosystems to continue providing valuable resources such as food, freshwater and forest resources, and services such as regulation of climate, air quality, water quality, soil resources.</p><p>[3] Agricultural activities, in particular, have been responsible for a vast majority of these land use related ecosystem consequences <ref type="bibr" target="#b53">[Richards, 1990;</ref><ref type="bibr" target="#b59">Tilman et al., 2001;</ref><ref type="bibr">Green et al., 2005]</ref>. Nearly 40% of the planet's ice-free land surface is now being used for agriculture, and much of this land has replaced forests, savannas, and grasslands <ref type="bibr" target="#b18">[Foley et al., 2005]</ref>. Clearing of tropical forests for cultivation or grazing is responsible for $12 -26% of the total emissions of carbon dioxide to the atmosphere <ref type="bibr">[DeFries and Achard, 2002;</ref><ref type="bibr" target="#b27">Houghton, 2003]</ref>, and land use changes can significantly modify regional and global climate <ref type="bibr" target="#b45">[Pitman et al., 1999;</ref><ref type="bibr" target="#b44">Pielke et al., 2002]</ref>. Furthermore, $20-30% of the total available surface water on the planet is withdrawn for irrigation <ref type="bibr" target="#b12">[Cassman and Wood, 2005]</ref>, and nitrogen fixation through fertilizer production and crop cultivation currently equals or even exceeds natural biotic fixation <ref type="bibr" target="#b23">[Galloway et al., 1995;</ref><ref type="bibr" target="#b56">Smil, 1999]</ref>.</p><p>[4] As such, agriculture is partly or wholly responsible for environmental concerns such as tropical deforestation and biodiversity loss, fragmentation and loss of habitats, emissions of important greenhouse gases, losses of soil quality through erosion and salinization, decreases in quantity and quality of water resources, alteration of regional climates, reduction in air quality, and increases in infectious diseases <ref type="bibr" target="#b18">[Foley et al., 2005]</ref>. On the other hand, agricultural expansion and intensification has provided a crucial service to humanity by meeting the food demands of a rapidly growing population <ref type="bibr" target="#b12">[Cassman and Wood, 2005]</ref>, and thereby involves a trade-off between food production and environmental deterioration <ref type="bibr" target="#b15">[DeFries et al., 2004;</ref><ref type="bibr" target="#b18">Foley et al., 2005]</ref>.</p><p>[5] In order to assess the Earth system consequences of agriculture, both the positive social and economic benefits and the often negative environmental consequences, it is essential to develop global data sets of the geographic distribution of agricultural land use and land cover change [e.g., <ref type="bibr" target="#b66">Wood et al., 2000;</ref><ref type="bibr" target="#b3">Bauer et al., 2003;</ref><ref type="bibr" target="#b17">Donner and Kucharik, 2003;</ref><ref type="bibr" target="#b12">Cassman and Wood, 2005]</ref>. Recent advances have led to the emergence of new continental-to-globalscale data sets of agricultural land cover, developed by merging satellite-derived land cover data sets and groundbased agricultural inventory data sets <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998;</ref><ref type="bibr" target="#b21">Frolking et al., 1999;</ref><ref type="bibr" target="#b48">Ramankutty and Foley, 1999;</ref><ref type="bibr" target="#b28">Hurtt et al., 2001;</ref><ref type="bibr" target="#b32">Klein Goldewijk, 2001;</ref><ref type="bibr" target="#b11">Cardille et al., 2002;</ref><ref type="bibr" target="#b22">Frolking et al., 2002;</ref><ref type="bibr" target="#b10">Cardille and Foley, 2003;</ref><ref type="bibr" target="#b16">Donner, 2003;</ref><ref type="bibr" target="#b36">Leff et al., 2004;</ref><ref type="bibr" target="#b46">Ramankutty, 2004]</ref>.</p><p>[6] Our earlier work, in particular, pioneered the development of a statistical ''data fusion'' technique to merge a satellite-derived, global, 1-km resolution land cover data set, with ground-based national and subnational cropland inven-tory statistics, to develop global maps of the world's croplands in the early 1990s <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998]</ref>, and their historical changes since the year 1700 <ref type="bibr" target="#b48">[Ramankutty and Foley, 1999]</ref>. These data sets have been widely used by the global change community and have been employed in various analysis and assessments, including analysis of regional food security <ref type="bibr">[Ramankutty et al., 2002b]</ref>, an assessment of the regions of the world undergoing the most rapid land cover changes over the last decade <ref type="bibr" target="#b37">[Lepers et al., 2005]</ref>, global carbon cycle modeling <ref type="bibr" target="#b40">[McGuire et al., 2001]</ref>, analysis of the role of agriculture in carbon cycling <ref type="bibr" target="#b6">[Bondeau et al., 2007]</ref>, global climate modeling <ref type="bibr" target="#b4">[Bonan, 1999;</ref><ref type="bibr" target="#b8">Brovkin et al., 1999;</ref><ref type="bibr" target="#b5">Bonan, 2001;</ref><ref type="bibr" target="#b42">Myhre and Myhre, 2003;</ref><ref type="bibr" target="#b9">Brovkin et al., 2006]</ref>, estimation of global soil erosion <ref type="bibr" target="#b67">[Yang et al., 2003]</ref>, and as input to global economic models <ref type="bibr" target="#b35">[Lee, 2005;</ref><ref type="bibr" target="#b51">Ramankutty et al., 2007]</ref>. These data have also provided the essential information on historical croplands for other global land use/cover data sets <ref type="bibr" target="#b29">[Hurtt et al., 2006;</ref><ref type="bibr" target="#b65">Wang et al., 2006]</ref>.</p><p>[7] In this paper, we present a critical update to our global agricultural land cover data sets. In particular, we present new global data sets for the year 2000, developed using an order-of-magnitude enrichment of our agricultural inventory data, a combination of two different satellite-derived global land cover data sets for year 2000, and improved methods to merge the satellite data and inventory data. We also present, in addition to an updated map of global croplands for the year 2000, a new map of global pastures, as well as estimated confidence intervals for both of these data sets. These new data sets will form valuable products for the global environmental change community.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Data Sets</head><p>[8] In this section we describe how we compiled the two different sources of information used in this study:</p><p>(1) satellite-based global land cover classification data sets; and (2) ground-based agricultural census/inventory data sets.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Satellite Data Sets</head><p>[9] We used two different high-resolution (1-km) satellitebased, global land cover classification data sets that are available for circa 2000: Boston University's Moderate resolution Imaging Spectrometer (MODIS) based global land cover product <ref type="bibr" target="#b20">[Friedl et al., 2002]</ref> (BU-MODIS hereafter), and the Satellite Pour l'Observation de la Terre (SPOT) VEGETATION based Global Land Cover 2000 (GLC2000) data set <ref type="bibr" target="#b2">[Bartholome and Belward, 2005]</ref>. The BU-MODIS land cover product used data acquired from 15 October 2000 to 15 October 2001 to derive 17 land cover classes using a supervised classification scheme (see Table <ref type="table" target="#tab_0">1</ref> for legend). The GLC2000 data set utilized data acquired from 1 November 1999 to 31 December 2000 to derive 22 global land cover classes on the basis of regional classifications performed with the expertise of regional institutions (Table <ref type="table" target="#tab_0">1</ref>).</p><p>[10] We applied a simple set of climatic parameters to mask obviously nonagriculture areas within the satellite data sets, else we obtain some spurious results in the Northern Hemisphere high latitudes (e.g., land classified as open shrublands are found both in the western United States and boreal Canada; because open shrublands have a small fraction of cultivation in the former we end up with croplands in boreal Canada also). This mask included all regions north of 50°N with Growing Degree Day (GDD; base 5°C) less than 1000°C d (see Figure <ref type="figure" target="#fig_0">S1</ref>). This GDD cutoff approximates that empirically estimated by <ref type="bibr">Ramankutty et al. [2002a]</ref> (using their previous cropland data set that does not include a mask, hence there is no circularity), and is conservative compared to the 2000°C d cutoff for agriculture used by <ref type="bibr" target="#b13">Cramer and Solomon [1993]</ref>. GDD data were calculated according to <ref type="bibr">Ramankutty et al. [2002a]</ref>, and interpolated to  <ref type="bibr">[11]</ref> We extensively compiled cropland and pasture inventory data for the globe at the national and subnational  [12] We compiled the cropland and pasture data to be consistent with the FAO definition of ''Arable lands and permanent crops'' and ''Permanent pastures'' respectively. Arable land is defined by FAO (<ref type="url" target="http://faostat.fao.org/site/">http://faostat.fao.org/site/</ref> 375/default.aspx) as including ''land under temporary crops (double-cropped areas are counted only once), temporary meadows for mowing or pasture, land under market and kitchen gardens and land temporarily fallow (less than 5 years). The abandoned land resulting from shifting cultivation is not included in this category. Data for arable land are not meant to indicate the amount of land that is potentially cultivable.'' Permanent crops are defined as ''land cultivated with crops that occupy the land for long periods and need not be replanted after each harvest, such as cocoa, coffee and rubber; this category includes land under flowering shrubs, fruit trees, nut trees and vines, but excludes land under trees grown for wood or timber.'' Permanent pastures are defined as ''land used permanently (5 years or more) for herbaceous forage crops, either cultivated or growing wild (wild prairie or grazing land). The dividing line between this category and the category 'Forests and woodland' is rather indefinite, especially in the case of shrubs, savannah, etc., which may have been reported under either of these two categories.''</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Agricultural Inventory Data</head><p>[13] The agricultural inventory data were seldom available exactly for the year 2000 because agricultural censuses are only taken every 5-10 years a in most industrialized nations of the world, and less frequently in other countries. We collected inventory data between the years 1998 to 2002 where possible, but in several instances we relied on older data (see Table <ref type="table" target="#tab_1">2</ref>). For nations where the inventory data did not fall within the 1998 -2002 period, or where cropland or pasture data were unavailable but some proxies were available (such as harvested area of individual crops or heads of livestock), we estimated cropland and pasture data for circa 2000 by calibrating the available information to national totals from FAOSTAT (see Text S1 for details).</p><p>[14] The quality of our census data is varied. Some regions of the world are not well represented in terms of the resolution of inventory data, with the African continent and the Former Soviet Union being the most underrepresented. Sometimes, the national level census statistics were inconsistent with the FAOSTAT data; in such cases we mostly relied on the national statistics (as recommended by FAO), except for a few cases where we believed that FAOSTAT data were more reliable (see Text S1 for details). Inconsistencies were a result of either unclear definitions of the category, or sometimes poor reporting by the national statistics agency. For example, the cropland census statistics for China has been noted by various studies to be particularly problematic <ref type="bibr" target="#b14">[Crook, 1993;</ref><ref type="bibr" target="#b21">Frolking et al., 1999;</ref><ref type="bibr" target="#b55">Seto et al., 2000;</ref><ref type="bibr">G. K. Heilig, Can China Feed</ref>  Here we have used the data for China from the study of <ref type="bibr">Verburg and Chen [2000]</ref>, which seems reliable. The definition of permanent pasture is particularly problematic, as acknowledged by the FAO (<ref type="url" target="http://faostat.fao.org/site/">http://faostat.fao.org/site/</ref> 375/default.aspx). Some countries (e.g., the United States) clearly distinguish between grassland pasture and range and forest use land grazed, while most countries do not. So it is not clear whether grazed forest land or semiarid grazing is included under the definition of pastures. One egregious example is Saudi Arabia for which FAOSTAT reports 1.7 million km 2 of permanent pasture in 2000, which is 80% of its total land area. However, most of Saudi Arabia is arid land and it is clear that much of the nomadic grazing areas are included under pasture. The Saudi Arabian subnational census data we obtained reports 486 km 2 of pasture, which is 3500 times smaller; we have chosen to rely on this lower value. Similarly, FAOSTAT reports 4 million km 2 of pasture in China. However, <ref type="bibr">Verburg et al. [2000]</ref> report a total of only 2.6 million km 2 of grassland in China. In this case, we have used the FAOSTAT value for the total amount of pasture in the country (but our final estimates for China are lower; see section 4.1, paragraph 2). Similar inconsistencies exist in other countries and are reported in Text S1.</p><p>[15] In summary, our agricultural inventory database yields a global total of 15 million km 2 of cropland and 31.5 million km 2 of pasture. This compares to 15.3 million km 2 of cropland and 34.4 million km 2 of pasture reported by FAO-STAT; significantly, our census data compilation and interpretation yields about 8% less pasture than FAOSTAT. The difference between FAOSTAT and our own inventory for pasture can mainly be explained by differences in Saudi Arabia (as described earlier in section 2.2, paragraph 4), Australia, Nigeria, Brazil, Mexico, Indonesia, Argentina, Colombia, Russia, and Spain. There were very few countries where the national census pasture area was greater than FAOSTAT; the one exception is Iran, for which FAOSTAT reports 0.4 million km 2 of pasture while the national census reported 0.9 million km 2 . For croplands, while the global total areas are comparable between FAOSTAT and our inventory, there are significant national differences. For example, the national inventories of Australia, Brazil, Canada, China and Turkey report lower cropland area compared to FAOSTAT, while Iran, Argentina, Nigeria, Mexico, and Indonesia report greater cropland area.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Methodology</head><p>[16] The basic methodology for creating the new cropland and pasture data sets originated from our earlier work <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998]</ref>, where we calibrated a high-resolution satellite-derived land cover data set against agricultural inventory data to derive a global map of croplands for 1992. In this paper, however, we updated the methodology in three important ways: (1) Instead of a single satellite-derived land cover data set, here we used a merger of two different satellite data sets; (2) instead of calibrating only the a priori identified agricultural land cover classes against inventory data (as in the work of <ref type="bibr" target="#b47">Ramankutty and Foley [1998]</ref>), we utilized all the land cover classes in our training procedure (as in the work of <ref type="bibr" target="#b28">Hurtt et al. [2001]</ref> and <ref type="bibr" target="#b11">Cardille et al. [2002]</ref>); and (3) because we had much higher-resolution census data compared to our previous efforts, we considered the census data sets to represent an approximate ''truth'', and used the two-step method developed by <ref type="bibr" target="#b46">Ramankutty [2004]</ref> whereby the satellite data is used to spatially locate agricultural lands within an administrative unit, but the total area of agricultural land in the administrative unit is derived from the census data (with some exceptions; see section 3.5). The following section provides a detailed description of the steps taken to create the final data set (see Figure <ref type="figure" target="#fig_1">2</ref> for a flowchart of our algorithm).   <ref type="bibr">[2005]</ref> compared the GLC2000 and BU-MODIS land cover data sets and found some consistency at the aggregate class level, but widespread disparities in the details. A few other studies have also tried to intercompare and harmonize these two and other global land cover data sets <ref type="bibr" target="#b26">[Herold et al., 2005;</ref><ref type="bibr" target="#b31">Jung et al., 2006;</ref><ref type="bibr" target="#b54">See and Fritz, 2006]</ref>. The GLC2000 data set was developed using SPOT vegetation data with the assistance of regional experts and used a flexible classification scheme. The BU-MODIS data set, on the other hand, was developed using a globally consistent procedure with a fixed classification scheme, but without regional expertise. The two data sets therefore bring different kinds of expertise and information that are poten-tially complimentary. Here we decided to capitalize on both by combining them into a single land cover data set. To do so, we overlaid the BU-MODIS and GLC2000 data sets and developed new land cover classes that contain all possible combinations of the individual land cover classes (see Table <ref type="table" target="#tab_4">3</ref> for an example). The resulting combined land cover data set consists of 391 possible land cover types and is shown later in section 3.3 to provide more accurate results when calibrated against the inventory data, as opposed to using either data set individually.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Step 1: Calibrating the Satellite Data Sets Against the Agricultural Inventory Data</head><p>[18] We followed methods developed in previous efforts <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998;</ref><ref type="bibr" target="#b11">Cardille et al., 2002;</ref><ref type="bibr">Figure 3</ref>. Maps of croplands and pastures from Step 1 of our regression procedure, obtained by calibrating the inventory data against each of the satellite-based land cover data sets separately (BU-MODIS and GLC2000) and by calibrating against the combined land cover data set (combined). <ref type="bibr" target="#b46">Ramankutty, 2004]</ref> to merge the satellite data sets and the agricultural inventory data to develop global maps of croplands and pastures for the year 2000. As mentioned in section 3 (paragraph 1), our statistical data fusion procedure is different from <ref type="bibr" target="#b47">Ramankutty and Foley [1998]</ref> in a couple of major ways. First, to allow for potential misclassifications in the satellite-derived land cover data sets [e.g, <ref type="bibr" target="#b28">Hurtt et al., 2001;</ref><ref type="bibr" target="#b11">Cardille et al., 2002]</ref>, and also because pasture is not explicitly identified as a land cover class by the satellitederived data sets, we utilized all land cover classes in our training procedure, as described below. Second, we used the two-step procedure of <ref type="bibr" target="#b46">Ramankutty [2004]</ref> which assumes that the inventory data is the ''truth'' (except for identified outliers), and uses the satellite data to spatially disaggregate the census data within each administrative unit.</p><p>[19] For each administrative unit, i, the proportion of cropland and pasture area from the inventory data, cf i and pf i respectively, was calculated by dividing the inventory cropland and pasture areas by the total land area (A i ) for the administrative unit. Then, we determined l j,i , which is the proportion of each of the satellite-derived land cover classes, j, within administrative unit i.</p><p>[20] We have P n l j¼1 = 1.0, where n l is the number of land cover categories in the satellite data set.</p><p>[21] We formulated a linear model relating the satellitederived data sets to the agricultural inventory data, as follows:</p><formula xml:id="formula_0">cf i ¼ X nl j¼1 a j Â l j;i À Á þ e c;i ;<label>ð1Þ</label></formula><formula xml:id="formula_1">and pf i ¼ X nl j¼1 b j Â l j;i À Á þ e p;i ;<label>ð2Þ</label></formula><p>where a j and b j are unknown parameters associated with each land cover category j, and e c,i and e p,i are error terms that represent the residual difference between the inventory and linear model predicted cropland and pasture proportions respectively.</p><p>[22] Additionally, (1) and ( <ref type="formula" target="#formula_1">2</ref>) were subject to the following constraints, 0 a j 1; and 0 b j 1; and</p><formula xml:id="formula_2">a j þ b j 1:<label>ð3Þ</label></formula><p>These constraints ensured that the cropland or pasture proportions in any pixel (when the model is later applied at pixel level) will be between 0 and 100%, and that the sum of cropland and pasture proportions will be less than or equal to 100%.</p><p>[23] We used a least squares minimization method to solve for the parameters a j and b j . In particular, we specified the weighted least squares error (LSE) to be minimized as:</p><formula xml:id="formula_3">LSE ¼ X ni i¼1 w i e c;i À Á 2 þ e p;i À Á 2 h i ;<label>ð4Þ</label></formula><p>where n i is the number of administrative units, and w i is a term that weights the residuals e c,i and e p,i by the land area, A i , of each administrative unit, normalized by the maximum value, i.e.,</p><formula xml:id="formula_4">w i ¼ A i max A i ð Þ :<label>ð5Þ</label></formula><p>To estimate the parameters in equations 1 and 2, we used a multiple linear regression model from the STARPAC package (<ref type="url" target="http://www.cisl.ucar.edu/softlib/STARPAC.html">http://www.cisl.ucar.edu/softlib/STARPAC.html</ref>).</p><p>We developed three separate models, first using the BU-MODIS and GLC2000 data sets separately, and then using the combined land cover data set. In each case, we started with a complete model specifying all the land cover classes as potentially being cropland or pasture; the following classes: BU13 (urban), BU15 (snow and ice), BU16 (barren), BU17 (no data), GLC19 (bare), GLC20 (water), GLC21 (snow and ice), GLC22 (artificial surfaces), and GLC23 (no data), and their combinations in our combined land cover data set, were left out of the model. We then used stepwise regression using backward selection to estimate the parameters. The details of this procedure are outlined in Text S2.</p><p>[24] We applied our optimization procedure separately to six different regions of the world (Figure <ref type="figure" target="#fig_1">S2</ref>), similar to <ref type="bibr" target="#b47">Ramankutty and Foley [1998]</ref>. These six regions were a compromise between selecting small enough regions with similar agricultural characteristics, but large enough regions to have enough observations within each to obtain robust parameter estimates. Clearly some of the regions extend across different types of agricultural land uses, but subdividing the world into smaller regions resulted in too few observations in some regions to get robust model estimates.</p><p>[25] The estimated parameter values (not shown) were used to make global cropland and pasture maps at 5 min spatial resolution in latitude by longitude for the BU-MODIS and GLC2000 data sets individually, and for the combined land cover data set (Figure <ref type="figure">3</ref>). For each 5 min grid cell, x, y (latitude by longitude), we determined l j,x,y , which is the proportion of each of the satellite-derived land cover classes, j, within 5 min grid cell x, y. Using the estimates of a j and b j , we calculated cropland and pasture proportions in each 5 min grid cell, cf x,y and pf x,y respectively, using:</p><formula xml:id="formula_5">cf x;y ¼ X nl j¼1 a j Â l j;x;y À Á<label>ð6Þ</label></formula><p>and</p><formula xml:id="formula_6">pf x;y ¼ X nl j¼1 b j Â l j;x;y À Á :<label>ð7Þ</label></formula><p>3.3. Comparison of the Performance of BU-MODIS, GLC2000, and Combined Data Sets <ref type="bibr">[26]</ref> We now present a comparison of the inventory agricultural land area to the predicted values for each data set from calibration Step 1 (from equations 6 and 7, aggregated from 5 min resolution to the administrative level) (Table <ref type="table" target="#tab_5">4</ref>). The cropland and pasture areas predicted using the combined satellite data set is better correlated to the inventory data compared to the models using either the BU-MODIS or GLC2000 data sets alone in every region except for a few exceptions (croplands in Africa/Middle East, and pastures in Europe and Russia and Australia/NZ). Further, neither the BU-MODIS nor the GLC2000 data set always performs better than the other; for example, in Africa and Middle East, GLC2000 predicts cropland much better than BU-MODIS, but the reverse is true for pastures. We next present a regional comparison of the inventory and predicted agricultural land areas from the combined data set (Figures <ref type="figure" target="#fig_3">4a</ref> and<ref type="figure" target="#fig_3">Figures 4a</ref> and<ref type="figure" target="#fig_3">4b</ref>). The most notable differences lie in the underestimation of pasture areas in Asia and Australia/New Zealand. We will discuss the significance of this underestimation in the next section.</p><p>[27] We now consider the spatial patterns of predicted agricultural land from the combined data set versus the individual data sets, using South American pastures as an example (Figure <ref type="figure">5</ref>). In Figure <ref type="figure">5a</ref> the inventory data shows large extent of pasture along the arc of deforestation, along coastal and southern Brazil, in Uruguay, and in the Patagonia region of Argentina. Figures <ref type="figure">5b</ref> and<ref type="figure">5c</ref> are the BU-MODIS and GLC2000 based pasture maps. Both do a reasonable job of reproducing the inventory data in Figure <ref type="figure">5a</ref>. The most glaring difference is in the Nordeste (northeast) region of Brazil, where both data sets overestimate the distribution of pasture as compared to the inventory data in Figure <ref type="figure">5a</ref>. The combined land cover data was able to best reproduce the inventory data, especially in the Brazilian Nordeste region and Patagonia (Figure <ref type="figure">5d</ref>).</p><p>[28] Thus by using the combined data set we are able to capitalize on whichever satellite-based land cover data set is best suited to each region. If we were to use either the BU-MODIS or GLC2000 data sets alone, we would get reasonably good global results, but would lose accuracy in some regions. The use of the combined land cover data set especially yields marked improvements over Asia and South America (Table <ref type="table" target="#tab_5">4</ref>). Therefore we use the combined data set in the next step of this study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Bootstrap Procedure to Estimate Uncertainty</head><p>[29] We further used a bootstrap technique in order to estimate the uncertainty in our parameter estimates. This procedure was applied at this stage for only the combined land cover data set. We performed 1000 bootstrap runs, where the entire census data was sampled with replacement each time, and reestimated our regression model using the combined satellite-based land cover data set (Sampling with replacement used the standard statistical procedure wherein the census data formed the population (of n i values, the total number of administrative units), and for each of the 1000 sample sets we randomly selected n i values from the population, with the sampled value being replaced back into the population. Each sampling outcome is therefore independent of the previous outcome; that is, every census data value has equal probability of being chosen during every sampling event, no matter whether it has been chosen before). This yielded a distribution of values for each parameter a j and b j , and we report the mean and 90% confidence intervals here (see Data Set S1).</p><p>[30] Using the 1000 estimates of a j and b j , we calculated 1000 estimates of cropland and pasture proportions in each 5 min grid cell, cf x,y and pf x,y respectively, using:</p><formula xml:id="formula_7">cf x;y k ð Þ ¼ X nl j¼1 a j k ð Þ Â l j;x;y À Á ; k ¼ 1; 1000<label>ð8Þ</label></formula><p>and</p><formula xml:id="formula_8">pf x;y k ð Þ ¼ X nl j¼1 b j k ð Þ Â l j;x;y À Á ; k ¼ 1; 1000:<label>ð9Þ</label></formula><p>From these 1000 estimates, we calculated the mean, 5th percentile and 95th percentile values of the cropland and pasture values, represented as cf x,y mean , cf x,y 5th%;ile , and , respectively (figures not shown from this stage of analysis).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5.">Step 2: Adjusting the Predicted Cropland and Pasture Data to Match Inventory Data</head><p>[31] In this final step, we followed the methods of <ref type="bibr" target="#b46">Ramankutty [2004]</ref>, to adjust our spatially explicit predictions from Step 1 (the bootstrap model estimates using the combined data set) to match the inventory data at the administrative level where available. To do so, we first aggregated our 5 min resolution cropland and pasture data sets to the administrative level. We then compared them to the inventory data to derive a correction factor for each administrative unit. The correction factors were, however, constrained to be within a factor of 5 (i.e., to lie between 0.2 and 5.0) for administrative units that were considered outliers in the regression, thereby trusting the satellite-based land cover data more than the inventory data in those cases. Outliers were determined to be those administrative units with residuals (predicted cropland area from the Step 1 calibration procedure minus inventory cropland area) that were greater than 2 standard deviations from the mean. Correction factors were set to 1.0 for administrative units with missing data, thereby relying on the satellite-estimated spatial patterns from Step 1 in these units. We then applied Pycnophylactic Interpolation <ref type="bibr" target="#b60">[Tobler, 1979]</ref> to the administrative level correction factors to obtain a smooth surface of correction factors at 5 min resolution (without this smoothing, artificial boundaries between administrative units might appear in the final product; note, however, that only the correction factors were smoothed, so any real boundaries in the original satellite data will remain). The spatial correction factors were then applied to our results from Step 1 to derive our final maps of cropland and pastures at 5 min resolution (Figure <ref type="figure">6</ref>) and respective Figure <ref type="figure">5</ref>. Comparison of pasture inventory data in South America against Step 1 model predictions for pasture using the BU-MODIS satellite data set, GLC2000, and combined land cover data set. confidence intervals (Figure <ref type="figure">7</ref>). The final equations for cropland and pasture proportions can be represented as </p><p>where mcf x,y and mpf x,y are the spatially explicit correction factors for cropland and pasture respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Total Global Area of Croplands and Pastures in 2000</head><p>[32] Our final results (Figure <ref type="figure">6</ref>) indicate that there were 15.0 (95% confidence range of 12.2-17.1) million km 2 of crop-land and 28.0 (95% confidence range of 23.6-30.0) million km 2 of pasture in the world in the year 2000. This compares to 15.3 million km 2 of cropland and 34.4 million km 2 of pasture reported by the FAOSTAT database. Thus we predict significantly lower extent of pasture (by 6.1 million km 2 or $18% lower) than reported by FAO. Our own inventory data reports 15.0 million km 2 of cropland and 31.5 million km 2 of pasture. Thus our inventory data for pasture is already lower than FAO statistics; this difference was explained earlier in section 2.2. Our cropland extent for the year 2000 of 15.3 million km 2 is lower than the 18.0 million km 2 of cropland in 1992 from our previous study <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998</ref>]. This does not mean that cropland extent has decreased from 1992 to 2000; rather the difference is a result of changes in methodology: We plan to reconstruct a consistent historical time series; until then a comparison of our 1992 and 2000 data sets is precluded.</p><p>[33] Our final predicted pasture area is even lower than our inventory data, especially in Asia and Australia/New Zealand (as already evidenced in Figures <ref type="figure" target="#fig_3">4a</ref> and<ref type="figure" target="#fig_3">4b</ref>). We anticipated that this problem would be overcome in Step 2, when we scaled our spatial cropland and pasture data to match our inventory data, but despite this our final predicted extent of pasture differs significantly from our inventory data. This is because we did not allow pixels with predicted agriculture proportions of 0% in Step 1 to be scaled, and Figure <ref type="figure">6</ref>. Final estimates of croplands and pastures from this study. This is the final result obtained by calibrating the combined land cover data set against the agricultural inventory data (Step 1), using 1000 bootstrap estimates for the parameters, and then further adjusting the predictions to match the inventory data at the administrative unit level (Step 2). each pixel was limited to have a maximum agriculture proportion of 100%. The biggest difference is in China, where the inventory reports 4 million km 2 of pasture, but we estimate a final area of only 2.9 million km 2 . Our estimate, however, is similar to the 2.6 million km 2 of grassland reported by <ref type="bibr">Verburg et al. [2000]</ref>. <ref type="bibr" target="#b63">Verburg and van Keulen [1999]</ref> discuss that much nontraditional grazing occurs in China, with goats grazing along roads, dry river beds, and in fields after harvest, and pigs in back yards; it is not clear how these landscapes should be characterized. It is also likely that grazed forestland and semiarid land are included under the pasture category in the Chinese inventory. Other Figure <ref type="figure">7</ref>. The 90% confidence intervals on our final estimates; here we show the difference between the 5th and 95th percentiles from the mean estimate. Note that the scales indicate absolute differences in the percentage of grid cells occupied by agriculture (e.g., if cropland mean = 50% and cropland 5th percentile = 30%, then the difference is shown as 20%). The figures show that the greatest uncertainty with respect to both croplands and pastures lies in the Sahelo-Sudan region of west and central Africa. There is also large uncertainty with respect to cropland extent in Southeast Asia and pasture extent in Australia and parts of Asia and South America. big differences in pasture area arise in Australia (inventory area of 3.2 million km 2 versus our prediction of 2.7 million km 2 ), Mongolia (inventory of 1.3 million km 2 versus our estimate of 0.9 million km 2 ), Mauritania (inventory of 0.4 million km 2 versus our 0.1 million km 2 ), Iran (inventory of 0.9 million km 2 versus our 0.6 million km 2 ), and the United States (inventory of 2.3 million km 2 versus our 2.1 million km 2 ). It is interesting to note that all of these countries have significant amount of semiarid land. One potential explanation could be the variability in grazing associated with the interannual changes in climate that can be quite extreme in semiarid regions; the satellite data set only captures a single year of land cover condition, which can vary from year to year. For croplands, while the global totals agree, there are compensating national level differences but these differences are less significant compared to the differences in pasture areas.</p><p>[34] Our final predicted cropland extent of 15.0 million km 2 in year 2000 amounts to roughly 12% of the global land area (excluding Greenland and Antarctica), and pasture extent of 28.0 million km 2 amounts to 22% of global land area. Thus humans are using 34% of the global land area for their agricultural needs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Geographic Distribution of Croplands and Pastures in Year 2000</head><p>[35] We analyzed the distribution of agricultural regions by 14 different regions of the world (Table <ref type="table" target="#tab_7">5</ref>). The greatest proportion of croplands in the world are found in South Asia, Europe, Southeast Asia, and United States, east of the Mississippi, while the greatest proportion of pastures are found in Argentina, Uruguay and Chile, Pacific developed countries, China, Mexico and Central America, United States, west of the Mississippi, and tropical Africa. The smallest proportion of croplands are found in Canada, the Pacific developed Countries, and northern South America, while the smallest proportion of pastures are found in Southeast Asia, Canada, and United States, east of the Mississippi.</p><p>[36] We also examined which potential natural vegetation types of the world have been most affected by agriculture (Table <ref type="table" target="#tab_8">6</ref>). We overlaid our agricultural maps over the global map of potential natural vegetation developed by <ref type="bibr" target="#b48">Ramankutty and Foley [1999]</ref>. We find that croplands have mostly replaced temperate deciduous forests (in Europe and eastern United States), and tropical deciduous forests (in South Asia), while, pastures have mostly replaced grasslands, savannas, and shrubland. Roughly 30% of temperate deciduous forests have been converted to cropland, while 50% of grasslands have been converted to pasture. However, this global picture varies regionally (Table <ref type="table" target="#tab_9">7</ref>). While forests have been cleared for croplands predominantly in Asia, a substantial amount of savanna and grasslands have been converted to croplands in North America, Africa, and the Former Soviet Union. Also, a significant amount of forests in South America have been cleared for pastures, even though globally most pastures have replaced savanna/grasslands.</p><p>[37] Next, we examined the amount of spatial overlap between croplands and pastures (Figure <ref type="figure">8</ref>). Our analysis shows that cropland and pastures are distinct biomes over much of our planet's land surface. The regions of the world with significant overlap lie along the western edge of cultivation in the midwestern United States and in Texas, northeast Brazil, in parts of West Africa, eastern China, Europe, and the former Soviet Union, scattered regions elsewhere. This is not to say that grazing does not occur in cultivated regions of the world; many regions of the world are characterized by multifunctional agricultural lands, subject to different uses during different parts of the year (e.g., grazing occurs following the harvest of a crop) <ref type="bibr" target="#b52">[Reenberg and Fog, 1995]</ref>. Therefore this lack of overlap partly reflects the inability of global monitoring systems, including satellite data and agriculture inventory data, to characterize multiple uses, and land is often classified as a single category. Our final estimates likely underestimate the real overlap between cultivation and grazing, especially the multiple uses that occur within a year.</p><p>[38] We also investigated the frequency distribution of croplands and pastures globally, and across the 14 different regions of the world. We calculated probability distributions using all pixels with nonzero cropland or pasture values, and estimated what proportion of total cropland or pasture area can be attributed to different categories of cropland or pasture proportions (Figure <ref type="figure" target="#fig_5">9</ref>). Globally, we find that a large proportion of the total cropland area comes from land that is between 60% and 80% cultivated. This pattern is observed in most regions of the world, except in northern South America, tropical Africa, and North Africa and Middle East (where larger number of pixels with low proportion of cultivation contribute most to the total cropland area, although in the latter two regions, there are a few pockets of greater than 90% cropland). With pastures, the total area is dominated by pixels with greater than 90% pasture. This pattern is true over most regions of the world, but is reversed in the eastern United States, Europe, and Southeast Asia (and South Asia, to a lesser extent). However, it is to be noted that the proportion of pasture in a grid cell provides no information on the grazing intensity in that grid cell; an area of grassland with very low stocking density of livestock would have the same proportion of pasture as one with very high stocking densities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Evaluation Against Other Independent Data Sets</head><p>[39] While there are no consistent, global spatial data sets of agriculture in the year 2000 to evaluate our products against, there are numerous regional products against which we can compare our global products (see Figures <ref type="figure" target="#fig_1">S3-S12</ref>). While many of these regional data are not for the year 2000 (and are sometimes a decade older), they nevertheless provide an independent measure of the large-scale spatial patterns of agriculture in these regions. These data were not always available in a consistent digital format; they were often in vector format that is difficult to quantitatively compare to our raster data and sometimes only available as images in publications. Therefore rather than making quantitative comparisons we present detailed regional maps from our data set compared to these independent regional maps, as online supplements (Figures <ref type="figure" target="#fig_1">S3 -S12</ref>)<ref type="foot" target="#foot_1">foot_1</ref> .</p><p>[40] Our regional comparisons are mostly for croplands because there are few spatial data sets depicting pastures (likely because it is difficult to distinguish between natural and grazed grasslands). Visual comparison (Figures <ref type="figure" target="#fig_1">S3-S12</ref>) suggests that our distribution of croplands is reasonable in North America (United States, Canada, and Mexico), and so is the distribution of pastures in the United States (except for noticeable differences in northeastern Texas, and eastern Oklahoma, arising from lower pasture census values). In the Amazon Basin, our distribution of both croplands and pastures shows similar geographic patterns but greater intensity compared to <ref type="bibr" target="#b11">Cardille et al. [2002]</ref>. This may be a result of our data being representative of 2000, while <ref type="bibr" target="#b11">Cardille et al. [2002]</ref> data is for the mid 1990s (changes in the southern Amazon are rapid) or because of differences in statistical methods with the regression tree method of <ref type="bibr" target="#b11">Cardille et al. [2002]</ref> not able to deal well with extremes. In China also, our geographic patterns of crop-Figure <ref type="figure">8</ref>. Map showing the amount of overlap between croplands and pastures. Croplands or pastures were considered to be dominant when they were a factor of 3 greater in magnitude than the other category and mixed otherwise. lands matches well with that of <ref type="bibr" target="#b38">Liu et al. [2005]</ref>, but our intensity is lower (the differences are greater than can be explained by the different spatial resolutions of the two data sets). In West Africa, our cropland distribution from this study is a significant improvement over our earlier work <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998</ref>], but consistent with our more recent effort <ref type="bibr" target="#b46">[Ramankutty, 2004]</ref>. Our distribution of croplands compares reasonably well with Africover data in East Africa <ref type="bibr" target="#b34">[Latham, 2001]</ref> (<ref type="url" target="http://www.africover.org/">http://www.africover.org/</ref>) but is not a significant improvement over our earlier effort, while in South Africa, our estimated patterns are an improvement over our previous effort but of much lower intensity. In Europe, our data set of croplands compares well to the CORINE land cover database. We seem to underestimate croplands in eastern Australia, while our distribution of pastures is significantly underestimated in the Northern Territory. The problem with pastures in Australia actually emerges from Step 2, with the census data in the Northern Territory suggesting very little pastures; our predicted pattern from Step 1 compares better to the data from the Australian Natural Resources Atlas.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Discussion and Conclusions</head><p>[41] We have merged two different satellite-based land cover classification data sets with an extensive compilation of national and subnational level agricultural census statistics to develop global maps of croplands and pastures for the year 2000. These maps form the first comprehensive characterization of the distribution of global agricultural lands in the year 2000, describing the spatial extent of croplands and pastures within 5 min resolution ($10km) grid cells in latitude by longitude; in addition, 90% confident intervals on the mean estimates are presented for the first time. In creating these new data sets, we have built on our earlier work in 1998 <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998]</ref>, where we developed a statistical ''data fusion'' method to merge satellite data and census data to map global croplands in 1992. Here we have improved our statistical methods, combined two new satellite data sets, and enriched our agricultural census data to update our global croplands map to the year 2000, and to create a new global pasture data set for 2000. We would like to strongly caution that our two croplands maps from 1992 and 2000 cannot be directly compared to detect changes over that time period: Changes in methodology and data sources preclude such a direct comparison. We plan to develop a consistent historical time series of croplands and pastures in the future.</p><p>[42] The global area of cropland from this study for the year 2000 of 15.0 million km 2 is smaller than the area of 18 million km 2 for 1992 estimated by our earlier study <ref type="bibr" target="#b47">[Ramankutty and Foley, 1998]</ref>. This is not a real decrease, but rather an artifact of change in methodology between the two studies. In this study, we used our Step 2 to scale the calibrated cropland patterns to identically match the census data. In our earlier study our final result was directly out of the calibration and we did not do any scaling. We have changed our philosophy here to trust the total area of agricultural land reported by the census data (unless they are outliers in the Step 1 calibration procedure), and use the satellite data sets for information on the spatial distribution within each census administrative unit.</p><p>[43] The global area of pasture of 28.0 million km 2 is 18% lower than the standard FAOSTAT estimate of 34.4 million km 2 . The major differences are found in Saudi Arabia, Australia, China, and Mongolia. This is likely because the census data on pasture reported to FAOSTAT include grazed forestland and semiarid land. The definition of pasture has always been problematic, as acknowledged by FAOSTAT (<ref type="url" target="http://faostat.fao.org/site/375/default.aspx">http://faostat.fao.org/site/375/default.aspx</ref>), and one way to improve the situation in the future may be to develop global maps of livestock density [e.g., <ref type="bibr" target="#b33">Kruska et al., 2003;</ref><ref type="bibr">W. Wint, Global Livestock Distributions, 2005, data</ref>  [44] Although we now have new global estimates of the distribution of cropland and pastures, several caveats need to be noted. First, there is much misunderstanding and confusion regarding the definitions of croplands and pastures. In this study, we have followed the FAO definition, as described in section 2.2 (paragraph 2). For croplands, this includes temporary fallow lands (less than 5 years), which are not cultivated. It is not clear how strictly this restriction of less than 5 years was applied when accounting for fallow land. For example, the U.S. data on croplands used by FAOSTAT includes idled cropland, which includes land under the Conservation Reserve Program that amounts to roughly 9% of the total cropland area, and is often idled for longer than 5 years <ref type="bibr">[Lubowski et al., 2002]</ref>. Secondly, in tropical nations characterized by extensive fallow cropping systems, such a definition may include much land that is not currently cultivated, and therefore portray a misleading picture of what may be commonly thought of as cropland. Finally, these definitions of croplands say nothing about the productivity of the land, but this is the topic of our companion article <ref type="bibr" target="#b41">[Monfreda et al., 2007]</ref>.</p><p>[45] The definition of pasture is subject to even greater uncertainty. The definition of pasture is not consistently clear in the census data that we compiled in this study, or any of the maps we compared our data against (Figures <ref type="figure" target="#fig_1">S3-S12</ref>). Where is the dividing line between herding and grazing? For example, is reindeer herding reported under pastureland? Does the data represent both planted pastures and natural pastures? Is grazing underneath a forest cover or in semiarid areas included in the pasture data? In other words, pasture is only a subset of the land (on herbaceous vegetative cover) that is used for grazing. The data on extent of pasture also says nothing about the intensity of grazing: An acre of land with one cow and another acre with 10 cows would both be considered 1 acre of pastureland.</p><p>[46] An additional concern related to the definition of croplands and pastures arises from the existence of multifunctional landscapes, as discussed in section 4.2 (paragraph 3) <ref type="bibr" target="#b52">[Reenberg and Fog, 1995]</ref>. In some countries, especially in Asia and Africa, land is cropped for a while, and then after harvest, is grazed for the remainder of the year. Thus during the year the land is put to multiple uses, and it is not clear how to classify these lands, and how these lands were accounted for in the census statistics. Mixed use classifications need to be used to characterize such landscapes rather than discrete classes such as cropland and pasture. It is not clear how much of the global agricultural land area is influenced by such multifunctional land use practices. Future agricultural census data compilation methods need to be encouraged to deal explicitly with multifunctional landscapes.</p><p>[47] Finally, our synthesized data sets have uncertainty related to the fact that we are trying to merge two different observation systems: remote-sensing based and ground based. Remote sensing satellites can only observe land cover, i.e., the top of the vegetative canopy, and have little information on what happens below the canopy. The ground-based land use data, on the other hand, may include different information. For example, the cropland census data include permanent crops such as tree crops. It is not clear whether the remote sensing observations consider tree crops as tree cover or whether they classify them as cropland. Similarly, as discussed in section 2.2 (paragraph 4), census data may not distinguish between grazing on grasslands, forests, and bare ground.</p><p>[48] There is great demand by the global environmental change community to understand how global agricultural lands are changing and evaluate their implications for a sustainable future [e.g., <ref type="bibr" target="#b59">Tilman et al., 2001;</ref><ref type="bibr" target="#b18">Foley et al., 2005]</ref>. Therefore despite large uncertainties we need to make progress toward developing new methods to characterize the spatial patterns of global agricultural lands. Here we have obtained the best available global data on agricultural lands and synthesized them to create a single homogeneous database of the world's croplands and pastures. We believe that these data sets would be enormously useful to at least two different communities of scientists/practitioners: (1) global change scientists, interested in the consequences of global agriculture for climate, carbon cycle, water resources, etc., who would use these data sets for globalscale analysis or as inputs to climate and ecosystem models [e.g., <ref type="bibr" target="#b40">McGuire et al., 2001;</ref><ref type="bibr" target="#b42">Myhre and Myhre, 2003;</ref><ref type="bibr" target="#b30">Jain and Yang, 2005]</ref>; and (2) ecologists and conservation practitioners, interested in the role of agriculture in modifying natural ecosystems and habitats, reducing biodiversity, and enhancing species extinction [e.g., <ref type="bibr" target="#b25">Green et al., 2005;</ref><ref type="bibr" target="#b61">Vandermeer et al., 2005]</ref>.</p><p>[49] Acknowledgments. We are grateful to Peter Verburg from Wageningen University for sharing his China data. We would like to thank Mark Friedl from Boston University for providing feedback on early versions of this work. We would like to thank George Allez for fabulous help with data compilation and entry. The comments from Eric Lambin, Alberte Bondeau, and another anonymous reviewer greatly helped us in improving this manuscript. This work was accomplished through support from a NASA Interdisciplinary Science (IDS) grant, for which we are thankful.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) Administrative units for which we calculated agricultural inventory data (n = 15,990 administrative units); (b) percentage cropland within each administrative unit from the agriculture inventory data; and (c) percentage pasture within each administrative unit from the agriculture inventory data.</figDesc><graphic coords="3,155.71,65.96,300.60,542.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Flowchart depicting our methodology for combining satellite data and agricultural inventory data to derive global data sets of croplands and pastures.</figDesc><graphic coords="6,60.75,70.21,240.93,168.72" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Comparison of agricultural inventory data on croplands and pastures against the model predictions from calibration Step 1 aggregated to the administrative unit level. Note the logarithmic scales for the axes.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. (continued)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Probability distribution of cropland and pasture areas as a function of the different proportions (or ''intensities'') of cropland and pastures for the different regions of the world. The figures indicate the percentage of the total area of cropland or pasture that is contributed by different intensities of cropland and pasture values (e.g., globally, croplands in grid cells that have between 60% and 70% cropland contribute to 13% of the total area of cropland).</figDesc><graphic coords="16,65.80,66.24,480.44,405.13" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Land Cover Classification Schemes Used by the Two Global Satellite Data Sets</figDesc><table><row><cell>BU-MODIS Legend a</cell><cell>GLC 2000 Legend</cell></row><row><cell>0: water</cell><cell>1: tree cover, broadleaved, evergreen</cell></row><row><cell>1: evergreen needleleaf forest</cell><cell>2: tree cover, broadleaved, deciduous, closed</cell></row><row><cell>2: evergreen broadleaf forest</cell><cell>3: tree cover, broadleaved, deciduous, open (15 -40% tree cover)</cell></row><row><cell>3: deciduous needleleaf forest</cell><cell>4: tree cover, needle-leaved, evergreen</cell></row><row><cell>4: deciduous broadleaf forest</cell><cell>5: tree cover, needle-leaved, deciduous</cell></row><row><cell>5: mixed forests</cell><cell>6: tree cover, mixed leaf type</cell></row><row><cell>6: closed shrublands</cell><cell>7: tree cover, regularly flooded, fresh water (and brackish)</cell></row><row><cell>7: open shrublands</cell><cell>8: tree cover, regularly flooded, saline water</cell></row><row><cell>8: woody savannas</cell><cell>9: mosaic; tree cover/other natural vegetation</cell></row><row><cell>9: savannas</cell><cell>10: tree cover, burnt</cell></row><row><cell>10: grasslands</cell><cell>11: shrub cover, closed-open, evergreen</cell></row><row><cell>11: permanent wetlands</cell><cell>12: shrub cover, closed-open, deciduous</cell></row><row><cell>12: croplands</cell><cell>13: herbaceous cover, closed-open</cell></row><row><cell>13: urban and built up</cell><cell>14: sparse herbaceous or sparse shrub cover</cell></row><row><cell>14: cropland/natural vegetation mosaic</cell><cell>15: regularly flooded shrub and/or herbaceous cover</cell></row><row><cell>15: snow and ice</cell><cell>16: cultivated and managed areas</cell></row><row><cell>16: barren or sparsely vegetated</cell><cell>17: mosaic; cropland/tree cover/other natural vegetation</cell></row><row><cell>254: unclassified (recoded to 17)</cell><cell>18: mosaic; cropland/shrub or grass cover</cell></row><row><cell>255: fill value (recoded to 17)</cell><cell>19: bare areas</cell></row><row><cell></cell><cell>20: water bodies (natural and artificial)</cell></row><row><cell></cell><cell>21: snow and ice (natural and artificial)</cell></row><row><cell></cell><cell>22: artificial surfaces and associated areas</cell></row><row><cell></cell><cell>23: no data</cell></row></table><note><p>a We obtained product 2000289 V003, SDS 01 Land_Cover_Type_1 with IGBP land cover classification scheme. 1km resolution. We also masked out protected/minimal use areas in the central part of the Australian continent (Bureau of Rural Sciences, Land Use of Australia, Version 3: 2000/2001, Department of Agriculture, Fisheries and Forestry, Australian Natural Resources Data Library, Canberra, Australia, available at http://www.nlwra.gov.au/Data_Library/index. aspx), which otherwise gets classified entirely as pasture.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Source of Census Data</figDesc><table><row><cell></cell><cell>Administrative</cell><cell></cell><cell>Year of</cell></row><row><cell>Country</cell><cell>Units</cell><cell>Source</cell><cell>Data</cell></row><row><cell>Argentina</cell><cell></cell><cell>Instituto Nacional de Estadistica y Censos, Censo Nacional</cell><cell>2001 -2002</cell></row><row><cell></cell><cell></cell><cell>Agropecurio, 2002 (http://www.indec.mecon.ar)</cell><cell></cell></row><row><cell>Australia</cell><cell></cell><cell>Australian Bureau of Statistics, Agricultural Commodity Survey data</cell><cell>2002 -2003</cell></row><row><cell></cell><cell></cell><cell>from 2002 -2004 (data purchased from ABS, 2005) (http://www.abs.gov.au)</cell><cell></cell></row><row><cell>Austria</cell><cell></cell><cell>''Regio'' database from Eurostat (http://ec.europa.eu/eurostat/)</cell><cell>2000</cell></row><row><cell>Belarus</cell><cell></cell><cell>cropland data from Ministry of Statistics and Analysis, Minsk, 2004;</cell><cell>1993; 2000</cell></row><row><cell></cell><cell></cell><cell>pasture data from FAO country pasture/forage resource profiles</cell><cell></cell></row><row><cell></cell><cell></cell><cell>(http://www.fao.org/ag/AGP/AGPC/doc/Counprof/regions/index.htm)</cell><cell></cell></row><row><cell>Belgium</cell><cell></cell><cell>''Regio'' database from Eurostat (http://ec.europa.eu/eurostat/)</cell><cell>2000</cell></row><row><cell>Bolivia</cell><cell></cell><cell>crop-harvested area data from Instituto Nacional de Estadistica,</cell><cell>2000</cell></row><row><cell></cell><cell></cell><cell>Cuadro 8.03.04 (http://www.ine.gov.bo); livestock units from the Food</cell><cell></cell></row><row><cell></cell><cell></cell><cell>and Agriculture Organization's GLIPHA database</cell><cell></cell></row><row><cell></cell><cell></cell><cell>(http://www.fao.org/ag/aga/glipha/index.jsp)</cell><cell></cell></row><row><cell>Brazil</cell><cell></cell><cell>Instituto Brasileiro de Geographia e Estatistica, 1995 -1996</cell><cell></cell></row><row><cell></cell><cell></cell><cell>Census of Agriculture (http://www.ibge.gov.br/)</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 2 .</head><label>2</label><figDesc>(continued)    </figDesc><table><row><cell></cell><cell>Administrative</cell><cell></cell><cell>Year of</cell></row><row><cell>Country</cell><cell>Units</cell><cell>Source</cell><cell>Data</cell></row><row><cell>South Africa</cell><cell>11</cell><cell>Central Statistical Service, natural resource accounts: land accounts,</cell><cell>1995</cell></row><row><cell></cell><cell></cell><cell>1994/1995 (http://www.statssa.gov.za/)</cell><cell></cell></row><row><cell>Spain</cell><cell>17</cell><cell>''Regio'' database from Eurostat (http://ec.europa.eu/eurostat/)</cell><cell>1999</cell></row><row><cell>Sri Lanka</cell><cell>24</cell><cell>Department of Census and Statistics, census of agriculture</cell><cell>2002</cell></row><row><cell></cell><cell></cell><cell>2002 (http://www.statistics.gov.lk/)</cell><cell></cell></row><row><cell>Sweden</cell><cell>8</cell><cell>''Regio'' database from Eurostat (http://ec.europa.eu/eurostat/)</cell><cell>1998</cell></row><row><cell>Thailand</cell><cell>72</cell><cell>National Statistical Office, 1993 agricultural census (http://web.nso.go.th/)</cell><cell>1993</cell></row><row><cell>Turkey</cell><cell>73</cell><cell>State Institute of Statistics, Prime Ministry, Republic of Turkey,</cell><cell>2001</cell></row><row><cell></cell><cell></cell><cell>Turkey's statistical yearbook,</cell><cell></cell></row><row><cell></cell><cell></cell><cell>2004 (http://www.die.gov.tr/ENGLISH/index.html/)</cell><cell></cell></row><row><cell>Ukraine</cell><cell>25</cell><cell>Bouzaher et al. [1994]</cell><cell>1991</cell></row><row><cell>United Kingdom</cell><cell>12</cell><cell>''Regio'' database from Eurostat (http://ec.europa.eu/eurostat/)</cell><cell>2000</cell></row><row><cell>United States</cell><cell>3077</cell><cell>National Agricultural Statistics Service,</cell><cell>2002</cell></row><row><cell>of America</cell><cell></cell><cell>U.S. Department of Agriculture, 2002 census of agriculture</cell><cell></cell></row><row><cell></cell><cell></cell><cell>(http://www.nass.usda.gov/Census_of_Agriculture/)</cell><cell></cell></row><row><cell>Uruguay</cell><cell>19</cell><cell>Ministerio de Ganaderia Agricultura y Pesca,</cell><cell>2000</cell></row><row><cell></cell><cell></cell><cell>Censo General Agropecuario 2000 (http://www.mgap.gub.uy/)</cell><cell></cell></row><row><cell>Venezuela</cell><cell>24</cell><cell>Infoagro Zulia, VI Censo Agracute;cola Nacional:</cell><cell></cell></row></table><note><p>Datos Preliminar (http://www.zulia.infoagro.info.ve/) 1997/98 Vietnam 61 General Statistical Office of Vietnam, land use in 2003 and number of livestock (http://www.gso.gov.vn/) 2003</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 3 .</head><label>3</label><figDesc>Examples of Combined Land Cover Categories</figDesc><table><row><cell>BU-MODIS</cell><cell>GLC2000</cell><cell>Combined Category</cell></row><row><cell>1 (evergreen needleleaf forest)</cell><cell>1 (tree cover, broadleaved, evergreen)</cell><cell>1 (BU1GLC1)</cell></row><row><cell>1 (evergreen needleleaf forest)</cell><cell>2 (tree cover, broadleaved, deciduous, closed)</cell><cell>2 (BU1GLC2)</cell></row><row><cell>1 (evergreen needleleaf forest)</cell><cell>3 (tree cover, broadleaved, deciduous, open)</cell><cell>3 (BU1GLC3)</cell></row><row><cell>1 (evergreen needleleaf forest)</cell><cell>4 (tree cover, needle-leaved, evergreen)</cell><cell>4 (BU1GLC4)</cell></row><row><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell></row><row><cell>10 (grasslands)</cell><cell>11 (shrub cover, closed-open, evergreen)</cell><cell>218 (BU10GLC11)</cell></row><row><cell>10 (grasslands)</cell><cell>12 (shrub cover, closed-open, deciduous)</cell><cell>219 (BU10GLC12)</cell></row><row><cell>10 (grasslands)</cell><cell>13 (herbaceous cover, closed-open)</cell><cell>220 (BU10GLC13)</cell></row><row><cell>10 (grasslands)</cell><cell>14 (sparse herbaceous or sparse shrub cover)</cell><cell>221 (BU10GLC14)</cell></row></table><note><p><p>3.1. Combining the Two Satellite-Derived Land Cover Classification Data Sets</p>[17] Giri et al.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 4 .</head><label>4</label><figDesc>Weighted Correlation Coefficient Between Inventory Data and Model Predictions From Step 1 a</figDesc><table><row><cell></cell><cell></cell><cell cols="2">BU-MODIS</cell><cell>GLC2000</cell><cell></cell><cell cols="2">COMBINED</cell></row><row><cell>Region</cell><cell>Administrative Units</cell><cell>Cropland</cell><cell>Pasture</cell><cell>Cropland</cell><cell>Pasture</cell><cell>Cropland</cell><cell>Pasture</cell></row><row><cell>Africa and Middle East</cell><cell>242</cell><cell>0.54</cell><cell>0.70</cell><cell>0.65</cell><cell>0.55</cell><cell>0.41</cell><cell>0.73</cell></row><row><cell>Europe and Russia</cell><cell>448</cell><cell>0.93</cell><cell>0.87</cell><cell>0.95</cell><cell>0.85</cell><cell>0.95</cell><cell>0.84</cell></row><row><cell>Asia</cell><cell>3190</cell><cell>0.83</cell><cell>0.79</cell><cell>0.87</cell><cell>0.66</cell><cell>0.91</cell><cell>0.85</cell></row><row><cell>North America</cell><cell>5752</cell><cell>0.90</cell><cell>0.84</cell><cell>0.89</cell><cell>0.84</cell><cell>0.93</cell><cell>0.89</cell></row><row><cell>South America</cell><cell>6201</cell><cell>0.77</cell><cell>0.67</cell><cell>0.59</cell><cell>0.70</cell><cell>0.83</cell><cell>0.79</cell></row><row><cell>Australia/NZ</cell><cell>71</cell><cell>0.90</cell><cell>0.90</cell><cell>0.81</cell><cell>0.86</cell><cell>0.91</cell><cell>0.74</cell></row></table><note><p>a Each data point is weighted by the area of the administrative unit.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 5 .</head><label>5</label><figDesc>Cropland and Pasture Areas by Different Regions of the World</figDesc><table><row><cell></cell><cell>Land Area,</cell><cell>Cropland,</cell><cell>Pasture,</cell><cell>Cropland,</cell><cell>Pasture,</cell></row><row><cell>Biome</cell><cell>million km 2</cell><cell>million km 2</cell><cell>million km 2</cell><cell>% of Land Area</cell><cell>% of Land Area</cell></row><row><cell>Canada</cell><cell>8.88</cell><cell>0.41</cell><cell>0.20</cell><cell>4.6</cell><cell>2.3</cell></row><row><cell>United States, east of Mississippi</cell><cell>2.20</cell><cell>0.53</cell><cell>0.11</cell><cell>24.0</cell><cell>5.0</cell></row><row><cell>United States, west of Mississippi</cell><cell>6.87</cell><cell>1.26</cell><cell>2.16</cell><cell>18.3</cell><cell>31.4</cell></row><row><cell>Mexico and Central America</cell><cell>2.63</cell><cell>0.50</cell><cell>0.83</cell><cell>19.1</cell><cell>31.4</cell></row><row><cell>South America, northern Portions</cell><cell>13.85</cell><cell>0.74</cell><cell>3.15</cell><cell>5.4</cell><cell>22.7</cell></row><row><cell>Argentina, Uruguay, and Chile</cell><cell>3.63</cell><cell>0.37</cell><cell>1.20</cell><cell>10.2</cell><cell>33.0</cell></row><row><cell>Tropical Africa</cell><cell>24.18</cell><cell>1.94</cell><cell>7.28</cell><cell>8.0</cell><cell>30.1</cell></row><row><cell>North Africa and Middle East</cell><cell>11.42</cell><cell>0.84</cell><cell>1.45</cell><cell>7.4</cell><cell>12.7</cell></row><row><cell>Europe</cell><cell>4.67</cell><cell>1.25</cell><cell>0.67</cell><cell>26.8</cell><cell>14.4</cell></row><row><cell>Former Soviet Union</cell><cell>21.41</cell><cell>2.07</cell><cell>2.73</cell><cell>9.7</cell><cell>12.8</cell></row><row><cell>China</cell><cell>10.83</cell><cell>1.40</cell><cell>3.54</cell><cell>12.9</cell><cell>32.7</cell></row><row><cell>South Asia</cell><cell>5.64</cell><cell>2.22</cell><cell>0.49</cell><cell>39.4</cell><cell>8.8</cell></row><row><cell>Southeast Asia</cell><cell>3.70</cell><cell>0.97</cell><cell>0.06</cell><cell>26.3</cell><cell>1.7</cell></row><row><cell>Pacific developed countries</cell><cell>8.99</cell><cell>0.40</cell><cell>2.94</cell><cell>4.5</cell><cell>32.7</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 6 .</head><label>6</label><figDesc>Cropland and Pasture Areas by Different Biomes of the World</figDesc><table><row><cell></cell><cell>Land Area,</cell><cell>Cropland,</cell><cell>Pasture,</cell><cell>Cropland, % of</cell><cell>Pasture, % of</cell></row><row><cell>Biome</cell><cell>million km 2</cell><cell>million km 2</cell><cell>million km 2</cell><cell>Biome Area</cell><cell>Biome Area</cell></row><row><cell>Tropical evergreen forest</cell><cell>16.77</cell><cell>1.81</cell><cell>1.48</cell><cell>10.8</cell><cell>8.8</cell></row><row><cell>Tropical deciduous forest</cell><cell>5.86</cell><cell>1.58</cell><cell>1.43</cell><cell>27.0</cell><cell>24.4</cell></row><row><cell>Temperate broadleaf evergreen forest</cell><cell>1.13</cell><cell>0.27</cell><cell>0.23</cell><cell>24.2</cell><cell>20.2</cell></row><row><cell>Temperate needleleaf evergreen forest</cell><cell>3.61</cell><cell>0.72</cell><cell>0.37</cell><cell>20.0</cell><cell>10.3</cell></row><row><cell>Temperate deciduous forest</cell><cell>4.84</cell><cell>1.46</cell><cell>0.82</cell><cell>30.1</cell><cell>16.9</cell></row><row><cell>Boreal evergreen forest</cell><cell>5.98</cell><cell>0.09</cell><cell>0.10</cell><cell>1.5</cell><cell>1.7</cell></row><row><cell>Boreal deciduous forest</cell><cell>2.22</cell><cell>0.04</cell><cell>0.05</cell><cell>1.7</cell><cell>2.1</cell></row><row><cell>Evergreen/deciduous mixed forest</cell><cell>14.96</cell><cell>1.16</cell><cell>0.71</cell><cell>7.7</cell><cell>4.8</cell></row><row><cell>Savanna</cell><cell>19.18</cell><cell>3.02</cell><cell>6.49</cell><cell>15.7</cell><cell>33.8</cell></row><row><cell>Grassland</cell><cell>14.29</cell><cell>2.74</cell><cell>7.25</cell><cell>19.2</cell><cell>50.7</cell></row><row><cell>Dense shrubland</cell><cell>5.99</cell><cell>1.07</cell><cell>1.87</cell><cell>17.9</cell><cell>31.2</cell></row><row><cell>Open shrubland</cell><cell>11.94</cell><cell>0.87</cell><cell>5.15</cell><cell>7.3</cell><cell>43.1</cell></row><row><cell>Tundra</cell><cell>7.01</cell><cell>0.04</cell><cell>0.92</cell><cell>0.6</cell><cell>13.1</cell></row><row><cell>Desert</cell><cell>15.34</cell><cell>0.13</cell><cell>1.22</cell><cell>0.9</cell><cell>7.9</cell></row><row><cell>Polar desert/rock/ice</cell><cell>1.21</cell><cell>0.00</cell><cell>0.02</cell><cell>0.1</cell><cell>1.7</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 7 .</head><label>7</label><figDesc>Cropland and Pasture Areas by Different Regions and Biomes of the World</figDesc><table><row><cell></cell><cell>Forest</cell><cell></cell><cell cols="2">Savanna/Grassland</cell><cell>Shrubland</cell><cell></cell><cell cols="2">Other Land</cell></row><row><cell>Area in million km 2</cell><cell>Cropland</cell><cell>Pasture</cell><cell>Cropland</cell><cell>Pasture</cell><cell>Cropland</cell><cell>Pasture</cell><cell>Cropland</cell><cell>Pasture</cell></row><row><cell>North America</cell><cell>1.03</cell><cell>0.71</cell><cell>1.55</cell><cell>1.42</cell><cell>0.16</cell><cell>1.20</cell><cell>0.00</cell><cell>0.00</cell></row><row><cell>South America</cell><cell>0.37</cell><cell>1.51</cell><cell>0.45</cell><cell>2.26</cell><cell>0.25</cell><cell>0.43</cell><cell>0.01</cell><cell>0.12</cell></row><row><cell>Africa</cell><cell>0.54</cell><cell>1.11</cell><cell>1.64</cell><cell>4.99</cell><cell>0.44</cell><cell>2.12</cell><cell>0.05</cell><cell>0.98</cell></row><row><cell>Europe</cell><cell>0.99</cell><cell>0.55</cell><cell>0.12</cell><cell>0.04</cell><cell>0.17</cell><cell>0.06</cell><cell>0.00</cell><cell>0.00</cell></row><row><cell>Former Soviet Union</cell><cell>0.75</cell><cell>0.39</cell><cell>1.24</cell><cell>2.02</cell><cell>0.09</cell><cell>0.83</cell><cell>0.02</cell><cell>0.19</cell></row><row><cell>Asia</cell><cell>3.33</cell><cell>0.87</cell><cell>0.63</cell><cell>1.84</cell><cell>0.66</cell><cell>0.79</cell><cell>0.09</cell><cell>0.84</cell></row><row><cell>Pacific developed</cell><cell>0.11</cell><cell>0.07</cell><cell>0.13</cell><cell>1.16</cell><cell>0.17</cell><cell>1.62</cell><cell>0.00</cell><cell>0.00</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head></head><label></label><figDesc>archive prepared by Environmental Research Group Oxford Limited for the Pro-Poor Livestock Policy Initiative of the Animal Production and Health Division of the Food and Agriculture Organization of the United Nations, Rome, Italy, available at http://ergodd.zoo.ox.ac.uk/agaagdat/ index.htm], and overlay that data with an independent global estimate of herbaceous vegetation.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>19449224, 2008, 1, Downloaded from https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2007GB002952, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_1"><p>Auxiliary material data sets are available at ftp://ftp.agu.org/apend/gb/</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>2007gb002952. Other auxiliary material files are in the HTML.</p></note>
+		</body>
+		<back>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>GB1003 19449224, 2008, 1, Downloaded from <ref type="url" target="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2007GB002952">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2007GB002952</ref>, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (<ref type="url" target="https://onlinelibrary.wiley.com/terms-and-conditions">https://onlinelibrary.wiley.com/terms-and-conditions</ref>) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</p><p>GB1003 19449224, 2008, 1, Downloaded from <ref type="url" target="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2007GB002952">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2007GB002952</ref>, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (<ref type="url" target="https://onlinelibrary.wiley.com/terms-and-conditions">https://onlinelibrary.wiley.com/terms-and-conditions</ref>) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<ptr target="http://www.ine.cl/)1997ChinaVerburgandChen" />
+		<title level="m">Bulgaria &apos;&apos;Regio&apos;&apos; database from Eurostat</title>
+		<meeting><address><addrLine>Censo Agropecuario</addrLine></address></meeting>
+		<imprint>
+			<publisher>Nacional de Estadı ´sticas</publisher>
+			<date type="published" when="1997">2001. 1997. 2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<author>
+			<persName><surname>Liu</surname></persName>
+		</author>
+		<ptr target="http:/" />
+	</analytic>
+	<monogr>
+		<title level="m">Mexico INEGI, VII Censo Agrı ´cola-Ganadero 1991/Unidad de produccio ´n rural/Segu ´n uso actual del suelo</title>
+		<title level="s">III Censo Nacional Agropecuario</title>
+		<imprint>
+			<publisher>Nepal Central Bureau of Statistics</publisher>
+			<date type="published" when="1991">2005. 1991. 1996. 2001. 2003. 2003 -2004. 1993. 2004. 2001. 1991</date>
+			<biblScope unit="page">1382</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>Bureau</orgName>
+		</respStmt>
+	</monogr>
+	<note>1993 Korea, Republic of Korea National Statistical Office, statistical database (KOSIS). /92 Netherlands &apos;&apos;Regio&apos;&apos; database from Eurostat</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">GLC2000: A new approach to global land cover mapping from Earth Observation data</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bartholome</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Belward</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="1959" to="1977" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Assessing climate forcings of the Earth system for the past millennium</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Claussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Brovkin</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2002GL016639</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">1276</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Frost followed the plow: Impacts of deforestation on the climate of the United States</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Bonan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ecol. Appl</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1305" to="1315" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Observational evidence for reduction of daily maximum temperature by croplands in the midwest United States</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Bonan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2430" to="2442" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Modelling the role of agriculture for the 20th century global terrestrial carbon balance</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bondeau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zaehle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Schaphoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lucht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gerten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lotze-Campen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Muller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Reichstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Change Biol</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="679" to="706" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">The Structure of Ukrainian Agriculture: Comparative Efficiency and Implications for Policy Reform</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bouzaher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Carriquiry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jensen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<publisher>Iowa State Univ</publisher>
+			<biblScope unit="volume">115</biblScope>
+			<pubPlace>Ames</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Modelling climate response to historical land cover change</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Brovkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ganopolski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Claussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kubatzki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Petoukhov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Ecol. Biogeogr</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="509" to="517" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Biogeophysical effects of historical land cover changes simulated by six Earth system models of intermediate complexity</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Brovkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Claussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Driesschaert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Fichefet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kicklighter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Loutre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Matthews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schaeffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sokolov</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00382-005-0092-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Dyn</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="587" to="600" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Agricultural land-use change in Brazilian Amazonia between 1980 and 1995: Evidence from integrated satellite and census data</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Cardille</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Remote Sens. Environ</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="551" to="562" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Characterizing patterns of agricultural land use in Amazonia by merging satellite classifications and census data</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Cardille</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Costa</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2000GB001386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">1045</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Cultivated systems, in Ecosystems and Human Well-being: Current State and Trends</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">G</forename><surname>Cassman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Statistical Year Book of Nepal 2001</title>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Hassan</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Washington, D. C. Central; Kathmandu</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cent. Bur. of Stat</publisher>
+			<date type="published" when="2001">2005. 2001</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">447</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>Bureau of Statistics</orgName>
+		</respStmt>
+	</monogr>
+	<note>8th ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Climatic classification and future global redistribution of agricultural land</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">P</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Solomon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Res</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="97" to="110" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">New estimates of tropical deforestation and terrestrial carbon fluxes: Results of two complementary studies</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Crook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LUCC Newsl</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="7" to="9" />
+			<date type="published" when="1993">1993. 2002</date>
+		</imprint>
+	</monogr>
+	<note>Underreporting of China&apos;s cultivated land area: Implications for world agricultural trade</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Land-use choices: Balancing human needs and ecosystem function</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Defries</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Asner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers Ecol. Environ</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="249" to="257" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The impact of cropland cover on river nutrient levels in the Mississippi River Basin</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Donner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Ecol. Biogeogr</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="341" to="355" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Evaluating the impacts of land management and climate variability on crop production and nitrate export across the Upper Mississippi Basin</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Donner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Kucharik</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2001GB001808</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">1085</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Global consequences of land use</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">309</biblScope>
+			<biblScope unit="page" from="570" to="574" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m">An Assessment of Land Use and Vegetation Changes in Nigeria Between 1978 -1993</title>
+		<meeting><address><addrLine>Geomatis, Ontario, Canada</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="volume">75</biblScope>
+		</imprint>
+	</monogr>
+	<note>Forestry Management, Evaluation and Coordinating Unit (FORMECU)</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Global land cover mapping from MODIS: Algorithms and early results</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Friedl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Remote Sens. Environ</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="287" to="302" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Agricultural land-use in China: A comparison of area estimates from ground-based census and satellite-borne remote sensing</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Frolking</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">M</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Salas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Ecol. Biogeogr</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="407" to="416" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Combining remote sensing and ground census data to develop new maps of the distribution of rice agriculture in China</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Frolking</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Boles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">M</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">G</forename><surname>Qin</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2001GB001425</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<date type="published" when="1091">2002. 1091</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Nitrogen fixation: Anthropogenic enhancement-environmental response</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Galloway</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Schlesinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">I</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Michaels</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Schnoor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="235" to="252" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A comparative analysis of the Global Land Cover 2000 and MODIS land cover data sets</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Giri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Reed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Remote Sens. Environ</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page" from="123" to="132" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Farming and the fate of wild nature</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Green</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Cornell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P W</forename><surname>Scharlemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Balmford</surname></persName>
+		</author>
+		<idno type="DOI">510.1126/science.1106049</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="page" from="550" to="555" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A joint initiative for harmonization and validation of land cover datasets</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Herold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Woodcock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Digregorio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mayaux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Belward</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Latham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Schmullius</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1719" to="1727" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Revised estimates of the annual net flux of carbon to the atmosphere from changes in land use and land management 1850 -2000</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Houghton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Tellus, Ser. B</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="378" to="390" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Linking remote-sensing estimates of land cover and census statistics on land use to produce maps of land use of the conterminous United States</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Hurtt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rosentrater</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Frolking</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Moore</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="673" to="685" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">The underpinnings of land-use history: Three centuries of global gridded land-use transitions, wood-harvest activity, and resulting secondary lands</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Hurtt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Frolking</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Fearon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Shevliakova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Malyshev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Pacala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Houghton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Change Biol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1" to="22" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Modeling the effects of two different land cover change data sets on the carbon stocks of plants and soils in concert with CO 2 and climate change</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2004GB002349</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<date type="published" when="2005">2005. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Exploiting synergies of global land cover products for carbon cycle modeling, Remote Sens</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Henkel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Herold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Churkina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environ</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="534" to="553" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Estimating global land use change over the past 300 years: The HYDE Database</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Klein Goldewijk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="417" to="433" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Mapping livestock-oriented agricultural production systems for the developing world</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Kruska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Reid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">K</forename><surname>Thornton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Henninger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Kristjanson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Agricul. Syst</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="39" to="63" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">AFRICOVER eastern Africa</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Latham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LUCC Newsl</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="15" to="16" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">The GTAP Land use data base and the GTAPE-AEZ model: Incorporating agro-ecologically zoned land use data and landbased greenhouse gases emissions into the GTAP framework</title>
+		<author>
+			<persName><forename type="first">H.-L</forename><surname>Lee</surname></persName>
+		</author>
+		<ptr target="https://www.gtap.agecon.purdue.edu/resources/res_display.asp?RecordID=1839" />
+	</analytic>
+	<monogr>
+		<title level="m">8th Annual Conference on Global Economic Analysis, Inst. of Market Anal. and Agricul. Trade Policy</title>
+		<meeting><address><addrLine>Lu ¨beck, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2005-09-11">2005. 9 -11 June</date>
+		</imprint>
+	</monogr>
+	<note>paper presented at the</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Geographic distribution of major crops across the world</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Leff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Foley</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2003GB002108.GB100319449224</idno>
+		<ptr target="https://onlinelibrary.wiley.com/terms-and-conditions" />
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<date type="published" when="1009">2004. 1009. 2008, 1. 04/03/2025</date>
+		</imprint>
+	</monogr>
+	<note>OA articles are governed by the applicable Creative Commons License</note>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A synthesis of information on rapid land-cover change for the period 1981 -2000</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Lepers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Lambin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Janetos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Defries</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Achard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Scholes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioscience</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="115" to="124" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Spatial and temporal patterns of China&apos;s cropland during 1990 -2000: An analysis based on Landsat TM data</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Q</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Deng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Remote Sens. Environ</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="442" to="456" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Census of Agriculture of the Philippines</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lopez-Meisel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Perez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Major Land Uses in the United States</title>
+		<title level="s">Econ. Inf. Bull. EIB-14</title>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Baez</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Roberts</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Washington, D. C.</addrLine></address></meeting>
+		<imprint>
+			<publisher>Econ. Res. Serv</publisher>
+			<date type="published" when="1991">1996. 1991. 2002. 2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Carbon balance of the terrestrial biosphere in the twentieth century: Analyses of CO 2 , climate and land use effects with four process-based ecosystem models</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Mcguire</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="183" to="206" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Farming the Planet. part 2: Geographic distribution of crop areas, yields, physiological types, and NPP in the year 2000</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Monfreda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2007GB002947</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note>in press</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Uncertainties in radiative forcing due to surface albedo changes caused by land use changes</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Myhre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Myhre</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1511" to="1524" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">National Statistical Office of Mongolia</title>
+	</analytic>
+	<monogr>
+		<title level="m">Mongolia in a Market System Statistical Yearbook</title>
+		<meeting><address><addrLine>Ulaanbaatar</addrLine></address></meeting>
+		<imprint>
+			<publisher>Natl. Stat. Off</publisher>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page">328</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">The influence of landuse change and landscape dynamics on the climate system: Relevance to climate-change policy beyond the radiative effect of greenhouse gases</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Pielke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Marland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Betts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Chase</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Eastman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Niles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D S</forename><surname>Niyogi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Running</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Trans. R. Soc. London, Ser. A</title>
+		<imprint>
+			<biblScope unit="volume">360</biblScope>
+			<biblScope unit="page" from="1705" to="1719" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">The role of the land surface in weather and climate: Does the land surface matter?</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pitman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Pielke</forename><surname>Sr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Avissar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Claussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gash</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Dolman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IGBP Newsl</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="4" to="9" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Croplands in West Africa: A geographically explicit dataset for use in models</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Earth Interactions</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="1" to="22" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Characterizing patterns of global land use: An analysis of global croplands data</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="667" to="685" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Estimating historical changes in global land cover: Croplands from 1700 to 1992</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="997" to="1027" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">The global distribution of cultivable lands: Current patterns and sensitivity to possible climate change</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Norman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mcsweeney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Ecol. Biogeogr</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="377" to="392" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">People on the land: Changes in population and global croplands during the 20th century</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Olejniczak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ambio</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="251" to="257" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Global agricultural land use data for integrated assessment modeling</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hertel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-L</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Rose</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Human-Induced Climate Change: An Interdisciplinary Assessment</title>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Schlesinger</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="252" to="265" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">The spatial pattern and dynamics of a Sahelian agro-ecosystem</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fog</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">GeoJournal</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="489" to="499" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Land transformation</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Richards</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Earth as Transformed by Human Action</title>
+		<editor>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Turner</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<date type="published" when="1990">1990</date>
+			<biblScope unit="page" from="163" to="178" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">A method to compare and improve land cover datasets: Application to the GLC-2000 and MODIS land cover products</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>See</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fritz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="1740" to="1746" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Landsat reveals China&apos;s farmland reserves, but they&apos;re vanishing fast</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Seto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Kaufmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Woodcock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">406</biblScope>
+			<biblScope unit="page">121</biblScope>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Nitrogen in crop production: An account of global flows</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Smil</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="647" to="662" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<monogr>
+		<title level="m">Sel&apos;skoe khoziaistvo Rossii: Statisticheskii sbornik</title>
+		<meeting><address><addrLine>Moscow</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page">503</biblScope>
+		</imprint>
+	</monogr>
+	<note>State Committee of the Russian Federation on Statistics. Gos. komt Rossiiskoi Federatsii po Statistike</note>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title level="m">Rural Facilities Statistics of Kazakhstan: Statistical Compendium</title>
+		<meeting><address><addrLine>Almaty, Kazakhstan</addrLine></address></meeting>
+		<imprint>
+			<publisher>State Comm. for Stat. of the Repub. of Kazakhstan</publisher>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+	<note>State Committee for Statistics of the Republic of Kazakhstan</note>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Forecasting agriculturally driven global environmental change</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Tilman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fargione</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wolff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>D'antonio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dobson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Howarth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Schindler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Schlesinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Simberloff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Swackhamer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">292</biblScope>
+			<biblScope unit="page" from="281" to="284" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Smooth pycnophylactic interpolation for geographical regions</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>Tobler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Statist. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="519" to="530" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">The future of farming and conservation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vandermeer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Perfecto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Green</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Cornell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P W</forename><surname>Scharlemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Balmford</surname></persName>
+		</author>
+		<idno type="DOI">1210.1126/science.1308.5726.1257b</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="page" from="1257" to="1258" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Multiscale characterization of land-use patterns in China</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Verburg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ecosystems</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="369" to="385" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Exploring changes in the spatial distribution of livestock in China</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Verburg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Van Keulen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Agricul. Syst</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="51" to="67" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Spatial explorations of land use change and grain production in China</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Verburg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Veldkamp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Agricul. Ecosyst. Environ</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="333" to="354" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Estimating changes in global vegetation cover (1850 -2100) for use in climate models</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Price</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Arora</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2005GB002514</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Global Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">3028</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<monogr>
+		<title level="m" type="main">Pilot analysis of global ecosystems: Agroecosystems</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sebastian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Scherr</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<publisher>Int. Food Policy Res. Inst. and World Resour. Inst</publisher>
+			<biblScope unit="volume">110</biblScope>
+			<pubPlace>Washington, D. C.</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Global potential soil erosion with reference to land use and climate changes</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kanae</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Oki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Koike</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Musiake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hydrol. Proc</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="2913" to="2928" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Aevan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1225">1225</date>
+			<pubPlace>West Dayton Street, Madison, WI 53706, USA</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Cooperative Institute for Meteorological Satellite Studies, University of Wisconsin-Madison</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Foley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Monfreda</surname></persName>
+		</author>
+		<title level="m">Center for Sustainability and the Global Environment</title>
+		<meeting><address><addrLine>Madison, WI 53726, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1710">1710</date>
+		</imprint>
+		<respStmt>
+			<orgName>SAGE) ; Nelson Institute for Environmental Studies, University of Wisconsin-Madison ; University Avenue</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ramankutty</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2007GB002952</idno>
+		<idno>) GB1003 19449224</idno>
+		<ptr target="https://onlinelibrary.wiley.com/terms-and-conditions" />
+		<imprint>
+			<date type="published" when="2008-01">2008, 1. 04/03/2025</date>
+			<biblScope unit="volume">805</biblScope>
+			<pubPlace>Sherbrooke Street West, Montreal, QC, Canada H</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Department of Geography and Earth System Science Program ; McGill University</orgName>
+		</respStmt>
+	</monogr>
+	<note>3A 2K6. (navin.ramankutty@mcgill.ca. OA articles are governed by the applicable Creative Commons License</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

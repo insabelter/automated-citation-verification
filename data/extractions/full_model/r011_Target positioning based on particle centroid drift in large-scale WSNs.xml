@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Target Positioning Based on Particle Centroid Drift in Large-Scale WSNs</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Zhengwan</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Online and Continuous Education</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Chunjiong</forename><surname>Zhang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computer Science and Technology</orgName>
+								<orgName type="institution">Tongji University</orgName>
+								<address>
+									<postCode>201804</postCode>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Mingyong</forename><surname>Li</surname></persName>
+							<email>limingyong@cqnu.edu.cn</email>
+							<affiliation key="aff2">
+								<orgName type="department">School of Computer and Information Science</orgName>
+								<orgName type="institution">Chongqing Normal University</orgName>
+								<address>
+									<postCode>401331</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><roleName>AND</roleName><forename type="first">Tao</forename><surname>Xie</surname></persName>
+							<idno type="ORCID">0000-0002-0467-5422</idno>
+							<affiliation key="aff3">
+								<orgName type="department">Institute of Education</orgName>
+								<orgName type="institution">Southwest University</orgName>
+								<address>
+									<postCode>400715</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Target Positioning Based on Particle Centroid Drift in Large-Scale WSNs</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">C70839BB64AC2AF9817301796765F921</idno>
+					<idno type="DOI">10.1109/ACCESS.2020.3008373</idno>
+					<note type="submission">Received June 7, 2020, accepted July 5, 2020, date of publication July 10, 2020, date of current version July 22, 2020.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:00+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Centroid drift</term>
+					<term>node positioning</term>
+					<term>particle filter</term>
+					<term>wireless sensor networks</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The localization problem of target nodes remains unresolved, especially in large-scale and complex environments. In this paper, we propose a particle centroid drift (PCD) algorithm to reduce the distance errors between nodes and obtain the particle aggregation region by using the drift vector. First, we use the particle quality prediction function to obtain the particles in a high-likelihood region. The high-quality particles have high probability in the calculation, which can increase the number of effective particles and enable avoiding particle degradation. Then, the centroid drift vector is used to make the particle distribution similar to the actual reference distribution. Experiments are conducted on state-space models: the local movement where 55% nodes are moving and the globe movement where 100% nodes are moving. The results show that the proposed algorithm has low estimation errors, a good tracking effect and an acceptable time complexity.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>There has been fruitful progress in the wireless sensor networks(WSNs) domain during the last decade, but the localization and tracking of target nodes still remain unresolved, especially in large-scale and complex environments, such as those in ecological monitoring and a military battlefield <ref type="bibr" target="#b0">[1]</ref>, <ref type="bibr" target="#b1">[2]</ref>.</p><p>Compared to the traditional static network, dynamic nodes are more difficult to monitor due to frequent node movement <ref type="bibr" target="#b2">[3]</ref>. Range-based positioning algorithms, e.g., Time of Arrival(TOA) algorithm <ref type="bibr" target="#b3">[4]</ref>, Time Difference of Arrival(TDOA) algorithm <ref type="bibr" target="#b4">[5]</ref>, Angle of Arrival(AOA) algorithm <ref type="bibr" target="#b5">[6]</ref>, and Received Signal Strength(RSSI) algorithm <ref type="bibr" target="#b6">[7]</ref>, try to obtain the measurement distance and utilize the geometric information to locate unknown nodes based on RF signals. However, the attenuation and refraction in the signal propagation process between nodes result in poor positioning accuracy and do not meet the actual application requirements <ref type="bibr" target="#b6">[7]</ref>- <ref type="bibr" target="#b8">[9]</ref>. Analogously, range-free positioning algorithms that rely on the connectivity between nodes are also difficult to use in a large-scale complex</p><p>The associate editor coordinating the review of this manuscript and approving it for publication was Lorenzo Mucchi .</p><p>environment <ref type="bibr" target="#b4">[5]</ref>- <ref type="bibr" target="#b6">[7]</ref> because a high node density and a large communication overhead are required. Typical examples of range-free algorithms include Amorphous <ref type="bibr" target="#b7">[8]</ref>, Distance Vector-Hop(DV-Hop) <ref type="bibr" target="#b8">[9]</ref>, Multi Dimentional Scaling Map(MDS-MAP) <ref type="bibr" target="#b9">[10]</ref>, Distance Vector-short(DV-short) <ref type="bibr" target="#b10">[11]</ref> and Approximate Point in Triangulation Test(APTT) <ref type="bibr" target="#b11">[12]</ref>.</p><p>Moreover, many scholars have proposed using the connectiveness between nodes to determine a target's current movement position and predict its next position. Bayesianestimation-based filtering algorithms such as the Particle Filter(PF) <ref type="bibr" target="#b12">[13]</ref>, Extended Kalman Filter(EKF) <ref type="bibr" target="#b13">[14]</ref>, Extended Kalman Particle Filter(EKPF) <ref type="bibr" target="#b14">[15]</ref>, Unscented Kalman Filter(UKF) <ref type="bibr" target="#b15">[16]</ref> and Hybrid Iterated Kalman Particle Filter(HIKPF) <ref type="bibr" target="#b16">[17]</ref> are representative of this scenario. Specifically, the PF can carry out the position estimation of target nodes in nonlinear and non-Gaussian WSNs <ref type="bibr" target="#b17">[18]</ref>- <ref type="bibr" target="#b19">[20]</ref>, but it depends on the initial state of the sensor nodes and cannot accurately measure the Euclidean distance between nodes <ref type="bibr" target="#b20">[21]</ref>, <ref type="bibr" target="#b21">[22]</ref>. In addition, the particle degradation problem of the PF, in which the weights of particles increase after a series of Bayesian iterations, has significant influences on the positioning accuracy.</p><p>To address these problems, we propose a particle centroid drift (PCD) algorithm to reduce the distance errors between nodes without depending on the Euclidean distance. We calculate the prior distribution parameters of the PF and obtain the particle aggregation region by using the drift vector of the particle center. To do this, we first use the particle quality prediction (PQP) function <ref type="bibr" target="#b22">[23]</ref> to obtain the particles in the high-likelihood region. The high-quality particles participate in the subsequent calculation with high probability, which can increase the number of effective particles and enable avoiding the degradation of particles. Then, the centroid drift vector is used to drift the predicted particles to make the particle distribution similar to the actual reference distribution.</p><p>In summary, this study has the following main contributions:</p><p>• We propose to use the motion of the particle's centroid to increase the positioning accuracy. The target positioning and tracking are transformed into a Bayesian estimation problem and the centroid drift vectorization is included in particle motion function.</p><p>• We combine the centroid algorithm and the particle distribution function so that high-quality particles can be obtained for subsequent position estimation. The moment equation is adopted to avoid the complex matrix calculation which turns out to be effective in terms of tracking and convergence.</p><p>• A series of experimental evidences are provided based on two different state-space models. Compared to the public benchmark algorithms, results the PCD produced have shown better performance in terms of estimation errors and tracking effects.</p><p>The remainder of this article is organized as follows. Section II summarizes the related work. Section III provides details of the proposed algorithm. Section IV validates our approach through experimental simulations. Section 5 draws some conclusions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RELATED WORK</head><p>Many filtering algorithms can improve the estimation accuracy in dynamic networks. The classic filter algorithms in terms of WSN positioning include the Wiener filter, least square filter, Kalman filter and its extensions (e.g., EKF and UKF), the PF, etc. <ref type="bibr" target="#b21">[22]</ref>, <ref type="bibr" target="#b23">[24]</ref>.</p><p>Typically, the PF algorithm is used to handle nonlinear and non-Gaussian filtering problems when the target nodes are deployed in large-scale and complex environments. Pak et al. <ref type="bibr" target="#b24">[25]</ref> proposed a distributed and PF-based range-free algorithm to alleviate the transmission interruption of indoor wireless signals. Ahmed et al. <ref type="bibr" target="#b12">[13]</ref> studied the accuracy in tracking moving objects and calculated the time of object motion. Suggestions for selecting appropriate time parameters were put forward to provide a reasonable trade-off between accuracy and complexity. Sve cko et al. <ref type="bibr" target="#b10">[11]</ref> presented the use of the PF in multiple hops between nodes for distance estimation and connected it with the source node using the radio frequency of the received signal strength indicator (RSSI). An improved PF for multitarget tracking was proposed in <ref type="bibr" target="#b25">[26]</ref>, which was grounded on the drift theory of the stochastic differential equation. The drift theory was used to design a Monte Carlo procedure in a Markov chain, causing the particle samples to be similar to observations. The particle swarm optimization (PSO) proposed in <ref type="bibr" target="#b11">[12]</ref> measures the distance between nodes, and the measurement error was contained in the observation function of the motion noise. As a result, the positions of objects were determined by a weighted aggregation and by maximizing the PSO. Hou et al. <ref type="bibr" target="#b26">[27]</ref> proposed an improved cubature PF algorithm that uses the least squares to estimate the prior states of target nodes. The cubature Kalman filter and Gauss-Newton iterative methods were used to measure the posterior state. This work provided the suggested distribution for the PF and improved the positioning accuracy. Vázquez and Míguez <ref type="bibr" target="#b27">[28]</ref> introduced a distributed PF algorithm based on the posterior probability and combined it with Bayesian estimation. Experimentally, this method is superior to the distributed PF in terms of the positioning accuracy and robustness.</p><p>In summary, most existing works combined the range-based and range-free methods and used additional auxiliary filters to improve the positioning accuracy. However, they did not consider the particle degradation problem and ignored the influence of various intricate environmental factors (such as the number of deployed nodes, the mobility, and the path loss factor) and PF parameters (such as the number of generated particles, the noise variation and the particle population mobility) on the positioning accuracy of the target node. In addition, they were limited by their computational complexity and convergence speed, hindering them from being applicable in a large-scale and complex environment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. PROPOSED ALGORITHM</head><p>The target node periodically broadcasts beacon packets to neighboring nodes, and each beacon packet contains its identification number and location coordinates. When the number of beacon packets exceeds a specified threshold, the node is determined to be the centroid of a polygon. Correspondingly, the centroids of its neighboring nodes are viewed as its estimation.</p><p>Although the traditional PF algorithm can perform node position estimation in non-linear and non-Gaussian WSNs, it has the particle degradation problem which means particles in the higher likelihood region have bigger weights and particles that do not intersect with the prior distribution region have weights close to 0. This problem can be well addressed by predicting the posterior distribution of high-quality particle populations. PQP algorithm can be applied in this respect.</p><p>Because nodes in large-scale WSNs are movable, we must consider the distances between them when they are moving. However, frequent calculation of the distances leads to high time complexity and more importantly influences the positioning accuracy significantly. The centroid algorithm is range-free and does not depend on Euclidean distance, which can estimate the node positions by using observable moving nodes nearby.</p><p>When the nodes move to complex boundaries where the coverages of nodes are coupled and crossed, the centroid solution is very time-consuming. In order to reduce the complexity of the algorithm, we apply the momentum equation to represent the acceleration and velocity of the particles to avoid complex matrix calculations.</p><p>Fig. <ref type="figure" target="#fig_0">1</ref> illustrates the framework of the proposed algorithm. The centroid algorithm is to calculate the centroid of the particle population <ref type="bibr" target="#b28">[29]</ref> by applying the momentum moment theorem <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b29">[30]</ref>. Combining the centroid with the average particle velocity, the scalar representation is transformed into the momentum. Considering the real conditions, we accommodate the particle acceleration in the framework. The high-quality particle set is obtained according to the nonlinear replication algorithm <ref type="bibr" target="#b22">[23]</ref>, and the predicted particle set x i 0:t : i = 1, 2, . . . , N is obtained by the PQP algorithm. The weighted centroid drift and the centroid of the predicted particle set are calculated when the centroid velocity solution is applied to the predicted particle set. Finally, we obtain the centroid drift vector by calculating the centroid motion equation, the centroid of the predicted particle set and the weighted centroid drift.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. PARTICLE CENTROID MOVEMENT</head><p>Considering the increasing complexity of a solution when the node movement is involved in the determination of the centroid resolution, we apply the momentum moment theorem (moment equation) <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b29">[30]</ref> to optimize the complex matrix inversion calculation and training process.</p><p>To determine the motion state of a particle, we define its position in structural space and the velocity space. According to the rules of a six-dimensional phase space <ref type="bibr" target="#b29">[30]</ref>, (r, v) = (x, y, z, v x , v y , v z ) is used to represent the phase space, where x, y, z are the directions. Then, the average w v of all particle velocities in the x direction can be denoted by f (r, v, t), which contains the particle velocity distribution and time, as shown in equation ( <ref type="formula">1</ref>) <ref type="bibr" target="#b30">[31]</ref>. Similarly, the motion equations in the y and z directions can be obtained in the same way, and we omit them for simplicity. The motion equation of the particle population centroid G(t) can be expressed by the drift velocity and the function f (r, v, t) containing the particle velocity distribution and time, as shown in (2):</p><formula xml:id="formula_0">w r (t) = d dt G(t) = d dt r,v xf (r, v, t) drdv r,v f (r, v, t) drdv (1) ω v (t) = r,v vxf (r, v, t)drdv r,v f (r, v, t)drdv (2)</formula><p>where the centroid G(t) at moment t is obtained by the centroid algorithm <ref type="bibr" target="#b28">[29]</ref>. The centroid drift velocity of the particle population can be obtained by CV/CT analysis of the average particle velocity <ref type="bibr" target="#b19">[20]</ref>, <ref type="bibr" target="#b25">[26]</ref>.</p><p>We use the differential equation to transform the equation (1), i.e.</p><formula xml:id="formula_1">w r (t) = r,v x ∂ ∂t f (r, ν, t)drdv r,v f (r, v, t)drdv -G(t) r,v ∂ ∂t f (r, v, t)drdv r,v f (r, v, t)drdv (3)</formula><p>The proof of equation( <ref type="formula">3</ref>) is obvious by using the differential equation. The partial differential term at time t in equation ( <ref type="formula">3</ref>) represents the movement of particles in the phase space.</p><p>According to the Boltzmann equation <ref type="bibr" target="#b31">[32]</ref>, we have:</p><formula xml:id="formula_2">∂f (r, v, t)/∂t = {v•(∂/∂r)+α•(∂/∂v) +(∂/∂t) coll f (r, v, t)<label>(4)</label></formula><p>where ( ∂ ∂t ) coll is the change in the particle distribution function caused by the signal attenuation between nodes and a = (a x , a y , a z ) = ( e m , 0, 0) is the acceleration factor. The drift speed of the particle population centroid is obtained by:</p><formula xml:id="formula_3">w r (t) = w v (t) + r,v (x -G(t))( ∂ ∂t ) coll f (r, v, t) drdv r,v f (r, v, t) drdv (5)</formula><p>Considering the y and z directions of the phase space, the actual drift velocity of the particle population centroid can be represented as w r (t, x, y, z). Obviously, equation ( <ref type="formula">5</ref>) is a continuous equation with respect to the particle density <ref type="bibr" target="#b32">[33]</ref>. In addition to the average velocity of particles, the entire particle population has another velocity component (i.e., deflection trend), which is caused by the deflection of the particle position outside the range of the particle centroid.</p><p>As the number of particles changes, the particle centroid will move forward, and the centroid velocity will exceed the particle velocity. Because faster particles have heavier weight, it is possible to predict the movement directions. However, we are bound to calculate the particle weight and the spatial distribution, which is very time consuming.</p><p>To reduce the complexity of the algorithm, we convert the velocity scalar into a vector to obtain w r and use the moment equation of the Boltzmann equation to address the factors under complex and real conditions.  <ref type="formula" target="#formula_2">4</ref>) into (3), we get:</p><formula xml:id="formula_4">ω r (t) = r,v x ∂ ∂t f (r, v, t)drdv r,v f (r, v, t)drdv -G(t) r,v {ν •(∂/∂r)+α•(∂/∂ν)+(∂/∂t) coll }f (r, v, t)drdv r,v f (r, v, t)drdv</formula><p>Because α= α x , α y , α z = (e/m, 0, 0), the partial derivative of α = 0, i.e. α(∂/∂v)=0, Then, we have:</p><formula xml:id="formula_5">ω r (t) = ω r (t) = r,v x ∂ ∂t f (r, v, t)drdv r,v f (r, v, t)drdv -G(t) r,v {ν • (∂/∂r) +(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv = r,v x{ν • (∂/∂r) +(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv -G(t) r,v {v • (∂/∂r) +(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv = r,v xv • (∂/∂r)f (r, v, t)drdv r,v f (r, v, t)drdv + r,v x(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv -G(t) r,v {v • (∂/∂r) +(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv</formula><p>When the particle distribution function changes, G(t) r,v v•(∂/∂r)f (r,v,t)drdv r,v f (r,v,t)drdv = 0 and the equation can be rewritten as:</p><formula xml:id="formula_6">ω r (t) = r,v vxf (r, v, t)drdv r,v f (r, v, t)drdv + r,v x(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv - r,v G(t)(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t)drdv = r,v vxf (r, v, t)drdv r,v f (r, v, t)drdv + r,v {x -G(t)}(∂/∂t) coll f (r, v, t)drdv r,v f (r, v, t</formula><p>)drdv Therefore, the equation ( <ref type="formula">5</ref>) is hold.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. MOMENT EQUATION SOLUTION</head><p>The momentum moment equation refers to the relationship among the momentum of the external force on a moving node, the momentum of the speed, and the momentum against the rate of time change <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b29">[30]</ref>. Therefore, we obtain the population centroid containing the trend and speed of the centroid movement.</p><p>The centroid G(t) of the particle population is represented as the quotient of Ne and M x <ref type="bibr" target="#b33">[34]</ref> in equation <ref type="bibr" target="#b5">(6)</ref>.</p><formula xml:id="formula_7">G(t) = M x (t) Ne(t) (6) Ne(t) = r,v f (r, v, t) drdv = v f (v, t) dv (7) M x (t) = r,v xf (r, v, t) drdv = v M x (v, t) dv (8)</formula><p>Ne and M x are, respectively, the first-order moment related to the movement along the x direction and the zero-order moment of the particle distribution in equation <ref type="bibr" target="#b34">[35]</ref>.</p><p>The partial derivatives of Ne and M x with respect to t are obtained by ( <ref type="formula">9</ref>) and <ref type="bibr" target="#b9">(10)</ref>, respectively.</p><formula xml:id="formula_8">∂f (v, t) ∂t = -ax ∂ ∂xv f (v, t) + ( ∂ ∂t ) coll f (v, t) (9) ∂M x (v, t) ∂t = vxf (v, t) -ax( ∂ ∂xv )M x (v, t) + ( ∂ ∂t ) coll M x (v, t)<label>(10)</label></formula><p>To reduce the number of calculation parameters, the integrated equation can be rewritten as equation ( <ref type="formula" target="#formula_9">11</ref>):</p><formula xml:id="formula_9">( ∂ ∂t ) coll = k -Nq k (v)|v| + v Nq k (v )|v |P k (v , v) dv (<label>11</label></formula><formula xml:id="formula_10">)</formula><p>where N is the particle density, q is the coupling area of particles, P k (v , v) is the Gaussian distribution of particles, with the velocity v becoming v when the movement direction changes, and k is a coupling type, representing the motion state under different scenes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. PARTICLE CENTROID DRIFT</head><p>According to <ref type="bibr" target="#b22">[23]</ref>, applying the PF to the target node may significantly affect the positioning accuracy. Particles in the high-likelihood region have large weights, and those that do not intersect with the prior distribution region have weights that are approximately equal to zero. As a result, the particle degradation problem occurs. When the observed likelihood distribution does not intersect with the prior distribution, the PF algorithm will degrade and affect the system stability. The posterior distribution of particles is the optimal distribution of the PF, but the integral of the particle weight cannot be solved <ref type="bibr" target="#b15">[16]</ref>, <ref type="bibr" target="#b25">[26]</ref>. Scholars frequently use a transfer probability function as a reference distribution for the particle prediction. The limitation is that observations at the current time in the reference distribution are not available. To address this problem, the PQP algorithm was proposed in <ref type="bibr" target="#b22">[23]</ref>, which presents a predictor to obtain a particle swarm of high quality and modify the reference distribution function by calculating nonlinear variations ranging between particles and specify flags.</p><p>In this work, we use PQP to calculate the predicted particle set x i 0:t : i = 1, 2, . . . , N and use the centroid drift vector in the particle set to track the target particle. The centroid drift vector is calculated by predicting the difference between the centroid of the particle set and the weighted centroid. The weighted particle centroid w r (t) is computed by <ref type="bibr" target="#b11">(12)</ref>:</p><formula xml:id="formula_11">w r (t) = N i=1 w r (t)x i 0:t + dNe(t) dt + dM x (t) dt (<label>12</label></formula><formula xml:id="formula_12">)</formula><p>where w r (t) is the centroid motion equation. Then, the centroid drift vector is as given in equation ( <ref type="formula">13</ref>):</p><formula xml:id="formula_13">(w r (t)) shift = (w r (t -1, x, y, z) -w r (t -1, x, y, z), w r (t, x, y, z) -w r (t, x, y, z)) (13)</formula><p>The particles drift with the guidance of the particle population centroid drift vector. Then, we have:</p><formula xml:id="formula_14">x i 0:t =    x i 0:t + (w r (t)) shift , if rand N &lt; min(1, w r (t) w r (t) ) w r (t), else<label>(14)</label></formula><p>where randN is a random value in [0, 1]. Given a weighted particle set x i 0:t |i = 1, . . . , N , its weighted centroid is the unbiased estimation of the current state. Then, the particle is resampled to update the particle weight.</p><p>Overall, the implementation of the proposed algorithm is as follows:</p><p>Step 1: Predict the particle filter distribution based on the transfer function p(x i t |x i t-1 ).</p><p>Step 2: Calculate the centroid drift vector using equations ( <ref type="formula">13</ref>) and ( <ref type="formula" target="#formula_14">14</ref>) and (w r (t)) shift = w r (t) -w r (t).</p><p>Step 3: Estimate the location of the target node according to the particle selection probability p(x t ) =</p><formula xml:id="formula_15">1 (2π) ( m 2 ) exp[-1 2 (z t -µ k ) T s -1 k ((z t -µ k )].</formula><p>Step 4: Resample the particles and update the particle weights; then, return to Step 3.</p><p>Step 1 is performed only once, while steps 3 and 4 are performed repeatedly. Step 2 is carried out to update the set after particle drift and obtain the posterior distribution p(x t |z t ) of the target particle.</p><p>An example of this algorithm is illustrated in Fig. <ref type="figure" target="#fig_2">2</ref>. The circle represents the particle, the size of the circle represents the weight of the particle, and the triangle represents the particle population centroid. The algorithm predicts the particle distribution first and then moves the particles to the high-likelihood region according to the centroid drift vector. The observation of the current moment determines the position of the particle by the transfer function, causing the particle distribution to be more similar to the real reference distribution. To be more specific, the algorithm performs the following stages. First, the PCD searches the degraded particles (i.e. green circles) and removes them from the initial particle population using step 1. We obtain a set of high-quality particles. When the high-quality particles are moving, more high-quality particles are produced by a non-linear replication mechanism in PQP algorithm. Then, we obtain the centroids of particles (i.e. blue triangles) and corresponding drift vectors (i.e. black arrows) by using step 2. The step 3 predicts the particle distribution and then the particles move to the high-likelihood region according to the centroid drift vector. Finally, the step 4 updates particle weights (i.e. the pink circle) by a resampling process so that the position of the target node is optimal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENT</head><p>In this section, a series of experiments on target node tracking are conducted. We compare public benchmark algorithms (PF <ref type="bibr" target="#b12">[13]</ref>, EKF <ref type="bibr" target="#b13">[14]</ref>, EKPF <ref type="bibr" target="#b14">[15]</ref> and HIKPF <ref type="bibr" target="#b16">[17]</ref>) and the proposed PCD algorithm in terms of the estimation errors, tracking effects and performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. ESTIMATION ERRORS</head><p>To analyze the estimation errors, we use two state-space models: the local movement where 55% nodes are moving and the globe movement where 100% nodes are moving.</p><p>The state-space model of local movement is:</p><formula xml:id="formula_16">x k = 1 + sin(0.04π(k -1)) + 0.5x k-1 + ν k-1 (15) z k = 0.23x 2 k + µ k , k ≤ 30 0.51x k -2 + µ k , k &gt; 30 (<label>16</label></formula><formula xml:id="formula_17">)</formula><p>The state-space model of globe movement is:  </p><formula xml:id="formula_18">x k = 1 + sin(0.04π(k -1)) - sin(x k ) 4 + 0.5x k-1 + ν k-1 (<label>17</label></formula><formula xml:id="formula_19">)</formula><formula xml:id="formula_20">z k = 0.23x 2 k + 0.51x k + sin(x k ) 5 -2 + µ k (<label>18</label></formula><formula xml:id="formula_21">)</formula><p>where ν k is subject to the Gamma distribution (α, 2) and the measurement noise µ k is subject to the Gaussian distribution N (0, 0.001). Here, the mean of 0 is commonly used when data are drawn from the standard normal distribution and the variance of 0.001 is used for the simulation of data dispersion in real-world environments by assuming a more centralized distribution than the standard normal distribution. The number of particles N = 200, and the observation time t = 60. We run 100 independent experiments. The mean of the particle set is calculated as:</p><formula xml:id="formula_22">x = 1 N N j=1 x j k<label>(19)</label></formula><p>We adopt the mean square error (MSE) for the noise measurement:  It is worth noting that we conduct experiments by selecting parameters in large-scale and complex environments. Basically, an environment which is large has more than 100 WSN nodes according to literature <ref type="bibr" target="#b8">[9]</ref>, <ref type="bibr" target="#b21">[22]</ref>. Therefore, the number of nodes in this experiment is set between 100 and 1000 to observe the performance of the algorithms. Besides, the network delay parameter and complex node speed can also simulate large-scale scenarios which are usually used in dynamic mountain monitoring and pollution source tracking.</p><formula xml:id="formula_23">mse = 1 t t i=1 (x i k -x i k ) 2<label>(20)</label></formula><p>Fig. <ref type="figure" target="#fig_3">3</ref> and Fig. <ref type="figure" target="#fig_4">4</ref> are drawn using the 55% local movement model. Fig. <ref type="figure" target="#fig_3">3</ref> illustrates the expectation values between the different algorithms. They show that the estimates of the PF, UKF and EKPF tend to deviate from the actual position and that the estimates of the HIKPF and PCD are basically consistent with the real positions. Generally, the MSE of PCD is lower than that of others. Fig. <ref type="figure" target="#fig_4">4</ref> shows changes in the MSEs with time. The PCD has the smallest MSE, followed by the HIKPF, UKF, EKPF and PF, which means that the PCD is not likely to be influenced by the running time. It is much more stable and optimal with respect to errors. Fig. <ref type="figure" target="#fig_5">5</ref> and Fig. <ref type="figure" target="#fig_6">6</ref> are drawn using the globe movement model. Fig. <ref type="figure" target="#fig_5">5</ref> shows the differences between the estimated expectation of the positioning state and the real state. The EKPF has the worst adaptability to the localization of target nodes in the WSN. The positioning mean square error curve generated by each filter is shown in Fig. <ref type="figure" target="#fig_6">6</ref>. It also demonstrates the superiority of the PCD algorithm in positioning estimation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. TRACKING EFFECT</head><p>To analyze the tracking effect, we deployed 500 nodes randomly in a rectangular area of 100 * 100 m. The target node moves at a speed of 0.5 m/s, pausing for 2 seconds after every interval of 20 seconds <ref type="bibr" target="#b35">[36]</ref>, <ref type="bibr" target="#b36">[37]</ref>. Again, we use the state-space models presented in Section IV-A.</p><p>The initial position state of the centroid shown in Fig. <ref type="figure" target="#fig_8">8</ref>(a) is different from the true state. However, they overlap at the final state in Fig. <ref type="figure" target="#fig_8">8(b)</ref>. Fig. <ref type="figure" target="#fig_8">8(c</ref>) presents the movement trajectory of the target particles, showing that the result of the PCD algorithm is close to the true movement state and is better than the measurement trajectory. Fig. <ref type="figure" target="#fig_8">8(d)</ref> shows the acceptable measurement error between the PCD and the real state.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. ALGORITHM PERFORMANCE</head><p>In this subsection, we evaluate the algorithm performance by changing the parameters. Fig. <ref type="figure" target="#fig_8">8</ref> shows the impact of motion noise on the MSE. An increase in motion noise leads to a larger MSE. Overall, the PCD outperforms the other algorithms in terms of the average MSE. Fig. <ref type="figure" target="#fig_9">9</ref> shows the impact of observation noise on the MSE. The MSE increases as the observation noise increases. The PF has higher but flatter MSE values than those of the other algorithms. The EKPF, UKF and HIKPF have almost comparable values in the curves, which increase dramatically as the observation noise increases. The PCD proposed in this study has the lowest MSE on average. Fig. <ref type="figure" target="#fig_10">10</ref> shows the influence of nodes on the MSE. Obviously, the MSEs decrease as the number of nodes increases. The PCD is superior to the others, especially to the PF, likely because the PF algorithm has the particle degradation   phenomenon, leading to a dramatic increase in errors. When the observation noise is small, the UKF and PQP significantly outperform the PF. As the observation noise increases,  the quality prediction function can effectively reduce the degradation of the PF. Fig. <ref type="figure" target="#fig_11">11</ref> shows the influence of the particle number on the MSE. The PCD achieves the lowest MSEs on average as the number of particles increases. The EKPF and UKF algorithms have similar performances. When the number of particles is greater than 100, the performance essentially becomes stable. The PF improves its performance gradually with the increase in particle number, but it still performs poorer than the others. The PCD can achieve the specified accuracy given a small number of particles.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. TIME COMPLEXITY</head><p>The time complexity tests the required time for an algorithm to produce an estimate. Herein, we consider the time spent to carry out sampling, importance sampling, and resampling rather than the signal communication. Fig. <ref type="figure" target="#fig_12">12</ref> shows the average time complexity based on duplicate configurations. The PF requires the least amount of time, while the HIKPF requires the most. The PCD requires nearly the same amount of time as required by the UKF and much less than that of the EKPF. The time complexity of PCD is not optimal because it requires calculation of the particle quality, matrix multiplication, the weights in PQP and the centroid drift vector in the particle population. In addition, the state model can also influence the processing time.</p><p>Simulations of the execution time versus node speed are shown in Fig. <ref type="figure" target="#fig_13">13</ref>. As the speed increases, the execution time increases. Totally speaking, the PCD algorithm runs more fast than other algorithms. This can be attributed to the use of momentum moment which simplifies the complex matrix calculation. To further verify it empirically, we run PCD algorithm with and without momentum moment. It shows PCD algorithm with momentum moment has less execution time than that without momentum moment. The time of PCD algorithm is mainly consumed by sampling and resampling of high-quality particles, which has O(nlogn) time complexity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. OVERALL MOBILITY NETWORK</head><p>In this subsection, we evaluate the performance of algorithms in highly dynamic environments, such as those in water pollution source tracing and air quality monitoring. We use the random path mobility model <ref type="bibr" target="#b26">[27]</ref>, <ref type="bibr" target="#b27">[28]</ref>, <ref type="bibr" target="#b32">[33]</ref>, <ref type="bibr" target="#b35">[36]</ref>, which provides random node movement in many mobile WSN applications. The model includes random pauses along the x, y, and z directions and speed changes <ref type="bibr" target="#b26">[27]</ref>, <ref type="bibr" target="#b35">[36]</ref>.</p><p>The network delay parameter is set to 3 s according to <ref type="bibr" target="#b12">[13]</ref>, <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b35">[36]</ref>, <ref type="bibr" target="#b37">[38]</ref>. The simulation time is 300 s. We consider the RF radius as a fixed value and evaluate the performances of various algorithms at a node density of 100 and speeds of 5, 10 and 15 m/s. These speeds are selected based on some practical applications, such as indoor positioning (low speed), dynamic mountain monitoring (medium speed) and pollution source tracking (high speed). The average of the 30 simulation tests is obtained.</p><p>Table <ref type="table" target="#tab_0">1</ref> provides the number of target nodes tracked by the algorithms at different node speeds. As the moving speed increases, the number of target nodes decreases. At the same speed level, the PF tracks less target nodes than the other algorithms, while the PCD tracks the most, e.g., we obtain 48 nodes at 5 m/s and 32 at 15 m/s.</p><p>Table <ref type="table" target="#tab_1">2</ref> shows the positioning errors when the node speed changes. It is clear that the higher the moving speed is, the faster the centroid drift speed. Overall, the PCD has higher positioning accuracies than those of the other algorithms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>F. DISCUSSION</head><p>In the experiments, we simulated the large-scale WSN environments by setting corresponding parameters. From the results presented, it is fairly clear that the accuracies of PF, UKF and EKPF algorithms are not satisfactory and the accuracies of HIKPF and PCD algorithms are basically equivalent. The superiority of PCD can be attributed to the following reasons. First, The PCD algorithm is designed for large-scale WSNs where the movement of nodes is considered. The movement leads to centroid drift and different speeds have significant impacts on the positioning accuracy. The centroid algorithm included in PCD is key to improve the accuracy of target positions which makes error changes in the independent experiment stable and convergent. Second, PCD algorithm addresses the problem of particle degradation, which filters and replicates high-quality particles while other algorithms do not do this. Third, execution time of PCD algorithm is mainly spent on the sampling and resampling process. It uses the moment function to avoid complex matrix calculation. Therefore, the time complexity is obviously less than HIKPF and EKPF algorithms. Although the PCD algorithm runs more slowly than UKF and PF algorithms, it has greater improvement of accuracy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSIONS</head><p>In this paper, we proposed a particle centroid drift method to measure the centroid drift state of a particle population. The simulation results demonstrate that the algorithm is robust and accurate. The calculation time and energy consumption are acceptable. Particle centroid drift can be applied to large-scale and complex environments. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1 .</head><label>1</label><figDesc>FIGURE 1. Algorithm framework.</figDesc><graphic coords="3,39.42,65.06,237.00,138.68" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Proof 1 :</head><label>1</label><figDesc>Taking (</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 2 .</head><label>2</label><figDesc>FIGURE 2. An example of particle centroid drift.</figDesc><graphic coords="5,109.35,66.06,355.76,132.50" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 3 .</head><label>3</label><figDesc>FIGURE 3. Expectation curves (local movement).</figDesc><graphic coords="6,41.44,55.03,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 4 .</head><label>4</label><figDesc>FIGURE 4. MSE curves (local movement).</figDesc><graphic coords="6,42.58,255.16,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIGURE 5 .</head><label>5</label><figDesc>FIGURE 5. Expectation curves (globe movement).</figDesc><graphic coords="6,302.82,55.61,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIGURE 6 .</head><label>6</label><figDesc>FIGURE 6. MSE curves (globe movement).</figDesc><graphic coords="6,302.68,264.36,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>FIGURE 7 .</head><label>7</label><figDesc>FIGURE 7. Tracking effect of PCD.</figDesc><graphic coords="7,60.80,254.45,237.60,178.03" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>FIGURE 8 .</head><label>8</label><figDesc>FIGURE 8. Impact of motion noise on the MSE (local movement).</figDesc><graphic coords="8,35.61,55.65,252.00,188.82" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>FIGURE 9 .</head><label>9</label><figDesc>FIGURE 9. Impact of observation noise on the MSE (local movement).</figDesc><graphic coords="8,33.75,268.74,252.00,188.82" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>FIGURE 10 .</head><label>10</label><figDesc>FIGURE 10. Impact of the node number on the MSE (local movement).</figDesc><graphic coords="8,39.18,480.23,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>FIGURE 11 .</head><label>11</label><figDesc>FIGURE 11. Impact of the particle number on the MSE (local movement).</figDesc><graphic coords="8,299.75,56.08,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>FIGURE 12 .</head><label>12</label><figDesc>FIGURE 12. Execution time across algorithms (local movement).</figDesc><graphic coords="8,303.25,259.05,237.00,177.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>FIGURE 13 .</head><label>13</label><figDesc>FIGURE 13. Execution time versus node speed. ''+'' denotes the algorithm with momentum moment, and ''-'' denotes the algorithm without momentum moment.</figDesc><graphic coords="9,48.78,66.06,216.00,176.07" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head></head><label></label><figDesc>CHUNJIONG ZHANG received the B.S. degree in electronic and information engineering from Shangqiu University, in 2015, and the M.S. degree in circuits and systems from Chongqing Three Gorges University, in 2018. He is currently pursuing the Ph.D. degree in electronic and information with Tongji University, China. His research interests include distributed artificial intelligence and wireless sensor networks. MINGYONG LI (Member, IEEE) received the M.S. degree from Chongqing Normal University, Chongqing, China. He is currently pursuing the Ph.D. degree with the School of Computer Science and Technology, Donghua University. He is also an Associate Professor with the School of Computer and Information Science, Chongqing Normal University. His current research interests include deep learning, large-scale data retrieval, and image processing. TAO XIE received the B.S. and M.S. degrees in educational technology from Southwest University, in 2007 and 2010, respectively, and the Ph.D. degree from the Department of Computer Science and Technology, Xi'an Jiaotong University, in 2017. He is currently an Associate Professor with Southwest University. His research interests include mobile Internet, data mining, and artificial intelligence.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 .</head><label>1</label><figDesc>Tracked nodes at different speeds.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2 .</head><label>2</label><figDesc>Positioning error at different speeds (unit: m).</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="127710" xml:id="foot_0"><p>  VOLUME 8, 2020   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>VOLUME 8, 2020   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="127714" xml:id="foot_2"><p>  VOLUME 8, 2020   </p></note>
+		</body>
+		<back>
+
+			
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGMENT (Zhengwan Zhang and Chunjiong Zhang contributed equally to this work.)</head></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The target-barrier coverage problem in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">C.-F</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-W</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Mobile Comput</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1216" to="1232" />
+			<date type="published" when="2018-05">May 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A new patch and stitch algorithm for localization in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kashniyal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Verma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">P</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Netw</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="3251" to="3264" />
+			<date type="published" when="2019-08">Aug. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">On the performance limits of cooperative localization in wireless sensor networks with strong sensor position uncertainty</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Commun. Lett</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1613" to="1616" />
+			<date type="published" when="2017-07">Jul. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Distributed TOA-based positioning in wireless sensor networks: A potential game approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Anpalagan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Commun. Lett</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="316" to="319" />
+			<date type="published" when="2018-02">Feb. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Optimal TDOA sensor-pair placement with uncertainty in source location</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Xiao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Veh. Technol</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="9260" to="9271" />
+			<date type="published" when="2016-11">Nov. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Statistical NLOS identification based on AOA, TOA, and signal strength</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Veh. Technol</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="274" to="286" />
+			<date type="published" when="2009-01">Jan. 2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Experimental evaluations of RSS threshold-based optimised DV-HOP localisation for wireless ad-hoc networks</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A M</forename><surname>Maung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kawai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electron. Lett</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="1246" to="1248" />
+			<date type="published" when="2014-08">Aug. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Obstacle based range-free localization-error estimation for WSN</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">N</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Sheeba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Comput. Sci. Issues</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page">31</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A Bayesian perspective on multiple source localization in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L T</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Septier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rajaona</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Peters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Nevat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Delignon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1684" to="1699" />
+			<date type="published" when="2016-04">Apr. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Localization from incomplete noisy distance measurements</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Javanmard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Montanari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Found. Comput. Math</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="297" to="345" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Distance estimation using RSSI and particle filter</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Svečko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Malajner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gleich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ISA Trans</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="275" to="285" />
+			<date type="published" when="2015-03">Mar. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">PSO-PF target tracking in range-based wireless sensor networks with distance-dependent measurement noise</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Keshavarz-Mohammadiyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Khaloozadeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 23rd Iranian Conf. Electr. Eng</title>
+		<meeting>23rd Iranian Conf. Electr. Eng</meeting>
+		<imprint>
+			<date type="published" when="2015-05">May 2015</date>
+			<biblScope unit="page" from="911" to="915" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Detection and tracking using Particle-Filter-Based wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rutten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bessell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Kanhere</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gordon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Mobile Comput</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1332" to="1345" />
+			<date type="published" when="2010-09">Sep. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A tracking algorithm based on orthogonal cubature Kalman filter with TDOA and FDOA</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhi-Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Da-Ming</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Jian-Hui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yue</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACTA Phys. SINICA</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page">150502</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A prediction-based clustering algorithm for tracking targets in quantized areas for wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">É</forename><forename type="middle">L</forename><surname>Souza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Pazzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Nakamura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Netw</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="2263" to="2278" />
+			<date type="published" when="2015-10">Oct. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">UKFbased navigation system for AUVs: Online experimental validation</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Costanzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fanelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Meli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ridolfi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Caiti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Allotta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Ocean. Eng</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="633" to="641" />
+			<date type="published" when="2019-07">Jul. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Hybrid iterated Kalman particle filter for object tracking problems</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Nagy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Zayed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. VISAPP</title>
+		<meeting>VISAPP<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Citeseer</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="375" to="381" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Location systems for ubiquitous computing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hightower</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Borriello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="57" to="66" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Utilizing active sensor nodes in smart environments for optimal communication coverage</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="11338" to="11348" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Localización de nodos dentro de una red inalámbrica de sensores</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Herrero</forename><surname>García</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<pubPlace>Barcelona, Spain</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Univ. Politècnica de Catalunya</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">B.S. thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">GPS-less low-cost outdoor localization for very small devices</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bulusu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Heidemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Estrin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Pers. Commun</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="28" to="34" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Sensor position determination with flying anchors in three-dimensional wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">C.-H</forename><surname>Ou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K.-F</forename><surname>Ssu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Mobile Comput</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1084" to="1097" />
+			<date type="published" when="2008-09">Sep. 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Positioning optimisation based on particle quality prediction in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Netw</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="107" to="113" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">E-SeRLoc: An enhanced serloc localization algorithm with reduced computational complexity</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Mabrouki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Belghith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 9th Int. Wireless Commun. Mobile Comput. Conf. (IWCMC)</title>
+		<meeting>9th Int. Wireless Commun. Mobile Comput. Conf. (IWCMC)</meeting>
+		<imprint>
+			<date type="published" when="2013-07">Jul. 2013</date>
+			<biblScope unit="page" from="153" to="158" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Distributed hybrid particle/FIR filtering for mitigating NLOS effects in TOA-based localization using wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Pak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Shmaliy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Lim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Ind. Electron</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="5182" to="5191" />
+			<date type="published" when="2017-06">Jun. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Improved particle filters for multi-target tracking</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Maroulas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Stinis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Phys</title>
+		<imprint>
+			<biblScope unit="volume">231</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="602" to="611" />
+			<date type="published" when="2012-01">Jan. 2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">An improved localization algorithm in wireless sensor networks inder complex background noise</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Q</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ying</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Beijing Inst. Technol</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="535" to="540" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A robust scheme for distributed particle filtering in wireless sensors networks</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Vázquez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Míguez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="190" to="201" />
+			<date type="published" when="2017-02">Feb. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Fuzzy weighted centroid localization with virtual node approximation in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Phoemphon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>So-In</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Leelathakul</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Internet Things J</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="4728" to="4752" />
+			<date type="published" when="2018-12">Dec. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Infrared absorption spectra, structure and thermodynamic properties of Cyclobutane1</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Rathjens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Freeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">D</forename><surname>Gwinn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Pitzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Amer. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">22</biblScope>
+			<biblScope unit="page" from="5634" to="5642" />
+			<date type="published" when="1953-11">Nov. 1953</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">The drift velocity vector of electron swarms in crossed electric and magnetic fields</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sugawara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Yahata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sakai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. D, Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1191" to="1196" />
+			<date type="published" when="2000-05">May 2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">On the Boltzmann equation for charged particle beams under the effect of strong magnetic fields</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bostan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Discrete Continuous Dyn. Syst.-B</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="339" to="371" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Mobile robot path planners with memory for mobility diversity algorithms</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Licea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mclernon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ghogho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Robot</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="419" to="431" />
+			<date type="published" when="2017-04">Apr. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Fluid interface detection technique based on neighborhood particles centroid deviation (NPCD) for particle methods</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Tsukamoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-Y</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">K</forename><surname>Motezuki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Numer. Methods Fluids</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="148" to="168" />
+			<date type="published" when="2016-09">Sep. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Energy landscapes for machine learning</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Ballard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Martiniani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mehta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Sagun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Stevenson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Wales</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<biblScope unit="page" from="12585" to="12603" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Improved bounds on information dissemination by manhattan random waypoint model</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rezaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Phillips</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Tóth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 26th ACM SIGSPATIAL Int. Conf. Adv. Geographic Inf. Syst</title>
+		<meeting>26th ACM SIGSPATIAL Int. Conf. Adv. Geographic Inf. Syst<address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2018-11">Nov. 2018</date>
+			<biblScope unit="page" from="139" to="148" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Generalizing the first-difference correlated random walk for marine animal movement data</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Albertsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">4017</biblScope>
+			<date type="published" when="2019-12">Dec. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Distributed target tracking using signal strength measurements by a wireless sensor network</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Lampe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Sel. Areas Commun</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1006" to="1015" />
+			<date type="published" when="2010-09">Sep. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">Zhengwan</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">E</forename></persName>
+		</author>
+		<title level="m">degree in computer applications from Southwest Normal University, in 2004, and the M.S. degree in education technology from</title>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+		<respStmt>
+			<orgName>Southwest University</orgName>
+		</respStmt>
+	</monogr>
+	<note>His research interests include big education data, artificial intelligence, and wireless sensor networks</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

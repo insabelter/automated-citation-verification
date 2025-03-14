@@ -1,0 +1,1841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Surbhi</forename><surname>Lal</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Laboratory for Nanophotonics</orgName>
+								<orgName type="institution">Rice University</orgName>
+								<address>
+									<addrLine>6100 Main Street</addrLine>
+									<postCode>77005-1892</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Stephan</forename><surname>Link</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Chemistry</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Laboratory for Nanophotonics</orgName>
+								<orgName type="institution">Rice University</orgName>
+								<address>
+									<addrLine>6100 Main Street</addrLine>
+									<postCode>77005-1892</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">J</forename><surname>Halas</surname></persName>
+							<email>halas@rice.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Chemistry</orgName>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">Laboratory for Nanophotonics</orgName>
+								<orgName type="institution">Rice University</orgName>
+								<address>
+									<addrLine>6100 Main Street</addrLine>
+									<postCode>77005-1892</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">9C76C7463CF8064B805E1C5CD8235F58</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:46+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Plasmonics is a subfield of nanophotonics that is concerned primarily with the manipulation of light at the nanoscale, based on the properties of propagating and localized surface plasmons. Plasmons are the collective oscillations of the electron gas in a metal or semiconductor. Optical waves can couple to these electron oscillations in the form of propagating surface waves or localized excitations, depending on the geometry. Although all conductive materials, such as metals, support plasmons, the coinage metals (that is, copper, silver and gold) have been most closely associated with the field of plasmonics as their plasmon resonances lie closer to the visible region of the spectrum, allowing plasmon excitation by standard optical sources and methods. The field of plasmonics is based on exploiting plasmons for a variety of tasks, by designing and manipulating the geometry of metallic structures, and consequently their plasmon-resonant properties.</p><p>In quantum theory, a plasmon is a quasiparticle that results from the quantization of plasma oscillations interacting with a photon. Despite their origins in quantum mechanics, the properties of plasmons can be described rigorously by classical electrodynamics. Surface plasmons are supported by structures at all length scales and are certainly not limited to quantum confined systems. For thin metal films, for example, surface plasmons are the electromagnetic waves that propagate along metallic-dielectric interfaces <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b1">2</ref> . They can exist at any interface and frequency range where the real dielectric constants of the media constituting the interface are of opposite signs. Small noble metal particles, with dimensions from a few up to several hundred nanometres, support localized surface plasmon oscillations that create large electromagnetic fields at the nanoparticle surface <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> .</p><p>The plasmon resonance frequency, determined by the frequencydependent dielectric function of the metal and the dielectric constant of the surrounding medium, is strongly dependent on the size and shape of the nanostructure <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref> . Although both the surface plasmon resonance for a thin film and the localized surface plasmon resonance supported on isolated nanoparticles have been of great interest in the scientific community, the resonances Nano-optics from sensing to waveguiding</p><p>The design and realization of metallic nanostructures with tunable plasmon resonances has been greatly advanced by combining a wealth of nanofabrication techniques with advances in computational electromagnetic design. Plasmonics -a rapidly emerging subdiscipline of nanophotonics -is aimed at exploiting both localized and propagating surface plasmons for technologically important applications, specifically in sensing and waveguiding. Here we present a brief overview of this rapidly growing research field.</p><p>supported by single nanoparticles in particular have received considerable attention owing to numerous significant advances in nanoparticle synthesis. Wet chemical synthesis methods have now made it possible to fabricate plasmonic nanoparticles having a variety of shapes (for example spheres 9 , triangles 10 , prisms <ref type="bibr" target="#b10">11</ref> , rods <ref type="bibr" target="#b11">12</ref> and cubes <ref type="bibr" target="#b12">13</ref> ) with controllable sizes and narrow size distributions. Furthermore, metallic-dielectric and metallic-metallic core-shell nanoparticles and mixed metallic-alloy nanoparticles with different shapes (for example, nanoshells <ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref> and nanorice <ref type="bibr" target="#b16">17</ref> ) have been prepared. Fabrication of this large variety of different structures makes a variety of applications possible, as the spectral position of the surface plasmon resonance depends on both the shape and the size of the nanoparticle. For spherical nanoparticles, a resonance of the oscillating electrons with an incident optical wave occurs when the negative of the real part of the particle's dielectric constant equals twice the value of the dielectric constant of the medium (see theoretical section below). However, for non-spherical particle shapes, the electron oscillation is non-isotropic and localized either along the principal axes <ref type="bibr" target="#b17">18</ref> or at the edges and corners of the nanoparticle <ref type="bibr" target="#b18">19</ref> (or both), leading to an additional shape-dependent depolarization and splitting of the surface plasmon resonance into several modes (such as longitudinal and transverse modes for nanorods or symmetric and antisymmetric modes in nanoshells <ref type="bibr" target="#b19">20</ref> ). A large variety of structures have been synthesized and characterized whose plasmon resonances may be varied over the entire visible to mid-infrared part of the electromagnetic spectrum (see Fig. <ref type="figure" target="#fig_0">1</ref>). In contrast to this explosion of plasmonic nanoparticles of various shapes and sizes, the controlled assembly and integration of nanoparticles into plasmonic materials and devices remains a challenge at present. Fabrication strategies using clean room and wet chemical techniques are leading to numerous advances in nanoparticle assembly and integration methods.</p><p>Within this rapidly developing and highly multidisciplinary field, several key research directions have been emerging with the potential for robust and commercializable technological applications. These range from enhanced sensing and spectroscopy for chemical identification and detection of biomolecules or biological agents, near-field optics and scanning microscopy using metallic probe tips, to signal propagation with metal-based waveguides. Broadly, one can distinguish between two main areas based on the properties of plasmons: sensing applications based on either the refractive-index dependence of the plasmon resonance or the amplification of the optical field near the nanostructure; and manipulation and guiding of light using plasmonic waveguides. This review focuses specifically on the plasmonic properties of nanostructures for sensing applications, and on plasmonic waveguides. We first start by reviewing some theoretical methods used throughout the field of plasmonics. For the many preparation methods developed for metallic nanostructures we refer the interested reader to the cited literature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>theoreticaL background</head><p>As a first approximation, the plasmon resonance for a small spherical metallic nanoparticle can be understood by a simple Drude freeelectron model, assuming that the positively charged metal atoms are fixed in place and that the valence electrons are dispersed throughout a solid sphere of overall positive charge. In the quasistatic limit, where the wavelength of light is much larger than the size of the particle, the force exerted by the electromagnetic field of the incident light moves all the free electrons collectively. Using the boundary condition that the electric field is continuous across the surface of the sphere, the static polarizability can be expressed as where R is the sphere radius, ε is the complex dielectric function of the metal and ε m is the dielectric constant of the embedding medium. The polarizability shows a resonance when the denominator is minimized, which occurs when the magnitude of the real part of the complex dielectric function, ε real , is -2ε m . This resonance condition for the polarizability leads to a strong extinction of light at the plasmon resonance frequency. Within this free-electron description, plasmons can be thought of as collective oscillations of the conduction-band electrons induced by an interacting light wave.</p><p>To determine the plasmon-resonant properties of arbitrarily shaped particles, solutions to Maxwell's equations must be obtained. For nanoparticles with a spherical symmetry, Mie scattering theory <ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> provides a rigorous solution that describes well the optical spectra of spheres of any size. To determine the extinction spectrum of a nanoparticle using Mie theory, the electromagnetic fields of the incident wave, scattered wave and the wave inside the particle are expressed as the sum of a series of vector spherical harmonic basis functions. The electromagnetic fields must then satisfy Maxwell's boundary conditions of continuity at the junction between the nanoparticle and the embedding medium. Mie theory is exact and accounts for field-retardation effects that become significant for particles whose size is comparable to the wavelength of light. A complete description of the Mie scattering problem can be found in the classic book by Craig Bohren and Donald Huffman <ref type="bibr" target="#b2">3</ref> .</p><p>For non-spherical geometries, brute-force computational methods, such as the discrete dipole approximation, DDA (ref. 23), and the finite-difference time domain, FDTD (refs 24,25), are widely used. In the DDA, the scattering and absorption properties of arbitrarily shaped nanostructures are calculated by approximating the complete nanostructure as a finite array of polarizable point dipoles. In response to an external field, the points acquire a dipole moment, and the scattering properties are then calculated as the interaction of a finite number of closely spaced dipoles.</p><p>The FDTD is a computational method based on numerically evaluating the temporal evolution of electromagnetic fields using Maxwell's equations. Because Maxwell's equations relate timedependent changes in the electric (magnetic) fields to spatial variations in the magnetic (electric) fields, FDTD programs implement an explicit time-marching algorithm for solving Maxwell's curl equations, usually on an offset cartesian spatial grid. Modelling a new system is therefore reduced to grid generation, instead of deriving geometry-specific equations. In addition, the time-marching aspect of the FDTD method enables direct observations to be made of both near-and far-field values of the electromagnetic fields at any time during the simulation. With these 'snap shots' , the time evolution of the electromagnetic fields can be calculated directly. The FDTD has become an extremely powerful technique for modelling nanostructures with complex shapes as well as arrangements of multiple nanostructures.</p><p>Although DDA and FDTD correctly predict the spectral response of arbitrarily shaped nanostructures, they provide little physical insight into the nature and origin of a plasmon. Thus, it is difficult to rationally design nanostructures with predictable plasmon resonances based on DDA and FDTD. Plasmon hybridization (PH) theory is a more intuitive method for calculating the plasmon resonances of complex nanostructures. The PH model is a mesoscale electromagnetic analogue of the molecular-orbital theory used to predict how atomic orbitals interact to form molecular orbitals. Plasmon hybridization theory separates complex nanoparticle geometries into simpler constituent parts and then calculates how the plasmon resonances of the elementary parts interact with each other to generate the hybridized plasmon modes of the composite nanostructure. For example, the plasmon resonances of a silica core with a gold shell, called a nanoshell, can be explained as the interacting plasmons of a solid spherical gold particle and a spherical cavity inside a bulk block of gold (see Fig. <ref type="figure" target="#fig_1">2a</ref>). The plasmon resonances of nanoshells can then be understood as the interaction or hybridization of the sphere and cavity plasmons. This hybridization leads to a higher-energy antisymmetric plasmon and a lower-energy symmetric plasmon. The symmetric plasmon has a larger dipole moment and couples easily with light giving rise to plasmon absorption (see Fig. <ref type="figure" target="#fig_1">2a</ref>). The tunability of the nanoshell plasmon resonance (Fig. <ref type="figure" target="#fig_1">2b</ref>) arises from the combination of silica-particle size (cavity plasmon) and gold-shell thickness (interaction distance). Thinner (thicker) shells have a stronger (weaker) interaction, leading to larger (smaller) energy splitting of the symmetric and antisymmetric plasmon modes. Therefore PH theory provides an elegant and more intuitive plasmon description and has become a useful guide in the engineering of metallic nanostructures with predictable resonances when applied to other complex geometries with interacting plasmons. first performed using propagating surface plasmons on continuous metal films that had been chemically functionalized. Modifications in the chemical environment due to binding of molecules to a functionalized film were monitored as a change in the incidence angle required for surface plasmon excitation in an evanescent coupling geometry <ref type="bibr" target="#b25">26</ref> . Similarly, metallic nanoparticles that support the excitation of a localized SPR are also highly sensitive to the environment, because the resonance frequency depends on the dielectric constant of the local medium (for example see Fig. <ref type="figure" target="#fig_1">2c</ref> and refs 4,7). In nanoparticle-based SPR sensing, changes in the dielectric constant of the medium surrounding the metallic nanostructure are detected by measuring the shift of the SPR absorbance maximum (see Fig. <ref type="figure" target="#fig_1">2c</ref> and refs 26,27). This enables the detection of molecules with different dielectric properties at the nanoparticle surface. Although the SPR response is not chemically specific, this disadvantage has been overcome by detection techniques using metal particles conjugated to, for example, antibodies or DNA, allowing for that selectivity of target-receptor molecules through binding specificities <ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b28">29</ref> . For example, the highly robust biotin-streptavidin labelling scheme has been used extensively for plasmon sensing in biological systems. Although SPR spectroscopy using nanoparticles is less sensitive at present than its thin-film-based analogue, it has the advantages of portability (that is, the technique can be miniaturized) and affordability <ref type="bibr" target="#b27">28</ref> ($5,000 versus $300,000).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>LocaL fieLd enhancement</head><p>When an electromagnetic wave interacts with a roughened metallic surface or a nanoparticle, the electromagnetic fields near the surface are greatly enhanced relative to the incident electromagnetic field. This phenomenon is due to two processes. The first is the 'lightning rod' effect, conventionally described as the crowding of the electric field lines at a sharp metallic tip. The second process is the excitation of localized surface plasmons at the metal surface and is responsible for the amplification of fluorescence and second-harmonic generation from thin metal films <ref type="bibr" target="#b29">30</ref> . For metal nanoparticles often both processes are involved in creating the localized enhanced near field. Although this electromagnetic enhancement effect has been exploited in several spectroscopy techniques, it is mainly the amplification of the Single-molecule spectroscopy <ref type="bibr" target="#b32">33,</ref><ref type="bibr" target="#b33">34</ref> has revealed that the SERS ensemble enhancement factor of 10 6 is actually due to a distribution of enhancement factors because some molecule-substrate combinations show much smaller or no enhancements, whereas others can reach values of up to 10 14 for dye molecules on aggregated gold and silver nanoparticles. In this context, nanoparticle aggregates can serve as efficient nanoantennas that harvest and focus the incident light, resulting in greatly enhanced electromagnetic fields in the direct nanoscale proximity of the nanoparticles. Work in this area has led to the improvement of SERS substrates, making SERS a chemical-specific sensing technique surpassing the capabilities achieved in single-molecule fluorescence spectroscopy.</p><p>It is now well understood that maximizing the SERS signal requires a combination of factors. First, the nanostructure or nanoparticle substrate must have a strong plasmon resonance. Nanostructures and nanoparticle assemblies with nanoscale gaps have been found to be the most efficient substrates owing to junction plasmons created in the gaps (see following section). Next, because SERS excitation is a near-field phenomenon and the near field decays exponentially with distance away from the nanoparticle surface <ref type="bibr" target="#b34">35</ref> , it is important that the analyte molecule is located within the enhanced fringing field of the nanoparticle surface or in the highly enhanced field region in the gaps between adjacent nanoparticles. Finally, a strong correlation has been observed between the SERS excitation wavelength and the SPR maximum <ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b36">37</ref> . Maximum enhancement is achieved under resonant excitation conditions, which requires that the excitation laser is tuned near the plasmon resonance of the nanoparticle substrate or, alternatively, that the plasmon resonance of the substrate is tuned near the excitation-laser wavelength.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Glass slide</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Junction pLaSmonS</head><p>Aggregated colloidal particles show localized areas of intense local fields, or 'hot spots' , that give rise to the largest enhancement factors and make single-molecule SERS possible. However, the heterogeneity of 'hot spots' in SERS substrates consisting of nanoparticle aggregates makes quantitative measurements unreliable and optimization difficult. For the past few years there has been a great emphasis on rationally designing substrate geometries to achieve large enhancement factors. A variety of shapes and geometries have been explored as SERS substrates, including metal island films <ref type="bibr" target="#b37">38</ref> , large silver and gold colloids <ref type="bibr" target="#b38">39</ref> , silver triangle arrays <ref type="bibr" target="#b25">26</ref> , silver and gold nanoshells <ref type="bibr" target="#b35">36</ref> and fractal silver films <ref type="bibr" target="#b39">40</ref> . In many applications where single-molecule detection is not required, substrates are optimized in such a way as to achieve the largest enhancement factors and the densest coverage of the detected adsorbate molecules. Another approach for optimizing SERS substrates is the fabrication of nanoscale structures with controllable nanoscale gaps between two or more nanoparticles.</p><p>The simplest geometry of a structure with a nanoscale gap is a pair of closely spaced nanoparticles, usually referred to as a nanoparticle dimer. For spherical nanoparticles, we can invoke PH to explain theoretically the dimer plasmon as the hybrid plasmon of two interacting sphere plasmons <ref type="bibr" target="#b40">41</ref> . The dimer plasmon is polarized <ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref> and for polarization perpendicular to the interparticle axis of the dimer, the hybridized plasmon is slightly blueshifted with respect to the single-particle plasmon. For incident polarization parallel to the dimer axis, there is a strong hybridization of the sphere plasmons, and the symmetric plasmon shows a continuous redshift as the gap between the spheres decreases. This has been observed experimentally for well-defined dimers made by electron-beam lithography <ref type="bibr" target="#b41">[42]</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref> . In addition to the strong redshift of the plasmon resonance, there is an accumulation of charge in the gap between the two nanoparticles leading to a large of the near field and an increase in the far-field extinction. It is important to point out that the enhancement in the junction is much larger than the sum of the enhancements for individual nanospheres <ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b44">45</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>nanoSheLL-baSed SubStrateS</head><p>The plasmon resonances of nanoshells can be tuned over a wide spectral range by changing the geometrical dimensions of the core and shell thickness (see Fig. <ref type="figure" target="#fig_1">2b</ref>). Additional tunability of the plasmon resonance can be achieved through asymmetric nanoshell geometries such as nanorice <ref type="bibr" target="#b16">17</ref> , a prolate spheroidal core-shell particle or a nanoegg <ref type="bibr" target="#b45">46</ref> -a nanoshell with an offset core. The nanoshell plasmons furthermore give rise to large near-field enhancements when they are excited resonantly. Nanoshell synthesis methods have been optimized and PH has successfully been applied to rationalize the plasmon properties of single nanoshells, nanoshell dimers, clusters <ref type="bibr" target="#b46">47</ref> , nanorice <ref type="bibr" target="#b16">17</ref> and a nanoegg <ref type="bibr" target="#b45">46</ref> . This makes nanoshells a well-characterized and highly reproducible substrate with large SERS enhancements and an ideal candidate for investigating the electromagnetic origins of SERS (refs 48,49).</p><p>Enhancement factors of around 10 9 have been achieved with SERS even for non-resonant molecules such as para-mercaptoaniline (pMA) on gold nanoshells (see Fig. <ref type="figure" target="#fig_2">3a</ref>,b and ref. 48). When the single nanoshell plasmon is resonantly excited by the pump laser, a linear response of the SERS signal with nanoshell density was observed indicating that individual nanoshells are responsible for the observed SERS signal. Nanoshell dimers and arrays have also produced large enhancement factors of more than 10 8 over a large interrogation area <ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b49">50</ref> . Nanoshell arrays furthermore support hybrid junction plasmons that can be tuned into the infrared region of the spectrum, which extends the usefulness of nanoshellbased substrates to measurements of surface-enhanced infrared absorption, SEIRA (ref. 50). Finally, nanoshells have been used to characterize the effect of metals (gold versus silver) <ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b50">51</ref> , surface defects <ref type="bibr" target="#b50">51</ref> and morphology on the SERS response. Thus, nanoshells with their well-characterized nanoenvironments are ideal substrates for sensitive chem-bio detection using SERS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>tip-enhanced raman SpectroScopy</head><p>Junction plasmons or 'hot spots' in nanoparticle aggregates and assemblies are small, and it is often difficult to place the SERS analyte into the hot spot. An alternative approach that uses nanosized metallic or metal-coated tips to produce an enhanced optical field at the tip apex has been developed for SERS detection <ref type="bibr" target="#b51">52,</ref><ref type="bibr" target="#b52">53</ref> . The metal tip is scanned over the analyte molecules, and the SERS signal is recorded as a function of tip position using an experimental setup similar to near-field scanning optical microscopy. Tip-enhanced Raman spectrocopy or TERS offers enhanced SERS signals together with high spatial resolution beyond the diffraction limit <ref type="bibr" target="#b53">54,</ref><ref type="bibr" target="#b54">55</ref> .</p><p>Initial TERS experiments were performed with a tapered metal tip, which was brought close to the analyte molecules illuminated in a diffraction-limited laser spot <ref type="bibr" target="#b55">56</ref> . The spatial resolution of these measurements depends mainly on the diameter of the tip apex. This imposes a severe limitation on TERS because the scattered fields from the tip decrease sharply as the tip size is reduced. A tip coated with a granular silver film has been successfully used to overcome this limitation because only one silver nanosphere near the apex of the tip acts as a nanoantenna to excite surface plasmons and to create enhanced local fields. Both of these geometries rely on the 'lightning rod' effect for field enhancement. A second TERS geometry is based on junction plasmons created between a metallic tip and a flat metallic surface that also serves as the analyte substrate <ref type="bibr" target="#b51">52</ref> . Figure <ref type="figure" target="#fig_2">3c</ref>,d shows an SEM image of a silver tip used for TERS along with the signal enhancement obtained when the tip is close to benzenethiol molecules on an optically flat gold film. Enhancement factors of 10 6 -10 8 under non-resonant excitation conditions have been reported for benzenethiol molecules adsorbed on optically flat gold and platinum surfaces probed with a gold tip placed one nanometre from the surface <ref type="bibr" target="#b51">52</ref> . Owing to the spatial resolution of TERS and the large field enhancements in easily accessible junctions between the tip and metal surface, TERS promises to be a powerful technique for real-time chem-bio sensing with nanoscale spatial resolution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>pLaSmonic waveguideS</head><p>As demand for computer processing speed increases, on-chip optical data transfer promises to greatly enhance current electronic computation schemes. However, for an optical technology to be feasible, light must be confined and routed in dimensions smaller than its wavelength to allow for sufficient miniaturization of chips. Surface plasmon waveguides offer the possibility of propagating electromagnetic radiation much like an optical fibre does, but using metallic waveguide structures that are an order of magnitude smaller <ref type="bibr" target="#b56">57,</ref><ref type="bibr" target="#b57">58</ref> . The diffraction of classical optics constrains the dimension of an optical fibre to be larger than about λ/2 (where λ is the wavelength, giving dimensions of about 750 nm for telecommunications applications), whereas plasmonic devices are only limited in their size by the dimensions of the input-output coupler and the transmitting medium. Plasmonic devices are therefore ideal candidates for next-generation nanoscale electronic applications such as light-on-a-chip.</p><p>Plasmon propagation has been explored for a variety of structures, such as patterned planar metal films, metal stripes, nanowires, nanoparticle chains, and metal-insulator-metal (MIM) waveguides. Two-dimensional plasmon propagation at the metalair interface of a planar metal film was achieved by introducing height modulations. Scattering of the plasmons at holes or ordered nanoparticle arrays acting as local defects enables guiding of the plasmons. A propagation length of 10 μm has been observed for a system consisting of silica nanostructures deposited on a silica substrate and overcoated with a 70-nm-thick silver film <ref type="bibr" target="#b58">59</ref> . Ordered arrangements of these surface modulations can be used to create functional elements like Bragg mirrors <ref type="bibr" target="#b58">59</ref> or focusing lenses <ref type="bibr" target="#b59">60</ref> . Focusing lenses were fabricated by milling a curved line of closely spaced holes into a metal film. The authors of ref. 60 elegantly demonstrated the focusing of their nanohole array by coupling a plasmon in a metal-stripe waveguide.</p><p>A particularly simple geometry of a plasmon waveguide is a long, thin metal stripe sandwiched between two insulator layers, that is, an insulator-metal-insulator (IMI) geometry <ref type="bibr" target="#b60">61</ref> . Plasmon propagation lengths of several micrometres in a 200-nm-wide stripe have been observed. The propagation lengths depend strongly on the width of the metal stripe <ref type="bibr" target="#b61">62,</ref><ref type="bibr" target="#b62">63</ref> , and it has been shown both theoretically <ref type="bibr" target="#b63">64</ref> and experimentally <ref type="bibr" target="#b64">65</ref> that, as the stripe waveguide becomes narrower, the number of guided modes decreases. At a certain stripe width, no more guided modes exist, and thus propagation on the stripe is very limited. For micrometre-wide stripes however, the propagating plasmon modes can reach attenuation lengths of a centimetre at telecommunication wavelengths in the near infrared. The IMI waveguide geometry also includes metal stripes on an insulator substrate surrounded by air. It is worth mentioning this asymmetric geometry separately because the plasmon modes excited at the metal-air interface suffer radiative losses in addition to ohmic heating. These additional losses cause shorter propagation distances compared with symmetric IMI structures <ref type="bibr" target="#b62">63,</ref><ref type="bibr" target="#b63">64</ref> . The same trend of decreasing propagation length with decreasing metal stripe width is also observed for the air-metal-insulator structures, confirming that, for metal-stripe waveguides, there is a trade-off between confinement and propagation length. Although the metal-stripe waveguide can, in general, support long propagation lengths for large stripe widths, it is not as useful for the purpose of subwavelength confinement.</p><p>In addition to lithographically prepared metal stripes, which are several hundred nanometres wide, plasmon propagation has also been reported for chemically prepared silver and gold nanorods or nanowires with transverse and longitudinal dimensions of less than 100 nm and around 4 μm, respectively. Light was coupled in at one end of the rod and observed to emerge from the other, proving that plasmons did in fact propagate along the rod <ref type="bibr" target="#b65">66,</ref><ref type="bibr" target="#b66">67</ref> (see Fig. <ref type="figure" target="#fig_3">4</ref>). More recent experiments were carried out with even longer and narrower silver wires (25 nm wide and about 50 μm long) <ref type="bibr" target="#b67">68</ref> . Plasmon propagation was visualized by fluorescence markers along the nanowire and terminated after a propagation distance of about 15 μm. Similar to light propagation in optical fibres, plasmon propagation is not limited to a straight line, but electromagnetic radiation contained in the plasmon can be bent and split using appropriate plasmonic structures <ref type="bibr" target="#b66">67,</ref><ref type="bibr" target="#b68">69</ref> . For example, a metallic wire branching into more than one path enables a plasmon to continue propagating down both paths of the wire, similar to an optical beamsplitter. These observations show the great opportunity to manipulate plasmons in the same way that light has been manipulated in optics, but using much smaller components.</p><p>The interparticle coupling responsible for the giant local field enhancement at the junctions between nanoparticles can also be exploited for plasmon propagation. Linear chains of nanoparticles can act as a plasmonic waveguide <ref type="bibr" target="#b69">70</ref> because the metal nanoparticles couple to each other by means of the optical near field when irradiated with light <ref type="bibr" target="#b70">71,</ref><ref type="bibr" target="#b71">72</ref> . Using a near-field scanning optical microscope to locally excite plasmons on one end of a nanoparticle chain, plasmon propagation and waveguiding has been observed along the nanoparticle chain by directly measuring the energy transport <ref type="bibr" target="#b72">73</ref> . It is anticipated that fabricating nanoparticle chains with complex architectures could be far superior to conventional top-down approaches such as electron-beam lithography <ref type="bibr" target="#b73">74</ref> .</p><p>The waveguide geometry consisting of an insulator with a metal cladding has recently stimulated increased interest. Theoretical studies suggested that these MIM structures could offer superior subwavelength confinement for plasmon waveguides. Although IMI structures (for example, metal stripes sandwiched between two insulators or gaps and grooves in a planar film) generally supported longer propagation lengths along the waveguide, the MIM structures confine the plasmon to the insulator part with far superior ability to achieve subwavelength confinement <ref type="bibr" target="#b74">75</ref> . Planarmultilayered MIM systems, furthermore, support both plasmonic modes and photonic modes (normal propagating electromagnetic modes) <ref type="bibr" target="#b75">76,</ref><ref type="bibr" target="#b76">77</ref> . In Ag/Si 3 N 4 /Ag layered MIMs, light can be coupled into and out of the waveguide structures using slit openings in the metal, enabling broadband propagation of electromagnetic energy over distances of several micrometres. Similarly, V-shaped grooves milled into a gold film support propagating plasmon modes localized at the bottom of the groove. Propagation lengths of 100 μm at a wavelength of 1,500 nm have been realized in metal grooves <ref type="bibr" target="#b77">78</ref> . The groove parameters (depth, d, which is about 1.1-1.3 μm, and groove angle, θ, about 25°) can be optimized to enable low-loss single-mode propagation at the bottom of the groove at telecom wavelengths. The shape of the grooves can be designed to function as complex optical components, such as Y-splitters and Mach-Zehnder interferometers. Figure <ref type="figure" target="#fig_4">5</ref> shows SEM images, along with topographical and near-field optical images of a Y-splitter (Fig. <ref type="figure" target="#fig_4">5a-c</ref>) and a Mach-Zehnder interferometer (Fig. <ref type="figure" target="#fig_4">5d-f</ref>) that can be used to realize plasmonic components in an integrated optical circuit. Inspired by the success of these plasmonic waveguides, more complicated plasmonic elements are being actively explored, such as Y-splitters, interferometers and ring resonators <ref type="bibr" target="#b77">78</ref> , with the ultimate goal of building all plasmonic-based active devices that include plasmonic light sources, waveguides and detectors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Summary</head><p>In conclusion, the rapidly growing subdiscipline of nanophotonics known as plasmonics has yielded unique phenomena based on light-metal interactions that may give rise to new, useful applications and technologies. With applications ranging from 'light-on-a-chip' to 'lab-on-a-chip' , the future of this field looks exceptionally bright and promising. We have no doubt that useful technologies will emerge from the development of plasmonics for a wide range of applications. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figure 1 nanoparticle resonances. a range of plasmon resonances for a variety of particle morphologies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2</head><label>2</label><figDesc>Figure2tunability of nanoshells. a, plasmon hybridization. nanoshell plasmons can be understood as a hybridization of a sphere and a cavity plasmon. the schematic of the plasmon hybridization shows the charge distribution forming symmetric and antisymmetric plasmon resonances. b, plasmon resonances of a 120-nm-diameter silica core coated with varying thicknesses of gold shell. note the blue shift in the plasmon resonance as the size of the gold layer increases from 5 nm to 20 nm. c, Surface plasmon resonance (Spr) shifts of a nanoshell's resonance in solutions with different refractive indices varying from 1.00 to 1.63.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3</head><label>3</label><figDesc>Figure3Surface-enhanced raman spectroscopy. a, Schematic sample geometry for nanoparticle-based SerS. b, raman spectrum of p-mercaptoaniline collected with no nanoshells (blue) and SerS spectra with nanoshells (red). c, Scanning electron microsopy image of a typical silver tip used for terS. the inset shows a zoom in of the tip apex, which has a radius of curvature sharper than 50 nm. d, tip-enhanced raman spectra from a benzenethiol self-assembled monolayer on a planar gold surface. Spectra were collected before and after the approach of the tip with an exposure time of 10 seconds per frame. parts c and d reprinted with permission from ref.79. copyright (2007) acS.</figDesc><graphic coords="4,305.47,278.10,217.82,177.02" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4</head><label>4</label><figDesc>Figure 4 micrographs showing the spatial sensitivity of launching plasmons. a, nanowire with excitation at the bottom end. b, the same nanowire when excited from the top end. c, a different nanowire excited at the left end. d, the same nanowire with a laser positioned at the middle of the nanowire. notice that the plasmon is not excited in this geometry. figure reproduced with permission from ref. 67. copyright (2006) acS.</figDesc><graphic coords="5,318.39,185.65,109.46,72.26" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5</head><label>5</label><figDesc>Figure 5 y-splitter and mach-Zehnder interferometer for plasmons 78 . a, Scanning electron microscope image, along with, b, topographical and, c, scanning near-field optical microscopy images of a y-splitter. the inset in a is an image showing a typical groove profile of the channel waveguide. d-f, Scanning electron microscope (d), topographical (e) and scanning near-field optical microscope (f) images of the mach-Zehnder interferometer. copyright (2006) Nature.</figDesc><graphic coords="6,395.97,191.90,140.78,122.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>doi:10.1038/nphoton.2007.223 references</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>nature photonics | VOL 1 | NOVEMBER 2007 | www.nature.com/naturephotonics</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>© 2007 Nature Publishing Group</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">R</forename><surname>Raether</surname></persName>
+		</author>
+		<title level="m">Surface Plasmons on Smooth and Rough Surfaces and on Gratings</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Maier</surname></persName>
+		</author>
+		<title level="m">Plasmonics: Fundamentals and Applications</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Bohren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Huffman</surname></persName>
+		</author>
+		<title level="m">Absorption and Scattering of Light by Small Particles</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kreibig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vollmer</surname></persName>
+		</author>
+		<title level="m">Optical Properties of Metal Clusters</title>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Influence of dielectric function properties on the optical response of plasmon resonant metallic nanoparticles</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Grady</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">399</biblScope>
+			<biblScope unit="page" from="167" to="171" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The optical properties of metal nanoparticles: The influence of size, shape, and dielectric environment</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Kelly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Coronado</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Schatz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="668" to="677" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Local refractive index dependence of plasmon resonance spectra from individual nanoparticles</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Mock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Schultz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="485" to="491" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Effect of the solution refractive index on the color of gold colloids</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Underwood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mulvaney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Langmuir</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="3427" to="3430" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Preparation and characterization of Au colloid monolayers</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Grabar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Freeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Hommer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Natan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page" from="735" to="743" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Nanosphere lithography: A materials general fabrication process for periodic particle array surfaces</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Hulteen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Van Duyne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Vac. Sci. Technol. A</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="1553" to="1558" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Formation of silver nanoprisms with surface plasmons at communication wavelengths</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bastys</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Pastoriza-Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rodríguez-González</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vaisnoras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Liz-Marzán</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="766" to="773" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Preparation and growth mechanism of gold nanorods (NRs) using seed-mediated growth method</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Nikoobakht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>El-Sayed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Mater</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1957" to="1962" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Shape-controlled synthesis of gold and silver nanoparticles</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">N</forename><surname>Xia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">298</biblScope>
+			<biblScope unit="page" from="2176" to="2179" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Nanoengineering of optical resonances</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Oldenburg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Averitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Westcott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">288</biblScope>
+			<biblScope unit="page" from="243" to="247" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Silver nanoshells: Variations in morphologies and optical properties</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="2743" to="2746" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Metal nanostructures with hollow interiors</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mayers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="641" to="646" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A hybrid plasmonic nanostructure</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Brandl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Nanorice</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="827" to="832" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Some properties of spherical and rod-shaped semiconductor and metal nanocrystals</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Landes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Link</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Mohamed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Nikoobakht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>El-Sayed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pure Appl. Chem</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="1675" to="1692" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The SERS activity of a supported Ag nanocube strongly depends on its orientation relative to laser polarization</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mclellan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Siekkinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1013" to="1017" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Plasmon hybridization in spherical nanoparticles</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Prodan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="5444" to="5454" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Articles on the optical characteristics of turbid media, especially colloidal metal solutions</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys. (Leipz.)</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="377" to="445" />
+			<date type="published" when="1908">1908</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Scattering of electromagnetic waves from two concentric spheres</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Aden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kerker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. App. Phys</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1242" to="1246" />
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Discrete-dipole approximation for scattering calculations</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Draine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Flatau</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Opt. Soc. Am. A</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="1491" to="1499" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Local electric field and scattering cross section of Ag nanoparticles under surface plasmon resonance by finite difference time domain method</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Futamata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Maruyama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ishikawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="7607" to="7617" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Optical properties of metallodielectric nanostructures calculated using the finite difference time domain method</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Oubre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="17740" to="17747" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Plasmon-sampled surface-enhanced Raman excitation spectroscopy</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Hayes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Van Duyne</surname></persName>
+		</author>
+		<ptr target="www.nature.com/naturephotonics" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="7426" to="7433" />
+			<date type="published" when="2003">2003. NOVEMBER 2007</date>
+		</imprint>
+	</monogr>
+	<note>nature photonics</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Biomedical applications of plasmon resonant metal nanoparticles</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Nehl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanomedicine</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="201" to="208" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A unified view of propagating and localized surface plasmon resonance biosensors</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Haes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Van Duyne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Bioanal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">379</biblScope>
+			<biblScope unit="page" from="920" to="930" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Scanometric DNA array detection with nanoparticle probes</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Taton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Mirkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Letsinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">289</biblScope>
+			<biblScope unit="page" from="1757" to="1760" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><surname>Novotny</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Hecht</surname></persName>
+		</author>
+		<title level="m">Principles of Nano-Optics</title>
+		<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge Univ. Press</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Surface raman spectroelectrochemistry: Part 1. Heterocyclic, aromatic and aliphatic amines adsorbed on the anodized silver electrodes</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Jeanmaire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Van Duyne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electroanal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="1" to="20" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Anomalously intense Raman spectra of pyridine at a silver electrode</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Albrecht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Creighton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page" from="5215" to="5217" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Single molecule detection using surface enhanced Raman scattering</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kneipp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="1667" to="1670" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Probing single molecules and single nanoparticles by surface-enhanced Raman scattering</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Emory</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">275</biblScope>
+			<biblScope unit="page" from="1102" to="1106" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Profiling the near field of a plasmonic nanoparticle with Raman-based molecular rulers</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Grady</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Goodrich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="2338" to="2343" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Surface-enhanced Raman scattering from individual Au nanoparticles and nanoparticle dimer substrates</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Talley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="1569" to="1574" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Wavelength-scanned surfaceenhanced Raman excitation spectroscopy</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Mcfarland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Young</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Dieringer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Van Duyne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="11279" to="11285" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Surface-enhanced Raman scattering from copper and zinc phthalocyanine complexes by silver and indium island films</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jennings</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Aroca</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="2033" to="2035" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Ag nanocrystal junctions as the site for surface-enhanced Raman scattering of single rhodamine 6G molecules</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Michaels</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Brus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="11965" to="11971" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Adaptive silver films for surface-enhanced Raman spectroscopy of biomolecules</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Drachev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Raman Spectrosc</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="648" to="656" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Plasmon hybridization in nanoparticle dimers</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Oubre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Prodan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Stockman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="899" to="903" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Optical properties of two interacting gold nanoparticles</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Rechberger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Comm</title>
+		<imprint>
+			<biblScope unit="volume">220</biblScope>
+			<biblScope unit="page" from="137" to="141" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Strongly interacting plasmon nanoparticle pairs: From dipole-dipole interaction to conductively coupled regime</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Atay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Nurmikko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1627" to="1631" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Confined plasmons in nanofabricated single silver particle pairs: Experimental observations of strong interparticle interactions</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gunnarsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="1079" to="1087" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Plasmons in nearly touching metallic nanoparticles: Singular response in the limit of touching dimers</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Aizpurua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Bryant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J G</forename><surname>De Abajo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="9988" to="9999" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Symmetry-breaking in individual plasmonic nanoparticles</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="10856" to="10860" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Plasmon modes of nanosphere trimers and quadrumers</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Brandl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Mirin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page" from="12302" to="12310" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Surface-enhanced Raman scattering on tunable plasmonic nanoparticle substrates</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="17930" to="17935" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Controlling the surface enhanced Raman effect via the nanoshell geometry</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Westcott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Hirsch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>West</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="257" to="259" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Nanoshell arrays as multifunctional surface enhanced Raman/IR spectroscopic substrates</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kundu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem. Int. Edn</title>
+		<imprint/>
+	</monogr>
+	<note>in the press</note>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Controlled texturing modifies the surface topography and plasmonic properties of Au nanoshells</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="11083" to="11087" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Nanoscale roughness on metal surfaces can increase tip-enhanced Raman scattering by an order of magnitude</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1401" to="1405" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Scanning-probe Raman spectroscopy with single-molecule sensitivity</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Neacsu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dreyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Behr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Raschke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">193406</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Tip-enhanced Raman spectroscopy (TERS)</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Pettinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Top. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="217" to="240" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Surface-enhanced Raman Scattering: Physics and Applications -Topics in Applied Physics</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Verma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Inouye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kawata</surname></persName>
+		</author>
+		<editor>Kneipp, K., Moskovits, M. &amp; Kneipp, M.</editor>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="241" to="262" />
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Toward Raman fingerprints of single dye molecules at atomically smooth Au(111)</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Domke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Pettinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="page" from="14721" to="14727" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Plasmonics -A route to nanoscale optical devices</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="1501" to="1505" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Surface plasmon subwavelength optics</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dereux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Ebbesen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">424</biblScope>
+			<biblScope unit="page" from="824" to="830" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Fluorescence imaging of surface plasmon fields</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Dittlbacher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="404" to="406" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Subwavelength focusing and guiding of surface plasmons</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="1399" to="1402" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Experimental observation of plasmonpolariton waves supported by a thin metal film of finite width</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Charbonneau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Berini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Berolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Lisicka-Shrzek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Lett</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="844" to="846" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Non-diffraction-limited light transport by gold nanowires</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Krenn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Europhys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="663" to="669" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Surface plasmon propagation in micrsoscale metal stripes</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lamprecht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">App. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="51" to="53" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Leaky and bound modes of surface plasmon waveguides</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Selker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Brongersma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">165431</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Near-field characterization of guided polariton propagation and cutoff in surface plasmon waveguides</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Schuller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Brongersma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">165415</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Unidirectional plasmon propagation in metallic nanowires</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Dickson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Lyon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. B</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="6095" to="6098" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Observation of plasmon propagation, redirection, and fan-out in silver nanowires</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">W</forename><surname>Sanders</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="1822" to="1826" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Graff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wagner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ditlbacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kreibig</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Silver Nanowires</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Euro. Phys. J. D</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="263" to="269" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Nanoparticle-mediated coupling of light into a nanowire</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Knight</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="2346" to="2350" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Electromagnetic energy transport via linear chains of silver nanoparticles</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Quinten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Leitner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Krenn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">R</forename><surname>Aussenegg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Lett</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1331" to="1333" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Observation of near-field coupling in metal nanoparticle chains using far-field polarization spectroscopy</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Brongersma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Kik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page">193408</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Observation of coupled plasmon-polariton modes in Au nanoparticle chain waveguides of different lengths: Estimation of waveguide loss</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Kik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="1714" to="1716" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Local detection of electromagnetic energy transport below the diffraction limit in metal nanoparticle plasmon waveguides</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Mater</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="229" to="232" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">One-dimensional plasmon coupling by facile selfassembly of gold nanoparticles into branched chain networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Dujardin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Girard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="2553" to="2559" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Geometries and materials for subwavelength surface plasmon modes</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Selker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Catrysse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Brongersma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Opt. Soc. Am. A</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="2442" to="2446" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Plasmon slot waveguides: Towards chip-scale propagation with subwavelength-scale localization</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Dionne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Sweatlock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Polman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">35407</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Highly confined photon transport in subwavelength metallic slot waveguides</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Dionne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Lezec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="1928" to="1932" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Channel plasmon subwavelength waveguide components including interferometers and ring resonators</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">I</forename><surname>Bozhevolnyi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Volkov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Devaux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-Y</forename><surname>Laluet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Ebbesen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">440</biblScope>
+			<biblScope unit="page" from="508" to="511" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Single molecule tip-enhanced Raman spectroscopy with silver tips</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Yeo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schmid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zenobi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. C</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="1733" to="1738" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

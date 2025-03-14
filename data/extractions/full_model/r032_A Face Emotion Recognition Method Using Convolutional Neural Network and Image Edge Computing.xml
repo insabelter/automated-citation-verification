@@ -1,0 +1,916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">ON DATA-ENABLED INTELLIGENCE FOR DIGITAL HEALTH</title>
+				<funder ref="#_cX7WeUZ">
+					<orgName type="full">Scientific and Technological Projects of Institutions of Higher Learning in Inner Mongolia Autonomous Region</orgName>
+				</funder>
+				<funder ref="#_eRYrHf6">
+					<orgName type="full">Natural Science Foundation Project of Inner Mongolia Autonomous Region</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Hongli</forename><surname>Zhang</surname></persName>
+							<idno type="ORCID">0000-0002-9364-7406</idno>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Educational Technology</orgName>
+								<orgName type="institution">Inner Mongolia Normal University</orgName>
+								<address>
+									<postCode>010022</postCode>
+									<settlement>Hohhot</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alireza</forename><surname>Jolfaei</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Computing</orgName>
+								<orgName type="institution">Macquarie University</orgName>
+								<address>
+									<postCode>2109</postCode>
+									<settlement>Sydney</settlement>
+									<region>NSW</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mamoun</forename><surname>Alazab</surname></persName>
+							<idno type="ORCID">0000-0002-1928-3704</idno>
+							<affiliation key="aff2">
+								<orgName type="institution">Charles Darwin University</orgName>
+								<address>
+									<postCode>0810</postCode>
+									<settlement>Darwin</settlement>
+									<region>NT</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">ON DATA-ENABLED INTELLIGENCE FOR DIGITAL HEALTH</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">30764BB78E6D589736202D77165916B3</idno>
+					<idno type="DOI">10.1109/ACCESS.2019.2949741</idno>
+					<note type="submission">Received October 3, 2019, accepted October 16, 2019, date of publication October 28, 2019, date of current version November 13, 2019.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:50+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Face expression recognition</term>
+					<term>convolutional neural network</term>
+					<term>edge computing</term>
+					<term>deep learning</term>
+					<term>image edge detection</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>To avoid the complex process of explicit feature extraction in traditional facial expression recognition, a face expression recognition method based on a convolutional neural network (CNN) and an image edge detection is proposed. Firstly, the facial expression image is normalized, and the edge of each layer of the image is extracted in the convolution process. The extracted edge information is superimposed on each feature image to preserve the edge structure information of the texture image. Then, the dimensionality reduction of the extracted implicit features is processed by the maximum pooling method. Finally, the expression of the test sample image is classified and recognized by using a Softmax classifier. To verify the robustness of this method for facial expression recognition under a complex background, a simulation experiment is designed by scientifically mixing the Fer-2013 facial expression database with the LFW data set. The experimental results show that the proposed algorithm can achieve an average recognition rate of 88.56% with fewer iterations, and the training speed on the training set is about 1.5 times faster than that on the contrast algorithm.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>Human-computer interaction technology refers to a kind of technology which takes computer equipment as the medium, so as to realize the interaction between human and computer. In the recent years, with the rapid development of pattern recognition and artificial intelligence, more and more research has been conducted in the field of human-computer interaction technology <ref type="bibr" target="#b0">[1]</ref>, <ref type="bibr" target="#b1">[2]</ref>. The facial expression recognition, as an important means of intelligent human-computer interaction, has a broad application background. It has been applied in the fields of assistant medicine, distance education, interactive games and public security <ref type="bibr" target="#b2">[3]</ref>- <ref type="bibr" target="#b4">[5]</ref>. The facial expression recognition extracts the information representing the facial expression features from the original input facial expression images through computer image</p><p>The associate editor coordinating the review of this manuscript and approving it for publication was Yongtao Hao.</p><p>processing technology, and classifies the facial expression features according to human emotional expression, such as happiness, surprise, aversion and neutrality <ref type="bibr" target="#b5">[6]</ref>, <ref type="bibr" target="#b6">[7]</ref>. The facial expression recognition plays an important role in the research of emotional quantification. Under the trend of artificial intelligence, the communication between human and computer becomes easier and easier. Therefore, vigorously promoting the research of facial expression recognition technology is of great value to the development of individuals and society <ref type="bibr" target="#b7">[8]</ref>, <ref type="bibr" target="#b8">[9]</ref>. The facial expression recognition is a technology which uses computer as an assistant tool and combines it with specific algorithms to judge the inner emotion of the human face expression. The facial expression recognition is also applied to the medical field. To know the effect of new antidepressants, more accurate drug evaluation can be made according to the daily record of patients' facial expressions. In the treatment of autistic children, facial expression recognition can be used to help interpret the emotions of <ref type="bibr">VOLUME 7, 2019</ref> This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see <ref type="url" target="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ref> autistic children and help doctors understand themselves. Psychological changes in autistic children, so as to develop more accurate treatment programs <ref type="bibr" target="#b9">[10]</ref>. The application of facial expression recognition in teaching field can enable the teaching system to capture and record students' emotional changes in learning, and provide better reference for teachers to teach students in accordance with their aptitude. The application of facial expression recognition in traffic field can be used to judge the fatigue state of pilots or drivers, and to avoid the occurrence of traffic hazards by technical means. Applying facial expression recognition to daily life, life management robots can understand people's mental state and intention according to facial expression recognition, and then make appropriate responses, thus enhancing the experience of human-computer interaction.</p><p>In the recent years, the development of facial expression recognition technologies has been rapid and many scholars have contributed to the development of facial expression recognition <ref type="bibr" target="#b10">[11]</ref>, <ref type="bibr" target="#b11">[12]</ref>. Among them, the Massachusetts Institute of Technology Media Laboratory and Japan's Art Media Information Science Laboratory are representative. The research of expression recognition in computer field mainly focuses on the feature extraction and feature classification. The so-called feature extraction refers to extracting features that can be used for classification from input pictures or video streams <ref type="bibr" target="#b12">[13]</ref>, <ref type="bibr" target="#b13">[14]</ref>. There are many methods of feature extraction. According to the type of data input, the existing methods of feature extraction can be divided into two categories: one is based on static images and the other is based on a dynamic sequence. Feature extraction methods based on static images include Gabor wavelet transform <ref type="bibr" target="#b14">[15]</ref>, Haar wavelet transform <ref type="bibr" target="#b15">[16]</ref>, Local Binary Pattern (LBP), and Active Appearance Models (AAM) <ref type="bibr" target="#b16">[17]</ref>. Generally speaking, the dimension of feature is large before and after the completion of feature, and thus the dimension reduction is usually carried out <ref type="bibr" target="#b17">[18]</ref>. The facial expression classification refers to the use of specific algorithms to identify the categories of facial expressions according to the extracted features. Commonly used methods of facial expression classification are Hidden Markov Model (HMM), Support Vector Machine (SVM), AdaBoost, and Artificial Neural Networks (ANN) <ref type="bibr" target="#b5">[6]</ref>. To avoid the complex process of explicit feature extraction and low-level data manipulation in traditional facial expression recognition, a fast R-CNN (Faster Regions with Convolutional Neural Network Features) facial expression recognition method is proposed in the literature <ref type="bibr" target="#b18">[19]</ref>. The trainable convolution kernel is used to extract the implicit features, and the maximum pool is used to reduce the dimension of the extracted implicit features. The work in <ref type="bibr" target="#b19">[20]</ref> presents a Feature Redundancy-Reduced Convolutional Neural Network (FRR-CNN). Unlike traditional CNN, the convolution core of FRR-CNN diverges due to the more discriminant differences between feature maps at the same level, resulting in fewer redundant features and a more compact image representation. In addition, the transformation invariant pool strategy is used to extract representative cross-transform features. The work in <ref type="bibr" target="#b20">[21]</ref> presents a hierarchical Bayesian topic model based on pose to solve the challenging problem in multi-user facial expression recognition. The model combines local appearance features with global geometric information and learns intermediate representation before recognizing expression. By sharing a set of functions with different postures, it provides a unified solution for multi-functional facial expression recognition, bypassing the individual training and parameter adjustment of each posture, so it can be extended to a large number of postures.</p><p>Although the CNN algorithm has made some progress in the field of facial expression recognition, it still has some shortcomings, such as too long training time and low recognition rate in the complex background. To avoid the complex process of explicit feature extraction in traditional facial expression recognition, a facial expression recognition method based on CNN and image edge detection is proposed in this paper. The main innovations of this method are as follows:</p><p>(1) The edge of each layer of the input image is extracted, and then the extracted edge information is superimposed on each feature image to preserve the edge structure information of the texture image.</p><p>(2) In this paper, the maximum pooling method is used to reduce the dimension of the extracted implicit features, which shortens the training time of the convolutional neural network model.</p><p>(3) The Fer-2013 facial expression database and LFW (Labeled Faces in the wild) data set are scientifically mixed to design a simulation experiment, which proves that the method proposed in this paper has a certain robustness for facial expression recognition under a complex background.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. FACIAL EXPRESSION DATA PREPROCESSING</head><p>Because the original pictures of facial expressions have complex background, different sizes, different shades and other factors, a series of image pre-processing processes have to be completed before facial expressions are input into the network for training. Firstly, we locate the face in the image and cut out the face image. Then, we normalize the face image to a specific size. Next, we equalize the histogram of the image to reduce the influence of illumination and other factors. Finally, we extract the edge of each layer of the image in the convolution process. The extracted edge information is superimposed on each feature image to preserve the edge structure information of texture image.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. FACE DETECTION AND LOCATION</head><p>This paper uses a Haar classifier for human detection. The Haar classifier is trained by Haar-like small features and an integral graph method combined with the AdaBoost algorithm. The Haar-like is a commonly used texture descriptor, and its main features are linear, edge, center and diagonal. Adaboost is an improvement of Boosting algorithm and its core idea is to form a strong classifier by iterating not only weak classifiers but also weak classifiers. The Viola-Jones detector is a milestone in the history of face detection. It has been widely used because of its high efficiency and fast detection. This method uses the Haar-like to extract facial features, and uses an integral graph to realize fast calculation of Haar-like features, and screens out important features from a large number of Haar-like features. Then, we use the Adaboost algorithm to train and integrate the weak classifier into a strong classifier. Finally, several strong classifiers are cascaded in series to improve the accuracy of the face detection.</p><p>The Haar-like feature can reflect the gray level change of image, so it is very effective to describe human face, because many features of human face have obvious contrast change characteristics. However, the calculation of eigenvalues is very time-consuming. In order to improve the calculation speed, this paper uses the integral graph method to calculate the Haar like eigenvalues. The concept of an integral graph is expressed in Figure <ref type="figure" target="#fig_0">1 (a)</ref>. The integral graph of the coordinate A (x, y) in a graph is defined as the sum of all the pixels in its upper left corner. Here, ii (x, y) represents the integral image. i x , y represents the original image; for gray image, here represents the gray value and for color image, here represents the color value.</p><formula xml:id="formula_0">A (x, y) ii (x, y) = x ≤x,y i x , y<label>(1)</label></formula><p>The pixel value of an area can be calculated by using the integral graph of the end points of the area, as shown in Figure <ref type="figure" target="#fig_0">1 (b)</ref>. The pixel value of region D can be calculated by</p><formula xml:id="formula_1">S (D) = ii (4) + ii (1) -ii (2) -ii (3)<label>(2)</label></formula><p>where ii (1) represents the pixel value of region A, ii </p><formula xml:id="formula_2">S (A) = ii (5) + ii (1) -ii (2) -ii (4)<label>(3)</label></formula><formula xml:id="formula_3">S (B) = ii (6) + ii (2) -ii (5) -ii (3)<label>(4)</label></formula><p>According to the definition, the eigenvalue of rectangular feature is the pixel value of region A minus the pixel value of region B. According to formula (3) and formula (4), the formula for calculating eigenvalue is as follows.</p><formula xml:id="formula_4">T = ii(5) -ii(4) + ii(3) -ii(2) -(ii(2)</formula><p>-ii(1)) -(ii(6) -ii( <ref type="formula" target="#formula_5">5</ref>))</p><p>(</p><p>It can be seen that the eigenvalues of rectangular features are only related to the integral graph of rectangular endpoints. Through simple integral graph addition and subtraction operation, the eigenvalues can be calculated, which greatly improves the speed of target detection. Next, the extracted Haar-like features are used to train the classifier, and the AdaBoost algorithm is used to train the classifier. Finally, the trained classifier is used to extract the face from the image.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. SCALE NORMALIZATION</head><p>Because the input of the network is a fixed sized picture, before the picture is input into the network, the original picture should be normalized to generate a specific size picture. Let point (x, y) in the original picture be normalized and mapped to point x , y . The mapping is as follows:</p><formula xml:id="formula_6">  x y 1   =   s x 0 0 0 s y 0 0 0 1     x y 1  <label>(6)</label></formula><p>where s x represents the scaling ratio of the image in the direction of x axis and s y represents the scaling ratio of the image in the direction of y axis. In the process of image scaling, bilinear interpolation algorithm is also needed to fill the image. A, B, C and D are the four points around the pixel (x, y). The corresponding gray values are g (A), g (B), g (C), g (D). To get the gray value of point (x, y) and calculate the gray value of points E and F, the formula is as follows:</p><formula xml:id="formula_7">g (E) = (x -x D ) (g (C) -g (D)) + g (D)<label>(7)</label></formula><formula xml:id="formula_8">g (F) = (x -x A ) (g (B) -g (A)) + g (A)<label>(8)</label></formula><p>x A and x D are the abscissa of point A and point D, respectively. The gray scale formula of (x, y) is as follows:</p><formula xml:id="formula_9">g (x, y) = (y -y D ) (g (F) -g (E)) + g (E)<label>(9)</label></formula><p>where y D represents the ordinates of CD points. Through normalization, the input image is scaled to 128 × 128 size. As shown in Figure <ref type="figure" target="#fig_1">2</ref>, it is a normalized contrast map. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. GRAY LEVEL EQUALIZATION</head><p>In the actual image acquisition process, it is easy to be affected by illumination, shadows and other factors, which makes the collected image show a state of uneven distribution of light and shade, which will increase the difficulty of feature extraction. Therefore, it is necessary to average the gray level of the image to enhance the contrast of the image. In this paper, the Histogram Equalization (HE) method is used to process images. The basic idea is to transform the histogram of the original graph into a uniform distribution form <ref type="bibr" target="#b21">[22]</ref>.</p><p>If the gray level of the gray image is L, the size is M × N , and the number of pixels in the r i gray level is E, the corresponding probability of gray level occurrence is as follows:</p><formula xml:id="formula_10">P r (r i ) = n i M × N , i = 0, 1, • • • , L -1<label>(10)</label></formula><p>Subsequently, the cumulative distribution function is calculated using the following equation.</p><formula xml:id="formula_11">T (r i ) = i j=0 P r r j , i = 0, 1, • • • , L -1<label>(11)</label></formula><p>Finally, the image histogram is averaged using the following mapping relations:</p><formula xml:id="formula_12">e j = INT [(e max -e min ) T (r) + e min + 0.5] j=0,1,••• ,L-1<label>(12)</label></formula><p>The processing results are shown in Figure <ref type="figure" target="#fig_3">3</ref>. When the histogram of the image is completely uniform, the entropy of the image is the largest and the contrast of the image is the largest. In fact, gray level equalization realizes the uniform distribution of image histogram, which enhances the contrast of the image and makes the details clearer, and is conducive to the extraction of facial features. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. IMAGE EDGE DETECTION</head><p>The edge information of an image is often reflected in the area where the gradient information of the image changes dramatically. The edge of image gives people a stronger visual sense. Therefore, the edge information of the image cannot be ignored in the process of texture synthesis. Some edge information of the image is lost, which results in the blurred edge information in the final synthesis result and affects the table. In this paper, we extract the edge of each layer of the image in the convolution process, and then superimpose the extracted edge information on each feature map, which preserves the edge structure information of texture image.</p><p>Kirsch edge operator is used to extract image edge information. The template of eight directions of Kirsch operator is respectively.</p><formula xml:id="formula_13">a 0 =   5 5 5 -3 0 -3 -3 -3 -3   , a 1 =   -3 5 5 -3 0 5 -3 -3 -3   , a 2 =   -3 -3 5 -3 0 5 -3 -3 5   , a 3 =   -3 -3 -3 -3 0 5 -3 5 5   a 4 =   -3 -3 -3 -3 0 -3 5 5 5   , a 5 =   -3 -3 -3 5 0 -3 5 5 -3   , a 6 =   5 -3 -3 5 0 -3 5 -3 -3   , a 7 =   5 5 -3 5 0 -3 -3 -3 -3   (<label>13</label></formula><formula xml:id="formula_14">)</formula><p>Assuming that any pixel P A in the image is surrounded by the gray level of 3 × 3 area, and that g i (i = 0, 1, • • • , 7) is the gray level of point A obtained by convolution of the i + 1 template of the Kirsch edge operator of the image, the gray level of point A can be obtained by the convolution of the D template of the Kirsch edge operator</p><formula xml:id="formula_15">g 0 = 5 × (a 3 +a 4 +a 5 )-3(a 2 +a 6 )-3(a 1 +a 0 +a 7 ) (14)</formula><p>In Equation ( <ref type="formula">14</ref>), a i (i = 0, 1, • • • , 7) is the neighborhood pixel of the arbitrary point A. The gray value of point A in other directions can be calculated by the same method of Equation ( <ref type="formula">14</ref>). After processing, the gray value of point A is calculated by</p><formula xml:id="formula_16">g A = max (g i ) i = 0, 1, • • • , 7<label>(15)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. FACE EXPRESSION RECOGNITION NETWORK MODEL BASED ON CNN</head><p>The essence of deep learning method is to construct a deep neural network similar to human brain structure, which learns more advanced feature expression of data layer by layer through multi-hidden non-linear structure. This mechanism of automatically learning the internal rules of large data makes the extracted features have more essential characterization of the data, and thus the classification results can be greatly enhanced. For a two-dimensional image input, the neural network model can interpret it layer-by-layer from the pixels initially understood by the computer to edges, parts, contours of objects, objects understood by the human brain, and then can classify it directly within the model to obtain recognition results.</p><p>The CNN is a feedforward neural network, which can extract features from a two-dimensional image and optimize network parameters by using back propagation algorithm. Common CNNs usually consist of three basic layers: a convolution layer, a pooling layer and a connective layer. Each layer is composed of several two-dimensional planes, that is, feature maps, and each feature map has many neurons. In convolution neural network, the input layer is a two-dimensional The CNN has three important characteristics: local perception, weight sharing and down sampling. These characteristics overcome the problem of too many parameters and difficult calculation of the traditional feedforward neural network in high-dimensional input, and make the model obtain certain translation, rotation and distortion invariance. Common sense holds that people's perception of the outside world is generally from the local to the whole. The image has a certain spatial connection. The adjacent pixels are closely related, while the distant pixels have little correlation. Therefore, neurons only need to perceive the local pixels, and then integrate the local information at the bottom to get the global information at the high level. This is the concept of local perception, which greatly reduces the number of parameters needed to learn.</p><p>Convolutional layers C1, C2 and C3 use 32, 64 and 128 convolutional nuclei for convolution operation respectively. The size of convolutional nuclei used in each convolution layer is 5 × 5; the size of sampling window used in pooling layer S1 and S2 is 2 × 2; the full connection layer contains 300 neurons, which are fully connected with pooling layer S2; and the Softmax layer contains 7 neurons, which are fully connected. The features of the output layer were classified, and the facial expressions were divided into seven categories: fearful, angry, sad, happy, surprised, disgusted and neutral.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. CONVOLUTION LAYER</head><p>The convolution layer is the core of CNN, which has the characteristics of local connection and value sharing. The specific method is to use the convolution core to calculate on the upper input layer by sliding windows one by one <ref type="bibr" target="#b22">[23]</ref>, <ref type="bibr" target="#b23">[24]</ref>. The input image and several trainable convolution filters are convoluted to produce the Cl layer of the feature mapping layer. Then the feature mapping map is processed, including summation, weighting and bias operations. A new feature mapping layer S2 is obtained through an activation function.</p><p>Then the convolution operation is carried out on the S2 layer, and the C3 layer is obtained. According to the same principle and operation, the S4 layer is obtained. Finally, these feature maps are rasterized and connected into a set of feature vectors, which are then transferred to the neural network classifier for training. Generally, the computational expression of convolution layer is</p><formula xml:id="formula_17">y l j = θ    N l-1 j i=1 w i,j ⊗ x l-1 i + b l j    , j = 1, 2, • • • , M (16)</formula><p>The layer l is the current layer, and the layer l -1 is the previous layer. w i,j represents the convolution kernel of the jth feature graph of the current layer and the i feature graph of the previous layer; y l j represents the j-th feature graph of the current layer; b l j represents the bias of the jth feature graph of the current layer; x l-1 i represents the ith feature graph of the previous layer. In the experiment, b l j = 0 is adopted to enable the network to train rapidly and reduce learning parameters. M represents the number of feature maps of the current layer; θ (•) stands for activation function; N l-1 j means connected to the current layer 1 j a characteristic figure of the previous layer all the characteristics of the figure, the number of experiments, the modified Linear unit (Rectified Linear Units, ReLU) functions, rather than the commonly used sigmoid or hyperbolic tangent function tanh(•), because ReLU can produce a more sparse ReLU function.</p><formula xml:id="formula_18">θ (x) = max (0, x)<label>(17)</label></formula><p>Practice has proved that the network trained with ReLU activation function has moderate sparsity. At the same time, it can solve the problem of gradient disappearance which may occur in the process of adjusting back propagation parameters and accelerate the convergence of the network. The feature extracted by convolution operation can be directly used to train classifiers, but it still faces huge computational challenges. In order to further reduce the parameters, a down sampling operation is proposed after the convolution operation. The basis of down sampling is that the pixels in the continuous range of the image have the same characteristics (local correlation), so the features of different locations can be aggregated and counted. For example, we can calculate the average or maximum value of a specific feature in an image region. This statistical dimensionality reduction method not only reduces the number of parameters, prevents fitting, but also makes the model obtain the scaling invariance of the image.</p><p>The convolution layer C1 convolutes 96 × 96 pixels of input image with a 5 × 5 convolution core, i.e. each neuron specifies a 5×5 local receptive field, so the size of the feature map obtained by convolution operation is (96 -5 + 1) × (96-5+1) = 92×92. Through convolution operations of 32 different convolution kernels, 32 feature maps are obtained, that is, 32 different local expression features are extracted. Convolution layer C2 uses 64 5 × 5 convolution kernels and then convolutes the characteristic graphs of convolution layer C1 output. 64 feature graphs are obtained. The size of each feature graph is (92 -5 + 1) × (92 -5 + 1) = 88 × 88. In convolution layer C3, 128 5 × 5 convolution kernels are used to convolute the characteristic maps of pool layer S1 output, and 128 feature maps are obtained. The size of each feature map is (44 -5 + 1) × (44 -5 + 1) = 40 × 40.</p><p>The principle of weight sharing is that the statistical characteristics of one part of an image are similar to those of other parts, so the same convolution kernel can be used to extract features for all positions on the image. However, it is not enough to use only one convolution kernel to learn the features. Therefore, in the actual training of convolution neural network, many convolution kernels are used to increase the diversity of feature mapping. Each kind of convolution can get the mapping plane of different features of the image. By using weight sharing, not only abundant image information can be obtained, but also the number of parameters needed for network training can be greatly reduced. Under the condition of reasonable control of network structure, the generalization ability of convolutional neural network can be enhanced. The feature extracted by convolution operation can be directly used to train classifiers, but it still faces huge computational challenges. In order to further reduce the parameters, a down sampling operation is proposed after the convolution operation. The basis of down sampling is that the pixels in the continuous range of the image have the same characteristics (local correlation), so the features of different locations can be aggregated and counted. For example, we can calculate the average or maximum value of a specific feature in an image region. This statistical dimensionality reduction method not only reduces the number of parameters, prevents fitting, but also makes the model obtain the scaling invariance of the image.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. POOLING LAYER</head><p>The main purpose of the pooling operation is to reduce the dimension. A pooling window of 2 × 2 step size can reduce the dimension of the next feature map by half. Although there is no direct reduction in the number of training parameters, halving the dimension of feature graph means that the computational complexity of convolution operation will be greatly reduced, which greatly improves the training speed.</p><p>If we train the Softmax classifier directly with all the features we have learned, it will inevitably bring about the problem of dimension disaster. To avoid this problem, a pooling layer is usually used after the convolution layer to reduce the feature dimension <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b25">[26]</ref>. Down sampling does not change the number of feature maps, but reduces the output of feature maps, which reduces the sensitivity to translation, scaling, rotation and other transformations. If the size of the sampling window is n × n, then after one down-sampling, the size of the feature graph becomes 1/n×1/n of the original feature graph. The general expression of pooling is</p><formula xml:id="formula_19">y l j = θ β l j down y l-1 j + b l j (<label>18</label></formula><formula xml:id="formula_20">)</formula><p>Among them, y l j and y l-1 j represent the j-th feature map of the current layer and the first layer respectively; down (•) represents a down sampling function; β l j and b l j represent the multiplicative and additive biases of the j-th feature map of the current layer, respectively. In the experiment, β l j = 1, b l j = 0 and θ (•) are used as activation functions, and identical functions are used in the experiment.</p><p>After sharing the local receptive fields and weights, the number of training parameters is greatly reduced, but the dimension of the feature map is not much reduced. There are two problems. Firstly, if the dimension of feature graph is too large, the number of training parameters generated by full connection will be very large; secondly, the computer will waste a lot of time on convolution calculation in the process of training network.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. FULL CONNECTION LAYER</head><p>The input of the full connection layer must be a one-dimensional array, whereas the output of the previous pooling layer S2 is a two-dimensional array. First, the twodimensional array corresponding to each feature graph is converted into a one-dimensional array, and then 128 onedimensional arrays are connected in series to a feature vector of 51200 dimensions (20 × 20 × 128 = 51200) as the full connection. The output of each neuron is</p><formula xml:id="formula_21">h w,b (x) = θ w T x + b (<label>19</label></formula><formula xml:id="formula_22">)</formula><p>where h w,b (x) denotes the output value of neurons. x denotes the input eigenvector of neurons. w denotes the weight vector. b denotes bias. b = 0 denotes the activation function in experiments. θ (•) denotes the activation function, and ReLU function is used in experiments. The number of neurons will affect the training speed and fitting ability of the network. The experimental results show that when the number of neurons is 300, the effect is better.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. SOFTMAX LAYER</head><p>The last layer of the CNN uses a Softmax classifier. The Softmax classifier is a multi-output competitive classifier. When a given sample is input, each neuron outputs a value between 0 and 1, which represents the probability that the input sample belongs to that class. Therefore, the category corresponding to the neuron with the largest output value is selected as the classification result.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. CNN PARAMETER TRAINING</head><p>The training process of CNN is essentially the process of optimizing and updating network weights. Appropriate initialization of weights has a great impact on the updating of weights. The commonly used initialization methods include constant initialization, uniform distribution initialization and Gauss distribution initialization. The CNN essentially implements a mapping relationship between input and output. The CNN carries out supervised training. Before starting training, it initializes the ownership value of the network with some different small random numbers. The training of convolution neural network is divided into two stages: 1) Forward propagation stage. Sample x is extracted from the training sample set. Its corresponding category label is y, ỹ is a 7-dimensional vector whose elements represent the probability that x is divided into different categories. x is input to the CNN network. The output of the upper layer is the input of the current layer. Then, the output of the current layer is calculated by activation function, which is passed down layer by layer. Finally, the output ỹ of the Softmax layer is obtained.</p><p>(2) Back propagation stage, also known as error propagation stage. Calculate the error between the output ỹ of Softmax layer and the class label vector y of a given sample (y is a 7-dimensional vector, only the element corresponding to the class label y is 1, the other elements are 0), and adjust the weight parameters by minimizing the mean square error cost function.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENT</head><p>In this section, two sets of experiments are designed to verify the performance of the proposed method. The first group of experiments analyze the performance of the algorithm and verify that the training time of the algorithm is lower than that of the traditional CNN algorithm model. The experimental data comes from the Fer-2013 expression database. The second group of experiments is used to verify that the recognition rate of the algorithm has increased under complex background. The experimental data comes from the Fer-2013 facial expression database and LF mixed sets of W data sets <ref type="bibr" target="#b26">[27]</ref>, <ref type="bibr" target="#b27">[28]</ref>. The Fer-2013 facial expression database contains 28,709 training pictures and 7,178 test pictures, each of which is a 48 × 48 gray scale image. Each face is more or less in the middle of the picture. Therefore, in the experiment, the image data can be directly input into the network for training without any other pre-processing.</p><p>We use a Keras framework to build the network. Keras is a python-based neural network framework, which supports seamless switching between theano and tensorflow <ref type="bibr" target="#b28">[29]</ref>. The hardware platform of the experiment is Intel (R) Core (TM) i5-6500 CPU main frequency 3.2GHz, 16GB memory and 6GB NVIDIA GeForce GTX 1060 GPU display memory.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. PERFORMANCE ANALYSIS EXPERIMENTS</head><p>The purpose of this experiment is to test the performance of the proposed algorithm, and verify that the proposed algorithm has a lower training time than the original algorithm. The experimental data come from the images of Fer-2013 expression database. The Fer-2013 expression database has been introduced in Section 3.D. In order to improve the reliability of the experimental results, three cross-validation experiments were carried out, which divided 35,886 facial expression images into three parts on average. Two of them were used as training samples in each experiment, and the remaining one was used as test samples. The experiments were repeated three times, and the average recognition results of three times were taken as the final recognition performance. The training set and the test set contained seven expressions of happiness, fear and surprise, respectively.</p><p>In order to verify the performance of the proposed algorithm, the proposed method and R-CNN model <ref type="bibr" target="#b18">[19]</ref> are compared experimentally. In the experiment, the same experimental environment and experimental data were used. Through simulation experiments, the relationship between iterations and Accuracy of training sets of the two models is obtained, as shown in Figure <ref type="figure" target="#fig_5">5</ref>. From Figure <ref type="figure" target="#fig_5">5</ref>, we can see that both the proposed method and R-CNN algorithm converge. It needs to be explained that this experiment takes the training set as an example. There are 23,924 images in the training set, 48 facial expressions (batch_size = 48) are processed at a time, and 499 samples can be processed at a time. This experiment has trained 50 generations in the training set, that is, 25,000 iterations. From the above figure, the following conclusions can be drawn:</p><p>(1) As can be seen from Figure <ref type="figure" target="#fig_5">5</ref>, both the proposed algorithm and the R-CNN algorithm converge after a certain number of iterations. When the model converges, the recognition rates are 85.54% and 77.78%, respectively. It can be seen that the proposed algorithm improves by nearly 8 percentage points compared to the R-CNN algorithm. Thus, the proposed algorithm has certain advantages in facial expression recognition rate.</p><p>(2) As seen from Figure <ref type="figure" target="#fig_5">5</ref>, both models converge after a certain number of iterations. When the proposed model is iterated to 10,000 times, the model begins to converge. The R-CNN algorithm converges after 15,000 iterations. This shows that the proposed algorithm can achieve satisfactory results after fewer iterations, that is to say, the training speed of the proposed method on the training set is 1.5 times faster than that of R-CNN algorithm.</p><p>The proposed method is compared with R-CNN and FRR-CNN algorithms <ref type="bibr" target="#b19">[20]</ref>. The experimental data come from Fer-2013 facial expression data set.  Table <ref type="table" target="#tab_1">1</ref> shows that the proposed algorithm is smaller than R-CNN algorithm and FRR-CNN algorithm in both training time and testing time. It can be concluded that the maximum pooling method is used to reduce the dimension of the extracted implicit features, which can shorten the training time of the convolutional neural network model. Moreover, the proposed algorithm achieves the highest average recognition rate of 88.56%.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. COMPARATIVE ANALYSIS EXPERIMENT</head><p>The purpose of this experiment is to verify the robustness of the proposed algorithm for facial expression recognition under complex background. The experimental data in the previous experiment are from the Fer-2013 facial expression database. Because the facial expression database is a standard facial expression image set, there is no complex recognition background. Therefore, in order to verify the recognition effect of this experiment under complex background, the experimental data is a mixture of LFW data set and Fer-2013 facial expression database. The LFW data set contains 13,000 face images, each of which is named after the person being photographed. The expression images of the database are not collected in the laboratory, but in the complex external environment collected by the network. The purpose of this experiment is to verify the recognition performance of the proposed algorithm under complex background.</p><p>In order to verify the robustness of this method for facial expression recognition under complex background, the proposed algorithm is compared with the classical convolutional neural network FRR-CNN model and R-CNN algorithm. This experiment can be divided into two steps. The first step is to scientifically mix the Fer-2013 facial expression database and LFW data set, and take 3,269 images of each of the seven kinds of expressions in the Fer-2013 facial expression database, totaling 22,883 images. It combines with 13,000 images of LFW data set, and forms a data set containing 35,883 images for training. The second step is to use 28,341 pictures in the mixed data set as training set and 7,542 pictures as test set to get the expression recognition rate of the above algorithm under different iteration times in different test sets. The experimental results are shown in Figure <ref type="figure" target="#fig_6">6</ref>.</p><p>As can be seen from Figure <ref type="figure" target="#fig_6">6</ref>, the three models converge after iteration to a certain algebra. Taking the test set as an example, the following conclusions can be drawn from the analysis of Figure <ref type="figure" target="#fig_6">6</ref> in our laboratory:</p><p>(1) From the figure it can be seen that the proposed algorithm began to converge after 20 generations of training, the R-CNN algorithm began to converge after about 26 generations, and the convergence speed of the FRR-CNN model was relatively slow. For R-CNN model and FRR-CNN model, the number of layers is similar, but R-CNN model has stronger feature extraction ability than FRR-CNN model, which makes the convergence speed of R-CNN model in complex background faster to some extent.</p><p>(2) It can be seen from the figure that in the experimental environment of complex background, although the overall recognition rate is not high in the Fer-2013 data set, the recognition rate of the proposed algorithm is still higher than that of the other two methods after iteration to a certain extent. Therefore, it can be explained that the proposed algorithm can improve the recognition rate of facial expressions in complex background to a certain extent.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSION</head><p>In this paper, we propose a facial expression recognition method using a CNN model which extracts facial features effectively. Compared to traditional methods, the proposed method can automatically learn pattern features and reduce the incompleteness caused by artificial design features. The proposed method directly inputs the image pixel value through training sample image data. Autonomous learning can implicitly acquire more abstract feature expression of the image. The training process of the proposed method uses appropriate initialization of weights which has a great impact on the updating of weights. Our extensive experimental analysis shows that compared to the past literatures, the proposed algorithm can improve the recognition rate of facial expressions in complex background to a certain extent. Compared to FRR-CNN and R-CNN models, the convergence speed of proposed model is much faster in complex background environments. Also, the proposed method achieves a higher recognition rate.</p><p>Facial expressions captured in reality may have various noises, such as face posture, occlusion, and blurring. To address this concern, as a future work, we will investigate more robust models which satisfy real conditions. We will also focus on how to reduce the complexity of network structure, and will try to recognize dynamic expressions with 3D convolution technology. MAMOUN ALAZAB received the Ph.D. degree in computer science from the School of Science, Information Technology and Engineering, Federation University Australia. He is currently an Associate Professor with the College of Engineering, IT and Environment, Charles Darwin University, Australia. He is also a Cyber-Security Researcher and Practitioner with industry and academic experience. His current research interests include cyber security and the digital forensics of computer systems, including current and emerging issues in the cyber environment like cyber-physical systems, and the Internet of Things, by taking into consideration the unique challenges present in these environments, with a focus on cybercrime detection and prevention. He has authored or coauthored more than 100 research articles, two of his papers were selected as the featured articles, and two other articles received the Best Paper Award. He was a recipient of the Short Fellowship from the Japan Society for the Promotion of Science (JSPS) based on his nomination from the Australian Academy of Science.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1 .</head><label>1</label><figDesc>FIGURE 1.Integral graph method to calculate eigenvalues.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>( 2 )</head><label>2</label><figDesc>represents the pixel value of region A + B, ii (3) represents the pixel value of region A + C, ii (4) represents the pixel value of regions A + B + C+ D. The eigenvalues of rectangular features can be calculated by integral graphs of feature endpoints. Taking the edge feature a as an example, the eigenvalue calculation can be expressed by Fig. 1 (c). The pixel values of point A and point B are:</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 2 .</head><label>2</label><figDesc>FIGURE 2. Contrast before and after normalization.</figDesc><graphic coords="3,328.34,620.01,85.32,83.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 3 .</head><label>3</label><figDesc>FIGURE 3. Grayscale equalization before and after contrast.</figDesc><graphic coords="4,57.81,480.15,99.61,52.83" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 4 .</head><label>4</label><figDesc>FIGURE 4. CNN structure for facial expression recognition.matrix composed of image pixels. The alternation of convolution layer C and pooling layer S is the core module to realize feature extraction of convolution neural network. This paper designs a CNN structure for facial expression recognition, as shown in Figure4. Excluding input layer, the network consists of seven layers, including three convolution layers (C1, C2 and C3), two pooling layers (S1 and S2), one full connection layer and one Softmax layer. The input layer is a 96 × 96 face pixel matrix. Each feature map is connected locally with its previous feature map. There are several feature maps in the convolution layer and the pooling layer.The CNN has three important characteristics: local perception, weight sharing and down sampling. These characteristics overcome the problem of too many parameters and difficult calculation of the traditional feedforward neural network in high-dimensional input, and make the model obtain certain translation, rotation and distortion invariance. Common sense holds that people's perception of the outside world is generally from the local to the whole. The image has a certain spatial connection. The adjacent pixels are closely related, while the distant pixels have little correlation. Therefore, neurons only need to perceive the local pixels, and then integrate the local information at the bottom to get the global information at the high level. This is the concept of local perception, which greatly reduces the number of parameters needed to learn.Convolutional layers C1, C2 and C3 use 32, 64 and 128 convolutional nuclei for convolution operation respectively. The size of convolutional nuclei used in each convolution layer is 5 × 5; the size of sampling window used in pooling layer S1 and S2 is 2 × 2; the full connection layer contains 300 neurons, which are fully connected with pooling layer S2; and the Softmax layer contains 7 neurons, which are fully connected. The features of the output layer were classified, and the facial expressions were divided into seven categories: fearful, angry, sad, happy, surprised, disgusted and neutral.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIGURE 5 .</head><label>5</label><figDesc>FIGURE 5. Expression recognition rate under different iterations.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIGURE 6 .</head><label>6</label><figDesc>FIGURE 6. Expression recognition rate of different methods in complex background.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>HONGLI ZHANG graduated from the Beijing Institute of Technology, in 2014, and the Ph.D. degree in computer science. She is currently an Associate Professor with Inner Mongolia Normal University. She has authored more than 15 peerreviewed articles on computer networks and intelligent algorithms. Her current research interests include artificial intelligent, data dining, and cognitive computing. ALIREZA JOLFAEI received the Ph.D. degree in applied cryptography from Griffith University, Gold Coast, Australia. He is currently an Assistant Professor in cyber security with Macquarie University, Sydney, Australia. He has authored more than 50 peer-reviewed articles on topics related to cyber security. His current research interests include cyber security, the IoT security, humanin-the-loop CPS security, cryptography, AI, and machine learning for cyber security. He received the prestigious IEEE Australian Council Award for his research article published in the IEEE TRANSACTIONS ON INFORMATION FORENSICS AND SECURITY. He has served more than ten conferences in leadership capacities, including the Program Co-Chair, Track Chair, Session Chair, and Technical Program Committee Member, including IEEE TrustCom. He has served as a Guest Associate Editor for IEEE journals and transactions, including the IEEE INTERNET OF THINGS JOURNAL, the IEEE TRANSACTIONS ON INDUSTRIAL APPLICATIONS, and the IEEE TRANSACTIONS ON INTELLIGENT TRANSPORTATION SYSTEMS.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Table 1 lists the recognition rate comparison of the three algorithms, and the time comparison on the test set and the training set. The training time and test time of training set indicated in Table 1 refer to the time used to process a batch of images. In this paper, 48 images are processed in batches.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 1 .</head><label>1</label><figDesc>Performance comparison of three algorithms.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="159082" xml:id="foot_0"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="159084" xml:id="foot_1"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="159086" xml:id="foot_2"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_3"><p>VOLUME 7, 2019   </p></note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>This work was supported in part by the <rs type="funder">Natural Science Foundation Project of Inner Mongolia Autonomous Region</rs> under Grant <rs type="grantNumber">2015MS0634</rs>, and in part by the <rs type="funder">Scientific and Technological Projects of Institutions of Higher Learning in Inner Mongolia Autonomous Region</rs> under Grant <rs type="grantNumber">NJZY033</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_eRYrHf6">
+					<idno type="grant-number">2015MS0634</idno>
+				</org>
+				<org type="funding" xml:id="_cX7WeUZ">
+					<idno type="grant-number">NJZY033</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Optimal feature selection and deep learning ensembles method for emotion recognition from human brain EEG sensors</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Mehmood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="14797" to="14806" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">MPED: A multi-modal physiological emotion database for discrete emotion recognition</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Cui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="12177" to="12191" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Semantic-emotion neural network for emotion recognition from text</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Batbaatar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Ryu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="111866" to="111878" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Pupil localization algorithm combining convex area voting and model constraint</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit. Image Anal</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="846" to="854" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Time-delay neural network for continuous emotional dimension prediction from facial expression sequences</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bianchi-Berthouze</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Cosmas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Cybern</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="916" to="929" />
+			<date type="published" when="2016-04">Apr. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Facial microexpression recognition: A survey</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">U</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-P</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Automatica Sinica</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="333" to="348" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Emotion recognition based on EEG features in movie clips with channel selection</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Özerdem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Polat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brain Inf</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="241" to="252" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Guest editorial: The computational face</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Escalera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Baró</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Guyon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Escalante</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tzimiropoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Valstar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pantic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kanade</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Pattern Anal. Mach. Intell</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2541" to="2545" />
+			<date type="published" when="2018-11">Nov. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Is interactional dissynchrony a clue to deception? Insights from automated analysis of nonverbal visual cues</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Dunbar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Jensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Burgoon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Metaxas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Cybern</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="492" to="506" />
+			<date type="published" when="2015-03">Mar. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Person identification through entropy oriented mean shift clustering of human gaze patterns</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Vella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Infantino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Scardino</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools Appl</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="2289" to="2313" />
+			<date type="published" when="2017-01">Jan. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Intra-class variation reduction using training expression images for sparse representation based facial expression recognition</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">N K</forename><surname>Plataniotis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Ro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Affect. Comput</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="340" to="351" />
+			<date type="published" when="2014-09">Jul./Sep. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Facial expression recognition based on local region specific features and support vector machines</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ghimire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jeong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimed. Tools Appl</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="7803" to="7821" />
+			<date type="published" when="2017-03">Mar. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Joint facial expression recognition and intensity estimation based on weighted votes of image sequences</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K A</forename><surname>Kamarol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Jaward</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kälviäinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Parkkinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Parthiban</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit. Lett</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="25" to="32" />
+			<date type="published" when="2017-06">Jun. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Facial expression recognition method based on sparse batch normalization CNN</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-L</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. 37th Chin. Control Conf. (CCC)</title>
+		<meeting>37th Chin. Control Conf. (CCC)</meeting>
+		<imprint>
+			<date type="published" when="2018-07">Jul. 2018</date>
+			<biblScope unit="page" from="9608" to="9613" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">&apos;3D palmprint recognition using shape index representation and fragile bits</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools Appl</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="15357" to="15375" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A scheme of features fusion for facial expression analysis: A facial action recognition</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bhargava</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Statist. Manage. Syst</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="693" to="701" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Fast algorithms for fitting active appearance models to unconstrained images</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tzimiropoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pantic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Comput. Vis</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="33" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A survey: Facial micro-expression recognition</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Takalkar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chaczko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools Appl</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="19301" to="19325" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Facial expression recognition with faster R-CNN</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="135" to="140" />
+			<date type="published" when="2017-01">Jan. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Facial expression recognition with FRR-CNN</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electron. Lett</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="235" to="237" />
+			<date type="published" when="2017-02">Feb. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Hierarchical Bayesian theme models for multipose facial expression recognition</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Multimedia</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="861" to="873" />
+			<date type="published" when="2017-04">Apr. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Contrast limited fuzzy adaptive histogram equalization for enhancement of brain images</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Magudeeswaran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Imag. Syst. Technol</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="98" to="103" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Spatially coherent feature learning for pose-invariant facial expression recognition</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Trans. Multimedia Comput., Commun., Appl</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1s</biblScope>
+			<biblScope unit="page">27</biblScope>
+			<date type="published" when="2018-04">Apr. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">FER-Net: Facial expression recognition using densely connected convolutional network</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Celik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electron. Lett</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="184" to="186" />
+			<date type="published" when="2019-02">Feb. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A recursive framework for expression recognition: From Web images to deep models to game dataset</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tsangouri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Abtahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach. Vis. Appl</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="489" to="502" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Reliable crowdsourcing and deep locality-preserving learning for unconstrained facial expression recognition</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Deng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Image Process</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="356" to="370" />
+			<date type="published" when="2019-01">Jan. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Deep neural networks and maximum likelihood search for approximate nearest neighbor in video-based image recognition</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Savchenko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Memory Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="129" to="136" />
+			<date type="published" when="2017-04">Apr. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">The behaviour of dark matter associated with four bright cluster galaxies in the 10 kpc core of Abell 3827</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Massey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Monthly Notices Roy. Astronomical Soc</title>
+		<imprint>
+			<biblScope unit="volume">449</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="3393" to="3406" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Facial expression recognition using dual dictionary learning</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Moeini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Faez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Moeini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Safai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Vis. Commun. Image Represent</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="20" to="33" />
+			<date type="published" when="2017-05">May 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

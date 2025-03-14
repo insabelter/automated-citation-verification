@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Nanotechnology and neurophysiology</title>
+				<funder>
+					<orgName type="full">Stanford Neuroscience Institute NeuroFab</orgName>
+				</funder>
+				<funder ref="#_dVcEFKs #_MKq677r #_P5aRZqv #_e3rmDbj">
+					<orgName type="full">National Science Foundation</orgName>
+					<orgName type="abbreviated">NSF</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2015-04-15">15th April 2015</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Matthew</forename><forename type="middle">R</forename><surname>Angle</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Materials Science and Engineering</orgName>
+								<orgName type="institution">Stanford University</orgName>
+								<address>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Bianxiao</forename><surname>Cui</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Chemistry</orgName>
+								<orgName type="institution">Stanford University</orgName>
+								<address>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Nicholas</forename><forename type="middle">A</forename><surname>Melosh</surname></persName>
+							<email>nmelosh@stanford.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Materials Science and Engineering</orgName>
+								<orgName type="institution">Stanford University</orgName>
+								<address>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Stanford Institute for Materials and Energy Sciences</orgName>
+								<orgName type="institution">SLAC National Accelerator Laboratory</orgName>
+								<address>
+									<settlement>Menlo Park</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francesco</forename><forename type="middle">P</forename><surname>Battaglia</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Mark</forename><forename type="middle">J</forename><surname>Schnitzer</surname></persName>
+						</author>
+						<title level="a" type="main">Nanotechnology and neurophysiology</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2015-04-15">15th April 2015</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">27D2861C1A9B49C5181A69D924B5C081</idno>
+					<idno type="DOI">10.1016/j.conb.2015.03.014</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:57+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Neuroscience would be revolutionized by a technique to measure intracellular electrical potentials that would not disrupt cellular physiology and could be massively parallelized. Though such a technology does not yet exist, the technical hurdles for fabricating minimally disruptive, solid-state electrical probes have arguably been overcome in the field of nanotechnology. Nanoscale devices can be patterned with features on the same length scale as biological components, and several groups have demonstrated that nanoscale electrical probes can measure the transmembrane potential of electrogenic cells. Developing these nascent technologies into robust intracellular recording tools will now require a better understanding of device-cell interactions, especially the membrane-inorganic interface. Here we review the state-of-the art in nanobioelectronics, emphasizing the characterization and design of stable interfaces between nanoscale devices and cells.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A renaissance for neurophysiology?</head><p>The brain is considered by many to be the most complex biological system in existence, so it is not surprising that the technical demands of neuroscience research drive innovation across many fields. The last decade has seen an explosion of new optical methods for recording and stimulating brain circuits <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>, particularly in the area of optogenetics <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref>. Equally significant, new experimental and analytical tools for electron microscopy are now enabling high resolution, volumetric reconstruction of neural tissue followed by quantitative connectivity analysis <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. Given the progress in these areas, it is surprising that direct electrical recording from neurons -long considered central to neuroscience research -has changed very little in the last three decades. Whole-cell patch recording <ref type="bibr" target="#b14">[15]</ref>, sharp microelectrode recording <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b16">17]</ref>, and silicon-based extracellular electrodes <ref type="bibr" target="#b17">[18,</ref><ref type="bibr" target="#b18">19]</ref> remain the state-of-the-art in neural recordings despite their well-known limitations: whole-cell patch recording causes dialysis over periods of minutes <ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>, sharp microelectrodes change input resistance and resting membrane potential <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref>, and extracellular recording cannot measure subthreshold changes in neuronal transmembrane potential <ref type="bibr" target="#b27">[28]</ref>.</p><p>The motivation for developing nanoscale tools for neurophysiology is to record intracellular electrical activity from thousands of neurons simultaneously without perturbing their physiological properties. Furthermore, to make these tools impactful to neuroscience, they should be robust, easy to use, and their performance reproducible across labs. Several groups have now demonstrated that solid-state nanoscale devices can record electrical activity in neurons and cardiomyocytes, which signals an important step toward parallelizable, non-dialyzing intracellular recording. The remaining challenge is to demonstrate that these devices can be used over timescales relevant to neurophysiological experiments while preserving native cellular function. In the following sections we will examine the technical capabilities to produce nanoscale devices, the intrinsic electrical properties of these devices, and their specific interaction with cells. We conclude that the cell-electrode interaction is most crucial aspect of designing next-generation intracellular electrodes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The nanoscale toolbox</head><p>Many neuroscientists will already be aware of the exciting developments in field of bionanoelectronics, thanks in part to several existing reviews on the topic <ref type="bibr">[29,30 ,31]</ref>. Nanoscale devices incorporating nanowires <ref type="bibr">[32 ,33 ,34 ,35]</ref>, nanotubes <ref type="bibr">[36,37 ,38 ]</ref>, and nanotransistors <ref type="bibr">[37 ,39 ,40 ]</ref> have been used to record electrical activity from neurons and cardiomyocytes. This field draws upon a broad range of state-of-the-art fabrication techniques, which means that building and manipulating devices on subcellular length scales (&lt;500 nm) is now routine, with some devices being patterned at the length-scale of single proteins <ref type="bibr">[41,</ref><ref type="bibr">42 ]</ref>. Patterning using electron beam lithography at $10 nm feature sizes is relatively straight-forward, if expensive, while patterns at 250 nm and above are readily accessible with optical lithography. Vertical nanowire growth is a field in and of itself, and numerous techniques are available for producing nanowires &lt;100 nm in diameter and up to tens of micrometers in length, either by patterning and etching, or chemical vapor deposition (CVD) <ref type="bibr" target="#b29">[43,</ref><ref type="bibr" target="#b30">44]</ref>. Thin film thicknesses can be controlled to &lt;1 nm on planar substrates, and with the advent of atomic layer deposition (ALD) oxide and metallic films can be conformally coated onto complex and high-aspect ratio structures with similar finesse. Nanostraws of wall thicknesses between 5 and 50 nm and diameters from tens to thousands of nm are also easily made with <ref type="bibr">ALD [37 ,</ref><ref type="bibr">41,</ref><ref type="bibr" target="#b31">[45]</ref><ref type="bibr" target="#b32">[46]</ref><ref type="bibr" target="#b33">[47]</ref> and can potentially dissociate the membrane penetrant portion of a recording device from the electrically sensing portion <ref type="bibr">[37 ,41]</ref>. Another facile method for conductive nanostructures is templated electrochemical growth, which can produce nanotubes <ref type="bibr">[38 ,48]</ref> and nanorods <ref type="bibr" target="#b34">[48]</ref>, and microspines <ref type="bibr">[49 ,50,51]</ref>, including banded structures of heterogeneous composition <ref type="bibr" target="#b38">[52]</ref>. Nanoscale field effect transistors have also been fabricated for cellular recordings <ref type="bibr">[37 ,39 ,40 ,41]</ref>, some in combination with nanostraw designs <ref type="bibr">[37 ,41]</ref>. Finally, thin-film techniques and selfassembled monolayers have been employed to create 3-5 nm hydrophobic bands on the sides of inorganic nanostructures, allowing them to integrate into the lipid bilayer like membrane proteins <ref type="bibr">[42 ,53,54]</ref>. In summary, the 'nano toolbox' is capable of producing almost any design down to the 10 nm level, making the central question not how to build, but what to build.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The nanoscale advantage</head><p>The most obvious argument for using nanofabricated recording devices is one of scale: smaller electrodes can record from smaller structures and be packed more densely to record from more cells with less volume displacement in vivo. Thus, all other things being equal, smaller devices are better for massively parallel activity mapping. Secondly, it is widely observed that cells spontaneously 'wrap', or engulf protruding nanostructures <ref type="bibr">[33 ,38 ,49 ,50,51,55]</ref>. This intimate contact between the cell and electrode simplifies signal source attribution (one electrode, one neurons) and improves signal-to-noise ratio as compared to planar recording systems. The nanoelectrode arrays described in recent literature are therefore not simply smaller microelectrode arrays, but rather interact with cells in qualitatively different ways. Another major advantage of using a solid-state nanoscale recording device is that that can be used intracellularly without disrupting the composition of the cytoplasm. Eliminating the liquid electrolyte conductor used in micropipette-based approaches immediately resolves the issue of interdiffusion between the cell and the pipette solution, which is especially problematic for whole-cell recording <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b21">22]</ref>, but also for microelectrodes using high ionic strength internal solutions <ref type="bibr" target="#b42">[56]</ref>. Because metallic conductors have greater than 10 7 times higher conductivity compared to typical electrolyte solutions, there is a specific scaling argument for reducing the cross-sectional area of the electrode leads by switching to solid-state devices. Finally, though impressive strides have been made toward the automation and parallelizing patch clamp technique in vivo <ref type="bibr" target="#b43">[57]</ref>, the mechanical requirements for pressure control (i.e. pipette rigidity) are not commensurate with massively parallel recordings. Nanofabrication on the other hand is designed for parallelization, routinely producing intricate structures at the same length scales as cellular components (3-30 nm), meaning that devices can be engineered to interact with cells at a subcellular level <ref type="bibr">[37 ,42 ]</ref>. Integration into readout electronics is also greatly facilitated by working with solid-state electronic probes, and arrays of nanostructures can be bonded by flip-chip methods to high density CMOS electronics for recording <ref type="bibr" target="#b44">[58,</ref><ref type="bibr" target="#b45">59]</ref> and stimulation <ref type="bibr" target="#b45">[59,</ref><ref type="bibr" target="#b46">60]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electrical recording from nanoscale devices</head><p>There are several distinct approaches to nanoscale electrical recording. To show the breadth of sizes and shapes, the silhouettes of some representative devices are compared in Figure <ref type="figure">1</ref> alongside a patch pipette and sharp microelectrode. The devices shown in the bottom row of Figure <ref type="figure">1</ref> are attached to a flat substrate and interact with cultured cells that are either grown on the substrates or are delivered to them. The devices shown in the top row of Figure <ref type="figure">1</ref> are inserted devices, delivered by micromanipulator to the cell, where recording moiety penetrates the plasma membrane to achieve cytosolic access. Figure <ref type="figure">2</ref> compares several electrical recordings using nanoscale devices where the transmembrane potential was independently measured by either a patch-pipette or sharp microelectrode. These early successes have stimulated a great deal of interest for expanding nanoelectrode designs into massively parallel device arrays for in vivo recordings.</p><p>From the standpoint of electrical recording, the most important distinction between these nanoscale recording devices is whether or not they penetrate the cell membrane. This determines whether the electrode will directly measure the transmembrane potential (Figure <ref type="figure">3a</ref>) or whether it will measure the local extracellular potential (Figure <ref type="figure">3b-d</ref>). If a nanoelectrode is merely adjacent to a cell, it behaves as a conventional MEA would (Figure <ref type="figure">3b</ref>), measuring a extracellular action potential waveform and virtually no signal from subthreshold changes in potential <ref type="bibr" target="#b47">[61,</ref><ref type="bibr" target="#b48">62]</ref>. When engulfment of a nanoelectrode results in a loose seal between the membrane and electrode <ref type="bibr">[33 ,38 ]</ref>, a canonical extracellular waveform is also observed (Figure <ref type="figure">3c</ref>), but when the seal is very tight <ref type="bibr">[49 ,50]</ref>, the invaginated pocket of solution may closely mimic the intracellular potential and low-frequency components of the action potential will be visible (Figure <ref type="figure">3d</ref>). In fact, nanoelectrode-cell interactions may be complex with a device partially penetrating into the membrane and partially engulfed, but for clarity and to introduce the most important electrical properties of various configurations, we here separately describe two general recording configurations: cell-penetrating electrodes and cellengulfed electrodes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Method 1: direct intracellular access</head><p>Electrical recording with cell-penetrating nanoelectrodes follows the tradition of intracellular recording using metal microelectrodes that dates back to the 1940s <ref type="bibr" target="#b49">[63]</ref><ref type="bibr" target="#b50">[64]</ref><ref type="bibr" target="#b51">[65]</ref>. Electrode insertion can be achieved either through mechanical force <ref type="bibr">[29,34 ,35,36]</ref> or by using fusogenic agents <ref type="bibr">[37 ,39 ,40 ]</ref>. Upon penetration, nanoelectrodes suffer similar disadvantages of their predecessor the metal microelectrode; insertion can cause a leak current at the site of penetration. For example, Angle and Schaefer [34 ] report intracellular recordings from pyramidal neurons in hippocampal organotypic slice cultures, using inserted tungsten nanoelectrodes (Figure <ref type="figure">1c</ref>). These electrodes are capable of measuring both action potentials and large (tens of mVs) DC offsets. In $10% of cases they find that inserting these electrodes does not effect cellular physiology (as assessed by a whole-cell recording during nanoelectrode penetration (Figure <ref type="figure">2a</ref>). The other 90% of recordings, however, showed measurable perturbation upon recording even with this small scale device. Given that sharp microelectrodes with tips &lt; 100 nm in diameter cause measurable leakage <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref>, a concern is that recently reported nanoscale devices that are larger than 100 nm may also cause membrane leakage.</p><p>Reducing electrode leakiness favors going to even smaller electrodes, but this leads to higher electrode impedance, causing increased signal distortion [30 , <ref type="bibr" target="#b52">66,</ref><ref type="bibr" target="#b53">67]</ref> and poorer signal quality <ref type="bibr" target="#b54">[68,</ref><ref type="bibr" target="#b55">69]</ref>. One way of minimizing signal distortion [32 ] is using nanoscale field-effect transistors (FET) [39 ] instead of a metal nanoelectrode. The almost negligible input impedance of the devices allows for extraordinarily small probes (&lt;100 nm) with excellent bandwidth. Using FETs for extracellular recordings was first proposed in 1968 <ref type="bibr" target="#b56">[70]</ref>, though it was not demonstrated until many years later <ref type="bibr" target="#b57">[71,</ref><ref type="bibr" target="#b58">72]</ref>. These early FET devices were planar and recorded conventional extracellular action potential waveforms. The issue with creating non-planar FETs at the nanoscale is that they are three terminal devices, requiring two electrical contacts in addition to solution contact; a simple post or nanowire at the end of an electrode is insufficient. How to fabricate such devices remained elusive until Tian et al. demonstrated a 'kinked' nanowire growth in which a nanowire could be made into a loop, with a FET located near the tip (Figure <ref type="figure">1e</ref>) <ref type="bibr">[39 ,40 ]</ref>. When brought into contact with a cardiomyocyte, a transition from an extracellular to an intracellular signal was observed, and the magnitude quantified by appropriate calibration of the FET transconductance. These waveforms showed excellent agreement with simultaneous patch clamp recording (Figure <ref type="figure">2c</ref>). This work was later extended to create nanoscale FETs on a substrate with a sharp hollow tube that could insert into the cell like a sharp microelectrode <ref type="bibr">[37 ]</ref>. These sharp tubes can be fabricated as small as a single membrane protein (Figure <ref type="figure">1h</ref>) <ref type="bibr">[41]</ref>.</p><p>Another way to reduce electrode distortion effects is to impose a large voltage on the electrode, thus enabling a new set of electrochemical processes to mediate charge transfer processes at the electrode-electrolyte interface. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Robinson et al.</head><p>[32 ] achieve lower impedance on their gold-coated silicon nanowire probes (Figure <ref type="figure">1f</ref>) by imposing a voltage of À1.5 V. This allows them to measure larger amplitude signals (Figure <ref type="figure">2b</ref>) but unfortunately requires injecting constant current into the cell, and they report that the electrochemical processes that occur while recording in this way are deleterious to cell health.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Method 2: engulfment</head><p>When a device is engulfed by a cell without penetrating it, that device is less probably to effect the cell's physical properties, but it measures only the local potential of the invaginated pocket of extracellular solution. This 'pocket potential' may be closer to bath potential (ground) or cytosolic potential depending on the ratio of transmembrane conductance and seal conductance (Figure <ref type="figure">3b,</ref><ref type="figure">c</ref>). One can consider the cytosol and bath as two sources of competing electrical potential, the first influencing the pocket potential through the transmembrane conductance and the latter through the conductance of the membrane-device seal. In electrical engineering this is referred to as a voltage-divider, and because the membrane conductance (properly admittance) is both frequency and voltage dependent, the voltage divider is dependent on the signal being measured, acting as a filter <ref type="bibr">[30 ]</ref>. When seal resistance is low, the divider acts as a high-pass filter. When seal resistance is high <ref type="bibr">[49 ,50,73]</ref> the recording arrangement closely mimics tight-seal cell-attached recordings <ref type="bibr" target="#b60">[74,</ref><ref type="bibr" target="#b61">75]</ref>, and low-frequency coupling to the cell can be achieved. In both configurations, the local transmembrane potential can be quite different from the rest of the cell; the isolated membrane patch experiences the potential difference between cytosol and pocket.</p><p>To maximize signal in an engulfed recording, membrane conductance should be maximized and seal conductance minimized (i.e. a tight seal). There are two complementary strategies to improving these extracellular recordings. The first is to improve seal resistance by promoting cellelectrode adhesion <ref type="bibr">[49 ,50,73,76,77]</ref>. Early experiments exploring the importance of adhesion and seal resistance on planar extracellular electrodes were performed by Fromherz and colleagues <ref type="bibr" target="#b62">[76]</ref><ref type="bibr" target="#b63">[77]</ref><ref type="bibr" target="#b64">[78]</ref><ref type="bibr" target="#b65">[79]</ref>, who found that sealing is depending on cell type and substrate-coating <ref type="bibr" target="#b63">[77]</ref>.</p><p>More recently, Spira and colleagues have developed gold microspine electrodes that promote engulfment and subsequently high seal resistance <ref type="bibr">[49 ,50]</ref> (Figure <ref type="figure">1g</ref>). These 'In-cell' microspine electrodes, despite being extracellular, are able to measure subthreshold membrane dynamics with high signal to noise and minimal filtering, as assessed by simultaneous microelectrode recordings (Figure <ref type="figure">2d</ref>). In-cell recordings have been applied to several different cell types <ref type="bibr">[49 ,80,81]</ref>, with the best results so far occurring in large aplysia neurons <ref type="bibr" target="#b35">[49 ]</ref>. Since they do not require membrane penetration, this route is very promising if slightly higher signal can be achieved, for example by increasing seal resistance.</p><p>Another approach to achieving intracellular-like recording using engulfed electrodes is to increase local transmembrane conductance in the area surrounding the electrode. An increase in transmembrane conductance could be achieved chemically by incorporating pore-forming antibiotics into the plasma membrane, as in perforated patch recording <ref type="bibr" target="#b68">[82,</ref><ref type="bibr" target="#b69">83]</ref>. More recently, carbon nanotubes <ref type="bibr" target="#b70">[84]</ref> and DNA-based nanopores <ref type="bibr" target="#b71">[85]</ref> have also been used to introduce synthetic channels into lipid membranes, suggesting another possible route toward intracellular access. Alternatively, physical breakdown of the lipid membrane during and after electroporation provides a mechanism for transient and reversible poration of the membrane <ref type="bibr">[33 ,38 ,46,51]</ref>.</p><p>Electroporation refers to the formation of tiny membrane pores (10-20 nm) that drastically increase the transmembrane conductance. By increasing membrane conductance, electroporation can increase the recorded signal amplitude by more than 100 fold. Electroporation has been combined with gold microspine recording <ref type="bibr" target="#b37">[51]</ref> as well as with nanowires [33 ] and nanotubes <ref type="bibr">[38 ]</ref>. Cui and colleagues transiently electroporated cells with nanowire arrays and recorded from them periodically over several days <ref type="bibr">[38 ]</ref>. These electroporated holes remained open for several minutes, with the detected signal decreasing over time (Figure <ref type="figure">2e</ref>). Modification of the electrode shape to a hollow cylinder (Figure <ref type="figure">1i</ref>) dramatically extended this period to over an hour, and recordings on the same cardiomyocyte could be performed periodically for seven days. While leakage during this process may be detrimental to cell health, it was still possible to phenotype induced pluripotent stem cell-derived cardiomyocytes <ref type="bibr" target="#b72">[86]</ref>.</p><p>Finally, when membrane conductance is increased dramatically without concurrent increase in seal resistance, the result can be a membrane shunt similar to that which can occur during cell penetration. Accordingly, transient electroporation in the absence of a tight seal is associated with simultaneous loss of input resistance and change in resting membrane potential <ref type="bibr">[38 ,51]</ref> (Figure <ref type="figure">2e</ref>), as has been shown previously when neurons are electroporated for dye loading <ref type="bibr" target="#b73">[87]</ref>. Though some basic cellular properties can be distinguished during this porated phase <ref type="bibr" target="#b72">[86]</ref>, it follows that detailed investigation of cellular physiology will require both high membrane conductance and a tight seal.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Seal resistance at the device-membrane interface</head><p>For both cell-penetrating and cell-engulfed electrical recording, it is crucial to control the interaction of the recording device with the cell, specifically the cell membrane. This kind of engineering will only be possible however with better characterization of the interfaces that existing devices form with cell membranes. Even assessing whether or not a device is intracellular can be nontrivial. Because engulfment and penetration look nearly identical at the resolution of light microscopy, the distinction often requires special characterization methods such as electron microscopic reconstruction [38 , <ref type="bibr">55,88 ,89]</ref>, force microscopy <ref type="bibr" target="#b76">[90,</ref><ref type="bibr" target="#b77">91]</ref>, or a second, simultaneous intracellular recording <ref type="bibr">[32 ,34 ,38 ,40 ,51]</ref>.</p><p>TEM examination of the cell membrane-substrate interface by different groups show that engulfment results in reduced membrane-nanoelectrode separation <ref type="bibr">[49 ,88 , 89,92]</ref>. In particular, Hanson et al. <ref type="bibr" target="#b74">[88 ]</ref> (Figure <ref type="figure" target="#fig_3">4a,</ref><ref type="figure">b</ref>) quantified the membrane-nanoelectrode cleft to be $18 nm, which is significantly smaller than the membrane-flat surface cleft at $50 nm. From the measured distances, the leakage resistance is estimated to increase by more than 10 times for nanoelectrodes interfacing with cell bodies. They also found that neurites can engulf nanoelectrodes and form closer junctions as compared with flat surfaces. Fendyur et al. <ref type="bibr" target="#b66">[80]</ref> (Figure <ref type="figure" target="#fig_3">4c,</ref><ref type="figure">d</ref>) find similarly that small neurites can even engulf much larger gold microspines with diameters &gt;1 mm. Another recent study further suggests that the performance could be further improved by optimizing the 3D geometry <ref type="bibr" target="#b41">[55]</ref>.</p><p>A different paradigm for membrane-inorganic interactions can be found in the work by <ref type="bibr">Almquist and Melosh [42 ,</ref><ref type="bibr" target="#b39">53]</ref>, who modify the surface of their probes to interact directly with the hydrophobic bilayer. Using gold-thiol chemistry and patterning the probes with a 3-5 nm thick hydrophobic band, they create structures that can integrate into the bilayer like membrane proteins (Figure <ref type="figure">1d</ref>). Similar applications where surface-assembled monolayers have been used to integrate with lipid bilayers have been described elsewhere <ref type="bibr" target="#b79">[93,</ref><ref type="bibr" target="#b80">94]</ref> and have even been used to form electrically tight pore-spanning membranes <ref type="bibr" target="#b81">[95]</ref>. This approach is promising because it potentially avoids complications in cell-surface heterogeneity that make engineering surface-adherent interfaces difficult, and it eliminates the aqueous layer that is responsible for seal region conductance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Designing over orders of magnitude</head><p>Engineering the nanoscale interaction between cells and electrodes may be the fundamental challenge to massively parallel intracellular recordings, but a complete in vivo recording system presents additional technical obstacles. For instance, each recording site must transmit information out of the brain (&gt;millimeters) to downstream electronics, which can become logistically challenging as the number and density of the electrodes increases. While up to 512 electrodes have been accommodated by flexible connectors <ref type="bibr" target="#b18">[19]</ref>, dramatically larger numbers of electrodes are probably to require multiplexing and/or wireless transmission. Electrode arrays of up to 26,400 electrodes have been achieved in vitro with multiplexing <ref type="bibr" target="#b82">[96]</ref>, but such a demonstration has yet to be achieved in vivo. Finally, electrode micromotions within the brain can disrupt the recording if the electrode moves relative to the cell <ref type="bibr" target="#b83">[97]</ref>. Ideally the recording site could move independently from the rest of the electronics, such as a wireless device on the brain surface <ref type="bibr" target="#b84">[98]</ref> or a soft physical tether to the outside world <ref type="bibr" target="#b18">[19]</ref>. Active mechanical stabilization has been used to correct the micromotion of rigid glass microelectrodes in vivo <ref type="bibr" target="#b83">[97]</ref>, but high density recordings will more probably rely on the compliance of flexible micro-wires or nanowires arrays <ref type="bibr" target="#b85">[99,</ref><ref type="bibr">100]</ref> to passively decouple recordings sites from recording electronics. Such a design will be particularly important for awake recordings, where animal movement requires special attention to electrode stabilization <ref type="bibr">[101]</ref>. Indeed, motivated by the difficulty of interfacing rigid structures with brain, there is much ongoing work adapting flexible electronic materials for use in neuroscience <ref type="bibr">[102,</ref><ref type="bibr">103]</ref>. Flexibly tethered recordings present a different problem, however, as they cannot be delivered deep within the brain without the aid of a rigid shuttle <ref type="bibr">[102,</ref><ref type="bibr">103]</ref> or other means of providing reversible rigidity during insertion <ref type="bibr">[104,</ref><ref type="bibr">105]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>Nanoscale devices show great promise for intracellular electrical recording and have indeed already been used</p><p>Nanotechnology and neurophysiology Angle, Cui and Melosh 137 for specific applications such as electrophysiological phenotyping of IPSC-derived cardiac cells <ref type="bibr" target="#b72">[86]</ref>. Stable, non-invasive intracellular electrical recording will require much more careful attention interactions between nanoscale devices and the cell membrane. Some of this work is already underway, and several groups are now paying closer attention to characterizing, modeling, and designing cell-electrode interfaces. Given the capabilities of modern nanotechnology and increased interest in device membrane interactions, it seems highly probable that better intracellular recording technology is on the horizon. This paper desribes the use of iridium oxide nanotubes for recording from cardiomyocytes. It demonstrates that electroporation can be repeatedly employed over several days to provide improved electrical access to the cell for periods of minutes. This periodic sampling does not disturb longterm cell health. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>42.</head><p>Almquist BD, Melosh NA: Fusion of biomimetic stealth probes into lipid bilayer cores. Proc Natl Acad Sci U S A 2010:5815-5820. This paper describes a fundamentally new way of interfacing inorganic devices with cells, patterning a 3 nm thick hydrophobic band on a nanoprobe that allows it to stably insert into the cell membrane. Integration of these bands is verified by atomic force microscopy.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>Figure 1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>Figure 2</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>Figure 3</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 (</head><label>4</label><figDesc>Figure 4</figDesc><graphic coords="6,67.76,456.35,226.86,175.15" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>39. Tian B et al.: Three-dimensional, flexible nanoscale field-effect transistors as localized bioprobes. Science 2010, 329:830-834. This paper first showed that kinked nanowire transistors could be used as an intracellular recording platform (cardiomyocytes) and started a new class of nanoscale recording devices based on nanoscale transistors. 40. Qing Q et al.: Free-standing kinked nanowire transistor probes for targeted intracellular recording in three dimensions. Nat Nanotechnol 2014, 9:142-147. This paper first extends the kinked nanowire transistor concept developed by Tian et al. [39 ] by mounting the device on a micromaniuplator and delivering it to cells. A simultaneous whole cell recording tracks changes in resting membrane potential after insertion and provides a direct comparison for the transconductance action potential waveform. 41. Fu T-M et al.: Sub-10-nm intracellular bioelectronic probes from nanowire-nanotube heterostructures. Proc Natl Acad Sci U S A 2014, 111:1259-1264.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Spira ME, HaiA: Multi-electrode array technologies for neuroscience and cardiology. Nat Nanotechnol 2013, 8:83-94. Neuronal recordings with solidconductor intracellular nanoelectrodes (SCINEs). PLoS One 2012, 7:e43194. This paper describes simulataneous nanoelectrode and patch clamp recordings in slice culture neurons. The whole cell recording, established before nanoelectrode insertion, allows for quantification of the nanoelectrode invasiveness. 35. Ferguson JE et al.: Nanowires precisely grown on the ends of microwire electrodes permit the recording of intracellular action potentials within deeper neural structures. Nanomedicine 2012, 7:847-853. 36. Schrlau MG, Dun NJ, Bau HH: Cell electrophysiology with carbon nanopipettes. ACS Nano 2009, 3:563-568. 37. Duan X et al.: Intracellular recordings of action potentials by an extracellular nanoscale field-effect transistor. Nat Nanotechnol 2012, 7:174-179. This paper is notable for its impressive fabrication acheivement, growing a 50-150 nm silica nanotube onto a nanotransistor to create a tiny, selfcontained sharp microelectrode. 38. Lin ZC et al.: Iridium oxide nanotube electrodes for sensitive and prolonged intracellular measurement of action potentials. Nat Commun 2014, 5.</figDesc><table><row><cell>34.</cell><cell>Angle MR, Schaefer AT:</cell></row><row><cell></cell><cell cols="2">This encompassing review describes much of the progress that has been</cell></row><row><cell></cell><cell cols="2">made in the area of microscale and nanoscale devices for electrophy-</cell></row><row><cell></cell><cell cols="2">siology, particuarly focusing on 'in-cell' gold microspine electrodes.</cell></row><row><cell></cell><cell cols="2">31. Tian B, Lieber CM: Synthetic nanoelectronic probes for</cell></row><row><cell></cell><cell></cell><cell>biological cells and tissues. Annu Rev Anal Chem 2013, 6:31-51.</cell></row><row><cell></cell><cell>32.</cell><cell>Robinson JT et al.: Vertical nanowire electrode arrays as a</cell></row><row><cell></cell><cell></cell><cell>scalable platform for intracellular interfacing to neuronal</cell></row><row><cell></cell><cell></cell><cell>circuits. Nat Nanotechnol 2012, 7:180-184.</cell></row><row><cell></cell><cell cols="2">This paper demonstrates that neurons can be cultured on electrically</cell></row><row><cell></cell><cell cols="2">addressable, vertical nanowires arrays. These nanowires can then be</cell></row><row><cell></cell><cell cols="2">used to measure electrical activity.</cell></row><row><cell></cell><cell>33.</cell><cell>Xie C et al.: Intracellular recording of action potentials by</cell></row><row><cell></cell><cell></cell><cell>nanopillar electroporation. Nat Nanotechnol 2012, 7:185-190.</cell></row><row><cell></cell><cell cols="2">This paper finds that nanopillar electrodes do not spontaneously</cell></row><row><cell></cell><cell cols="2">insert into cells but can acheive transient intracellular access by</cell></row><row><cell></cell><cell cols="2">electroporation.</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Nanotechnology and neurophysiology Angle, Cui and Melosh 133 www.sciencedirect.com Current Opinion in Neurobiology 2015, 32:132-140</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>www.sciencedirect.comCurrent Opinion in Neurobiology 2015, 32:132-140</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>The authors thank <rs type="person">Jason Castro</rs> for helpful comments on the manuscript, and support from <rs type="funder">NSF</rs> <rs type="grantNumber">IDBR-1063397</rs> and <rs type="grantNumber">HFSP-RGP0048</rs> and the <rs type="funder">Stanford Neuroscience Institute NeuroFab</rs> (<rs type="person">N Melosh</rs>, M Angle), as well as <rs type="funder">NSF</rs> <rs type="grantNumber">DBI-1055112</rs> and <rs type="grantNumber">MPS-1344302</rs> (<rs type="person">B Cui</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_dVcEFKs">
+					<idno type="grant-number">IDBR-1063397</idno>
+				</org>
+				<org type="funding" xml:id="_MKq677r">
+					<idno type="grant-number">HFSP-RGP0048</idno>
+				</org>
+				<org type="funding" xml:id="_P5aRZqv">
+					<idno type="grant-number">DBI-1055112</idno>
+				</org>
+				<org type="funding" xml:id="_e3rmDbj">
+					<idno type="grant-number">MPS-1344302</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest statement</head><p>Nothing declared.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Advances in multiphoton microscopy technology</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">E</forename><surname>Hoover</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Squier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Photon</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="93" to="101" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Engineering approaches to illuminating brain structure and dynamics</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Deisseroth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Schnitzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuron</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="568" to="577" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Genetically encoded calcium indicators for multi-color neural activity imaging and combination with optogenetics</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Akerboom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Mol Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">2</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Two-photon calcium imaging of evoked activity from L5 somatosensory neurons in vivo</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mittmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1089" to="1093" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Mapping brain activity at scale with cluster computing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Freeman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note>advance online publication</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">From cudgel to scalpel: toward precise neural control with optogenetics</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Peron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Svoboda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="30" to="34" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Electrophysiology in the age of light</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scanziani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hausser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">461</biblScope>
+			<biblScope unit="page" from="930" to="939" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Optical neural interfaces</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Warden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Cardin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Deisseroth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu Rev Biomed Eng</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="103" to="129" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">All-optical electrophysiology in mammalian neurons using engineered microbial rhodopsins</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Hochbaum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="825" to="833" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Volume electron microscopy for neuronal circuit reconstruction</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Briggman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Bock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Neurobiol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="154" to="161" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">3D structural imaging of the brain with photons and electrons</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Helmstaedter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Briggman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Denk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Neurobiol</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="633" to="641" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">High-accuracy neurite reconstruction for high-throughput neuroanatomy</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Helmstaedter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Briggman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Denk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1081" to="1088" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The big and the small: challenges of imaging the brain&apos;s circuits</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Lichtman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Denk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">334</biblScope>
+			<biblScope unit="page" from="618" to="623" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Staining and embedding the whole mouse brain for electron microscopy</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mikula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Binding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Denk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1198" to="1201" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Improved patch-clamp techniques for highresolution current recording from cells and cell-free membrane patches</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">P</forename><surname>Hamill</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pflugers Arch</title>
+		<imprint>
+			<biblScope unit="volume">391</biblScope>
+			<biblScope unit="page" from="85" to="100" />
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The normal membrane potential of frog sartorius fibers</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Gerard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Cell Comp Biol</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="383" to="396" />
+			<date type="published" when="1949">1949</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Membrane potentials and excitation of impaled single muscle fibers</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Graham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Gerard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Cell Comp Physiol</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="99" to="117" />
+			<date type="published" when="1946">1946</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">An integrated-circuit approach to extracellular microelectrodes</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>Wise</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Angell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Starr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Biomed Eng</title>
+		<imprint>
+			<biblScope unit="page" from="238" to="247" />
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Large-scale, high-density (up to 512 channels) recording of local circuits in behaving animals</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bere ´nyi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Influence of sodium-calcium exchange on calcium current rundown and the duration of calciumdependent chloride currents in pituitary cells, studied with whole cell and perforated patch recording</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Korn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Horn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Gen Physiol</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page" from="789" to="812" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Calculation of time constants for intracellular diffusion in whole cell patch clamp configuration</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Oliva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Mathias</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="791" to="799" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Rates of diffusional exchange between small cells and a measuring patch pipette</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pusch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Neher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pflu¨gers Archiv</title>
+		<imprint>
+			<biblScope unit="volume">411</biblScope>
+			<biblScope unit="page" from="204" to="211" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Intracellular microelectrode measurements in small cells evaluated with the patch clamp technique</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ince</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="1203" to="1209" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A direct comparison of whole cell patch and sharp electrodes by simultaneous recording from single spinal neurons in frog tadpoles</title>
+		<author>
+			<persName><forename type="first">W-C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Soffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roberts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="380" to="386" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Perforated patch-clamp analysis of the passive membrane properties of three classes of hippocampal neurons</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Spruston</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Johnston</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page" from="508" to="529" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Membrane properties of dentate gym granule cells comparison of sharp microelectrode and whole-cel recordings</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Staley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page" from="1346" to="1358" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Detection of a membrane shunt by DC field polarization during intracellular and whole cell recording</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Svirskis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gutman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hounsgaard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="579" to="586" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Electrophysiological recordings from behaving animals -going beyond spikes</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Chorev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Neurobiol</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="513" to="519" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Nanowire electrodes for highdensity stimulation and measurement of neural circuits</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jorgolli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Neural Circuits</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">38</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Growth of nanowires</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Q</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater Sci Eng R Rep</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="1" to="51" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Exploring arrays of vertical one-dimensional nanostructures for cellular investigations</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanotechnology</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">362001</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Nanostraws for direct fluidic intracellular access</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Vandersarl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Melosh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="3881" to="3886" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Nanostraw-electroporation system for highly efficient intracellular delivery and transfection</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Nano</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="4351" to="4358" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Quantification of nanowire penetration into living cells</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Commun</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Electrodeposition of tubular-rod structure gold nanowires using nanoporous anodic alumina oxide as template</title>
+		<author>
+			<persName><forename type="first">H-J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electrochem Commun</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="2019" to="2022" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">In-cell recordings by extracellular microelectrodes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shappir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Spira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="200" to="202" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Long-term, multisite, parallel, in-cell recording and stimulation by an array of extracellular microelectrodes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shappir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Spira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="559" to="568" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">On-chip electroporation, membrane repair dynamics and transient in-cell recordings by arrays of gold mushroom-shaped microelectrodes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Spira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lab Chip</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="2865" to="2873" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">On-wire lithography</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Qin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">309</biblScope>
+			<biblScope unit="page" from="113" to="115" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Molecular structure influences the stability of membrane penetrating biointerfaces</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Almquist</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Melosh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="2066" to="2070" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Nanoscale patterning controls inorganicmembrane interface structure</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Almquist</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanoscale</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="391" to="400" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Interfacing electrogenic cells with 3D nanoelectrodes: position, shape, and size matter</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Santoro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Nano</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="6713" to="6723" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">KCl leakage from microelectrodes and its impact on the membrane parameters of a nonexcitable cell</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Blatt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Slayman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Membr Biol</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="223" to="234" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Automated whole-cell patch-clamp electrophysiology of neurons in vivo</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Kodandaramaiah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="585" to="587" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">A novel high electrode count spike recording array using an 81,920 pixel transimpedance amplifier-based imaging chip</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurosci Methods</title>
+		<imprint>
+			<biblScope unit="volume">205</biblScope>
+			<biblScope unit="page" from="223" to="232" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Single-cell recording and stimulation with a 16k micro-nail electrode array integrated on a 0.18 mm CMOS chip</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Huys</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lab Chip</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1274" to="1280" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">A retinal prosthesis technology based on CMOS microelectronics and microwire glass electrodes</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Scribner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Biomed Circuits Syst</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="73" to="84" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Intracellular features predicted by extracellular recordings in the hippocampus in vivo</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Henze</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="390" to="400" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">On the origin of the extracellular action potential waveform: a modelling study</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gold</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page" from="3113" to="3128" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Origin, conduction and termination of impulses in the dorsal spino-cerebellar tract of cats</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Grundfest</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Campbell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="275" to="294" />
+			<date type="published" when="1942">1942</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Stainless steel micro-needle electrodes made by electrolytic pointing</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Grundfest</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev Sci Instrum</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">360</biblScope>
+			<date type="published" when="1950">1950</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Tungsten microelectrode for recording from single units</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hubel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="549" to="550" />
+			<date type="published" when="1957">1957</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Review of signal distortion through metal microelectrode recording circuits and filters</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Nelson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurosci Methods</title>
+		<imprint>
+			<biblScope unit="volume">169</biblScope>
+			<biblScope unit="page" from="141" to="157" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">The electrical properties of metal microelectrodes</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Robinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc IEEE</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="1065" to="1071" />
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Voltage fluctuations of metal-electrolyte interfaces in electrophysiology</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Flasterstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med Biol Eng</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="583" to="588" />
+			<date type="published" when="1966">1966</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Optimization of microelectrode design for cortical recording based on thermal noise considerations</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Lempka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">EMBS &apos;06. 28th Annual International Conference of the IEEE</title>
+		<imprint>
+			<publisher>Engineering in Medicine and Biology Society</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">New amplification method for depth recording</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bergveld</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Biomed Eng</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="102" to="105" />
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+	<note>BME</note>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Active microelectrode array to record from the mammalian central nervous system in vitro</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Jobling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wheal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med Biol Eng Comput</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="553" to="560" />
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A neuron-silicon junction: a Retzius cell of the leech on an insulated-gate fieldeffect transistor</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fromherz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Offenhausser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T1</forename><surname>Vetter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">252</biblScope>
+			<biblScope unit="page" from="1290" to="1293" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">High-resolution intracellular recordings using a real-time computational model of the electrode</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Brette</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuron</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="379" to="391" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">The interpretation of current-clamp recordings in the cell-attached patch-clamp configuration</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Mason</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page" from="739" to="750" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Cell-attached voltage-clamp and current-clamp recording and stimulation techniques in brain slices</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Perkins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurosci Methods</title>
+		<imprint>
+			<biblScope unit="volume">154</biblScope>
+			<biblScope unit="page" from="1" to="18" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Fluorescence interference-contrast microscopy of cell adhesion on oxidized silicon</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Braun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P1</forename><surname>Fromherz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am Physiol Soc</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="341" to="348" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Imaging neuronal seal resistance on silicon chip using fluorescent voltage-sensitive dye</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Braun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fromherz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="1351" to="1359" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Extracellular resistance in cell adhesion measured with a transistor probe</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Kiessling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mu ¨ller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fromherz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Langmuir</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="3517" to="3521" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">The extracellular electrical resistivity in cell adhesion</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Gleixner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fromherz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page" from="2600" to="2611" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Formation of essential ultrastructural interface between cultured hippocampal cells and gold mushroomshaped MEA-toward &apos;&apos;IN-CELL&apos;&apos; recordings from vertebrate neurons</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Fendyur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Neuroeng</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">14</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Toward on-chip, in-cell recordings from cultured cardiomyocytes by arrays of gold mushroom-shaped microelectrodes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Fendyur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Spira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Neuroeng</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">21</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Muscarinic activation of ionic currents measured by a new whole-cell recording method</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Horn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Marty</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Gen Physiol</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="145" to="159" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Perforated patch-clamp techniques</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sarantopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuromethods</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="253" to="293" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Stochastic transport through carbon nanotubes in lipid bilayers and live cell membranes</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Geng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">514</biblScope>
+			<biblScope unit="page" from="612" to="615" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Synthetic lipid membrane channels formed by designed DNA nanostructures</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Langecker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">338</biblScope>
+			<biblScope unit="page" from="932" to="936" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Chemically defined generation of human cardiomyocytes</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Burridge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="855" to="860" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Calcium indicator loading of neurons using single-cell electroporation</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nevian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Helmchen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pflugers Arch</title>
+		<imprint>
+			<biblScope unit="volume">454</biblScope>
+			<biblScope unit="page" from="675" to="688" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Characterization of the cell-nanopillar interface by transmission electron microscopy</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hanson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="5815" to="5820" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">A transparent nanowire-based cell impalement device suitable for detailed cell-nanowire interaction studies</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mumm</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Small</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="263" to="272" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Adhesively-tensed cell membranes: lysis kinetics and atomic force microscopy probing</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hategan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="2746" to="2759" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Penetration of cell membranes and synthetic lipids bilayers by nanoprobes</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Angle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T</forename><surname>Schaefer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Melosh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys J</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="2091" to="2100" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Spine-shaped gold protrusions improve the adherence and electrical coupling of neurons with the surface of micro-electronic devices</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J R Soc Interface</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="1153" to="1165" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">Supported hybrid bilayer membranes as rugged cell membrane mimics</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Plant</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Langmuir</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="5128" to="5135" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Electrical manipulation of supported lipid membranes by embedded electrodes</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Nye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Groves</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Langmuir</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="6189" to="6193" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Electrically insulating pore-suspending membranes on highly ordered porous alumina obtained from vesicle spreading</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K</forename><surname>Schmitt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Soft Matter</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="250" to="253" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">A 1024-channel CMOS microelectrode array with 26,400 electrodes for recording and stimulation of electrogenic cells in vitro</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ballini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J Solid-State Circuits</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="2705" to="2719" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Active stabilization of electrodes for intracellular recording in awake behaving animals</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Fee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuron</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="461" to="468" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Seo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Carmena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Rabaey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Alon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Maharbiz</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1307.2196v1.q-bio</idno>
+		<imprint>
+			<publisher>NC</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Exceptional integration of metal or semimetal nanowires in human-hair-like glass fiber</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Badinter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater Lett</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">100</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Arrays of indefinitely long uniform nanowires and nanotubes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yaman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Mater</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">101</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Anesthetized-and awake-patched whole-cell recordings in freely moving rats using UV-cured collar-based electrode stabilization</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Protocols</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">102</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Injectable, cellular-scale optoelectronics with applications for wireless optogenetics</title>
+		<author>
+			<persName><forename type="first">T-I</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">340</biblScope>
+			<biblScope unit="page">103</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">Insertion shuttle with carboxyl terminated self-assembled monolayer coatings for implanting flexible polymer neural probes in the brain</title>
+		<author>
+			<persName><forename type="first">Tdy</forename><surname>Kozai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Kipke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurosci Methods</title>
+		<imprint>
+			<biblScope unit="volume">184</biblScope>
+			<biblScope unit="page">104</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Gelatine-embedded electrodes -a novel biocompatible vehicle allowing implantation of highly flexible microelectrodes</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gustav</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physiol Behav</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="671" to="674" />
+			<date type="published" when="1972">2010. 1972</date>
+		</imprint>
+	</monogr>
+	<note>J Neural Eng</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

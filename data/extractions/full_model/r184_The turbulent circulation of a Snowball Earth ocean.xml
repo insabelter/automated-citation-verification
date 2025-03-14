@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The Turbulent Circulation of a Snowball Earth Ocean</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date>10 AM UTC</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Malte</forename><forename type="middle">F</forename><surname>Jansen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of the Geophysical Sciences</orgName>
+								<orgName type="institution">University of Chicago</orgName>
+								<address>
+									<settlement>Chicago</settlement>
+									<region>Illinois</region>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of the Geophysical Sciences</orgName>
+								<orgName type="institution">University of Chicago</orgName>
+								<address>
+									<addrLine>5734 South Ellis Avenue</addrLine>
+									<postCode>60637.</postCode>
+									<settlement>Chicago</settlement>
+									<region>IL</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The Turbulent Circulation of a Snowball Earth Ocean</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published">10 AM UTC</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">28C12C5879EC592B30C49C456DB22CFD</idno>
+					<idno type="DOI">10.1175/JPO-D-15-0224.1</idno>
+					<note type="submission">received 18 November 2015, in final form 20 February 2016</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Theoretical arguments are developed to derive general properties of the ocean circulation in a ''snowball'' world, and the predictions are confirmed in a series of idealized numerical simulations. As suggested previously, a turbulent flow is driven by geothermal heating at the seafloor, which is balanced by a similar heat loss through the ice sheet above. It is argued that the expected horizontal inhomogeneities in these heat fluxes are sufficient to generate baroclinic instability, which drives geostrophic turbulence. Turbulent eddies then transport heat upward and poleward along isolines of constant density, thereby maintaining a statically stable stratification, contrary to previous findings from numerical models that do not adequately resolve the geostrophic turbulence. The kinetic energy of the turbulent flow is expected to be controlled by a balance between the potential energy input by the diabatic forcing and frictional dissipation in the bottom boundary layer. The resulting characteristic flow speed is estimated to be on the order of 1 cm s 21 , which is in agreement with previous numerical simulations. Eddy diffusivities are estimated to be on the order of 100 m 2 s 21 , which is smaller than in the present-day ocean but probably within one order of magnitude. Because of the weak forcing, the resulting gradients of temperature and salinity would be much smaller than in the present-day ocean, with global-scale potential temperature variations on the order of 0.1 K, again in agreement with previous numerical simulations. The presented theoretical arguments may also be relevant to other planetary bodies with an ice-covered ocean.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Geological evidence suggests that for multiple time periods during Earth's history the oceans were entirely, or almost entirely, covered by sea glaciers <ref type="bibr" target="#b31">(Kirschvink 1992;</ref><ref type="bibr">Hoffman et al. 1998;</ref><ref type="bibr">Hoffman and Li 2009;</ref><ref type="bibr" target="#b21">Hoffman and Schrag 2002;</ref><ref type="bibr" target="#b60">Pierrehumbert et al. 2011</ref>). These periods are commonly referred to as ''snowball Earth'' events. While many studies have simulated the atmospheric and climate dynamics of snowball Earth events (e.g., <ref type="bibr" target="#b62">Wetherald and Manabe 1975;</ref><ref type="bibr" target="#b43">Pierrehumbert 2005;</ref><ref type="bibr" target="#b0">Abbot and Pierrehumbert 2010;</ref><ref type="bibr" target="#b59">Voigt and Marotzke 2010;</ref><ref type="bibr">Voigt et al. 2012;</ref><ref type="bibr">Abbot et al. 2013;</ref><ref type="bibr" target="#b50">Rose 2015)</ref>, the ocean dynamics have received relatively little attention.</p><p>A number of studies have presented coupled atmosphere-ocean simulations of snowball states (e.g., <ref type="bibr" target="#b47">Poulsen et al. 2001;</ref><ref type="bibr" target="#b38">Marotzke and Botzet 2007;</ref><ref type="bibr" target="#b59">Voigt and Marotzke 2010;</ref><ref type="bibr" target="#b1">Voigt et al. 2011;</ref><ref type="bibr" target="#b13">Ferreira et al. 2011;</ref><ref type="bibr" target="#b50">Rose 2015)</ref>. However, the ocean model setup and parameters in these simulations are based on the present-day ocean; yet, basic physical considerations make clear that the ocean circulation in a snowball world would be very different from the present day. In particular, the source of mechanical energy for the present-day ocean circulation is provided primarily by surface stress from the winds blowing over the ocean <ref type="bibr">(Wunsch and Ferrari 2004;</ref><ref type="bibr" target="#b11">Ferrari and Wunsch 2009)</ref>. During a snowball event, however, the ocean is shielded from atmospheric wind stress by a solid ice sheet, and the circulation is likely driven primarily by geothermal heating at the seafloor (typically ignored in the aforementioned studies). Because heat is supplied at higher temperatures and pressures near the seafloor, and lost at lower temperatures and pressures at the bottom of the ice sheet, mechanical energy can be extracted via the principle of a heat engine. However, the rate of mechanical energy extraction is expected to be much smaller than the power provided to the large-scale circulation in the present-day ocean by wind stress, which provides a crucial constraint on the strength of the ocean circulation and mixing rates (e.g., <ref type="bibr" target="#b11">Ferrari and Wunsch 2009)</ref>.</p><p>A more focused analysis of snowball Earth ocean circulation was recently spearheaded in a series of papers by <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> and <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>, who use a hierarchy of models to study the ocean circulation under a thick ice sheet. In <ref type="bibr">Ashkenazy et al. (2013)</ref> and <ref type="bibr">Ashkenazy et al. (2014)</ref>, global two-and three-dimensional ocean models are coupled to a dynamic sea glacier model. The simulations of <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> indicate interesting dynamics mostly in the equatorial region, where a vigorous overturning circulation with associated zonal jets develops within a few degrees of the equator. The rest of the ocean is unstratified, with vertical heat transport accomplished by parameterized convection and meridional heat and salt fluxes accomplished by parameterized eddy fluxes. The eddy transport of heat and salt in these noneddying simulations is parameterized by horizontal eddy diffusion, which differs from the <ref type="bibr" target="#b16">Gent and McWilliams (1990)</ref>-type eddy parameterizations typically used in simulations of the present-day ocean. While horizontal diffusion generates irreversible horizontal mixing, the effect of the <ref type="bibr" target="#b16">Gent and McWilliams (1990)</ref> (GM) parameterization is a reversible rearrangement of water masses, which acts to release available potential energy and transports heat not just horizontally but also vertically. Whether a GM parameterization or simple horizontal diffusion is more appropriate in a snowball Earth ocean remains an open question.</p><p>Motivated by the results of the coarse-resolution simulations, <ref type="bibr">Ashkenazy et al. (2013)</ref> and <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref> discuss additional higher-resolution simulations using an equatorial ocean sector model coupled to a static ice sheet. In addition to confirming the vigorous equatorial overturning circulation and jets, the simulations exhibit a well-developed turbulent eddy field. Horizontal mixing rates are estimated to be comparable to the present-day ocean, while vertical mixing rates are found to be much larger, with weak or vanishing vertical stratification. However, the simulated domain only extends over the tropical region between 208S and 208N, and the resolution of 1/88 is adequately eddy permitting only in an even smaller region around the equator, as the deformation radius decreases rapidly away from the equator because of the very weak stratification. <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref> present a diagnostic analysis of the Lorenz energy cycle, pointing toward the importance of both baroclinic and barotropic instabilities in generating the eddy field in the equatorial region. However, no predictive theory is brought forward to explain the surprisingly large eddy kinetic energy (EKE) and turbulent eddy diffusivities. The work of <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> and <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref> represents an important first step toward understanding the ocean circulation during snowball Earth events, but more work is needed to fully appreciate the properties of the turbulent flow outside of the equatorial region. This is the goal of this study.</p><p>Rather than presenting additional global-scale simulations, the focus of this paper is to improve our theoretical understanding of extratropical ocean dynamics in a snowball Earth ocean. What are the expected dominant dynamical processes? What are the energetic constraints? And what does this tell us about the largescale mean state and the transport of heat, salt, and other constituents? The results are expected to provide 1) some theoretical constraints on the ocean mean state and turbulent circulation during a snowball Earth event and 2) a basis for the formulation of ocean eddy parameterizations for use in future snowball world climate simulations. As in <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> and <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>, the focus here will be on the so-called hard snowball scenario, where the entire ocean is covered by an ice sheet. Possible implications of the results for a ''Waterbelt'' <ref type="bibr" target="#b24">(Hyde et al. 2000)</ref> or ''Jormungand'' <ref type="bibr">(Abbot et al. 2011</ref>) state with incomplete ice cover will be discussed in the conclusions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Theoretical considerations</head><p>In this section, we will consider what the appropriate boundary conditions for a snowball Earth ocean are and infer constraints for the expected circulation. The inferences will be tested in idealized process-oriented simulations in section 3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>a. Boundary conditions and ocean heat transport</head><p>Assuming that the ocean was entirely covered by sea ice, the heat budget of the global ocean would most likely be dominated by a balance between geothermal heating at the seafloor and heat loss through the ice sheet (see sketch in Fig. <ref type="figure">1</ref>). Given a rough estimate for the atmospheric temperature above the ice sheet, and for the thermal conductivity of the ice, the required heat flux provides a first guess for the average thickness of the ice sheet in equilibrium. The mean thickness of the ice sheet can be estimated as h i ' k i DTQ 21 g , where Q g is the geothermal heating rate, DT is the temperature contrast across the ice sheet, and k is the thermal conductivity <ref type="bibr" target="#b60">(Pierrehumbert et al. 2011)</ref>. The term DT is to first order controlled by the atmospheric temperature, since the ocean temperature at the bottom of the ice sheet is expected to be near the freezing point. The geothermal heating rate during the Cryogenian is uncertain, but it was likely within about 30% of today's value of Q g ' 0.1 W m 22 <ref type="bibr" target="#b32">(Korenaga 2008;</ref><ref type="bibr" target="#b5">Arevalo et al. 2009;</ref><ref type="bibr" target="#b46">Pollack et al. 1993)</ref>. Assuming further a temperature contrast across the ice sheet of DT ' 508C <ref type="bibr" target="#b43">(Pierrehumbert 2005)</ref> and k i ' 2 W m 21 K 21 <ref type="bibr" target="#b60">(Pierrehumbert et al. 2011)</ref>, we obtain h i ' 1 km.</p><p>Spatial variations in the atmospheric temperature or the geothermal heat flux would lead to strong variations in the local equilibrium ice thickness. However, previous studies have shown that ice flow is relatively effective at homogenizing the thickness of the ice sheet, such that typical global-scale variations in the ice sheet thickness were likely only on the order of 10% (e.g., <ref type="bibr">Ashkenazy et al. 2013</ref>). In the limit that variations in the ice thickness are relatively small, the spatial structure of the heat flux through the ice sheet is controlled primarily by the spatial structure of the atmospheric temperature and can be estimated as</p><formula xml:id="formula_0">Q i ' k i h i DT ,<label>(1)</label></formula><p>where h i is the mean ice thickness. Equation ( <ref type="formula" target="#formula_0">1</ref>) provides a useful approximation as long as relative variations in the ice thickness are small compared to relative variations in DT. Relative variations in DT are O(1) (e.g., <ref type="bibr" target="#b43">Pierrehumbert 2005;</ref><ref type="bibr">Abbot et al. 2013)</ref>, and thus significantly larger than the O(10%) variations in ice thickness found by <ref type="bibr">Ashkenazy et al. (2013)</ref>. However, significant uncertainty remains as to how effectively ice flow homogenizes the ice thickness, with less efficient ice flow possibly reducing spatial variations in heat flux through the ice sheet. Equation ( <ref type="formula" target="#formula_0">1</ref>) together with an estimate for the spatial structure of Q g can be used to estimate the required meridional ocean heat transport as a function of latitude</p><formula xml:id="formula_1">F y (f) 5 ð 2p 0 ð p f (Q i 2 Q g )a 2 cosf dl df , (<label>2</label></formula><formula xml:id="formula_2">)</formula><p>where f denotes latitude, l is longitude, and a is the radius of Earth. Given the atmospheric temperature and geothermal heat flux, Eq. ( <ref type="formula" target="#formula_1">2</ref>), together with Eq. ( <ref type="formula" target="#formula_0">1</ref>), provides a first-order estimate of the ocean heat transport, without requiring any understanding of the underlying ocean dynamics (see sketch in Fig. <ref type="figure">1</ref>).</p><p>Figure <ref type="figure">2</ref> shows an estimate of the meridional ocean heat transport as a function of latitude, computed under the simplifying assumption of a globally constant geothermal heat flux and ice sheet thickness. The term DT (which to good approximation is given by the difference between the freezing point and the atmospheric temperature above the ice sheet) is assumed to vary between 30 and 70 K between the equator and the pole <ref type="bibr" target="#b43">(Pierrehumbert 2005;</ref><ref type="bibr">Abbot et al. 2013)</ref>, and the geothermal heating rate is assumed constant at 0.1 W m 22 . The meridional heat transport peaks at about 2.5 TW at midlatitudes, which is almost three orders of magnitude smaller than the present-day poleward ocean heat transport <ref type="bibr" target="#b56">(Trenberth and Caron 2001</ref>) and also about three orders of magnitude smaller than the expected atmospheric heat transport in a snowball Earth climate <ref type="bibr" target="#b43">(Pierrehumbert 2005)</ref>. However, dividing the total meridional heat transport by the circumference of the planet and an average ocean depth of about 2 km nevertheless yields a meridional heat transport per crosssection area that peaks at about 45 W m 22 (Fig. <ref type="figure">2c</ref>). Comparing this to the average vertical heat flux of about 0.1 W m 22 suggests that over most of the ocean the horizontal component of the heat transport was larger than the vertical heat transport by more than a factor of 100. This has important implications for the expected dynamics, as will be discussed below.</p><p>The surface temperatures assumed for Fig. <ref type="figure">2</ref> are estimates for an early snowball stage, when CO 2 concentration was low. Near the termination of a snowball event, the tropical atmospheric temperatures must have increased to around the freezing point (e.g., <ref type="bibr">Abbot et al. 2012</ref><ref type="bibr">Abbot et al. , 2013))</ref>. Since it is the relative variation in DT that effectively governs the meridional heat transport, an overall warmer surface temperature (i.e., smaller mean DT) with similar meridional gradient, would have led to an increased meridional heat transport. If the FIG. <ref type="figure">1</ref>. Sketch of the snowball Earth ocean. The ocean is heated from below by geothermal heating Q g , which is balanced by a similar heat loss through the ice sheet Q i . A meridional gradient in the atmospheric temperature T atm implies a meridional gradient in the temperature contrast across the ice sheet DT, which in turn leads to a meridional gradient in the heat flux through the ice sheet Q i . A poleward and upward meridional ocean heat transport is required to balance the heat fluxes through the boundaries (wavy arrows). In the absence of salt, the heat flux by geostrophic eddies is directed along isotherms (dotted lines). More generally the buoyancy transport is directed along isopycnals. Freezing and melting is expected to enhance the horizontal buoyancy transport and therefore flatten the isopycnal slopes (see text). atmospheric temperature in the tropics is assumed to be near the freezing point, the heat transport increases by about a factor of 4 compared to the values shown in Fig. <ref type="figure">2</ref>. Finally, the geothermal heat flux was likely enhanced at low latitudes, associated with the existence of a diverging low-latitude supercontinent <ref type="bibr" target="#b36">(Li et al. 2008)</ref>. This could have further contributed to increase the poleward ocean heat transport, though the order of magnitude would likely be unaffected.</p><p>Before proceeding, it should be noted that some of the meridional heat transport may be accomplished not by a transport of sensible heat but by a freshwater transport, balancing freezing and melting at the bottom of the ice sheet. Given the salinity difference between the ice sheet and seawater, and the latent heat of freezing, this freshwater transport can be translated into an effective latent heat transport. We will return to this issue below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>b. Energetics</head><p>Using the Boussinesq approximation, the mechanical energy input associated with geothermal heating and heat loss through the ice sheet can be expressed in terms of the potential energy gain:</p><formula xml:id="formula_3">_ P 5 2 ð _ bz dV ' H ð gar 21 c 21 p Q g dA,<label>(3)</label></formula><p>where _ b is the buoyancy tendency, H is the depth of the ocean, g is the gravitational acceleration, a is the thermal expansion coefficient, c p is the heat capacity, and r is the density of seawater. The first integral in Eq. ( <ref type="formula" target="#formula_3">3</ref>) is taken over the entire volume of the ocean, while the second integral is taken over the bottom of the ocean. The second step assumes that the total buoyancy flux through the bottom, associated with geothermal heating, equals the total buoyancy flux at the top and that there are no sources or sinks of buoyancy in the interior. Because of the nonlinearity of the equation of state, this is not strictly true. While heat and salt are conserved variables, buoyancy is not strictly conserved. However, for the present purposes of obtaining a rough scaling for the mechanical energy input, we will ignore the nonlinearity in the equation of state and treat buoyancy as a conserved variable.</p><p>It may seem surprising that the energy input does not depend on melting and freezing at the bottom of the ice sheet, which leads to buoyancy fluxes via latent heat transfer and brine rejection. However, if the bottom of the ice sheet is relatively flat, all freezing and melting happens at about the same depth and thus does not contribute to the mechanical energy budget <ref type="bibr" target="#b53">(Sandström 1908;</ref><ref type="bibr" target="#b42">Paparella and Young 2002)</ref>. To the extent that there are differences in the ice thickness, ice is generally expected to be thinner at low latitudes, where melting dominates, while it is thicker at high latitudes, where freezing dominates (e.g., <ref type="bibr">Ashkenazy et al. 2014)</ref>. Melting, which leads a net buoyancy gain (see below), thus would occur at higher levels than freezing, which leads to a net buoyancy loss. This configuration, again, is not effective at driving a circulation <ref type="bibr" target="#b53">(Sandström 1908;</ref><ref type="bibr" target="#b42">Paparella and Young 2002)</ref>.</p><p>To make inferences about the ocean circulation, we need to understand how the potential energy input in Eq. ( <ref type="formula" target="#formula_3">3</ref>) is converted into kinetic energy before eventually being dissipated. As previously noted by <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>, the situation has some similarity to Earth's atmosphere (much more so than to the present-day ocean), which is predominantly heated radiatively near the surface and at lower latitudes and cooled at higher altitudes and higher latitudes. Part of the potential energy input in Earth's atmosphere is released via convection (mostly in the tropics), but much of it is tapped into by baroclinic instability, which drives a turbulent, largely geostrophic circulation (e.g., FIG. <ref type="figure">2</ref>. Estimate of the ocean heat transport as a function of latitude for a given atmospheric temperature distribution and assuming a globally constant geothermal heating rate of 0.1 W m 22 . (a) The assumed temperature contrast across the ice sheet. (b) The total poleward heat transport, according to Eq. ( <ref type="formula" target="#formula_1">2</ref>). (c) The mean poleward heat transport per unit area cross section, computed as the total heat transport divided by the ocean depth and circumference of Earth at the respective latitude. <ref type="bibr" target="#b55">Stone 1972;</ref><ref type="bibr" target="#b26">Jansen and Ferrari 2013)</ref>. Whether or not the heat transport is dominated by geostrophic turbulence, as opposed to convection or symmetric instability, depends on the geostrophic Richardson number Ri 5 f 2 › z bj=bj 22 , where f is the Coriolis parameter. If Ri 1, the dynamics are expected to be dominated by baroclinic instability driving geostrophic turbulence (e.g., <ref type="bibr" target="#b9">Boccaletti et al. 2007;</ref><ref type="bibr" target="#b14">Fox-Kemper et al. 2008)</ref>. Before proceeding to explicitly estimate a characteristic Richardson number for the snowball Earth ocean, we want to continue our analysis of energetics, assuming that the potential energy provided by geothermal heating is indeed converted into geostrophic turbulence. The implicit assumption that Ri 1 will be justified a posteriori in section 2c.</p><p>Because of the lack of a forward energy cascade <ref type="bibr" target="#b10">(Charney 1971;</ref><ref type="bibr" target="#b51">Salmon 1978</ref><ref type="bibr">Salmon , 1980;;</ref><ref type="bibr" target="#b49">Rhines 1979</ref>), geostrophic eddies are understood to lose most of their energy via a transfer of energy into internal waves and three-dimensional turbulence near the bottom boundary (e.g., <ref type="bibr" target="#b33">Ledwell et al. 2000;</ref><ref type="bibr" target="#b40">Nikurashin et al. 2013)</ref>. Frictional dissipation in the bottom boundary layer is typically parameterized using a quadratic bottom drag, which follows directly from dimensional considerations <ref type="bibr" target="#b17">(Gill 1982;</ref><ref type="bibr" target="#b63">Willebrand et al. 2001;</ref><ref type="bibr" target="#b4">Arbic and Scott 2008)</ref>. Assuming such a quadratic drag law, the frictional dissipation can be related to the geostrophic velocity V via a nondimensional drag parameter C D :</p><formula xml:id="formula_4">_ E 5 2 ð C D jVj 3 dA. (<label>4</label></formula><formula xml:id="formula_5">)</formula><p>Assuming a balance between this frictional dissipation in the bottom boundary layer<ref type="foot" target="#foot_1">foot_1</ref> and the potential energy input provided by geothermal heating [Eq. ( <ref type="formula" target="#formula_3">3</ref>)], we obtain an estimate for the characteristic eddy velocity as</p><formula xml:id="formula_6">jVj ' (C 21 D r 21 c 21 p HgaQ g ) 1/3 . (<label>5</label></formula><formula xml:id="formula_7">)</formula><p>Assuming a drag coefficient of C D ' 3 3 10 23 <ref type="bibr" target="#b41">(Özgökmen and Fischer 2008)</ref>, c p ' 4000 J kg 21 K 21 , r ' 10 3 kg m 23 , H ' 2000 m, g ' 10 m s 22 , Q g ' 0.1 W m 22 , and a ' 10 24 K 21 (estimated for seawater at temperatures near the freezing point), we obtain jVj ' 2.5 cm s 21 . Equation ( <ref type="formula" target="#formula_6">5</ref>) technically provides an estimate only for the geostrophic velocity near the bottom boundary. However, since the frictional halting scale for the turbulent cascade is expected to be much larger than the deformation radius in a snowball Earth ocean (as will be shown below), we expect the kinetic energy to be approximately barotropic, such that Eq. ( <ref type="formula" target="#formula_6">5</ref>) provides a useful estimate for the characteristic eddy velocity over the entire water column <ref type="bibr">(Jansen et al. 2015)</ref>. Equation ( <ref type="formula" target="#formula_4">4</ref>) further considers only the kinetic energy dissipation in the turbulent bottom boundary layer, but additional routes to dissipation of geostrophic kinetic energy have been proposed [see <ref type="bibr">Wunsch and Ferrari (2004)</ref> and <ref type="bibr" target="#b11">Ferrari and Wunsch (2009)</ref> for a review], and there are significant uncertainties with regards to the adequate drag coefficient C D . Moreover, tidal flows can add a background velocity that enhances energy dissipation. However, even if only 10% of the total kinetic energy dissipation is given by a quadratic drag in the form of Eq. ( <ref type="formula" target="#formula_4">4</ref>), the characteristic eddy velocity estimate would still yield about 1.2 cm s 21 . We can thus conclude with some confidence that eddy velocities were likely on the order of a centimeter per second.</p><p>c. Eddy mixing rates and the impact on the oceanic gradients of temperature and salinity</p><p>Given an estimate for the eddy mixing length L mix , the eddy velocity can be used to obtain an estimate for the eddy diffusivity: K ; V 3 L mix . We may expect the mixing length to be given by the smaller of the Rhines scale L R ; jVj 1/2 b 21/2 <ref type="bibr" target="#b49">(Rhines 1979)</ref>, where b is the planetary vorticity gradient, and a frictional halting scale L f ; HC 21 D <ref type="bibr" target="#b18">(Grianik et al. 2004)</ref>. With b ; O(10 211 ) m 21 s 21 and jVj ; O(0.01) m s 21 , we find L R ; O(10-100) km. With H ; O(1) km and C D ; O(10 23 ), we instead find L f ; O(1000) km. This suggests that the mixing length is likely limited by the Rhines scale. 2 A quantitative estimate for the eddy diffusivity, when the mixing length is limited by the Rhines scale, is provided by <ref type="bibr">Jansen et al. (2015)</ref> as</p><formula xml:id="formula_8">K ' 0:25jVj 3/2 b 21/2 . (<label>6</label></formula><formula xml:id="formula_9">)</formula><p>Using a midlatitude value for the planetary vorticity gradient (b ' 1.6 3 10 211 m 21 s 21 ) and assuming an eddy velocity in the range of 1-3 cm s 21 , we obtain an estimated range for the eddy diffusivity of around 60 to 300 m 2 s 21 . This is somewhat smaller than eddy diffusivities observed in the present-day ocean, but the difference is likely to be less than one order of magnitude (e.g., <ref type="bibr" target="#b57">Tulloch et al. 2014)</ref>. The estimated eddy diffusivity is also somewhat lower than the estimate provided by <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>.</p><p>Wind-driven gyres are expected to be absent in a snowball Earth ocean, which is covered by a thick ice sheet, and <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> argue that a significant meridional overturning circulation can only be maintained in the immediate vicinity of the equator. The meridional heat transport in the extratropics is therefore likely dominated by turbulent eddies. The eddy diffusivity estimate, together with the meridional heat flux estimate in Eq. ( <ref type="formula" target="#formula_1">2</ref>), can then used to obtain an estimate for the meridional temperature gradient. Matters are complicated by the possibility for ice melting and freezing, which allows for part of the meridional heat transport to be accomplished by freshwater transport. Before considering freezing and melting, we simplify the problem by assuming that all meridional heat transport is in the form of sensible heat. The meridional heat transport in Eq. ( <ref type="formula" target="#formula_1">2</ref>) can then be combined with the eddy diffusivity to directly obtain an estimate for the meridional temperature gradient as › y T 5 F y H 21 L 21 r 21 c 21 p K 21 , where F y is the meridional heat flux estimated in Eq. ( <ref type="formula" target="#formula_1">2</ref>), H is the depth, and L is the zonal extent of the ocean. The argument in section 2a suggested that F y H 21 L 21 is O(10) W m 22 , while the eddy diffusivity K is O(100) m 2 s 21 . This yields a meridional temperature gradient on the order of 10 24 K km 21 or 0.1 K over 1000 km. Compared to the present-day ocean, temperature thus would have been very homogeneous.</p><p>We can also infer an estimate for the vertical stratification by noting that in the adiabatic interior of the ocean, geostrophic eddies transport buoyancy primarily along isopycnals (e.g., <ref type="bibr" target="#b45">Plumb and Ferrari 2005)</ref>. If both the horizontal and vertical flux of buoyancy are dominated by sensible heat flux, the slope of the isopycnals then is given directly by the ratio of the vertical to the horizontal heat transport, which in section 2a was argued to be on the order of 1/100 (see also Fig. <ref type="figure">1</ref>). The thermal stratification thus would be larger by a factor of O(100) than the horizontal temperature gradient, that is, on the order of 0.01 K km 21 . With a thermal expansion coefficient, a ' 10 24 and g ' 10 m s 22 , this yields a buoyancy frequency of order N 5 (ag› z T) 1/2 5 O(10 24 ) s 21 and a deformation radius on the order of NHf 21 5 O(1) km.</p><p>The above results for the meridional temperature gradient and stratification hold only under the assumptions that we can neglect freezing and melting and that temperature is the only variable controlling buoyancy variations, which is not likely to hold in reality. Instead, melting at low latitudes and freezing at high latitudes will likely cause part of the meridional heat transport to be in the form of latent heat of freshwater. Because freshwater fluxes associated with freezing and melting have an effect on buoyancy that is about a factor of 5 larger than that of the associated latent heat transfer,<ref type="foot" target="#foot_3">foot_3</ref> the effect would be a significant increase in the meridional buoyancy transport. Since the vertical buoyancy flux is unaffected, the ratio of meridional to vertical buoyancy transport would be increased. Using again that the eddy buoyancy transport is directed along isopycnals, we thus find a weaker isopycnal slope than what was estimated above. In the limit that all meridional heat transport is accomplished via a freshwater flux, the isopycnal slope would be reduced by about a factor of 5. The increased meridional buoyancy flux would further imply a similarly increased meridional buoyancy gradient (realized via a salinity gradient). The increase in horizontal buoyancy gradient and reduction in isopycnal slope would finally imply an increased stratification by up to about a factor of 25 and thus an increased deformation radius by up to about a factor of 5.</p><p>In summary, we find that meridional temperature and salinity gradients were very weak compared to the present-day ocean. However, as in today's ocean, isopycnal slopes were very small in an absolute sense: on the order of 1/100 to 1/1000, indicating that the stratification, although weak, was robustly stable. The deformation radius was likely in the range of about 1-5 km.</p><p>The arguments above relied on the assumption that the dynamics are dominated by geostrophic eddies as opposed to upright or slantwise convection. This assumption is justified if geostrophic turbulence is able to maintain a mean state with Richardson numbers much larger than one. Using the definitions of isopycnal slope s [ j=bj/› z b and deformation radius L d [ (› z b) 1/2 Hf 21 , we can express the Richardson number as Ri 5 s 22 (H/L d ) 2 . From the above considerations we find that H/L d 5 O(1), while s 1 and thus indeed Ri 1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Numerical simulations</head><p>This section discusses numerical simulations to test the theoretical arguments presented above. As discussed above, we anticipate a deformation radius in the range of 1-5 km, which suggests that a horizontal resolution around 1 km or finer is required to resolve only the deepest modes of baroclinic instability. Globalscale, eddy-resolving simulations are thus computationally prohibitive. Instead, idealized numerical simulations are performed in a smaller domain but are subject to similar boundary conditions. Specifically, the fluid is heated from below by a weak geothermal heat flux, while losing heat through a thick ice sheet at the top. Meridional inhomogeneities in the geothermal heat flux and heat loss through the ice sheet give rise to a meridional heat transport as described by Eq. ( <ref type="formula" target="#formula_1">2</ref>). For illustrative purposes, we will first consider an idealized fluid with a linear equation of state, where density depends only on temperature, and phase changes are omitted. We will then proceed to the more realistic case where freezing and melting at the bottom of the ice sheet modifies the heat and freshwater budget, and fluid densities are computed using a realistic equation of state. Eventually, it will be shown that most of the basic results can be reproduced with a noneddying model, where along-isopycnal eddy fluxes are parameterized using a Gent-McWilliams skew flux <ref type="bibr" target="#b19">(Griffies 1998</ref>) with an eddy diffusivity of 150 m 2 s 21 , as predicted in section 2b.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>a. Model description</head><p>The simulations use the Massachusetts Institute of Technology General Circulation Model (MITgcm; <ref type="bibr" target="#b39">Marshall et al. 1997)</ref>, employing the hydrostatic and Boussinesq approximations. Preliminary simulations showed negligible differences between hydrostatic and nonhydrostatic configurations, and non-Boussinesq effects are very unlikely to be relevant because of the very small variations in density. The domain is 1600 km long in the meridional and 160 km wide in the zonal direction. The horizontal boundary conditions are periodic in the zonal direction, and no-slip walls are imposed at the southern and northern end of the domain. The Coriolis parameter is f 5 10 24 s 21 in the center of the domain and varies linearly in the meridional, with a planetary vorticity gradient b [ › y f 5 1.6 3 10 24 s 21 m 21 . The depth of the ocean is 2 km, with an additional 1-km ice sheet in the simulations with explicit treatment of freezing and melting. Unless otherwise mentioned, the eddypermitting simulations use a horizontal grid spacing of 1 km, while the noneddying simulations use a grid spacing of 20 km. The simulations without ice use 20 unevenly spaced vertical levels, with a resolution ranging from 50 m near the top and bottom boundaries to 150 m in the interior. The simulations with explicit treatment of freezing and melting use 23 subice levels with the resolution refined to 10 m under the ice sheet.</p><p>Heat fluxes through the bottom and through the ice sheet are prescribed and vary in latitude, as described below. Importantly, the net prescribed heat flux through the bottom of the ocean, integrated over the entire domain, always equals the net prescribed heat flux through the top of the ice sheet, as necessary to obtain a quasiequilibrium state. Simulations with explicit treatment of ice use the MITgcm shelf ice package <ref type="bibr" target="#b37">(Losch 2008)</ref>, which describes ocean-ice sheet interactions following the three-equation thermodynamics of <ref type="bibr" target="#b20">Hellmer and Olbers (1989)</ref> with the modifications of <ref type="bibr" target="#b29">Jenkins et al. (2001)</ref>.</p><p>Frictional dissipation in the bottom boundary layer is parameterized using a quadratic bottom drag law with a nondimensional drag parameter C D 5 3 3 10 23 (e.g., <ref type="bibr" target="#b4">Arbic and Scott 2008)</ref>. Free-slip conditions are applied at the upper boundary. Enstrophy is dissipated using a biharmonic hyperviscosity, which in the eddy-permitting simulations is formulated following <ref type="bibr" target="#b35">Leith (1996)</ref> and <ref type="bibr" target="#b14">Fox-Kemper and Menemenlis (2008)</ref>.</p><p>Large uncertainty exists with regards to the appropriate vertical diffusivity of heat and salt for a snowball Earth ocean [see discussion in <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>]. Unless otherwise noted, the simulations discussed below use a vertical diffusivity of k 5 10 24 m 2 s 21 , which is somewhat larger than values typically found in the present-day ocean <ref type="bibr">(Ledwell et al. 2011)</ref>. The sensitivity of the results to the vertical diffusivity will be discussed.</p><p>Convection is parameterized by a large vertical diffusion whenever the column is statically unstable. For present-day ocean simulations, the convective diffusivity is typically chosen on the order of 10 m 2 s 21 . This value is consistent with the velocity and length scales expected in rotating convection subject to a surface cooling on the order of 100 W m 22 , as experienced in the present-day high-latitude ocean <ref type="bibr" target="#b30">(Jones and Marshall 1993)</ref>. However, typical buoyancy fluxes in the snowball Earth ocean were about three orders of magnitude smaller. The results of <ref type="bibr" target="#b30">Jones and Marshall (1993)</ref> suggest that both length and velocity scales in rotating convection are proportional to the square root of the buoyancy flux, which suggests a convective diffusivity proportional to the buoyancy flux. Consistent with the reduced buoyancy fluxes, the simulations thus employ a convective diffusivity of k conv 5 10 22 m 2 s 21 . To test the sensitivity of the simulations to this uncertain parameter, an additional simulation was performed in which the convective diffusivity was increased by two orders of magnitude to k conv 5 1 m 2 s 21 . The results indicate little sensitivity to the choice of the convective diffusivity, consistent with the result that eddies maintain a stable stratification and convection only plays a role in close vicinity to the boundaries.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>b. Idealized simulations without phase changes</head><p>To gain insight into the underlying physical processes (as well as for computational reasons), it is beneficial to start with idealized numerical simulations that do not consider the effect of freezing and melting at the bottom of the ice sheet. The simulations use a linear equation of state where buoyancy is related only to temperature:</p><formula xml:id="formula_10">b [ 2g r 2 r 0 r 0 5 ga(T 2 T 0 ) ,<label>(7)</label></formula><p>where g 5 9.81 m s 22 is the gravitational acceleration, and a 5 10 24 K 21 is the thermal expansion coefficient. The terms r 0 and T 0 are arbitrary reference densities and temperatures.</p><p>The simulations are forced by a heat flux through the bottom and top boundaries, which varies in the meridional direction as</p><formula xml:id="formula_11">Q bot 5 0:1 W m 22 2 D Q sin(py/L) 3 and Q top 5 0:1 W m 22 1 D Q sin(py/L) 3 , (<label>8</label></formula><formula xml:id="formula_12">)</formula><p>where y goes from 2L/2 at the southern boundary to L/2 at the northern boundary. For symmetry, similar (but opposite signed) forcing gradients are applied at the top and bottom boundaries. Relaxing this symmetry constraint does not alter the results significantly. Simulations with two different values for the meridional forcing gradient will be discussed: D Q 5 0.05 W m 22 and D Q 5 0.1 W m 22 . In the simulation with D Q 5 0.1 W m 22 , the relative variations in buoyancy fluxes are likely larger than actual variations during snowball Earth events. However, as discussed in section 2, more relevant for the dynamics are the net vertical and horizontal heat fluxes per unit area. Because of the smaller meridional extent of the domain, larger variations in the heat fluxes through the boundaries are necessary to obtain horizontal heat fluxes of similar order as expected for the snowball Earth ocean. The implied meridional heat flux per cross-section area is shown for the two cases in Fig. <ref type="figure" target="#fig_0">3</ref>.</p><p>In both simulations the meridional heat flux per crosssection area is larger than the vertical heat flux by more than a factor of 100 and of similar order (albeit somewhat smaller) than the meridional heat transport estimated for the snowball Earth ocean (cf. to Fig. <ref type="figure">2c</ref>).</p><p>Because of the effect of the meridional heat transport on stratification (see section 2c), the deformation radius in the simulation with D Q 5 0.05 W m 22 is smaller than in the simulation with D Q 5 0.1 W m 22 . To allow for an adequately eddy-permitting resolution in both simulations, the horizontal grid spacing in the simulation with D Q 5 0.05 W m 22 is reduced to 500 m.</p><p>Figure <ref type="figure" target="#fig_1">4</ref> shows snapshots of temperature and flow speed at a depth of 700 m and over the central 800 km of the domain, after a statistically steady state has been reached (which here takes about 100 yr). In both cases we see a turbulent flow, with eddies stirring up a largescale meridional temperature gradient. The temperature gradient in the simulation with D Q 5 0.1 W m 22 is around 5 3 10 25 K km 21 , which is on the same order as the estimate of O(10 24 ) K km 21 given in section 2. The temperature gradient in the simulation with D Q 5 0.05 W m 22 is somewhat weaker, which is in qualitative agreement with the expected effect of a reduced forcing gradient.</p><p>The characteristic eddy velocity is on the order of a few centimeters per second, with a root-mean-square (rms) velocity of 1.8 cm s 21 in both simulations, in agreement with the prediction in section 2 [and simulations in <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>]. <ref type="foot" target="#foot_6">4</ref> The characteristic eddy size appears to be somewhat reduced in the simulation with D Q 5 0.05 W m 22 as compared to the simulation with D Q 5 0.1 W m 22 . This is likely a result of the reduced deformation radius in the simulation with D Q 5 0.05 W m 22 . Notice, however, that eddies in both simulations are larger than the deformation radius, which is indicative of a significant turbulent inverse Figure <ref type="figure" target="#fig_2">5</ref> shows the time-and zonal-mean temperature field in the simulations. Black lines indicate the direction of the bulk heat transport, computed by linearly connecting enclosed regions of identical integrated heat flux through the top and bottom boundaries. The thermal structure shows that the water column is stably stratified away from the boundaries, with the slope of the isotherms roughly predicted by the direction of the heat transport. Neutral to weakly unstable stratification is found near the top and bottom boundaries. Near the boundaries, geostrophic eddies become inefficient at transporting heat in the vertical and convection takes over. The thickness of these convective boundary layers is likely overestimated in the present simulations because of the limited horizontal resolution, which allows only the deepest vertical modes to be resolved. The presence of higher baroclinic modes (which have smaller deformation radii and thus require finer resolution to be resolved) may allow geostrophic eddies to efficiently transport heat much closer to the top and bottom boundaries, thus stabilizing the stratification (e.g., <ref type="bibr">Ferrari et al. 2010)</ref>.</p><p>The resolution in the simulations discussed above is best characterized as ''eddy permitting,'' that is, the resolution is sufficient to allow for the development of geostrophic turbulence from baroclinic instability, but biases due to the relatively coarse resolution are expected. We can estimate the baroclinic deformation radius as</p><formula xml:id="formula_13">L d [ f 21 ð N dz,<label>(9)</label></formula><p>where N [ › z hbi 1/2 is the buoyancy frequency,<ref type="foot" target="#foot_7">foot_7</ref> with h i denoting a horizontal average across the domain. For the simulation with D Q 5 0.1 W m 22 , we find L d ' 1.5 km, while for the simulation with D Q 5 0.1 W m 22 , L d ' 1 km. The wavelength of the fastest growing linearly unstable mode is generally a few times L d , about 3.9 3 L d for the Eady model, which represents a reasonable approximation to the situation here (e.g., <ref type="bibr" target="#b58">Vallis 2006)</ref>. This suggests that the fastest growing wave is resolved with about six grid points in the simulation with D Q 5 0.1 W m 22 and about eight grid points for the simulation with D Q 5 0.05 W m 22 . The main effect of insufficient resolution is expected to be a significant spurious dissipation of EKE by explicit or numerical viscosity near the grid scale <ref type="bibr">(Jansen and Held 2014)</ref>. This is confirmed by analysis of the energy budget, which suggests that about 50% of the kinetic energy is lost to (explicit or numerical) viscous dissipation. Considering that the energy dissipation by bottom friction (which would have to come up for the additional dissipation otherwise) is cubic in the flow velocity [Eq. ( <ref type="formula" target="#formula_4">4</ref>)], this spurious viscous energy dissipation is expected to lead to an underestimate of the characteristic eddy velocity by about 25%.</p><p>The simulations discussed above use a zonally reentrant domain, even though a supercontinent during snowball Earth time periods would have provided a zonal barrier at least at low latitudes (see also <ref type="bibr">Ashkenazy et al. 2013</ref><ref type="bibr">Ashkenazy et al. , 2014))</ref>. To analyze the effect of a zonal barrier, an additional simulation was performed in a closed basin. The setup is identical to the simulation with D Q 5 0.1 W m 22 described above, but with no normal flow, no-slip boundary conditions along the eastern and western boundaries of the domain. While a weak meridional overturning circulation develops in this simulation, the meridional temperature gradient, stratification, and rms velocity all remain within 20% of the results obtained without a continental boundary (not shown). This result suggests that the presence of continental boundaries, which may support a large-scale mean circulation, is not likely to change the results qualitatively, as also found by <ref type="bibr">Ashkenazy et al. (2013)</ref>. However, various factors, such as domain size and geometry or spatially inhomogeneous geothermal heating, could substantially impact the large-scale circulation. The potential role of large-scale circulation in a snowball Earth ocean thus remains an interesting topic for future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>c. The role of freezing and melting</head><p>As discussed in section 2, freshwater exchange associated with freezing and melting at the bottom of the ice sheet affects the buoyancy fluxes at the upper boundary. To analyze the effects on the flow field and mean state, and to test the predictions of section 2, this section discusses a simulation in which the ocean interacts with an ice sheet of fixed thickness H ice 5 1 km. The simulation uses a realistic seawater equation of state, following <ref type="bibr" target="#b25">Jackett and McDougall (1995)</ref>. The heat flux through the ice sheet and the geothermal heating rate are specified as before, with D Q 5 0.1 W m 22 . Notice that the heat flux boundary condition prescribes the conductive heat flux through the ice sheet (which amounts to prescribing the vertical temperature contrast between the atmosphere and ocean), but the sensible heat flux in and out of the ocean can be modified by freezing and melting. To achieve a quasi-equilibrium solution in a manageable amount of time, the initial conditions were chosen such that the ocean water is near the freezing point. For the chosen initial salinity of 50 g kg 21 (as in <ref type="bibr">Ashkenazy et al. 2014)</ref>, the freezing point at the bottom of the ice sheet is just below 23.68C. The simulation nevertheless requires a much longer integration time to reach a quasi-equilibrium state than simulations without ocean-ice interactions. An initial spinup simulation was therefore performed at a much coarser horizontal resolution of 20 km, using the skew flux parameterization for eddy fluxes discussed below. The equilibrated zonalmean state of this coarse-resolution simulation was then used as an initial condition for a simulation at 1-km resolution, which was integrated to a statistical equilibrium for another 260 yr. Statistics were computed from the last 10 yr of the high-resolution simulation.</p><p>Figure <ref type="figure" target="#fig_3">6</ref> shows snapshots of temperature, salinity, and velocity after a statistical equilibrium has been reached. As in the simulations without an explicit ice sheet, a turbulent flow develops, which maintains a large-scale temperature gradient of around 5 3 10 25 K km 21 . Freezing and melting further leads to a large-scale gradient in salinity of around 5 3 10 26 g kg 21 km 21 . The thermal expansion coefficient here is on the order of 10 24 K 21 , while the haline contraction coefficient is on the order of 10 23 kg g 21 . The effects of temperature and salinity on the large-scale buoyancy gradients are thus of similar order in this simulation, with both contributing to a poleward increase in density. Figure <ref type="figure" target="#fig_3">6c</ref> reveals characteristic eddy velocities on the order of a few centimeters per second, with an rms velocity of 2 cm s 21 , again similar to the results obtained without an explicit ice sheet. A similar characteristic eddy velocity scale was predicted from the theoretical considerations in section 2 because ocean-ice sheet interactions do not affect the mechanical energy budget.</p><p>Figure <ref type="figure" target="#fig_4">7</ref> shows time-and zonal-mean temperature, salinity, and potential density fields in the simulation. As before, eddies are able to maintain a statically stable stratification in the fluid interior, which now is realized through a combination of temperature and salinity effects. The net density stratification is increased, leading to an average deformation radius of about L d ' 4 km. Convectively neutral boundary layers again develop near the top and bottom boundaries, except near the southern end of the domain, where a statically stable freshwater lens develops near the upper boundary. The solid black lines in Fig. <ref type="figure" target="#fig_4">7c</ref> mark the direction of total (sensible plus latent) heat transport, estimated as before from the imposed heat flux boundary conditions. The slope of the density (and thus buoyancy) surfaces is flatter than the direction of the heat transport, as expected because of the difference between the directions of the heat and buoyancy transports (see section 2). The direction of buoyancy transport can be computed from the net buoyancy exchange at the bottom and top boundaries, using the diagnosed rates of freezing and melting. The buoyancy flux at the bottom boundary is obtained directly from the heat flux as B bot 5 gaQ bot /(r 0 c p ), where a again is the thermal expansion coefficient and c p 5 3994 J kg 21 K 21 is the heat capacity. The buoyancy flux at the interface with the ice sheet can be estimated as</p><formula xml:id="formula_14">B top 5 ga Qtop /(r 0 c p ) 2 gbF S/r 0 , (<label>10</label></formula><formula xml:id="formula_15">)</formula><p>where Qtop is the (diagnosed) sensible heat flux and F is the freshwater flux at the ocean-ice interface (all fluxes are positive upward), S is the salinity of ocean water (the ice is assumed to be fresh in the model), and b is the haline contraction coefficient. The thermal expansion and (to a lesser extent) haline contraction coefficients vary with depth, primarily because of their dependence on pressure. As a result, buoyancy is not exactly conserved, even though temperature and salinity are. To avoid having to introduce interior sources and sinks of buoyancy, buoyancy fluxes are for diagnostic purposes approximated using constant average thermal expansion and haline contraction coefficients: a 5 1.1 3 10 24 K 21 and b 5 7.8 3 10 24 kg g 21 . The maximum error of this approximation is about 30%. The direction of the buoyancy flux can then be estimated by meridional integration of the buoyancy fluxes through the boundaries, analog to the computation of the heat flux direction. The dashed lines in Fig. <ref type="figure" target="#fig_4">7c</ref> show the estimated direction of the buoyancy flux, which aligns well with the isopycnal slope in the fluid interior.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>d. Noneddying simulations</head><p>The results above suggest that turbulent eddies in a snowball Earth ocean share similar properties as geostrophic turbulence in the present-day atmosphere and ocean. In particular, potential energy is released by an upward flux of buoyancy along density surfaces, with little irreversible mixing across density surfaces. This behavior can be mimicked using a GM parameterization for the buoyancy fluxes, in combination with a <ref type="bibr" target="#b48">Redi (1982)</ref> parameterization for mixing along isopycnals. We therefore here compare the results of the eddypermitting simulations to coarse-resolution, noneddying simulations, where eddy effects are parameterized using the GM skew flux formulation proposed by <ref type="bibr" target="#b19">Griffies (1998)</ref>, which combines the effects of <ref type="bibr">GM and Redi (1982)</ref>. With the isopycnal diffusivity and GM coefficient chosen identically (as is typical in ocean models), the meridional eddy fluxes of heat and salt are simply given by</p><formula xml:id="formula_16">F C,y 5 2K› y C , (<label>11</label></formula><formula xml:id="formula_17">)</formula><p>where C may be temperature, salinity, or any conservative passive tracer, and K is the eddy diffusivity. The expression for the vertical fluxes is slightly more involved and can be found in <ref type="bibr" target="#b19">Griffies (1998)</ref>. Importantly though, the net buoyancy flux is directed along isopycnals. Equation ( <ref type="formula" target="#formula_16">11</ref>) can be used to estimate the eddy diffusivity in our eddy-permitting simulations, which gives K ' 150 m 2 s 21 , in agreement with the theoretical prediction in section 2. To test the GM skew flux parameterization in the context of a turbulent snowball ocean, the simulation described in section 3c was repeated with a grid spacing of 20 km and parameterized eddy fluxes with K 5 150 m 2 s 21 .</p><p>Figure <ref type="figure">8</ref> shows the equilibrated zonal-mean temperature, salinity, and potential density fields in the noneddying simulation, which shall be compared to the results of the eddy-permitting simulation in Fig. <ref type="figure" target="#fig_4">7</ref>. The basic characteristics of the mean state show good qualitative agreement, though we also note some differences. As in the eddy-permitting simulations, the parameterized eddy fluxes maintain a statically stable stratification in the fluid interior, realized through a combination of temperature and salinity effects. The bulk temperature and salinity gradients are on the same order as in the eddying simulations. The slope of the isopycnals is given by the direction of the buoyancy transport, which again follows a somewhat weaker slope than the imposed heat flux. Notice that the use of a GM parameterization here is crucial to reproduce the isopycnal slopes and associated stable stratification. A purely horizontal diffusion of heat and salt [as used in the noneddying simulations of <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014))</ref>] would instead lead to a statically unstable stratification, with vertical heat transport maintained by the convection scheme. One obvious difference between the coarseresolution results in Fig. <ref type="figure">8</ref> and the high-resolution results in Fig. <ref type="figure" target="#fig_4">7</ref> relates to the behavior of the solution near the top and bottom boundaries. While the highresolution simulations suggest convectively neutral boundary layers over much of the domain, the stratification in the coarse resolution simulation remains stable, with approximately constant isopycnal slopes all the way to the boundaries. The convective boundary layers in the eddy-permitting simulations are a result of vertical eddy fluxes becoming inefficient near the boundaries. The GM parameterization applied here instead assumes that eddy fluxes remain constant all the way to the boundary. A tapering of eddy fluxes near the boundaries could be achieved with a generalization of the GM parameterization, such as proposed by <ref type="bibr">Ferrari et al. (2010)</ref>. However, as discussed above, the extent of the stable boundary layers may be significantly overestimated in our ''high-resolution'' simulations because only the deepest-mode baroclinic eddies can be resolved. It therefore remains unclear how much tapering near the boundaries would actually be realistic.</p><p>The relatively low computational cost of coarseresolution simulations allows us to test the sensitivity of our results to uncertain parameters, such as the diapycnal vertical diffusivity. Additional coarse-resolution simulations were performed with vertical diffusivities reduced and increased by one order of magnitude to k 5 10 25 m 2 s 21 and k 5 10 23 m 2 s 21 . The simulation with reduced vertical diffusivity shows a significant shallowing of the stable freshwater lens at low latitudes, but otherwise differences to the reference case are relatively small (not shown). Larger differences are found when the vertical diffusivity is increased to k 5 10 23 m 2 s 21 (Fig. <ref type="figure" target="#fig_5">9</ref>). The meridional temperature gradient is reduced and the salinity gradient is increased, although both remain within about a factor of 2 of the reference simulations. The reason for the reduced temperature and enhanced salinity gradients appears to be associated with enhanced melting at low latitudes, aided by the removal of freshwater from the surface boundary layer by vertical diffusion. Arguably the most striking difference to the reference simulation, however, is an increased isopycnal slope, which no longer follows the direction of the net buoyancy flux. The reason for the increased isopycnal slope can be understood by noting that the large vertical diffusion now contributes significantly to vertical buoyancy flux. The vertical buoyancy flux associated with vertical diffusion is B 5 2k› z b. The vertical component of the along-isopycnal geostrophic eddy transport instead can be estimated as B 5 2sK› y b 5 Ks 2 › z b, where K is the geostrophic eddy diffusivity, and s is the isopycnal slope. Vertical diffusion thus becomes a first-order contributor to vertical buoyancy flux when k * Ks 2 . With K ' 150 m 2 s 21 and s ' 1/400, the threshold becomes k * 10 23 m 2 s 21 . The energy required for vertical mixing is probably provided mostly by tides, which were likely stronger in a snowball Earth ocean <ref type="bibr" target="#b64">(Wunsch 2016)</ref>. However, great uncertainty remains as to how much of the tidal energy can be converted into baroclinic modes and eventually into small-scale interior mixing. The question of what sets the vertical diffusivity in a snowball Earth ocean thus remains an important topic for future research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusions</head><p>Theoretical arguments and numerical process studies suggest that the potential energy input associated with geothermal heating at the seafloor and heat loss through the ice sheet drives a turbulent circulation in a snowball world. The release of potential energy is dominated by baroclinic instability, which drives geostrophic turbulence that transports buoyancy poleward and upward along surfaces of constant density, thereby maintaining a statically stable stratification. The kinetic energy level can be estimated from a balance between this release of potential energy and frictional dissipation in the bottom boundary layer. The resulting eddy velocities are on the order of 1 cm s 21 and are thus smaller but probably within one order of magnitude of the present-day ocean. Eddy diffusivities are on the order of 100 m 2 s 21 , which again is smaller but probably within one order of magnitude of the present-day ocean. Because of the weak forcing, gradients of temperature and salinity are much smaller than in the present-day ocean, with global-scale potential temperature variations likely on the order of 0.1 K. FIG. <ref type="figure">8</ref>. As in Fig. <ref type="figure" target="#fig_4">7</ref>, but for a coarse-resolution simulation where eddy fluxes are parameterized using a GM skew flux parameterization <ref type="bibr" target="#b19">(Griffies 1998)</ref>. The contour intervals are identical to Fig. <ref type="figure" target="#fig_4">7</ref>, but the ranges of the colorbars are allowed to vary.</p><p>The weak temperature and salinity gradients and the significant turbulent flow predicted in this study are in general agreement with the results presented by <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> and <ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>. Possibly the most important addition is the result that geostrophic eddies are able to maintain a statically stable stratification and likely dominate the vertical heat transport. This has important implications for the energetics of the turbulent flow as well as for the parameterization of eddies in ocean models. While <ref type="bibr">Ashkenazy et al. (2013</ref><ref type="bibr">Ashkenazy et al. ( , 2014) )</ref> use horizontal diffusion in their noneddying models, the results of the present study support the use of a parameterization following <ref type="bibr" target="#b16">Gent and McWilliams (1990)</ref>, where buoyancy fluxes are directed upward along isopycnals.</p><p>It remains uncertain whether the ocean was entirely frozen over during Earth's snowball events or whether open ocean existed in a small low-latitude region (e.g., <ref type="bibr" target="#b60">Pierrehumbert et al. 2011)</ref>. While the arguments provided here assume a fully ice-covered ocean, they likely remain relevant for states with an ice-free region near the equator. The warmer atmosphere in the equatorial region (required to maintain an ice-free ocean) as well as an expected freshwater input associated with glacial ice import would likely lead to a relatively warm and fresh top layer in the ice-free region, whose depth is modulated by wind-driven Ekman pumping (e.g., <ref type="bibr" target="#b50">Rose 2015)</ref>. The dynamics in the deep ocean and away from the equatorial region, however, would likely be affected relatively little by this stable region. Maybe most importantly, the use of a GM parameterization for turbulent eddy fluxes is expected to remain adequate for simulations of a Waterbelt climate. Finally, geothermal heating is expected to remain crucial for the dynamics in the deep ocean and thus should always be included in future simulations of a snowball ocean, whether or not ice coverage is assumed to be complete.</p><p>The results presented here may also be of relevance to other planetary bodies, such as Europa, which are believed to have an ocean covered by a thick ice sheet (e.g., <ref type="bibr">Soderlund et al. 2014, and references therein)</ref>. The arguments in section 2 provide a recipe that can be applied to predict the flow characteristics and mean state of any thermally driven ocean, given estimates for the geothermal heat flux and the spatial structure of heat escape through the ice sheet. The results here stress the importance of meridional inhomogeneity in the top and bottom boundary conditions, which can lead to baroclinic dynamics that differ fundamentally from the convective solutions presented by <ref type="bibr" target="#b54">Soderlund et al. (2014)</ref>.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 3 .</head><label>3</label><figDesc>FIG.3. The mean meridional heat transport per unit crosssection area in the idealized numerical simulations (compare to a vertical heat flux of 0.1 W m 22 and to Fig.2cfor an estimate of the same quantity for the snowball Earth ocean).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 4 .</head><label>4</label><figDesc>FIG. 4. Snapshots of potential temperature and flow speed at a depth of 700 m for simulations with different meridional forcing gradients D Q (see figure titles). Notice that the range of the colorbar varies between the two temperature plots, but the range is held fixed between the two plots of flow velocity.</figDesc><graphic coords="9,52.38,63.27,465.11,276.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIG. 5 .</head><label>5</label><figDesc>FIG. 5. Time and zonal mean of potential temperature for simulations with (a) D Q 5 0.1 W m 22 and (b) D Q 5 0.05 W m 22 . The contour interval in both plots is 2 mK. The black lines indicate the direction of the bulk heat transport, computed such that they enclose regions of identical integrated heat flux through the top and bottom boundaries.</figDesc><graphic coords="10,85.44,63.27,393.44,216.57" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIG. 6 .</head><label>6</label><figDesc>FIG. 6. Snapshots of (a) potential temperature, (b) salinity, and (c) flow speed at a depth of 700 m below the ice sheet for simulation with ocean-ice sheet interactions. The meridional forcing contrast is D Q 5 0.1 W m 22 .</figDesc><graphic coords="12,49.61,63.27,465.08,365.27" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIG. 7 .</head><label>7</label><figDesc>FIG. 7. Time-and zonal-mean (a) potential temperature, (b) salinity, and (c) potential density referenced to z 5 22000 m for simulation with ocean-ice sheet interactions. The meridional forcing contrast is D Q 5 0.1 W m 22 . The black lines indicate the direction of the heat transport, while the dotted lines indicate the direction of the buoyancy transport, estimated using the diagnosed buoyancy fluxes (see text).</figDesc><graphic coords="13,88.33,63.27,393.44,302.51" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIG. 9 .</head><label>9</label><figDesc>FIG. 9. As in Figs. 7 and 8, but for a coarse-resolution simulation with 103 increased vertical diffusivity: k 5 10 23 m 2 s 21 . The contour intervals are identical to Figs. 7 and 8, but the ranges of the colorbars are allowed to vary.</figDesc><graphic coords="15,88.33,63.27,393.44,297.47" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="14,85.44,63.27,393.44,302.51" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Unauthenticated | Downloaded 03/04/25 10:10 AM UTC</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_1"><p>Some frictional drag may also be expected at the bottom of the ice sheet in a snowball world. Assuming a similar quadratic drag law as at the bottom boundary, and a similar drag coefficient (probably an overestimate), the characteristic eddy velocities would likely be reduced by about</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>20% by including frictional drag at the bottom of the ice sheet.2  InJansen et al. (2015), we argue that the frictional halting scale in baroclinic turbulence is generally larger (and less sensitive to the bottom drag) than the barotropic frictional halting scale found by<ref type="bibr" target="#b18">Grianik et al. (2004)</ref>. This would further strengthen the conclusion that the Rhines scale here represents the limiting factor.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_3"><p>The buoyancy flux associated with a sensible heat flux Q is B 5 Qgar 21 c 21 p ' Q 3 2.5 3 10 210 m</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_4"><p>s 22 J 21 . The buoyancy flux associated with the same latent heat flux instead is B</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_5"><p>QgL 21 i r 21 b s S ' Q 3 1.3 3 10 29 m 4 s 22 J 21 , where L i ' 3 3 10 5 J kg 21 K 21 is the latent heat of freezing, b s ' 8 3 10 24 kg g 21 is the haline contraction coefficient, and the ambient salinity S is assumed to be about 50 g kg 21 (e.g.,Ashkenazy et al. 2014).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_6"><p>The characteristic flow velocities are arguably somewhat larger in the simulations of<ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref>, which is likely because the simulations in<ref type="bibr" target="#b6">Ashkenazy and Tziperman (2016)</ref> do not employ a quadratic bottom drag parameterization to represent dissipation in the bottom boundary layer. Instead bottom friction is crudely represented by a no-slip bottom boundary condition, which when combined with a small vertical viscosity effectively amounts to a weak linear bottom drag (Y.Ashkenazy 2015,  personal communication).</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_7"><p>The term N is here set to zero where the boundary layer becomes statically unstable.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgments. I would like to thank <rs type="person">Dorian Abbot</rs>, <rs type="person">Edwin Kite</rs>, <rs type="person">Katherine Thomas</rs>, <rs type="person">Eli Tziperman</rs>, and two anonymous reviewers for their comments, which helped to improve this manuscript. I would also like to thank <rs type="person">Yosef Ashkenazy</rs> for sharing his MITgcm configuration files. Finally, I acknowledge the <rs type="institution">Research Computing Center at the University of Chicago</rs>, which generously provided the computational resources for this study. The numerical simulations presented in this study are performed using the MITgcm, which is freely available online (at mitgcm.org). Configuration files for the specific simulations discussed here are available from the author upon request.</p></div>
+			</div>			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Mudball: Surface dust and snowball Earth deglaciation</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Abbot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2009JD012007</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">3104</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The Jormungand global climate state and implications for Neoproterozoic glaciations</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Voigt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Koll</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2011JD015927</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page">18103</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Clouds and snowball Earth deglaciation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Branson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pollard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Le</forename><surname>Hir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Koll</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2012GL052861</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">20711</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Robust elements of snowball Earth atmospheric circulation and oases for life</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Le Hir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Branson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pollard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D B</forename><surname>Koll</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jgrd.50540</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res. Atmos</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page" from="6017" to="6027" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">On quadratic bottom drag, geostrophic turbulence, and oceanic mesoscale eddies</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Arbic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Scott</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/2007JPO3653.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="84" to="103" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The K/U ratio of the silicate Earth: Insights into mantle composition, structure and thermal evolution</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Arevalo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Mcdonough</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Luong</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.epsl.2008.12.023</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Earth Planet. Sci. Lett</title>
+		<imprint>
+			<biblScope unit="volume">278</biblScope>
+			<biblScope unit="page" from="361" to="369" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Variability, instabilities, and eddies in a snowball ocean</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ashkenazy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Tziperman</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI-D-15-0308.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Climate</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="869" to="888" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Dynamics of a snowball Earth ocean</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gildor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Losch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Schrag</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Tziperman</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature11894</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">495</biblScope>
+			<biblScope unit="page" from="90" to="93" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Ocean circulation under globally glaciated snowball Earth conditions: Steadystate solutions</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Tziperman</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JPO-D-13-086.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="24" to="43" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Mixed layer instabilities and restratification</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Boccaletti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fox-Kemper</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JPO3101.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="2228" to="2250" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Geostrophic turbulence</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Charney</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0469(1971)028&lt;1087:GT&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="1087" to="1094" />
+			<date type="published" when="1971">1971</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Ocean circulation kinetic energy: Reservoirs, sources, and sinks</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wunsch</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev.fluid.40.111406.102139</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Fluid Mech</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="253" to="282" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">A boundary-value problem for the parameterized mesoscale eddy transport</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Griffies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Nurser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Vallis</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ocemod.2010.01.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ocean Modell</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="143" to="156" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Climate determinism revisited: Multiple equilibria in a complex climate model</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ferreira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marshall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">E J</forename><surname>Rose</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/2010JCLI3580.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Climate</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="992" to="1012" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Can large eddy simulation techniques improve mesoscale rich ocean models? Ocean Modeling in an Eddying Regime</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fox-Kemper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Menemenlis</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/177GM19</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Monogr</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<biblScope unit="page" from="319" to="337" />
+			<date type="published" when="2008">2008</date>
+			<publisher>Amer. Geophys. Union</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Parameterization of mixed layer eddies. Part I: Theory and diagnosis</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hallberg</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/2007JPO3792.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="1145" to="1165" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Isopycnal mixing in ocean circulation models</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Gent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Mcwilliams</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1990)020&lt;0150:IMIOCM&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="150" to="155" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Gill</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1990)020&lt;0150:IMIOCM&gt;2.0.CO;2</idno>
+		<title level="m">Atmosphere-Ocean Dynamics</title>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="1982">1982</date>
+			<biblScope unit="page">662</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The effects of quadratic drag on the inverse cascade of two-dimensional turbulence</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Grianik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Held</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Vallis</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.1630054</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Fluids</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="73" to="78" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">The Gent-McWilliams skew flux</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Griffies</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1998)028&lt;0831:TGMSF&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="831" to="841" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">A two-dimensional model for the thermohaline circulation under an ice shelf</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hellmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Olbers</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0954102089000490</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Antarct. Sci</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="325" to="336" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">The snowball Earth hypothesis: Testing the limits of global change</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>Hoffman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Schrag</surname></persName>
+		</author>
+		<idno type="DOI">10.1046/j.1365-3121.2002.00408.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Terra Nova</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="129" to="155" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A palaeogeographic context for Neoproterozoic glaciation</title>
+		<author>
+			<persName><forename type="first">Z.-X</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.palaeo.2009.03.013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Palaeogeogr. Palaeoclimatol. Palaeoecol</title>
+		<imprint>
+			<biblScope unit="volume">277</biblScope>
+			<biblScope unit="page" from="158" to="172" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A Neoproterozoic snowball Earth</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Kaufman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Halverson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Schrag</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.281.5381.1342</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">281</biblScope>
+			<biblScope unit="page" from="1342" to="1346" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Neoproterozoic &apos;snowball Earth&apos; simulations with a coupled climate/ice-sheet model</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Hyde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Crowley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Baum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>Peltier</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/35013005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">405</biblScope>
+			<biblScope unit="page" from="425" to="429" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Minimal adjustment of hydrographic profiles to achieve static stability</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Jackett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Mcdougall</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0426(1995)012&lt;0381:MAOHPT&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Oceanic Technol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="381" to="389" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Equilibration of an atmosphere by adiabatic eddy fluxes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JAS-D-13-013.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="2948" to="2962" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Parameterizing subgrid-scale eddy effects using energetically consistent backscatter</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Held</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ocemod.2014.06.002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ocean Modell</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="36" to="48" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Parameterization of eddy fluxes based on a mesoscale energy budget</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Adcroft</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hallberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Held</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ocemod.2015.05.007</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ocean Modell</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="28" to="41" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">The role of meltwater advection in the formulation of conservative boundary conditions at an ice-ocean interface</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jenkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Hellmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Holland</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(2001)031&lt;0285:TROMAI&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="285" to="296" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Convection with rotation in a neutral ocean: A study of open-ocean deep convection</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marshall</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1993)023&lt;1009:CWRIAN&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1009" to="1039" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Late Proterozoic low-latitude global glaciation: The snowball Earth. The Proterozoic Biosphere: A Multidisciplinary Study</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kirschvink</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1993)023&lt;1009:CWRIAN&gt;2.0.CO;2</idno>
+		<editor>J. Schopf and C. Klein</editor>
+		<imprint>
+			<date type="published" when="1992">1992</date>
+			<publisher>Cambridge University Press</publisher>
+			<biblScope unit="page" from="51" to="52" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Urey ratio and the structure and evolution of Earth&apos;s mantle</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Korenaga</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2007RG000241</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Geophys</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<date type="published" when="2007">2008. 2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Evidence for enhanced mixing over rough topography in the abyssal ocean</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Ledwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">T</forename><surname>Montgomery</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Polzin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>St</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Laurent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Schmitt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Toole</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/35003164</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">403</biblScope>
+			<biblScope unit="page" from="179" to="182" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Diapycnal mixing in the Antarctic Circumpolar Current</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>St</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Laurent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Girton</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Toole</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/2010JPO4557.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="241" to="246" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Stochastic models of chaotic systems</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Leith</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0167-2789(96)00107-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physica D</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="481" to="491" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Assembly, configuration, and break-up history of Rodinia: A synthesis</title>
+		<author>
+			<persName><forename type="first">Z.-X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Coauthors</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.precamres.2007.04.021</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Precambrian Res</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="page" from="179" to="210" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Modeling ice shelf cavities in a z coordinate ocean general circulation model</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Losch</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2007JC004368</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">8043</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Present-day and ice-covered equilibrium states in a comprehensive climate model</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marotzke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Botzet</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2006GL028880</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">16704</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Hydrostatic, quasi-hydrostatic, and nonhydrostatic ocean modeling</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marshall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Perelman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Adcroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/96JC02776</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="5733" to="5752" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Routes to energy dissipation for geostrophic flows in the Southern Ocean</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nikurashin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Vallis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Adcroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo1657</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="48" to="51" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">On the role of bottom roughness in overflows</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Özgökmen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">F</forename><surname>Fischer</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ocemod.2007.10.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ocean Modell</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="336" to="361" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Horizontal convection is nonturbulent</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Paparella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Young</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S0022112002001313</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Fluid Mech</title>
+		<imprint>
+			<biblScope unit="volume">466</biblScope>
+			<biblScope unit="page" from="205" to="214" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Climate dynamics of a hard snowball Earth</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2004JD005162</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">1111</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Climate of the Neoproterozoic</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Abbot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Voigt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Koll</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev-earth-040809-152447</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Earth Planet. Sci</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="417" to="460" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Transformed Eulerian-mean theory. Part I: Nonquasigeostrophic theory for eddies on a zonal-mean flow</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Plumb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JPO-2669.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="165" to="174" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Heat flow from the earth&apos;s interior: Analysis of the global data set</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">N</forename><surname>Pollack</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Hurter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/93RG01249</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Geophys</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="267" to="280" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Impact of ocean dynamics on the simulation of the Neoproterozoic &apos;&apos;snowball Earth</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Poulsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Jacob</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2000GL012058</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="1575" to="1578" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Oceanic isopycnal mixing by coordinate rotation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Redi</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0485(1982)012&lt;1154:OIMBCR&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1154" to="1158" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Geostrophic turbulence</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Rhines</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev.fl.11.010179.002153</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Fluid Mech</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="401" to="441" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Stable &apos;&apos;waterbelt&apos;&apos; climates controlled by tropical ocean heat transport: A nonlinear coupled climate mechanism of relevance to snowball Earth</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">E J</forename><surname>Rose</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/2014JD022659</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res. Atmos</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="1404" to="1423" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Two-layer quasi-geostrophic turbulence in a simple special case</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Salmon</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/03091927808242628</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Astrophys. Fluid Dyn</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="25" to="52" />
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Baroclinic instability and geostrophic turbulence</title>
+		<idno type="DOI">10.1080/03091928008241178</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Astrophys. Fluid Dyn</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="167" to="211" />
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Dynamische versuche mit meerwasser</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Sandström</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Hydrodyn. Mar. Meteor</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="6" to="23" />
+			<date type="published" when="1908">1908</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Ocean-driven heating of Europa&apos;s icy shell at low latitudes</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Soderlund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wicht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Blankenship</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo2021</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="16" to="19" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">A simplified radiative-dynamical model for the static stability of rotating atmospheres</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Stone</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0469(1972)029&lt;0405:ASRDMF&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="405" to="418" />
+			<date type="published" when="1972">1972</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Estimates of meridional atmosphere and ocean heat transports</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Trenberth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Caron</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0442(2001)014&lt;3433:EOMAAO&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Climate</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="3433" to="3443" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Direct estimate of lateral eddy diffusivity upstream of Drake Passage</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tulloch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Coauthors</forename></persName>
+		</author>
+		<idno type="DOI">10.1175/JPO-D-13-0120.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="2593" to="2616" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Vallis</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JPO-D-13-0120.1</idno>
+		<title level="m">Atmospheric and Oceanic Fluid Dynamics</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page">745</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">The transition from the presentday climate to a modern snowball Earth</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Voigt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marotzke</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00382-009-0633-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Climate Dyn</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="887" to="905" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Initiation of a Marinoan snowball Earth in a state-of-the-art atmosphere-ocean general circulation model</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Abbot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pierrehumbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marotzke</surname></persName>
+		</author>
+		<idno type="DOI">10.5194/cp-7-249-2011</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Climate Past</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="249" to="263" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Hadley cell dynamics in a virtually dry snowball Earth atmosphere</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Held</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Marotzke</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JAS-D-11-083.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="116" to="128" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">The effects of changing the solar constant on the climate of a general circulation model</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Wetherald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manabe</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0469(1975)032&lt;2044:TEOCTS&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="2044" to="2059" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Circulation characteristics in three eddy-permitting models of the North Atlantic</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Willebrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Coauthors</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/S0079-6611(01)00003-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="123" to="161" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Tides of global ice-covered oceans</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wunsch</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.icarus.2016.03.026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Icarus</title>
+		<imprint>
+			<biblScope unit="volume">274</biblScope>
+			<biblScope unit="page" from="122" to="130" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Vertical mixing, energy, and the general circulation of the oceans</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferrari</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev.fluid.36.050802.122121</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Fluid Mech</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="281" to="314" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

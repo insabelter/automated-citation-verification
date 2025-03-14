@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Atomically resolved real-space imaging of hot electron dynamics</title>
+				<funder ref="#_bvVfYQz #_U7rVX8m">
+					<orgName type="full">EPSRC</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">University of Bath</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2015-09-21">21 Sep 2015</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">D</forename><surname>Lock</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Bath</orgName>
+								<address>
+									<postCode>BA2 7AY</postCode>
+									<settlement>Bath</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Rusimova</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Bath</orgName>
+								<address>
+									<postCode>BA2 7AY</postCode>
+									<settlement>Bath</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Pan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">School of Physics and Astronomy</orgName>
+								<orgName type="laboratory">Nanoscale Physics Research Laboratory</orgName>
+								<orgName type="institution">University of Birmingham</orgName>
+								<address>
+									<postCode>B15 2TT</postCode>
+									<settlement>Birmingham</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Palmer</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">School of Physics and Astronomy</orgName>
+								<orgName type="laboratory">Nanoscale Physics Research Laboratory</orgName>
+								<orgName type="institution">University of Birmingham</orgName>
+								<address>
+									<postCode>B15 2TT</postCode>
+									<settlement>Birmingham</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Sloan</surname></persName>
+							<email>p.sloan@bath.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of Bath</orgName>
+								<address>
+									<postCode>BA2 7AY</postCode>
+									<settlement>Bath</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Atomically resolved real-space imaging of hot electron dynamics</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2015-09-21">21 Sep 2015</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">82DC81F4817C78BBD244BAFC0BD48D75</idno>
+					<idno type="DOI">10.1038/ncomms9365</idno>
+					<note type="submission">Received 1 May 2015 | Accepted 10 Aug 2015 |</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The dynamics of hot electrons are central to understanding the properties of many electronic devices. But their ultra-short lifetime, typically 100 fs or less, and correspondingly short transport length-scale in the nanometre range constrain real-space investigations. Here we report variable temperature and voltage measurements of the nonlocal manipulation of adsorbed molecules on the Si(111)-7 Â 7 surface in the scanning tunnelling microscope. The range of the nonlocal effect increases with temperature and, at constant temperature, is invariant over a wide range of electron energies. The measurements probe, in real space, the underlying hot electron dynamics on the 10 nm scale and are well described by a two-dimensional diffusive model with a single decay channel, consistent with 2-photon photo-emission (2PPE) measurements of the real time dynamics.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>T he dynamics of hot electrons, those with energies perhaps hundreds of times greater than the available thermal energy, is central to understanding the properties of many electronic devices. For example, they contribute to leakage currents across CMOS transistors and may fundamentally limit their downsizing <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref> and they are intrinsic to solar cells, where high energy photons generate hot electrons that consequently generate a photocurrent <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref> . Hot electrons can also, for example, be induced through plasmonics <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> and offer a route to instigate non-thermal chemical reactions <ref type="bibr" target="#b9">10</ref> . Hot electron charge transport is thus the subject of major scientific research, both experimentally and theoretically <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref> . But the experiments are constrained by the ultra-short lifetime of hot electrons, typically 100 fs or less, and hence their corresponding transport length-scale of a few nm (refs 15,16). Direct pump-probe measurements with ultra-fast lasers typically provide little or no spatial information. Recently a scanning tunneling microscope (STM) coupled to terahertz radiation reported 0.5 ps and 2 nm resolution <ref type="bibr" target="#b16">17</ref> . Here we employ the technique of STM-induced nonlocal atomic manipulation on an atomically precise surface to show that the nonlocal effect is a direct manifestation of hot electron dynamics. This allows us to observe directly and control the outcome of injecting hot electrons with atomic-scale spatial resolution.</p><p>Conventional atomic manipulation with the STM, whereby individual atoms and molecules are excited by the STM tunnel current, is constrained to the tip-surface tunnel junction <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref> . However, atomic manipulation can also occur some distance, B10 nm, from the tunnel junction. Such nonlocal manipulation can be considered as a three step process: (1) charge injection (electrons or holes) from the STM tip into the surface; (2) charge transport across the surface; and (3) electron (or hole) induced manipulation, for example, desorption or diffusion, of a remote adsorbate or substrate atom/molecule. Such nonlocal manipulation has now been reported across a range of systems, including metal <ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref> and semiconductor <ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30</ref> surfaces, within chemical overlayers <ref type="bibr" target="#b30">31</ref> and on graphene <ref type="bibr" target="#b31">32</ref> . In particular, several different systems based on the Si(111)-7 Â 7 surface have shown similar nonlocal manipulation, suggesting a common transport mechanism: specifically, NO molecules <ref type="bibr" target="#b32">33</ref> , C 60 macromolecules <ref type="bibr" target="#b33">34</ref> , chlorine atoms <ref type="bibr" target="#b34">35</ref> and even the silicon surface atoms themselves <ref type="bibr" target="#b35">36</ref> . Our previous nonlocal study <ref type="bibr" target="#b36">37</ref> examined the injection step, here we probe the resulting hot electrons transport across the surface.</p><p>We show that the behaviour of the nonlocal atomic manipulation properties of small aromatic molecules on the Si(111)-7 Â 7 surface in the STM exhibit a distinct temperature, as well as voltage (energy) dependence. Quantitative experimental results lead to a model of two-dimensional (2D) diffusion of hot electrons across the surface and within the back-bond state 2 eV above the Fermi level, consistent with ultra-fast pump-probe experiments on the same surface. We conclude that nonlocal STM manipulation provides real-space information on the hot electron transport at the surface and, by implication, their femtosecond electron dynamics. injection of 2.7 eV electrons at the indicated central site. At the imaging bias voltage ( þ 1 V) silicon adatoms image as bright spots and chemisorbed toluene molecules appear as dark spots and are unperturbed by the STM tunnel current <ref type="bibr" target="#b37">38</ref> . An area B15 nm in radius surrounding the hot-electron injection site is transformed, showing a marked reduction in the number of molecular adsorbates to reveal the underlying Si(111)-7 Â 7 surface. We previously demonstrated this nonlocal manipulation to be a one-electron process <ref type="bibr" target="#b36">37</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>STM imaging of nonlocal manipulation.</head><p>To disentangle the contributions of molecular and surface properties to this nonlocal manipulation, local manipulation experiments were performed. By positioning the STM directly over an adsorbate molecule (Fig. <ref type="figure">1c,</ref><ref type="figure">e</ref>) electrons were injected directly into a target molecule and a time-trace of the STM z-height recorded (Fig. <ref type="figure">1f</ref>). The moment of displacement is indicated by the 0.05 nm step away from the surface as the molecule (dark spot) is removed to reveal the underlying silicon adatom (bright-spot). Figure <ref type="figure">1d</ref> shows a schematic diagram of the bonding configuration of the lone toluene molecule. The exponential distribution of survival times from 107 individual time-traces gives the probability per injected electron a of inducing a manipulation event (see Methods for details). The voltage dependence of the probability per electron (Fig. <ref type="figure">1g</ref>) displays a threshold energy of (1.4±0.1) eV. We conclude that any electron with energy below the 1.4 eV threshold that interacts with an adsorbate molecule, whether directly injected into a molecule from the STM tip or transported across the surface from a remote tip, will not induce manipulation. The molecules therefore function as a high-pass filter that discriminates against low-energy electrons and is only sensitive, unlike conventional surface conductivity measurements <ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b39">40</ref> , to high energy hot electrons.</p><p>The Si(111)-7 Â 7 surface is known to be a conducting surface therefore it is perhaps not surprising that we find a spreading of the injected electrons across the surface <ref type="bibr" target="#b40">41</ref> . However, even the best spatially resolved four-point-probe measurements that successfully isolate the surface conduction <ref type="bibr" target="#b38">39</ref> have a probe spacing of B10 mm, much larger than the o15 nm range of our nonlocal effect. Moreover, a conventional four-point-probe will measure low-energy transport across the surface as will a novel three-point-probe <ref type="bibr" target="#b39">40</ref> , our nonlocal manipulation is sensitive to the hot electrons.</p><p>Figure <ref type="figure" target="#fig_1">2</ref> presents variable temperature STM images taken after electron injection into a surface at (A) 260 K, (B) 120 K, (C) 95 K and (D) 5 K. (The STM tip was always in thermal equilibrium with the sample.) Injecting into a colder surface results in a markedly reduced nonlocal effect. We quantitatively describe the nonlocal manipulation by counting the number of adsorbed molecules (versus radius) that move from their original position, that is molecules that have desorbed or diffused, within a 1-nm wide annulus at a certain radius. An automated computer programme <ref type="bibr" target="#b37">38</ref> identifies the location of every dark-spot (that is, molecule) in images before and after injection within each annulus. We use this information to plot the ratio of the number of dark spots displaced (desorbed or diffused) from their original position N(r) (that is, the number of molecules manipulated) to the original number of dark spots N 0 (r). (We assume the same nonlocal mechanism drives both desorption and diffusion as both share the same initial bond-breaking step typical for a chemisorbed system.) Figure <ref type="figure" target="#fig_1">2e</ref> presents curves showing the distance dependence of the ratio N(r)/N 0 (r) at five temperatures. The probability and range of nonlocal manipulation clearly increase as the temperature rises.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Quantifying nonlocal manipulation through diffusive transport.</head><p>The temperature dependence suggests that the injected electrons must, to some extent, thermalize yet remain above the 1.4 eV molecular energy threshold at all temperatures, that is, they are still hot electrons. Furthermore, the reduction of the nonlocal range rules out a simple ballistic transport mechanism, since this transport mode would be expected to lead to a longer range at lower temperature as the population of phonons available to scatter the electron is reduced at low temperature. Thus, we model the hot-electron dynamics with a diffusive transport model. We restrict the model to two dimensions, since we are only sensitive to the electrons at the surface. We use a single isotropic diffusion coefficient D, as we find no azimuthal angular dependence to the nonlocal manipulation. To account for the finite range of nonlocal manipulation we include a single decay channel with lifetime t (see Methods section for details). The resulting mathematical model gives Here n i is the total number of electrons injected during the voltage pulse, s is the (unknown) factor describing the fraction of the injected electrons initially captured into the 2D state (we set s to unity), s is the cross-section for an electron that interacts with a molecule (analogous to gas-phase electron scattering) and k is the probability per unit time of an electron inducing a manipulation event once it reaches a molecule. Finally, K 0 is a modified Bessel function of the second kind. Figure <ref type="figure" target="#fig_1">2e</ref> shows the good fit of this model to the experimental data at the five temperatures shown. The surface charge diffusion model conforms to the observed insensitivity of the nonlocal manipulation to the type of dopant, n-type or p-type, and the dopant level from 30 to 0.1 O cm, since the surface electronic properties of Si(111)-7 Â 7 are independent of those of the bulk (except at extreme doping levels) due to the pinning of the Fermi level by the surface dangling-bond state. Crucially the transport properties are regulated by a single parameter, the diffusion length l ¼ ffiffiffiffiffi ffi Dt p . Figure <ref type="figure" target="#fig_2">3a</ref> plots the voltage dependence of the nonlocal range l at room temperature for three similar adsorbate molecules: benzene, toluene and chlorobenzene. For all three molecules we find a manipulation onset at 2.0 eV, followed by a relatively constant plateau region of l up to B2.8 eV (indicated by the grey region) followed by a rise in l. Within the plateau region (2.0-2.8 eV) it appears that no matter what the injection energy, electrons are transported across the surface in almost identical fashion. This implies that before undergoing surface transport any electron injected within this energy window attains some common transport dependent property. Similar energy independent behaviour was reported for laser excitation of surface-state electrons of the Si(111)-7 Â 7 surface.</p><formula xml:id="formula_0">NðrÞ N 0 ðrÞ ¼ 1 À exp À s Á k Á n i Á s 2pD K 0 r ffiffiffiffiffiffiffiffiffi D Á t p ! :<label>ð1Þ</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>In 2-photon-photo-emission (2PPE) an initial (pump) laser pulse excites electrons within a surface and a second (probe) pulse creates photoelectrons that are energy analysed. Such 2PPE experiment have reported energy <ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b42">43</ref> and time-resolved measurements <ref type="bibr" target="#b43">44</ref> of the surface electronic states of Si(111)-7 Â 7. For a range of pump energies, the probe pulse was found to generate photoelectrons from a common intermediate state with energy of ( þ 1.94±0.15) eV (refs 42,44) above E F . Between the pump and probe (o150 fs) the initially highly excited electron relaxes to a common energy state at þ 1.94 eV above E F before photo-emission. By careful consideration of pump and probe polarizations, adsorption coefficients and energetics, and the symmetry of the initial state, the þ 1.94 eV state was identified as the unfilled back-bond surface-state U 2 (ref. 42). The U 2 state has been reported for a wide range of energies from 1.6 to 1.9 eV (ref. 42) and has been observed in numerous STM and ultraviolet photoelectron spectroscopy experiments <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b45">46</ref> . Such a process, the ultra-fast relaxation on a state at 1.94 eV, would explain the voltage independence of the nonlocal range l for injections between þ 2.0 and B2.8 V if, before the injected electron begins its diffusive transport, it has already relaxed down to the 1.94 eV state attaining a common energy and hence common transport dynamics.</p><p>At higher pump energies a new intermediary bulk-state arises in the 2PPE experiments at (3.45±0. 15) eV above E F . The increase in our transport range between 2.8 eV and our maximum energy of 3.4 eV may be explained with the opening of a new diffusive route with longer range transport and much higher manipulation probability (not shown) through this new channel. Furthermore, this bulk-like transport channel may well also account for the insensitivity of nonlocal manipulation behaviour to grain boundaries and atomic steps for 3.3 eV electron injections <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b46">47</ref> .</p><p>Time-resolved 2PPE experiments <ref type="bibr" target="#b43">44</ref> of the 1.94 eV derived peak (though attributed to the bulk L-valley of silicon) show that between pump and probe pulses there is an ultrafast, o40 fs, convergence of the initially excited electrons onto an electronic resonance at 1.94 eV above the Fermi level. Furthermore, the time-dependent 2PPE signal of the electrons photoemitted from the 1.94 eV intermediate state was well described by a diffusion process coupled to a single decay channel; the lifetime for the hot electrons in the intermediate state was determined as (180±20) fs and the state to which electrons decay lay at þ 0.5 eV above the Fermi level. In our STM experiment, electrons with energy of þ 0.5 eV will be unable to induce a nonlocal manipulation event, as they will lie well below the 1.4 eV manipulation energy threshold. On the basis of our measured length-scale of (7±1) nm and the 2PPE derived lifetime of (180±20) fs, we compute a diffusion coefficient at room temperature of (3±2) cm 2 s À 1 . Our value of D is similar to, but smaller than, simulations of conduction band electrons at a silicon surface of 18 cm 2 s À 1 (ref. 48), that used in ultrafast measurements of free carriers in bulk silicon 20 cm 2 s À 1 (ref. 49) and for that found for carrier diffusion in single silicon core-shell nanowires of 35 cm 2 s À 1 (ref. 50).</p><p>Figure <ref type="figure" target="#fig_2">3b</ref> presents the temperature dependence of the nonlocal length-scale l. As the lattice temperature increases so does the nonlocal manipulation range. This further conforms to the diffusive transport model which, unlike ballistic transport, should increase with increasing temperature. The relationship also demonstrates the connection between the temperature of the crystal lattice and the measured electron dynamics.</p><p>Hot electrons undergo several scattering processes to bring them into eventual thermal equilibrium with a crystal lattice. Typically carrier-carrier and carrier-phonon scattering brings a population of hot carriers into a Fermi-Dirac distribution with some characteristic hot electron temperature T e within 10 s of fs (refs 43,51,52). We inject at currents of B100 pA and therefore have, on average, one-electron injected every 1 ns. Given the 180 fs lifetime of the electrons within the 2.0 eV state, we rule out carrier-carrier scattering. Further carrier-phonon scattering brings the mean energy of the electron distribution down to ultimately thermalize with the lattice. In our case, this carrierphonon scattering appears to occur within the high-lying 2.0 eV state since we have a temperature dependence of the nonlocal range. Subsequent scattering, here in a time of 180 fs, removes the electron from this state to lower lying states. There is therefore a competition between electron-phonon scattering thermalizing the hot-electron within the 2.0 eV state and scattering that electron into a lower lying state. This will result in a dynamic quasi-equilibrated electron distribution within the 2.0 eV state.</p><p>To gain an insight into this connection we present a simple model of the temperature dependence of the nonlocal effect in terms of a 2D random walk. The RMS of a 2D random walk can be equated to 2D diffusion by l ffiffiffiffi N p ¼ ffiffiffiffiffiffiffiffi 2Dt p ; where l is the random walk step length and N the number of steps. Hence our length-scale l ¼ l ffiffiffiffiffiffiffiffi ffi N=2 p . We set the time between steps (scattering events) as t s then, l ¼ v Á t s ffiffiffiffiffiffiffiffiffiffi ffi t=2t s p . The decay mechanism out of the þ 2.0 eV state is by electron-phonon scattering <ref type="bibr" target="#b43">44</ref> giving t ¼ At ep , where A is a constant that describes the probability of a scattering event relaxing the electron down to the dangling-bond state <ref type="bibr" target="#b52">53</ref> and t ep is the time between electronphonon scattering events.</p><p>The temperature dependence of the rate of electron-phonon scattering varies as 2n BE (T) þ 1 where n BE (T) is the Bose-Einstein distribution for a particular phonon mode <ref type="bibr" target="#b52">53</ref> , hence t ep p1/ [2n BE (T) þ 1]. The 2.0 eV state is identified as lying at the silicon back-bond sites. At this back-bond site the phonon mode with the greatest spectral power has an energy of 53 meV (ref. 54). We assume the same scattering event that causes the electron to decay out of the state is also responsible for the 2D random walk giving t s pt ep and therefore l / v Á t . Finally we simply set the power law relationship T e pT n . The curve fitted in Fig. <ref type="figure" target="#fig_2">3b</ref>, lpT n / [2n BE (T) þ 1], gives a value of n ¼ 1.5±0.2 and demonstrates the lattice temperature dependence of the hot-electron transport. Further analysis would need a more detailed theoretical framework.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>Experimental. Room temperature STM images were obtained using an Omicron UHV STM-1 instrument with RHK SPM1000 controller for the nonlocal manipulation and with a Nanonis control system with customized software for the local manipulation work. Low temperature nonlocal measurements were performed using an Omicron UHV LT-STM with Nanonis electronics. All images were obtained in 'passive' <ref type="bibr" target="#b37">38</ref> constant-current mode with a tunnelling current of typically 100 pA and a sample bias voltage of þ 1 V. STM tips were electrochemically etched from 0.25 mm tungsten wire in 2 M NaOH solution. Insulating tungsten-oxide was removed from the tips by resistive heating in high vacuum. Reproducible and clean Si(111)-7 Â 7 surfaces were prepared using an automated computer controlled system. See ref. 37 for details of sample and gas preparation. The voltage dependent measurement used an n-type crystal with 30-0.1 O cm resistivity. The temperature dependent measurements used a p-type crystal with resistivity 0.01 O cm to enable STM imaging down to 4 K. A suite of in house written computer programs were used to determine the position of all molecules in the STM images before and after injection. A typical 65 nm Â 65 nm image contained between 500 and 1,000 molecules for analysis with a molecular detection error rate of o1%. Thermally activated displacement was accounted for in the same manner as ref. 38. For each voltage 15 sets of before and after injection images were typically analysed, for each temperature five sets of before and after injection images were typically analysed. All errors quoted are one s.d.</p><p>All temperature dependent injections were performed into the corner-hole location of the Si(111)-7 Â 7 surface. By contrast, the voltage dependent measurements had random injection sites. At the crossover energy B2.7 eV between transport through the U 2 state and through the bulk-like states, we find a slight injection site dependence of the measured range l. We attribute this to the site-specific energy landscape of the Si(111)-7 Â 7 reconstruction which manifests itself in slightly different intensities of the surface states at each site. Thus, at a particular injection energy there is a site-dependence of the fraction of the tunnelling current injected into the lower or the upper manipulation state. At the crossover region, where both states are present on each site, we therefore measure an average length-scale l weighted by the intensity of the transport state at the injection site. At the corner-hole site there is a higher intensity (than the surface averaged) of the higher lying state and hence the slightly longer manipulation range (Fig. <ref type="figure" target="#fig_2">3b</ref>) of (11±1) nm than the range averaged over sites of (7±1) nm (Fig. <ref type="figure" target="#fig_2">3a</ref>).</p><p>Local manipulation. We work at room temperature and hence have more contamination issues than at lower temperature due to higher background pressures. Coupled to the fact that contamination on the Si(111)7 Â 7 surface images in a near identical fashion to our adsorbate molecule, 'dark-spots' on the Si(111)7 Â 7 surface, non-reactive contaminants could be included in our local experiments and may skew our results. Here we present a slightly different method of extracting the probability per electron from local injection experiments than the standard recipe. This allows us to remove any bias in our results due to such background contamination.</p><p>The single-molecule experiments were performed with a Nanonis SPM control system, which was programmed to find and inject into a pre-selected molecular adsorption position. Stability during the injection was ensured by bespoke driftcompensation software, enhanced by a 'feature locking' routine prior to injection. The time taken for the target molecule to be manipulated (desorbed or displaced) was simply read off a time-trace of the z-height of the tip during the injection (see Fig. <ref type="figure">1f</ref>). Molecular manipulation was subsequently confirmed by comparison of the passive scans taken before and after an injection. It has been previously demonstrated that molecules adsorbed to the faulted middle adatom sites of the Si(111)-7 Â 7 surface displace more readily than those adsorbed to other positions <ref type="bibr" target="#b36">37</ref> . Therefore, we selected to inject only into molecules located at faulted middle positions. Given a first order rate dependence, the time-dependent probability of a molecule remaining in its initial position is</p><formula xml:id="formula_1">d dt pðtÞ ¼ À a I e pðtÞ;<label>ð2Þ</label></formula><p>where a is the probability per electron of inducing a displacement of the molecule, I is the tunnelling current and e is the absolute charge on an electron. We solve with initial conditions p(0) ¼ 1 to get</p><formula xml:id="formula_2">pðtÞ¼ exp À a I e t ! :<label>ð3Þ</label></formula><p>Experimentally we measure a population of individual molecules N 0 and from aggregating the individual time-traces can construct the time-dependent population N(t) so that N(t)/N 0 ¼ p(t). The value of N 0 will include any 'black-spot' contaminants that we have inadvertently included in our experiment and analysis.</p><p>Even at low levels these can unduly skew the resulting analysis. To alleviate this problem we recast the analysis in terms of the number of molecules that are manipulated (rather than the number that remain in place). We define G(t) to be the time-dependent number of molecules that have been manipulated,</p><formula xml:id="formula_3">GðtÞ ¼ N 0 À NðtÞ ð 4Þ ¼ N 0 1 À exp À a I e t ! :<label>ð5Þ</label></formula><p>If we take the time for, say, the Nth molecule of an initial population of N 0 to be displaced as t N then</p><formula xml:id="formula_4">N ¼ N 0 1 À exp À at N I e ! :<label>ð6Þ</label></formula><p>NATURE COMMUNICATIONS | DOI: 10.1038/ncomms9365 and hence,</p><formula xml:id="formula_5">GðtÞ N ¼ 1 À exp À at I e À Á 1 À exp À at N I e À Á:<label>ð7Þ</label></formula><p>This effectively allows us to remove the initial number of dark-spots N 0 from our analysis and leaves us with the single fitting parameter a. We compute the best fit to all our data for a range of N values and find that there is a large range of N that all lead to the same fitted value of a. Going beyond this range begins to add in contaminant effects with a resulting skew of the fitted a values. Figure <ref type="figure" target="#fig_4">4</ref> shows, a plot of this ratio (using N ¼ 107) and the appropriate mathematical fit with single fitting parameter a, for four bias voltages: 1.2, 1.4, 1.6 and 1.8 V (all with 50 pA injection current). The results are presented in Fig. <ref type="figure">1g</ref>. We note that the displacement at 1.2 V is higher than that we would expect based on thermal displacement <ref type="bibr" target="#b37">38</ref> . It may be that the close proximity of the tip lowers the barrier between the chemisorbed and physisorbed state leading to this slightly enhanced thermally activated displacement.</p><p>Nonlocal probability of manipulation of a single molecule by a single electron.</p><p>We generically write the rate of change of the probability p(r) of a molecule retaining its original position at a distance r from the charge injection as the first order rate equation</p><formula xml:id="formula_6">d dt pðrÞ ¼ À Cðr; tÞ Á s Á k Á pðrÞ ð<label>8Þ</label></formula><p>where C(r,t) is the time-dependent probability per unit area of finding an electron at that radial distance, s is the cross-section of the molecule (analogous with gasphase electron scattering) and k is the probability per unit time of an electron causing desorption. The factor C(r, t) is dependent on the transport model and we will describe a 2D-diffusive model in the next section. Solving with initial conditions (p(r) ¼ 1 at t ¼ 0) gives</p><formula xml:id="formula_7">pðrÞ¼ exp À s Á k Z 1 0 Cðr; tÞdt 2 4 3 5 ;<label>ð9Þ</label></formula><p>where the integral runs over the whole lifetime of the single electron during the manipulation. This is of the order 100 fs. During the several seconds injection we have many injected electrons, each of which may induce desorption. Hence, we write the probability of a molecule desorbing P(r) at a distance r after an injection containing n i electrons as</p><formula xml:id="formula_8">PðrÞ ¼ pðrÞ ½ ni ¼ exp À s Á k Á n i Z 1 0 Cðr; tÞdt 2 4 3 5<label>ð10Þ</label></formula><p>Experimentally we measure the number of molecules that leave their original location N(r) due to an injection of current I and duration t i , and the original number of molecules N 0 (r) within an annulus at radius r hence</p><formula xml:id="formula_9">NðrÞ N 0 ðrÞ ¼ 1 À PðrÞ ð 11Þ ¼ 1 À exp À s Á k Á n i Á s Z 1 0 Cðr; tÞdt 2 4 3 5<label>ð12Þ</label></formula><p>where n i ¼ It i /e and s is a (unknown) factor describing the fraction of the injected electrons that are initially captured into the 2D state. We note that even with a modicum of contamination this gives a robust fit (since we have B1000 data points per injection experiment) and purposely do not drive all molecules to be manipulated. We aim for half the molecules to be manipulated at half the distance between the injection site and the boundary of the before and after STM images.</p><p>2D-diffusive transport model. The normalized analytical time and radial distance dependent solution for 2D diffusion from an instantaneous point source at r ¼ 0 and t ¼ 0 in an unbounded domain assuming isotropic diffusion coefficient D is</p><formula xml:id="formula_10">Cðr; tÞ ¼ 1 4pDt exp À r 2 4Dt ! :<label>ð13Þ</label></formula><p>We add a single decay term to give</p><formula xml:id="formula_11">Cðr; tÞ ¼ 1 4pDt exp À r 2 4Dt ! exp À t t h i<label>ð14Þ</label></formula><p>with a lifetime t. We typically use a tunnel current of 100 pA, so on average electrons arrive every 1 ns. Since this is much longer than the lifetime of a hot electron (B100 fs) we can assume there is only one electron in the surface at a time (consistent with a one-electron process). Hence, the time integrated total charge per unit area at a distance r for an initial single electron at r ¼ 0 is</p><formula xml:id="formula_12">Z 1 0 Cðr; tÞdt ¼ Z 1 0 1 4pDt exp À r 2 4Dt ! exp À t t h i dt<label>ð15Þ</label></formula><formula xml:id="formula_13">¼ 1 2pD K 0 r ffiffiffiffiffi ffi Dt p<label>ð16Þ</label></formula><p>where K 0 r ffiffiffiffi Dt p is a modified Bessel function of the second kind with argument r ffiffiffiffi Dt p and ffiffiffiffiffi ffi Dt p is nothing more than the diffusion length which we write as l. Finally we can write that</p><formula xml:id="formula_14">NðrÞ N 0 ðrÞ ¼ 1 À exp À s Á k Á n i Á s 2pD K 0 r l ! :<label>ð17Þ</label></formula><p>Therefore the length-scale of the nonlocal effect, in this model, is only dependent on the transport of the hot electrons, specifically their diffusion coefficient and their lifetime. For a diffusion length of B10 nm, the Bessel function mimics an exponential decay between B6 and B20 nm in agreement with our initial model given in ref. 37.  </p><formula xml:id="formula_15">G(t)/N 1.2 V 1.4 V 1.6 V 1.8 V Fit</formula></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 Figure 1 |</head><label>11</label><figDesc>Figure 1 | Nonlocal and local manipulation of toluene on the Si(111)-7 Â 7 surface at room temperature. STM images (21 Â 21 nm, þ 1 V, 100 pA) of toluene on Si(111)-7 Â 7 taken before (a) and after (b) a charge injection ( þ 2.7 V, 200 pA, 10 s) at location 'X'. High resolution STM images (2.5 Â 2.5 nm, þ 1 V, 100 pA) of toluene on Si(111)-7 Â 7, taken before (c) and after (e) a charge injection ( þ 1.6 V, 750 pA, 7 s) directly into the toluene molecule (dark spot) at location 'X'. (d) Schematic diagram of a molecule binding to a restatom and adatom site. Time-trace (f) of the STM tip height above the molecule during the injection of C and E. (g) The probability per electron (a) as a function of injection voltage for a toluene molecule subject to manipulation (diffusion/desorption) by direct charge injection into the molecule.</figDesc><graphic coords="2,137.93,516.37,123.46,123.50" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 |</head><label>2</label><figDesc>Figure 2 | Nonlocal manipulation as a function of temperature. STM images (12 Â 12 nm, þ 1 V, 100 pA) of chlorobenzene molecules on the Si(111)-7 Â 7 surface following charge injection [ þ 2.7 V, 800 pA, 80 s (a-c), þ 2.7 V, 100 pA, 160 s (d)] at the sites indicated by X: surface and tip at (a) 260 K, (b) 120 K, (c) 95 K and (d) 4 K. White circles indicate locations of molecules that are displaced due to the charge injection. Black circles indicate sites of molecules that are unmoved. (e) Radial distribution of displaced molecules as a function of the distance from the injection site at temperatures indicated. Each decay curve is the average of several (B5) experiments. Lines are fits to the 2D diffusion, single decay channel transport model given by equation 1.</figDesc><graphic coords="3,129.41,594.73,67.39,67.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 |</head><label>3</label><figDesc>Figure 3 | Range, k, of nonlocal manipulation versus V and T. (a) Voltage dependence of the nonlocal manipulation range l at room temperature (random injection site) for: benzene, blue circles; toluene, green squares; chlorobenzene, purple diamonds. Grey region highlights a region of (near) constant range. (b) Temperature dependence of the range l for injection into corner-hole sites at þ 2.7 V for chlorobenzene molecules on Si(111)-7 Â 7. Solid blue line is a fit to data (see Discussion for details) with T e pT 1.5±0.2 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 |</head><label>4</label><figDesc>Figure 4 | Number of manipulated molecules as a function of time for four injection bias voltages: circles, 1.2 V; diamonds, 1.4 V, triangles, 1.6 V and squares, 1.8 V. All injections are with 750 pA and z-feedback loop active. Fit details are given in the Methods section and fit parameters presented in Fig. 1f.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>NATURE COMMUNICATIONS | 6:8365 | DOI: 10.1038/ncomms9365 | www.nature.com/naturecommunications &amp; 2015 Macmillan Publishers Limited. All rights reserved.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>NATURE COMMUNICATIONS | 6:8365 | DOI: 10.1038/ncomms9365 | www.nature.com/naturecommunications</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>&amp; 2015 Macmillan Publishers Limited. All rights reserved.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>We acknowledge <rs type="person">S. Crampin</rs> for discussions, <rs type="person">R. Purkiss</rs> and <rs type="person">S. Thomas</rs> for preliminary experimental work. P.A.S. gratefully acknowledge support from the <rs type="funder">EPSRC</rs> grant <rs type="grantNumber">EP/K00137X/1</rs>. DL was funded by an <rs type="funder">EPSRC</rs> <rs type="grantName">DTA</rs> studentship and K.R.R. by a <rs type="funder">University of Bath</rs> studentship. R.E.P. is grateful to <rs type="funder">EPSRC</rs> for the award of a fellowship.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_bvVfYQz">
+					<idno type="grant-number">EP/K00137X/1</idno>
+				</org>
+				<org type="funding" xml:id="_U7rVX8m">
+					<orgName type="grant-name">DTA</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>All authors have contributed significantly to this work. D.L., K.R.R. and T.L.P. performed the experiments. D.L. and K.R.R. analysed the data. P.A.S. and R.E.P. conceived, designed and led the research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Additional information</head><p>Data access: All data supporting this study are openly available from the University of Bath data archive at <ref type="url" target="http://dx.doi.org/10.15125/BATH-00126">http://dx.doi.org/10.15125/BATH-00126</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing financial interests:</head><p>The authors declare no competing financial interests. This work is licensed under a Creative Commons Attribution 4.0 International License. The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in the credit line; if the material is not included under the Creative Commons license, users will need to obtain permission from the license holder to reproduce the material. To view a copy of this license, visit <ref type="url" target="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Reprints and permission</head></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Off-state degradation and correlated gate dielectric breakdown in high voltage drain extended transistors: a review</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Varghese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Krishnan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Alam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Microelectron. Reliab</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1477" to="1488" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Leakage current mechanisms and leakage reduction techniques in deep-submicrometer CMOS circuits</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mukhopadhyay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Mahmoodi-Meimand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. IEEE</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="305" to="327" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Analog circuit design in nanoscale CMOS technologies</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Lewyn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ytterdal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wulff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE</title>
+		<meeting>IEEE</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="1687" to="1714" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Hot-electron-transfer enhancement for the efficient energy conversion of visible light</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem. Int. Ed. Engl</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="11203" to="11207" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Multiple Exciton collection in a sensitized photovoltaic system</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Sambur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Novet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Parkinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">330</biblScope>
+			<biblScope unit="page" from="63" to="66" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Energy level control: toward an efficient hot electron transport</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">5983</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Hot-electron nanoscopy using adiabatic compression of surface plasmons</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Giugni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Nanotechnol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="845" to="852" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Narrowband photodetection in the near-infrared with a plasmon-induced hot electron device</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sobhani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">1643</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Plasmon-induced hot-electron generation at nanoparticle/metaloxide interfaces for photovoltaic and photocatalytic devices</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Clavero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Photon</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="95" to="103" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Hot-electron-induced dissociation of H 2 on gold nanoparticles supported on SiO 2</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mukherjee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page" from="64" to="67" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Measurement of the hot electron mean free path and the momentum relaxation rate in GaN</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Suntrup</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">263506</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Competing channels for hot-electron cooling in graphene</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Ma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page" from="247401" to="247401" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Dual-gated bilayer graphene hot-electron bolometer</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Nanotechnol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="472" to="478" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Spectroscopy and hot electron relaxation dynamics in semiconductor quantum wells and quantum dots</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Nozik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Phys. Chem</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="193" to="231" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Imaging energy-, momentum-, and time-resolved distributions of photoinjected hot electrons in GaAs</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kanasaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tanimura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tanimura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">237401</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Femtosecond spectroscopy in semiconductors: a key to coherences, correlations and quantum kinetics</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Axt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kuhn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rep. Prog. Phys</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page" from="433" to="512" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">An ultrafast terahertz scanning tunnelling microscope</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Cocker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Photon</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="620" to="625" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Real-space imaging of molecular structure and chemical bonding by single-molecule inelastic tunneling probe</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName><surname>-L</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Ho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">344</biblScope>
+			<biblScope unit="page" from="885" to="888" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Vibrational excitation induces double reaction</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Leung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Polanyi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Nano</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="12468" to="12475" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Surface hydrogenation reactions at the single-molecule level</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Katano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kawai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Trenary</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Rec</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="819" to="826" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Research update: molecular electronics: the single-molecule switch and transistor</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sotthewes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Geskin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Heimbuch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J W</forename><surname>Zandvliet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">APLMater</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">10701</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Direct imaging of covalent bond structure in singlemolecule chemical reactions</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>De Oteyza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">340</biblScope>
+			<biblScope unit="page" from="1434" to="1437" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Organic nanostructures on hydrogen-terminated silicon report on electric field modulation of dangling bond charge state</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Ryan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Livadaru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dilabio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Wolkow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page" from="12054" to="12063" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Two-electron dissociation of single molecules by atomic manipulation at room temperature</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Sloan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Palmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">434</biblScope>
+			<biblScope unit="page" from="367" to="371" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Picometer-scale electronic control of molecular dynamics inside a single molecule</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lastapis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="page" from="1000" to="1003" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Nonlocal dissociative chemistry of adsorbed molecules induced by localized electron injection into metal surfaces</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Maksymovych</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Dougherty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Yates</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">16101</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Manipulation and control of hydrogen bond dynamics in absorbed ice nanoclusters</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gawronski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Carrasco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Michaelides</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Morgenstern</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page">136102</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Nonlocal chemical reactivity at organic-metal interfaces</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Nano</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="3684" to="3690" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Nonlocal manipulation of dimer motion at Ge (001) clean surface via hot carriers in surface states</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Takagi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yoshimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Nakatsuji</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="3143" to="3146" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Nonlocal activation of a bistable atom through a surface state charge-transfer process on Si (100)-(2x1)</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bellec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Riedel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Dujardin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Boudrioua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chaput</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">H. Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">48302</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Charge delocalization induces reaction in molecular chains at a surface</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Polanyi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem. Int. Ed. Engl</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="320" to="324" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Manipulation at a distance: atomic-scale observation of ballistic electron transport in single layer graphene</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Mayne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cejas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Dujardin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kuk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="223104" to="223105" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Atomically resolved adsorption and scanning tunneling microscope induced desorption on a semiconductor: NO on Si (111)-(7 Â 7)</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Rezaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Stipe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Ho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Physis</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page" from="4891" to="4896" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Spreading effects in surface reactions induced by tunneling current injection from an STM tip</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Maeda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Nakamura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Surf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">528</biblScope>
+			<biblScope unit="page" from="110" to="114" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Nanoscale imaging of electronic surface transport probed by atom movements induced by scanning tunneling microscope current</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Nakamura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Mera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Maeda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">266805</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Site-specific displacement of Si adatoms on Si (111)-(7 Â 7)</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Stipe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Rezaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Ho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="4397" to="4400" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Nonlocal desorption of chlorobenzene molecules from the Si (111)-(7 Â 7) surface by charge injection from the tip of a scanning tunneling microscope: remote control of atomic manipulation</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Sloan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sakulsermsuk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Palmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">48301</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Calibrating thermal and scanning tunnelling microscope induced desorption and diffusion for the chemisorbed chlorobenzene/Si(111)7 Â 7 system</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sakulsermsuk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Sloan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Theis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Palmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">84002</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Disentangling surface, bulk, and space-charge-layer conductivity in Si(111)-(7 Â 7)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Wells</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Kallehauge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Hansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hofmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page">206803</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Conductivity of Si(111)-(7 Â 7): the role of a single atomic step</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">V C</forename><surname>Martins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Smeu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Livadaru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Wolkow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">246802</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Electronic conductivity of Si(111)-7 Â 7</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">N J</forename><surname>Persson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="5916" to="5917" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Resonant surface-state transitions of Si(111)-7 Â 7 measured with two-photon photoemission spectroscopy</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shudo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Takeda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Munakata</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page">75302</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Ultrafast carrier dynamics in Si (111) 7 Â 7 dangling bonds probed by time-resolved secondharmonic generation and two-photon photoemission</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mauerer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">L</forename><surname>Shumay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Berthold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Ho ¨fer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">245305</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Ultrafast relaxation of highly excited hot electrons in Si: roles of the L-X intervalley scattering</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ichibayashi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tanaka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kanasaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tanimura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Fauster</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">235210</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Electronic and geometric structure of Si(111)-(7 Â 7) and Si(100) surfaces</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hamers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tromp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Demuth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Surf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">181</biblScope>
+			<biblScope unit="page" from="346" to="355" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Fermi surface of Si(111)7 Â 7</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Losio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Altmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Himpsel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="10845" to="10853" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Non-local atomic manipulation on semiconductor surfaces in the STM: The case of chlorobenzene on Si(111)-7 Â 7</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Sloan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Palmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Rec</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="841" to="847" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Kinetics of high-density plasmas generated in Si by 1.06-and 0.53-mm picosecond laser pulses</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Van Driel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="8166" to="8176" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Time-resolved measurement of free carrier absorption, diffusivity, and internal quantum efficiency in silicon</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Meitzner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">G</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Tillotson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Kevan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Richmond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page">92101</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Mapping carrier diffusion in single silicon core-shell nanowires with ultrafast optical microscopy</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Seo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="6334" to="6338" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Lifetime of a quasiparticle in a two-dimensional electron-gas</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">F</forename><surname>Giuliani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Quinn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="4421" to="4429" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Ab Initio study of hot carriers in the first picosecond after sunlight absorption in silicon</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bernardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vigil-Fowler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lischner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Neaton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Louie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">257402</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Ridley</surname></persName>
+		</author>
+		<title level="m">Quantum Processes in Semiconductors</title>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Surface phonons of the Si(111)-(7 Â 7) reconstruction observed by Raman spectroscopy</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liebhaber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">45313</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

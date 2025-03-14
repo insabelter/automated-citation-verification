@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Evaluating and recognizing stressful periods and events of urban migrant children from microblog</title>
+				<funder ref="#_ZBgavVK">
+					<orgName type="full">National Social Science Foundation</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Fang</forename><surname>Ji</surname></persName>
+							<email>jifang@chd.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">School of Literature, Art and Communication</orgName>
+								<orgName type="institution">Chang&apos;an University</orgName>
+								<address>
+									<postCode>710064</postCode>
+									<settlement>Xi&apos;an</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ching-Hsien</forename><surname>Hsu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Asia University</orgName>
+								<address>
+									<settlement>Taichung</settlement>
+									<country key="TW">Taiwan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">&amp;</forename><surname>Carlos</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Enrique</forename><surname>Montenegro-Marin</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="institution">Universidad Distrital Francisco José de Caldas</orgName>
+								<address>
+									<settlement>Bogota</settlement>
+									<country key="CO">Colombia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Carlos</forename><surname>Enrique</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">of Springer Nature</orgName>
+								<orgName type="institution">Springer Science+Business Media, LLC</orgName>
+								<address>
+									<postCode>2020</postCode>
+									<country>part</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Evaluating and recognizing stressful periods and events of urban migrant children from microblog</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">42A48589AAE502B366FBBA933E7F675D</idno>
+					<idno type="DOI">10.1007/s12144-020-00844-8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Mental stress</term>
+					<term>Psychological stress</term>
+					<term>Microblog</term>
+					<term>Migrant children</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Increased issues in the health of urban migrant children induced by mental stress have attracted worldwide attention. The stable growth of migrant children, which affects the sustainable stability of the community, is adversely impacted by sustained pressures without adequate assistance and advice. Therefore, psychological stress from each post on microblog has been established through research focused on detecting migrant children. Nevertheless, after stressful times, it is more important to consider stress from aspect to recognize stressful periods and stressful incidents that cause each stressful period. This paper identifies the problem of the recognition of migrant children in the open social network microblog stressful periods and stressor events. Besides, the improved Poisson-dependent probability model has been developed and focused on the study of the postings of migrant children during stressful activities in schools to compare stressors with a set of postings on Tencent Weibo (microblog). Through this model the average stressed times of migrant children which obtains more information regarding potential stressors affecting stressed periods.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction about Traditional System</head><p>Chinese recent rapid economic development has contributed to a large internal flow of capital, energy, and labor from predominant traditional system with a planned economy into a market <ref type="bibr" target="#b11">(Martin et al. 2014)</ref>. Over the past 30 years, the voluntary migration of farmers from rural China has increased, gradually seeking employment and improved living standards in urban <ref type="bibr" target="#b5">(Hollander et al. 2016</ref>) and coastal export processing centers. In 2012, about 250 million migrant workers moved to metropolitan centers with over 20 million offspring <ref type="bibr" target="#b2">(Bandari 2018;</ref><ref type="bibr" target="#b4">Gee et al. 2012)</ref>.</p><p>For starters, Wenzhou, a medium coastal town in south-considered to be the home to around three million migratory families <ref type="bibr" target="#b16">(Twigg and Mosel 2017)</ref>. These families form the fastest rising metropolitan group, contributing almost one-third of the total population of Wenzhou <ref type="bibr" target="#b12">(Mu and Hu 2016)</ref>. The impact of migration would eventually change China's educational and job environment over the next decade. Migrant children are now a core tool for the Chinese urban social community. Effective incorporation into urban schools of migrant children is the prerequisite for well-being, financial prosperity, and social stability. However, the dual household registration (hukou) (or ruralurban stratification system) that prevents equitable access to public facilities, including schooling for migrant children <ref type="bibr" target="#b9">(Liu 2013)</ref>, is among the most compelling structural barriers to integration. There are many drawbacks for students at a traditional migrant school in the residential region of a communityincluding a shortage of teaching positions <ref type="bibr" target="#b14">(Shakeel and Baskar 2020)</ref>, outdated infrastructure for schooling and inadequate instructional content and equipment. Migrant children are more likely to live in distress relative to the metropolitan equivalent, undergo psychiatric symptoms such as anxiety and depression, endure discrimination and victimization and report crime <ref type="bibr" target="#b6">(Joshi et al. 2019)</ref>. Besides economic drawbacks, the acculturation and well-being of migrant children are further constrained by a lack of cultural resources and social isolation in the region (Fig. <ref type="figure">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction for Stress Analysis of Migrant Children</head><p>Stress is a major health problem which consists of 77% of migrant children recorded daily stress-related physical effects, and an additional 75 to 90% have stress-related visits <ref type="bibr">(An et al. 2018a)</ref>. The children consistently claimed their stress rates in school which are significantly higher than they assumed and their overall tension rate was much higher than in children. About 37% claimed that they are fatigued from depression <ref type="bibr" target="#b7">(Leggett 2017</ref>) and another 23% said they had missed meals for it. Teens recorded a 10-point stress rating of 5.8 relative to 5.1 for adults on average. According to the study, depression tends to intensify among certain children <ref type="bibr" target="#b1">(An et al. 2018b)</ref>. Then there is no chance that migrant children would become more difficult than most at the speed of culture and with high expectations of adults and themselves <ref type="bibr" target="#b8">(Li et al. 2019)</ref>.</p><p>To this end, this paper advance from emotionally focused level to event-driven level based on the topic of urban migrant children's psychological stress identification <ref type="bibr" target="#b15">(Sudin et al. 2019)</ref>. By studying the connection between stress incidents in Tencent Weibo postings (http:/t.qq.com), it uncovers the traumatic time for migrant children and obtains further information on traumatic activities that cause stress. Use measures to resolve data uncertainty if the post is missed and if incorrect warnings of abnormal distress are absent which implies stressors over a stressful time which are associated <ref type="bibr" target="#b3">(Chen et al. 2014)</ref>.</p><p>However, it is not a simple task to identify stressful times and microblog stresses. Within the study, it investigates the definition of stressful migrant children's activities that involve daily difficulties and life occurrences which are likely to be encountered by worldwide migrant children within five aspects: student life, home life, peer interactions, intimate relationships, and auto-recognition. As per the knowledge, the literature to examine and classify stressor incidents in children from the micro blog has the chance trend on fish for the association between stress incidents and stressful post-postage activities, together with the event-driven stress identification methodology that has been proposed in this paper, which aims to solve the psychological health issue of children from presence to material.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Literature Survey and Outline about Conventional Methods</head><p>Recent researches indicate that racism can affect inequalities in health. As people grow up from early childhood to old age, social systems may generate new vulnerabilities to racial inequalities. Nevertheless, few types of research have taken this theory completely into consideration. They present a structure demonstrating how inequality and health inequalities can be viewed from life <ref type="bibr" target="#b19">(Ye et al. 2016)</ref>. They relate ideas about aging exposures, cycles about vulnerability, interlinked lives, delay, tension distribution, historical phases, and cohorts. This reflects a general notion that racism will organize its presence in the sense of having a benefit (e.g. education) or in marginalized (e.g. prison) situations. Such period and duration variability may lead to ethnic inequities in life expectancy and other consequences of health throughout lifespan and generations.</p><p>Worldwide, millions of children suffer acute medical emergencies. The reaction of children to these incidents goes from temporary distress to severe post-traumatic symptoms of stress disorder (PTSS). Although several models have examples for adult PTSS development and maintenance, relatively few were children. Current child PTSS models are primarily limited to post-trauma, and the crucial peri-trauma period can Fig. <ref type="figure">1</ref> General structure of stress analysis be most readily overlooked while the evaluation and prevention activities take place <ref type="bibr" target="#b10">(Marsac et al. 2014)</ref>. PTSS work for childhood injuries typically explores separation predictors, sometimes ignoring possibly significant experiences. This paper presents a new framework that utilizes the Bio-Psycho-Social System (BPSS) and reflects on emergency care incidents peri trauma processes. Knowing the connections between bio-psycho-social factors during peripheral trauma that inform the early detection of risky children, prevention measures and clinical care. Recommendations for further studies are addressed, including the need for the analysis of PTSS in the sense of many causes.</p><p>Throughout their everyday lives, school-age children experience a lot of tension, which can trigger psychological and physical difficulties <ref type="bibr" target="#b18">(White 2012)</ref>. Stress Management focused on awareness is an adult awareness-centered system of practices successful. This research aimed to evaluate the effectiveness of awareness training with schoolgirls in yoga to reduce the experience of tension, to improve coping skills, self-esteem and self-regulation. Students in grades four and five have been selected and selectively allocated to participation and waitlist monitoring classes from two high schools. The therapy party worked for 1 h a week and completed 10 min of daily assignments for 8 weeks. A better understanding of the feeling correlated with stress may improve the coping ability according to studies of attention training. Even though the growing perception of stressors itself may raise stress as part of the cycle of awareness of cognitive, emotional of social development. It could be necessary to increase stress.</p><p>The analysis of potential effects on later behavior and neurobiology of early life stress (ERS) in humans is a fast increasing field. Although epidemiologic and neurobiological research offer a dark image of adverse outcomes the scope of the findings surrounding potential emotional and cognitive deficiencies correlated with ELS has not been incorporated. Emerging results of experimental research exploring brain developmental processes in healthy populations will offer a new basis for the understanding of ELS-based sequels <ref type="bibr" target="#b13">(Pechtel and Pizzagalli 2011)</ref>. The goal is to increase this analysis based on the effects of clinical research on normative brain growth which are outlined. Second, this control brain structure system was used to explain shifts in the developmental path of ELS cognitive and affective deficits.</p><p>Research of immigrant children and displaced migrant communities from (military) foreign tensions showed the emotional health and conduct patterns of the children and the values regulating their organization and recovery <ref type="bibr" target="#b17">(Vostroknutov 2011)</ref>. Concerning the age (preschool, school-age and teenage children) and often in connection with actions of the adult, emotional and behavioral impairments have been identified following mental trauma (acute, sub-acute and long-term periods). The company, in collaboration with numerous medical practitioners (psychiatrists, psychotherapists), counselors and social workers are discussed as follows,</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressing Events and Posting Behaviors</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressor Events</head><p>This section carry out the user analysis at Taicang High school, main senior research in Zhejiang Province of China, to empirically test the connection between stressors and the abnormal posting behaviors of migrant children. The school periodically posts the weekly schedule on the official website of the school. From 1 January 2012 to 1 February 2015, it has 273 school activities, most of the teaching has been analyzed and it takes out 122 challenging research activities such as interviews, competitions, grades, etc. Table <ref type="table" target="#tab_0">1</ref> mentions several common events, their duration, the frequency of student performance assessment and the overall frequencies in the observed 3 years. As these activities are regular and graduation, students in the same grade have the same experiences each year as in previous years. Through month on average there will be 2-stressor activities for every student school.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Posting Behaviour</head><p>It recognizes 124 students who are Tencent Weibo superiors (registered in Taicang Senior High School before 1 January 2012) that have published more than 100 entries in the microblog. Each student is anonymous, and every post is accessible. A total of 29,232 posts have been written between 1 January 2012 and 1 February 2015. The average number for postal services is 236, a maximum of 1387 and a minimum of 104. In each school, Table <ref type="table">2</ref> displays the number of active students over 3 years, students 'roles and stressor activities. The number of users, communications and stress events involved in user research is provided in Table <ref type="table">2</ref>.</p><p>If the detection feature applies to each post k of the post, it will sense the stress level of the youth in the community, in the relatives, in friends, in self-relationships and the relationship, indicating stress stress(k, q) = (k, D, h), whereby D = {d 1 , d 2 , …. d m } which corresponds to stress class community, studentrelationships, self-relationships, romantic relations and uncertainties and l = K = {0, 1, 2, 3, 4, 5}, corresponding to none, fairly light, medium, mild, heavy, high-stress rates. If no term is available for the group, it can add an "unknown" label to the observed stress point.</p><p>Stressor and stressful posts relationships have been used to analyze the effect of stressors on the postreport actions of students; it divided the entire observation period into two different collections. Owing to the consistency of the experience of the human person, it has a period of 1 day on all sides of an event stressor. The estimation of Δk relies on the meaning of the event and the length of the eventΔk = Sigificance * Duration. In this sample Day is the main time unit. It divides them into one if there is an overlap between two stressor event periods. Instead, for each student will see where the behavior, across four tests, is different across stressor events and non-stressor events (Fig. <ref type="figure" target="#fig_1">2</ref>):</p><p>P # post: Total number of posts every day over the times between stressors and non-stressors; P # stress _ post: Average amount of stressful posts average for times of stress and non-stress events (Fig. <ref type="figure">3</ref>).</p><p>P # stress level : the average total stress level ratio per day across stressors and non-stressors; P # stress proportion : the total proportion of stressful posts.</p><p>If a predictor value is below 1.0, the difference in stressor and non-stressor occurrence times within this variable is low.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Proposed Methodology</head><p>It presents a statistical model of a stressful rate for migrant children based on empirical findings. Based on this finding with the model, it is possible to remove traumatic times and stress events from each stressful time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A Stressful Time Computational Model for Migrant Children</head><p>Poisson Stress Level Process over some Time It models the teenage posting behavior as two separate and identical cycles during stress and non-stressing activities. A hierarchical Poisson process, with a β 1 post rate for each unit cycle, and the number of stressful objects generated in a nonstressed scenario, is a different, heterogeneous Poisson stressor follows a β 0 post level for each unit duration. From Fig. <ref type="figure">3</ref>, it findsβ 1 &gt; β 0 .</p><p>In general, the number of stressful posts β posted over some time K (which should not be adjacent) for a Poisson process. In other words, the probability that a migrant child has stressful roles m can be estimated as:</p><formula xml:id="formula_0">R q M ¼ m β ! ¼ e -βK βK ð Þ m m!<label>ð1Þ</label></formula><p>Wherem = 0, 1, 2, …∞.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressing Periods with Stressful Post Rates</head><p>It uses teen historical post details to assess the probability distribution of stressor β 1 and β 0 for calculating the expectation of the stressful event. These are our metrics regarding times of stress or uncertainty, i.e. times of stress. M 0 and M 1 are minimum numbers to measure β 1 and β 0 respectively, according to estimation theory. Assume that Jeffrey's has not been notified before the stressful β 1 and β 0 posting rate.</p><p>For β 1 and β 0 &gt; 0, the previous density R β 1 and β 0 ð Þα</p><formula xml:id="formula_1">1 ffiffiffiffiffiffiffiffiffiffiffi ffi β 0 -β 1 p and the corresponding priors R β 1 ð Þ α 1 ffiffiffiffiffiffiffiffiffiffiffi ffi β 0 -β 1 p and R β 0 ð Þ α 1 ffiffiffiffiffiffiffiffiffiffiffi ffi β 0 -β 1 p . The post-distribution of β j (for j = 0, 1, 2, …∞) is according to the Bayes Rule. R β j M j ∝R p M j β j Â Ã r β j À Á ¼ 1 ffiffiffiffiffiffiffiffiffiffiffiffiffi β 1 ; β 0 p Â e -β j K j β j K j À Á M j M j ! Â 1 ffiffiffiffi ffi β j p ! ∝β j M j -0:5<label>ð2Þ</label></formula><formula xml:id="formula_2">It is simplified the posteriors to 1 R β j ¼ y M j ¼ K j K j y À Á M j -0:5 e K j y γ M j þ 0:5 À Á 0 otherwise 8 &gt; &lt; &gt; : if y≥ 0<label>ð3Þ</label></formula><p>It is simplified the posteriors to 1. It measures the probability that a teen would experience stress as:</p><formula xml:id="formula_3">r β 1 &gt; β 0 M 1 ; M 2 ¼ ∬r β 1 ¼ y M 1 r β 0 ¼ z M 0 dydz<label>ð4Þ</label></formula><p>When r(β 1 &gt; β 0 |M 1 , M 2 ) exceeds a level, it assumes that during stressor event periods the traumatic rate of the child is greater than that during times of non-stressor activities. Thus it considers the respective time to be stressful.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Exploration of Stressful Times for Migrant Children</head><p>The model now provides specific description and removal of stressful times.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressful time definitions.</head><p>Definition 1:</p><formula xml:id="formula_4">TSW[K 1 , K z ]</formula><p>is a wave of stress when at least one traumatic post happens in the increasing period in [K 1 , K f ], i.e., all in one direction ∀ j (1 ≤ j ≤ f)(mK j &gt; 0) is a great stress mechanism, whether it is the stress mechanism, although the μ1 stress intensity is more likely to surpass a β 0 in traditional nonstress case periods above a trust level TSW[K 1 , K z ]. If the level of stress is not a high level of stress, it is a low level of stress.</p><p>Six big waves A, D, E, F, and two small waves B are shown in Fig. <ref type="figure" target="#fig_0">4</ref>. While B, F are not common and are regarded as large waves of stress, late waves of large wave A, or large stress wave D, which can result in the same stress case, can occur. The same stressors can help to create a large stress wave D and E. They combine these semantically-related signals focused on specific stress categories to cope with both irregular and  Given</p><formula xml:id="formula_5">TSW(k 1 , k n ) = {(k 1 , C 1 , s 1 )……. (k n , C n , s n ) , let de- scribe the proportion of stress class c ∈ C in TSW, over the period (k 1 , k n ) as tSW. cRatio tSW k 1 ; k n ½ ; c ð Þ¼ n C j j j ∈ 1; n ½ ∧ cϵC j ∑ j∈ 1;n ð Þ C j<label>ð5Þ</label></formula><p>Extending the function for a single period to allow for multiple periods</p><formula xml:id="formula_6">∑ c∈C cRatio tSW k 1 ; k n ½ ; …::tSW k n ; k f ; f Â Ã ; C À Á ¼ 1<label>ð6Þ</label></formula><p>Definition 2:</p><p>Let tSW [k 1 , k z ] and tSW [k 1 ′, k z ′] be two stress waves that have tSW [k 1 , k n ] and tSW [k 1 ′, k z ′]as the point of stress. The distribution category K is named tSW [k 1 , k z ] and K is equivalent, only if, the analysis, γ has been set to 0.2 on the Euclidean distance of its distribution categorycDist[.] ≤ γ, and In traditional non-stress event times, the probability of traumatic γ 1 in [k 1 , k z ] being greater than α is above expectation (Fig. <ref type="figure">5</ref>).</p><formula xml:id="formula_7">cDist tSW k 1 ; k z ½ tSW 0 k 1 0 ; k z 0 ½ ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi ∑ c∈C cRatio tSW k 1 ; k n ½ ; c ð Þ -cRatio tSW 0 k 1 0 ; k n 0 ½ ; c À Á À Á À Á 2 r<label>ð7Þ</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The extraction process for an optimum stressful period</head><p>The analysis in three phases of the highest stressful periods:</p><p>Step 1: Let RG be stressful times in different forms. RG = B at the beginning.</p><p>Step 2: Combined with increasing big stress wave d in RG before or next to them, whether the outcome is stressful. Every time, it checks the fusion, beginning from the neighbor with the distribution of the topic d more identical. They replicate stage 2 before the exhausting period is no longer reached. It eliminates d from RG and moves the long stress duration obtained intoRG.</p><p>Step 3: Combine each of the two adjacent stressful periods in RG (not including small wave gaps) if the effects are both stressful. The method is identical to step 2. It repeats step 3 until there is no more combination. These eliminate the stressful times from RG and transfer the stressful duration received intoRG. The RG outcome retains all full stress periods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stress Extraction from High-Stress Periods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressor Events Description</head><p>Stressor events are form [dimension, category of event, event instance, influence], doer element, behavior, object, time or position, which can be empty. The occurrence-instance involves a single event involving the performer, act, object, Fig. <ref type="figure">5</ref> Stressor events example date, location and a concise description. Figure <ref type="figure">5</ref> provides an example of two stressful incidents of the form "too much research" and of the sort "study emotions" in the field "student life." As many things may be identified during the traumatic time of the adolescent by language processing, It identifies them based on their traumatic impact. Given that a stressor typically causes a rise in stress rates, the higher the stress, the greater the effect. The stress impact of the incident is calculated as</p><formula xml:id="formula_8">influence ¼ X 1 * level ef ð Þ argmax ef *∈EFlevel ef * ð Þ þ X 2 * increase ef ð Þ argmax ef *∈EFincrease ef * ð Þ<label>ð8Þ</label></formula><p>Where 1) level (ef): the average stress degree at a time unit at which the impact of the event starts, It searches at the temporal words/phases representing the date to indicate the start period of the event. 2) increase (ef): the rate of change in the average stress level at the beginning point of the operation. (3) SE shall be the sequence of activities extracted over the maximum stressful period examined, and in the study (4) X 1 = X 2 = 0.5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stressor Extraction Methods</head><p>From every post during a maximum stress period that is defined, thus extract stressors from all posts in the period, combine and rate extracted stressors and finally present them in a three-stage stressor event hierarchy(Size, type of event, eventinstance).</p><p>Step 1. Extract stressors from a post over a set of stress time.</p><p>Step 2. In the highest stressful time merge and define stressors from all posts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results and Discussion</head><p>If added to each post with a stress detector, it senses the tension level in a school life group, family life, peer relationships, and romantic relationship. In each stressful time that discover maximal stress and rank stressor events.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>High-Stress Periods Detection</head><p>A microblog frame is introduced to diagnose migrant children with traumatic psychological cycles and adverse incidents. The underlying Poisson dependent probability model, together with the event-oriented approach indicated by this paper, attempts at predicting the psychological traumatic periods of Although the simple truth includes activities linked to school life, it disregards the observed maximum stress periods which are not traumatic in the context of school nature. The typical stressful identification efficiency under different trust levels as seen in Fig. <ref type="figure" target="#fig_3">6</ref>.</p><p>In comparison, the sensitivity improves considerably with the threshold value. It examines the predictive model by discriminating between stressful and stable post-stress rates. Another significant point is that the precision rate is smaller than the recall rate. It is the different test events which can be contained in the basic truth. Yet there are often other difficult times, such as "So much homework" in school life, which normally give school students a lot of homework before an exam. Although such occasions do not occur in the truth of the fields, they are considered as incorrect findings that affect detection precision. The findings of the identification of stressors indicate a similar effect to that of stressful times, as seen in Fig. <ref type="figure">7</ref>.</p><p>The highest F1 value 0.71 can be obtained when the threshold value is around 0.57. Table <ref type="table" target="#tab_1">3</ref> compares the results when derived stress factors in the highest stressful time are classified as top 1 and top 3. As the first is stricter, the F1 results are 15.2% smaller than the latter, mainly due to a decrease in the recall by 9.56 points.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation with the State-of-the-Art Approach to Personal Event Identification</head><p>While there are no methods to recognizing young people with traumatic periods and challenging events in the research on the traumatic era, our linguistic system of stressors is similar to that of the state-of-the-art predictive approach to the recognition of personal life events Table <ref type="table" target="#tab_2">4</ref>.</p><p>It analyzes the stressor incidents found that the overall traumatic times (not restricted to the aspect of the school life). It counts the number of instances of any stressor overall observed cumulative stress times for each student and measures their occurrence rate by the amount / overall stressful duration. Table <ref type="table" target="#tab_3">5</ref> indicates the total student event rates of grades. The highest stressors among both classes are self-awareness and school life. This is consistent with the migrant children's psychological study and leads to problems with the inner cognitions of migrant children in school lives.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>This paper introduces approaches to evaluate and define stressful times for teens and traumatic microblog events. The association of stressor and traumatic posturing activities is established with an improved Poisson-based probability method. The model shows high-stress levels and removes stress factors from any stressful period. The first stressor event prediction efficiency is even greater than the state-of-the-art approach to individually identified life events and is more precise, more recognizable, and higher in F1. According to the complexity of stressor theory, the identification of stressor occurrences and stress periods and many more associated issues need more research is interesting and difficult. First of all, people's reaction to the stressor defined as the psychological process is indeed an integral part of the theory of stress. Second, while this research indicates a positive direction in identifying traumatic times and stress experiences for migrant children, the microblog remains incomplete and requires a lot of evidence. Numerous sources may be useful and include more detailed and continuous knowledge to further enhance detection efficiency. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 Four big waves (a, d, e, f), 2 small waves (b, c), and three average periods of stress</figDesc><graphic coords="5,306.65,574.58,237.29,117.30" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 P</head><label>2</label><figDesc>Fig. 2 P # post, P # stress _ post, P # stress level, P # stress proportion the ratio between stressors and non-stressors</figDesc><graphic coords="5,51.53,53.86,237.29,211.01" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>Assume a series of teen sporadic posts generated through [k 1 , k z ] is observed as high-stress waves D and small stress waves W. tSW [k 1 , k z ] is considered a stressful time, only if the following four conditions are satisfied. &amp; The initial period k 1 and the end k z include at least one stressful post. &amp; Every two major B-stress waves are different in classes.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 6</head><label>6</label><figDesc>Fig. 6 Quality of the average stress periods in three separate ranges for the 124 students detected</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="2,231.87,54.88,312.40,210.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc></figDesc><table><row><cell>Several stress events</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>related to the study</cell><cell>Events of Stressor</cell><cell>Period (Days)</cell><cell>Effectiveness</cell><cell>Frequency</cell></row><row><cell></cell><cell>Opening of School</cell><cell>1</cell><cell>2</cell><cell>7</cell></row><row><cell></cell><cell>Last / mid-term examination</cell><cell>3</cell><cell>2</cell><cell>24</cell></row><row><cell></cell><cell>Examination (weekly / monthly)</cell><cell>2</cell><cell>1</cell><cell>28</cell></row><row><cell></cell><cell>Test result notification</cell><cell>2</cell><cell>3</cell><cell>32</cell></row><row><cell></cell><cell>Examination IT</cell><cell>1</cell><cell>2</cell><cell>13</cell></row><row><cell></cell><cell>Test of mock</cell><cell>1</cell><cell>2</cell><cell>10</cell></row><row><cell></cell><cell>Application for college entry</cell><cell>3</cell><cell>1</cell><cell>6</cell></row><row><cell></cell><cell>Examination of college entrance</cell><cell>3</cell><cell>1</cell><cell>5</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 3</head><label>3</label><figDesc>The efficiency of stress detection (Threshold value is 0.57)</figDesc><table><row><cell>Grades</cell><cell>Top 1</cell><cell></cell><cell></cell><cell>Top 2</cell><cell></cell><cell></cell></row><row><cell></cell><cell>Recall</cell><cell>Precision</cell><cell>F1</cell><cell>Recall</cell><cell>Precision</cell><cell>F1</cell></row><row><cell>1</cell><cell>0.65</cell><cell>0.78</cell><cell>0.62</cell><cell>0.76</cell><cell>0.73</cell><cell>0.82</cell></row><row><cell>2</cell><cell>0.73</cell><cell>0.64</cell><cell>0.68</cell><cell>0.87</cell><cell>0.79</cell><cell>0.76</cell></row><row><cell>3</cell><cell>0.68</cell><cell>0.75</cell><cell>0.79</cell><cell>0.73</cell><cell>0.85</cell><cell>0.71</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 4</head><label>4</label><figDesc>Comparison between the linguistic process between detection of stressors and the predictive methodology of predicting life events</figDesc><table><row><cell cols="4">Grades Extraction of Stressor Event</cell><cell cols="3">Personal Event Identification</cell></row><row><cell></cell><cell>(Top 1)</cell><cell></cell><cell></cell><cell>(Top 2)</cell><cell></cell><cell></cell></row><row><cell></cell><cell>Recall</cell><cell>Precision</cell><cell>F1</cell><cell>Recall</cell><cell>Precision</cell><cell>F1</cell></row><row><cell>1</cell><cell>0.65</cell><cell>0.78</cell><cell>0.62</cell><cell>0.56</cell><cell>0.67</cell><cell>0.65</cell></row><row><cell>2</cell><cell>0.73</cell><cell>0.64</cell><cell>0.68</cell><cell>0.65</cell><cell>0.69</cell><cell>0.68</cell></row><row><cell>3</cell><cell>0.68</cell><cell>0.75</cell><cell>0.79</cell><cell>0.59</cell><cell>0.61</cell><cell>0.56</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 5</head><label>5</label><figDesc>Five level stress occurrence ratios</figDesc><table><row><cell>Level</cell><cell>Grade 1</cell><cell>Grade 2</cell><cell>Grade 3</cell></row><row><cell>self-awareness</cell><cell>0.43</cell><cell>0.46</cell><cell>0.49</cell></row><row><cell>school lives</cell><cell>0.34</cell><cell>0.38</cell><cell>0.31</cell></row><row><cell>Interaction</cell><cell>0.21</cell><cell>0.27</cell><cell>0.29</cell></row><row><cell>Life of the family</cell><cell>0.14</cell><cell>0.17</cell><cell>0.19</cell></row><row><cell>Peer Connection</cell><cell>0.043</cell><cell>0.037</cell><cell>0.029</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements This work was supported by <rs type="funder">National Social Science Foundation</rs> Project "<rs type="projectName">Family language life and language planning of migrant children in Northwest China</rs>" (<rs type="grantNumber">18XYY008</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funded-project" xml:id="_ZBgavVK">
+					<idno type="grant-number">18XYY008</idno>
+					<orgName type="project" subtype="full">Family language life and language planning of migrant children in Northwest China</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Compliance with Ethical Standards</head><p>Conflict of Interest No conflict of Interest.</p><p>Ethical Approval Statement My manuscript has no associated data or the data that will not be deposited.</p><p>Informed Consent This work is original and this manuscript is not previously submitted in some other journals.</p><p>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Text segmentation of health examination item based on character statistics and information measurement</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>An</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CAAI Transactions on Intelligence Technology</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="28" to="32" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Text segmentation of health examination item based on character statistics and information measurement</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>An</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">CAAI Transactions on Intelligence Technology</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="28" to="32" />
+			<date type="published" when="2018">2018b</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Bandari</surname></persName>
+		</author>
+		<title level="m">Evaluating access and use of community information services by informal urban settlers in Nairobi County: The case of Kibera slums</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+		<respStmt>
+			<orgName>Moi university</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">doctoral dissertation</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Perceived discrimination, schooling arrangements psychological adjustments of rural-to-urban migrant children in Beijing, China</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Tam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Health Psychology and Behavioral Medicine: An Open Access Journal</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="713" to="722" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A life course perspective on how racism may be related to health inequities</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Gee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Walsemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Brondolo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American Journal of Public Health</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="967" to="974" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Urban social listening: Potential and pitfalls for using microblogging data in studying cities</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Hollander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Graves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Renski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Foster-Karim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wiley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Das</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>Springer</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A low cost and computationally efficient approach for occlusion handling in video surveillance systems</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mathur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Interactive Multimedia and Artificial Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="28" to="38" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Online civic engagement and the anti-domestic violence movement in China: Shifting norms and influencing law</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Leggett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Voluntas: International Journal of Voluntary and Nonprofit Organizations</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2251" to="2277" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Identifying psychological resilience in Chinese migrant youth through multidisciplinary language pattern decoding</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Peng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Children and Youth Services Review</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page">104506</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liu</surname></persName>
+		</author>
+		<title level="m">Chinese microblog Users&apos; efforts to solve social problems: A study of online participatory behaviors and their implications</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+		<respStmt>
+			<orgName>State University of New York at Buffalo</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Posttraumatic stress following acute medical trauma in children: A proposed model of bio-psycho-social processes during the peri-trauma period</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Marsac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kassam-Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Delahanty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Widaman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Barakat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clinical Child and Family Psychology Review</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="399" to="411" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Microblogging and life changes: An ethnographic and statistical analysis of young adults</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Martin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Berry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The International academic forum</title>
+		<imprint>
+			<publisher>IAFOR</publisher>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Mu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hu</surname></persName>
+		</author>
+		<title level="m">Living with vulnerabilities and opportunities in a migration context: Floating children and left-behind children in China</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Effects of early life stress on cognitive and affective function: An integrated review of human literature</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pechtel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Pizzagalli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Psychopharmacology</title>
+		<imprint>
+			<biblScope unit="volume">214</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="55" to="70" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Automatic human emotion classification in web document using fuzzy inference system (FIS): Human emotion classification</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Shakeel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Baskar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Technology and Human Interaction (IJTHI)</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="94" to="104" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Humanoid localization on Robocup field using corner intersection and geometric distance estimation</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">N</forename><surname>Sudin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Abdullah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Nasudin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The International Journal of Interactive Multimedia and Artificial Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="50" to="56" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Emergent groups and spontaneous volunteers in urban disaster response</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Twigg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Mosel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environment and Urbanization</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="443" to="458" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">New approaches to the diagnosis of mental state in children experiencing extreme stress events</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">V</forename><surname>Vostroknutov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroscience and Behavioral Physiology</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="171" to="176" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Reducing stress in school-age girls through mindful yoga</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">S</forename><surname>White</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Pediatric Health Care</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="45" to="56" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Peer victimization and depressive symptoms among rural-to-urban migrant children in China: The protective role of resilience</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers in Psychology</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">1542</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

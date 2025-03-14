@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Sequence analysis DeepCleave: a deep learning predictor for caspase and matrix metalloprotease substrates and cleavage sites</title>
+				<funder ref="#_aDXZy86 #_D3rAnXn">
+					<orgName type="full">Australian Research Council</orgName>
+					<orgName type="abbreviated">ARC</orgName>
+				</funder>
+				<funder ref="#_EKp2wKf">
+					<orgName type="full">National Health and Medical Research Council of Australia</orgName>
+					<orgName type="abbreviated">NHMRC</orgName>
+				</funder>
+				<funder ref="#_gYHtybf">
+					<orgName type="full">Collaborative Research Program of Institute for Chemical Research, Kyoto University</orgName>
+				</funder>
+				<funder ref="#_CTrEDga">
+					<orgName type="full">Major Inter-Disciplinary Research</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Robert J. Mattauch Endowment</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Monash University</orgName>
+				</funder>
+				<funder ref="#_xvwrkfz">
+					<orgName type="full">National Institute of Allergy and Infectious Diseases of the National Institutes of Health</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Fuyi</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Monash Biomedicine Discovery Institute</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Monash Centre for Data Science</orgName>
+								<orgName type="department" key="dep2">Faculty of Information Technology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jinxiang</forename><surname>Chen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Monash Biomedicine Discovery Institute</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">College of Information Engineering</orgName>
+								<orgName type="institution">Northwest A&amp;F University</orgName>
+								<address>
+									<addrLine>Yangling</addrLine>
+									<postCode>712100</postCode>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Andre</forename><surname>´leier</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Genetics</orgName>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department" key="dep1">Department of Cell, Developmental and Integrative Biology</orgName>
+								<orgName type="department" key="dep2">School of Medicine</orgName>
+								<orgName type="institution">University of Alabama at Birmingham</orgName>
+								<address>
+									<settlement>Birmingham</settlement>
+									<region>AL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tatiana</forename><surname>Marquez-Lago</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Genetics</orgName>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department" key="dep1">Department of Cell, Developmental and Integrative Biology</orgName>
+								<orgName type="department" key="dep2">School of Medicine</orgName>
+								<orgName type="institution">University of Alabama at Birmingham</orgName>
+								<address>
+									<settlement>Birmingham</settlement>
+									<region>AL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Quanzhong</forename><surname>Liu</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">College of Information Engineering</orgName>
+								<orgName type="institution">Northwest A&amp;F University</orgName>
+								<address>
+									<addrLine>Yangling</addrLine>
+									<postCode>712100</postCode>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yanze</forename><surname>Wang</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">College of Information Engineering</orgName>
+								<orgName type="institution">Northwest A&amp;F University</orgName>
+								<address>
+									<addrLine>Yangling</addrLine>
+									<postCode>712100</postCode>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jerico</forename><surname>Revote</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Monash Biomedicine Discovery Institute</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">Ian</forename><surname>Smith</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Monash Biomedicine Discovery Institute</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tatsuya</forename><surname>Akutsu</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department" key="dep1">Bioinformatics Center</orgName>
+								<orgName type="department" key="dep2">Institute for Chemical Research</orgName>
+								<orgName type="institution">Kyoto University</orgName>
+								<address>
+									<postCode>611-0011</postCode>
+									<settlement>Kyoto</settlement>
+									<country key="JP">Japan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Geoffrey</forename><forename type="middle">I</forename><surname>Webb</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Monash Centre for Data Science</orgName>
+								<orgName type="department" key="dep2">Faculty of Information Technology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Lukasz</forename><surname>Kurgan</surname></persName>
+							<email>lkurgan@vcu.edu</email>
+							<affiliation key="aff6">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Virginia Commonwealth University</orgName>
+								<address>
+									<postCode>23284</postCode>
+									<settlement>Richmond</settlement>
+									<region>VA</region>
+									<country>USA and</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jiangning</forename><surname>Song</surname></persName>
+							<email>jiangning.song@monash.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Monash Biomedicine Discovery Institute</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Monash Centre for Data Science</orgName>
+								<orgName type="department" key="dep2">Faculty of Information Technology</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff7">
+								<orgName type="department">ARC Centre of Excellence in Advanced Molecular Imaging</orgName>
+								<orgName type="institution">Monash University</orgName>
+								<address>
+									<postCode>3800</postCode>
+									<settlement>Melbourne</settlement>
+									<region>VIC</region>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arne</forename><surname>Elofsson</surname></persName>
+						</author>
+						<title level="a" type="main">Sequence analysis DeepCleave: a deep learning predictor for caspase and matrix metalloprotease substrates and cleavage sites</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BD4A86F6CAD436A29122E6685B7312B7</idno>
+					<idno type="DOI">10.1093/bioinformatics/btz721</idno>
+					<note type="submission">Received on June 7, 2019; revised on August 13, 2019; editorial decision on September 16, 2019; accepted on September 25, 2019</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:58+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Motivation: Proteases are enzymes that cleave target substrate proteins by catalyzing the hydrolysis of peptide bonds between specific amino acids. While the functional proteolysis regulated by proteases plays a central role in the 'life and death' cellular processes, many of the corresponding substrates and their cleavage sites were not found yet. Availability of accurate predictors of the substrates and cleavage sites would facilitate understanding of proteases' functions and physiological roles. Deep learning is a promising approach for the development of accurate predictors of substrate cleavage events. Results: We propose DeepCleave, the first deep learning-based predictor of protease-specific substrates and cleavage sites. DeepCleave uses protein substrate sequence data as input and employs convolutional neural networks with transfer learning to train accurate predictive models. High predictive performance of our models stems from the use of high-quality cleavage site features extracted from the substrate sequences through the deep learning process, and the application of transfer learning, multiple kernels and attention layer in the design of the deep network. Empirical tests against several related state-of-the-art methods demonstrate that DeepCleave outperforms these methods in predicting caspase and matrix metalloprotease substrate-cleavage sites.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Protease substrate cleavage plays important roles in a variety of biological processes, such as cell cycle, pathway regulation and protein degradation <ref type="bibr" target="#b14">(Hilt and Wolf, 1995;</ref><ref type="bibr" target="#b28">Lo ´pez-Otı ´n and Overall, 2002)</ref>. Knowledge of protease-specific substrate cleavage is important for understanding the mechanisms and biological functions of proteases. In contrast to relatively expensive and time-consuming conventional experimental methods for identifying protease substrate cleavage events, computational methods provide a more cost-and time-efficient alternative that is suitable for proteome-wide annotation and which can be used to guide hypothesis-driven experimental design.</p><p>Several computational predictors of the protease-specific substrates and cleavage sites that rely on machine learning algorithms have been developed in the past two decades <ref type="bibr">(Li et al., 2018a)</ref>. They include Pripper <ref type="bibr" target="#b35">(Piippo et al., 2010)</ref>, Cascleave <ref type="bibr" target="#b42">(Song et al., 2010)</ref>, PROSPER <ref type="bibr" target="#b43">(Song et al., 2012)</ref>, LabCaS <ref type="bibr" target="#b8">(Fan et al., 2013)</ref>, ScreenCap3 <ref type="bibr">(Fu et al.,</ref> V C The Author(s) 2019. Published by Oxford University Press. All rights reserved. For permissions, please e-mail: journals.permissions@oup.com 1057 Bioinformatics, 36(4), 2020, 1057-1065 doi: 10.1093/bioinformatics/btz721 Advance Access Publication Date: 30 September 2019 Original Paper 2014), CleavPredict <ref type="bibr" target="#b22">(Kumar et al., 2015)</ref>, PROSPERous <ref type="bibr">(Song et al., 2018a)</ref>, iProt-Sub <ref type="bibr">(Song et al., 2018b)</ref> and Procleave (<ref type="url" target="http://procleave.erc.mo-nash.edu">http://procleave. erc.mo-nash.edu</ref>), etc. These methods rely on a variety of different features extracted from the input protein sequences, such as amino acid frequencies, information extracted position-specific scoring matrices, and a wide range of physicochemical properties of amino acids <ref type="bibr" target="#b2">(Chen et al., 2018</ref><ref type="bibr" target="#b3">(Chen et al., , 2019))</ref>. These features are used to train predictive models utilizing several different types of machine learning algorithms. While the strategy that depends on the feature-based sequence encoding has resulted in the development of several well-performing predictors, it has a few shortcomings. First, the already large feature space must be enlarged by combination of existing features and manual design of additional features in order to further improve the prediction performance.</p><p>The design of new and informative features is typically done via a trialand-error approach that requires a substantial amount of manual work. Second, the manually developed features could be irrelevant to this prediction and/or redundant (correlated), which negatively impacts the training of the accurate predictive models with the machine learning algorithms. Thus, inclusion of the new features usually involves application of feature selection techniques to reduce the risk of using irrelevant and redundant features. Third, the design of the new features and the use of feature selection methods have to be coupled with the selection of a suitable machine learning algorithm. To sum up, the design of these methods is rather complex and requires handing of three tasks: feature design, feature selection and algorithm selection.</p><p>Deep learning-based approach to building the predictive models alleviates these issues. In contrast to the conventional feature-based methods, deep learning is a form of representation learning. That is, it automatically learns a suitable representation from the raw input data, such as protein sequences, without the need to design and select features. Furthermore, the use of the deep learning models, especially when combined with the application of transfer learning, may produce competitive predictive quality when compared with more conventional machine learning-based methods. Consequently, several deep learning-based methods for the protein sequence analysis were published in recent years. For instance, deep neural networks were used for the prediction of protein crystallization <ref type="bibr" target="#b7">(Elbasir et al., 2018)</ref>, PTM sites <ref type="bibr" target="#b54">(Wang et al., 2018)</ref>, phosphorylation sites <ref type="bibr" target="#b29">(Luo et al., 2019;</ref><ref type="bibr" target="#b53">Wang et al., 2017)</ref>, promoters <ref type="bibr" target="#b50">(Umarov et al., 2019)</ref> and protein function <ref type="bibr" target="#b59">(Zhang et al., 2019)</ref>. However, deep learning has not been so far used for the prediction of the protease-specific substrate cleavage sites <ref type="bibr">(Li et al., 2018a)</ref>.</p><p>We introduce DeepCleave, the first deep learning framework for the caspase and matrix metalloprotease substrate cleavage site prediction. Our approach does not require manual feature engineering and transfers generic protease-family models using transfer learning to generate accurate protease-specific predictors. The use of the transfer learning addresses the problem of relatively small sample sizes of the protease-specific substrate cleavage site datasets. Empirical tests illustrate that the use of the transfer learning improves the quality of the protease-specific substrate cleavage sites prediction when compared to the deep network designed without the transfer learning. Extensive empirical benchmark on an independent test dataset demonstrates that DeepCleave outperforms current state-of-the-art computational approaches. A user-friendly and free webserver that implements DeepCleave is available at <ref type="url" target="http://deepcleave.erc.monash.edu/">http:// deepcleave.erc.monash.edu/</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Materials and methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Design and assessment process</head><p>We summarize the design and assessment process of DeepCleave in Figure <ref type="figure" target="#fig_1">1A</ref>. There are four major steps in this process: (i) dataset collection, (ii) model training, (iii) performance evaluation and (iv) webserver construction. In the first step, we collect the benchmark and independent test datasets from the MEROPS database <ref type="bibr" target="#b37">(Rawlings et al., 2018)</ref>. In the second step, we design and optimize a convolutional neural network (CNN) <ref type="bibr" target="#b23">(LeCun et al., 2010)</ref> using the training dataset. In the third step, we comparatively evaluate the trained CNN models on the independent test against the existing state-of-the-art methods. In the fourth step, we implement and release the DeepCleave webserver and the corresponding source code.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Dataset collection</head><p>We extract the experimentally validated protein substrate annotations from the release 12.0 of the MEROPS database <ref type="bibr" target="#b37">(Rawlings et al., 2018)</ref>. We reduce sequence similarity of the corresponding substrate sequences using the CD-HIT program <ref type="bibr" target="#b10">(Fu et al., 2012)</ref> with the identity threshold of 50% at full protein sequence level. We randomly partition the remaining sequences into the training dataset and the independent test dataset (not used for training) with a ratio of 7:3. Next, we further reduce identity between the test proteins and the proteins from the training dataset to 20% by clustering both datasets together using CD-HIT with the identity threshold of 50% and removing the test proteins that are in clusters with the training proteins. This ensures that the remaining test proteins share &lt;20% identity with the training dataset, while we keep the 50% pairwise similarity within the training set to enlarge the amount of the training data. We note that the 20% cut-off is stricter than the similarity levels maintained in other related studies, which include 80 <ref type="bibr" target="#b11">(Fu et al., 2014)</ref>, 70 <ref type="bibr" target="#b42">(Song et al., 2010;</ref><ref type="bibr">Song et al., 2018a, b)</ref> and 50% <ref type="bibr" target="#b53">(Wang et al., 2017)</ref>. Details concerning the size and composition of the training and test datasets are summarized in Supplementary Tables <ref type="table" target="#tab_0">S1-S3</ref>. We use the training dataset exclusively to optimize the design and parameters of DeepCleave. We utilize the independent (low similarity) test dataset to validate the predictive performance of DeepCleave and compare it with the existing methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Model training</head><p>We use the substrate sequences as input and we employ the one-hot encoding to present these sequences for the CNN. We train CNN using the training dataset to self-learn features that best represent information that is relevant for the protease substrate cleavage site prediction from the one-hot encoded input chains. The output from the DeepCleave predictor consists of two numeric scores for each residue in the input protein sequence: one that quantifies propensity for cleavage site and the other that quantifies propensity for noncleavage site. The two scores are combined together to produce a binary prediction, i.e. every residue is predicted as either cleavage site (if cleavage site score &gt; non-cleavage site score) or non-cleavage site (otherwise). We provide further details in the following sections.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1">One-hot encoding of the input protein sequence</head><p>The CNN model requires the input with a fixed length, while the lengths of the substrate sequences vary widely. Thus, we use a local sliding window approach with a fixed window size of 30 (P15-P15 0 sites: 15 residues upstream and downstream of the cleavage site). We pad the positions of the window that extend beyond the protein sequence at either terminus with symbol X. We encode the protease subsequence using the one-hot encoding which produces a 21-dimensional vector (20 types of common amino acids and X) with a value of 1 corresponding to the amino acid in the sliding window and 0 at all other positions. Consequently, the input used to predict the cleavage site for the residue in the middle of the window is 21 Â 30 matrix. Each residue/matrix is labeled as 1 (if this is a native cleavage site) or 0 (otherwise) for the purpose of training the CNN network.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2">Architecture of the deep CNN</head><p>We use the Keras package <ref type="bibr" target="#b12">(Gulli and Pal, 2017)</ref> with a Theano backend <ref type="bibr" target="#b48">(Team et al., 2016)</ref> to implement the DeepCleave model. Classical CNNs consist of a convolution layer, max-pool layer and fully connected layers from lower layers to higher layers. The lower layers learn simple sequence features which aggregate into more complex features in the higher network levels. The topology of the CNN used in DeepCleave is shown in Figure <ref type="figure" target="#fig_1">1B</ref>. It consists of three convolutional layers, attention layer, two fully connected layers and the output layer. We describe these layers in the subsequent paragraphs.</p><p>The three convolutional layers that aim to capture features from the one-hot encoding matrix. In the first convolutional layer, we use kernel size ¼ 1 Â 200 (convolutional filter in first convolutional layer) to extract simple features from the one-hot encoding matrix. The convolution of the kernel matrix and the input portion of the neuron window size is the output of the neurons on each convolutional layer. The second convolutional layer uses three parallel convolution blocks, each with a different convolution window size (kernel sizes ¼ 3 Â 150, 6 Â 150 and 9 Â 150; convolutional filter ¼ 150 in the second convolutional layer) to convert the features from the first convolutional layer in a parallel manner. We apply three different kernel sizes to diversify the extracted features, ultimately leading to a potentially more robust and more accurate predictive model. This strategy diversifies the high-level features that are extracted from the features generated in the previous layer. Next, we utilize a merge layer to combine the feature representations generated by the three convolution blocks into a higher-dimensional feature representation. The third convolutional layer also uses three convolution blocks with different convolution window sizes (kernel sizes ¼ 5 Â 200, 10 Â 200 and 15 Â 200; convolutional filter ¼ 200 in the third convolutional layer) to further diversify and improve the extracted features. A detailed visualization of three different kernel sizes in the first and the second convolutional layer is provided as an example in Supplementary Figure <ref type="figure" target="#fig_1">S1</ref>.</p><p>The attention layer aims to selectively discover relevant features from a large number of features generated in the convolutional layers. Inspired by the implementation of attention mechanism in previous studies <ref type="bibr" target="#b29">(Luo et al., 2019;</ref><ref type="bibr" target="#b53">Wang et al., 2017)</ref>, we implement the DeepCleave's attention layer to learn two types of feature representations from the output of each convolution block of the third convolution layer. One representation considers the direction of the sequence and the other focuses on the direction of the features. The 'transposition' in Figure <ref type="figure" target="#fig_0">1</ref> means transposed matrix. The feature representation matrix in the direction of features is the transposed matrix in the direction of sequence. This results in the total of six feature representations that are combined together in the merge layer.</p><p>The merged attention layer is followed by two fully connected layers. These two layers reassemble more localized features produced in the merge layer to produce features that cover the entire context of the input matrix. They also act as classifiers that map the resulting feature space onto the corresponding labels using nonlinear transformations. The two fully connected layers use 149 and 8 neurons, respectively.</p><p>The output layer has two neurons that quantify propensity for cleavage site and for the non-cleavage site. The two neurons are fully connected to the previous layer and the activation function is softmax. The softmax activation is commonly used in the final output layer to distribute the probability throughout each of the multiple output nodes <ref type="bibr" target="#b0">(Armenteros, 2019;</ref><ref type="bibr" target="#b29">Luo et al., 2019;</ref><ref type="bibr" target="#b53">Wang et al., 2017</ref><ref type="bibr" target="#b54">Wang et al., , 2018))</ref>. We use transfer learning to convert generic protease family models into protease-specific models. We implement the transfer learning by keeping the layers before the 2nd fully connected layer of the base network (protease-family level model) frozen and training the 2nd fully connected layer and output layer for protease-specific cleavage sites prediction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.3">Training of the CNN</head><p>We employ the 'Adam' optimizer <ref type="bibr" target="#b20">(Kingma et al., 2014)</ref> with the classification cross-entropy as a loss function to train our model. Moreover, we use grid search to adjust the DeepCleave hyperparameters. We utilize several strategies that are detailed below to prevent over-fitting into the training dataset. They include the use of ReLU activation function, L2 regularization, dropout <ref type="bibr" target="#b38">(Sainath et al., 2013)</ref> and 'early stopping' <ref type="bibr" target="#b57">(Yao et al., 2007)</ref>.</p><p>ReLU, which fixes the gradient disappearance problem in the backpropagation training algorithm, is defined as</p><formula xml:id="formula_0">ReLU ¼ 0 if x &lt; 0 x else :</formula><p>L2 regularization imposes large penalties on sparse spiked weight vectors, preferring uniform parameters. This results in the neural nodes taking advantage of a larger number of the inputs coming from the upper network layer, rather than only a part of the input. After the L2 term is added, the absolute value of the weights tends to overall decrease, especially if there is no particularly large value, that is, the network tends to learn relatively small weights.</p><p>Dropout refers to the random removal of some neurons ('erasure' of these neurons from the network) when training a large neural network. Since randomly removed neurons are different in each batch of the training process, the corresponding networks are also different, resulting in 'new' models. Dropout reduces a potentially harmful co-adaptation of neurons because this way neurons do not depend on the presence of other specific neurons. Therefore, the network is forced to learn new features that are used in combination to improve predictions. As such, dropout is a useful to ensure that the prediction network model is robust to the loss of individual features <ref type="bibr" target="#b21">(Krizhevsky et al., 2017)</ref>.</p><p>The 'early stopping' strategy stops training when the loss on the training set is not decreasing (i.e. the degree of reduction is less than a certain threshold). This solves the problem of manually setting the number of epochs and reduces chances of overfitting the network to the training set.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Balancing the training dataset</head><p>The number of cleavage sites is much smaller than the number of noncleavage sites. We apply bootstrapping <ref type="bibr" target="#b52">(Wallace et al., 2011)</ref> to tackle this imbalance problem in the training dataset. We visualize this strategy in the 'Bootstrap' part of Figure <ref type="figure" target="#fig_1">1B</ref>. Let P and N be the positive set (cleavage sites) and negative set (non-cleavage sites), respectively, and #P and #N be the number of the corresponding positive and negative residues. We selected the same numbers (#P) of negative and positive residues to train a model in each bootstrap iteration. We split the negative residues into n ¼ N=P subsets and we apply n bootstrap iterations to traverse the negative residue and train one prediction model. We repeat this procedure five times to train five prediction models. We use the average output of these five models as the final prediction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">Optimization of the model training parameters</head><p>We tune the training parameters of the CNN to maximize the predictive performance. We use 90% of the training dataset to perform bootstrapping and the remaining 10% of the training dataset for validation. We employ Bayesian optimization <ref type="bibr" target="#b41">(Snoek et al., 2012)</ref> to tune the following parameters: learning rate (values in the 0.0001-0.1 range), L2 regularization weight decay (0.0001-0.1), the batch size (64-1024), the dropout probability (0.2-0.8), the convolutional filter (100-250) and the dense filter . We show the best performing on the validation set parameter values in Table <ref type="table" target="#tab_0">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6">Evaluation metrics</head><p>We assess the predictive performance with five commonly used measures including sensitivity (Sn), specificity (Sp), precision, accuracy (Acc) and Matthew's Correlation Coefficient (MCC):</p><formula xml:id="formula_1">Sn ¼ TP TP þ FN Sp ¼ TN TN þ FP Precision ¼ TP TP þ FP Acc ¼ TP þ TN TP þ TN þ FP þ FN MCC ¼ TP Â TN À FP Â FN ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi ðTP þ FPÞ Â ðTP þ FNÞ Â ðTN þ FPÞ Â ðTN þ FNÞ p</formula><p>where TP, TN, FP and FN denote the numbers of true positives (correctly predicted cleavage sites), true negatives (correctly predicted 3 Results and discussion On the other hand, if the target dataset is large or the number of parameters is small, the over-fitting should not be a concern and the base layers should be fine-tuned <ref type="bibr" target="#b58">(Yosinski et al., 2014)</ref>. We apply the second strategy to implement the deep transfer learning since the target dataset is small and the number of parameters is relatively large. We first generate protease-family level deep CNNs for the caspases and matrix metallopeptidases (MMPs) (by combining all the caspases/MMPs cleavage data together) given the relatively small sizes of the protease-specific substrate cleavage site data. Next, we copy the all layers before the 2nd fully connected layer of the base network (protease-family level model), keep these layers frozen, and trained the 2nd fully connected layer and output layer to produce protease-specific predictors. We evaluate and compare the predictive performance of the family level and protease-specific deep CNNs in this section. We contrast the protease-specific predictors with current state-of-the-art predictors in Section 3.4.</p><p>Figure <ref type="figure" target="#fig_3">2</ref> shows change in the average training loss and accuracy for the two family-level networks over the consecutive training epochs. We monitor accuracy changes when testing for when to stop training. Therefore, the training process of the network for the caspase cleavage site prediction ('caspase base network') converges after about 400 epochs, while the training for the MMP cleavage site prediction ('MMP base network') requires about 1000 epochs to converge. The caspase base network secures a lower training loss than the network for MMPs. Moreover, the caspase base network converges to a higher accuracy (&gt;0.9 after about 400 epochs) than the MMP base network (around 0.8). However, both results indicate that these networks provide high-quality family level predictions of the cleavage sites. These accurate results provide a strong foundation for the transfer learning of the protease-specific predictors.</p><p>We also compare the predictive performance of the DeepCleave models trained with and without transfer learning. We summarize these results in Supplementary Tables <ref type="table">S4</ref> and<ref type="table">S5</ref>. The results reveal that the DeepCleave models trained with transfer learning achieves a significantly better performance than the models trained without transfer learning for all 12 proteases. The average AUC of DeepCleave trained with transfer learning over the 12 proteases is 0.92, while the models trained without transfer learning achieve an average AUC of 0.75. In addition, DeepCleave trained with transfer learning also achieves a significantly better accuracy (0.89 versus 0.76), MCC (0.77 versus 0.52), sensitivity (0.88 versus 0.79) and precision (0.89 versus 0.76) than the models trained without the transfer learning. Taken together, these results indicate that the transfer learning strategy is effective for training accurate DeepCleave models using limited protease-specific cleavage data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Ablation analysis for the protease-specific deep CNNs on the training dataset</head><p>As shown in Figure <ref type="figure" target="#fig_1">1B</ref>, the DeepCleave's network uses three different kernel sizes in the second (kernel sizes ¼ 3, 6, 9) and the third (kernel sizes ¼ 5, 10, 15) convolutional layers. The two-dimensional attention layer is applied after the convolutional layers. We perform an ablation analysis to investigate whether the inclusion of the attention layer and the three different kernel sizes in the convolutional layers provide improvements in the predictive performance. Specifically, we compare results generated by DeepCleave (the complete architecture with the attention layer and three kernel sizes) with (i) DeepCleave without the attention layer, (ii) DeepCleave with only one kernel size (one kernel size model) in the second and the third convolutional layers (kernel sizes are 3 and 5, respectively) and (iii) DeepCleave with two kernel sizes (two kernel sizes model) in the second (kernel sizes are 3 and 6) and the third convolutional layers (kernel sizes are 5 and 10). The comparison was done based on the 5-fold cross-validation tests on the training dataset. We summarize the results in Figure <ref type="figure">3</ref> and Supplementary Figure <ref type="figure" target="#fig_3">S2</ref>.</p><p>The results reveal that the complete DeepCleave framework has achieved the best predictive performance for all test scenarios. On the other hand, the DeepCleave without the attention layers performed the worst, with the exception of MMP-9 where the DeepCleave version with one kernel size model performed the worst. These results demonstrate that the attention layer plays an important role in ensuring high quality of predictions produced DeepCleave. Moreover, the empirical results also justify the use of the three kernel sizes in the second and the third convolutional layers of the DeepCleave framework. Figure <ref type="figure" target="#fig_2">4A</ref> and B reveals that the one-hot encoding cannot be directly used to accurately discriminate proteases. The cleavage data for the different proteases are almost randomly distributed within the UMAP plot space. However, use of the attention layer visibly improves the ability to discriminate protease cleavage data (Fig. <ref type="figure" target="#fig_2">4C</ref> and<ref type="figure">D</ref>). The features represented further down the network at the 2nd fully connected layer generate even better results (Fig. <ref type="figure" target="#fig_2">4E</ref> and<ref type="figure">F</ref>). The UMAP plots demonstrate that the DeepCleave framework learns informative feature representations from the one-hot encoding that is easy to extract from the input protein chains. However, even the results at the 2nd fully connected layer show overlap between some cleavage points associated with different caspases. This is not surprising since some sites are cleaved by several different proteases. In addition, we obtain similar results when using another visualization tool, t-SNE (van der <ref type="bibr" target="#b51">Maaten and Hinton, 2008)</ref>. The t-SNE plots are shown in Supplementary Figure <ref type="figure">S3</ref>. To sum up, our empirical results in Sections 3.1-3.3 suggest that the models trained on the protease-family cleavage data can be used to develop accurate cleavage prediction models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Feature representation in the DeepCleave predictor</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4">Comparison of predictive performance on the test dataset</head><p>We compare the predictive performance of the protease-specific DeepCleave models on the independent test dataset (up to 20% similarity with the training dataset) against state-of-the-art prediction tools that have been developed for the caspase and MMP cleavage sites prediction. The considered tools include Cascleave, CAT3, ScreenCap3, SitePrediction and PROSPERous. We collect predictions from these methods using their webservers or implementations provided by the authors. We provide the corresponding ROC curves in Figure <ref type="figure" target="#fig_4">5</ref> and Supplementary Fig. <ref type="figure" target="#fig_2">S4</ref>. Moreover, we report MCC, ACC, sensitivity, specificity and precision for these methods for the five caspases and the seven MMPs in Supplementary Table <ref type="table">S6</ref>.</p><p>DeepCleave achieves competitive predictive performance measured with AUC. Specifically, for the five tested caspases (caspase-1, caspase-2, caspase-3, caspase-6 and caspase-7) and four out of the seven tested MMPs (MMP-2, MMP-7, MMP-12 and membranetype MMP-1), it secures the best AUC value. For the other three types of MMPs (MMP-3, MMP-8 and MMP-9), PROSPERous achieves the best AUC values for two, SitePrediction for one, while DeepCleave ranks either second (MMP-8 and MMP-9) or third (MMP-3). The DeepCleave's average AUC over the 12 proteases is 0.947. When compared with the second-best PROSPERous on the four caspases that both methods can predict, DeepCleave secures average AUC ¼ 0.981 versus 0.965 for PROSPERous. For the seven MMPs, DeepCleave achieves average AUC ¼ 0.920 versus 0.910 for PROSPERous. The two predictors with the third and fourth highest average AUCs are SitePrediction (average AUC ¼ 0.872 over the four caspases and six MMPs that it predicts) and ScreenCap3 (average AUC ¼ 0.869 over the five caspases it covers). DeepCleave provides the average AUCs ¼ 0.985 (caspases) and 0.920 (MMPs) for the two corresponding sets of proteases, respectively. Similar observation can be made for the assessment of the binary predictions using MCC and accuracy. The average MCC of DeepCleave equals 0.828 over all proteases, 0.945 for the five caspases and 0.744 for the seven MMPs. These values reveal that the correlation between the cleavage sites predicted by DeepCleave and the native annotations is high. The average (over the 12 proteases) accuracy of DeepCleave is 0.914 with balanced values of specificity (0.921), sensitivity (0.908) and precision (0.916). Overall, the empirical tests demonstrate that DeepCleave provides accurate predictions of the caspase-and MMP-specific cleavage sites that outperform results generated by the currently available tools.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5">One-hot encoding provides favourable predictive quality</head><p>Previous studies have used a variety of input including the composition of k-spaced amino acid pairs (CKSAAP), BLOSUM62 matrix, position-specific scoring matrix (PSSM) and sequence conservation to predict protease-specific cleavage sites <ref type="bibr">(Song et al., 2018b;</ref><ref type="bibr">Wang Fig. 4</ref>. UMAP plots of the input one-hot encoding (A and B), feature representation after the attention layer (C and D) and the feature representation of the 2nd fully connected layer (E and F) for the models for the caspases (on the left) and the MMPs (on the right). These results were produced using the training dataset Fig. <ref type="figure">3</ref>. Comparison of the predictive performance for the four models considered in the ablation study on the test dataset using five-fold cross-validation. The results concern six proteases: caspase-1, caspase-3, caspase-6, matrix metallopeptidase-2, matrix metallopeptidase-9 and matrix metallopeptidase-7; the identifier inside the brackets (e.g. 'C14.005') is the protease ID in MEROPS. The following models are included: DeepCleave, DeepCleave without attention layer, DeepCleave with only one kernel size in the second and the third convolutional layer, and DeepCleave with two kernel sizes in the second and the third convolutional layer et al., 2014). Predicted structural features, such as secondary structures and solvent accessibility, are also used to predict functional sites in proteins <ref type="bibr" target="#b61">(Zhang et al., 2010</ref><ref type="bibr" target="#b60">(Zhang et al., , 2017))</ref>. We investigate whether these inputs can be used to further improve the prediction performance of DeepCleave. We compare performance between the DeepCleave and the deep networks trained using each feature types individually (CKSAAP, BLOSUM62, putative secondary structure, putative solvent accessibility, PSSM with the PSSM-derived conservation scores) and using all inputs together. The PSSM was calculated by performing PSI-BLAST search against the UniRef90 database. The secondary structure was predicted with PSIPRED <ref type="bibr" target="#b17">(Jones, 1999)</ref> while solvent accessibility was predicted with ASAquick <ref type="bibr" target="#b9">(Faraggi et al., 2014)</ref>. We provide a detailed description of how these data were encoded into the inputs for the DeepCleave's network in Supplementary Methods section in Supplementary Materials.</p><p>We compare the predictive quality of these approaches on the training and independent test datasets in Supplementary Tables <ref type="table">S7</ref> and<ref type="table">S8</ref>, respectively. Results reveal that majority of these input types, except for the putative secondary structure, can be used to predict the cleavage sites reasonably well. The average AUCs computed over the 12 proteases equal 0.605 for the putative secondary structure, 0.766 for CKSAAP, 0.798 for the putative solvent accessibility, 0.806 for the PSSM and conservation scores, 0.922 when using the BLOSUM62 matrix-derived inputs and 0.947 when using the one-hot encoding from DeepCleave. Similar trend is true when using the average MCC, with the corresponding values equal 0.181, 0.463, 0.527, 0.510, 0.732 and 0.828. These results demonstrate that the one-hot encoding utilized in DeepCleave provides the best solution for the prediction of the protease cleavage sites using this particular neural network topology, although several other types of inputs are also predictive. The deep network that uses all inputs secures relatively high average AUC ¼ 0.865 and average MCC ¼ 0.635. However, these results are still lower than the results secured by the one-hot encoding. Again, we believe that this stems from the architecture of the network that favours the binary inputs. One important advantage of the one-hot encoding is that it can be efficiently computed from the input protein sequence, particularly when compared to a computationally expensive calculation of some other inputs like PSSM, putative secondary structure and putative solvent accessibility. This leads to a short prediction runtime, allowing for a large-scale application of the DeepCleave method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6">Webserver</head><p>The DeepCleave's webserver allows the users to perform highthroughput bioinformatics analyses of the protease specific cleavage sites. This server is freely available at <ref type="url" target="http://deepcleave.erc.monash.edu/">http://deepcleave.erc.monash. edu/</ref>. The calculations are done on the server side, freeing the user from utilizing their own hardware. The website of the webserver also provides access to the trained DeepCleave's models. The front page was implemented using PHP and the webserver runs using Tomcat7 on the Linux system. The underlying hardware is an eightcore CPU, 500 GB hard disk and 16 GB memory, which ensures that predictions are produced efficiently.</p><p>To utilize the webserver, the users should paste the sequences of the proteins of interest into the 'TEXTAREA' or upload a protein sequence file that is formatted using the FASTA format. The website provides an example of correctly formatted inputs. The webserver allows for a batch submission of up to 100 sequences at a time, which is possible due to computational efficiency of the underlying predictive model. Users can download and run the trained models of DeepCleave using their own hardware to process larger protein sets. At the submission time, users can input an e-mail address to receive notification when the submitted task is completed. This email includes links to the web page with the predictions. Detailed step-by-step instructions of how to use the DeepCleave webserver are available on the help page of the webserver.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7">Case studies</head><p>We illustrate the results produced by DeepCleave using two substrate proteins selected from the independent test dataset, one that is cleaved by caspases and another that is cleaved by MMPs. The first protein is the human Claspin (UniProt ID: Q9HAW4) <ref type="bibr" target="#b4">(Chini and Chen, 2003)</ref>, while the second is Heat shock 70 kDa protein 4 from mouse (UniProt ID: Q61316) <ref type="bibr" target="#b31">(McCallister et al., 2015)</ref>. We visualize the predictions in Supplementary Figure <ref type="figure" target="#fig_4">S5</ref>. There are three experimentally validated cleavage sites in Claspin that are cleaved by caspases, i.e. site 25 is cleaved by caspase-3, site 82 is cleaved by caspase-6 and site 1072 is cleaved by caspase-7 <ref type="bibr" target="#b6">(Clarke et al., 2005;</ref><ref type="bibr" target="#b19">Julien et al., 2016;</ref><ref type="bibr" target="#b40">Semple et al., 2007)</ref>. DeepCleave is able to identify all three of these sites among the highest-valued predictions generated by the corresponding three models. The Heat shock 70 kDa protein 4 has five cleavage sites processed by MMPs, i.e. sites 97, 182, 356 and 678 are cleaved by MMP-2 and site 678 is cleaved by MMP-9 (auf dem <ref type="bibr" target="#b1">Keller et al., 2010;</ref><ref type="bibr" target="#b36">Prudova et al., 2010)</ref>. The MMP-2 and MMP-9 models from the DeepCleave server generate high scores for these positions, leading to accurate identification of these cleavage sites.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.8">Human proteome-wide prediction of the substrate cleavage sites and gene ontology enrichment analysis</head><p>We apply DeepCleave to pre-compute a human proteome-wide prediction of protease substrate cleavage sites. To this end, we collect 20 413 human proteins from the Swiss-Prot database (The UniProt Consortium, 2017), 14/02/2019). We parameterize the outputs generated by DeepCleave for these proteins to obtain putative cleavage sites that are predicted with high-confidence, i.e. we use threshold that corresponds to the 99% specificity on the training dataset <ref type="bibr" target="#b24">(Li et al., 2015</ref><ref type="bibr" target="#b25">(Li et al., , 2016</ref><ref type="bibr">(Li et al., , 2018b;;</ref><ref type="bibr">Song et al., 2018a, b)</ref>. We provide summary of the predicted cleavage substrates and sites for the five caspases and seven MMPs in Supplementary Table <ref type="table">S9</ref>. A complete list of the predicted cleavage substrates and their cleavage sites can be freely downloaded from the DeepCleave webserver page at <ref type="url" target="http://deepcleave.erc.monash.edu/">http:// deepcleave.erc.monash.edu/</ref>.</p><p>We perform functional analysis of these putative human substrates for the five caspases and seven MMPs. We generate a set of gene ontology (GO) terms that are significantly enriched for each set of the putative substrates when compared to the human proteome. We run two-sided hypergeometric tests to quantify significance of enrichment and we divide the significantly enriched terms (p-value 0.05) into three categories: cellular components, biological processes and molecular functions. The top five significantly over-represented GO terms for each protease are given in Supplementary Table <ref type="table" target="#tab_0">S10</ref>. Summarized results in Supplementary Figure <ref type="figure">S6</ref> demonstrate that putative substrates of different proteases are associated with different GO terms. However, putative substrates targeted by the same protease family tend to be enriched in more similar GO terms than when comparing GO terms across the families. For instance, the putative substrates targeted by caspase-1, caspase-3, caspase-6 and caspase-2 are enriched in the RNA-binding function (GO: 0003723) <ref type="bibr" target="#b30">(Matthews et al., 1994)</ref>, which is supported by a close relationships between RNA-binding proteins and specific caspases <ref type="bibr" target="#b16">(Janakiraman et al., 2017;</ref><ref type="bibr" target="#b46">Subasic et al., 2016;</ref><ref type="bibr" target="#b47">Talwar et al., 2011)</ref>. Moreover, the putative substrates of all caspases are enriched in the cytosol term (GO: 0005829), which is consistent with experimental studies of subcellular localization for caspases <ref type="bibr" target="#b18">(Juin et al., 1998;</ref><ref type="bibr" target="#b33">Mesner et al., 1999)</ref>. On the other hand, the putative substrates of all MMPs, except for MMP-2, are enriched in the 'extracellular region' (GO: 0005576) and 'extracellular space' (GO: 0005615) terms, which is again consistent with the actual subcellular localization for MMPs <ref type="bibr" target="#b5">(Christensen and Shastri, 2015;</ref><ref type="bibr" target="#b13">Hakulinen et al., 2008;</ref><ref type="bibr" target="#b34">Oh et al., 2001;</ref><ref type="bibr" target="#b39">Schmidt-Hansen et al., 2004;</ref><ref type="bibr" target="#b56">Wiesner et al., 2013)</ref>. These observations support validity of the underlying DeepCleave's predictions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Conclusions</head><p>We introduce DeepCleave, the first deep learning-based approach for accurate prediction of the caspase and matrix metalloprotease substrate cleavage sites. DeepCleave employs substrate sequences as the sole input and utilizes the one-hot encoding to convert these sequences into the input for the deep network. We apply transfer learning to extend generic protease family models for the prediction of 12 specific proteases. This approach also allowed us to address the problem of a small sample sizes of the protease-specific cleavage site data.</p><p>We empirically demonstrate that the DeepCleave framework learns feature representations that accurately differentiate between different caspases and MMPs. We also show that the use of multiple kernel sizes and the attention layer lead to substantial improvements in the predictive performance of our method, and that the one-hot encoding provides favorable results when compared with several other input types. We empirically compare DeepCleave with several state-of-the-art predictors. The results reveal that DeepCleave provides accurate predictions that outperform previously proposed methods for the large majority of the considered proteases (9 out of 12). We anticipate that this deep learning framework will be useful for other similar predictive tasks, such as prediction of glycosylation and other PTM sites.</p><p>A user-friendly webserver and the source code of DeepCleave are freely available at <ref type="url" target="http://deepcleave.erc.monash.edu/">http://deepcleave.erc.monash.edu/</ref>. This website also provides access to a pre-computed set of putative cleavage site for the entire human proteome. To sum up, DeepCleave is a computational tool for high-throughput and accurate cleavage site prediction, which has the potential to produce novel biological hypotheses.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Development flowchart and the deep network architecture. (A) The flowchart of the development and assessment process. (B) The topology of the deep CNN. The CNN takes input sequences and sequentially transforms them into a 'flattened' output vector using convolutional, pooling and fully connected layers. The elements of the output vector (softmax layer) represent the probabilities of the cleavage sites. During the training process, the internal parameters of the neural network layers are iteratively adjusted to improve accuracy. Typically, lower layers (left side of B) learn simple features, which then influence the high-level representations (right side of B)</figDesc><graphic coords="3,77.16,59.47,457.91,537.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>3. 1</head><label>1</label><figDesc>Predictive performance of the protease-family and protease-specific deep CNNsThe protease-specific datasets have relatively small sizes when compared to the needs of the deep network training. Small training datasets may cause overfitting when used to train deep networks<ref type="bibr" target="#b58">(Yosinski et al., 2014)</ref>. To address this, we utilize the deep transfer learning technique that is commonly used in the deep learning studies<ref type="bibr" target="#b15">(Hurtado et al., 2018;</ref><ref type="bibr" target="#b53">Wang et al., 2017</ref><ref type="bibr" target="#b54">Wang et al., , 2018))</ref>. The deep transfer learning first trains a base network, and then copies the first n layers of this base network to the first n layers of the target network. Next, the remaining layers of the target network are randomly initialized and trained for a target problem. There are two main strategies for training the target network. The first is to back-propagate errors in the entire target problem network to fine-tune them to the new problem. The second is to keep the transferred feature layers frozen, which means that they are fixed during the training of for the target problem. Choosing whether to fine-tune the first n layers of the target network depends on the size of the target dataset. If the dataset is small and the number of parameters is large, fine-tuning may lead to over-fitting and thus these layers should be kept frozen.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4</head><label>4</label><figDesc>Figure4gives the UMAP plots<ref type="bibr" target="#b32">(McInnes et al., 2018)</ref> that visualize feature representations that are automatically learned inside of the DeepCleave model. The UMAP plots cluster the actual feature representations into a two-dimensional space. This figure includes the mapped feature representations for the one-hot encoding, after the attention layer, and for the 2nd fully connected layer. Each dot in the figure represents a positive sample (i.e. a cleavage site for a given protease). Figure4Aand B reveals that the one-hot encoding cannot be directly used to accurately discriminate proteases. The cleavage data for the different proteases are almost randomly distributed within the UMAP plot space. However, use of the attention layer visibly improves the ability to discriminate protease cleavage data (Fig.4C and D). The features represented further down the network at the 2nd fully connected layer generate even better results (Fig.4E and F). The UMAP plots demonstrate that the DeepCleave framework learns informative feature representations from the one-hot encoding that is easy to extract from the input protein chains. However, even the results at the 2nd fully connected layer show overlap between some cleavage points associated with different caspases. This is not surprising since some sites are cleaved by several different proteases. In addition, we obtain similar results when using another visualization tool, t-SNE (van der<ref type="bibr" target="#b51">Maaten and Hinton, 2008)</ref>. The t-SNE plots are shown in Supplementary FigureS3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. The average training loss and accuracy of the family level networks for the caspase (left) and for the matrix metallopeptidase (right) cleavage site prediction</figDesc><graphic coords="5,64.18,626.63,231.93,86.17" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. ROC curves and corresponding AUC values generated by seven considered protease cleavage site predictors (DeepCleave, Cascleave, SitePrediction, CleavPredict, CAT3, ScreenCap3 and PROSPERous) for caspase-1, caspase-3, caspase-6, matrix metallopeptidase-2, matrix metallopeptidase-9 and matrix metallopeptidase-7; the identifier in the brackets (e.g. 'C14.005') is the protease ID in MEROPS</figDesc><graphic coords="7,64.18,59.47,231.93,361.47" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="6,316.18,59.47,231.93,355.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="6,63.55,59.47,233.12,324.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Values of the tuned parameters -cleavage sites), false positives (non-cleavage sites incorrectly predicted as cleavage sites) and false negatives (cleavage sites incorrectly predicted as non-cleavage sites), respectively. Moreover, we also plot the Receiver-Operating Characteristic (ROC) curves and calculated the Area Under the Curve (AUC) values based on the scores produced by the output layer.</figDesc><table><row><cell>Parameters</cell><cell>Tuned setting</cell></row><row><cell>Batch size</cell><cell>1024</cell></row><row><cell>Learning rate</cell><cell>0.001</cell></row><row><cell>L2 regularization</cell><cell>0.001</cell></row><row><cell>Dropout rate</cell><cell>0.75</cell></row><row><cell>'Early stopping' patience</cell><cell>20</cell></row><row><cell>Initializer</cell><cell>he_normal</cell></row><row><cell>Convolutional filter</cell><cell>200, 150, 200</cell></row><row><cell>Dense filter</cell><cell>149, 8, 2</cell></row><row><cell>Activation function</cell><cell>ReLU</cell></row></table><note><p>non</p></note></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><head>Funding</head><p>This work was supported by grants from the <rs type="funder">Australian Research Council (ARC)</rs> (<rs type="grantNumber">LP110200333</rs> and <rs type="grantNumber">DP120104460</rs>), <rs type="funder">National Health and Medical Research Council of Australia (NHMRC)</rs> (<rs type="grantNumber">1092262</rs>, <rs type="grantNumber">490989</rs>), the <rs type="funder">National Institute of Allergy and Infectious Diseases of the National Institutes of Health</rs> (<rs type="grantNumber">R01 AI111965</rs>) and a <rs type="funder">Major Inter-Disciplinary Research</rs> (IDR) Grant Awarded by <rs type="funder">Monash University</rs>, and the <rs type="funder">Collaborative Research Program of Institute for Chemical Research, Kyoto University</rs> (<rs type="grantNumber">2019-32</rs>). LK was supported in part by the <rs type="funder">Robert J. Mattauch Endowment</rs> funds.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_aDXZy86">
+					<idno type="grant-number">LP110200333</idno>
+				</org>
+				<org type="funding" xml:id="_D3rAnXn">
+					<idno type="grant-number">DP120104460</idno>
+				</org>
+				<org type="funding" xml:id="_EKp2wKf">
+					<idno type="grant-number">1092262</idno>
+				</org>
+				<org type="funding" xml:id="_xvwrkfz">
+					<idno type="grant-number">490989</idno>
+				</org>
+				<org type="funding" xml:id="_CTrEDga">
+					<idno type="grant-number">R01 AI111965</idno>
+				</org>
+				<org type="funding" xml:id="_gYHtybf">
+					<idno type="grant-number">2019-32</idno>
+				</org>
+			</listOrg>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>://deep cleave.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Conflict of Interest: none declared.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Detecting Novel Sequence Signals in Targeting Peptides Using Deep Learning</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Armenteros</surname></persName>
+		</author>
+		<idno type="DOI">.org/10.1101/639203</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BioRxiv</title>
+		<imprint>
+			<biblScope unit="volume">2019</biblScope>
+			<biblScope unit="page">639203</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A statistics-based platform for quantitative N-terminome analysis and identification of protease cleavage products</title>
+		<author>
+			<persName><forename type="first">Auf Dem</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="912" to="927" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">iFeature: a Python package and web server for features extraction and selection from protein and peptide sequences</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="2499" to="2502" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">iLearn: an integrated platform and meta-learner for feature engineering, machine-learning analysis and modeling of DNA, RNA and protein sequence data</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bib/bbz041</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Brief. Bioinf</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Human claspin is required for replication checkpoint control</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C S</forename><surname>Chini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">278</biblScope>
+			<biblScope unit="page" from="30057" to="30062" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Matrix-metalloproteinase-9 is cleaved and activated by Cathepsin K</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Christensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Shastri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Res. Notes</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">322</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Cleavage of claspin by caspase-7 during apoptosis inhibits the Chk1 pathway</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Clarke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">280</biblScope>
+			<biblScope unit="page" from="35337" to="35345" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">DeepCrystal: a deep learning framework for sequence-based protein crystallization prediction</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Elbasir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="2216" to="2225" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">LabCaS: labeling calpain substrate cleavage sites from amino acid sequence using conditional random fields</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">X</forename><surname>Fan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proteins</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="622" to="634" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Accurate single-sequence prediction of solvent accessible surface area using local and global features</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Faraggi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proteins Struct. Funct. Bioinf</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="3170" to="3176" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">CD-HIT: accelerated for clustering the next-generation sequencing data</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="3150" to="3152" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">ScreenCap3: improving prediction of caspase-3 cleavage sites using experimentally verified noncleavage sites</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Fu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2042" to="2046" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gulli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pal</surname></persName>
+		</author>
+		<title level="m">Deep Learning with Keras</title>
+		<meeting><address><addrLine>Birmingham, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Packt Publishing Ltd</publisher>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Secretion of active membrane type 1 matrix metalloproteinase (MMP-14) into extracellular space in microvesicular exosomes</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hakulinen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell. Biochem</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="1211" to="1218" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Proteasomes. Complex proteases lead to a new understanding of cellular regulation through proteolysis</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Hilt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Wolf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Naturwissenschaften</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="257" to="268" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Hurtado</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1804.06281</idno>
+		<title level="m">Deep transfer learning in the assessment of the quality of protein models</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Repression of caspase-3 and RNA-binding protein HuR cleavage by cyclooxygenase-2 promotes drug resistance in oral squamous cell carcinoma</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Janakiraman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="3137" to="3148" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Protein secondary structure prediction based on position-specific scoring matrices</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Jones</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">292</biblScope>
+			<biblScope unit="page" from="195" to="202" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Induction of a caspase-3-like activity by calcium in normal cytosolic extracts triggers nuclear apoptosis in a cell-free system</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Juin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">273</biblScope>
+			<biblScope unit="page" from="17559" to="17564" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Quantitative MS-based enzymology of caspases reveals distinct protein substrate specificities, hierarchies, and cellular roles</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Julien</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="2001" to="2010" />
+			<date type="published" when="2016">2016</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">A method for stochastic optimization</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Kingma</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1412.6980</idno>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">ImageNet classification with deep convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krizhevsky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun. ACM</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page" from="84" to="90" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">CleavPredict: a platform for reasoning about matrix metalloproteinases proteolytic events</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">127877</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Convolutional networks and applications in vision</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 2010 IEEE International Symposium on Circuits and Systems</title>
+		<meeting>2010 IEEE International Symposium on Circuits and Systems</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="253" to="256" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">GlycoMine: a machine learning-based approach for predicting N-, C-and O-linked glycosylation in the human proteome</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="1411" to="1419" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">GlycoMine(struct): a new bioinformatics tool for highly accurate mapping of the human N-linked and O-linked glycoproteomes by incorporating structural features</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">34595</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Twenty years of bioinformatics research for protease-specific substrate and cleavage site prediction: a comprehensive revisit and benchmarking of existing methods</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bib/bby077</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Brief. Bioinf</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Quokka: a comprehensive tool for rapid and accurate prediction of kinase family-specific phosphorylation sites in the human proteome</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="4223" to="4231" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Protease degradomics: a new challenge for proteomics</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lo ´pez-Otı ´n</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Overall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Rev. Mol. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="509" to="519" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">DeepPhos: prediction of protein phosphorylation sites with deep learning</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page">2766</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Structure of human rhinovirus 3C protease reveals a trypsin-like polypeptide fold, RNA-binding site, and means for cleaving precursor polyprotein</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Matthews</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="761" to="771" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Functional diversification and specialization of cytosolic 70-kDa heat shock proteins</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mccallister</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<date type="published" when="2015">2015. 9363</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mcinnes</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1802.03426</idno>
+		<title level="m">Uniform manifold approximation and projection for dimension reduction</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Characterization of caspase processing and activation in HL-60 cell cytosol under cell-free conditions. Nucleotide requirement and inhibitor profile</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Mesner</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">274</biblScope>
+			<biblScope unit="page" from="22635" to="22645" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">The membrane-anchored MMP inhibitor RECK is a key regulator of extracellular matrix integrity and angiogenesis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Oh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="789" to="800" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Pripper: prediction of caspase cleavage sites from whole proteomes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Piippo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">320</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Multiplex N-terminome analysis of MMP-2 and MMP-9 substrate degradomes by iTRAQ-TAILS quantitative proteomics</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Prudova</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="894" to="911" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">The MEROPS database of proteolytic enzymes, their substrates and inhibitors in 2017 and a comparison with peptidases in the PANTHER database</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Rawlings</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="624" to="D632" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Deep convolutional neural networks for LVCSR</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Sainath</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Int Conf Acoust SPEE</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="8614" to="8618" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Extracellular S100A4(mts1) stimulates invasive growth of mouse endothelial cells and modulates MMP-13 matrix metalloproteinase activity</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schmidt-Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="5487" to="5495" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Cleavage and degradation of Claspin during apoptosis by caspases and the proteasome</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">I</forename><surname>Semple</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Death Differ</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1433" to="1442" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Practical Bayesian optimization of machine learning algorithms</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Snoek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Neural Inf. Process. Syst</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="2960" to="2968" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Cascleave: towards more accurate prediction of caspase substrate cleavage sites</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="752" to="760" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">PROSPER: an integrated feature-based tool for predicting protease substrate cleavage sites</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">50300</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">PROSPERous: high-throughput prediction of substrate cleavage sites for 90 proteases with improved accuracy</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="684" to="687" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">iProt-Sub: a comprehensive package for accurately mapping and predicting protease-specific substrates and cleavage sites</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brief. Bioinf</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="638" to="658" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Post-transcriptional control of executioner caspases by RNA-binding proteins</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Subasic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="2213" to="2225" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Caspase-mediated cleavage of RNA-binding protein HuR regulates c-Myc protein expression after hypoxic stress</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Talwar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">286</biblScope>
+			<biblScope unit="page" from="32333" to="32343" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">Theano: a Python framework for fast computation of mathematical expressions</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T D</forename><surname>Team</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1605.02688</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">The UniProt Consortium (2017) UniProt: the universal protein knowledgebase</title>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<date type="published" when="2699">2699</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Promoter analysis and prediction in the human genome using sequence-based deep learning models</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Umarov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page">2730</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Visualizing data using t-SNE</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Van Der Maaten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="2579" to="2605" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<title level="m" type="main">Class imbalance, redux</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">C</forename><surname>Wallace</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<publisher>IEEE</publisher>
+			<biblScope unit="page" from="754" to="763" />
+		</imprint>
+	</monogr>
+	<note>2011 IEEE 11th international conference on data mining</note>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">MusiteDeep: a deep-learning framework for general and kinase-specific phosphorylation site prediction</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="3909" to="3916" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Capsule network for protein post-translational modification site prediction</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="2386" to="2394" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Cascleave 2.0, a new approach for predicting caspase and granzyme cleavage targets</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="71" to="80" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">A specific subset of RabGTPases controls cell surface exposure of MT1-MMP, extracellular matrix degradation and three-dimensional invasion of macrophages</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wiesner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Sci</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page" from="2820" to="2833" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">On early stopping in gradient descent learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Constr. Approx</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="289" to="315" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">How transferable are features in deep neural networks? Ad</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yosinski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Inf. Process. Syst</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="3320" to="3328" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">DeepFunc: a deep learning framework for accurate prediction of protein functions from protein sequences and interactions</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">1900019</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Comprehensive review and empirical analysis of hallmarks of DNA-, RNA-and protein-binding residues in protein chains</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno>doi.org/10.1093</idno>
+		<ptr target="/bib/bbx168" />
+	</analytic>
+	<monogr>
+		<title level="j">Brief. Bioinform</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Analysis and prediction of RNA-binding residues using sequence, evolutionary conservation, and predicted secondary structure and solvent accessibility</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Protein Pept. Sci</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="609" to="628" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

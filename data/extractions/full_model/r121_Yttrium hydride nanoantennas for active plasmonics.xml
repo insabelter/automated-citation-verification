@@ -1,0 +1,1872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Yttrium Hydride Nanoantennas for Active Plasmonics</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2014-02-27">February 27, 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Nikolai</forename><surname>Strohfeldt</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Andreas</forename><surname>Tittl</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Martin</forename><surname>Schaferling</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Frank</forename><surname>Neubrech</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Uwe</forename><surname>Kreibig</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Ronald</forename><surname>Griessen</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Faculty of Sciences</orgName>
+								<orgName type="department" key="dep2">Division of Physics and Astronomy</orgName>
+								<orgName type="institution">VU University</orgName>
+								<address>
+									<addrLine>De Boelelaan 1081</addrLine>
+									<postCode>1081 HV</postCode>
+									<settlement>Amsterdam</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Harald</forename><surname>Giessen</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Physics Institute and Research Center SCoPE</orgName>
+								<orgName type="institution">University of Stuttgart</orgName>
+								<address>
+									<addrLine>Pfaffenwaldring 57</addrLine>
+									<postCode>70569</postCode>
+									<settlement>Stuttgart</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Physics Institute</orgName>
+								<orgName type="institution">RWTH Aachen</orgName>
+								<address>
+									<addrLine>Sommerfeldstrasse 14</addrLine>
+									<postCode>52074</postCode>
+									<settlement>Aachen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Yttrium Hydride Nanoantennas for Active Plasmonics</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-02-27">February 27, 2014</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">AB0BAD5BB6F390F2E09EFA8402714AB0</idno>
+					<idno type="DOI">10.1021/nl403643v</idno>
+					<note type="submission">Received: September 30, 2013 Revised: January 26, 2014</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:46+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Particle plasmons</term>
+					<term>active plasmonics</term>
+					<term>reconfigurable nanostructures</term>
+					<term>metal-insulator transitions</term>
+					<term>metal hydrides</term>
+					<term>switchable mirrors</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A key challenge for the development of active plasmonic nanodevices is the lack of materials with fully controllable plasmonic properties. In this work, we demonstrate that a plasmonic resonance in top-down nanofabricated yttrium antennas can be completely and reversibly turned on and off using hydrogen exposure. We fabricate arrays of yttrium nanorods and optically observe, in extinction spectra, the hydrogen-induced phase transition between the metallic yttrium dihydride and the insulating trihydride. Whereas the yttrium dihydride nanostructures exhibit a pronounced particle plasmon resonance, the transition to yttrium trihydride leads to a complete vanishing of the resonant behavior. The plasmonic resonance in the dihydride state can be tuned over a wide wavelength range by simply varying the size of the nanostructures. Furthermore, we develop an analytical diffusion model to explain the temporal behavior of the hydrogen loading and unloading trajectories observed in our experiments and gain information about the thermodynamics of our device. Thus, our nanorod system serves as a versatile basic building block for active plasmonic devices ranging from switchable perfect absorbers to active local heating control elements.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>P lasmonics has evolved into a broad and important field of nanooptics that enables a variety of new applications. <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref> By creating local hotspots of the electric field on the nanometer scale, it is possible to develop very sensitive chemical and biological sensor devices and locally initiate and control chemical processes. <ref type="bibr" target="#b3">4,</ref><ref type="bibr" target="#b4">5</ref> In recent years, plasmonics has expanded toward active nanophotonic devices, which can be reconfigured using external stimuli such as laser pulses, <ref type="bibr" target="#b5">6</ref> mechanical strain, <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref> heat, <ref type="bibr" target="#b10">11</ref> or electrical currents. <ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13</ref> Furthermore, the realization of active plasmonic devices requires a move from widely used but passive metals such as silver or gold toward novel materials systems. <ref type="bibr" target="#b13">14</ref> This allows for additional degrees of freedom in device design and enables external control over the optical response of a plasmonic nanostructure without having to directly modify its geometry. <ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b15">16</ref> Phase change materials provide an ideal toolkit for the realization of such active nanodevices and several materials with heating-or laser-induced switching behavior such as vanadium dioxide (VO 2 ), <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref> gallium lanthanum sulphide (GLS), <ref type="bibr" target="#b19">20</ref> or germanium antimony telluride (GST) <ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref> have already been investigated in the context of plasmonics.</p><p>In 1996, Huiberts et al. <ref type="bibr" target="#b23">24</ref> discovered a switchable mirror effect in thin films of yttrium when exposed to hydrogen gas. They demonstrated that a fully reflecting metallic yttrium mirror becomes dielectric and almost completely transparent after absorbing a sufficient amount of hydrogen. This work was expanded to the field of nanoparticles by Stepanov et al., <ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b25">26</ref> who showed that hydrogenated spherical yttrium nanoparticles under ultrahigh vacuum conditions can have switchable Mie resonances.</p><p>Here, we demonstrate reconfigurable YH x nanoantennas, fabricated via electron beam lithography, which exhibit a pronounced plasmonic resonance in their metallic YH 2 state. The resonance wavelength and width can be widely tuned through variation of the antenna dimensions. Compared to the very small, bottom-up produced nanoparticles from Stepanov et al., <ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b25">26</ref> we demonstrate antennas and antenna assemblies with a large oscillator strength and varying size, showing customdesigned plasmonic properties in the near-and mid-IR spectral regions. The transition between metallic and dielectric yttrium hydride antennas is induced by simple hydrogen exposure from the gas phase or from electrolysis under ambient atmospheric conditions and shows a drastic change of the spectral response.</p><p>Compared to other promising phase change materials used in plasmonic devices, yttrium dihydride has the advantage of comparatively low intrinsic damping and can therefore support plasmonic resonances itself, whereas the metallic phases of VO 2 , GST, or GLS are known to exhibit only a weak plasmonic response, if any. Despite the advantage of much faster switching times, they can often be used only in hybrid plasmonic systems, that is, in combination with gold or other good plasmonic metals. However, the use of hybrid systems drastically lowers the switching contrast, since only the dielectric environment of the resonant material changes and not the antenna itself. Therefore, yttrium dihydride is a highly relevant and very promising alternative for plasmonic applications that require a high switching contrast and are less dependent on ultrashort switching times. Furthermore, as a metal, yttrium and its hydrides can be structured easily using standard nanofabrication techniques.</p><p>During hydrogen absorption, metallic yttrium (Y) transforms first into yttrium dihydride (YH 2 , Figure <ref type="figure" target="#fig_0">1a</ref>), which has an even higher electrical conductivity than pure yttrium. This phase change from a metal in hcp configuration into a fcc metal is nonreversible under normal conditions. Through further exposure to hydrogen, it undergoes a second, reversible, phase change into yttrium trihydride (YH 3 , Figure <ref type="figure" target="#fig_0">1b</ref>), a transparent semiconductor with a hcp structure. However, it is important to note that under normal hydrogen partial pressures (i.e., less than 1 bar near room temperature) full stoichiometric YH 3 cannot be realized, <ref type="bibr" target="#b26">27</ref> and the final state of the system reaches only YH 3-δ , where δ is in the range of 0.1-0.3 (under very high pressure δ = 0.01 can be reached <ref type="bibr" target="#b27">28</ref> ). For simplicity, we will refer to this final state as yttrium trihydride (YH 3 ).</p><p>The transition from YH 2 to YH 3 induces strong and reversible changes in the dielectric properties that can be triggered at low partial pressures of hydrogen. Even though yttrium hydride thin films exhibit a large hysteresis effect, <ref type="bibr" target="#b28">29</ref> the ability to switch reversibly (in the sense that after a full hysteresis loop it returns to the original dihydride phase) from metal to a transparent semiconductor upon hydrogen absorption makes yttrium an attractive candidate for active plasmonic applications. Moreover, due to the drastic change from metal to insulator, the plasmonic response vanishes completely when the yttrium is in the trihydride phase and recovers when switched back into the yttrium dihydride phase.</p><p>To demonstrate the functionality of such a switchable plasmonic system, we fabricate arrays of yttrium nanorods (Figure <ref type="figure" target="#fig_0">1c</ref>). We choose nanorods as a model system because they exhibit a strong plasmonic response and approximately dipole-like behavior and therefore constitute an ideal development platform for new plasmonic materials such as yttrium dihydride.</p><p>To realize this system experimentally, we first prepare a PMMA mask on a fused silica substrate using a standard electron beam lithography process. <ref type="bibr" target="#b29">30</ref> Afterward, yttrium and platinum are evaporated onto the developed PMMA mask via electron beam assisted evaporation. Platinum on top of the yttrium rods serves as a catalytic layer to dissociate the H 2 molecules into atomic hydrogen. Hydrogen can then be incorporated into the yttrium lattice to form the hydride states. Catalytic materials such as platinum or palladium next to yttrium are necessary because yttrium itself is not able to catalytically dissociate H 2 molecules into atomic hydrogen. Additionally, the platinum cover prevents oxidation at the top surface of the yttrium rods. Such oxidation is common in transition metals like yttrium, which easily form an oxide layer (Y 2 O 3 ) of several nanometers when exposed to oxygen. <ref type="bibr" target="#b25">26</ref> This impedes hydrogen from penetrating into the particle volume. Although the thin layer of platinum introduces some additional damping to our system, the overall influence on the plasmonic response is weak.</p><p>Figure <ref type="figure" target="#fig_1">2</ref> shows typical extinction spectra of the different hydrogenation states of yttrium nanoantennas measured with a commercial Fourier transform infrared spectroscopy system (Bruker FTIR) and an incident electric field polarization parallel to the rods. Here, the rods have dimensions of 385 × 160 nm and a height of 50 nm yttrium plus 6 nm platinum.</p><p>Pure yttrium is a metal with a relatively low electrical conductivity, <ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b31">32</ref> and therefore Y nanoantennas do not exhibit  a distinct plasmonic response in the visible and near-IR spectral region (gray dotted line in Figure <ref type="figure" target="#fig_1">2</ref>). The decrease in extinction toward longer wavelengths can be attributed to the tail of a very strong and broad electronic resonance at about 3.1 eV (400 nm). <ref type="bibr" target="#b32">33</ref> In contrast to Y, YH 2 is a good metal with a markedly different atomic and electronic structure. <ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b34">35</ref> To transform the yttrium into YH 2 , we expose our sample to 4 vol % hydrogen in nitrogen for 10 min. According to literature, this is more than sufficient to reach the dihydride and even the trihydride state. <ref type="bibr" target="#b35">36</ref> However, the transition between Y and YH 2 is nonreversible at room temperature, whereas the second transition between YH 2 and YH 3 is fully reversible. Therefore the rods automatically settle in the YH 2 state after the hydrogen is turned off and equilibrium is reached.</p><p>The red line in Figure <ref type="figure" target="#fig_1">2</ref> shows an extinction spectrum of such a hydrogenated rod array in the YH 2 state. The YH 2 rods have a clear extinction maximum at approximately 1720 nm that can be attributed to a localized surface plasmon resonance. This YH 2 state can be seen as the ground state of our switchable plasmonic structure, because the system will not return to the unhydrided state without extremely harsh and destructive measures such as strong heating and ultrahigh vacuum. Therefore the yttrium nanostructure can only be switched reversibly between the dihydride and the trihydride phase. This is not a disadvantage as there is a large contrast in extinction between YH 2 and YH 3 (see Figure <ref type="figure" target="#fig_1">2</ref>).</p><p>When continuously exposed to hydrogen (in this case 5 vol % H 2 in N 2 at room temperature), the yttrium nanostructures switch into the trihydride phase within seconds. This dramatic change from a metal to a Mott insulator also leads to a drastic change in the extinction spectrum. In fact, yttrium hydride is one of the few strongly correlated systems with a continuous Mott-Hubbard metal-insulator transition. <ref type="bibr" target="#b36">37,</ref><ref type="bibr" target="#b37">38</ref> The particle plasmon resonance fully vanishes, and the extinction spectrum becomes almost flat, as shown by the blue line in Figure <ref type="figure" target="#fig_1">2</ref>. This proves that it is possible to completely turn off the plasmon resonance by introducing only small and safe amounts of hydrogen into the system. The switching results in a relative extinction change at the peak wavelength (1720 nm) of almost 70%, which translates to an absolute change in transmittance of 23% that can easily be observed by the naked eye.</p><p>To incorporate yttrium nanostructures into switchable plasmonic devices, the ability to tune the plasmon resonance over a wide spectral range is needed. Here, the simplest approach is to vary the length of the plasmonic nanorods while leaving width and height constant.</p><p>Consequently, we fabricated yttrium rod arrays with a constant width w of 160 nm and height h of 50 nm yttrium covered with 6 nm platinum, while varying the length from 290 to 385 nm. Figure <ref type="figure" target="#fig_2">3</ref> shows the change of the plasmon resonance for increasing rod length. For longer rods, we observe a higher extinction as well as a red-shift of the resonance wavelength. The increasing extinction can be attributed to the enhanced dipole strength that is caused by the increase in nanoparticle volume. A further contribution comes from the increased filling factor of the arrays, since we keep the periodicity (p x = 700 nm; p y = 400 nm) unchanged for all rod lengths. The red-shift of about 400 nm is a clear indication of a particle plasmon resonance that is highly correlated with particle dimension and shape. Especially, we find a linear relation between rod length l and plasmon resonance wavelength λ res , shown in the inset of Figure <ref type="figure" target="#fig_2">3</ref>, which is in excellent agreement with theoretical and experimental knowl-edge about plasmon resonances in metal nanoantennas. <ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b39">40</ref> The tuning range of our reconfigurable antennas is mainly limited at lower wavelengths due to a broad electronic transition at around 400 nm. At longer wavelengths, the YH 2 dielectric function follows a Drude-like behavior and thus enables full tunability of the plasmonic resonance.</p><p>To investigate the switching dynamics in our nanoantenna system in more detail, we study the temporal behavior of the extinction during hydrogen exposure. Figure <ref type="figure" target="#fig_5">4</ref> shows the H 2 loading (Figure <ref type="figure" target="#fig_5">4a,</ref><ref type="figure">b</ref>) and the unloading process (Figure <ref type="figure" target="#fig_5">4c,</ref><ref type="figure">d</ref>) of an yttrium rod array with rod parameters l = 290 nm, w = 160 nm, h Y = 50 nm, h Pt = 6 nm, and a periodicity p x,y = 400 nm, measured at room temperature. We start in the YH 2 phase and observe a strong resonance at 1580 nm (red line, Figure <ref type="figure" target="#fig_5">4a</ref>). After exposing the system to hydrogen (5 vol % H 2 in N 2 ), the resonance immediately flattens and continuously approaches the YH 3 spectrum where it saturates after approximately 50 s (blue line). The spectra in Figure <ref type="figure" target="#fig_5">4a</ref> show a typical set of FTIR measurements recorded during hydrogen uptake with one measurement every 4 s. In Figure <ref type="figure" target="#fig_5">4b</ref> the extinction time trace at 1580 nm (position of the YH 2 plasmon resonance) is displayed (green line), showing the almost instantaneous reaction to hydrogen exposure. Within a few seconds, the extinction starts to drop from 0.62 with an almost constant slope of 2% per second. This large change together with the reasonable response time makes the system well-suited for active plasmonic devices. Moreover, the switching time from the dihydride to the trihydride phase decreases monotonically with the hydrogen pressure as shown in the Supporting Information and explained by the diffusion model below.</p><p>Figure <ref type="figure" target="#fig_5">4c</ref> shows the back reaction, moving from YH 3 to YH 2 . This takes approximately 3 h, which is significantly slower than the absorption reaction. There are several factors that lead to this slow transition. The key reason is the reduced out-diffusion of hydrogen due to the platinum cap layer and the oxidized sidewalls of the nanoantennas.</p><p>To explain this asymmetry in the behavior of our system, we developed an analytical one-dimensional diffusion model, following the ideas of Pasturel et al. <ref type="bibr" target="#b40">41</ref> The assumption of a 1D system is valid, since the oxidized side walls of the nanorods channel the hydrogen flow through the platinum cap layer in and out of the yttrium-hydride nanostructures. The model incorporates the diffusion of atomic hydrogen through the caplayer and into the Y nanoantenna. Soon after exposition to hydrogen gas at pressure p H2 , a stationary state is established with a linear concentration gradient in the caplayer. The H current through the caplayer is then equal to the diffusion current into the Y antennas, and we have</p><formula xml:id="formula_0">= - = j D V c c L L V c t d d diffusion Pt Pt s i Pt Y Y Y<label>(1)</label></formula><p>where </p><formula xml:id="formula_1">L</formula><p>with  Nano Letters </p><formula xml:id="formula_3">= - Δ + = Δ -Δ ⎛ ⎝ ⎜ ⎞ ⎠ ⎟ ⎛ ⎝ ⎜ ⎞ ⎠ ⎟ g H T S RT</formula><formula xml:id="formula_4">τ = - - ⎛ ⎝ ⎜ ⎞ ⎠ ⎟ c t m g p f c c d d 1 Y Y Y<label>(4)</label></formula><p>where τ = L Pt L Y /D Pt and m = V Y /V Pt = 19.88/9.09 = 2.19 is the ratio between the molar volumes of Y and Pt. In the case of hydrogen loading eq 4 can be solved and approximated by a straight line for sufficiently low concentrations c Y , leading to</p><formula xml:id="formula_5">τ ≅ × c t mg p t ( ) Y H2<label>(5)</label></formula><p>The measured loading curve in Figure <ref type="figure" target="#fig_5">4c</ref> resembles this linear behavior very well and by normalizing the measured extinction values to the interval [0,1], one finds mg(p H2 ) 1/2 /τ = 1/46 and, since p H2 = 0.05 bar during loading, mg/τ = 0.097/bar.</p><p>During unloading of the antennas in vacuum, that is, at p H2 = 0, we have</p><formula xml:id="formula_6">τ = - - ⎛ ⎝ ⎜ ⎞ ⎠ ⎟ c t mf c c d d 1 Y Y Y (6)</formula><p>which is readily integrated to</p><formula xml:id="formula_7">τ = - + ∞ ∞ ⎛ ⎝ ⎜ ⎜ ⎛ ⎝ ⎜ ⎞ ⎠ ⎟ ⎞ ⎠ ⎟ ⎟ t mf c c c c ln Y Y<label>(7)</label></formula><p>Under the chosen experimental conditions we expect c ∞ to be close to unity. A plot of time versus c Y -1ln c Y should thus be a straight line with slope τ/(mf). This is indeed the case. Figure <ref type="figure" target="#fig_5">4d</ref> shows the measured unloading data from Figure <ref type="figure" target="#fig_5">4c</ref> normalized to the range from 1 to 0 (orange line) plotted in this way. The measured data points follow a straight line with slope τ/(mf) = 5100 s. Deviations at higher times (for c close to 0) are merely due to noise in the measurement data. The excellent agreement between model and experimental data for both hydrogen loading and unloading strongly supports the validity of the assumptions made in its derivation. For m = 2.19, we find f/τ = 9 × 10 -5 s -1 .</p><p>With D Pt = 3 × 10 -7 cm 2 /s derived from an extrapolation of Katsuta and McLellan diffusity data <ref type="bibr" target="#b41">42</ref> to room temperature, we find τ = L Pt L Y /D Pt = 1 × 10 -5 s and thus f = 9 × 10 -10 . From the definition of f and ΔH Y ≅ -40 kJ/mol H from Van Gogh et al. <ref type="bibr" target="#b30">31</ref> we find ΔH Pt ≅ +8 kJ/mol H for the enthalpy of hydrogen solution for the platinum layer. This value is smaller than ΔH Pt ≅ +35 kJ/mol H for bulk Pt. <ref type="bibr" target="#b42">43</ref> This might be due to partial alloying of Pt with the underlying Y (the enthalpy of, for example, a Y-Pt alloy is very negative, <ref type="bibr" target="#b43">44</ref> -247 kJ/mol) and to surface roughness of the thin (L Pt = 6 nm) caplayer. One should also realize that large lattice expansions occurred during the initial loading of the antenna from pure Y to dihydride YH 2 .</p><p>By carrying out loading experiments at 0.05, 0.1, and 0.2 bar hydrogen pressure with a different sample we found that (dc Y / dt)/(p H2 1/2 ) remains constant (see the Supporting Information), which is in agreement with eq 5.</p><p>At this point the reader might wonder whether the large asymmetry between loading and unloading times is due to a particular choice of parameters. It is in fact easy to show that it is a robust property only related to the low solubility of H in the cap layer. From eq 1 follows that the H particle current is proportional to c sc i . At half loading, that is, when c Y = 0.5, c i = f according to eq 2. During unloading the driving gradient is c sc i = -c i = -f as the surface concentration is at best 0. During loading, however, relatively large values of the surface concentration can be set up so that c sf ≫ f. For metals with a low solubility f is very small (for Pt, f = 2 × 10 -9 , see above), and c s ≫ 2f is already satisfied at relatively low pressures (in our case, certainly for p &gt; 0.01 bar).</p><p>In summary, we can say that the asymmetry between the loading and unloading times can be explained by the high (and in this case even positive) solution enthalpy of platinum. Since this enthalpy depends on the nanoscale structure and thickness of the platinum, it will be of interest to conduct further studies on the optimal thickness and material of the capping layer to obtain shorter switching times without interfering with the plasmonic properties of the system. Even without such optimizations, both the diffusion limited absorption and the desorption processes can be accelerated by heating the sample.</p><p>Good agreement between experimental results and theoretical/numerical predictions is crucial for the efficient and robust design of switchable devices. To verify this for our yttrium nanoantenna system, we perform numerical simulations of the optical response using a commercial FEM solver (CST Microwave Studio). The optical constants of yttrium and the different hydrides are taken from literature. <ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b44">45</ref> Here, the dielectric functions of YH 1.8 and YH 2.9 from ref 25 provide the closest match to the yttrium hydride states that were investigated in our measurements and identified as YH 2 and YH 3 , respectively. The numerical results for such YH 1.8 and YH 2.9 nanorod arrays are presented in the Supporting Information (Figure <ref type="figure" target="#fig_1">S2</ref>).</p><p>Whereas the YH 2.9 results are in good agreement with the measured data (almost flat response), the YH 1.8 spectra require closer attention. Figure <ref type="figure" target="#fig_6">5</ref> shows the numerical results for an YH 1.8 (50 nm) + Pt (6 nm) nanorod array on a fused silica substrate as a green dotted line. In this simulation we use the complex dielectric function of YH 1.8 from Van Gogh et al., <ref type="bibr" target="#b30">31</ref> and Pt from Weaver, <ref type="bibr" target="#b45">46</ref> respectively. The rods are assumed to have dimensions of 380 × 160 × 56 nm and periodicities of 700 × 400 nm in accordance with SEM measurements on the fabricated structures. The measured spectrum is shown as a solid black line in Figure <ref type="figure" target="#fig_6">5</ref>. Comparing the black solid and green dotted line, we can observe significant differences. The numerical extinction peak is much narrower, higher in amplitude, and red-shifted compared to the measured one.</p><p>Since both experiment and simulation return absolute values for the extinction, the reason for the significant quantitative deviation has to be found in the modeling of the simulated nanorod system itself.</p><p>One major deviation between the model and the experimental system is the yttrium oxide (Y 2 O 3 ) layer that forms at all yttrium surfaces that are not protected from oxygen. This layer has a thickness of a few nanometers <ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b31">32</ref> and forms at the side walls of the yttrium rods that are not protected by either the substrate or the platinum cover layer. If we assume an oxide thickness of 3 nm and replace the outermost 3 nm in our model's sidewalls with dielectric Y 2 O 3 using a constant refractive index <ref type="bibr" target="#b46">47</ref> of n = 1.93, we obtain the dashed green line in Figure <ref type="figure" target="#fig_6">5</ref>. Even though the discrepancy between simulation and experiment is slightly reduced, there is still a key ingredient missing to match the experimental data.</p><p>In our previous calculations, we have used a dielectric function of YH 2 measured on extended thin films with thicknesses in the 300 nm range, prepared and characterized under ultrahigh Nano Letters Letter dx.doi.org/10.1021/nl403643v | Nano Lett. 2014, 14, 1140-1147 vacuum conditions. <ref type="bibr" target="#b30">31</ref> In comparison, our nanostructuring process (PMMA masking, electron-beam assisted evaporation) can introduce impurities and defects into our nanorod system.</p><p>Combined with the higher reactivity of yttrium and its desire to form yttrium oxide, this leads to a deterioration of the plasmonic properties. This effect becomes especially pronounced when moving from extended films to nanoparticle structures. One way of measuring the impact of the nanostructuring on the yttrium dielectric function quantitatively would be to perform ellipsometry on such a nanorod array. However, this is not feasible due to the low reflectance of the arrays at glancing angles.</p><p>In general, surface modifications as well as impurities in a plasmonic material lead to a decreased free electron lifetime τ fe compared to the film that was used in ref 25 and therefore an enhanced free electron damping γ fe = (1/τ fe ) in our system.</p><p>To modify the dielectric function of yttrium dihydride with this assumption, we first fit a Drude model together with a harmonic oscillator to the YH 2 dielectric data following the approach of Gartz and Quinten for unhydrided yttrium. <ref type="bibr" target="#b47">48</ref> This model (more detailed discussion in the Supporting Information, Figure <ref type="figure" target="#fig_2">S3</ref>) yields the free electron damping γ fe , the plasma frequency ω p , the oscillator strength S oz , and the oscillator frequency and damping ω oz , γ oz as fitting parameters. However, in the near-infrared region (NIR) where our particle plasmon resonance is located, the YH 2 can be seen as an almost perfect Drude metal with a dielectric function ε(ω) which is mostly governed by the free electron damping γ fe and the plasma frequency ω p . Therefore, we can safely ignore the oscillator part of the model in our discussion.</p><p>If we now want to incorporate the previously discussed impurities and defects into our simulation, we can increase the free electron damping in the dielectric function without changing the other parameters. Increasing the damping constant by a factor of 3 from γ fe = 2.4 × 10 14 s -1 to γ fe * = × 14 s -1 is reasonable, since the nanofabrication process strongly alters the structure of the yttrium compared to yttrium films used for ellipsometry measurements in literature.</p><p>With all influences included (platinum cover, yttrium oxide layer, enhanced intrinsic damping), we obtain excellent agreement with the measured data, as exemplified by the red line in Figure <ref type="figure" target="#fig_6">5</ref>, verifying the hypothesis of an increased intrinsic damping in our samples.</p><p>In conclusion, we have shown that yttrium nanostructures offer an exciting new pathway for the design of active plasmonic devices by utilizing hydrogen-induced metal insulator transitions. We have demonstrated that YH 2 nanorods exhibit a pronounced particle plasmon resonance in the NIR which can be tuned over a wide spectral range. This resonance can be switched off within several seconds by introducing hydrogen into the system that transforms the nanorods into dielectric YH 3 . After the hydrogen exposure is stopped, the plasmonic resonance slowly returns to its original form, demonstrating the full reversibility of the transition. In addition, we found a way to model this diffusion process analytically and gain knowledge about the thermodynamic quantities of our system. This gives us the ability to further improve the material system in the future on the road to a fast and reliable switching device. Therefore we also modeled the dielectric properties and the plasmonic behavior of our YH 2 nanoantennas. These results provide a powerful tool to predict the behavior of any yttrium based plasmonic nanodevice and even allow us to make quantitative predictions about the resonance width and position of more complex structures.</p><p>In the future, yttrium nanostructures can form a crucial building block in the realization of a variety of plasmonic switching schemes. Possible applications include switchable plasmonic EIT <ref type="bibr" target="#b48">49</ref> or switchable perfect absorber devices <ref type="bibr" target="#b49">50</ref> where the hydrogen concentration can be adjusted by adjusting the voltage in a simple electrochemical cell setup. <ref type="bibr" target="#b50">51</ref> Furthermore, the system can be used as a hydrogen detector through monitoring the slope of YH 2 to YH 3 phase transition or to locally control chemical processes that require a certain activation energy. This energy can be provided by the enhanced local electric field generated by the plasmonic resonance, depending on the surrounding hydrogen concentration. Due to its high refractive index, YH 3 could even act as high-index nanophotonic material (n ≈ 2.8 at 600 nm <ref type="bibr" target="#b30">31,</ref><ref type="bibr" target="#b51">52</ref> ) which supports electric and magnetic Mie resonances <ref type="bibr" target="#b52">53,</ref><ref type="bibr" target="#b53">54</ref> that can be switched on and off using hydrogen. Other transition metals such as vanadium <ref type="bibr" target="#b54">55</ref> or scandium, or transition metal alloys like Mg-Y, Mg-La, Mg-Sc, and Mg-Gd may provide even faster response. <ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref><ref type="bibr" target="#b57">[58]</ref><ref type="bibr" target="#b58">[59]</ref> Complete blackness and thus highest switching contrast could be expected using nickel metal hydrides (such as Mg 2 MeH x , with Me = Ni, Co, Fe). <ref type="bibr" target="#b59">60</ref> Finally, studies of the Mott-Hubbard metalto-insulator phase transition in rare earth and lanthanide hydride nanostructures as a function of structure size, morphology, and so forth, will enable a whole family of intriguing experiments.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>■ ASSOCIATED CONTENT</head><p>* S Supporting Information Optical characterization, details of the diffusion model, and description of the extinction simulations and the dielectric function modeling. This material is available free of charge via the Internet at <ref type="url" target="http://pubs.acs.org">http://pubs.acs.org</ref>. Comparison of the experiment to FEM simulations of the yttrium rod system. The black line shows the experimental spectrum of an YH 2 nanorod array with parameters l = 380 nm;w = 160 nm; h YH2 = 50 nm; h Pt = 6 nm. The green lines show simulated data for the same system using tabulated dielectric data. However, the simulated spectra for YH 2 rods with a platinum cover (green dotted line) show a resonance, which is much narrower and slightly red-shifted compared to the experimental data. This mismatch cannot be compensated by simply introducing a surrounding yttrium oxide shell (dashed green line) into the simulation. Only an additional increase of the free electron damping γ fe in the YH 2 dielectric function by a factor of 3 is able the reproduce the experimental data fully (red line). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Nano Letters</head></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) Schematic drawing of a metallic yttrium dihydride (YH 2 ) nanorod array on a fused silica substrate in hydrogen-free environment. (b) Formation of dielectric yttrium trihydride (YH 3 ) nanorods under hydrogen exposure. (c) Exemplary SEM image of the fabricated YH 2 nanorods.</figDesc><graphic coords="2,92.64,245.71,175.64,203.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure2. Extinction spectra of yttrium, YH 2 , and YH 3 nanorods. The metallic YH 2 rods (red line) show a distinct particle plasmon resonance at 1720 nm. In contrast, the YH 3 rods (blue line) are almost transparent in the same spectral region. The increased extinction in Y nanorods (gray dotted line) toward lower wavelengths can be attributed to the tail of a broad electronic transition in yttrium occurring at around 400 nm which makes them unsuitable for plasmonic applications.</figDesc><graphic coords="2,348.95,399.69,191.00,199.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. YH 2 extinction spectra for various rod lengths l and constant width (w = 160 nm) and height (h = 50 nm), showing a red-shift and increase in amplitude of the resonance for increasing rod lengths. The inset shows the extracted particle plasmon peak positions (colored dots) that scale linearly with rod length (λ res = 4.2l + 115 nm), as indicated by the black dashed line.</figDesc><graphic coords="3,353.37,69.17,182.15,188.62" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>Pt is the thickness of the Pt cap layer, D Pt the diffusion coefficient of H in Pt, L Y the thickness of Y, and V Pt and V Y the molar volumes of Pt and Y, respectively. The H concentrations in the Pt layer are c s at the surface and c i at the Pt-Y interface. The H concentration in Y is c Y . Using the fact that the chemical potential of H in the sample is continuous everywhere, we derive the following relations between c s , c i , c Y , and the hydrogen loading pressure p H2 .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. In situ hydrogenation dynamics of the yttrium nanorods at room temperature. (a) Extinction spectra taken every 4 s during hydrogen exposure. The phase transition from the metallic YH 2 (red lines) to the dielectric YH 3 (blue lines) can be clearly observed. (b) Full time trace of the measured extinction at a wavelength of 1580 nm. After 100 s the sample is exposed to 5 vol % hydrogen in nitrogen at constant pressure of 1 bar. The system almost instantly reacts and switches to the dielectric YH 3 state. The phase transition is completed within less than 50 s. The black dashed line shows the fit to our diffusion model. (c) When turning off the hydrogen exposure the system relaxes back into the metallic YH 2 state (orange line). (d) Time trace of (c) renormalized to a range between 0 and 1 (named c for concentration) and then plotted as time versus cln c -1 (orange line). The resulting straight line demonstrates the validity of our analytical diffusion model. The slope (5100 s) of the best fit straight line (black dashed line) yields the fitting parameter τ/f (see eq 7).</figDesc><graphic coords="4,109.64,69.17,405.58,414.71" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 5 .</head><label>5</label><figDesc>Figure5. Comparison of the experiment to FEM simulations of the yttrium rod system. The black line shows the experimental spectrum of an YH 2 nanorod array with parameters l = 380 nm;w = 160 nm; h YH2 = 50 nm; h Pt = 6 nm. The green lines show simulated data for the same system using tabulated dielectric data. However, the simulated spectra for YH 2 rods with a platinum cover (green dotted line) show a resonance, which is much narrower and slightly red-shifted compared to the experimental data. This mismatch cannot be compensated by simply introducing a surrounding yttrium oxide shell (dashed green line) into the simulation. Only an additional increase of the free electron damping γ fe in the YH 2 dielectric function by a factor of 3 is able the reproduce the experimental data fully (red line).</figDesc><graphic coords="6,80.84,69.17,199.16,197.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>Letter dx.doi.org/10.1021/nl403643v | Nano Lett. 2014, 14, 1140-1147</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Pt and ΔH Y are the enthalpy of hydrogen absorption in Pt and Y, respectively, and S H2 is the entropy of gaseous H 2 at 1 bar.Combining eqs 1 and 2, we obtain a differential equation for the hydrogen concentration c Y :</figDesc><table /><note><p><p>Letter dx.doi.org/10.1021/nl403643v | Nano Lett. 2014, 14, 1140-1147</p>where ΔH</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>© 2014 American Chemical Society</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>dx.doi.org/10.1021/nl403643v | Nano Lett. 2014, 14, 1140-1147 Downloaded via HOCHSCHULE MANNHEIM on March 4, 2025 at 11:08:09 (UTC).See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>■ AUTHOR INFORMATION</head><p>Corresponding Author *E-mail: n.strohfeldt@pi4.uni-stuttgart.de.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Notes</head><p>The authors declare no competing financial interest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>■ ACKNOWLEDGMENTS</head><p>We gratefully acknowledge financial support by the Deutsche Forschungsgemeinschaft (SPP1391, FOR730, and GI 269/11-1), by the Bundesministerium fur Bildung und Forschung (13N9048 and 13N10146), by ERC Advanced Grant COM-PLEXPLAS, by the Baden-Wurttemberg Stiftung (Spitzenforschung II) and by the Ministerium fur Wissenschaft, Forschung und Kunst Baden-Wurttemberg (Az: 7533-7-11.6-8). We would like to thank Heinz Schweizer for very interesting and fruitful discussions.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Plasmonics: Fundamentals and Applications</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>Springer</publisher>
+			<biblScope unit="page">223</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>1st ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-S</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Link</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nordlander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Rev</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="3913" to="3961" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><surname>Giannini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Fernańdez-Domínguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Heck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Rev</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="3888" to="3912" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Christopher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marimuthu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Linic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="1" to="7" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Link</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Halas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Photonics</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="641" to="648" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Traviss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bruck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">L</forename><surname>Muskens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">121112</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zi</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Nano Res</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="807" to="812" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Pryce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Aydin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">A</forename><surname>Kelaita</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Briggs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="4222" to="4227" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mech. Phys. Solids</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="330" to="345" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Olcum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kocabas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ertas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Atalar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aydinli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="8542" to="8547" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Appavoo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sonnefraud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Pantelides</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Haglund</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="780" to="786" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Emani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-F</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Ni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Kildishev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">P</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Boltasseva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="5202" to="5206" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J.-Y</forename><surname>Ou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Plum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">I</forename><surname>Zheludev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Nanotechnol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="252" to="255" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Naik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Shalaev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Boltasseva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="3264" to="3294" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R C</forename><surname>Vivekchand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Engel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Lubin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Blaber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Suh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Schatz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Odom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="4324" to="4328" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Soares</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Jonsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zheludev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">153905</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Driscoll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Palit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Qazilbash</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brehm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Keilmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B.-G</forename><surname>Chae</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-J</forename><surname>Yun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-T</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Jokerst</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Basov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page">24101</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Dicken</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Aydin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Pryce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Sweatlock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Boyd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Walavalkar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Atwater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="18330" to="18339" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Appavoo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sonnefraud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Haglund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Maier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Lett</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="3988" to="3990" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Saḿson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>De Angelis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gholipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Knight</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Di Fabrizio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Hewak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">I</forename><surname>Zheludev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page">143105</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="1566" to="1569" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gholipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">F</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Hewak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">I</forename><surname>Zheludev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="3050" to="3054" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A.-K</forename><forename type="middle">U</forename><surname>Michel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Chigrin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W W</forename><surname>Maß</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Schonauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Salinga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wuttig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Taubner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="3470" to="3475" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Huiberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Rector</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Wijngaarden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Dekker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>De Groot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Koeman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">380</biblScope>
+			<biblScope unit="page" from="231" to="234" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Stepanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reinholdt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kreibig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Tech. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="642" to="644" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Stepanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">N</forename><surname>Osin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reinholdt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kreibig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Vacuum</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page" from="9" to="14" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kooij</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T M</forename><surname>Van Gogh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Nagengast</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Koeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="10088" to="10100" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huiberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wijngaarden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kremers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Van Haesendonck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="3724" to="3727" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Remhof</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kerssemakers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Van Der Molen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kooij</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page">54110</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hentschel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schaferling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Metzger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Giessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="600" to="606" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Van Gogh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Nagengast</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Kooij</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Koeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rector</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Flipse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Smeets</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">195105</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reinholdt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stepanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Keutgen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kreibig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. D</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="219" to="223" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Quinten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. B: Lasers Opt</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="327" to="332" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">In Handbook on the Physics and Chemistry of Rare Earths</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vajda</surname></persName>
+		</author>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Handbook on the Physics and Chemistry of Rare Earths</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Aruna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">K</forename><surname>Malhotra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Mehta</surname></persName>
+		</author>
+		<editor>Gschneidner, K. A., Bunzli, J.-C. G., Pecharsky, V. K.</editor>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<publisher>Elsevier</publisher>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="83" to="279" />
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kooij</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T M</forename><surname>Van Gogh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="page">146</biblScope>
+			<date type="published" when="1999">1999. 2990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F T</forename><surname>Hoekstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">F J</forename><surname>Rosenbaum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1405" to="1413" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hoekstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Rosenbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wijngaarden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Koeman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="5349" to="5352" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Bryant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>García De Abajo</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Aizpurua</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="631" to="636" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Dattoma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Grande</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Marani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Morea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Marrocco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prog. Electromagn. Res. B</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="337" to="353" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pasturel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Wijngaarden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lohstroh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Schreuders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Slaman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Mater</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="624" to="633" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Katsuta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B J</forename><surname>Mclellan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="697" to="699" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Riesterer</surname></persName>
+		</author>
+		<title level="m">Hydrogen in Intermetallic Compounds I SE -6</title>
+		<editor>
+			<persName><forename type="first">L</forename><surname>Schlapbach</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1988">1988</date>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="219" to="284" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H J</forename><surname>Buschow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C P</forename><surname>Bouten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Miedema</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rep. Prog. Phys</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="937" to="1039" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Weaver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Olson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="590" to="594" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><surname>Weaver</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="1416" to="1425" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Handbook of Optics</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bass</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Decusatis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Enoch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lakshminarayanan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Mahajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Stryland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Optical Properties of Materials, Nonlinear Optics, Quantum Optics</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-hill</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="volume">IV</biblScope>
+		</imprint>
+	</monogr>
+	<note>3rd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Quinten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. B: Lasers Opt</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="327" to="332" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Weiss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mesch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Langguth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Eigenthaler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hirscher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sonnichsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Giessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1103" to="1107" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tittl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Taubert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dregely</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Giessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="4366" to="4369" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m" type="main">In Hydrogen as a Future Energy Carrier</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A M E</forename><surname>Giebels</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dam</surname></persName>
+		</author>
+		<editor>Zttel, A., Borgschulte, A., Schlapbach, L.</editor>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+			<biblScope unit="page" from="275" to="334" />
+			<pubPlace>Weinheim, Germany</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">P</forename><surname>Shin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">6798</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Kuznetsov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Miroshnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">F</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Luk'yanchuk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">1527</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Kuznetsov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Miroshnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Luk'yanchuk</surname></persName>
+		</author>
+		<idno type="DOI">.org/10.1021/nl403643v</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Letters Letter</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1140" to="1147" />
+			<date type="published" when="2012">2012. 2014</date>
+		</imprint>
+	</monogr>
+	<note>Nano Lett</note>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Azofeifa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Vargas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Solís</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Paĺsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Hjorvarsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Alloys Compd</title>
+		<imprint>
+			<biblScope unit="volume">580</biblScope>
+			<biblScope unit="page">114</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Messina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Markert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">104109</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Richardson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Slack</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Armitage</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kostecki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Farangis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Rubin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">3047</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J A</forename><surname>Den Broeder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Van Der Molen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kremers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Huiberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Nagengast</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T M</forename><surname>Van Gogh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Huisman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Koeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Rector</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Plota</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Haaksma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M N</forename><surname>Hanzen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Jungblut</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Duine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">394</biblScope>
+			<biblScope unit="page" from="26" to="28" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Huiberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kremers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T M</forename><surname>Van Gogh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Koeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Dekker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H L</forename><surname>Notten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Alloys Compd</title>
+		<imprint>
+			<biblScope unit="page" from="44" to="50" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lohstroh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Westerwaal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Noheda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Enache</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A M E</forename><surname>Giebels</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Griessen</surname></persName>
+		</author>
+		<idno type="DOI">.org/10.1021/nl403643v</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Letters Letter</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="1140" to="1147" />
+			<date type="published" when="2004">2004. 2014</date>
+		</imprint>
+	</monogr>
+	<note>Nano Lett</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

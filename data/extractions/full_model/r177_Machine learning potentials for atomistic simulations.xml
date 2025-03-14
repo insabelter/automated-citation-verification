@@ -1,0 +1,1784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Perspective: Machine learning potentials for atomistic simulations</title>
+				<funder ref="#_WaDDDC8">
+					<orgName type="full">DFG</orgName>
+				</funder>
+				<funder ref="#_7xzmxsZ">
+					<orgName type="full">Cluster of Excellence RESOLV</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Deutsche Forschungsgemeinschaft</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-11-01">1 November 2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jörg</forename><surname>Behler</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Lehrstuhl für Theoretische Chemie</orgName>
+								<orgName type="institution">Ruhr-Universität Bochum</orgName>
+								<address>
+									<postCode>D-44780</postCode>
+									<settlement>Bochum</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Perspective: Machine learning potentials for atomistic simulations</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016-11-01">1 November 2016</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">9D4932D5DAB2DE3E170FCB27626D95E7</idno>
+					<idno type="DOI">10.1063/1.4966192]170901-2</idno>
+					<note type="submission">Received 18 August 2016; accepted 11 October 2016;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:00+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Nowadays, computer simulations have become a standard tool in essentially all fields of chemistry, condensed matter physics, and materials science. In order to keep up with state-of-the-art experiments and the ever growing complexity of the investigated problems, there is a constantly increasing need for simulations of more realistic, i.e., larger, model systems with improved accuracy. In many cases, the availability of sufficiently efficient interatomic potentials providing reliable energies and forces has become a serious bottleneck for performing these simulations. To address this problem, currently a paradigm change is taking place in the development of interatomic potentials. Since the early days of computer simulations simplified potentials have been derived using physical approximations whenever the direct application of electronic structure methods has been too demanding. Recent advances in machine learning (ML) now offer an alternative approach for the representation of potential-energy surfaces by fitting large data sets from electronic structure calculations. In this perspective, the central ideas underlying these ML potentials, solved problems and remaining challenges are reviewed along with a discussion of their current applicability and limitations.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>Machine learning (ML) methods <ref type="bibr" target="#b0">1</ref> have a long tradition in chemistry and physics. <ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b2">3</ref> While for many years they have been used almost exclusively as a classification tool to assist, e.g., the analysis of spectra, <ref type="bibr" target="#b3">4</ref> the prediction of binding sites of biomolecules <ref type="bibr" target="#b4">5</ref> or the derivation of quantitative structureactivity relationships (QSARs), <ref type="bibr" target="#b5">6</ref> they have now started to enter the heart of theoretical chemistry and computational materials science in a manifold way. This process was initially slow, because of the understandable scepticism of theoretical chemists and physicists, who are used to wellcontrolled hierarchies of physical approximations, regarding these obscure black box methods. Further, only in recent years ML methods have reached a mature state mainly driven by commercial needs, resulting in a variety of new applications.</p><p>The border between ML, which is a subtopic of artificial intelligence, and other purely mathematical regression methods is difficult to define and is not possible without some degree of arbitrariness. Still, several definitions have been proposed in the literature over the years starting from the famous classical definition given by Arthur Samuel, a pioneer in ML research, in 1959: "[ML is a] Field of study that gives computers the ability to learn without being explicitly programmed," to a modern definition by Tom M. Mitchell: 1 "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with the experience E."</p><p>Nowadays, ML affects everyday life in manifold ways, like character and voice recognition software, fingerprint identification, e-mail spam filtering, autonomously driving cars, computer game opponents, credit card fraud detection and too many others to mention. For these purposes, ML offers a whole toolbox of techniques, like artificial neural networks, <ref type="bibr" target="#b6">7</ref> Gaussian processes, <ref type="bibr" target="#b7">8</ref> and support vector machines. <ref type="bibr" target="#b8">9</ref> Driven by the desire for a more rational design of materials, in recent years ML has also established a new trend in computational materials science, <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b10">11</ref> which shows many similarities to the traditional field of QSAR and drug design. In both cases the goal is to identify systems, molecules or materials, exhibiting certain properties. To reach this goal the machinery of ML is used to search large databases for hidden relationships between the atomic structure, which can be encoded directly or indirectly using a huge number of possible descriptors, and the property of interest. <ref type="bibr" target="#b11">12</ref> The idea to employ information from large databases is not new, and repositories of experimental data like the Cambridge Structural Database <ref type="bibr" target="#b12">13</ref> and the Protein Data Bank <ref type="bibr" target="#b13">14</ref> have been existing for decades. New is the availability of enormous amounts of high quality theoretical data from electronic structure calculations, which are inaccessible to a manual inspection and analysis. Still, in spite of the high performance of modern supercomputers, it will remain impossible for a long time to screen all candidate structures directly by electronic structure calculations due to the exponentially increasing complexity of configuration space with chemical composition and system size. ML now offers a very exciting tool to fill this gap enabling the analysis of the available data, the discovery of hitherto unknown relationships and the identification of new promising materials.</p><p>The topic of this perspective is a different application of ML methods, i.e., the accurate representation of atomic interactions for applications in atomistic computer simulations of problems in chemistry, physics and materials science. In contrast to the classification and pattern recognition applications discussed above, the task to be performed for this purpose is the fitting of a complicated function using a set of known function values. This function, the potential energy surface (PES), is a multidimensional real-valued function providing the potential energy of a system as a function of the atomic positions. The concept of a PES is founded on the Born-Oppenheimer approximation <ref type="bibr" target="#b14">15</ref> of quantum mechanics. If the atomic positions, the nuclear charges and the total charge are known, the potential energy of a system is fully defined by its electronic Hamiltonian. Electronic structure methods enable in principle the calculation of arbitrary atomic configurations corresponding to individual points on the PES, which can be either a ground state or excited state surface. For applications like molecular dynamics (MD) simulations, the energies and forces for a large number of atomic configurations are required, which can be obtained either on-the-fly, by performing the electronic structure calculations as needed while the trajectory evolves, or by evaluating an analytic expression, which provides a direct functional relation between the atomic configuration and the energy. This analytic expression, which has to be defined before running the simulation, is often called "interatomic potential," "force field" or potential-energy surface.</p><p>Electronic structure calculations are computationally very demanding, even if relatively efficient methods like density functional theory (DFT) are used, and DFT-based "ab initio MD simulations" <ref type="bibr" target="#b15">16</ref> are thus restricted to a few hundred atoms and simulation times significantly shorter than 1 ns. Analytic potentials, which provide a much simpler direct relation between the structure and its energy in closed form, can be calculated many orders of magnitude faster, but they are usually derived by introducing physical approximations. While in most cases, the essential features of the atomic interactions are still reasonably described, these potentials necessarily represent a compromise between efficiency and accuracy. Interatomic potentials employing ML techniques aim to combine the advantages of both approaches, the accuracy of first principles calculations and the efficiency of a simple functional form. Much progress has been made in recent years to reach this goal, but still this field is young and developing very dynamically.</p><p>In principle, the requirements to be met by ML potentials are very similar to conventional empirical potentials. The evaluation should be fast to enable large scale MD and Monte Carlo simulations. The computational effort to construct the potential should be significantly lower than the costs of a direct application of electronic structure methods. Minimum human effort and manual intervention should be needed to develop the potential and systematic improvements should be possible. Analytic energy gradients for the calculation of the forces, the stress tensor and other gradient-dependent quantities should be available. The information required to evaluate the potential should not include any classification of atoms into types beyond the specification of the nuclear charge, as chemical environments and bonding situations should be allowed to change in the course of simulations. Consequently, also the use of predefined atomic connectivities and bonds should be avoided to obtain a reactive potential enabling the making and breaking of bonds. Ideally, potentials should be generally applicable and not restricted to certain types of atomic interactions, like covalent, ionic, or metallic bonding, and due to their purely mathematical unbiased form ML methods are particularly promising candidates to reach this goal. Finally, the most important requirement is the accuracy of the potential, i.e., the energies and forces should be as close as possible to the underlying first principles data. Aiming for predictive simulations, the most stringent test concerns the transferability to structures, which are very different from the data used in the construction of the potential.</p><p>Based on these requirements, a definition of ML potential can be given. A ML potential</p><p>• employs a ML method to construct a direct functional relation between the atomic configuration and its energy; • does not contain any physical approximations apart from the chosen reference electronic structure method used in its construction; • is developed using a consistent set of electronic structure data.</p><p>In particular, the last point is of high practical importance because the use of experimental data or the mixing of electronic structure data from different levels of theory would result in numerically inconsistent data, which would give rise to serious problems in the construction of the potential. The application of ML potentials in computer simulations in chemistry, physics, and materials science involves several steps. When using a ML potential, e.g., in MD simulations, in the first step the atomic positions need to be transformed to a set of coordinates suitable as input for the ML method. The complexity of this crucial step has represented a significant challenge in the early days of ML potentials. This problem emerged rather unexpectedly since in most empirical potentials feeding the structure into the functional form is quite trivial, and often, like in classical force fields, readily available internal coordinates like interatomic distances, bond angles, and dihedral angles are well suited. Overcoming the problem of finding appropriate structural descriptors for ML potentials has slowed down their development substantially in the first ten years, but nowadays several options are available. After the transformation of the coordinates onto a suitable set of descriptors, which must have certain properties as discussed in Section II, a ML method is used to evaluate the energy and if required the atomic forces. In principle, they can further be validated to get an estimate for the reliability. They are then passed to the propagator of the MD code and a new atomic configuration is obtained, which then undergoes the same cycle again.</p><p>In this perspective, the construction and application of ML potentials for computer simulations with first principles accuracy is reviewed and discussed. A special focus is put on the two central components of any ML potential: the transformation of the atomic positions onto suitable descriptors and the subsequent assignment of an energy to this structure using a functional form provided by a ML method. Since there is no strict border between ML potentials and other available mathematical fitting approaches to represent PESs, the list of methods covered in this perspective cannot be complete, and several important related approaches like splines, <ref type="bibr" target="#b16">17</ref> modified Shepard interpolation, <ref type="bibr" target="#b17">18</ref> interpolating moving least squares, <ref type="bibr" target="#b18">19</ref> and permutation invariant polynomial fits, <ref type="bibr" target="#b19">20</ref> which are very similar in spirit in that they do not employ a physically derived functional form and to some extent face similar challenges, will not be discussed here.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. STRUCTURAL DESCRIPTION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. The role of the descriptor</head><p>Many different names have been used in the literature for the effective coordinates, i.e., the descriptors, representing the structural inputs for the ML algorithms. The set of descriptors plays a central role, not only in the construction of PESs, <ref type="bibr" target="#b20">21</ref> but also beyond in applications like structure-property relationships for property prediction in materials science <ref type="bibr" target="#b21">22</ref> and also in the strongly related older field of QSAR. <ref type="bibr" target="#b22">23</ref> Further applications with similar requirements regarding the structural description are the analysis of MD trajectories, the screening of large numbers of atomic configurations for certain features, and structure identification in general. <ref type="bibr" target="#b23">24</ref> Even the collective variables used in simulation techniques like metadynamics have similar requirements. <ref type="bibr" target="#b24">25</ref> The substantial challenge of finding suitable descriptors for ML potentials has been recognized in the advent of the first NN potentials about 20 years ago, <ref type="bibr" target="#b25">26</ref> which initially have been developed for rather low-dimensional systems like small molecules and diatomic molecules interacting with frozen surfaces. As NNs, like all other ML methods, process ordered vectors of numbers, the output is not invariant with respect to any permutation of the position of equivalent atoms in the structure. Further, directly available descriptors of the atomic positions like Cartesian coordinates are not invariant with respect to translation and rotation of the system, while the resulting ML potential must possess these properties. There have been satisfying customized solutions for specific molecular <ref type="bibr" target="#b26">27</ref> and surface systems <ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b28">29</ref> also beyond the field of ML potentials, e.g., for permutation invariant polynomials. <ref type="bibr" target="#b19">20</ref> Still, initially the lack of suitable input descriptors was the main obstacle to construct ML potentials for high-dimensional systems including hundreds or thousands of atoms.</p><p>In general, a transformation of the atomic coordinates onto a suitable set of descriptors must provide the same numerical descriptor values for any equivalent atomic configuration, including translation, rotation, permutation, and any applicable point group symmetry. If this is ensured, then all these equivalent representations of the system have the same effective coordinate values and consequently they are considered as the same structure with necessarily the same energy by the ML method. For simple potentials like classical force fields meeting these requirements is straightforward, because internal coordinates are translationally and rotationally invariant, and the total energy is constructed as a sum of very low-dimensional terms, which maintain permutation invariance. For more accurate potentials employing ML, many-body descriptors are needed, that are much more complicated than additive low dimensional functions.</p><p>It is of utmost importance that the descriptors do not contain any artificial symmetries because in this case two different structures would be mapped onto the same coordinates and become indistinguishable. Ideally there would be a one-to-one correspondence between the structure and the set of descriptor values, but this would only be guaranteed if there would be one descriptor per degree of freedom in the system. In this case the number of descriptors would depend on the system size, which should be avoided to obtain generally applicable ML potentials as discussed below. It should also be noted that the transformation from the atomic positions to the set of descriptors does not need to be inverted, and rather complicated functional forms can therefore be used.</p><p>Apart from these formal requirements there are also practical aspects concerning the choice of descriptors. Since the transformation onto the descriptors has to be carried out for every structure, the evaluation should be fast, and the descriptors need to be differentiable with respect to the atomic positions to enable the calculation of analytic gradients for the forces. To obtain very accurate ML potentials, the descriptors must provide a very detailed structural description and typically multidimensional functions are required to allow for fitting the many-body interactions in electronic structure calculations with high precision.</p><p>In summary, the choice of the descriptors is of vital importance because it is the set of descriptors to which the energy is assigned. The number of descriptors has an immediate impact on the feasibility of any ML potential, as it does not only restrict the efficiency of the energy evaluation but also determines the dimensionality of the coordinate space to be mapped by the training sets. On the other hand, the number of descriptors must be sufficiently large to enable an unambiguous distinction of different structures. In Secs. II B 1-II B 4 several descriptors which have been developed for ML potentials are discussed. This list is by far not complete, and there are plenty of new interesting approaches, which have been proposed recently, like moment tensors, <ref type="bibr" target="#b29">30</ref> scattering transforms, <ref type="bibr" target="#b30">31</ref> and many others.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Descriptors for machine learning potentials</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Atom centered symmetry functions</head><p>A ML approach applicable to high-dimensional systems containing large numbers of atoms has been proposed by Behler and Parrinello in 2007 employing NNs. <ref type="bibr" target="#b31">32</ref> As in many conventional empirical potentials, the potential energy E is constructed as a sum of local atomic energies E i of all atoms i in the system,</p><formula xml:id="formula_0">E = N atoms  i=1 E i .<label>(1)</label></formula><p>This locality of the atomic interactions is known as nearsightedness in quantum chemistry <ref type="bibr" target="#b32">33</ref> and has also been exploited in a series of electronic structure methods for a long time. The chemical environments of the atoms are characterized by sets of atom-centered symmetry function (ACSF) descriptors, which depend on the positions of the neighboring atoms up to a cutoff radius R c , at which the atomic interactions are screened by the cutoff function,</p><formula xml:id="formula_1">f c R i j =          0.5 •  cos ( πR i j R c ) + 1  , for R i j ≤ R c 0.0, for R i j &gt; R c . (<label>2</label></formula><formula xml:id="formula_2">)</formula><p>This function is essentially the monotonously decreasing part of a cosine function of the distance R i j to all neighboring atoms j inside the cutoff radius and zero otherwise. Similar cutoff functions have been used for many years in empirical potentials like the Tersoff potential. <ref type="bibr" target="#b33">34</ref> The positions of the atoms inside R c are then described by many-body ACSFs, which simultaneously depend on the positions of all neighboring atoms. The most important ACSFs are the "radial function"</p><formula xml:id="formula_3">G atom,rad i = N atom  j=1 e -η(R i j -R s) 2 • f c R i j ,<label>(3)</label></formula><p>and the "angular function"</p><formula xml:id="formula_4">G atom,ang i = 2 1-ζ all  j,k i 1 + λ cos θ i j k ζ • e -η ( R 2 i j +R 2 i k +R 2 j k ) • f c R i j • f c (R ik ) • f c R j k .<label>(4)</label></formula><p>The radial function in Eq. ( <ref type="formula" target="#formula_3">3</ref>) is a sum of Gaussians of R i j , which can be shifted by parameter R s and are multiplied by f c to ensure a smooth decay in value and slope to zero at R c . The width of the Gaussians is controlled by the parameter η and typically a set of η values is used to obtain a radial fingerprint of the environment. Due to the summation all neighbors in the cutoff spheres, the number of ACSFs is independent of the coordination of each atom i, which is important since NNs require a constant number of input descriptors irrespective of the coordination number that might change frequently in MD simulations.</p><p>The angular ACSF (Eq. ( <ref type="formula" target="#formula_4">4</ref>)) provides an angular fingerprint of the environment using the angles θ i j k formed with each pair of neighbors j and k. The angular resolution can be controlled by the parameter ζ, while λ = ±1 defines the positions of the extrema of the cosine function.</p><p>A number of potentials have been constructed using these ACSFs, <ref type="bibr" target="#b34">35</ref> and typically 50-100 symmetry functions are used per atom differing in the specific values of η, ζ, R s and λ. The cutoff R c is a convergence parameter, which needs to be increased until all energetically relevant interactions are included, and in most cases values between 6 and 9 Å have been found to be sufficient. All ACSFs provide a rotationally and translationally invariant description of the environment because they depend on the internal coordinates R i j and θ i j k . Further, because of the sum over all neighbors, they are invariant with respect to any permutation of chemically equivalent atoms in the environment. The number of ACSFs grows with the number of elements in the system because for each atom there is one radial function per element. The angular functions must be constructed for all possible element combinations involved in the angles θ i j k . Further details and a discussion of the properties of these and other ACSFs can be found elsewhere. <ref type="bibr" target="#b35">36</ref> It can easily be shown that Eq. ( <ref type="formula" target="#formula_0">1</ref>) can be written as a sum of atom pair energies E i j ,</p><formula xml:id="formula_5">E = N atoms  i=1 N atoms  j &gt;i E i j .<label>(5)</label></formula><p>Also this form can be used for the construction of ML potentials using the pair centered symmetry functions (PCSF) <ref type="bibr" target="#b36">37</ref> G pair,rad i j</p><formula xml:id="formula_6">= f c R i j • e -η •R 2 i j •        k f c (R ik ) e -η •R 2 i k +  k f c R j k e -η •R 2 j k      <label>(6)</label></formula><p>and</p><formula xml:id="formula_7">G pair,ang i j = f c R i j • e -η •R 2 i j • 2 1-ζ  α  (1 + λ cos α) ζ • e -η •(R 2 i k +R 2 j k ) • f c (R ik ) • f c (R j k )  ,<label>(7)</label></formula><p>which have been demonstrated to be equally suitable for obtaining high-quality potentials.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Bispectrum of the neighbor density</head><p>An alternative approach to describe the atomic environments based on Eq. ( <ref type="formula" target="#formula_0">1</ref>) has been proposed by Csányi and coworkers in 2010 <ref type="bibr" target="#b37">38</ref> for constructing ML potentials for high-dimensional systems employing Gaussian processes. In this very systematic approach, the selection of parameters defining the spatial shape of the descriptors, that is required in case of ACSFs, is avoided by an expansion of the environment in a series of spherical harmonics.</p><p>The starting point for developing the descriptors for the atomic environments is the construction of a neighbor density ρ i (R) at each point in space R for each atom i. This is done by placing δ functions at all positions of neighboring atoms j in the environment up to the cutoff and at the position of the reference atom itself as 38</p><formula xml:id="formula_8">ρ i (R) = δ(R) +  R i j &lt; R c f c (R i j ) • w j • δ(R -R i j ).<label>(8)</label></formula><p>The dimensionless weights w j enable a discrimination of different elements. The cutoff function f c , which is the same as used for the ACSFs (Eq. ( <ref type="formula" target="#formula_1">2</ref>)), ensures a smooth decay to zero at the cutoff R c . The angular distribution of the neighbors is then obtained by projecting all neighbors onto a sphere to obtain a projected density ρ(θ, φ), which is then expanded in spherical harmonics</p><formula xml:id="formula_9">Y l m , ρ(θ, φ) = ∞  l=0 l  m=-l c l m Y l m (θ, φ).<label>(9)</label></formula><p>While the radial distribution could be described in principle by a set of radial functions in full analogy to basis sets used in electronic structure calculations, instead they are converted to an additional angle θ 0 extending the spherical harmonics to four dimensions. The positions on the four-dimensional sphere, which are given by (φ, θ, θ 0 ) = tan -1 ( y/x), cos -1 (z/|r|), |r|/r 0 (10)  are then expanded in hyperspherical harmonics U j m, m ′ as</p><formula xml:id="formula_10">ρ = ∞  j=0 j  m, m ′ =-j c j m, m ′ U j m, m ′ .<label>(11)</label></formula><p>The coefficients c j m, m ′ =  U j m, m ′ | ρ  are used to build the bispectrum matrix,</p><formula xml:id="formula_11">B j 1 , j 2 , j = j 1  m 1 , m ′ 1 =-j 1 j 2  m 2 , m ′ 2 =-j 2 j  m, m ′ =-j ( c j m, m ′ ) • C j m j 1 m 1 j 2 m 2 × C j m ′ j 1 m ′ 1 j 2 m ′ 2 • c j 1 m ′ 1 m 1 • c j 2 m ′ 2 m 2 ,<label>(12)</label></formula><p>which has originally been developed for image and pattern recognition applications. <ref type="bibr" target="#b38">39</ref> The C j m j 1 m 1 j 2 m 2 are Clebsch-Gordon coefficients.</p><p>Like in the case of ACSFs, the structural description by the bispectrum has all required properties like translational and rotational as well as permutation invariance. An advantage is the possibility to refine the description of the environments very systematically by using more and more spherical harmonics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Smooth overlap of atomic positions</head><p>A drawback of the neighbor density defined in Eq. ( <ref type="formula" target="#formula_8">8</ref>) is that it employs δ-functions and consequently even slight deviations of the positions between two environments result in strong numerical changes. In the SOAP (Smooth Overlap of Atomic Positions) approach, <ref type="bibr" target="#b20">21</ref> the δ functions have therefore been replaced by Gaussians centered at the central atom and at all N env neighboring atoms in the environment. The neighbor density in SOAP is then given by</p><formula xml:id="formula_12">ρ SOAP (R) = N env  i=1 exp(-α|R -R i | 2 ). (<label>13</label></formula><formula xml:id="formula_13">)</formula><p>This expression is related to the radial ACSFs (Eq. ( <ref type="formula" target="#formula_3">3</ref>)) in Section II B 1 in which a sum of distance-dependent Gaussians is used. But while for each radial symmetry function G atom,rad i only a single function value is obtained and the full environment is characterized by a set of functions, ρ SOAP can be viewed as a three-dimensional generalization characterizing the full atomic environment at once. Consequently, ρ SOAP cannot be rotationally invariant, and when comparing two different neighbor densities ρ SOAP and ρ ′ SOAP , one of the densities needs to be integrated over all possible rotations to incorporate this invariance.</p><p>The SOAP kernel for comparing two environments is therefore the overlap of the two corresponding neighbor densities, one of which has been integrated over all rotations R as 21</p><formula xml:id="formula_14">k(ρ SOAP , ρ ′ SOAP ) =  d R  ρ ρ SOAP (r)ρ ρ ′ SOAP ( Rr)dr n SOAP . (<label>14</label></formula><formula xml:id="formula_15">)</formula><p>The exponent n SOAP is usually chosen as 2, since for n SOAP = 1 the rotational information is lost due to the interchangeability of the integrals. Finally, a normalization by the factor</p><formula xml:id="formula_16">1 √ k(ρ SOAP , ρ SOAP )k(ρ ′ SOAP , ρ ′ SOAP )</formula><p>ensures that the overlap of any environment with itself is one. Finally, an expansion of ρ SOAP using a set of normalized radial basis functions g n (r) and spherical harmonics has been advocated <ref type="bibr" target="#b20">21</ref> as it is computationally significantly more efficient resulting in the kernel</p><formula xml:id="formula_17">k(ρ SOAP , ρ ′ SOAP ) =  n, n ′ ,l p n, n ′ ,l p ′ n, n ′ ,l<label>(15)</label></formula><p>with</p><formula xml:id="formula_18">p n, n ′ ,l =  m c n, n ′ ,l (c n, n ′ ,l ) *<label>(16)</label></formula><p>containing the expansion coefficients c n, n ′ ,l of the basis functions and p n, n ′ ,l corresponding to the power spectrum.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Coulomb matrix</head><p>In 2012 Rupp et al. have proposed a very different descriptor in form of the eigenvalues of a Coulomb matrix, <ref type="bibr" target="#b39">40</ref> which is related to the concept of a distance matrix. The Coulomb matrix M is defined as</p><formula xml:id="formula_19">M I J =        0.5 • Z 2.4 I , for I = J Z I • Z J |R I -R J | , for I J . (<label>17</label></formula><formula xml:id="formula_20">)</formula><p>The diagonal elements represent a polynomial fit of the atomic energies to the nuclear charge Z I . The off-diagonal elements take the form of the Coulomb repulsion between the nuclei, which can be viewed as scaled inverse distances. Apart from containing the full information about the pairwise distances of all atoms, the inclusion of the nuclear charges introduces numerical offsets for different element combinations allowing to encode information about the chemical composition without the introduction of additional descriptors, which however might also result in numerical difficulties in the fits due to the range of values over many orders of magnitude. While the original Coulomb matrix in Eq. ( <ref type="formula" target="#formula_19">17</ref>) contains an overcomplete description of the system, which would be no problem for ML methods, the N atoms permutation invariant eigenvalues represent only a subset of the information in the 3 • N atoms -6 dimensional configuration space and nicely illustrate the frequent problem of simultaneously finding a complete descriptor while the required symmetry is still fully included. The size of the Coulomb matrix, which contains one line and one row per atom, is given by the largest system used in the reference data set, and for smaller systems the unnecessary parts of the matrix are filled with zeros. Like the other descriptors discussed before, the eigenvalues of the Coulomb matrix are invariant with respect to rotation, translation, and permutation. Several of the drawbacks of the original Coulomb matrix have been removed by introducing local Coulomb matrices <ref type="bibr" target="#b40">41</ref> depending on the neighboring atoms inside a cutoff radius. In this way the description of many-atom systems becomes possible, while the locality of many properties is exploited like in the other methods developed for high-dimensional systems. Still, access to the analytic derivatives is complicated, as the eigenvalues are not continuous and differentiable if the number of neighbors in the environment changes. <ref type="bibr" target="#b20">21</ref> To date, the Coulomb matrix has not been applied to the construction of PESs, but several energy-related applications have been reported, like the atomization energies of small organic molecules, <ref type="bibr" target="#b39">40</ref> and atomic forces as a function of the environment. <ref type="bibr" target="#b40">41</ref> Further, also new related approaches like the "bag of bonds" method have been proposed recently with promising first results. <ref type="bibr" target="#b41">42</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. A BRIEF SURVEY OF ML POTENTIALS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Overview</head><p>The development of ML potentials has taken place in two steps, which are intimately related to the progress made in the derivation of suitable structural descriptors. In the initial phase, ML potentials have been available only for low-dimensional systems, since ML approaches based on the decomposition of the total energy into atomic contributions according to Eq. ( <ref type="formula" target="#formula_0">1</ref>) had not been devised. These early potentials almost exclusively relied on artificial neural networks <ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b43">44</ref> and have been applicable to systems containing up to about six atoms. Nevertheless, several interesting and quite successful attempts have also been made in this early stage to extend the applicability of NNs to systems including larger numbers of atoms. <ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b45">46</ref> Starting with NNs 32 in 2007, several different ML approaches suitable for high-dimensional systems containing thousands of atoms have now become available <ref type="bibr" target="#b37">38,</ref><ref type="bibr" target="#b39">40</ref> and are still evolving rapidly. <ref type="bibr" target="#b9">10,</ref><ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b47">48</ref> An overview about the increasing use of different ML techniques to the construction of PESs is shown in Fig. <ref type="figure" target="#fig_0">1</ref>.</p><p>In this section, several ML methods along with their use in the construction of PESs are outlined, which in principle could be combined almost arbitrarily with the descriptors discussed above. Still, currently there are a few dominant combinations of descriptors and ML methods, but this is not because of the compatibility or incompatibility of the different approaches, but it is mainly a consequence of the personal preferences of the developers. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Neural networks</head><p>Artificial neural networks are the oldest ML method <ref type="bibr" target="#b48">49</ref> and they have first been developed to understand the signal processing in the brain. They also represent the first ML method which has been used to fit a DFT PES by Doren and coworkers in 1995, <ref type="bibr" target="#b25">26</ref> and to date a large number of NN potentials have been developed for many molecular and condensed systems. <ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b49">50</ref> The central component of all NN potentials (NNPs) are feed-forward neural networks (FFNNs) as shown in Fig. <ref type="figure">2</ref>. The artificial neurons plotted as circles are arranged in one or more hidden layers and provide the functional flexibility to represent arbitrary functions. In the input layer a set of descriptors {G i } is fed into the network, the output node on the right provides the potential energy E. Each node i in each layer k is connected to the nodes j in the next layer l = k + 1 by weight parameters a k l i j , which are the fitting parameters of the network. Thus, the small FFNN in Fig. <ref type="figure">2</ref> corresponds to the analytic form</p><formula xml:id="formula_21">E = f b 3 1 + 3  k=1 a 23 k1 • f b 2 k + 3  j=1 a 12 j k • f b 1 j + 2  i=1 G i • a 01 i j . (<label>18</label></formula><formula xml:id="formula_22">)</formula><p>The bias weights b j i are acting as adjustable offsets for each node, and the functions f are non-linear activation functions like the hyperbolic tangent or a Gaussian function. The weight parameters are determined using energies and forces from electronic structure calculations in an iterative gradient-based optimization process and finally they contain all the information of the reference set. When applying the NN potential, Eq. ( <ref type="formula" target="#formula_21">18</ref>) is directly evaluated without the need to know the reference set.</p><p>By using a FFNN for each atom in the system and employing Eq. ( <ref type="formula" target="#formula_0">1</ref>), an extension to high-dimensional NN potentials applicable to very large systems has been proposed by Behler and Parrinello in 2007. <ref type="bibr" target="#b31">32</ref> For this purpose, the atomic environments have been described by ACSFs. Further details about this method can be found elsewhere. <ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b50">51</ref> In 2013 it has been explicitly demonstrated by Geiger and Dellago 52 that this scheme, i.e., the combination of atomic NNs and ACSFs, can FIG. <ref type="figure">2</ref>. Structure of a feed-forward neural network. <ref type="bibr" target="#b6">7</ref> also be used to accurately identify amorphous and crystalline structures in MD simulations. They found that this approach is superior to conventional methods for structure identification like Steinhardt parameters, <ref type="bibr" target="#b52">53</ref> which supports the suitability of ACSFs for the distinction of different structural motifs. This application, which is very useful on its own, can be viewed as an intermediate step of the construction of the NN PES, since the proper characterization of the atomic environments is a mandatory ingredient for obtaining a reliable structure-energy relation in NNPs.</p><p>Finally, it should be noted that NNs are currently experiencing an enormous boost in development under the name "deep learning," which is essentially based on very large NNs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Gaussian approximation potentials and kernel methods</head><p>Gaussian approximation potentials (GAPs) <ref type="bibr" target="#b37">38,</ref><ref type="bibr" target="#b53">54</ref> are an important example for kernel-based ML potentials, which are obtained by combining a suitable structural descriptor and a kernel establishing the connection between structure and energy. In case of GAPs, the atomic energies E i in Eq. ( <ref type="formula" target="#formula_0">1</ref>) are interpolated in the bispectrum descriptor space using Gaussian process regression, 8</p><formula xml:id="formula_23">E i = N ref  n=1 α n e -0.5•  L l=1 [(bl-bn,l)/θl] 2 = N ref  n=1 α n e G(b,b n ) , (<label>19</label></formula><formula xml:id="formula_24">)</formula><p>where L is the number of components in the truncated bispectrum and the θ l are fitting parameters. Thus, the atomic energy is a weighted sum over the energies of the known atomic environments in the reference set, which has to be available when applying the potential. The determination of the parameters α n requires an O(N 3 ref ) inversion of the covariance matrix, which is a rather demanding operation. <ref type="bibr" target="#b54">55</ref> In earlier work, also Popelier and coworkers have used Gaussian processes, which are also called Kriging, for the fitting of electrostatic multipoles <ref type="bibr" target="#b55">56</ref> for improving conventional force fields.</p><p>GAPs belong to the class of kernel methods, which have the general form</p><formula xml:id="formula_25">E i (d i ) = N basis  j=1 α j χ j (d i ),<label>(20)</label></formula><p>i.e., they are linear combination of some basis functions χ j depending on descriptor d i for the environment of i. The coefficient vector α is independent of the specific environment. The energy is expanded in terms of the known data points using a nonlinear kernel function K(d, d i ) providing a measure for the similarity of any two structures or environments, 54</p><formula xml:id="formula_26">E i = N train  j=1 α j K(d, d j ).<label>(21)</label></formula><p>GAPs use the squared exponential kernel</p><formula xml:id="formula_27">K SE (d, d ′ ) = exp -  j (d -d ′ ) 2 θ j .<label>(22)</label></formula><p>Kernel methods are very frequently used. Another example is the combination with a Coulomb matrix descriptor for representing the atomization energies of organic molecules by Rupp et al. <ref type="bibr" target="#b39">40</ref> Here, the "distance" between two molecules is defined as</p><formula xml:id="formula_28">d(M, M ′ ) = d(ϵ, ϵ ′ ) =   n |ϵ n -ϵ ′ n | 2 ,<label>(23)</label></formula><p>which is the Euclidean norm of the diagonalized Coulomb matrix.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. Support vector machines</head><p>Support Vector Machines (SVMs) <ref type="bibr" target="#b8">9</ref> belong to the most important ML methods, but to date they have been rarely used for the construction of PES. <ref type="bibr" target="#b56">57,</ref><ref type="bibr" target="#b57">58</ref> Originally, SVMs have been developed for the classification of data into two groups with different properties by introducing a multidimensional hyperplane separating the data. As this hyperplane usually has a very complicated non-linear shape, the data is processed by a kernel substitution, which is in essence the mapping of the original data onto a higher-dimensional feature space, in which a linear separation is possible (see Fig. <ref type="figure">3</ref>). In order to assign the data to real-valued properties like energies, instead of the original SVMs, an extension in the form of support vector regression (SVR) is used. <ref type="bibr" target="#b56">57</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>E. Spectral neighbor analysis potential</head><p>The Spectral Neighbor Analysis Potential (SNAP) introduced by Thompson et al. <ref type="bibr" target="#b58">59</ref> represents a linear version of GAPs and is based on the same bispectrum components, which are now assumed to be related linearly to the atomic energies. The atomic energy of atom i in SNAP is then given as a linear combination of the K projected bispectrum components by <ref type="bibr" target="#b58">59</ref> E i,SNAP = β</p><formula xml:id="formula_29">α i 0 + K  k=1 β α i k • B i k (24)</formula><p>FIG. <ref type="figure">3</ref>. Operation mode of support vector machines (SVMs): <ref type="bibr" target="#b8">9</ref> The data to be classified into two categories cannot be separated linearly by a hyperplane (a). This linear separation becomes possible after the transformation onto a higher-dimensional space as shown in (b). using the coefficients β α k , which can be determined in a leastsquares linear regression. α i specifies the atom type of atom i, B i k is the bispectrum component k of atom i, and β α i 0 is a constant element-specific contribution. Also further properties related to the energy gradients, like the forces and the stress tensor, can be expressed as similar linear combinations of the corresponding derivative terms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. DISCUSSION AND OUTLOOK</head><p>Starting from the two main components discussed in Secs. II and III, ML potentials can be constructed by combining a descriptor to convert the structure into a representation fulfilling the required invariances and a ML method to relate the set of descriptor values to an energy. In principle this approach is quite modular and many combinations of descriptors and ML techniques are possible, although only a few have been used so far.</p><p>The obtained ML potentials have a solid theoretical foundation. Concerning the physics this is the Born Oppenheimer approximation. Mathematically it has been proven for several ML approaches, e.g., for NNs, <ref type="bibr" target="#b59">60,</ref><ref type="bibr" target="#b60">61</ref> that very accurate representations of the potential energy functions are possible, although for practical applications these proofs are of limited use. Therefore, the application of ML to PES fitting is more rigorous than the prediction of other physical properties, although in the end most properties are related to the quantum mechanical Hamiltonian, i.e., to the structure. This relation, however, might be very indirect and thus more complicated to identify for ML.</p><p>ML potentials have many advantages. They offer a very fast calculation of the energies and forces, although they are usually one or two orders of magnitude slower than very simple force fields. High-dimensional ML potentials employing Eq. (1) can easily be parallelized and scale close to linearly with system size. Therefore, they enable simulations of very large systems much beyond the realm of ab initio MD. They all provide very accurate energies close to the underlying electronic structure methods, but they cannot and must not provide better results than this chosen reference method because by themselves they are not relying on a physical functional form but must learn the physical shape of the PES from the provided example data.</p><p>Still, there are also some remaining challenges. The construction of ML potentials currently requires very large reference data sets from electronic structure calculations, making the construction computationally very demanding and time consuming. Reducing the size of the reference sets should therefore be one of the primary goals, and all available information about the PES, like forces, should also be used. The minimum size of the reference sets strongly depends on the complexity of the PES, which must be fully mapped, and research in this direction is just in its infancy. In any case, the identification of missing relevant structures is closely related to the analysis of structural similarities. <ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b61">62,</ref><ref type="bibr" target="#b62">63</ref> Alternatively, the flexibility of the ML methods can also be used to identify structures, which are too far away from the known reference set. <ref type="bibr" target="#b50">51</ref> Another interesting approach is to test ML forces onthe-fly in MD simulations and to add more data if necessary while running the simulations. <ref type="bibr" target="#b54">55</ref> In any case, ML potentials require very careful testing and validation because they can fail spectacularly, if they have not been constructed properly. ML potentials are a tool to speed up simulations, but they are unable to provide new insights that have not been provided in the training set, but these insights might be complex and hidden and very difficult to extract without the use of ML techniques.</p><p>Another current limitation is caused by the exponentially growing complexity of configuration space with chemical composition, which drastically increases both, the number of descriptors and the amount of reference data. Therefore, many ML potentials are restricted to only a few chemical elements, a limitation that they share with many other potentials in materials science. Only if the configuration space is reduced, either by using only very low-dimensional terms like in classical force fields, or by the restriction to local minima of the PES, 40 a higher chemical complexity can be dealt with.</p><p>A future trend to overcome this limitation will certainly be the combination of ML methods with physically meaningful energy terms. The first step in this direction has already been taken for the most obvious choice, the electrostatic energy contribution. Already in 2007 Popelier and coworkers demonstrated that NNs can be used to represent atomic electrostatic multipoles <ref type="bibr" target="#b63">64</ref> to obtain improved electrostatic energy terms in classical force fields. In 2011 environmentdependent atomic charges have been expressed as an extension to the short range energy part in high-dimensional NN potential to avoid the truncation of the atomic interactions at the cutoff radius defining the atomic environments. <ref type="bibr" target="#b64">65</ref> Both approaches rely on reference charges from electronic structure calculations, which are mathematically well-defined but physically not unique. A possible solution to overcome this limitation in a ML framework has been proposed by Ghasemi et al. 66</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSIONS</head><p>A lot of progress has been made in recent years in the development of interatomic potentials based on the combination of ML techniques and data from electronic structure calculations. For this purpose, a toolbox of structural descriptors and ML methods is now ready for use and several new techniques can be expected to enter the stage soon. First applications have demonstrated that potentials of very high accuracy can be obtained for realistic systems containing many atoms and complex atomic configurations. Apart from benchmark studies, state-of-the-art simulations can now be performed, which allow to solve problems in chemistry, physics, and materials science that have hitherto been inaccessible due to the lack of suitable potentials with first-principles accuracy. <ref type="bibr" target="#b66">[67]</ref><ref type="bibr" target="#b67">[68]</ref><ref type="bibr" target="#b68">[69]</ref><ref type="bibr" target="#b69">[70]</ref><ref type="bibr" target="#b70">[71]</ref><ref type="bibr" target="#b71">[72]</ref><ref type="bibr" target="#b72">[73]</ref> In spite of this success, the construction of ML potentials is still very demanding and the potentials need to be tested very carefully due to the lack of a physical basis of their functional form. Consequently, the distribution of potentials from developers to users is not as quickly as for other types of potentials, which is certainly one of the main reasons for the only slowly increasing usage of these methods. Further efforts are also required regarding the applicability to systems containing more than a few elements. This bottleneck, which ML potentials share with many conventional potentials in materials science, is one of the most urgent problems to be addressed in the near future. Finally, it would be desirable to compare different approaches for well-defined benchmark cases to identify and possibly combine the advantages of these methods. To date only the tip of the iceberg of the field of ML has been exploited in the construction of interatomic potentials and many new approaches will be developed to further extend the applicability of ML-based potentials in atomistic simulations.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG. 1. Historic development of machine learning potentials.</figDesc><graphic coords="7,51.43,549.93,228.01,184.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="1,0.00,-0.00,116.21,852.41" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="1,130.00,645.29,435.00,116.71" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_0"><p>March 2025 10:05:14</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>The author thanks the <rs type="funder">DFG</rs> for financial support (<rs type="grantName">Heisenberg Fellowship</rs> No. <rs type="grantNumber">Be3264/6-1</rs>). This work was supported by the <rs type="funder">Cluster of Excellence RESOLV</rs> (<rs type="grantNumber">EXC 1069</rs>) funded by the <rs type="funder">Deutsche Forschungsgemeinschaft</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_WaDDDC8">
+					<idno type="grant-number">Be3264/6-1</idno>
+					<orgName type="grant-name">Heisenberg Fellowship</orgName>
+				</org>
+				<org type="funding" xml:id="_7xzmxsZ">
+					<idno type="grant-number">EXC 1069</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Mitchell</surname></persName>
+		</author>
+		<title level="m">Machine Learning</title>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">G</forename><surname>Sumpter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Getino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Noid</surname></persName>
+		</author>
+		<idno type="DOI">10.1146/annurev.pc.45.100194.002255</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Phys. Chem</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">439</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gasteiger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zupan</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/anie.199305031</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem. Int. Ed</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">503</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">U</forename><surname>Thomsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Meyer</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0022-2364(89)90021-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Magn. Reson</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">212</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Keil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Exner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brickmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/jcc.10361</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">779</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Agrafiotis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Cedeno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Lobanov</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/ci0203702</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Inf. Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">903</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Haykin</surname></persName>
+		</author>
+		<title level="m">Neural Networks and Learning Machines</title>
+		<imprint>
+			<publisher>Prentice Hall</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+	<note>3rd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Rasmussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K I</forename><surname>Williams</surname></persName>
+		</author>
+		<title level="m">Gaussian Processes for Machine Learning</title>
+		<imprint>
+			<publisher>MIT Press</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">N</forename><surname>Cristianini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shawe-Taylor</surname></persName>
+		</author>
+		<title level="m">An Introduction to Support Vector Machines and Other Kernel-based Learning Methods</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Atomistic calculations and materials informatics: A review</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ward</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wolverton</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cossms.2016.07.002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Solid State Mater. Sci</title>
+		<imprint/>
+	</monogr>
+	<note>in press</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hautier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Persson</surname></persName>
+		</author>
+		<idno type="DOI">10.1557/jmr.2016.80</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Res</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page">977</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pilania</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rajasekaran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramprasad</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/srep02810</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Rep</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">2810</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Allen</surname></persName>
+		</author>
+		<idno type="DOI">10.1107/S0108768102003890</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Crystallogr. B</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page">380</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">C</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">F</forename><surname>Koetzle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J B</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Meyer</surname><genName>Jr</genName></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Brice</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Kennard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Shimanouchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tasumi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0003-9861(78)90204-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Arch. Biochem. Biophys</title>
+		<imprint>
+			<biblScope unit="volume">185</biblScope>
+			<biblScope unit="page">584</biblScope>
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Born</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Oppenheimer</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/andp.19273892002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="volume">389</biblScope>
+			<biblScope unit="page">457</biblScope>
+			<date type="published" when="1927">1927</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><surname>Marx</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hutter</surname></persName>
+		</author>
+		<title level="m">Ab initio Molecular Dynamics: Basic Theory and Advanced Methods</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Press</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teukolsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Vetterling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">P</forename><surname>Flannery</surname></persName>
+		</author>
+		<title level="m">Numerical Recipes: The Art of Scientific Programming</title>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note>3rd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lancaster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Salkauskas</surname></persName>
+		</author>
+		<title level="m">Curve and Surface Fitting: An Introduction</title>
+		<imprint>
+			<publisher>Academic Press</publisher>
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ishida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Schatz</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0009-2614(99)00881-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="page">369</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Braams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Bowman</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/01442350903234923</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Rev. Phys. Chem</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page">577</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Bartók</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kondor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Csányi</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.87.184115</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">184115</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Ghiringhelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vybiral</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Levchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Draxl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scheffler</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.114.105503</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">105503</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Topological Indices and Related Descriptors in QSAR and QSPR</title>
+		<editor>J. Deviller and A. T. Balaban</editor>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<publisher>Gordon and Breach Science Publishers</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Valle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oganov</surname></persName>
+		</author>
+		<idno type="DOI">10.1107/s0108767310026395</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Crystallogr., Sect. A: Found. Crystallogr</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">507</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<author>
+			<persName><forename type="first">A</forename><surname>Laio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/3-540-35273-2_9</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Computer Simulations in Condensed Matter Systems: From Materials to Chemical Biology</title>
+		<title level="s">Lecture Notes in Physics</title>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Ferrario</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">G</forename><surname>Ciccotti</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Binder</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="315" to="347" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Blank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">W</forename><surname>Calhoun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Doren</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.469597</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page">4129</biblScope>
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gassner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Probst</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lauenstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hermansson</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp972209d</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">4596</biblScope>
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lorenz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Groß</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scheffler</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cplett.2004.07.076</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">395</biblScope>
+			<biblScope unit="page">210</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lorenz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Reuter</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2746232</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page">14705</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Shapeev</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1512.06054</idno>
+		<imprint/>
+	</monogr>
+	<note type="report_type">e-print</note>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hirn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Poilvert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mallat</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1502.02077</idno>
+		<imprint/>
+	</monogr>
+	<note type="report_type">e-print</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.98.146401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">146401</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kohn</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.76.3168</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">3168</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tersoff</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.39.5566</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">5566</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/0953-8984/26/18/183001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">183001</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.3553717</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page">74106</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">V</forename><surname>Jose</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Artrith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.4712397</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page">194111</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Bartók</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Payne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kondor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Csányi</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.104.136403</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">136403</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kondor</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:cs/0701127</idno>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">e-print</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rupp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tkatchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K.-R</forename><surname>Müller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Lilienfeld</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.108.058301</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">58301</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rupp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramakrishnan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Lilienfeld</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/acscatal.5b02666</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Catal</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">1675</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Biegler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramakrishnan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Pronobis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Von Lilienfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K.-R</forename><surname>Müller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tkatchenko</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/acs.jpclett.5b00831</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">2326</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Handley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L A</forename><surname>Popelier</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/jp9105585</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">3371</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/c1cp21668f</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">17930</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hobday</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Belbruno</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/0965-0393/7/3/308</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Modell. Simul. Mater. Sci. Eng</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">397</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manzhos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Carrington</surname><genName>Jr</genName></persName>
+		</author>
+		<idno type="DOI">10.1063/1.2336223</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page">84109</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Handley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1140/epjb/e2014-50070-0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. B</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">152</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rupp</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qua.24954</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">1058</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mcculloch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Pitts</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF02478259</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bull. Math. Biophys</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">115</biblScope>
+			<date type="published" when="1943">1943</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manzhos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Dawes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Carrington</surname><genName>Jr</genName></persName>
+		</author>
+		<idno type="DOI">10.1021/jp055253z</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">5295</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qua.24890</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">1032</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Geiger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Dellago</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.4825111</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">139</biblScope>
+			<biblScope unit="page">164105</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Steinhardt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ronchetti</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.28.784</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page">784</biblScope>
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Bartók</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Csányi</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qua.24927</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">1051</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Kermode</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">De</forename><surname>Vita</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.114.096405</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">96405</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Handley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">I</forename><surname>Hawe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Kell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L A</forename><surname>Popelier</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/b905748j</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">6365</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vitek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stachon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Krömer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Snasel</surname></persName>
+		</author>
+		<title level="m">IEEE 5th International Conference on Intelligent Networking and Collaborative Systems</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page">121</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Balabin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Lomakina</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/c1cp00051a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">11710</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Thompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Swiler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Trott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Foiles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Tucker</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jcp.2014.12.018</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Phys</title>
+		<imprint>
+			<biblScope unit="volume">285</biblScope>
+			<biblScope unit="page">316</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Cybenko</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF02551274</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Control, Signals Syst</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">303</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0893-6080(91)90009-T</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Networks</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">251</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>De</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Bartok</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Csanyi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ceriotti</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/C6CP00415F</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">13754</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Amsler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Fuhrer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schaefer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Faraji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rostami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Ghasemi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sadeghi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Grauzinyte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wolverton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Goedecker</surname></persName>
+		</author>
+		<idno type="DOI">10.1063/1.4940026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="page">34203</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Houlding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Liem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L A</forename><surname>Popelier</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qua.21507</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Quantum Chem</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page">2817</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Artrith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Morawietz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.83.153101</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">153101</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Ghasemi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hofstetter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Saha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Goedecker</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.92.045131</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page">45131</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Z</forename><surname>Khaliullin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Eshet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">D</forename><surname>Kühne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parrinello</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nmat3078</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">693</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Sosso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Donadio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Caravati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bernasconi</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.86.104301</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">104301</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Morawietz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Singraber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Dellago</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1602375113</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. U. S. A</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">8368</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hellström</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/acs.jpclett.6b01448</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">3302</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Artrith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Kolpak</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/nl5005674</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">2670</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Elias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Artrith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bugnet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Giordano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Botton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Kolpak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shao-Horn</surname></persName>
+		</author>
+		<idno type="DOI">10.1021/acs.jpclett.5b01456</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">3309</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kondati Natarajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Behler</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/C6CP05711J</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">28704</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

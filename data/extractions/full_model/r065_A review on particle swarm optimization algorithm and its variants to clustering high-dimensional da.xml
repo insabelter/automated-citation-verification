@@ -1,0 +1,3479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A review on particle swarm optimization algorithm and its variants to clustering high-dimensional data</title>
+				<funder>
+					<orgName type="full">CNPq</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">NSERC (Canada)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">FAPEMIG (Brazilian agencies)</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2013-02-15">15 February 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ahmed</forename><forename type="middle">A A</forename><surname>Esmin</surname></persName>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Rodrigo</forename><forename type="middle">A</forename><surname>Coelho</surname></persName>
+							<email>rodrigoac@comp.ufla.br</email>
+						</author>
+						<author>
+							<persName><forename type="first">Stan</forename><surname>Matwin</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Federal University of Lavras (UFLA)</orgName>
+								<address>
+									<addrLine>Campus Universitário -</addrLine>
+									<postBox>PO Box 3037</postBox>
+									<postCode>MG 37200-000</postCode>
+									<settlement>Lavras</settlement>
+									<country key="BR">Brazil</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Faculty of Computer Science</orgName>
+								<orgName type="institution">Dalhousie University</orgName>
+								<address>
+									<postCode>B3H 1W5</postCode>
+									<settlement>Halifax</settlement>
+									<region>NS</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department">Matwin Institute of Computer Science</orgName>
+								<orgName type="institution">Polish Academy of Sciences</orgName>
+								<address>
+									<settlement>Warsaw</settlement>
+									<country key="PL">Poland</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A review on particle swarm optimization algorithm and its variants to clustering high-dimensional data</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-02-15">15 February 2013</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">4F0F9FC9382BD4F7305BB978392ADC33</idno>
+					<idno type="DOI">10.1007/s10462-013-9400-4</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:58+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Particle swarm optimization</term>
+					<term>PSO</term>
+					<term>PSO variants</term>
+					<term>Data clustering</term>
+					<term>High-dimensional data clustering</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Data clustering is one of the most popular techniques in data mining. It is a process of partitioning an unlabeled dataset into groups, where each group contains objects which are similar to each other with respect to a certain similarity measure and different from those of other groups. Clustering high-dimensional data is the cluster analysis of data which have anywhere from a few dozen to many thousands of dimensions. Such high-dimensional data spaces are often encountered in areas such as medicine, bioinformatics, biology, recommendation systems and the clustering of text documents. Many algorithms for large data sets have been proposed in the literature using different techniques. However, conventional algorithms have some shortcomings such as the slowness of their convergence and their sensitivity to initialization values. Particle Swarm Optimization (PSO) is a population-based globalized search algorithm that uses the principles of the social behavior of swarms. PSO produces better results in complicated and multi-peak problems. This paper presents a literature survey on the PSO algorithm and its variants to clustering high-dimensional data. An attempt is made to provide a guide for the researchers who are working in the area of PSO and high-dimensional data clustering.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>In recent years there has been an explosive growth in the generation, acquisition and storage of data. This large amount of stored data contains valuable and important hidden knowledge, which could be used to improve the decision-making process of an organization. Extracting information and knowledge from this huge and continuously increasing amount of available data, has become a very complex task and has outpaced our capability to process, analyze, and understand it. Therefore, a process for converting large amounts of data to knowledge will become invaluable. The area of Knowledge Discovery in Databases (KDD) has arisen over the last decade to address this challenge. Data mining is a part of the KDD process. Technically, data mining is the process of extracting useful patterns or mining knowledge from large amounts of data through the application of appropriate algorithms, tools, and techniques. Clustering is one of the important and well-known data mining tasks <ref type="bibr" target="#b38">(Han and Kamber 2001;</ref><ref type="bibr" target="#b96">Pang-ning et al. 2006)</ref>.</p><p>Clustering means the process of partitioning an unlabeled dataset into groups of similar objects. Each group, called a cluster, consists of objects that are similar to each other with respect to a certain similarity measure and which are dissimilar to objects of other groups. The applications of cluster analysis have been used in a wide range of different areas, including artificial intelligence, bioinformatics, biology, computer vision, data compression, image analysis, information retrieval, machine learning, marketing, medicine, pattern recognition, spatial database analysis, statistics, recommendation systems and web mining <ref type="bibr" target="#b65">(Kriegel et al. 2009;</ref><ref type="bibr" target="#b81">Luxburg 2007)</ref>.</p><p>The challenge of clustering high-dimensional data has emerged in recent years. Clustering high-dimensional data is the cluster analysis of data with anywhere from a few dozen to many thousands of dimensions. Such high-dimensional data spaces are often encountered in areas such as medicine, biology, bioinformatics, and the clustering of text documents, where, if a word-frequency vector is used, the number of dimensions equals the size of the dictionary. However, high-dimensional data poses different challenges for clustering algorithms that require specialized solutions. In particular, in high-dimensional data, traditional similarity measures, as used in conventional clustering algorithms, are usually not meaningful <ref type="bibr" target="#b65">(Kriegel et al. 2009;</ref><ref type="bibr" target="#b118">Steinbach et al. 2003)</ref>.</p><p>Almost all research on specialized approaches to clustering high dimensional data is relatively new. Recently, some surveys have given overviews of some approaches. In the survey by <ref type="bibr" target="#b97">Parsons et al. (2004)</ref> the problem is introduced in a very illustrative way and some approaches are sketched out. In <ref type="bibr" target="#b65">Kriegel et al. (2009)</ref> the survey took a more systematic approach to the problem and focused on the different tasks and sub-problems (axis-parallel, pattern-based, and arbitrarily-oriented clustering).</p><p>Common approaches for high dimensional cluster analysis either employ dimension reduction at a data preprocessing step or iteratively carry out dimension reduction and clustering. In particular, dimension reduction based on variable selection aims at identifying a subspace spanned by a small set of variables that include most of the relevant variables that generate the nature data clusters and excludes most irrelevant variables <ref type="bibr" target="#b118">(Steinbach et al. 2003;</ref><ref type="bibr" target="#b97">Parsons et al. 2004)</ref>. Variable selection in clustering has been approached from different perspectives: density-based methods such as <ref type="bibr" target="#b6">(Agrawal et al. 1998;</ref><ref type="bibr" target="#b15">Chan and Hall 2010;</ref><ref type="bibr" target="#b102">Raftery and Dean 2006)</ref>, model-based methods such as <ref type="bibr" target="#b95">(Pan and Shen 2007;</ref><ref type="bibr">Wang ans Zhu 2008)</ref>, and criterion-based methods such as <ref type="bibr" target="#b127">(Witten and Tibshirani 2010;</ref><ref type="bibr" target="#b102">Raftery and Dean 2006)</ref>.</p><p>Many algorithms for large data sets have been proposed in the literature using different techniques. However, conventional algorithms have some shortcomings such as the slowness of the convergence and the sensitivity to initialization values, etc. and they still require much investigation to improve performance and efficiency. Clustering methods such as the K-means algorithm, soft clustering based on mixed models, hierarchical clustering, and spectral clustering have been developed and have proven to be successful in many real world applications <ref type="bibr" target="#b65">(Kriegel et al. 2009;</ref><ref type="bibr" target="#b81">Luxburg 2007;</ref><ref type="bibr" target="#b118">Steinbach et al. 2003;</ref><ref type="bibr" target="#b97">Parsons et al. 2004;</ref><ref type="bibr" target="#b143">Zhou and Shi 2011)</ref>.</p><p>The K-means (KM) algorithm is one of the most popular and widespread partitioning clustering algorithms because of its superior feasibility and efficiency in dealing with a large amount of data. The main drawback of the KM algorithm is that the cluster result is sensitive to the selection of the initial cluster centers and may converge to the local optima <ref type="bibr" target="#b22">(Cui et al. 2005;</ref><ref type="bibr">Kao et al. 2008)</ref>.</p><p>To overcome the drawbacks of these algorithms several new algorithms have been introduced <ref type="bibr" target="#b105">(Sandeep et al. 2011)</ref>. A Genetic Algorithm (GA) based on a mutation operator for clustering analysis was proposed by <ref type="bibr" target="#b86">Maulik and Bandyopadhyay (2002)</ref>. Another approach based on Simulated Annealing (SA) for data clustering was proposed by <ref type="bibr" target="#b109">Selim and Alsultan (1991)</ref> and more recently the Particle Swarm Optimization (PSO) and hybrid PSO algorithms were proposed (Van der Merwe and Engelhrecht 2003; <ref type="bibr" target="#b92">Omran et al. 2006;</ref><ref type="bibr" target="#b26">Esmin et al. 2008;</ref><ref type="bibr" target="#b105">Sandeep et al. 2011)</ref>.</p><p>Particle Swarm Optimization is a population-based stochastic algorithm proposed by <ref type="bibr" target="#b57">Kennedy and Eberhart (1995)</ref>, which is inspired by the social behaviors of animals like fish schooling and bird flocking. As a stochastic search scheme, PSO has characters of simple computation and rapid convergence capability. PSO has been successfully applied in several areas such as clustering problems <ref type="bibr" target="#b98">(Paterlini and Krink 2006;</ref><ref type="bibr" target="#b17">Chen and Ye 2004;</ref><ref type="bibr" target="#b26">Esmin et al. 2008;</ref><ref type="bibr" target="#b8">Ahmadi et al. 2010;</ref><ref type="bibr" target="#b105">Sandeep et al. 2011)</ref>, and image processing <ref type="bibr" target="#b90">(Niu and Shen 2006;</ref><ref type="bibr" target="#b92">Omran et al. 2006;</ref><ref type="bibr" target="#b29">Esmin and Matwin 2012)</ref>. Also the PSO has proved to be competitive with genetic algorithms in several tasks, mainly in optimization areas <ref type="bibr" target="#b116">(Silva et al. 2002;</ref><ref type="bibr">Kennedy 2002;</ref><ref type="bibr" target="#b28">Esmin and Lambert-Torres 2012;</ref><ref type="bibr" target="#b142">Zhao et al. 2005)</ref>.</p><p>Recently, some surveys have given overviews of PSO and hybrid evolutionary algorithms for data cluster analysis. In <ref type="bibr" target="#b105">Sandeep et al. (2011)</ref> the survey has given a general literature review of the PSO application in data clustering. In Hasan and Ramakrishnan (2011) the survey has given a review of hybrid evolutionary algorithms including PSO for cluster analysis. Both surveys focus on a general cluster analysis problem and most of the reviewed papers focus on the application of PSO to cluster simple data with low dimensional numbers.</p><p>The main advantage of PSO is that it has fewer parameters to adjust. PSO finds the best value for interaction of particles, but when the search space is high its convergence speed becomes very slow near the global optimum. It also shows poor quality results when it deals with large and complex data sets. PSO often failed in searching for a global optimal solution in the case where the objective function has a large number of dimensions. The reason for this phenomenon is not only the existence of the local optimal solutions, but that the velocities of the particles sometimes lapsed into degeneracy, so that the successive range was restricted in the sub-plain of the whole search hyper-plain <ref type="bibr">(Kao et al. 2008;</ref><ref type="bibr" target="#b36">Gao and Xu 2011;</ref><ref type="bibr" target="#b122">Thangaraj et al. 2012)</ref>.</p><p>The issue of local optima in PSO has been studied and different variants of PSO algorithm were proposed. Some of these variants have been proposed in order to incorporate the capabilities of other evolutionary algorithms, such as hybrid versions of PSO or the adaptation of PSO parameters, thereby creating the adaptive PSO versions. Many authors have considered incorporating selection, mutation, and crossover, as well as differential evolution, into the PSO algorithm. As a result, hybrid versions of PSO have been created and tested, including the hybrid of a genetic algorithm and PSO, a genetic programming-based adaptable evolutionary hybrid PSO, and evolutionary PSO <ref type="bibr" target="#b76">(Løvbjerg et al. 2001;</ref><ref type="bibr">Miranda and 123 Fonseca 2002;</ref><ref type="bibr" target="#b27">Esmin et al. 2005;</ref><ref type="bibr" target="#b103">Rashid and Baig 2010;</ref><ref type="bibr" target="#b122">Thangaraj et al. 2012)</ref>. <ref type="bibr" target="#b42">Hiqushi and Iba (2003)</ref> proposed the PSO with Gaussian mutation (GPSO), whose global searching ability is more efficient than the standard PSO. <ref type="bibr" target="#b73">Ling et al. (2008)</ref> proposed a hybrid PSO with wavelet mutation named HWPSO. Using another approach, <ref type="bibr">Sun et al. (2004a, b)</ref> introduced quantum theory into PSO and proposed a quantum-behaved PSO (QPSO) algorithm, which can be guaranteed theoretically to find optimal solutions in a search space, and <ref type="bibr" target="#b2">Marinakis et al. (2008)</ref> introduced an improved quantum-behaved particle swarm optimization algorithm with better convergence, called weighted QPSO (WQPSO).</p><p>Although such improvements work well and have the ability to avoid a fall in the local optima, the problem of early convergence by the degeneracy of some dimensions still remains, even if there are no local optima. Hence the PSO algorithm does not always work well for the high-dimensional function as well as for the cluster of high-dimensional data <ref type="bibr" target="#b36">(Gao and Xu 2011;</ref><ref type="bibr" target="#b122">Thangaraj et al. 2012)</ref>.</p><p>From this point of view, different variants of PSO have been proposed to improve the performance of the PSO algorithm in the case of high-dimensional functions. Therefore, the aim of this work is to give a survey by reviewing PSO algorithm and its variants as applied to clustering large and high-dimensional data.</p><p>The rest of this paper is organized as follows: In the next section a brief description of the PSO is presented. In Sect. 3 the PSO variants are described. Section 4 offers a survey about the previous work done on the particle swarm optimization algorithm and its variants for clustering high-dimensional data. A brief discussion is also provided at the end of this section. Finally, conclusions are presented in Sect. 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Particle swarm optimization algorithm</head><p>The PSO algorithm is a population-based optimization method that tries to find the optimal solution using a population of particles <ref type="bibr" target="#b57">(Kennedy and Eberhart 1995;</ref><ref type="bibr" target="#b114">Shi and Eberhart 1998;</ref><ref type="bibr">Kennedy and Shi 2002)</ref>. Each particle is an individual, and the swarm is composed of particles. Some of the attractive features of the PSO include ease of implementation and the fact that no gradient information is required. In PSO, the solution space of the problem is formulated as a search space. Each position in the search space is a potential solution of the problem. Particles cooperate to find the best position (best solution) in the search space (solution space). Each particle moves according to its velocity. At each iteration, the particle movement is computed as follows:</p><formula xml:id="formula_0">x i (t + 1) ← x i (t) + v i (t),</formula><p>(1)</p><formula xml:id="formula_1">v i (t + 1) ← ωv i (t) + c 1 r 1 ( pbest i (t) -x i (t)) + c 2 r 2 (gbest (t)) -x i (t))</formula><p>(2)</p><p>In Eqs.</p><p>(1) and (2), x i (t) is the position of particle i at time t, v i (t) is the velocity of particle i at time t, pbest i (t) is the best position found by particle itself so far, gbest(t) is the best position found by the whole swarm so far, ω is an inertia weight scaling the previous time step velocity, c 1 and c 2 are two acceleration coefficients that scale the influence of the best personal position of the particle (pbest i (t)) and the best global position (gbest(t)), and r 1 and r 2 are random variables within the range of 0 and 1 <ref type="bibr" target="#b123">(Tsai and Chiu 2008)</ref>. Equations ( <ref type="formula">3</ref>) and (4) define how the personal and global best values are updated at time t, respectively. It is assumed below that the swarm consists of s particles and the objective function f is used to calculate the fitness of the particles with a minimization task.  </p><formula xml:id="formula_2">Thus, i ∈ 1 . . . s pbest i (t + 1) = pbest i (t) if f ( pbest (t)) ≤ f (x i (t + 1)) x i (t + 1) if f ( pbest (t)) &gt; f (x i (t + 1)) (3) gbest (t + 1) = min { f (y), f (gbest (t))} where, y ∈ { pbest 0 (t), pbest 1 (t), . . . , pbest s (t)} (4)</formula><p>The process of PSO is shown as Fig. <ref type="figure">1</ref>. Equation (2) consists of three terms. The first term is the current speed of the particle, which shows its present state and has the ability to balance the whole and search a local part. The second term is the cognition term, which expresses the "thought" of the particle itself and causes the swarm to have a strong ability to search the whole and avoid a local minimum. The third term is called the social term; it reflects the information sharing among the swarm and among the particles, leading the particles toward known good solutions. Under the influence of these three terms, the particles can reach an effective and best position. Figure <ref type="figure">2</ref> illustrated the schematic representation of updating the velocity (Eq. 2) of a particle as presented in <ref type="bibr" target="#b8">Ahmadi et al. (2010)</ref>.</p><p>Two basic approaches to PSO exist based on the interpretation of the neighborhood of particles. Equation (2) reflects the global best (gbest) version of PSO where, for each particle, 123 the neighborhood is simply the entire swarm. The social component then causes particles to be drawn toward the best particle in the swarm. In the local best (lbest) PSO model, the swarm is divided into overlapping neighborhoods, and the best particle of each neighborhood is determined <ref type="bibr" target="#b114">(Shi and Eberhart 1998;</ref><ref type="bibr">Kennedy and Shi 2002)</ref>.</p><p>The stopping criterion (termination conditions) mentioned in the aforementioned algorithm depends on the type of problem being solved. Usually, the algorithm is run for a fixed number of iterations (objective function evaluations) or until a specified error bound is reached.</p><p>The description of how the algorithm works is as follows: initially, based on particle fitness information, one particle is identified as the best particle. Then, all the particles are accelerated in the direction of this particle but, at the same time, in the direction of their own best previously encountered solutions. Occasionally, the particles will overshoot their target, exploring the search space beyond the current best particles. All particles also have the chance to discover better particles en route, in which case, the other particles will change direction and head toward the new best particle. Because most functions have some continuity, chances are that a good solution will be surrounded by equally good, or better, solutions. By approaching the current best solution from different directions in search space, the chances that these neighboring solutions will be discovered by some of the particles are good <ref type="bibr">(Kennedy and Shi 2002;</ref><ref type="bibr" target="#b123">Tsai and Chiu 2008)</ref>.</p><p>The PSO algorithm is very fast, simple and easy to understand and implement. It also has few parameters to adjust <ref type="bibr" target="#b57">(Kennedy et al. 2001)</ref>. PSO finds the best value with interaction of particle, but when the search space is high its convergence speed becomes very slow near global optimum. It also shows poor quality results when it deals with large and complex data set. As aforementioned, several PSO variants have been developed to overcome this problem.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">PSO variants</head><p>There are several variants of the PSO algorithm available in the literature <ref type="bibr" target="#b107">(Sedighizadeh and Masehian 2009;</ref><ref type="bibr" target="#b38">Hasan and Ramakrishnan 2011;</ref><ref type="bibr" target="#b105">Sandeep et al. 2011)</ref>. <ref type="bibr" target="#b107">Sedighizadeh and Masehian (2009)</ref> discussed the PSO' s Taxonomy and classified these variants according to cooperation, continuity, fuzziness, accordance, attraction, activity, mobility, divisibility, topology, hierarchy, restriction, objective, recursively, uncertainty etc.</p><p>One of the variant was proposed by <ref type="bibr" target="#b133">Yao (2008)</ref>, a Cooperatively Coevolving Particle Swarm Optimization (CCPSO) algorithm for solving large-scale problem by breaking the problem into some smaller-scaled ones in a way that the internal dependencies of generated particles are in the possible least values. Then, these particles will become cooperated. In multidimensional or large problems the PSO does not work well. For solving these types of problems, a Cooperative Multiple PSO (CMPSO) was proposed by <ref type="bibr" target="#b32">Felix et al. (2007)</ref>. This algorithm has all conductivity and control properties of the PSO. In Orthogonal PSO (OPSO), Intelligent Move Method (IMM) is used for updating the velocity and this method provides the best result when dealing with optimization problem of large-scale parameter <ref type="bibr" target="#b43">(Ho et al. 2008</ref>). The Two Swarm-based PSO algorithm helps in escaping from local optimum and avoiding rapid convergence. The two different swarms are flown in space. The particles of these swarms follow different paths, which will enhance the capability of finding global optimum. At the same time other swarm will enhance local discovery by using roulette wheel selection based selection method <ref type="bibr">(Li et al. 2006a, b)</ref>. To achieve multiple optimizations, Niching PSO is used. Initially the individual particles are monitored and those particles whose fitness changes little is separated in each iteration and a sub swarm is formed. These sub swarms are useful in finding all the global and local optimums <ref type="bibr" target="#b12">(Brits et al. 2005)</ref>. In Optimized PSO, swarms within a swarm help in optimizing the free parameter of PSO. It has been shown by test results that this method performs better than other methods <ref type="bibr" target="#b87">(Meissner et al. 2006)</ref>. The balance between discovery and extract is very important in algorithm related to PSO.</p><p>In Best Rotation PSO (BRPSO), multi-model functions are optimized by dividing single swarm into sub swarms. In BRPSO when best rotation is executed, stagnation on local minima is avoided by forcing populations to move from one local minimum to another one, increasing the exploration of the problem space between different local minima <ref type="bibr" target="#b10">(Alviar et al. 2007</ref>). PSO with spatial particle extension (SEPSO) algorithm uses species, which include a collection of similar particle in a sub swarm. The criterion for finding similarity is the Euclidean distance. When particles move in their species, a parallel multi-objective optimization takes place and helps in increasing convergence <ref type="bibr" target="#b66">(Krink et al. 2002)</ref>. In parallel PSO a parallel computation is used to reduce the total time when solving large-scale complex problem <ref type="bibr" target="#b16">(Chang et al. 2005)</ref>.</p><p>To improve the efficiency of PSO a hybridization of PSO and harmony search is introduced for solving high dimensional problem <ref type="bibr" target="#b69">(Li and Li 2007)</ref>. Parallel synchronous PSO (PSPSO) algorithm performs the position and velocity updating at the end of each iteration using wholly simulating. It uses a constant load balancing in which the assigned task to each processor in the total time is determined <ref type="bibr" target="#b64">(Koh et al. 2005)</ref>. To solve constrained single objective problem, Constrained Optimization by PSO (COPSO) algorithm is used. These algorithm employees a technique to investigate constrained with the help of an external file to save particle information. This algorithm offers improvement in the best version by using an external procedure, which maintains swarm diversity and guidance <ref type="bibr" target="#b7">(Aguirre et al. 2007</ref>). Augmented Lagrangian PSO was proposed to solve the optimization problem with equal and unequal constraints <ref type="bibr" target="#b108">(Sedlaczek and Eberhard 2006)</ref>.</p><p>Adaptive PSO (APSO) algorithm that introduce a solution to adaptively replace the current inactive particles with fresh particles in a way that the existing PSO-based relationships among the particles are kept <ref type="bibr">(Xie et al. 2002a, b)</ref>. In Adaptive PSO Guided by Acceleration Information (AGPSO) the concept of acceleration item was introduced in the position and velocity updating equations to improve the efficiency of PSO for finding the global optima <ref type="bibr" target="#b135">(Zeng et al. 2006)</ref>. Attractive Repulsive Particle Swarm Optimization (ARPSO) algorithm has been developed to remove the PSO's drawback in premature convergence. It includes an attractive phase and a repulsive phase. In the attractive phase, the addition operator is used among the equation terms for velocity updating. In the repulsive phase, the subtraction operator is employed <ref type="bibr" target="#b104">(Riget and Vesterstroem 2002)</ref>. In Trained PSO (TPSO) algorithm, the training of particle helps in reducing completion complexity and convergence time <ref type="bibr" target="#b37">(Gheitanchi et al. 2008</ref>). In Self-Organization PSO (SOPSO) algorithm, the inclusion feedback of agent improves the performance of particle in the next iteration by improving the discovery and extract. This algorithm avoids premature convergence of total swarm <ref type="bibr" target="#b50">(Jie et al. 2006)</ref>. In Active Target PSO (APSO) algorithm, in addition to two existing terms; namely the best position and the best previous position for particle velocity updating, a third term called 'Active target' is also utilized. Calculating the third term is complicated and it does not belong to the existing positions. This method maintains the diversity of the PSO as well as not trapping in the local optimum <ref type="bibr">(Zhang et al. 2008b)</ref>. Binary PSO (BPSO)-The difference between PSO and BPSO lies in their defined searching spaces. In the BPSO moving in the spaces means a change in the probability of the fact that the value of position coordinate is zero or one <ref type="bibr" target="#b58">(Kennedy and Eberhart 1997)</ref>.</p><p>Angle Modulated PSO (AMPSO) algorithm employs a trigonometry function to generate a bit string. Its difference with the Binary PSO (BPSO) algorithm lies in its high computational efficiency. That is, it avoids the generation of high-dimensional binary vector and thus, 123 its discretion process is not complicated. Moreover, it changes all of the high-dimensional problems to a four-dimensional problem <ref type="bibr" target="#b94">(Pampara et al. 2005)</ref>. Combinatorial PSO (CPSO) algorithm is employed to optimize hybrid problems (consisted of continuous and integer variables) <ref type="bibr" target="#b49">(Jarbouia et al. 2007)</ref>. In Comprehensive Learning PSO (CLPSO) algorithm, a new velocity updating function is proposed and employed to construct CLPSO and then the new algorithm is tested using a group of benchmark functions <ref type="bibr" target="#b71">(Liang et al. 2006)</ref>.</p><p>Dissipative PSO is used to solve the problem of searching the limited area, and this method helps in overcoming swarm's tendency to get equilibrium status. The concept of negative entropy is used for producing craziness among particles <ref type="bibr">(Xie et al. 2002a, b)</ref>. In Dynamic adaptive dissipative PSO (ADPSO algorithm, on the one hand, a dissipative is made for the PSO introducing negative entropy and on the other hand, a mutation operator is utilized to increase the variety in the swarm when it reaches an equilibrium condition in last runs. Thus, it generates an adaptive strategy for inertia weight in order to keep the balance between the local and global optimality <ref type="bibr" target="#b112">(Shen et al. 2007</ref>). The Dynamic neighborhood PSO (DNPSO) method has some modifications to the conventional PSO. In this method, instead of using the current Gbest in the PSO, another parameter, called Nbest, is utilized. This term is the best particle among the current particle's neighbors in a specified neighborhood <ref type="bibr" target="#b46">(Hu and Eberhart 2002)</ref>. Evolutionary Programming and PSO (EPPSO) algorithm is a combination of the PSO and EP. The combination of these two algorithms increase the PSO capability in making a balance between local and global search due to the faster convergence of the EP algorithm <ref type="bibr">(Wei et al. 2002)</ref>. Evolutionary Iteration PSO (EIPSO) algorithm is a combination of the PSO and Evolutionary Programming (EP). Thus, it is able to increase the computational efficiency of EP and it can avoid trapping the algorithm in local optimum <ref type="bibr" target="#b68">(Lee 2007)</ref>.</p><p>In fuzzy PSO an explicit selection procedure is used together with PSO. The parameters are set using the self-adaptive characteristics. Different operators like mutation, replication, reproduction, evaluation and selection are utilized in this algorithm <ref type="bibr" target="#b113">(Shi and Eberhart 2001)</ref>. In Gaussian PSO, to visualize the random nature of PSO, the probability distribution of swarm is used, which allows better understanding of tuning the algorithm and depicting the weakness. The Gaussian distance of swarm moving from global best and local best is utilized in this algorithm <ref type="bibr" target="#b106">(Secrest and Lamont 2003)</ref>. In Fitness-to-Distance Ratio PSO (FDRPSO) algorithm, the particles are moved towards nearby particles of higher fitness instead of attracting each particle towards just the best position discovered so far by any particle. The direction in which each component of particle position needs to be changed is determined by using the ratio of relative fitness and the distance of other particle <ref type="bibr" target="#b100">(Peram et al. 2003)</ref>.</p><p>In Hierarchical PSO, the neighborhood structure is defined by arranging particle in a dynamic hierarchy. The particle moves up or down this hierarchy, based on quality of their best solution till now <ref type="bibr" target="#b48">(Janson and Middendorf 2004)</ref>. Heuristic PSO derives that in HPSO the method of selecting next particle for updating its velocity and position is different from original PSO. The main objective of this algorithm is to increase the convergence speed <ref type="bibr" target="#b67">(Lam et al. 2007)</ref>. Hybrid particle swarm optimizer with mutation (HPSOM) algorithm is a combination of PSO and GA mutation. This process allows the search to escape from local optima and search in different zones of the search space. As a result, the proposed algorithm has the automatic balance ability between global and local searching abilities to guarantee the better convergence <ref type="bibr" target="#b27">(Esmin et al. 2005;</ref><ref type="bibr" target="#b30">Esmin and Matwin 2013)</ref>. Hybrid PSO with Simulated Annealing (SA) algorithm is a combination of PSO and SA. These two mechanisms have their merits and demerits individually, but when used in combination using SA they overcome the problem of each other <ref type="bibr" target="#b125">(Wang and Li 2004)</ref>. Predator Prey PSO (PPPSO) algorithm uses the definitions of predator and prey. In this algorithm prey tries to avoid predator. This helps in moving towards global optimum and avoiding local optimum <ref type="bibr" target="#b49">(Jarbouia et al. 2007)</ref>. Quadratic Interpolation PSO (QLPSO) algorithm uses a multi-parent, quadratic crossover/reproduction operator. In this algorithm, the swarm leader is determined in each iteration. Then, its partners are selected among other particles. Next, employing a crossover operation called "quadratic crossover", off spring production is performed. The new particle is accepted into the swarm when it is better than the best particle existing in the swarm <ref type="bibr">(Pant et al. 2007)</ref>. A Novel Hybrid PSO (NHPSO) algorithm is proposed to make the PSO more efficient in solving high-dimensional problems. The NHPSO use a hybridization of PSO and harmony search <ref type="bibr" target="#b69">(Li and Li 2007)</ref>. Principal Component PSO (PCPSO) algorithm is proposed to reduce the time complexity of the problem in high dimensions. In this algorithm, particles are flown in an n-dimensional space and contemporarily; they are flown in an m-dimensional space (m is less than n). That is, the particles are flown simultaneously in two separate spaces <ref type="bibr" target="#b124">(Voss 2005)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">PSO and its variants to cluster high-dimensional data</head><p>Clustering is an important problem that often must be solved as part of more complicated tasks in pattern recognition, image analysis, and other fields of science and engineering. Clustering is one of the main tasks in knowledge discovery from databases (KDD) and consists in finding groups within a certain set of data, where each group contains objects similar to each other and different from those of other groups <ref type="bibr" target="#b38">(Han and Kamber 2001;</ref><ref type="bibr" target="#b96">Pang-ning et al. 2006</ref>). In the past decade it has been proved by many researchers that the biologically or nature-inspired algorithms (Ant Colony Optimization Algorithm, Artificial Bee Colony Algorithm, Particle Swarm Optimization, Bird Flocking Algorithm, Frog Leaping Algorithm, Genetic Algorithm) are viable tools to solve complex optimization problems and can be successfully implemented for solving the clustering problems. Among them, the particle swarm optimization algorithm is very popular due to its flexibility and self-organization. The PSO combined with other techniques such as dimensionality reduction and subspace can be successfully applied to address the problem of clustering high-dimensional data <ref type="bibr" target="#b9">(Ahmadi et al 2007;</ref><ref type="bibr" target="#b23">Das et al. 2008;</ref><ref type="bibr" target="#b63">Kiranyaz et al. 2009;</ref><ref type="bibr" target="#b45">Hua and Pei 2010)</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Literature survey</head><p>An implementation of PSO for document clustering was introduced in <ref type="bibr" target="#b22">Cui et al. (2005)</ref>. The PSO algorithm is used to perform a global search in the entire solution space. The PSO-Clustering algorithm can generate more compact clustering results than the K-means clustering algorithm. <ref type="bibr" target="#b35">Fun and Chen (2005)</ref> introduced the hybrid PSO and K-means algorithm with a novel alternative metric; this is called the Alternative KPSO clustering (AKPSO) and it automatically detects the cluster centers of geometrical structure datasets. They presented an evolutionary particle swarm optimization learning-based method to optimally cluster N data points into K clusters. <ref type="bibr" target="#b111">Shen et al. (2005)</ref> presented a mountain clustering based on an improved particle swarm optimization (MCBIPSO) algorithm. A mountain clustering method constructs a mountain function according to the density of the sample. The improved PSO algorithm is used to find all peaks of the mountain function. The simulation results show that the MCBIPSO algorithm is successful in deciding the density clustering centers of data samples. <ref type="bibr" target="#b92">Omran et al. (2006)</ref> proposed a new dynamic clustering approach (DCPSO), based on particle swarm optimization for image segmentation. The proposed approach automatically determines the 'optimum' number of clusters and simultaneously clusters the data set with 123 minimal user interference. The algorithm starts by partitioning the data set into a relatively large number of clusters to reduce the effects of initial conditions. Using binary particle swarm optimization the "best" number of clusters is selected. The centers of the chosen clusters are then refined via the K-means clustering algorithm. The experiments show that the proposed approach generally found the optimum number of clusters on the tested images. <ref type="bibr" target="#b21">Cui and Potok (2006)</ref> proposed a hybrid PSO based algorithm (PSO + K-means) to perform fast document clustering and to avoid being trapped in a local optimal solution as well. In this algorithm, the initial process starts by using the particle swarm optimization algorithm and then the result of the PSO is used as the initial seed of the K-means algorithm; the K-means algorithm can quickly locate the optima with a low distance average value. They reported that this hybrid PSO + K-means algorithm generated higher compact clustering than using either PSO or K-means alone. <ref type="bibr" target="#b33">Feng et al. (2006)</ref> proposed an adaptive hyper-fuzzy partition particle swarm optimization clustering algorithm to optimally classify different geometrical structure data sets into correct groups. In this architecture, they used a hyper-fuzzy partition metric to improve the traditional commonly-used Euclidean norm metric clustering method. Since one fuzzy rule describes one pattern feature and implies the detection of one cluster center, it is encouraged that researchers decrease the number of fuzzy rules with the hyper-fuzzy partition metric. According to the adaptive particle swarm optimization, it was very suitable that they manage the clustering task for a complex, irregular, and high dimensional data set. They conclude that the proposed hyper-fuzzy PSO clustering algorithms are adaptive to outliers and achieve more accuracy than traditional K-means and fuzzy c-means clustering methods. <ref type="bibr" target="#b44">Hongwen and Rui (2006)</ref> presented a neural network clustering methods-based particle swarm optimization for the large spatial datasets suitable for parallel processing. The outcome of the study clearly indicates that the proposed composite model and approach of this neural network clustering based PSO can be used as an attractive means for load characteristics to obtain the global load model for describing the nonlinear characteristics of the electric load. It will automatically produce the If-Then rules, whose premise parameters and consequent parameters are adjusted by using a Back-Propagation algorithm in combination with the least squares method. The simulation results also show the feasibility of the method. <ref type="bibr" target="#b98">Paterlini and Krink (2006)</ref> introduced two algorithms for numerical optimization, namely particle swarm optimization (PSO) and differential evolution (DE). DE is clearly and consistently superior compared with the genetic algorithm (GA) for hard clustering problems. <ref type="bibr" target="#b4">Abraham et al. (2007)</ref> introduced a method for clustering complex and linearly nonseparable datasets, without any prior knowledge of the number of naturally occurring clusters. The proposed method is based on an improved variant of the particle swarm optimization (PSO) algorithm. <ref type="bibr" target="#b9">Ahmadi et al (2007)</ref> reported that, when the data set is large and has a high dimension, the time single swarm is incapable of exploring the entire solution space. To solve such kinds of problems they proposed a multiple swarm based clustering algorithm based on the PSO. The proposed algorithm considers multiple cooperating swarms to find centers of clusters. In this algorithm a portion of the solution space is assigned to each swarm to search in that particular portion for increasing the chances of a good solution. The results of this algorithm show that it outperforms k-means clustering as well as conventional PSO-based clustering techniques. <ref type="bibr">Kao et al. (2007a)</ref> applied the particle swarm optimization (PSO) algorithm to data clustering problems. Two reflex schemes are implemented on the PSO algorithm to improve the efficiency. <ref type="bibr">Kao et al. (2007b)</ref> stated that PSO gives better clustering results, when it is applied in one dimension and for a small data set, but when it is applied to a large data set, it does not give good results. The reason behind this is that, when the search for a good solution reaches the search space boundary, the particles tend to stay there and do not move in other directions for a good solution. To overcome this problem a hybrid technique based on combining the K-means algorithm, Nelder-Mead simplex search <ref type="bibr" target="#b89">(Nelder and Mead 1965;</ref><ref type="bibr" target="#b31">Fan et al. 2004)</ref>, and particle swarm optimization, called K-NM-PSO, was proposed. The K-NM-PSO searches for cluster centers of an arbitrary data set as does the K-means algorithm, but it can effectively and efficiently find the global optima. This algorithm is both robust and suitable for handling data clustering and gives better results than other algorithms such as PSO, NM-PSO, K-PSO and K-means. <ref type="bibr" target="#b84">Marinakis et al. (2007)</ref> presented a new stochastic nature-inspired methodology, which is based on the concept of particle swarm optimization and a greedy randomized adaptive search procedure (GRASP), for optimally clustering N objects into K clusters. They described a PSO algorithm for the solution of the feature selection problem and a GRASP for the solution of the clustering problem. <ref type="bibr" target="#b51">Junyan and Huiying (2007)</ref> proposed the algorithm for mining web usage patterns based on PSO named RVPSO-K. Since web databases have high dimensions, a traditional clustering algorithm (K-means, FCM etc.) is not suitable for web data mining. <ref type="bibr" target="#b23">Das et al. (2008)</ref> introduced a scheme for clustering complex and linearly non-separable datasets, without any prior knowledge of the number of naturally occurring groups in the data. The proposed method was based on a modified version of the classical PSO algorithm, known as the Multi-Elitist PSO (MEPSO) model. It also employs a kernel-induced similarity measure instead of the conventional sum-of-squares distance. The use of the kernel function makes it possible to cluster data that is linearly non-separable in the original input space into homogeneous groups in a transformed high-dimensional feature space. The performance of the proposed method was compared with six other clustering algorithms such as, GCUK-Genetic Clustering with an Unknown number of clusters K <ref type="bibr" target="#b86">(Maulik and Bandyopadhyay 2002)</ref>, the DCPSO-Dynamic Clustering PSO <ref type="bibr" target="#b92">(Omran et al. 2006</ref>), an ordinary PSO based kernel-clustering method, and the kernel K-means and a kernelized version of the subtractive clustering <ref type="bibr" target="#b59">(Kim et al. 2005)</ref>. They concluded that the algorithm gives similar and in some cases better results than the other compared algorithms using a test-bed of five datasets. They also concluded that Euclidean distance is suitable when data is hyper spherical and linearly separable. For a nonlinear and complex data set, it does not produce good results and they observed that the final classification accuracy and the mean number of classes found by the MEPSO deteriorate considerably when the feature space dimensionality exceeds 40. <ref type="bibr" target="#b20">Cui et al. (2008)</ref> stated that the performance of HPSO using PSO and KM <ref type="bibr" target="#b22">(Cui et al. 2005</ref>) could be improved for document clustering by transforming the high dimensional vector document matrix into a lower dimension matrix. They report significant improvements in total clustering runtime for two dimensionality reduction techniques Latent Semantic Indexing-LSI <ref type="bibr" target="#b24">(Deerwester et al. 1990</ref>) and Random Projection-RP <ref type="bibr" target="#b55">(Kaski 1998)</ref>. Moreover, the clustering accuracy of the LSI-HPSO and RP-HPSO clustering algorithms is comparable to the one that uses the full term space. <ref type="bibr" target="#b82">Marinakis et al. (2008)</ref> proposed a new hybrid algorithm, which is based on the concepts of PSO and GRASP, for optimally clustering N objects into K clusters. The proposed algorithm is a two-phase algorithm, which combines a multi-swarm constriction PSO algorithm for the solution of the feature selection problem and a GRASP algorithm for the solution of the clustering problem. <ref type="bibr" target="#b25">Díaz et al. (2008)</ref> applied a derivative of the PSO algorithm to partitional clustering of a real-world data set obtained from a Water Supply Company. This PSO with its self-adaptive feature was compared to partitional clustering algorithms such as PAM and CLARA <ref type="bibr" target="#b56">(Kaufman and Rousseeauw 1990)</ref> and results showed that the PSO efficiency was superior. <ref type="bibr">Zhang et al. (2008b)</ref> proposed an improved ant colony optimization (IACO) and hybrid particle swarm optimization (HPSO) method for spatial clustering with obstacle constraints (SCOC). They applied IACO to obtain the shortest obstructed distance, which is an effective method for arbitrary shape obstacles, and 123 then they developed a novel HPKSCOC based on HPSO and K-medoids to cluster spatial data with obstacles. <ref type="bibr" target="#b54">Kao and Lee (2009)</ref> presented a dynamic data clustering algorithm based on K-means and combinatorial particle swarm optimization, called KCPSO. Unlike the traditional K-means method, KCPSO does not need a specific number of clusters given before performing the clustering process and is able to find the optimal number of clusters during the clustering process. <ref type="bibr" target="#b41">Herrera et al. (2009)</ref> applied a variant of Particle Swarm Optimization (PSO), to distinguish between perioperative practices and associate them with some unknown relevant facts. The PSO algorithm was compared to Partitioning Around Medoids (PAM) <ref type="bibr" target="#b56">(Kaufman and Rousseeauw 1990)</ref> and in terms of efficiency; PSO efficiency was superior. <ref type="bibr" target="#b83">Marinakis et al. (2009)</ref> proposed a new hybrid algorithm for clustering, which is based on the concepts of the bumble bees mating optimization (BBMO) and greedy randomized adaptive search procedure (GRASP). The proposed algorithm is a two-phase algorithm, which combines the BBMO algorithm for the solution of the feature selection problem and a GRASP algorithm for the solution of the clustering problem. <ref type="bibr" target="#b80">Lu et al. (2009)</ref> presented a subspace clustering method to cluster documents, called Text Clustering via Particle Swarm Optimizer (TCPSO), which extends the particle swarm optimizer for variable weighting (PSOVW), <ref type="bibr">Luo and Wang (2009)</ref>, to handle the problem of clustering documents. Compared with the clustering quality of the six algorithms, TCPSO shows the ability to greatly improve the quality of text clustering. <ref type="bibr" target="#b0">Chen et al. (2009)</ref> proposed a text clustering method algorithm based on K-means clustering and the PSO algorithm called OK-PSO. The K-means, DSOM-FS-FCM <ref type="bibr" target="#b47">(Hu et al. 2008)</ref> and OK-PSO clustering approaches are applied on text datasets to compare the performance. Experimental results illustrate the efficiency of the proposed OK-PSO method. <ref type="bibr">Luo and Wang (2009)</ref> introduced a data streams clustering algorithm based on Grid <ref type="bibr" target="#b91">(O'Callaghan et al. 2002;</ref><ref type="bibr" target="#b70">Li et al. 2009</ref>) and the PSO optimized clustering in order to get a more precise clustering efficiency. Experiments show that this algorithm is more efficient than the CluStream algorithm <ref type="bibr" target="#b5">(Aggarwal et al. 2003)</ref>. <ref type="bibr" target="#b11">Binwahlan et al. 2009</ref> introduced a novel text summarization model based on swarm intelligence (PSO). The main purpose of the proposed model is for scoring sentences, while emphasizing how to deal with the text features fairly based on their importance. Results show that the proposed model creates better summary results than produced by the MS Word summarizer. <ref type="bibr" target="#b110">Sharma and Omlin (2009)</ref> proposed the use of an adaptive heuristic PSO algorithm for finding cluster boundaries directly from the code vectors obtained from a self-organizing map (SOM). <ref type="bibr" target="#b63">Kiranyaz et al. (2009</ref><ref type="bibr">Kiranyaz et al. ( , 2010a))</ref>) proposed two techniques. The first proposed technique, called Fractional Global Best Formation (FGBF), is designed to alleviate the premature convergence. The second technique called Multi-Dimensional Particle Swarm Optimization (MDPSO), is designed to achieve a dynamic clustering where the optimum number of clusters is also determined within the process. These techniques were used to find the optimal number of clusters in multidimensional data and to remove the common drawbacks of PSO family methods. <ref type="bibr">Li and Qian (2010)</ref> proposed the hybrid P-HPSO clustering algorithm and used the Principle Component Analysis (PCA) to lower the data dimensionality with hybrid PSO and K-means algorithms (van der Merwe and Engelbrecht 2003) to cluster data. The results indicated that it could process the clustering analysis efficiently for the high-dimensional data. <ref type="bibr">Zhang et al. (2010)</ref> adapted the Quantum-behaved Particle Swarm Optimization (QPSO) <ref type="bibr">(Sun et al. 2004a, b)</ref> to improve the project indicating function to the PP (Projection Pursuit) model <ref type="bibr" target="#b34">(Friedman and Tukey 1974;</ref><ref type="bibr" target="#b101">Qiang and Xiaoyong 2006)</ref>, which is a multiple data processing method to find the best projection to project high dimension data to a lower dimension. They used the K-means clustering method to cluster the projected lower dimension data. The improved PP clustering model was proposed and shows the effectiveness and feasibility on different data types. <ref type="bibr" target="#b99">Peng et al. (2010)</ref> present the text clustering algorithm that uses cluster intelligent optimization algorithms (PSO) to find the initial focal point to resolve the input sequences of the fuzzy clustering algorithm (FCM). Clustering results of experiments proved relatively stable; the text in each test set showed fairly good results. <ref type="bibr" target="#b138">Zhang and Jiang (2010)</ref> proposed a text clustering method, called Text Clustering via Particle Swarm Optimizer (TCPSO) to solve the Chinese text clustering problem <ref type="bibr" target="#b80">(Lu et al. 2009</ref>). The simulation results on a text dataset shows that this approach effectively improves the quality of clustering and gets better results compared with the K-means algorithm, but is inferior to that on English text clustering because of the features of the Chinese words and the complex grammars. <ref type="bibr" target="#b14">Cai et al. (2010)</ref> presented schemes for outlier detection in conjunction with clustering using PSO. They concluded that the combined modifications to PSO can speed up the optimization process to the point that it can quickly generate very efficient clustering solutions in large datasets. The running results of the system show that it was feasible and valuable to apply this method to mining the outliers in high-dimensional spectrum data. <ref type="bibr">Kiranyaz et al. (2010b)</ref> presented a personalized long-term continuous electrocardiogram (ECG) classification system. It is based on multi-dimensional particle swarm optimization (MDPSO) to find out the true number of clusters and fractional global best formation (FGBF) to avoid local optima. To help professionals to quickly and accurately diagnose any latent heart disease, the proposed systematic approach produced results that were consistent with the manual labels with 99.5% average accuracy. <ref type="bibr" target="#b85">Marini and Walczak (2011)</ref> proposed a discrete binary-coded implementation of the PSO algorithm to identify and select variables with a significant clustering tendency. In particular, to cope with the problems that can arise when performing variable selection on data sets with a high number of variables, and to account for the possibility of using the method also for purely exploratory purposes, an unsupervised approach was used, where the fitness was computed based on hierarchical clustering models. The characteristics of the method were shown on two simulated data sets and on a real megavariate data set coming from the analysis of genomic microarrays. They conclude that in all cases, PSO allowed them to explore different subspaces and to discover meaningful structures in the analyzed data. Based on these considerations, it is apparent that the use of PSO can represent a very promising option to deal with the problem of finding groups in a multivariate data set in a relatively straightforward and reliable way. This approach could be very useful to cope with biomarker identification in the fields of genomics, proteomics or metabolomics. Lotfi <ref type="bibr" target="#b75">Shahreza et al. (2011)</ref> introduced an unsupervised algorithm based on a combination of a Self-Organizing Map (SOM) <ref type="bibr" target="#b129">(Xiang et al. 2003)</ref> and Particle Swarm Optimization (PSO) for detection of anomalies like those in forest fires. In comparison with some other methods, this hybrid algorithm obtained good results, especially when abnormal cases are rare. <ref type="bibr" target="#b77">Lu et al. (2011)</ref> presented a particle swarm optimizer to solve the variable weighting problem in projected clustering of high-dimensional data, called PSOVW. The PSOVW employs a K-means weighting function, which calculates the sum of the within-cluster distances for each cluster along relevant dimensions preferentially to irrelevant ones. It also proposed a normalized representation of variable weights in the objective function, which greatly facilities the search process. This algorithm makes use of particle swarm optimization to get near-optimal variable weights for the given objective function. They conclude that the experimental results on synthetic and real-life datasets, including an application to document clustering, show that it can greatly improve clustering accuracy for high-dimensional data and is much less sensitive to the initial cluster centroids. Moreover, the application to text clustering shows that the effectiveness of PSOVW is not confined to Euclidean distance. The reason is that the weights are only affected by the values of the objective function and weight updating in PSOVW is independent of the similarity measure. Other similarity measures can thus be used for different applications: the extended Jaccard <ref type="bibr" target="#b96">(Pang-ning et al. 2006)</ref> coefficient for text data, for instance. <ref type="bibr" target="#b119">Sun et al. (2011)</ref> presented a comparative analysis of particle swarm optimization (PSO), self-organizing hierarchical particle swarm optimizer (HPSO) and self-organizing hierarchical particle swarm optimizer with time-varying acceleration coefficients (HPSO-TVAC) for data clustering. Through experiments on six well-known benchmarks, they found that the HPSO and the HPSO-TVAC algorithms had better performance than the PSO algorithm in most cases, and that all the clustering algorithms using PSO have good performance for large-scale data and high-dimensional data, especially the two algorithms proposed in this paper. Furthermore, they also observed that the convergence of the HPSO and the HPSO-TVAC algorithms is better when using a suitable fitness function <ref type="bibr" target="#b26">(Esmin et al. 2008)</ref>. <ref type="bibr" target="#b61">Kiranyaz et al. (2011)</ref> presents the stochastic approximation-driven (SAD) MD-PSO. This used the simultaneous perturbation stochastic approximation (SPSA) <ref type="bibr" target="#b117">(Spall 1992</ref>) to drive the multi-dimensional extension of PSO, the MD-PSO <ref type="bibr" target="#b63">(Kiranyaz et al. 2009)</ref>. Experiments with and without SAD approve the superiority of SAD MD-PSO in terms of global convergence. <ref type="bibr" target="#b132">Yang and Du (2011)</ref> proposed a particle swarm optimization (PSO)-based dimensionality reduction approach to improve support vector machine (SVM)-based classification for high-resolution hyperspectral imagery <ref type="bibr" target="#b13">(Bruzzone and Carlin 2006)</ref>. In experiments, SVM classification accuracy using PSO-selected bands was much higher than using all the original bands or dimensionalityreduced data. <ref type="bibr" target="#b137">Zhang and Mahfouf (2011)</ref> introduced a framework for data-driven fuzzy modeling, named HFM-DSMO. As a multi-objective optimization algorithm, it used MPSO <ref type="bibr" target="#b140">(Zhang and Mahfouf 2006)</ref>, a modification of the PSO algorithm. This proposed modeling approach was successfully applied within the context of high-dimensional industrial data, the manufacturing of heat-treated alloy steels. <ref type="bibr" target="#b18">Chuang et al. (2011)</ref> stated that the PSO, applied to clusters in multi-dimensional space, has shown outstanding performance. However, the rate of convergence when searching for global optima is still not sufficient <ref type="bibr">(Kao et al. 2008)</ref>. For this reason, they combined chaotic map particle swarm optimization (CPSO) with an accelerated convergence rate strategy <ref type="bibr" target="#b19">(Chuanwen and Bompard 2005;</ref><ref type="bibr" target="#b128">Xiang et al. 2007</ref>). This technique allows the ACPSO algorithm to cluster arbitrary data better than previous algorithms. Results of the conducted experimental trials on a variety of data sets taken from several real-life situations demonstrate that ACPSO was superior to the K-means, PSO, NM-PSO, CPSO, K-PSO and K-NM-PSO algorithms <ref type="bibr">(Kao et al. 2008)</ref>. <ref type="bibr" target="#b93">Padma and Komorasamy (2012)</ref> presented a comparative study between the Quantum Clustering method (QC) <ref type="bibr" target="#b134">(Yeang et al. 2001</ref>) and some clustering methods within the same framework. In the experiments they used the Singular Value Decomposition (SVD) method to reduce the dataset's dimensionality and they conclude that the results show the effectiveness of the QC. Table <ref type="table" target="#tab_1">1</ref> summarizes the above research contributions and Table <ref type="table" target="#tab_2">2</ref> summarizes their contributions in different problem domains and applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Discussion</head><p>In the last decade, nature-inspired techniques are emerging as viable tools and alternatives to more traditional clustering techniques. Among the many nature-inspired techniques, clustering with particle swarm optimization techniques has found success in solving clustering problems. PSO can be used to find centroids of a user specified number of clusters. It is suitable for clustering complex and linearly non-separable datasets. In order to improve the efficiency of PSO algorithms, researchers have proposed different variants of the PSO algorithm and have developed new ideas such as adaptive heuristics, different fitness functions, kernel-induced similarity measures, and evolution of swarm generations etc.   The PSO still requires much investigation to improve performance and other key features that would make such algorithms suitable techniques for clustering high-dimensional data. Some future works and research trends to address the clustering of high-dimensional data are as follows: developing of multiple swarm cluster algorithms; dynamic PSO clustering algorithms; multi-objective PSO clustering algorithms; developing new fitness and measure functions; integration with feature selection and other techniques for dimensionality reduction; developing new PSO variants algorithms for feature selection phase and clustering algorithm analysis phase; developing and the use of multi distance measures; developing and the use of new similarity measures; developing and use of a multi similarity measure with multiple swarm algorithms; sensitivity analysis of PSO parameters; new strategies to find the optimal number of the clusters without any prior knowledge; and the applications to different real-world problems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusion</head><p>This paper has presented a review of previous research in the area of Particle Swarm Optimization, PSO Variants and its application to Clustering High-Dimensional Data.</p><p>Research shows that, PSO applied to clusters in multi-dimensional space has shown outstanding performance. However, the rate of convergence when searching for global optima is still not sufficient. Furthermore, the modified PSO and its hybridization with other algorithms such as K-means, KFC, GA, ACO, etc. and/or the combinations with other techniques such as dimensionality reduction and feature selection can be successfully applied to address the problem of clustering high-dimensional data and gives better results. The implementation of such algorithms for High-Dimensional Data Clustering results in better cluster formation, which finally leads to better predictions and analysis of data. Some of the reviewed algorithms based on PSO can be also applied for clustering complex and linearly non-separable datasets, without any prior knowledge of the number of clusters. A survey of the literature available in this topic has been given to provide a comprehensive insight into these topics.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 Fig. 2</head><label>12</label><figDesc>Fig.1The PSO algorithm</figDesc><graphic coords="5,106.59,193.88,226.84,174.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1</head><label>1</label><figDesc></figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 2</head><label>2</label><figDesc>Resume of the research contributions in different applications domain Application</figDesc><table /></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>We would like to thank <rs type="funder">CNPq</rs>, <rs type="funder">FAPEMIG (Brazilian agencies)</rs> and <rs type="funder">NSERC (Canada)</rs> for partial financial support. The authors also thank the anonymous reviewers for useful remarks and suggestions.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">Chen</forename><surname>Fun</surname></persName>
+		</author>
+		<title level="m">Cluster analysis</title>
+		<editor>
+			<persName><forename type="first">Walczak</forename><surname>Marini</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2005">2005. 2005. 2006. 2006. 2006. 2007. 2007. 2007. 2008. 2008. 2008. 2009. 2009. 2009. 2009. 2010. 2010. 2010. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">Lotfi</forename><surname>Shahreza</surname></persName>
+		</author>
+		<title level="m">Data streams clustering and web mining Junyan and Huiying</title>
+		<editor>
+			<persName><forename type="first">Potok</forename><surname>Cui</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2005">2011. 2011. 2011. 2011. 2011. 2012. 2007. 2009. 2005. 2008. 2006</date>
+		</imprint>
+	</monogr>
+	<note>Padma and Komorasamy. Document clustering. Feature selection</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Image Processing</title>
+		<author>
+			<persName><surname>Marinakis</surname></persName>
+		</author>
+		<editor>Zhang et al.</editor>
+		<imprint>
+			<date type="published" when="2007">2007. 2008. 2010. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Other application examples: Electrocardiogram (ECG) system and industrial applications</title>
+		<author>
+			<persName><surname>Omran</surname></persName>
+		</author>
+		<editor>Zhang and Jiang</editor>
+		<imprint>
+			<date type="published" when="2006">2006. 2011. 2010. 2011. 2010. 2011. 2009. 2009. 2009. 2010. 2010</date>
+		</imprint>
+	</monogr>
+	<note>Outlier and anomalies detection. Text clustering and summarization. References</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Kernel based automatic clustering using modified particle swarm optimization algorithm</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abraham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Konar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th annual conference on genetic and evolutionary computation-GECCO&apos;07 computation conference (GECCO 2007)</title>
+		<editor>
+			<persName><forename type="first">D</forename><surname>Thierens</surname></persName>
+		</editor>
+		<meeting>the 9th annual conference on genetic and evolutionary computation-GECCO&apos;07 computation conference (GECCO 2007)</meeting>
+		<imprint>
+			<publisher>ACM Press</publisher>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="2" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A frame work for clustering evolving data streams</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Aggarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">VLDB &apos;03 proceedings of the 29th international conference on very large data bases</title>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="81" to="92" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Automatic subspace clustering of high-dimensional data for data mining applications</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gehrke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gunopulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Raghavan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 1998 ACM SIGMOD international conference on management of data</title>
+		<meeting>the 1998 ACM SIGMOD international conference on management of data</meeting>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="page" from="94" to="105" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">COPSO: constraints optimization via PSO algorithm</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Aguirre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Munoz</forename><surname>Zavala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Diharce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">V</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Botello</forename><surname>Rionda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Communication technics</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="30" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note>CC/CIMAT</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Flocking based approach for data clustering</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Karray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Kamel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Comput</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="767" to="791" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Multiple cooperating swarms for data clustering</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Karray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Kamel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE swarm intelligence symposium</title>
+		<meeting>the IEEE swarm intelligence symposium</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="206" to="212" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Subpopulation best rotation: a modification on PSO</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Alviar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hincapie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Revista Facultad de Ingenieria</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="118" to="122" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Swarm based text summarization</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Binwahlan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Salim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Suanmali</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2009 International association of computer science and information technology-Spring conference</title>
+		<imprint>
+			<publisher>IACSIT-SC</publisher>
+			<date type="published" when="2009">2009. 2009</date>
+			<biblScope unit="page" from="145" to="150" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Niche particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Brits</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Engelbrecht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Van Den Bergh</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+		<respStmt>
+			<orgName>Department of Computer Science, University of Pretoria, Technical report</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A multilevel context-based system for classification of very high spatial resolution images</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bruzzone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Carlin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="2587" to="2600" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A star spectrum outliers mining system based on PSO</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Mult Valued Logic Soft Comput</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="631" to="641" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Using evidence of mixed populations to select variables for clustering very highdimensional data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Stat Assoc</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">490</biblScope>
+			<biblScope unit="page" from="798" to="809" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A parallel particle swarm optimization algorithm with communication strategies</title>
+		<author>
+			<persName><forename type="first">J-F</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Roddick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Pan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Inf Sci Eng</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="809" to="818" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimization algorithm and its application to clustering analysis</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE international conference on networking, sensing and control</title>
+		<meeting><address><addrLine>Taipei, Taiwan</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2004">2004. 2004</date>
+			<biblScope unit="page" from="789" to="794" />
+		</imprint>
+	</monogr>
+	<note>Proceedings of the</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Chaotic particle swarm optimization for data clustering</title>
+		<author>
+			<persName><forename type="first">L-Y</forename><surname>Chuang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-J</forename><surname>Hsiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-H</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst Appl</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="14555" to="14563" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A self-adaptive chaotic particle swarm algorithm for short term hydroelectric system scheduling in deregulated environment</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chuanwen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bompard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Convers Manag</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="2689" to="2696" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Dimensionality reduction particle swarm algorithm for high dimensional clustering</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Beaver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Charles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Potok</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/SIS.2008.4668309</idno>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE swarm intelligence symposium, SSIS 2008</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Document clustering analysis based on hybrid PSO+K-means algorithm</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Potok</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Comput Sci</title>
+		<idno type="ISSN">1549-3636</idno>
+		<imprint>
+			<biblScope unit="page" from="27" to="33" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Document clustering using particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Potok</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Palathingal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings 2005 IEEE swarm intelligence symposium</title>
+		<meeting>2005 IEEE swarm intelligence symposium</meeting>
+		<imprint>
+			<publisher>SIS</publisher>
+			<date type="published" when="2005">2005. 2005. 2005</date>
+			<biblScope unit="page" from="185" to="191" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Automatic kernel clustering with a multi-elitist particle swarm optimization algorithm</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Das</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abraham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Konar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit Lett</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="688" to="699" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Indexing by latent semantic analysis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Deerwester</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Dumais</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Furnas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Landauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Harshman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Soc Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="391" to="407" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A particle swarm optimization derivative applied to cluster analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Díaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Herrera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Izquierdo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Montalvo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pérez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of iEMSs 4th Biennial Meeting-Interantional congress on environmental modelling and software: integrating sciences and information technology for environmental assessment and decision making</title>
+		<meeting>iEMSs 4th Biennial Meeting-Interantional congress on environmental modelling and software: integrating sciences and information technology for environmental assessment and decision making<address><addrLine>iEMSs</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008">2008. 2008</date>
+			<biblScope unit="page" from="1782" to="1790" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Study of different approach to clustering data by using the particle swarm optimization algorithm</title>
+		<author>
+			<persName><forename type="first">Aaa</forename><surname>Esmin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Pereira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>De Araujo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE world congress on computational intelligence</title>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="1817" to="1822" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A hybrid particle swarm optimization applied to loss power minimization</title>
+		<author>
+			<persName><forename type="first">Aaa</forename><surname>Esmin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lambert-Torres</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Zambroni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Power Syst</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="859" to="866" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Application of particle swarm optimization to optimal power systems</title>
+		<author>
+			<persName><forename type="first">Aaa</forename><surname>Esmin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lambert</forename><forename type="middle">-</forename><surname>Torres</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Innov Comput Inf Control (IJICIC)</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1705" to="1716" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Data clustering using hybrid particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">Aaa</forename><surname>Esmin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Matwin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">13th International Conference on Intelligent Data Engineering and Automated Learning</title>
+		<title level="s">Lecture Notes in Computer Science (Springer LNCS</title>
+		<meeting><address><addrLine>IDEAL; Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012">2012. 2012</date>
+			<biblScope unit="volume">7435</biblScope>
+			<biblScope unit="page" from="159" to="166" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">HPSOM: a hybrid particle swarm optimization algorithm with genetic mutation</title>
+		<author>
+			<persName><forename type="first">Aaa</forename><surname>Esmin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Matwin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Innov Comput Inf Control (IJICIC)</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1919" to="1934" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Hybrid simplex search and particle swarm optimization for the global optimization of multimodal functions</title>
+		<author>
+			<persName><forename type="first">S-Ks</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y-C</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zahara</forename><forename type="middle">E</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eng Optim</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="401" to="418" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A CMPSO algorithm based approach to solve the multi-plant supply chain problem</title>
+		<author>
+			<persName><forename type="first">Tsc</forename><surname>Felix</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mishra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Swarm intelligence, focus on ant and particle swarm optimization</title>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="447" to="474" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Adaptive hyper-fuzzy partition particle swarm optimization clustering algorithm</title>
+		<author>
+			<persName><forename type="first">H-M</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C-Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cybern Syst Int J</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="463" to="479" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">A projection pursuit algorithm for exploratory data analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Friedman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Tukey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Comput Part C</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="881" to="890" />
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Alternative KPSO-clustering algorithm</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Fun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Sci Eng</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="165" to="174" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Particle swarm algorithm with hybrid mutation strategy</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Soft Comput</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="5129" to="5142" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Trained particle swarm optimization for ad-hoc collaborative computing networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gheitanchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Stipidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Swarm intell, algorithms and applications symposium</title>
+		<meeting><address><addrLine>ASIB, UK</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="7" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">A survey: hybrid evolutionary algorithms for cluster analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kamber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Morgan</forename><surname>Kaufmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Los</forename><forename type="middle">Altos</forename><surname>Hasan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jam</forename><surname>Ramakrishnan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Rev</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="179" to="204" />
+			<date type="published" when="2001">2001. 2011</date>
+		</imprint>
+	</monogr>
+	<note>Data mining: concepts and techniques</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>He</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A text clustering method based on two-dimensional OTSU and PSO algorithm</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Nian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ji</forename><forename type="middle">W</forename></persName>
+		</author>
+		<idno type="DOI">10.1109/CNMT.2009.5374525</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Computer network and multimedia technology</title>
+		<imprint>
+			<date type="published" when="2009">2009. 2009</date>
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+	<note>CNMT 2009. International symposium on</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Identification of surgical practice patterns using evolutionary cluster analysis</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Herrera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Izquierdo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Montalvo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>García-Armengol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Roig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math Comput Model</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">5-6</biblScope>
+			<biblScope unit="page" from="705" to="712" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimization with gaussian mutation</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hiqushi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Iba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE conference swam intelligence symposium (SIS)</title>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="72" to="79" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">OPSO orthogonal particle swarm optimization and its application to task assignment problems</title>
+		<author>
+			<persName><forename type="first">S-Y</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H-S</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Liauh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-J</forename><surname>Ho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Syst Man Cyber Part A</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="288" to="298" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Design a nevel neural network clustering algorithm based on PSO and application</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hongwen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rui</forename><surname>Ma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE world congress intelligent control and automation (WCICA)</title>
+		<meeting>the IEEE world congress intelligent control and automation (WCICA)</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="6015" to="6018" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Clustering in applications with multiple data sources-a mutual subspace clustering approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Pei</forename><forename type="middle">J</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page" from="133" to="144" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Multi objective optimization using dynamic neighborhood particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Eberhart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/CEC</title>
+		<meeting>the IEEE/CEC</meeting>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page" from="1677" to="1681" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">A novel text clustering method based on DSOM-FS-FCM</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International symposium on distributed computing and applications to business, engineering and science</title>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="354" to="360" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">A hierarchical particle swarm optimizer for dynamic optimization problems</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Janson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Middendorf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the application of evolutionary, computing</title>
+		<meeting>the application of evolutionary, computing</meeting>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="volume">3005</biblScope>
+			<biblScope unit="page" from="513" to="524" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Combinatorial particle swarm optimization (CPSO) for partitioned clustering problem</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Jarbouia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cheikha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Siarryb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rebaic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Appl Math Comput</title>
+		<imprint>
+			<biblScope unit="volume">192</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="337" to="345" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Self-organization particle swarm optimization based on infirmation feedback</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in natural computing (part-I-II: second international conference, ICNC, Xi&apos;an</title>
+		<meeting><address><addrLine>China</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="913" to="922" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Research on application of clustering algorithm based on PSO for the web usage</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Junyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Huiying</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE international conference on wireless communications, networking and mobile computing</title>
+		<meeting>the IEEE international conference on wireless communications, networking and mobile computing</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="3705" to="3708" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">An effective particle swarm optimization method for data clustering</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">W</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Tsai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE international conference on industrial engineering and engineering management</title>
+		<imprint>
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<biblScope unit="page" from="548" to="552" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">A hybridized approach to data clustering</title>
+		<author>
+			<persName><forename type="first">Y-T</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Zahara</forename><forename type="middle">E</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I-W</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.eswa.2007.01.028</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst Appl</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1754" to="1762" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Combining K-means and particle swarm optimization for dynamic data clustering problems</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S-Y</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE international conference on intelligent computing and intelligent systems</title>
+		<imprint>
+			<date type="published" when="2009">2009. 2009. ICIS 2009</date>
+			<biblScope unit="page" from="757" to="761" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title level="m" type="main">Dimensionality reduction by random mapping: fast similarity computation for clustering</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kaski</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="page" from="413" to="418" />
+			<pubPlace>Anchorage, AK, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title level="m" type="main">Finding gropus in data: an introduction to cluster analysis</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kaufman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Rousseeauw</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990">1990</date>
+			<publisher>Wiley</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Swarm intelligence</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Eberhart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE internal conference on neural networks</title>
+		<editor>
+			<persName><forename type="first">J</forename></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Eberhart</forename><surname>Rc</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Los Altos Kennedy; Perth, Australia</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1995">2001. 1995</date>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="942" to="1948" />
+		</imprint>
+	</monogr>
+	<note>Particle swarm optimization</note>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A discrete binary version of the particle swarm algorithm</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Eberhart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE conferenceon systems, man, and cyber</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="4104" to="4108" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">A kernel-based subtractive clustering method</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recogn Lett</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="879" to="891" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Fractional particle swarm optimization in multidimensional search space</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kiranyaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ince</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Yildirim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Systems Man Cybern Part B Cybern IEEE Trans on</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="298" to="319" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Stochastic approximation driven particle swarm optimization with simultaneous perturbation-who will guide the guide</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kiranyaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ince</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gabbouj</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Soft Comput J</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="2334" to="2347" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Dynamic data clustering using stochastic approximation driven multidimensional particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kiranyaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ince</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gabbouj</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2010 international conference on applications of evolutionary computation-volume part I (EvoApplicatons&apos;10)</title>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Chio</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Cagnoni</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Cotta</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Ebner</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Ekárt</surname></persName>
+		</editor>
+		<meeting>the 2010 international conference on applications of evolutionary computation-volume part I (EvoApplicatons&apos;10)<address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="volume">I</biblScope>
+			<biblScope unit="page" from="336" to="343" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Multi-dimensional particle swarm optimization for dynamic clustering</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kiranyaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ince</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Yildirim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gabbouj</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE EUROCON</title>
+		<meeting><address><addrLine>EUROCON</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009">2009. 2009. 2009</date>
+			<biblScope unit="page" from="1398" to="1405" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Parallel asynchronous particles swarm for global biomechanical</title>
+		<author>
+			<persName><forename type="first">B-Il</forename><surname>Koh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B-J</forename><surname>Fregly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A-D</forename><surname>George</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R-T</forename><surname>Haftka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Number Methods Eng</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="578" to="595" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Clustering high-dimensional data: A survey on subspace clustering, pattern-based clustering, and correlation clustering</title>
+		<author>
+			<persName><forename type="first">H-P</forename><surname>Kriegel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kröger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zimek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Trans Knowl Discov Data</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">58</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimization with spatial particle extension</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Krink</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Vesterstrom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of congress on evolutionary computation (CEC&apos;02)</title>
+		<meeting>congress on evolutionary computation (CEC&apos;02)</meeting>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1474" to="1479" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">gentic and evolutionary computation in ant colony optimization</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">N</forename><surname>Nikolaevna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ntm</forename><surname>Quan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the annual conference on</title>
+		<meeting>the annual conference on</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="volume">07</biblScope>
+			<biblScope unit="page">174</biblScope>
+		</imprint>
+	</monogr>
+	<note>The heuristic particle swarm optimization</note>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Optimal spinning reserve for a wind-thermal power system using EIPSO</title>
+		<author>
+			<persName><forename type="first">T-Y</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE/TPWRS</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1612" to="1621" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">A novel hybrid particle swarm optimization algorithm combined with harmony search for high dimensional optimization problems</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/IPC</title>
+		<meeting>the IEEE/IPC</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="94" to="97" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Data stream clustering algorithm based on grid density</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lengjun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Chin Comput Syst</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="1376" to="1382" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Comprehensive learning particle swarm optimizer for global optimization of multimodal Functions</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Baskar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Evol Comput</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">An improved two-swarm based particle swarm optimization algorithm</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of IEEE/WCICA</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="3129" to="3133" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Hybrid particle swarm optimization with wavelet mutation and its industrial applications</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hhc</forename><surname>Iu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">Y</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bcw</forename><surname>Yeung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Leung</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Syst Man Cybern</title>
+		<imprint>
+			<biblScope unit="page" from="743" to="763" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimization for fuzzy c-means clustering</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yushu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xinxin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yuanqing</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 6th world congress on, intelligent control and automation</title>
+		<meeting>the 6th world congress on, intelligent control and automation</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="6055" to="6058" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Anomaly detection using a self-organizing map and particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">Lotfi</forename><surname>Shahreza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Moazzami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Moshiri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Delavar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Iran</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">1460</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Hybrid particle swarm optimiser with breeding and subpopulations</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Løvbjerg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Rasmussen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Krink</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the genetic and evolutionary computation conference (GECCO-2001)</title>
+		<meeting>the genetic and evolutionary computation conference (GECCO-2001)</meeting>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page" from="469" to="476" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimizer for variable weighting in clustering highdimensional data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach Learn</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="43" to="70" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Data streams clustering algorithm based on grid and particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IFCSTA 2009 proceedings international forum on computer science-technology and applications</title>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="93" to="96" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimizer for variable weighting in clustering high-dimensional data</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Swarm intelligence symposium. IEEE, SIS &apos;09</title>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="37" to="44" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Text clustering via particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE swarm intelligence. Symposium</title>
+		<imprint>
+			<date type="published" when="2009">2009. 2009</date>
+			<biblScope unit="page" from="45" to="51" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">A tutorial on spectral clustering</title>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">V</forename><surname>Luxburg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stat Comput</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="395" to="416" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">A hybrid clustering algorithm based on multi-swarm constriction PSO and GRASP</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Marinakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Marinaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Matsatsinis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">DaWaK</title>
+		<imprint>
+			<biblScope unit="page" from="186" to="195" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">A hybrid bumble bees mating optimization-GRASP algorithm for clustering</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Marinakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Marinaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Matsatsinis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<editor>
+			<persName><forename type="first">Hais</forename><surname>Corchado</surname></persName>
+		</editor>
+		<imprint>
+			<biblScope unit="volume">5572</biblScope>
+			<biblScope unit="page" from="549" to="556" />
+			<date type="published" when="2009">2009. 2009</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">A hybrid particle swarm optimization algorithm for cluster analysis</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Marinakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Marinaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Matsatsinis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<editor>
+			<persName><forename type="first">I-Y</forename><surname>Song</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Eder</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Nguyen</surname></persName>
+		</editor>
+		<imprint>
+			<biblScope unit="volume">4654</biblScope>
+			<biblScope unit="page" from="241" to="250" />
+			<date type="published" when="2007">2007. 2007. 2007</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Finding relevant clustering directions in high-dimensional data using particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Marini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Walczak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Chemom</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="366" to="374" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Genetic algorithm based data clustering techniques</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Maulik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bandyopadhyay</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1455" to="1465" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Optimized paricle swarm optimization (OPSO) and its application to artificial neural network training</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Meissner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schmuker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Schneider</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinform</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1" to="11" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">EPSO-evolutionary particle swarm optimization, a new algorithm with applications in power systems</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Miranda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Fonseca</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Asia Pacific IEEE/PES transmission and distribution conference and exhibition</title>
+		<meeting>the Asia Pacific IEEE/PES transmission and distribution conference and exhibition</meeting>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="745" to="750" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">A simplex method for function minimization</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Nelder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mead</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput J</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="308" to="313" />
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">An adaptive multi-objective particle swarm optimization for color image fusion</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<imprint>
+			<biblScope unit="page" from="473" to="480" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Streaming-data algorithms for highquality clustering</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>O'callaghan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mishra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Meyerson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Guha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Motwani</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICDE.2002.994785</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 18th international conference</title>
+		<meeting>18th international conference</meeting>
+		<imprint>
+			<date type="published" when="2002">2002. 2002</date>
+			<biblScope unit="page" from="685" to="694" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">Dynamic clustering using particle swarm optimization with application in image segmentation</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Omran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Salman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Engelbrecht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Anal Appl</title>
+		<imprint>
+			<biblScope unit="page" from="332" to="344" />
+			<date type="published" when="2006">2006. 2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">A modified algorithm for clustering based on particle swarm optimization and K-means</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Padma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Komorasamy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International conference on computer communication and informatics</title>
+		<meeting><address><addrLine>ICCCI</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2012">2012. 2012</date>
+			<biblScope unit="page" from="1" to="5" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">Combining particle swarm optimizationwith anglemodulation to solve binary problems</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pampara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Franken</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Engelbrecht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Cong Evol Comput</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="89" to="96" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">Penalized model-based clustering with application to variable selection</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Mach Learn Res</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="1145" to="1164" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">A new particle swarm optimization with quadratic interpolation</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pang-Ning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Michael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Vipin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Radha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International IEEE conference on computational intelligence and multimedia applications</title>
+		<meeting><address><addrLine>Upper Saddle River Pant</addrLine></address></meeting>
+		<imprint>
+			<publisher>Pearson Education</publisher>
+			<date type="published" when="2006">2006. 2007</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="55" to="60" />
+		</imprint>
+	</monogr>
+	<note>Introduction to data mining</note>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title level="a" type="main">Subspace clustering for high dimensional data: a review</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Parsons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Haque</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SIGKDD Explor Newsl</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="90" to="105" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">Differential evolution and particle swarm optimization in partitional clustering</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Paterlini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Krink</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Stat Data Anal</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1220" to="1247" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<analytic>
+		<title level="a" type="main">Swarm intelligent optimization algorithm for text clustering</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Guan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings-2010 3rd IEEE international conference on computer science and information technology</title>
+		<meeting>-2010 3rd IEEE international conference on computer science and information technology<address><addrLine>ICCSIT</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010">2010. 2010</date>
+			<biblScope unit="page" from="200" to="203" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">Fitness-distance-ratio based particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Peram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Veeramachaneni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Mohan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/SIS</title>
+		<meeting>the IEEE/SIS</meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="174" to="181" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<monogr>
+		<title level="m" type="main">Theory and application of project pursuit model</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xiaoyong</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<publisher>Science Press</publisher>
+			<pubPlace>Beijing</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title level="a" type="main">Variable selection for model-based clustering</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Raftery</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Dean</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Stat Assoc</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="issue">473</biblScope>
+			<biblScope unit="page" from="168" to="178" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title level="a" type="main">PSOGP: a genetic programming based adaptable evolutionary hybrid particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rashid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Baig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Innov Comput Inf Control</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="287" to="296" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<monogr>
+		<title level="m" type="main">A diversity-guided particle swarms optimizer-the ARPSO</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Riget</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Vesterstroem</surname></persName>
+		</author>
+		<idno>no. 2002-02</idno>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+		<respStmt>
+			<orgName>Department of Computer Science, University of Aarhus, EVALife</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Technical report</note>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title level="a" type="main">A review on particle swarm optimization algorithms and their applications to data clustering</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sandeep</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sanjay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rajesh</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10462-010-9191-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Artif Intell Rev</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="211" to="222" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title level="a" type="main">Visualizing particle swarm optimization-Gaussian particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Secrest</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Lamont</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the swarm intelligence symposium (IEEE/SIS)</title>
+		<meeting>the swarm intelligence symposium (IEEE/SIS)</meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="198" to="204" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title level="a" type="main">An particle swarm optimization method, taxonomy and applications</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Sedighizadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Masehian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the international journal of computer theory and engineering</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="486" to="502" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title level="a" type="main">Using augmented lagrangian particle swarm optimization for constrained problems in engineering</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sedlaczek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Eberhard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Struct Multidiscip Optim</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="277" to="286" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title level="a" type="main">A simulated annealing algorithm for the clustering problem</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Z</forename><surname>Selim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Alsultan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1003" to="1008" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title level="a" type="main">Performance comparison of particle swarm optimization with traditional clustering algorithms used in self-organization map</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Omlin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Inf Math Sci World Acad Sci Eng Technol</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title level="a" type="main">A mountain clustering based on improved PSO algorithm</title>
+		<author>
+			<persName><forename type="first">H-Y</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X-Q</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-N</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z-K</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ICNC 2005, LNCS</title>
+		<editor>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Ong</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2005">2005. 2005</date>
+			<biblScope unit="volume">3612</biblScope>
+			<biblScope unit="page" from="477" to="481" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title level="a" type="main">A dynamic adaptive dissipative particle swarm optimization with mutation operation</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE/ICCA</title>
+		<meeting>IEEE/ICCA</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="586" to="589" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<analytic>
+		<title level="a" type="main">Fuzzy adaptive particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Eberhart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/congress on, evolutionary computation</title>
+		<meeting>the IEEE/congress on, evolutionary computation</meeting>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="101" to="106" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title level="a" type="main">Parameter selection in particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Eberhart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Evolutionary programming</title>
+		<imprint>
+			<biblScope unit="volume">1441</biblScope>
+			<biblScope unit="page" from="591" to="600" />
+			<date type="published" when="1998">1998</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title level="a" type="main">Date clustering using principal component analysis and particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi-Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xiao</forename><forename type="middle">-</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename></persName>
+		</author>
+		<idno type="DOI">10.1109/ICCSE.2010.5593568</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Computer science and education (ICCSE)</title>
+		<imprint>
+			<date type="published" when="2010-08">2010. 2010. Aug. 2010</date>
+			<biblScope unit="page" from="24" to="27" />
+		</imprint>
+	</monogr>
+	<note>5th international conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title level="a" type="main">Chasing the swarm: a predator-prey approach to function optimisation</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Neves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Costa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Mendel 2002-8th international conference on soft computing</title>
+		<meeting>the Mendel 2002-8th international conference on soft computing<address><addrLine>Mendel; Brno, Czech Republic</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2002">2002. 2002</date>
+			<biblScope unit="page" from="103" to="110" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title level="a" type="main">Multivariate stochastic approximation using a simultaneous perturbation gradient approximation</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Spall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Autom Control</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="332" to="341" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b118">
+	<analytic>
+		<title level="a" type="main">Challenges of clustering high dimensional data</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Steinbach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ertöz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">New vistas statistical physics: applications in econophysics, bioinformatics, and pattern recognition</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b119">
+	<analytic>
+		<title level="a" type="main">A comparative analysis of PSO, HPSO, and HPSO-TVAC for data clustering</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Exp Theoret Artif Intell</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="51" to="62" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b120">
+	<analytic>
+		<title level="a" type="main">A global search strategy of quantum-behaved particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE conference on cybernetics and intelligent systems</title>
+		<meeting><address><addrLine>Piscataway</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Press</publisher>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="111" to="116" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b121">
+	<analytic>
+		<title level="a" type="main">A global search strategy of quantum-behaved particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Feng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Cybernetics and intelligent systems proceedings of the 2004 IEEE conference</title>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="111" to="116" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b122">
+	<analytic>
+		<title level="a" type="main">Modified particle swarm optimization with timevarying velocity vector</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Thangaraj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abraham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Snasel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Innov Comput Inf Control</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="201" to="218" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b123">
+	<analytic>
+		<title level="a" type="main">Developing a feature weight self-adjustment mechanism for a k-means clustering algorithm</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Tsai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Chiu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Stat Data Anal</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="4658" to="4672" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b124">
+	<analytic>
+		<title level="a" type="main">Principal component particle swarm optimization (PCPSO)</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Voss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE symposium on swarm Intelligence</title>
+		<meeting>the IEEE symposium on swarm Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="401" to="404" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b125">
+	<analytic>
+		<title level="a" type="main">Hybrid particle swarm optimization with simulated annealing</title>
+		<author>
+			<persName><forename type="first">X-H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-J</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the IEEE international conference on machine learning and cyber</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="2402" to="2405" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b126">
+	<analytic>
+		<title level="a" type="main">Variable selection for model-based high-dimensional clustering and its application to microarray data</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biometrics</title>
+		<idno type="ISSN">1541-0420</idno>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="440" to="448" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b127">
+	<analytic>
+		<title level="a" type="main">A framework for feature selection in clustering</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Witten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tibshirani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Am Stat Assoc</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">490</biblScope>
+			<biblScope unit="page" from="713" to="726" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b128">
+	<analytic>
+		<title level="a" type="main">An improved particle swarm optimization algorithm combined with piecewise linear chaotic map</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Math Comput</title>
+		<imprint>
+			<biblScope unit="volume">190</biblScope>
+			<biblScope unit="page" from="1637" to="1645" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b129">
+	<analytic>
+		<title level="a" type="main">Gene clustering using self-organizing maps and particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Ernst</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Zina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Robert</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IPDPS.2003.1213290</idno>
+	</analytic>
+	<monogr>
+		<title level="m">International parallel and distributed processing symposium-IPDPS&apos;03</title>
+		<imprint>
+			<date type="published" when="2003-04">2003. April 2003</date>
+			<biblScope unit="page" from="22" to="26" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b130">
+	<analytic>
+		<title level="a" type="main">Adaptive particle swarm optimization on individual level</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International conference signal processing (ICSP)</title>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page" from="1215" to="1218" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b131">
+	<analytic>
+		<title level="a" type="main">A dissipative particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Congress on evolutionary computation (CEC)</title>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page" from="1456" to="1461" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b132">
+	<analytic>
+		<title level="a" type="main">Particle swarm optimization-based dimensionality reduction for hyperspectral image classification</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Du</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/IGARSS.2011.6049683</idno>
+	</analytic>
+	<monogr>
+		<title level="m">International geoscience and remote sensing symposium (IGARSS)</title>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="2357" to="2360" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b133">
+	<analytic>
+		<title level="a" type="main">Cooperatively coevolving particle swarm for large scale optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Conference of EPSRC, artificial intell technologies new and emerging computer paradigms</title>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b134">
+	<analytic>
+		<title level="a" type="main">Molecular classification of multiple tumor types</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Yeang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ramaswamy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tamayo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mukherjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Rifkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Angelo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Reich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Lander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mesirov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tch</forename><surname>Golub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ramaswamy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">Suppl 1</biblScope>
+			<biblScope unit="page" from="316" to="S322" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b135">
+	<analytic>
+		<title level="a" type="main">Adaptive particle swarm optimization guided by acceleration information</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc IEEE/ICCIAS</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="351" to="355" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b136">
+	<analytic>
+		<title level="a" type="main">Active target particle swarm optimization: research articles</title>
+		<author>
+			<persName><forename type="first">Y-N</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q-N</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H-F</forename><surname>Teng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Concurr Comput Pract Exp</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="29" to="40" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b137">
+	<analytic>
+		<title level="a" type="main">A hierarchical Mamdani-type fuzzy modelling approach with new training data selection and multi-objective optimisation mechanisms: a special application for the prediction of mechanical properties of alloy steels</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mahfouf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Soft Comput J</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="2419" to="2443" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b138">
+	<analytic>
+		<title level="a" type="main">Chinese text mining based on subspace clustering</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings-2010 7th international conference on fuzzy systems and knowledge discovery. FSKD 2010</title>
+		<meeting>-2010 7th international conference on fuzzy systems and knowledge discovery. FSKD 2010</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="1617" to="1620" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b139">
+	<analytic>
+		<title level="a" type="main">An improved projection pursuit clustering model and its application based on quantum-behaved PSO</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICNC.2010.5583182</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings international conference on natural computation, ICNC</title>
+		<meeting>international conference on natural computation, ICNC</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="2581" to="2585" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b140">
+	<analytic>
+		<title level="a" type="main">A new structure for particle swarm optimization (nPSO) applicable to single objective and multiobjective problems</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mahfouf</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd international IEEE conference on intelligent systems</title>
+		<meeting>the 3rd international IEEE conference on intelligent systems</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="176" to="181" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b141">
+	<analytic>
+		<title level="a" type="main">Clustering spatial data with obstacles using improved ant colony optimization and hybrid particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2008 5th international conference on fuzzy systems and knowledge, discovery</title>
+		<meeting>the 2008 5th international conference on fuzzy systems and knowledge, discovery</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="volume">02</biblScope>
+			<biblScope unit="page" from="424" to="428" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b142">
+	<analytic>
+		<title level="a" type="main">A multiagent-based particle swarm optimization approach for optimal reactive power dispatch. Power systems</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">X</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Cao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Power Syst</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1070" to="1078" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b143">
+	<monogr>
+		<title level="m" type="main">Variable selection in high dimensional clustering using ensemble variable importance measure</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Shi</surname></persName>
+		</author>
+		<ptr target="http://www.stat.osu.edu/~taoshi/research/publications.html" />
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="volume">864</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>Department of Statistics, the Ohio State University</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

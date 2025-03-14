@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Extreme learning machine: algorithm, theory and applications</title>
+				<funder ref="#_KSW9jea">
+					<orgName type="full">National Key Basic Research Program of China</orgName>
+				</funder>
+				<funder ref="#_n69YThC">
+					<orgName type="full">National Natural Science Foundation</orgName>
+				</funder>
+				<funder ref="#_Gbtb5BU">
+					<orgName type="full">Opening Foundation of the Key Laboratory of Intelligent Information Processing of Chinese Academy of Sciences</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Opening Foundation of Beijing Key Lab of Intelligent Telecommunications Software and Multimedia, Beijing University of Posts and Telecommunications</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2013-04-23">23 April 2013</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Shifei</forename><surname>Ding</surname></persName>
+							<email>dingsf@cumt.edu.cn</email>
+						</author>
+						<author>
+							<persName><forename type="first">Han</forename><surname>Zhao</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Yanan</forename><surname>Zhang</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Xinzheng</forename><surname>Xu</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Ru</forename><surname>Nie</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">School of Computer Science and Technology</orgName>
+								<orgName type="laboratory">Key Laboratory of Intelligent Information Processing</orgName>
+								<orgName type="institution">China University of Mining and Technology</orgName>
+								<address>
+									<postCode>221116</postCode>
+									<settlement>Xuzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Computing Technology</orgName>
+								<orgName type="institution">Chinese Academy of Science</orgName>
+								<address>
+									<postCode>100190</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Extreme learning machine: algorithm, theory and applications</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2013-04-23">23 April 2013</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">40BAE708E2DD4B4BE24780F3AEA789F9</idno>
+					<idno type="DOI">10.1007/s10462-013-9405-z</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Extreme learning machine (ELM)</term>
+					<term>Single-hidden layer feedforward neural networks (SLFNs)</term>
+					<term>Local minimum</term>
+					<term>Over-fitting</term>
+					<term>Least-squares</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Extreme learning machine (ELM) is a new learning algorithm for the single hidden layer feedforward neural networks. Compared with the conventional neural network learning algorithm it overcomes the slow training speed and over-fitting problems. ELM is based on empirical risk minimization theory and its learning process needs only a single iteration. The algorithm avoids multiple iterations and local minimization. It has been used in various fields and applications because of better generalization ability, robustness, and controllability and fast learning rate. In this paper, we make a review of ELM latest research progress about the algorithms, theory and applications. It first analyzes the theory and the algorithm ideas of ELM, then tracking describes the latest progress of ELM in recent years, including the model and specific applications of ELM, finally points out the research and development prospects of ELM in the future.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>As early as in the 1940s, mathematician Pitts and psychologist McCulloch have put forward neurons mathematical model (MP model) from the mathematical logic view <ref type="bibr" target="#b35">(McCulloch and Pitts 1943)</ref> which opened the prelude of artificial neural network research. Neural network with parallel and distributed information processing network structure has a strong nonlinear mapping ability and adaptive self-learning, robustness and fault tolerance characteristics.</p><p>In dealing with small samples, nonlinear adaptive information performance issues ELM has many unique advantages. Its unique nonlinear adaptive information processing capacity can overcome the traditional artificial intelligence methods for intuitive, such as pattern recognition, speech recognition, unstructured information processing deficiencies. Coupled with its solid theoretical basis and simple network structure model make the neural network in the fields of pattern recognition, image processing, sensors, signal processing and automatic control have significant results <ref type="bibr">(Ding et al. 2011a</ref><ref type="bibr">(Ding et al. ,b, 2012;;</ref><ref type="bibr" target="#b39">Quteishat and Lim 2008;</ref><ref type="bibr" target="#b48">Zhang and Wang 2009;</ref><ref type="bibr" target="#b9">Ding and Jin 2013)</ref>. It is widely used in the fields of expert system <ref type="bibr" target="#b33">(Markowska-Kaczmar and Trelak 2005)</ref>, pattern recognition <ref type="bibr" target="#b36">(Mohamed 2011)</ref>, intelligent control <ref type="bibr">(Ding et al. 2011a,b)</ref>, combinatorial optimization <ref type="bibr" target="#b22">(Kahramanli and Allahverdi 2009)</ref> and prediction <ref type="bibr" target="#b12">(Hagan et al. 2002)</ref>.</p><p>At present, there are many common kinds of neural network model, such as BP network <ref type="bibr">(Ding et al. 2011a,b;</ref><ref type="bibr" target="#b10">Feng et al. 2009</ref>), RBF network <ref type="bibr">(Ding et al. 2011a,b)</ref>, Hopfield network, CMAC cerebellar model, ART adaptive resonance theory <ref type="bibr" target="#b24">(LeCun and Bengio 1995;</ref><ref type="bibr" target="#b0">Benqio 2009;</ref><ref type="bibr" target="#b2">Carpenter and Grossberg 2003;</ref><ref type="bibr">Li et al. 2013)</ref>, etc. The powerful computing capabilities of the neural network are achieved through the propagation of information between neurons. According to the direction of the neural network internal information transfer, the neural network can be divided into two categories: feedforward neural network and feedback type neural networks. Extreme learning machine (ELM) described in this paper is for single hidden layer feedforward neural network which is one of feedforward neural networks.</p><p>Feedforward neural network model has been extensively used in many fields due to its ability to approximate complex nonlinear mappings directly from the input samples. Among them, for a single hidden layer feedforward neural network learning ability the majority of studies focused on the input samples, divided into two aspects of the compact set and finite set. <ref type="bibr" target="#b14">Hornik (1991)</ref> proved that if the activation function is continuous, bounded and nonconstant, then continuous mappings can be approximated in measure by neural networks over compact input sets. On this basis <ref type="bibr" target="#b25">Leshno et al. (1991)</ref> improved the results and proved that feedforward networks with a non-polynomial activation function can approximate continuous functions. Through further study in a finite training set containing N different instance, <ref type="bibr" target="#b17">Huang and Babri (Huang and Babri 1998;</ref><ref type="bibr">Huang 2003)</ref> shows that a nonlinear activation function single hidden layer feedforward neural network (SLFN) with at most N hidden nodes and can exactly approximate N distinct instances.</p><p>Single hidden layer feed forward neural network has very strong learning ability, can approximate a complex nonlinear function and can solve the problems which cannot be solved by the traditional parameter learning method. However, the lack of fast learning method, often cannot meet the actual demand. To solve this problem, based on the above research conclusions of many scholars a new algorithm which is called the ELM has been proposed by <ref type="bibr" target="#b21">Huang et al. (2006)</ref>. As a new proposed learning algorithm can be easily solve the traditional feedforward neural network, such as BP network local minimum problem. ELM can adaptively set the hidden layer node number and randomly assign for the input weights and hidden layer biases, then the output layer weights obtained by the least square method, the whole process of a complete without iteration and improves the neural network generalization ability and learning ability.</p><p>Since the extreme machine learning algorithm proposed, it has been widely used and became research focus of data mining, machine learning, image processing and other areas. In this paper, we make a review of extreme machine learning latest research progress about the algorithms, theory and applications. This paper is organized as follows. Section 2 introduces the basic idea and algorithm model of ELM. Section 3 further summarizes some improved ELM algorithms and its model. The applications of ELM in related fields are presented in Sect. 4. Conclusions and prospects are given in Sect. 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Extreme learning machine</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Algorithm thought of ELM</head><p>Extreme learning machine is a learning algorithm for the single hidden layer feedforward neural networks used in classification and regression. The ELM used for single hidden layer feedforward neural network training can adaptively set the hidden layer node number and randomly assign for the input weights and hidden layer biases, the output layer weights obtained by the least square method, the whole learning process completed through one mathematical change without iteration. The training speed compared with the traditional BP algorithm based on gradient descent has been significantly improved (usually 10 times or more) <ref type="bibr">(Deng et al. 2010a,b)</ref>.</p><p>In practical applications, firstly training on ELM and then predict. The training data set is mainly combined with the specific issues. The data sets include actual results and its related factors. During training, the influence factors and the corresponding results will be put into ELM for training, through an iteration to complete learning process. Then, with the trained ELM to predict, only need to input and the training data set is similar to the influencing factors. ELM model can be obtained the prediction results according to the memory.</p><p>Extreme learning machine is an easy to use and effective algorithm for single hidden layer feedforward neural network. The traditional neural network learning algorithm (e.g. BP algorithm) need to set up lots of artificial network training parameters, and can easily lead to local optimal solution. ELM algorithm only need to set the number of hidden layer nodes, in the algorithm implementation process does not need to adjust the network input weights and hidden biases, and generates a unique optimal solution, with advantages of fast learning speed and generalization performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Model of ELM</head><p>For N arbitrary distinct samples (x i , t i ), where</p><formula xml:id="formula_0">x i = [x i1 , x i2 , . . . , x in ] T ∈ R n and t i = [t i1 , t i2 , . . . , t im ] T ∈ R m , what's more (x i , t i ) ∈ R n × R m (i = 1, 2, . . . , N ), standard</formula><p>SLFNs with Ñ hidden nodes and activation function f (x) are mathematically models as</p><formula xml:id="formula_1">Ñ i=1 β i f i (x j ) = Ñ i=1 β i f (a i • x j + b i ) = t j , j = 1, . . . , N<label>(1)</label></formula><p>where a i = [a i1 , a i2 , . . . , a in ] T is the weight vector connecting the i th hidden node and the input nodes, and b i is the threshold of the ith hidden node.β i = [β i1 , β i2 , . . . , β im ] T is the weight vector connecting the ith hidden node and the output nodes.a i • x j represents the inner product of a i and x i , and the activation function usually choose "Sigmoid", "Sine", "RBF". The above Eq. ( <ref type="formula" target="#formula_1">1</ref>) can be written compactly as</p><formula xml:id="formula_2">Hβ = T (2)</formula><p>where</p><formula xml:id="formula_3">H (a 1 , . . . , a Ñ , b 1 , . . . , b Ñ , x 1 , . . . x N ) 123 = ⎡ ⎢ ⎣ f (a 1 • x 1 + b 1 ) • • • f (a Ñ • x 1 + b Ñ ) . . . • • • . . . f (a 1 • x N + b 1 ) • • • f (a Ñ • x N + b Ñ ) ⎤ ⎥ ⎦ N × Ñ , β = ⎡ ⎢ ⎣ β T 1 . . . β T Ñ ⎤ ⎥ ⎦ Ñ ×m , T = ⎡ ⎢ ⎣ t T 1 . . . t T N ⎤ ⎥ ⎦ N ×m</formula><p>H is called the hidden layer output matrix of the neural network; the ith column of H is the ith hidden node output with respect to inputs x 1 , x 2 , . . . , x N .</p><p>Theorem proving <ref type="bibr">(Huang 2003)</ref>, as long as the number of hidden nodes is enough, when the activation function f (x) is infinitely differentiable at any interval the parameters of the network does not all need to adjust. When the training starts, SLFN randomly assigns to the input connection weights a and hidden layer node biases b, moreover, while the training process unchanged it can approximate any continuous function. Generally, in order to get good generalization performance, take Ñ N . When the input weights and hidden layer biases are determined in accordance with the random assignment, according to the input samples can get the hidden layer output matrix H . Therefore, training SFLN is converted into solving linear equations Hβ = T least squares solution.</p><formula xml:id="formula_4">H (a 1 , . . . , a Ñ , b 1 , . . . , b Ñ ) β -T = min β H (a 1 , . . . , a Ñ , b 1 , . . . , b Ñ )β -T (3)</formula><p>The above Eq. ( <ref type="formula">3</ref>) least squares solution of the above liner system is</p><formula xml:id="formula_5">β = H † T (4)</formula><p>In the Eq. ( <ref type="formula">4</ref>), H † represents Moore-Penrose <ref type="bibr" target="#b30">(Liang and Huang 2006</ref>) generalized inverse of the hidden layer output matrix H .Usually, the optimal solution β contains the following features:</p><p>(1) According to β, the algorithm can gain the minimal training error;</p><p>(2) Can get the optimal generalization capability of the minimum paradigm of the output connection weights and network;</p><p>(3) β is unique. This can avoid producing the local optimal solution.</p><p>In summary, given a training set</p><formula xml:id="formula_6">(x i , t i ) ∈ R n × R m (i = 1, 2, . . . , N ),activation function f (x)</formula><p>and hidden node number Ñ , then the ELM algorithm can be can be summarized as follows 3 steps:</p><p>Step 1: Definition of hidden layer node number Ñ , randomly assign input weights a i and hidden layer biases b i , (i = 1, 2, . . . , Ñ ).</p><p>Step 2: Calculate the hidden layer output matrix H .</p><p>Step 3: According to the Eq. ( <ref type="formula">4</ref>), calculate the output weight β.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Performance of ELM</head><p>To further demonstrate the performance of ELM, through experiments on ELM, support vector machines (SVMs) and BP neural network to compare the performance. ELM and BP execution environment for Matlab7.11 and the SVM execution environment for VC + + 6.0. ELM's source code can be downloaded directly from the profile of Huang. BP algorithm has been integrated in the neural network toolbox in Matlab and can directly execute experiment. SVM algorithm using the C language implementation of the SVM package: LibSVM. ELM and BP activation function to select a sigmoid function: f (x) = 1/(1 + exp(-x)) and the In the experiment we use several classification data sets in the UCI database and then compare experimental results. Datasets used in the experiment include: Segmen dataset, Satimage dataset and Diabetes dataset. The fundamental characteristics of the three datasets are as shown in Table <ref type="table" target="#tab_0">1</ref>.</p><p>For all samples in the experiment randomly divided into two groups for training and testing data sets. ELM and BP network hidden layer nodes and the number of SVM support vectors are the average of several experimental results. As shown in Table <ref type="table" target="#tab_1">2</ref> are ELM, BP and SVM algorithm performance comparison.</p><p>It can be seen that ELM is a very simple and fast neural network learning algorithm just need one iteration process. Compared with the BP algorithm, ELM can randomly initialize input connection weights and hidden layer neurons threshold by just tuning the number of hidden layer nodes Ñ .In practical applications, Ñ can be identified through constantly trying. Moreover, in a large number of experiments on standard UCI data sets show that, ELM has faster training speed and better generalization performance <ref type="bibr" target="#b13">(Han and Huang 2006)</ref> than the BP algorithm and SVM method.</p><p>To further validate the performance of the ELM, the article refers to the experimental results from literature <ref type="bibr" target="#b21">(Huang et al. 2006</ref>) to analysis. In the literature, Huang et al, do the experiment with small and medium real classification datasets and then compare ELM, BP and SVM classification results. The basic characteristics of the data set in Table <ref type="table" target="#tab_2">3</ref>.</p><p>Performance comparison of ELM, BP and SVM as in Table <ref type="table" target="#tab_3">4</ref>.</p><p>As well as the widely used neural network, ELM based on single hidden layer feedforward neural network due to its good learning capability and generalization performance, make it a 123 (1) ELM algorithm is based on the empirical risk minimization, without considering the structural risk and this may lead to over-fitting problems.</p><p>(2) ELM directly calculates the least squares solution. The users cannot fine-tune according to the characteristics of the data sets. It is also poorly controllability. (3) When there are outliers in the data sets, the performance of model will be greatly affected, poor robustness.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Improvements on extreme learning machine</head><p>Since ELM was proposed by Huang et al. <ref type="bibr" target="#b23">(Lan et al. 2010</ref>) at 2004, many researchers began to study on ELM and put forward lots of improved algorithms. To make ELM in improving the speed of network training, at the same time also to avoid the based on gradient descent learning method for many problems, for example, local minimal, too much iterative times, termination conditions as well as the definition of learning rate parameter <ref type="bibr" target="#b20">(Huang et al. 2004</ref>). However, because the ELM is based on the empirical risk minimization principle, randomly select the input weights and hidden layer biases which may lead to non-optimal or unnecessary input weights and hidden layer biases. Compared with the based on gradient descent learning algorithm, ELM may need more hidden layer neurons, which reduces the computation rate and training effect of ELM. Therefore, in order to speed up the response rate of the training network, people put forward a lot of ELM improved algorithm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Online extreme learning machine</head><p>Extreme learning machine algorithm usually used in solving multiple logistic regression and classification problems. In the applications, it reflects good generalization performance and fast learning speed. But in concrete applications it will also encounter some problems, such as small sample data set, prone to over-fitting phenomenon.</p><p>After the ELM proposed <ref type="bibr">(Huang 2005</ref>) put forward sequential modification based on recursive least-squares (RLS) algorithm, which referred as online sequential extreme learning machine (OS-ELM). Based on OS-ELM, online sequential fuzzy extreme learning machine (Fuzzy-ELM) is also introduced to implement zero order TSK model and first order TSK model. The performance of OS-ELM and Fuzzy-ELM are evaluated and compared with other popular sequential learning algorithms, and compared with other sequential learning algorithm shows that the proposed OS-ELM produces better generalization performance at very fast learning speed. <ref type="bibr" target="#b41">Rong et al. (2009)</ref> combined with previous work and find an online sequential fuzzy extreme learning machine (OS-Fuzzy-ELM) developed for function approximation and classification problems. The equivalence of a Takagi-Sugeno-Kang (TSK) fuzzy inference system (FIS) to a generalized single hidden layer feedforward network is shown first, which is then used to develop the OS-Fuzzy-ELM algorithm. This results in a FIS that can handle any bounded non-constant piecewise continuous membership function. Furthermore, the learning in OS-Fuzzy-ELM can be done with the input data coming in a one-by-one mode or a chunk-by-chunk mode with fixed or varying chunk size. In OS-Fuzzy-ELM, all the antecedent parameters of membership functions are randomly assigned first, and then, the corresponding consequent parameters are determined analytically. Performance comparisons of OS-Fuzzy-ELM with other existing algorithms are presented using realworld benchmark problems in the areas of nonlinear system identification, regression, and classification.</p><p>To solve the problem of extreme learning machine (ELM) online training with sequential training samples, a new algorithm called selective forgetting extreme learning machine (SF-ELM) is proposed by <ref type="bibr">Zhang (2011)</ref> and applied to chaotic time series prediction. The SF-ELM adopts the latest training sample and weights the old training samples iteratively to insure that the influence of the old training samples is weakened. The output weight of the SF-ELM is determined recursively during on-line training procedure according to its generalization performance. In comparison with on-line sequential extreme learning machine, the SF-ELM has better performance in the sense of computational cost and prediction accuracy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Pruned extreme learning machine</head><p>Extreme learning machine represents one of the recent successful approaches in machine learning, particularly for performing pattern classification. One prominent advantage of ELM is its short training time. The number of hidden layer nodes can be randomly selected and analyzed to determine. This reduces the calculation time while learning speed fast.</p><p>However, ELM also exist some shortcomings such as over-fitting problems. <ref type="bibr" target="#b42">Rong et al. (2008)</ref> address the architectural design of the ELM classifier network, since too few/many hidden nodes employed would lead to under-fitting/over-fitting issues in pattern classification. A pruned-ELM (P-ELM) algorithm was proposed as a systematic and automated approach for designing ELM classifier network. P-ELM uses statistical methods to measure the relevance of hidden nodes. Beginning from an initial large number of hidden nodes, irrelevant nodes are then pruned by considering their relevance to the class labels. As a result, the architectural design of ELM network classifier can be automated. Empirical study of P-ELM on several commonly used classification benchmark problems and with diverse forms of hidden node functions show that the proposed approach leads to compact network classifiers that generate fast response and robust prediction accuracy on unseen data, comparing with traditional ELM and other popular machine learning approaches.</p><p>An algorithm for pruning ELM networks by using regularized regression methods was put forward by <ref type="bibr" target="#b34">Martinez-Martinez et al. (2011)</ref>, thus obtaining a suitable number of the hidden nodes in the network architecture. Beginning from an initial large number of hidden nodes, irrelevant nodes are then pruned using ridge regression, elastic net and lasso methods; hence, the architectural design of ELM network can be automated. Empirical studies on several commonly used regression benchmark problems show that the proposed approach leads to compact networks that generate competitive results compared with the ELM algorithm.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Some other improved ELM algorithms</head><p>ELM may need higher number of hidden neurons due to the random determination of the input weights and hidden biases, a hybrid learning algorithm was proposed by <ref type="bibr" target="#b51">Zhu et al. (2005)</ref> which uses the differential evolutionary algorithm to select the input weights and Moore-Penrose (MP) generalized inverse to analytically determine the output weights. This approach is able to achieve good generalization performance with much more compact networks.</p><p>Consider about the improved ELM algorithm, many researchers combine ELM and other data processing methods to propose a new learning model which is applied to the related fields, and achieved very good results.</p><p>In order to solve the ELM non-optimal performance and the over fitting issue, a hybrid approach is proposed based on group search optimizer strategy to select input weights and hidden biases for ELM algorithm by <ref type="bibr" target="#b44">Silva (2011)</ref>. In this method, need to evaluate the influence of different forms of handling members that fly out of the search space bounds. And in the benchmark data sets for processing can be obtained than traditional ELM better generalization performance.</p><p>Because of the random choice of input weights and biases, the ELM algorithm sometimes makes the hidden layer output matrix H of SLFN not full column rank, which lowers the effectiveness of ELM. An effectiveness improved algorithm of ELM was proposed by <ref type="bibr" target="#b45">Wang and Cao (2011)</ref> called EELM that makes a proper selection of the input weights and biases before calculating the output weights, which ensures the full column rank of H in theory. This improves to some extend the learning rate and the robustness property of the networks. The experimental results based on both the benchmark function approximation and real-world problems including classification and regression applications show the good performances of EELM. <ref type="bibr" target="#b11">Fernandez-Navarro et al. (2011)</ref> propose a methodology for training a new model of artificial neural network called the generalized radial basis function (GRBF) neural network. This model is based on generalized Gaussian distribution, which parameterizes the Gaussian distribution by adding a new parameter τ . For example, when GRBF takes a value of τ = 2, it represents the standard Gaussian radial basis function. The model parameters are optimized through a modified version of the extreme learning machine (ELM) algorithm. The centers of each GRBF were taken randomly from the patterns of the training set and the radius and τ values were determined analytically, taking into account that the model must fulfill two constraints: locality and coverage. A thorough experimental study is presented to test its overall performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Applications of ELM</head><p>Neural network is widely used in artificial intelligence, data mining and other applications. Single hidden layer feedforward neural network has a strong learning ability. Extreme learning methods proposed to improve the disadvantage of a single hidden layer feedforward neural network, improve the learning ability and generalization performance. Due to ELM algorithm does not require large-scale operations, there is no need to adjust the hidden layer of the network and compared with the traditional computational intelligence techniques, such as BP algorithm the whole learning process needs only one iteration and the training speed improved more than 10 times.</p><p>The algorithm is different from the traditional neural network methods. It can randomly select the hidden layer neurons number and weights, and analysis to determine the output weights of SLFN. The training speed is fast and with good generalization ability, which makes SLFN training time greatly reduced.</p><p>Extreme learning machine is used in the fields such as signal processing <ref type="bibr" target="#b31">(Mao 2002)</ref>, automatic control <ref type="bibr" target="#b32">(Mao and Huang 2005)</ref>, image processing <ref type="bibr" target="#b19">(Huang et al. 2011)</ref>, market analysis, aviation and aerospace and medical diagnosis <ref type="bibr" target="#b43">(Shang et al. 2005)</ref>, etc.</p><p>A new human face recognition algorithm based on bidirectional two dimensional principal component analysis (B2DPCA) and ELM is proposed by <ref type="bibr" target="#b37">Mohammed et al. (2011)</ref>. The method is based on curvelet image decomposition of human faces and a subband that exhibits a maximum standard deviation is dimensionally reduced using an improved dimensionality reduction technique. Discriminative feature sets are generated using B2DPCA to ascertain classification accuracy. Other notable contributions of the proposed work include significant improvements in classification rate, up to hundred folds reduction in training time and minimal dependence on the number of prototypes.</p><p>Many researchers using the ELM to solve the compete phenomena in the whole nature and society, such as the winner-take-all (WTA) competition which is widely observed in both inanimate and biological media and society. Then, <ref type="bibr">Li et al. (2013)</ref> presented a simple model which produces the WTA competition by taking advantage of selective positive-negative feedback through the interaction of neurons via p-norm.</p><p>In order to solve the hidden layer neuron determination problem of regularized extreme learning machine applied to chaotic time series prediction, a new algorithm based on Cholesky factorization is proposed by <ref type="bibr">Zhang (2011)</ref>. First, an RELM-based prediction model with one hidden-layer neuron is constructed and then a new hidden-layer neuron is added to the prediction model in each training step until the generalization performance of the prediction model reaches its peak value. Thus, the optimal network structure of the prediction model is determined. In the training procedure, Cholesky factorization is used to calculate the output weights of RELM. The algorithm can be effectively used to determine the optimal network structure of RELM, and the prediction model trained by the algorithm has excellent performance in prediction accuracy and computational cost.</p><p>A sign-bi-power activation function is proposed by <ref type="bibr" target="#b27">Li et al. (2012)</ref> to accelerate Zhang neural network to finite-time convergence. The problem of this neural network is with the suggested activation functions never converge to the desired value in finite time, which may limit its applications in real-time processing. In addition, the proposed algorithm is applied to online calculating the pseudo-inverse of a matrix and nonlinear control of an inverted pendulum system. Both theoretical analysis and numerical simulations validate the effectiveness of proposed activation function.</p><p>Recently, error minimized extreme learning machines (EM-ELMs) have been proposed by <ref type="bibr" target="#b40">Romero and Alquezar (2012)</ref> as a simple and efficient approach to build SLFNs sequentially. They add random hidden nodes one by one and update the output weights incrementally to minimize the sum-of-squares error in the training set. Other very similar methods that also construct SLFNs sequentially had been reported earlier with the main difference that their hidden layer weights are a subset of the data instead of being random. These approaches are referred to as support vector sequential feed-forward neural networks (SV-SFNNs), and they are a particular case of the sequential approximation with optimal coefficients and interacting frequencies (SAOCIF) method. In this paper, it is shown that EM-ELMs can also be cast as a particular case of SAOCIF. In particular, EM-ELMs can easily be extended to test some number of random candidates at each step and select the best of them, as SAOCIF does. Moreover, it is demonstrated that the cost of the computation of the optimal output-layer weights in the originally proposed EM-ELMs can be improved if it is replaced by the one included in SAOCIF.</p><p>In addition, there are still a lot of applications about ELM in other areas. An improved ELM method was proposed for soft sensing modeling by <ref type="bibr" target="#b3">Chang et al. (2007)</ref>. By adding a kind of sorting neurons into the hidden layer of the single hidden layer feedforward neural network (SLFN), a new SLFN structure was proposed. The method provided a new approach to build soft sensing models, and it was successfully applied to the soft sensing modeling the of cell concentration for the Nosiheptied fermentation process to realize the online prediction of the cell concentration. <ref type="bibr" target="#b38">Pan et al. (2010)</ref> use the ELM to predicting reservoir permeability, through the contrast analysis with SVM, found in the reservoir permeability prediction of possibility and advantage.</p><p>Yao and Han (2010) use the ELM for remote sensing image fusion. It gets the training sample regression relationship between the remote sensing image data quickly and efficiently while improving the real quality of a thermal infrared image data and provide convenience for the practical application of remote sensing. <ref type="bibr" target="#b1">Cai et al. (2010)</ref> use the ELM method for lithology identification, and the establishment of the ELM lithology classification model, the results indicate that the application of ELM in the field the feasibility and effectiveness of the algorithm. <ref type="bibr" target="#b27">Li et al. (2012)</ref> studies the decentralized kinematic control of multiple redundant manipulators for the cooperative task execution problem. They formulated the problem as a constrained quadratic programming problem and proposed a recurrent neural network with independent modules to solve the problem in a distributed manner. Each module in the neural network controls a single manipulator in real time without explicit communication with others and all the modules together collectively solve the common task.</p><p>At present, the ELM is applied in more and more fields and plays a significant role. Especially in high dimensional complex data mining has prominent advantage. In the future, how to make better combinations between other learning methods and ELM and applications in the broader field are the issues of concern.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusions and prospects</head><p>Extreme learning machine algorithm was proposed to solve the traditional single hidden layer feed forward neural network easily to appear the local minimum and over-fitting problems, and the network structure has also been greatly improved. However, the ELM algorithm still exists some shortcomings, this need further development and perfection.</p><p>In view of the above shortages, ELM needs further improvement. Further research includes:</p><p>(1) Do further refine and improve of the existing ELM algorithm. The ELM algorithm efficiency of learning and generalization performance has been recognized, but the number of neurons in hidden layer is numerous, the application is not very convenient also will affect the accuracy of the results. Therefore, further enhancing ELM model structure and the generalization performance of the algorithm is necessary.</p><p>(2) The integration of other disciplines and other technology with ELM. In recent years, many researchers in view of ELM problems try to combine other kinds of disciplines algorithm with the ELM, presented better training model. In the future study, how to make the online learning, genetic algorithm, SVM and ELM together will be a very worthwhile to explore direction. (3) Expand ELM applications. Although ELM has obvious advantages in theory, but the actual application field is limited at present. Therefore, how to apply ELM to the daily life effectively is an important aspect in future research. How to use the ELM better use to address and resolve any regression and multi-classification problem is worth to explore and discover.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Basic characteristic of the three datasets Datasets Classification Number of samples Number of attributes</figDesc><table><row><cell>Segmen</cell><cell>7</cell><cell>2,310</cell><cell>19</cell></row><row><cell cols="2">Satimage 7</cell><cell>4,435</cell><cell>36</cell></row><row><cell cols="2">Diabetes 2</cell><cell>768</cell><cell>8</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Performance comparison of three kinds of algorithms</figDesc><table><row><cell>Datasets</cell><cell>Algorithm</cell><cell>Time/s</cell><cell></cell><cell cols="2">Classification accuracy/%</cell><cell>Hidden layer</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>nodes/number of</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>support vector</cell></row><row><cell></cell><cell></cell><cell>Train time</cell><cell>Test time</cell><cell>Training</cell><cell>Testing</cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>accuracy</cell><cell>accuracy</cell><cell></cell></row><row><cell>Segmen</cell><cell>ELM</cell><cell>1.007</cell><cell>0.0568</cell><cell>97.58</cell><cell>95.03</cell><cell>100</cell></row><row><cell></cell><cell>BP</cell><cell>2438.5</cell><cell>0.0781</cell><cell>94.36</cell><cell>83.01</cell><cell>200</cell></row><row><cell></cell><cell>SVM</cell><cell>0.2641</cell><cell>0.3865</cell><cell>84.07</cell><cell>77.92</cell><cell>100</cell></row><row><cell>Satimage</cell><cell>ELM</cell><cell>9.7656</cell><cell>0.1875</cell><cell>94.63</cell><cell>87.75</cell><cell>200</cell></row><row><cell></cell><cell>BP</cell><cell>4786.9</cell><cell>0.2548</cell><cell>90.68</cell><cell>82.02</cell><cell>150</cell></row><row><cell></cell><cell>SVM</cell><cell>1.1384</cell><cell>0.4351</cell><cell>84.93</cell><cell>80.45</cell><cell>500</cell></row><row><cell>Diabetes</cell><cell>ELM</cell><cell>0.0313</cell><cell>0.1563</cell><cell>84.77</cell><cell>77.63</cell><cell>60</cell></row><row><cell></cell><cell>BP</cell><cell>0.9456</cell><cell>0.4581</cell><cell>78.56</cell><cell>69.73</cell><cell>100</cell></row><row><cell></cell><cell>SVM</cell><cell>0.0179</cell><cell>0.0275</cell><cell>65.36</cell><cell>58.49</cell><cell>300</cell></row></table><note><p>kernel function of SVM choose radial basis function. Experimental data inputs are normalized to [0, 1] range, while the output is normalized to [-1, 1] range.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Basic characteristic of the datasets</figDesc><table><row><cell>Datasets</cell><cell>Classification</cell><cell>Number of samples</cell><cell>Number of attributes</cell></row><row><cell>Image segmentation</cell><cell>7</cell><cell>2,310</cell><cell>18</cell></row><row><cell>Satellite image</cell><cell>7</cell><cell>6,400</cell><cell>36</cell></row><row><cell>Shuttle</cell><cell>7</cell><cell>58,000</cell><cell>9</cell></row><row><cell>Banana</cell><cell>2</cell><cell>495,200</cell><cell>2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Performance comparison of three kinds of algorithms (continued)</figDesc><table><row><cell>Datasets</cell><cell cols="2">Algorithm Time/s</cell><cell></cell><cell cols="2">Classification accuracy/%</cell><cell>Hidden layer</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>nodes/number of</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>support vector</cell></row><row><cell></cell><cell></cell><cell cols="3">Train time Test time Training</cell><cell>Testing</cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>accuracy</cell><cell>accuracy</cell><cell></cell></row><row><cell cols="2">Satellite image ELM</cell><cell>14.92</cell><cell>0.34</cell><cell>93.52</cell><cell>89.04</cell><cell>500</cell></row><row><cell></cell><cell>BP</cell><cell>12,561</cell><cell>0.08</cell><cell>95.26</cell><cell>82.34</cell><cell>100</cell></row><row><cell cols="2">Image segment ELM</cell><cell>1.40</cell><cell>0.07</cell><cell>97.35</cell><cell>95.01</cell><cell>200</cell></row><row><cell></cell><cell>BP</cell><cell>4,745.7</cell><cell>0.04</cell><cell>96.92</cell><cell>86.27</cell><cell>100</cell></row><row><cell>Shuttle</cell><cell>ELM</cell><cell>5.740</cell><cell>0.23</cell><cell>99.65</cell><cell>99.40</cell><cell>50</cell></row><row><cell></cell><cell>BP</cell><cell>6,132.2</cell><cell>0.22</cell><cell>99.77</cell><cell>99.27</cell><cell>50</cell></row><row><cell>Banana</cell><cell>ELM</cell><cell>2.19</cell><cell>20.06</cell><cell>92.36</cell><cell>91.57</cell><cell>100</cell></row><row><cell></cell><cell>BP</cell><cell>6,132.2</cell><cell>21.10</cell><cell>90.26</cell><cell>88.09</cell><cell>100</cell></row><row><cell>Diabetes</cell><cell>ELM</cell><cell>0.0118</cell><cell>0.0031</cell><cell>78.68</cell><cell>77.57</cell><cell>20</cell></row><row><cell></cell><cell>BP</cell><cell>3.0116</cell><cell>0.0035</cell><cell>86.63</cell><cell>74.73</cell><cell>20</cell></row><row><cell></cell><cell>SVM</cell><cell>0.1860</cell><cell>0.0673</cell><cell>78.76</cell><cell>77.31</cell><cell>317.16</cell></row><row><cell>Forest-type</cell><cell>ELM</cell><cell>1.6148</cell><cell>0.7195</cell><cell>92.35</cell><cell>90.21</cell><cell>200</cell></row><row><cell></cell><cell>BP</cell><cell>12 min</cell><cell>N/A</cell><cell>82.44</cell><cell>81.85</cell><cell>100</cell></row><row><cell></cell><cell>SVM</cell><cell>693.6000</cell><cell cols="2">347.7833 91.70</cell><cell>89.90</cell><cell>31,806</cell></row><row><cell cols="7">very good development. However, ELM algorithm also obtains several defects (Deng et al.</cell></row><row><cell>2010a,b):</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>This work is supported by the <rs type="funder">National Key Basic Research Program of China</rs> (No. <rs type="grantNumber">2013CB329502</rs>), the <rs type="funder">National Natural Science Foundation</rs> (<rs type="grantNumber">41074003</rs>), the <rs type="funder">Opening Foundation of the Key Laboratory of Intelligent Information Processing of Chinese Academy of Sciences</rs> (<rs type="grantNumber">IIP2010-1</rs>), and the <rs type="funder">Opening Foundation of Beijing Key Lab of Intelligent Telecommunications Software and Multimedia, Beijing University of Posts and Telecommunications</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_KSW9jea">
+					<idno type="grant-number">2013CB329502</idno>
+				</org>
+				<org type="funding" xml:id="_n69YThC">
+					<idno type="grant-number">41074003</idno>
+				</org>
+				<org type="funding" xml:id="_Gbtb5BU">
+					<idno type="grant-number">IIP2010-1</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Learning deep architectures for AI</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Benqio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Found Trends Mach Learn</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="127" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Lithologic identification based on ELM</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Pan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Engi Des</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="210" to="2012" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">The handbook of brain theory and neural networks</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Carpenter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Grossberg</surname></persName>
+		</author>
+		<editor>Arbib MA</editor>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<publisher>MIT Press</publisher>
+			<biblScope unit="page" from="87" to="90" />
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+	<note>Adaptive resonance theory. 2nd edn</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Soft sensing modeling based on extreme learning machine for biochemical processes</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Syst Simul</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">23</biblScope>
+			<biblScope unit="page" from="5587" to="5590" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Research on extreme learning of neural networks</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chin J Comput</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="279" to="287" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Ordinal extreme learning machine</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">1-3</biblScope>
+			<biblScope unit="page" from="447" to="456" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Research of neural network algorithm based on factor analysis and cluster analysis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput Appl</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="297" to="302" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">An optimizing BP neural network algorithm based on genetic algorithm</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Rev</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="153" to="162" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">An optimizing method of RBF neural network based on genetic algorithm</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chunyang</forename><surname>Suc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput Appl</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="333" to="336" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Modern data analysis and information pattern recognition</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jin</forename><forename type="middle">F</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>Science Press</publisher>
+			<pubPlace>Beijing</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Error minimized extreme learning machine with growth of hidden nodes and incremental learning</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1352" to="1357" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">MELM-GRBF: A modified version of the extreme learning machine for generalized radial basis function neural networks</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Fernandez-Navarro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hervas-Martinez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sanchez-Monedero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="2502" to="2510" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Hagan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>Demuth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Beale</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<publisher>Mechanical Industry Press</publisher>
+			<pubPlace>Beijing, China</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Improved extreme learning machine for function approximation by encoding apriori information</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="issue">16-18</biblScope>
+			<biblScope unit="page" from="2369" to="2373" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Approximation capabilities of multilayer feedforward networks</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="251" to="257" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Learning capability and storage capacity of two hidden-layer feedforward networks</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="274" to="281" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Learning capability and storage capacity of two-hidden-layer feedforward network</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="274" to="281" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Upper bounds on the number of hidden neurons in feedforward networks with arbitrary bounded nonlinear activation functions</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Babri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="224" to="229" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">On-line sequential extreme learning machine</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Rong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The IASTED international conference on, computational intelligence</title>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="232" to="237" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Extreme learning machines: a survey</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Mach Learn Cybern</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="107" to="122" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Extreme learning machine: a new learning scheme of feedforward neural networks</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Siew</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Int Jt Conf Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="985" to="990" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Extreme learning machine: theory and applications</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Siew</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="issue">1-3</biblScope>
+			<biblScope unit="page" from="489" to="501" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Rule extraction from trained adaptive neural networks using artificial immune systems</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kahramanli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Allahverdi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst Appl</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1513" to="1522" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Two-stage extreme learning machine for regression</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Soh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="3028" to="3038" />
+			<date type="published" when="2010">2010. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Convolutional networks for images, speech, and time series</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<publisher>MIT Press</publisher>
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Multilayer feedforward networks with a non-polynomial activation function can approximate any function</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Leshno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pinkus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="861" to="867" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Accelerating a recurrent neural network to finite-time convergence for solving time-varying Sylvester equation by using a sign-bi-power activation function</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Process Lett</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="189" to="205" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Decentralized kinematic control of a class of collaborative redundant manipulators via recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Selective positive-negative feedback produces the winner-take-all competition in recurrent neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw Learn Syst</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="301" to="309" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">A nonlinear model to generate the winner-take-all competition</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun Nonlinear Sci Numer Simul</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="435" to="442" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">A fast and accurate online sequential learning algorithm for feed forward networks</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1411" to="1423" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">RBF neural network center selection based on Fisher ratio class separability measure</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1211" to="1217" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Neuron selection for RBF neural network classifier based on data structure preserving criterion</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1531" to="1540" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Fuzzy logic and evolutionary algorithm-two techniques in rule extraction from neural networks</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Markowska-Kaczmar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Trelak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="359" to="379" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Regularized extreme learning machine for regression problems</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Martinez-Martinez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Escandell-Montero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Soria-Olivas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="3716" to="3721" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">A logical calculus of the ideas immanent in nervous activity</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mcculloch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Pitts</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bull Math Biophys</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="115" to="133" />
+			<date type="published" when="1943">1943</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Genetic algorithms</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Mohamed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="3180" to="3192" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Human face recognition based on multidimensional PCA and extreme learning machine</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Mohammed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Minhas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">10-11</biblScope>
+			<biblScope unit="page" from="2588" to="2597" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Comparison of the extreme learning machine with the support vector machine for reservoir permeability prediction</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput Engi Sci</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="131" to="134" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">A modified fuzzy min-max neural network with rule extraction and its application to fault detection and classification</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Quteishat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">P</forename><surname>Lim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Soft Comput</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="985" to="995" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Comparing error minimized extreme learning machines and support vector sequential feed-forward neural networks</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Alquezar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="122" to="129" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Online sequential fuzzy extreme learning machine for function approximation and classification problems</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Rong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sundararajan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Syst Man Cybern Part B Cybern</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1067" to="1072" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">A fast pruned-extreme learning machine for classification problem</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Rong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Tan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="issue">1-3</biblScope>
+			<biblScope unit="page" from="359" to="366" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A classification approach based on evolutionary neural networks</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Softw</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1577" to="1583" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">An evolutionary extreme learning machine based on group search optimization</title>
+		<author>
+			<persName><forename type="first">Dng</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lds</forename><surname>Pacifico</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Ludermir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Congress on Evolutionary Computation</title>
+		<imprint>
+			<biblScope unit="page" from="574" to="580" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A study on effectiveness of extreme learning machine</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="2483" to="2490" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">A novel optimizing method for RBF neural network based on rough set and AP clustering algorithm</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Zhejiang University-SCIENCE C</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="131" to="138" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Fusion of thermal infrared and multispectral remote sensing images via neural network regression</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Image Graphics</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1278" to="1284" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Rough neural network based on bottom-up fuzzy rough data analysis</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Process Lett</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="187" to="211" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Incremental regularized extreme learning machine based on Cholesky factorization and its application to time series prediction</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Physica Sinica</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="110201" to="110201" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Selective forgetting extreme learning machine and its application to time series prediction</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Physica Sinica</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="80504" to="80505" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Evolutionary extreme learning machine</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">N</forename><surname>Suganthan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Patt Recognit</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1759" to="1763" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Optimizing Top Precision Performance Measure of Content-Based Image Retrieval by Learning Similarity Function</title>
+				<funder>
+					<orgName type="full">Provincial Key Laboratory for Computer Information Processing Technology, Soochow University, China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-08-20">20 Aug 2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ru-Ze</forename><surname>Liang</surname></persName>
+							<email>ruzeliang@outlook.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">King</forename><surname>Abdullah</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Lihui</forename><surname>Shi</surname></persName>
+							<email>shilihui@uw.edu</email>
+						</author>
+						<author>
+							<persName><forename type="first">Haoxiang</forename><surname>Wang</surname></persName>
+							<email>wanghaoxiang1102@outlook.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Jiandong</forename><surname>Meng</surname></persName>
+							<email>jiandongmeng26@hotmail.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Jim</forename><surname>Jing</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Yan</forename><surname>Wang</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Qingquan</forename><surname>Sun</surname></persName>
+							<email>qsun@csusb.edu</email>
+						</author>
+						<author>
+							<persName><forename type="first">Yi</forename><surname>Gu</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">University of Science and Technology</orgName>
+								<address>
+									<country key="SA">Saudi Arabia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">Centerfield Corporation</orgName>
+								<address>
+									<postCode>90245</postCode>
+									<settlement>Los Angeles</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">Cornell University</orgName>
+								<address>
+									<postCode>14850</postCode>
+									<settlement>Ithaca</settlement>
+									<region>NY</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="institution">Shandong Medical College</orgName>
+								<address>
+									<postCode>276000</postCode>
+									<settlement>Linyi</settlement>
+									<region>Shangdong</region>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="department">Provincial Key Laboratory for Computer Information Processing Technology</orgName>
+								<orgName type="institution">New York University Abu</orgName>
+								<address>
+									<settlement>Dhabi</settlement>
+									<country key="AE">United Arab Emirates</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff5">
+								<orgName type="department">School of Computer Science and Computer Engineering</orgName>
+								<orgName type="institution">Soochow University</orgName>
+								<address>
+									<postCode>215006</postCode>
+									<settlement>Suzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff6">
+								<orgName type="institution">California State University San Bernardino</orgName>
+								<address>
+									<postCode>92407</postCode>
+									<settlement>San Bernardino</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff7">
+								<orgName type="institution">Travelers Canada</orgName>
+								<address>
+									<settlement>Toronto</settlement>
+									<region>ON Toronto</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Optimizing Top Precision Performance Measure of Content-Based Image Retrieval by Learning Similarity Function</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016-08-20">20 Aug 2016</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2A677E84F2EBB68FB3E68359DC5A024A</idno>
+					<idno type="DOI">10.1109/ICPR.2016.7900086</idno>
+					<idno type="arXiv">arXiv:1604.06620v5[cs.CV]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this paper we study the problem of content-based image retrieval. In this problem, the most popular performance measure is the top precision measure, and the most important component of a retrieval system is the similarity function used to compare a query image against a database image. However, up to now, there is no existing similarity learning method proposed to optimize the top precision measure. To fill this gap, in this paper, we propose a novel similarity learning method to maximize the top precision measure. We model this problem as a minimization problem with an objective function as the combination of the losses of the relevant images ranked behind the top-ranked irrelevant image, and the squared Frobenius norm of the similarity function parameter. This minimization problem is solved as a quadratic programming problem. The experiments over two benchmark data sets show the advantages of the proposed method over other similarity learning methods when the top precision is used as the performance measure.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>In the problem of content-based image retrieval, the two basic steps of the content-based image retrieval are image visual feature extraction, and the similarity calculation. Recently, the similarity learning problem has been a hot topic in the field of machine learning. This problem tries to learn a parameterized similarity function from a training set, so that a targeted performance can be optimized <ref type="bibr" target="#b0">[1]</ref>. To evaluate the performance of a retrieval system, common measures for retrieval performance are taken, including the area under the receiver operating characteristic (ROC) curve, and the top precision value <ref type="bibr" target="#b1">[2]</ref>, <ref type="bibr" target="#b2">[3]</ref>, <ref type="bibr" target="#b3">[4]</ref>. The top precision measure is defined as the portion of the top-ranked relevant images out of all the relevant database images. The top-ranked relevant images are further defined as the database images which are ranked before the first ranked irrelevant database image. Top precision is an important performance measure for retrieval problems, however, all the existing similarity learning methods ignore the performance measures, and the resulted similarity function cannot give an optimal performance measure of top precision.</p><p>To fill the gap between similarity learning and top precision optimization in the problem of content-based image retrieval, we propose a problem of top precision-optimal similarity learning, together with a corresponding solution using a novel algorithm. Our contributions in this paper are divided into two parts, which are given as followed. The proposed problem is to learn a similarity function to compare a query image against a database image. With the similarity scores between query and database images, when retrieval task is performed, we can obtain a maximum top precision measure. The problem is to adjust the parameters of the similarity function, so that the top precision can be maximized. The proposed novel similarity function learning algorithm is to maximize the top precision over a training set of query images and a database of images. We design the similarity function as a linear function of the two feature vectors of a query image and a database image. To learn the parameter matrix of the similarity function, we propose to maximize the top precision for each query, and parallelly minimize the squared Frobenius norm of the parameter matrix in order to prevent the emergence of the over-fitting problem. The optimization problem is modeled by a hinge loss and solved as a quadratic programming.</p><p>The rest parts of this paper are organized as followed.</p><p>In section II, we introduce the proposed similarity learning algorithm. In section III, we give the experimental results of the proposed method. In section IV, we give the conclusion of this paper with future works.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. PROPOSED SIMILARITY LEARNING METHOD</head><p>We assume we have an image database of m images, D = {x 1 , • • • , x m }, where x j ∈ R d is the feature vector of the jth database image, a set of query images</p><formula xml:id="formula_0">Q = {z 1 , • • • , z n },</formula><p>where z i ∈ R d is the feature vector of the i-th query image, and a relevance matrix Y = [y ij ] ∈ {1, 0} n×m , where y ij = 1 if z i is relevant to x j , and 0 otherwise. We define a similarity function for a query z and a database image x parameterize by a matrix</p><formula xml:id="formula_1">W ∈ R d×d , s(z, x) = z ⊤ W x.<label>(1)</label></formula><p>The first ranked irrelevant database image of a query z i , denoted as top irrelevant, is defined as the irrelevant database image with the largest similarity to the query,</p><formula xml:id="formula_2">x φi , where φ i = arg max k:y ik =0 s(z i , x k ).<label>(2)</label></formula><p>Top precision measure of a query z i is defined as the portion of the relevant images ranked before the top irrelevant image,</p><formula xml:id="formula_3">T op P recision(z i ) = |{x j : y ij = 1, and s(z i , x j ) &gt; s(z i , x φi )}| |{x j : y ij = 1}| .<label>(3)</label></formula><p>To obtain a good performance measure of top precision, we hope that for any pair of query and relevant database image, (z i , x j ) i,j:yij =1 , their similarity (z i , x j ) is larger than the similarity to the top irrelevant database image plus a margin, s(z i , x φi ) + 1,</p><formula xml:id="formula_4">s(z i , x j ) &gt; max k:y ik =0 s(z i , x k ) + 1, ⇒ 0 &gt; max k:y ik =0 s(z i , x k ) -s(z i , x j ) + 1, ∀ i, j : y ij = 1.<label>(4)</label></formula><p>To maximize the top precision, we propose to learn the similarity function parameter matrix W by penalizing the case which doesn't satisfies this condition,</p><formula xml:id="formula_5">0 ≤ max k:y ik =0 s(z i , x k ) -s(z i , x j ) + 1.∀ i, j : y ij = 1. (<label>5</label></formula><formula xml:id="formula_6">)</formula><p>Thus the loss function for each</p><formula xml:id="formula_7">(z i , x j ) i,j:yij =1 is, ℓ(z i , x j ; W ) = max 0, max k:y ik =0 s(z i , x k ) -s(z i , x j ) + 1 = max 0, max k:y ik =0 z ⊤ i W (x k -x j ) + 1 . (6) The optimization problem is modeled as, min W,ξij |i,j:y ij =1    1 2 W 2 F + C i,j:yij =1 ξ ij    , s.t. ∀i, j : y ij = 1, ξ ij ≥ 0, ξ ij ≥ z ⊤ i W (x k -x j ) + 1,<label>(7)</label></formula><p>where ξ ij is slack variable of (6), 1 2 W 2 F is the squared Frobenius norm of W to prevent the over-fitting problem, and C is the tradeoff parameter.</p><p>The Lagrange function of ( <ref type="formula" target="#formula_7">7</ref>) is</p><formula xml:id="formula_8">L = 1 2 W 2 F + C i,j:yij =1 ξ ij - i,j:yij =1 α ij ξ ij - i,j,k:yij =1,y ik =0 β ijk ξ ij -z ⊤ i W (x k -x j ) -1 ,<label>(8)</label></formula><p>where α ij ≥ 0 is the Lagrange multiplier of the constraint ξ ij ≥ 0, and β ijk ≥ 0 is the Lagrange multiplier of the constraint</p><formula xml:id="formula_9">ξ ij ≥ z ⊤ i W (x k -x j ) + 1.</formula><p>The dual form of the optimization problem of ( <ref type="formula" target="#formula_7">7</ref>) is given as follows,</p><formula xml:id="formula_10">max αij |i,j:y ij =1 ,β ijk | i,j,k:y ij =1,y ik =0 min W,ξij |i,j:y ij =1 L s.t.α ij ≥ 0, ∀i, j : y ij = 1, β ijk ≥ 0, ∀i, j, k : y ij = 1, y ik = 0.<label>(9)</label></formula><p>By setting the derivative of L with regard to ξ ij to zero, we have</p><formula xml:id="formula_11">∂L ∂ξ ij = C -α ij - k:y ik =0 β ijk = 0, ⇒ α ij = C - k:y ik =0 β ijk ≥ 0, ⇒ C ≥ k:y ik =0 β ijk .<label>(10)</label></formula><p>By substituting <ref type="bibr" target="#b9">(10)</ref> to L, we have</p><formula xml:id="formula_12">L = 1 2 W 2 F - i,j,k:yij =1,y ik =0 β ijk z ⊤ i W (x j -x k ) + i,j,k:yij =1,y ik =0 β ijk .<label>(11)</label></formula><p>By setting the derivative of L with regard to W to zero, we have</p><formula xml:id="formula_13">∂L ∂W = W - i,j,k:yij =1,y ik =0 β ijk z i (x j -x k ) ⊤ = 0 ⇒ W = i,j,k:yij =1,y ik =0 β ijk z i (x j -x k ) ⊤ .<label>(12)</label></formula><p>By substituting W of ( <ref type="formula" target="#formula_13">12</ref>) to L of (11), we have</p><formula xml:id="formula_14">L = - 1 2 i,j,k:yij =1,y ik =0 i ′ ,j ′ ,k ′ :y i ′ j ′ =1,y i ′ k ′ =0 β ijk β i ′ j ′ k ′ z ⊤ i z i ′ (x j ′ -x k ′ ) ⊤ (x j -x k ) + i,j,k:yij =1,y ik =0 β ijk .</formula><p>(13) This is a quadratic function of the multiplier variables, β ijk | i,j,k:yij =1,y ik =0 . The optimization problem of ( <ref type="formula" target="#formula_10">9</ref>) is transferred to max</p><formula xml:id="formula_15">β ijk | i,j,k:y ij =1,y ik =0    - 1 2 i,j,k:yij =1,y ik =0 i ′ ,j ′ ,k ′ :y i ′ j ′ =1,y i ′ k ′ =0 β ijk β i ′ j ′ k ′ z ⊤ i z i ′ (x j ′ -x k ′ ) ⊤ (x j -x k ) + i,j,k:yij =1,y ik =0 β ijk    , s.t. C ≥ k:y ik =0</formula><p>β ijk , and β ijk ≥ 0, ∀ i, j, k :</p><formula xml:id="formula_16">y ij = 1, y ik = 0. (<label>14</label></formula><p>) This is a quadratic programming (QP) problem, and we can use a standard active set algorithm to solve this problem. After the β ijk | i,j,k:yij =1,y ik =0 are solved, we can recover W from <ref type="bibr" target="#b11">(12)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. EXPERIMENTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Experimental protocol</head><p>In this experiment, we used two benchmark image databases, which are Indoor image database <ref type="bibr" target="#b4">[5]</ref>, and Cal-tech256 image database <ref type="bibr" target="#b5">[6]</ref>. Then total number of images/ number classes of these two databases are 15,620/ 67 and 30,670/ 256. Given a database, we first split it to a set of queries and a set of database images, and these queries are further split into a training set and a test set. We apply the proposed similarity learning algorithm to the training set of queries and the database images to learn the similarity function. Then we use the similarity function to conduct the retrieval task for the test set of queries. The performance is evaluated by top precision measure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Experimental results</head><p>We compare our proposed maximum top precision similarity learning method (MTPS), to several state-of-the-art similarity learning methods, online algorithm for scalable image similarity (OASIS) <ref type="bibr" target="#b6">[7]</ref>, online multiple kernel similarity (OMKS) <ref type="bibr" target="#b7">[8]</ref>, Boosted distance (BD) <ref type="bibr" target="#b8">[9]</ref>, stochastic intersection kernel machine (SIKMA) <ref type="bibr" target="#b9">[10]</ref>, and visuality-preserving distance metric (VPDM) <ref type="bibr" target="#b10">[11]</ref>. The results of the comparison over the four benchmark databases are given in Figure <ref type="figure" target="#fig_0">1</ref>. It is obvious that the proposed algorithm, MTPS, outperforms the compared similarity learning algorithms over both the two benchmark databases. In the results over the Caltech256, the top precisions of almost all the compared algorithms are below 0.16, while our algorithms, MTPS, have top precisions higher than 0.18.</p><p>In addition, we test the running time of the proposed algorithm over the two benchmark databases, displayed in Figure <ref type="figure" target="#fig_1">2</ref>. Our proposed algorithm MTPS exhibits shorter running time than others, except for the OASIS and OMKS, suggesting that MTPS provides a comparably efficient way against the problem, and shows a promising improvement space for the future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. CONCLUSION AND FUTURE WORKS</head><p>In this paper we study the problem of similarity learning for content-based image retrieval. The critical novelty of this work is it learns the similarity to maximize the top precision measure over the training set. We model the learning problem as a support top irrelevant database image weighting problem to obtain the optimal similarity function. The experiments over some benchmark databases show its advantages over other similarity learning methods. In the future, we will investigate to use some other similarity function as similarity measure instead of linear function, such as Bayesian network <ref type="bibr" target="#b11">[12]</ref>, <ref type="bibr" target="#b12">[13]</ref>, <ref type="bibr" target="#b13">[14]</ref>, and also to develop novel algorithms of other machine learning problems and applications besides similarity learning, to maximize top precision measure, such as importance sampling <ref type="bibr" target="#b14">[15]</ref>, <ref type="bibr" target="#b15">[16]</ref>, <ref type="bibr" target="#b16">[17]</ref>, portfolio choices <ref type="bibr" target="#b17">[18]</ref>, <ref type="bibr" target="#b18">[19]</ref>, multimedia technology <ref type="bibr" target="#b19">[20]</ref>, <ref type="bibr" target="#b20">[21]</ref>, <ref type="bibr" target="#b21">[22]</ref>, <ref type="bibr" target="#b22">[23]</ref>, <ref type="bibr" target="#b23">[24]</ref>, <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b25">[26]</ref>, <ref type="bibr" target="#b26">[27]</ref>, <ref type="bibr" target="#b27">[28]</ref>, <ref type="bibr" target="#b28">[29]</ref>, computational biology <ref type="bibr" target="#b29">[30]</ref>, <ref type="bibr" target="#b30">[31]</ref>, <ref type="bibr" target="#b31">[32]</ref>, <ref type="bibr" target="#b32">[33]</ref>, <ref type="bibr" target="#b33">[34]</ref>, big data processing <ref type="bibr" target="#b34">[35]</ref>, <ref type="bibr" target="#b35">[36]</ref>, <ref type="bibr" target="#b36">[37]</ref>, <ref type="bibr" target="#b37">[38]</ref>, <ref type="bibr" target="#b38">[39]</ref>, computer vision <ref type="bibr" target="#b39">[40]</ref>, <ref type="bibr" target="#b40">[41]</ref>, <ref type="bibr" target="#b41">[42]</ref>, <ref type="bibr" target="#b42">[43]</ref>, <ref type="bibr" target="#b43">[44]</ref>, <ref type="bibr" target="#b44">[45]</ref>, <ref type="bibr" target="#b45">[46]</ref>, <ref type="bibr" target="#b46">[47]</ref>, <ref type="bibr" target="#b47">[48]</ref>, <ref type="bibr" target="#b48">[49]</ref>, <ref type="bibr" target="#b49">[50]</ref>, <ref type="bibr" target="#b50">[51]</ref>, <ref type="bibr" target="#b51">[52]</ref>, <ref type="bibr" target="#b52">[53]</ref>, information security <ref type="bibr" target="#b53">[54]</ref>, <ref type="bibr" target="#b54">[55]</ref>, <ref type="bibr" target="#b55">[56]</ref>, <ref type="bibr" target="#b56">[57]</ref>, <ref type="bibr" target="#b57">[58]</ref>, <ref type="bibr" target="#b58">[59]</ref>, and medical imaging <ref type="bibr" target="#b59">[60]</ref>, <ref type="bibr" target="#b60">[61]</ref>, <ref type="bibr" target="#b61">[62]</ref>, etc.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Comparison of different similarity learning algorithms for retrieval task over two benchmark databases.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Running of different similarity learning algorithms over two benchmark databases.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>The study is supported by a grant from <rs type="funder">Provincial Key Laboratory for Computer Information Processing Technology, Soochow University, China</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Cross-modal similarity learning: A low rank bilinear formulation</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Pan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Information and Knowledge Management, Proceedings</title>
+		<imprint>
+			<date type="published" when="2015-10">Oct-2015, 2015</date>
+			<biblScope unit="page" from="1251" to="1260" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Convex hull-based multi-objective evolutionary computation for maximizing receiver operating characteristics performance</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Memetic Computing</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="35" to="44" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Top rank optimization in linear time</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Neural Information Processing Systems</title>
+		<imprint>
+			<date type="published" when="2014-01">January, 2014</date>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Enhanced maximum auc linear classifier</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fuzzy Systems and Knowledge Discovery (FSKD), 2010 Seventh International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1540" to="1544" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Recognizing indoor scenes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Quattoni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Torralba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops, CVPR Workshops</title>
+		<imprint>
+			<date type="published" when="2009">2009. 2009. 2009</date>
+			<biblScope unit="page" from="413" to="420" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Caltech-256 object category dataset</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Holub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Perona</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Large scale online learning of image similarity through ranking</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chechik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Shalit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bengio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<imprint>
+			<biblScope unit="volume">5524</biblScope>
+			<biblScope unit="page" from="11" to="14" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Online multiple kernel similarity learning for visual search</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hoi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="536" to="549" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Distance learning for similarity estimation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Amores</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sebe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Radeva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Tian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="451" to="462" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Learning image similarity from flickr groups using fast kernel machines</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hoiem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Forsyth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2177" to="2188" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A boosting framework for visualitypreserving distance metric learning and its application to medical image retrieval</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mummert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sukthankar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Goode</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hoi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Satyanarayanan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="30" to="44" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Tightening bounds for bayesian network structure learning</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Malone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 28th AAAI Conference on Artificial Intelligence (AAAI-2014)</title>
+		<meeting>the 28th AAAI Conference on Artificial Intelligence (AAAI-2014)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="2439" to="2445" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Finding optimal bayesian network structures with constraints learned from data</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Malone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceed. of the 30th Conf. on Uncertainty in Artificial Intelligence (UAI-2014)</title>
+		<meeting>eed. of the 30th Conf. on Uncertainty in Artificial Intelligence (UAI-2014)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="200" to="209" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">An improved lower bound for bayesian network structure learning</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 29th AAAI Conference on Artificial Intelligence (AAAI-2015)</title>
+		<meeting>the 29th AAAI Conference on Artificial Intelligence (AAAI-2015)</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="3526" to="3532" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A new variable sampling control scheme at fixed times for monitoring the process dispersion</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Kapur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Quality and Reliability Engineering International</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="961" to="972" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A synthesis of feedback and feedforward control for process improvement under stationary and nonstationary time series disturbance models</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Kapur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Quality and Reliability Engineering International</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="343" to="354" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Margin-based over-sampling method for learning from imbalanced datasets</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Weise</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 15th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD-2011)</title>
+		<meeting>the 15th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD-2011)<address><addrLine>Berlin Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="309" to="320" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Portfolio choices with orthogonal bandit learning</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-G</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 24th International Conference on Artificial Intelligence</title>
+		<meeting>the 24th International Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="974" to="980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Portfolio blending via thompson sampling</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Twenty-Fifth International Joint Conference on Artificial Intelligence</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Design and implementation of a low power spike detection processor for 128-channel spike sorting microsystem</title>
+		<author>
+			<persName><forename type="first">T.-C</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-G</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="3889" to="3892" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Coupled dictionary learning and feature mapping for cross-modal retrieval</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shimada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>-I. Taniguchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+	<note>Multimedia and Expo (ICME)</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Multi-kernel learning for multivariate performance measures optimization</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xiahou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mcdonald</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Neural Computing and Applications</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="1" to="13" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Supervised learning of sparse context reconstruction coefficients for data representation and classification</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Edwards</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Neural Computing and Applications</title>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Multiple kernel multivariate performance learning using cutting plane algorithm</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mcdonald</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Systems, Man, and Cybernetics (SMC)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="1870" to="1875" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Supervised cross-modal factor analysis for multiple modal data classification</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">-Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bensmail</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Systems, Man, and Cybernetics (SMC)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="1882" to="1888" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">An effective image representation method using kernel classification</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE 26th International Conference on Tools with Artificial Intelligence (ICTAI 2014)</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="853" to="858" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Representing data by sparse combination of contextual data points for classification</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Edwards</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Neural Networks-ISNN 2015</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="373" to="381" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Image tag completion by local learning</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Peterson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Neural Networks-ISNN 2015</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="232" to="239" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Mechanical response of cardiovascular stents under vascular dynamic bending</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uhl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomedical engineering online</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Computational modeling of magnetic nanoparticle targeting to stent surface under high gradient field</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computational mechanics</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="403" to="412" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Biomarker binding on an antibody-functionalized biosensor surface: the influence of surface properties, electric field, and coating density</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Journal of Physical Chemistry C</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">26</biblScope>
+			<biblScope unit="page" from="14" to="586" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Structure design of vascular stents</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Multiscale simulations and mechanics of biological materials</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="301" to="317" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Modeling nanoparticle targeting to a vascular surface in shear flow through diffusive particle dynamics</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanoscale research letters</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Remote health coaching system and human motion data analysis for physical therapy with microsoft kinect</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kurillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ofli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bajcsy</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1512.06492</idno>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Towards scalable distributed workload manager with monitoring-based weakly consistent resource stealing</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Qiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mcclelland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Raicu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 24rd international symposium on High-performance parallel and distributed computing</title>
+		<meeting>the 24rd international symposium on High-performance parallel and distributed computing</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="219" to="222" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Next generation job management systems for extreme-scale ensemble computing</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Raicu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd international symposium on High-performance parallel and distributed computing</title>
+		<meeting>the 23rd international symposium on High-performance parallel and distributed computing</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="111" to="114" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Fusionfs: Toward supporting data-intensive scientific applications on extreme-scale high-performance computing systems</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kimpe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Carns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Raicu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014. 2014</date>
+			<biblScope unit="page" from="61" to="70" />
+		</imprint>
+	</monogr>
+	<note>Big Data (Big Data)</note>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Optimizing load balancing and data-locality with data-aware scheduling</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Raicu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014. 2014</date>
+			<biblScope unit="page" from="119" to="128" />
+		</imprint>
+	</monogr>
+	<note>Big Data (Big Data)</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Zht: A light-weight reliable persistent dynamic scalable zero-hop distributed hash table</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Brandstatter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rajendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Raicu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Parallel &amp; Distributed Processing (IPDPS)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="775" to="787" />
+		</imprint>
+	</monogr>
+	<note>IEEE 27th International Symposium on</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">A study on human age estimation under facial expression changes</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Computer Vision and Pattern Recognition (CVPR)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2012">2012. 2012</date>
+			<biblScope unit="page" from="2547" to="2553" />
+		</imprint>
+	</monogr>
+	<note>IEEE Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Dog breed classification via landmarks</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sorensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kambhamettu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on Image Processing (ICIP)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="5237" to="5241" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Leveraging appearance and geometry for kinship verification</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kambhamettu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on Image Processing (ICIP)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="5017" to="5021" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Leveraging geometry and appearance cues for recognizing family photos</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rohith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kambhamettu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">11th IEEE International Conference and Workshops on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+	<note>Automatic Face and Gesture Recognition (FG)</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Multilayer joint gait-pose manifolds for human gait motion modeling</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Fan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Cybernetics</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2413" to="2424" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Articulated and generalized gaussian kernel correlation for human pose estimation</title>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Image Processing</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="776" to="789" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Computational models for multiview dense dynamic scene depth maps</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">E-LETTER</title>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Unsupervised temporal segmentation of repetitive human actions based on kinematic modeling and frequency analysis</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kurillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ofli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bajcsy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015. 2015</date>
+			<biblScope unit="page" from="562" to="570" />
+		</imprint>
+	</monogr>
+	<note>3D Vision</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Evaluation of pose tracking accuracy in the first and second generations of microsoft kinect</title>
+	</analytic>
+	<monogr>
+		<title level="m">Healthcare Informatics (ICHI), 2015 International Conference on</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="380" to="389" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Visual coding in a semantic hierarchy</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd ACM international conference on Multimedia</title>
+		<meeting>the 23rd ACM international conference on Multimedia</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="59" to="68" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Learning binary codes for maximum inner product search</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Shen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2015 IEEE International Conference on Computer Vision (ICCV)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="4148" to="4156" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Surgical wound debridement sequentially characterized in a porcine burn model with multispectral imaging</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Squiers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mohan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Sellke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Dimaio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Thatcher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Burns</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1478" to="1487" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Outlier detection and removal improves accuracy of machine learning approach to multispectral burn diagnostic imaging</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Squiers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Sellke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Dimaio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Thatcher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of biomedical optics</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="121" to="305" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Burn injury diagnostic imaging device&apos;s accuracy improved by outlier detection and removal</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Squiers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Sellke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Dimaio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Thatcher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">SPIE Defense+ Security</title>
+		<imprint>
+			<publisher>International Society for Optics and Photonics</publisher>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="947" to="206" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Gradual gray-watermark embedding algorithm in the wavelet domain</title>
+		<author>
+			<persName><forename type="first">C.-Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D.-Y</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-S</forename><surname>Yi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computer Applications</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Federated cloud security architecture for secure and agile clouds</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">High Performance Cloud Auditing and Applications</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="169" to="188" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">An evasion and counter-evasion study in malicious websites detection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Communications and Network Security (CNS)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014. 2014</date>
+			<biblScope unit="page" from="265" to="273" />
+		</imprint>
+	</monogr>
+	<note>IEEE Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Cross-layer detection of malicious websites</title>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the third ACM conference on Data and application security and privacy</title>
+		<meeting>the third ACM conference on Data and application security and privacy</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="141" to="152" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Adaptive epidemic dynamics in networks: Thresholds and control</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Transactions on Autonomous and Adaptive Systems (TAAS)</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">19</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Push-and pull-based epidemic spreading in networks: Thresholds and deeper insights</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Transactions on Autonomous and Adaptive Systems (TAAS)</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">32</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Inferring sources of dementia progression with network diffusion model</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Hua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Thompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">El</forename><surname>Fakhri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Workshop on Machine Learning in Medical Imaging</title>
+		<imprint>
+			<publisher>Springer International Publishing</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="42" to="49" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A spectral graph regression model for learning brain connectivity of alzheimers disease</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sepulcre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Fakhri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PloS one</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page">128136</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Matched signal detection on graphs: Theory and application to brain imaging data classification</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sepulcre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Fakhri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">M</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NeuroImage</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="587" to="600" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Research and Application of Acoustic Emission Signal Processing Technology</title>
+				<funder ref="#_43QvdKQ">
+					<orgName type="full">Ph.D. Start-up Fund of Yangtze Normal University</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Liang</forename><surname>Zhao</surname></persName>
+							<idno type="ORCID">0000-0002-7541-9696</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Civil and Architectural Engineering</orgName>
+								<orgName type="institution">Yangtze Normal University</orgName>
+								<address>
+									<postCode>408100</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">L</forename><forename type="middle">E</forename><surname>Kang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">College of Materials Science and Engineering</orgName>
+								<orgName type="institution">Xi&apos;an University of Science and Technology</orgName>
+								<address>
+									<postCode>710055</postCode>
+									<settlement>Xi&apos;an</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Shuang</forename><surname>Yao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Civil and Architectural Engineering</orgName>
+								<orgName type="institution">Yangtze Normal University</orgName>
+								<address>
+									<postCode>408100</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Research and Application of Acoustic Emission Signal Processing Technology</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">C7889C620DC24E43322984D762D11AC5</idno>
+					<idno type="DOI">10.1109/ACCESS.2018.2886095</idno>
+					<note type="submission">Received November 26, 2018, accepted November 30, 2018, date of publication December 10, 2018, date of current version January 4, 2019.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:03+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Acoustic emission</term>
+					<term>spectrum analysis</term>
+					<term>wavelet analysis</term>
+					<term>signal processing</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Acoustic emission signal processing has always been a key problem in damage assessment of components and materials, and parameter analysis and waveform analysis are two important means of acoustic emission signal processing. In this paper, the parameter analysis method in signal processing and the meaning and characteristics of each parameter are introduced. Then, the waveform analysis method is introduced and the basic theory of wavelet transform and its spectrum analysis in waveform analysis method are mainly analyzed. The comparison between wavelet transform and Fourier transform is made: traditional Fourier transform signal processing methods can only be used to process transient stationary signals, and the transient non-stationary signals cannot be analyzed locally. The wavelet transform can take into account the characteristics of both the time and frequency domains, and it can also reflect the local signal well. Through the analysis of the signals in the process of concrete damage, it is found that the two signal processing methods mentioned above can well characterize the damage evolution of materials and damage precursors.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>Modern signal and image processing has been widely applied to many areas, including medicine, seismic, astrophysical imaging and so on <ref type="bibr" target="#b0">[1]</ref>, as a fast analysis algorithm combining theoretical analysis with numerical methods. Various process monitoring and adaptive control are studied on the basis of physical model and intelligent optimization research. At the same time, many signals are used to monitor process parameters, such as force, power, acoustic emission (AE), torque, vibration and temperature <ref type="bibr" target="#b1">[2]</ref>. It is the core of signal processing and the basis of the development of numerical calculation methods of signal processing to acquire signal data. As one of the most valuable signal data processing in the near future, the hidden Markov model <ref type="bibr" target="#b2">[3]</ref>, Gauss mixture model <ref type="bibr" target="#b3">[4]</ref>, and deep neural network <ref type="bibr" target="#b4">[5]</ref> are used to optimize acoustic signal. And it is mainly used to study the elastic wave signal produced by material's rapid release of energy, monitor and analyze the acoustic emission signal with instruments, and then infer the source of rupture. Based on this, the acoustic emission waveforms of fatigue crack propagation <ref type="bibr" target="#b5">[6]</ref>, <ref type="bibr" target="#b6">[7]</ref>, the influence of acoustic emission sensors on the acoustic emission waveforms of fatigue crack propagation of thinwalled aerospace specimens <ref type="bibr" target="#b7">[8]</ref>, and the relationship between crop acoustic emission and disease stress are studied with the abnormal change propagation characteristics captured by the evolution of acoustic emission waveforms <ref type="bibr" target="#b8">[9]</ref>. In recent years, economic development has led to the growth of various types of construction, while the corresponding waste is also increasing. Construction waste, which most seriously affects the environment, has become one of the focuses of research.</p><p>Secondary pollution is becoming more and more serious due to construction waste increasingly diversified and the impact of construction waste on the environment is permanent and cumulative. Since the 21st century, the amount of urban construction waste has gradually increased, and now it accounts for about 35% of the total amount of urban waste <ref type="bibr" target="#b9">[10]</ref>. For various reasons, most of the construction waste is directly transported to the suburbs without treatment and is disposed of by open-air stacking or landfill, which seriously threatens the safety of the ecological environment. In this regard, scholars from all over the world have carried out studies on waste minimization, multiple utilization and harmlessness from the perspectives of waste management methods <ref type="bibr" target="#b10">[11]</ref>, management mode <ref type="bibr" target="#b11">[12]</ref>, optimization process <ref type="bibr" target="#b12">[13]</ref>, recycling <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b14">[15]</ref>. Among waste, construction waste is the most important component of construction waste, including broken concrete blocks, bricks and so on <ref type="bibr" target="#b15">[16]</ref>. It is one of the most necessary research to reduce environmental pollution by secondary utilization after crushing. However, construction waste cannot be recycled and reused in a full sense <ref type="bibr" target="#b16">[17]</ref>, <ref type="bibr" target="#b17">[18]</ref>. When it is damaged to a certain extent, it will not be reused. It can only be treated by landfill or open-air stacking. It is one of the important means to solve the problem at present, including effectively judging the damage degree of construction waste, reducing unnecessary secondary treatment and misjudgement of multiple utilization, and making comprehensive use of valuable components <ref type="bibr" target="#b18">[19]</ref>.</p><p>As a common waste of construction waste, recycled aggregate concrete aggregate has a lot of research on the development and application all over the world <ref type="bibr" target="#b19">[20]</ref>. The recycled aggregate concrete is studied through a lot of experiments. It is found that the recycled aggregate concrete has high crushing index, low density, high porosity, enhanced water absorption, low aggregate strength and weak bonding ability. The shear strength and compressive strength test showed that the recycled aggregate perforated brick material showed obvious brittleness <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b20">[21]</ref>, <ref type="bibr" target="#b21">[22]</ref>. By measuring the low modulus of elasticity of recycled coarse aggregate concrete relative to ordinary concrete, Etxeberria et al. analyzed the effect of material sequence in concrete production (made of recycled aggregate) on improving its splitting tensile strength <ref type="bibr" target="#b22">[23]</ref>. To some extent, these studies have played a positive role in the reuse of construction waste. However, in practical application, such as the increase of wall cracks has become the bottleneck of the development of this new construction material. In this regard, scanning electron microscopy (SEM) observation <ref type="bibr" target="#b23">[24]</ref>- <ref type="bibr" target="#b25">[26]</ref>, acoustic signal feedback information processing <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b26">[27]</ref>, <ref type="bibr" target="#b27">[28]</ref> and other technologies have been used to analyze the internal primary structure of recycled concrete, as well as its micro-damage and damage mechanism <ref type="bibr" target="#b28">[29]</ref>. It is of great practical engineering significance to use acoustic emission technology to study the safety performance evaluation and non-destructive detection technology of concrete structures <ref type="bibr" target="#b29">[30]</ref>. Therefore, the damage degree signal feedback from construction waste concrete is studied and the corresponding damage model is established with acoustic emission technology in this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. WAVELET ANALYSIS BASED ON ACOUSTIC EMISSION SIGNALS</head><p>From the processing of digital signals, the analysis methods of acoustic emission signals are mainly divided into two categories. One is to process the basic parameters of AE signal, and to analyze the characteristics of single or multiple parameters to study the characteristics of AE, which is called parametric analysis method. The second is to study the characteristics of the extracted time-domain waveform. Because the waveform carries the essential information of the signal, the essential characteristics of the acoustic emission signal can be obtained by analyzing the waveform characteristics, which is called waveform analysis method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. PARAMETER ANALYSIS METHOD</head><p>The parametric analysis method is to obtain the waveform characteristics of material damage by using acoustic emission sensors, and to analyze the waveform by using acoustic emission parameters, so that the damage degree of material can be estimated by using acoustic emission parameters <ref type="bibr" target="#b30">[31]</ref>. Common parameters include the number of acoustic emission events, amplitude, ringing count, impact technology, rise time, duration and so on <ref type="bibr" target="#b31">[32]</ref>. The parametric analysis method is a classical and constantly developing sound acoustic emission signal processing method, which has relatively perfect theory and is widely used.</p><p>The amplitude is the maximum value of AE signal, which is used to determine the type of AE source. Energy is the area of waveform envelope and threshold voltage line, which reflects the energy of acoustic emission events. Ringing count is the number of all peaks across the threshold, reflecting the intensity and frequency of the signal. Duration is the amplitude of the signal from the threshold to the threshold time. All AE activities during the duration are an AE event, which reflects the change of local stress characteristics of materials.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. WAVEFORMANALYSIS METHOD</head><p>Because the time domain waveform contains a lot of information about the acoustic emission source, it is called the best object to describe the characteristics of the acoustic emission source. This paper focuses on the waveform analysis. The frequency distribution characteristics of the timedomain waveform can be obtained by spectrum analysis, and the signal characteristics that can not be found by the timedomain waveform can be found. In recent years, wavelet analysis has become an important analytical method in signal field. Wavelet analysis combines the advantages of signal in time domain and frequency domain. It can not only display the corresponding time domain information of signal's local spectrum, but also describe the spectrum information of local time period <ref type="bibr" target="#b32">[33]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) WAVELET TRANSFORM</head><p>Wavelet transform is developed in overcoming the shortcomings of Fourier transform. Fourier transform reflects the integral characteristics of signal or function, but it can not display the characteristics of signal in local time range. Wavelet analysis has a very good frequency resolution at the low frequency end of the signal, while the frequency resolution at the high frequency end is very weak, which just makes up for Fourier's shortcomings <ref type="bibr" target="#b33">[34]</ref>. Wavelet transform decomposes signals at different scales to extract their characteristics, or to analyze the results of time-frequency decomposition for signal processing <ref type="bibr" target="#b34">[35]</ref>.</p><p>For arbitrary square integrable functions</p><formula xml:id="formula_0">f (x) ∈ L 2 (R), Wavelet transform is defined. WT (a, b) = 1 √ C k +∞ -∞ f (x)ψ a,b (x)dx (1)</formula><p>Herein, ψ(x) is mother wavelet, ψ a,b (x) is the conjugate function after stretching translation. ψ a,b (x) is analysis wavelet, obtain through the extension and translation of the mother wavelet. a is scale factor, b is time factor. ψ(x) need to meet the following conditions:</p><formula xml:id="formula_1">C k = 2π +∞ -∞ |ψ(ω)| 2 |ω| 2 dω &lt; ∞ (2)</formula><p>In the formula, ψ(ω) is the Fourier transform of ψ(x). Only the function satisfying the condition is continuous wavelet. From the above conditions, in the frequency domain, ψ(0) = 0. In the time domain. ψ(x) satisfy the regularity conditions.</p><formula xml:id="formula_2">+∞ -∞ ψ p (x)dx = 0, p = 1, 2, • • • , n<label>(3)</label></formula><p>For n, the bigger the better. ψ(x) is localized in time domain.</p><p>The wavelet transform also satisfies the reconstruction kernel equation.</p><formula xml:id="formula_3">WT (a 0 , b 0 ) = ∞ 0 da a 0 -∞ WT (a, b)K ψ (a 0 , b 0 , a, b)db (4) K ψ (a 0 , b 0 , a, b) = 1 C ψ ψ a 0 ,b 0 (x)ψ a,b (x)dx<label>(5)</label></formula><p>K ψ is the reconstruction of the nucleus. It reflects the correlation degree between ψ a 0 ,b 0 (x) and ψ a,b (x) <ref type="bibr" target="#b35">[36]</ref>. The reconstructed kernels show that not all WT (a, b) in the plane a-b can be used as wavelet transform, and the reconstructed kernels equation must be satisfied. Continuous wavelet is redundant, that is, any point in the plane a-b is related to the point on its plane.</p><p>When the scale a is relatively small, ψ a,b (x) is contracted in the time domain and is stretched in the frequency domain. When the signal expands on a dense wavelet basis, the smallscale a continuous wavelet transform can analyze the details of the signal. Conversely, when the scale is large, ψ a,b (x) is stretched in the time domain and shrinks in the frequency domain. When the signal expands on a sparse wavelet basis, large-scale a continuous wavelet transform can analyze the general picture of the signal.</p><p>Because of the redundancy of continuous wavelet transform, it is necessary to discretize A and b, and the result will not lose information. Discrete wavelet transform takes discrete sampling in a certain way. Discrete wavelet transform is a discrete sampling method for (a,b) in a certain way. Grid sampling is often adopted a = a m 0 , b = nb 0 a m 0 . The step size of discrete wavelet transform is smaller for small-scale highfrequency sampling, but larger for large-scale low-frequency sampling.</p><p>Based on signal theory, localized lattice points on the phase plane of discrete wavelet transform is: Its time and frequency width is a m 0 h, ĥ/ a m 0 respectively. The lattice points are non-uniformly distributed in the phase plane. The smaller m is, the more densely distributed the lattice points are on the time axis. The time domain width decreases with the decrease of m and the frequency domain width increases with the decrease of m, which indicates the zoom characteristic of wavelet transform.</p><formula xml:id="formula_4">(nb 0 a m 0 , a -m 0 ω ± 0 ) = ( R t ψ m,n (t) 2 dt, 0≤±ω&lt;∞ ω ψ m,n (w) 2 dw) (6)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2) TIME FREQUENCY ANALYSIS BASED ON WAVELET TRANSFORM</head><p>Frequency domain representation and energy frequency distribution of acoustic emission signals based on Fourier transform express the characteristics of signals in frequency domain. But Fourier transform is a kind of integral transformation, either in time domain or in frequency domain, and it cannot express the information in frequency domain in a certain time interval. For a time-varying signal like AE, it is necessary to know how its spectrum changes with time, timefrequency analysis is introduced <ref type="bibr" target="#b36">[37]</ref>.</p><p>Wavelet transform has the characteristics of multifrequency analysis, unlike STFT, which uses a single analysis frequency, it divides the frequency domain into different frequency bands in some way. The wavelet basis function can be regarded as a window function. If the center of the wavelet basis function ψ is t * and the width of the time window is 2 t, then the center of the wavelet function ψ a,b (x) is at * + b and the width of the time window is 2a t. The time domain information of wavelet transform is obtained from the following time window.</p><formula xml:id="formula_5">[at * + b -a t, at * + b + a t]</formula><p>In the frequency domain, the center of the wavelet base ψ is ω * , the width of the time window is 2 ω. According to the frequency domain analysis theory, the center of the wavelet function ψ a,b (x) is ω * /a, the width of the time window is2 ω /a. The time domain information of wavelet transform is obtained from the following frequency window.</p><p>[ω * /aω/a, ω * /a + ω/a] The time-frequency analysis of the signal is carried out on the two type of time frequency windows. With time as abscissa, frequency as ordinate and time frequency window of wavelet transform is represented as below.</p><formula xml:id="formula_6">[at * + b -a t, at * + b + a t] ×[ω * /a -ω/a, ω * /a + ω/a]</formula><p>The time domain width of the window is 2a t, the frequency domain width is2 w /a. For high frequency signals in time domain, the time window width can be narrowed automatically for better detection. For low frequency signals, the time domain width can also be widened automatically, and good results can be achieved. In the frequency domain, the width of the window is opposite, and it also has a good detection effect. Wavelet transform can automatically adjust the energy of time and frequency bandwidth, it has good localization characteristics in both time and frequency domains.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. APPLICATION OF SIGNAL PROCESSING IN CONCRETE DAMAGE IDENTIFICATION A. EXPERIMENTAL DESIGN</head><p>The loading system is TAW-3000 conventional three axis test machine, the maximum axial pressure is 3000kN, and the measuring accuracy is 1%. The acoustic emission system adopts the PCI-2 type acoustic emission meter of the US Physical Acoustics Corporation. Sensor is R6αtype, the resonant frequency is 90 kHz, the working frequency range is 35-100 kHz, and the sampling length is 2048 points. Before the test, the acoustic emission signals generated by the lead breaking test were analyzed. In order to reduce the error in the sample process, the threshold value is set to 50 dB. The parameters of other acoustic emission instruments are set as shown in Table <ref type="table" target="#tab_0">1</ref> below. Uniaxial compression test was carried out with loading rate of 0.2 mm/min. The preparation of specimens was carried out according to relevant specifications and regulations, which met the requirements of conventional experiments.</p><p>In this study, the stress equivalence principle is used to determine the load and sectional dimensions of the specimens. The cube model was made. The concrete material is pre-sorted by vibrating feeding screen and special vibrating screen for construction waste. After the specimen is finished, it will be demoulding after 24h and then standard curing for 28 days <ref type="bibr" target="#b37">[38]</ref>. The concrete mix proportion is shown in Table <ref type="table" target="#tab_1">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. ANALYSIS OF BASIC PARAMETERS DURING LOADING PROCESS</head><p>The information about the source of acoustic emission, including the degree of damage and the service life, can be accurately obtained and the damage situation of the detected object can be deduced with analysis and processing of AE signals. On this basis, the safety can be evaluated. AE signal parameter analysis method is more traditional, which is to express the waveform of acoustic emission signal in the form of parameters, and can further analyze the waveform signal. The characteristics of the specimen in the whole process of damage are analyzed, by studying the change of a characteristic parameter in the process of time damage. Three characteristic parameters, including energy rate, ring counting rate and event rate, are selected to analyze the information in the damage process of concrete specimens in the paper.</p><p>Acoustic emission rate refers to the energy released by acoustic emission in unit time. The results are shown in Figure <ref type="figure" target="#fig_0">1</ref> to compare different specimens, with the acoustic emission energy per unit time analyzed as an energy rate. And the experimental loading rate is used as the basis, taking 1s as the unit time length statistic energy rate.</p><p>The experimental results show that the change characteristics of AE energy rate of each specimen are the same, and acoustic emission parameters are the same change law with the same specimen and different acoustic emission channels. In the initial loading stage of concrete, the energy release of acoustic emission is weaker than that of later stage with the initial cracks in the specimen closed and compacted, the slope of the energy rate curve with time smaller and a horizontal straight line closing to 0. This proves that acoustic emission signals are stationary small energy events, and energy begins to gather. With the increase of load, the slope of the curve of acoustic emission energy rate with time increases, and the activity of acoustic emission begins to increase, which is the energy dissipation period. At the same time, with the concrete dilatancy and the unsteady expansion of microfracture, the accumulated energy of the specimen begins to release.</p><p>The above evidence shows that the acoustic emission energy of concrete specimens is accelerated before approaching damage. The acoustic emission is transformed from low energy small crack to high energy. With the nucleation and propagation of a large number of micro-cracks, macrocracks eventually penetrate, and the specimens are completely destroyed and most of the energy is released. Taking the sudden increase of acoustic emission energy rate as the precursor of concrete damage, which of the two specimens correspond to 89% and 96% of their respective peak loads, respectively.</p><p>Same as energy efficiency, acoustic emission rate refers to the number of AE events per unit time, and using unit time to calculate acoustic emission incident rate. The results are shown in Figure <ref type="figure" target="#fig_1">2</ref>. The experimental result shows that the acoustic emission incident rate of each specimen is basically the same. In the compaction stage of concrete specimens, the acoustic emission event rate is higher due to the closure of the original crack. With the end of the compaction stage, the acoustic emission event rate decreases. At the early stage of elastic stage to plastic stage, the incident rate of acoustic emission increases with the increase of stress. At the later stage of plastic stage, the incident rate of acoustic emission suddenly drops into tranquil until destruction. The sudden fall of AE incident rate to tranquil period can be regarded as a precursor of concrete damage. Taking the abrupt decrease of acoustic emission event rate as the precursor of concrete damage, the precursor points of the two specimens correspond to 83% and 86% of their peak loads, respectively.</p><p>In addition, the acoustic emission ringing counting rate refers to the acoustic emission ringing counting produced in a unit time, which is a stiffness evaluation method for reinforced concrete flexural members. Based on this, the analysis result shows in Figure <ref type="figure" target="#fig_2">3</ref>.</p><p>The result shows that the number of acoustic emission rings increases slowly in the early stage, and suddenly increases in the later stage. According to the morphology of crack growth, the crack growth process can be divided into four stages: micro-crack formation, micro-crack growth, slow crack instability growth and rapid crack instability growth. The damage process of concrete specimens is very complicated. The damage of concrete specimens is the result of the comprehensive action of various factors, such as crack generation, propagation and fracture.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. WAVELET ANALYSIS OF CONCRETE LOADING PROCESS SIGNALS 1) SPECTRUM ANALYSIS BASED ON WAVELET TRANSFORM</head><p>In the process of concrete damage, the formation and expansion of cracks is the main source of acoustic emission. Because of the anisotropy of concrete material, when sound waves propagate in concrete, they are reflected, refracted and converted many times, and finally reach the sensor with different wave velocities, different wave ranges and different time series. According to the different AE signals produced by different damage mechanisms and the same characteristics of AE signals produced by the same damage mechanism, the AE signal waveforms obtained by sensors can be analyzed in frequency spectrum, and then the characteristics of AE signals in different materials during the damage process can be studied. Acoustic emission detector records the acoustic emission signals of Specimen 1 from loading to damage process. Based on the analysis of basic parameters of acoustic emission, the typical acoustic emission signals of specimens in each damage stage are analyzed by spectrum analysis method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>a: FORMATION STAGE OF MICRO-CRACKS</head><p>In the early stage of loading, only a few acoustic emission signals are generated because the cracks in concrete are compacted and closed. With the increase of load, the microdefects in the specimen are continuously penetrated, microcracks are gradually formed, and acoustic emission signals begin to increase. From the figure, we can see that the AE signal is very weak, the amplitude is small, and the frequency peak is multi-peak. The center frequency mainly concentrates on 45 kHz and 105 kHz.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>b: STABLE GROWTH STAGE OF MICRO-CRACKS</head><p>With the load increases and enters the stage of microcrack steady growth, the activity of crack is strengthened. With the continuous expansion of existing cracks, new cracks are emerging. It can be seen from the figure that the frequency bandwidth of the wave increases, and the signal expands from low frequency to high frequency. The frequency of the signal is mainly in the frequency range from 50 kHz to 200 kHz. A strong acoustic emission signal with the </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>c: SLOW INSTABILITY AND PROPAGATION STAGE OF CRACKS</head><p>At this stage, with the increase of load and crack width, slip phenomenon and slight crack appear between concrete. Compared with the previous stage, the frequency spectrum becomes wider, and the amplitude in the 50-300 kHz band increases significantly. Acoustic emission signals with the frequency of 50-110 kHz, 190 kHz and 290 kHz as the center frequency appear, and the number of micro-cracks in the specimen increases greatly.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>d: RAPID INSTABILITY AND STAGE OF CRACKS</head><p>It can be seen that the typical acoustic emission signals collected during the period of time instability and damage, when cracks penetrate, concrete specimens yield, and concrete in the compression zone is crushed. At this time, the time-domain amplitude of the generated AE signal decreases, the high-frequency band of the frequency-domain signal moves down, and the high-amplitude frequency  band narrows. The signal is mainly generated in the high frequency band with the frequency of 50 kHz as the center.</p><p>From the whole process of concrete damage, the change of acoustic emission signal is a process of increasing amplitude and widening high amplitude. The above table lists the spectrum of acoustic emission signals at different stages of concrete damage. It can be seen that the spectrum changes from low frequency to high frequency during the whole damage process, and then to low frequency after the damage is completed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2) DENOISING OF AE SIGNALS BASED ON WAVELET TRANSFORM</head><p>Acoustic emission signal is a transient non-stationary signal. Wavelet transform has more advantages than other transforms. At the same time, it is great influence to select different wavelet basis on the result of signal analysis. Generally speaking, when analyzing the wavelet basis, it is mainly considered that the characteristics of tight support is compactness, symmetry, orthogonality, and vanishing moments. In this paper, the waveforms of the slow propagation stage of micro-cracks are analyzed, and DB6 wavelet is chosen as the decomposition wavelet basis. The DB6 wavelet function is used to decompose the acoustic emission signal, and the waveform signal of the wavelet decomposition is shown in Figure <ref type="figure" target="#fig_8">8</ref>.</p><p>After the wavelet transform, the acoustic emission signals of concrete materials are decomposed into 6 frequency bands. As you can see from the above picture, there is little difference between the detail signal d2 and d3, which is a signal related to noise. d4 and d5 have less information, and d1 is the characteristic signal of acoustic emission.</p><p>In the process of wavelet denoising, the key is how to select the threshold and quantify the threshold of high frequency coefficients, which is directly related to the quality of signal denoising. In practical engineering applications, there are many methods to determine thresholds, such as adaptive thresholds based on unbiased likelihood estimation, heuristic thresholds and thresholds based on Minimax principle. Because unbiased unbiased likelihood estimation and threshold selection of minimax principle are conservative, when a small part of the high frequency information of useful  signal is in noise, these two rules are more appropriate and can extract small signal. Heuristic threshold is more effective in denoising, but it may remove useful high-frequency signals.</p><p>The commonly used processing methods are mainly divided into two types: hard threshold and soft threshold. Hard threshold method is to retain the wavelet coefficients of the current position when the wavelet coefficients are larger than a certain value; otherwise, the wavelet coefficients of the current position are set to zero. Soft threshold method is to shrink in the direction of decreasing the amplitude of the coefficients when the wavelet coefficients of the current position are larger than a certain value, otherwise set to zero.  In the acoustic emission signal processing of wavelet transform applied in concrete material damage, the wavelet decomposition coefficient is processed by soft threshold quantization through fixed threshold method and subjected to multi-scale one-dimensional reconstruction through threshold processing. It can be seen that the noise component with a frequency of 300 kHz is removed with comparing time domain and frequency domain after denoising. The wavelet method retains the characteristics of acoustic emission signals of concrete materials and has a good effect on the processing of random noise.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. CONCLUSION</head><p>In this paper, the parametric analysis method in signal processing and the meanings and characteristics of its parameters are introduced, which can be used to estimate the damage degree of materials. Then the waveform analysis method is introduced. Because the waveform contains a lot of essential information of acoustic emission source, the frequency distribution characteristics of the waveform in time domain can be obtained through the spectrum analysis of the waveform in time domain. It is possible to find the signal characteristics that cannot be found by the time domain waveform.</p><p>The basic theory of wavelet transform and its spectrum analysis in waveform analysis are emphatically analyzed, and the comparison between wavelet transform and Fourier transform is made. Traditional Fourier transform signal processing methods can only be used to process transient stationary signals, but the transient non-stationary signals can not be analyzed locally. The wavelet transform can take into account the characteristics of both time and frequency domains, and it can also reflect the local signal well.</p><p>The acoustic emission technology is applied to nondestructive testing of concrete structures. Acoustic emission detector is used to record all acoustic emission signals of concrete in the process of load damage. By using signal processing techniques such as basic parameter analysis, spectrum analysis and wavelet analysis, the characteristics of acoustic emission signals in four different stages of concrete test are compared and analyzed:</p><p>(1) From the analysis of the basic parameters of acoustic emission, when the concrete structure is destabilized and the apparent cracking occurs, the acoustic emission energy rate and ringing counting rate suddenly increase with the time transformation curve. Acoustic emission event rate increases first and then decreases with time. Before concrete damage, there is a long period of calm. These signs can be used as precursors of concrete damage.</p><p>(2) From the analysis of AE spectrum, during the whole process of concrete damage, AE signal is a process of gradually increasing amplitude and continuously widening high amplitude. The spectrum changes from low frequency to high frequency.</p><p>(3) Wavelet transform is more suitable for dealing with transient non-stationary signals compared with other transforms. From the analysis of time domain and frequency domain images before and after acoustic emission wavelet denoising, it can be seen that the wavelet method retains the characteristics of acoustic emission signals of concrete materials, effectively removes the noise components, and has a good result in dealing with random noise.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1 .</head><label>1</label><figDesc>FIGURE 1. Characteristics of acoustic emission energy rate changes of different specimens (a) Specimen 1 (b) Specimen 2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 2 .</head><label>2</label><figDesc>FIGURE 2. Acoustic emission rate of different specimens (a) Specimen 1 (b) Specimen 2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 3 .</head><label>3</label><figDesc>FIGURE 3. Acoustic emission ring counting rate of different specimens (a) Specimen 1 (b) Specimen 2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 4 .</head><label>4</label><figDesc>FIGURE 4. Acoustic emission signal and its spectrum analysis in the phase of micro-cracks formation (a) Waveform (b) Spectrum analysis.</figDesc><graphic coords="6,308.83,235.92,223.80,167.65" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIGURE 5 .</head><label>5</label><figDesc>FIGURE 5. Acoustic emission signal and its spectrum analysis in the stable propagation stage of micro-cracks (a) Waveform (b) Spectrum analysis.</figDesc><graphic coords="7,46.35,236.69,225.20,169.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIGURE 6 .</head><label>6</label><figDesc>FIGURE 6. Acoustic emission signal and spectrum analysis in slow propagation stage of crack instability (a) Waveform (b) Spectrum analysis.</figDesc><graphic coords="7,300.62,262.09,245.66,200.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>FIGURE 7 .</head><label>7</label><figDesc>FIGURE 7. Acoustic emission signal and its spectrum analysis in the stage of instability and failure (a) Waveform (b) Spectrum analysis.</figDesc><graphic coords="8,37.77,252.71,236.39,177.17" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>FIGURE 8 .</head><label>8</label><figDesc>FIGURE 8. Waveform signals decomposed at different scales.</figDesc><graphic coords="8,297.84,59.61,247.37,185.53" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>FIGURE 9 .</head><label>9</label><figDesc>FIGURE 9. Acoustic emission signal denoising processing (a) Time Domain Map of Acoustic Signal Denoising (b) Frequency Domain Map of Acoustic Signal Denoising.</figDesc><graphic coords="8,319.09,407.63,197.10,147.91" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 .</head><label>1</label><figDesc>Acoustic emission parameter setting.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 2 .</head><label>2</label><figDesc>Concrete mix proportion.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 3 .</head><label>3</label><figDesc>Spectrum distribution of specimens at different damage stages.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>2169-3536 2018 IEEE. Translations and content mining are permitted for academic research only.Personal use is also permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="986" xml:id="foot_1"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="988" xml:id="foot_3"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="990" xml:id="foot_4"><p>  VOLUME 7, 2019   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="992" xml:id="foot_5"><p>  VOLUME 7, 2019   </p></note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>This work was supported by the <rs type="funder">Ph.D. Start-up Fund of Yangtze Normal University</rs> under Grant <rs type="grantNumber">010720210</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_43QvdKQ">
+					<idno type="grant-number">010720210</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The numerical tours of signal processing part 2: Multiscale processings</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Peyré</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Sci. Eng</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="68" to="71" />
+			<date type="published" when="2011-10">Sep./Oct. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Material removal monitoring in precision cylindrical plunge grinding using acoustic emission signal</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Mai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Guo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Inst. Mech. Eng., C, J. Mech. Eng. Sci</title>
+		<imprint>
+			<biblScope unit="volume">228</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="715" to="722" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Multirate coupled hidden Markov models and their application to machining tool-wear classification</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Cetin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ostendorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Bernard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2885" to="2896" />
+			<date type="published" when="2007-06">Jun. 2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Unsupervised cross-lingual knowledge transfer in DNN-based LVCSR</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Swietojanski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ghoshal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Renals</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE Spoken Lang. Technol. Workshop</title>
+		<meeting>IEEE Spoken Lang. Technol. Workshop</meeting>
+		<imprint>
+			<date type="published" when="2013-12">Dec. 2013</date>
+			<biblScope unit="page" from="246" to="251" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Deep neural networks for acoustic modeling in speech recognition: The shared views of four research groups</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Signal Process. Mag</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="82" to="97" />
+			<date type="published" when="2012-11">Nov. 2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Toward identifying crack-length-related resonances in acoustic emission waveforms for structural health monitoring applications</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Y</forename><surname>Bhuiyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Poddar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Giurgiutiu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Structural Health Monit</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="577" to="585" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Performance analysis of superheated steam injection for heavy oil recovery and modeling of wellbore heat efficiency</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="795" to="804" />
+			<date type="published" when="2017-04">Apr. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Detecting system of crop disease stress based on acoustic emission and virtual technology</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Mech. Mater</title>
+		<imprint>
+			<biblScope unit="volume">556</biblScope>
+			<biblScope unit="issue">562</biblScope>
+			<biblScope unit="page" from="3331" to="3334" />
+			<date type="published" when="2014-05">May 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Management of construction wastes in several typical projects</title>
+		<author>
+			<persName><forename type="first">Q</forename><forename type="middle">H</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Mech. Mater</title>
+		<imprint>
+			<biblScope unit="page" from="1763" to="1767" />
+			<date type="published" when="2013-02">Feb. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Identification and analyze of influence level on waste construction management of performance</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Elizar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Wibowo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Koestalam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Eng</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="46" to="52" />
+			<date type="published" when="2015-12">Dec. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Discussion on management mode of construction waste in china</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">X</forename><surname>Shao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater. Res</title>
+		<imprint>
+			<biblScope unit="page" from="1920" to="1924" />
+			<date type="published" when="2011-10">Oct. 2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Distribution of materials in construction and demolition waste in Portugal</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Coelho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brito</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Waste Manage. Res</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="843" to="853" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Utilization of construction and demolition wastes in low-volume roads for rural areas in china</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transp. Res. Rec., J. Transp. Res. Board</title>
+		<imprint>
+			<biblScope unit="volume">2474</biblScope>
+			<biblScope unit="page" from="39" to="47" />
+			<date type="published" when="2015-06">Jun. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Measuring three-dimensional damage in concrete under compression</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Lawler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Keane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Shah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. J</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="465" to="475" />
+			<date type="published" when="2001-11">Nov. 2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Study on dye wastewater treatment of tunable conductivity solid-waste-based composite cementitious material catalyst</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Desalination Water Treat</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="296" to="301" />
+			<date type="published" when="2018-09">Sep. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The heat and mass transfer characteristics of superheated steam coupled with non-condensing gases in horizontal wells with multi-point injection technique</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy</title>
+		<imprint>
+			<biblScope unit="volume">143</biblScope>
+			<biblScope unit="page" from="995" to="1005" />
+			<date type="published" when="2018-01">Jan. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Research on big data digging of hot topics about recycled water use on micro-blog based on particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sustainability</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="2488" to="2502" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">The mono(catecholamine) derivatives as iron chelators: Synthesis, solution thermodynamic stability and antioxidant properties research</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Roy. Soc. Open Sci</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="171492" to="171503" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Ensemble prediction algorithm of anomaly monitoring based on big data analysis platform of open-pit mine slope</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ruan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xie</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2018/1048756</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Complexity</title>
+		<imprint>
+			<biblScope unit="volume">2018</biblScope>
+			<biblScope unit="page">1048756</biblScope>
+			<date type="published" when="2018-08">Aug. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Exploring the potential relationship between indoor air quality and the concentration of airborne culturable fungi: A combined experimental and neural network modeling study</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environ. Sci. Pollut. Res</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="3510" to="3517" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Enhanced hydrogen production performance through controllable redox exsolution within CoFeAlO x spinel oxygen carrier materials</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Xiao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem. A</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<biblScope unit="page" from="11306" to="11316" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Efficient bacterial inactivation by transition metal catalyzed auto-oxidation of sulfite</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environ. Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">21</biblScope>
+			<biblScope unit="page" from="12663" to="12671" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Influence of amount of recycled coarse aggregates and production process on properties of recycled aggregate concrete</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Etxeberria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Vázquez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marí</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Barra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cement Concrete Res</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="735" to="742" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Microstructure of concrete with aggregates from construction and demolition waste recycling plants</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bravo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Evangelista</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Microsc. Microanal</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="149" to="167" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Synthesis of hydrophobic carbon nanotubes/reduced graphene oxide composite films by flash light irradiation</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers Chem. Sci. Eng</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="376" to="382" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Evaluation of sulfate resistance of concrete with recycled and natural aggregates</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bulatović</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Melešev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Radeka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Radonjanin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Lukić</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Construction Building Mater</title>
+		<imprint>
+			<biblScope unit="volume">152</biblScope>
+			<biblScope unit="page" from="614" to="631" />
+			<date type="published" when="2017-10">Oct. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Fracture process and reliability of concrete made from high grade recycled aggregate using acoustic emission technique under compression</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">N</forename><surname>Kencanawati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Iizasa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shigeishi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Struct</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1441" to="1448" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Quantitative evaluation of low-temperature performance of sustainable asphalt pavements containing recycled asphalt shingles (RAS)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Arnold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Behnia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Mcgovern</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">G</forename><surname>Buttlar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Reis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Construction Building Mater</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2014-05">May 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Research on workshopbased positioning technology based on Internet of Things in big data background</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2018/7875460</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Complexity</title>
+		<imprint>
+			<biblScope unit="volume">2018</biblScope>
+			<biblScope unit="page">7875460</biblScope>
+			<date type="published" when="2018-09">Sep. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Research on a fusion scheme of cellular network and wireless sensor for cyber physical social systems</title>
+		<author>
+			<persName><forename type="first">A.-M</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-C</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F.-B</forename><surname>Kong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q.-B</forename><surname>Ran</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="18786" to="18794" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">A framework of data-enabled science for evaluation of material damage based on acoustic emission</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Wayne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Nondestruct. Eval</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="597" to="615" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Differential diagnosis model of hypocellular myelodysplastic syndrome and aplastic anemia based on the medical big data platform</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yuan</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2018/4824350</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Complexity</title>
+		<imprint>
+			<biblScope unit="volume">2018</biblScope>
+			<biblScope unit="page">4824350</biblScope>
+			<date type="published" when="2018-11">Nov. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Basic creep behavior of concretes investigation of the physical mechanisms by using acoustic emission</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rossi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-L</forename><surname>Tailhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">L</forename><surname>Maou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gaillet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cement Concrete Res</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="61" to="73" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Analysis of time-varying signals using continuous wavelet and synchrosqueezed transforms</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Tary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Herrera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Van Der Baan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Trans. Roy. Soc. A, Math., Phys. Eng. Sci</title>
+		<imprint>
+			<biblScope unit="volume">376</biblScope>
+			<biblScope unit="issue">2126</biblScope>
+			<biblScope unit="page">20170254</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Fractional continuous wavelet transform on some function spaces</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Prasad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kuma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Nat. Acad. Sci., India A, Phys. Sci</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="57" to="64" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Automated rock recognition with wavelet feature space projection and Gaussian process classification</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Monteiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hatherly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ramos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Nettleton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Oppolzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. IEEE Int. Conf. Robot. Automat</title>
+		<meeting>IEEE Int. Conf. Robot. Automat</meeting>
+		<imprint>
+			<date type="published" when="2010-05">May 2010</date>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="4444" to="4450" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">High-precision frequency attenuation analysis and its application</title>
+		<author>
+			<persName><forename type="first">X.-J</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-L</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z.-H</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Geophys</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="337" to="343" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Preparation, characterization and photocatalytic activity of novel CeO 2 loaded porous alkaliactivated steel slag-based binding material</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Hydrogen Energy</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">27</biblScope>
+			<biblScope unit="page" from="17341" to="17349" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">He received the B.S. degree in materials science and engineering and the Ph.D. degree in materials science from the Xi&apos;an University of Architecture and Technology</title>
+		<author>
+			<persName><surname>Liang Zhao Was Born In</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Baoji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">China</forename><surname>Shaanxi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">include detection and reinforcement of buildings, solidwaste recycling, and catalytic materials</title>
+		<meeting><address><addrLine>Shaanxi, China</addrLine></address></meeting>
+		<imprint>
+			<publisher>Yangtze Normal University</publisher>
+			<date type="published" when="1987">1987. 2010 and 2018. 2018. 1989</date>
+		</imprint>
+		<respStmt>
+			<orgName>Xi&apos;an University of Science and Technology,</orgName>
+		</respStmt>
+	</monogr>
+	<note>respectively. He is currently a Lecturer with the School of Civil and Architectural Engineering, Yangtze Normal University. His current research interests include new wall materials, high performance ceramics, and resource utilization of solid waste. LE KANG received the Ph.D. degree in materials science from the Xi&apos;an University of Architecture and Technology. He is currently with the College of Materials Science and Engineering. as a Lecturer. His current research interests. SHUANG YAO was born in Xi&apos;an. She received the B.S. degree in safety engineering and architecture from the Xi&apos;an University of Architecture and Technology, in 2011, and the M.S. degree in municipal engineering from Chang&apos;an University, in 2014. From 2014 to 2017, she was an Assistant Engineer with the Xianyang Urban Construction Bureau. Since 2018, she has been an Engineer with the School of Civil and Architectural Engineering. Her current research interests include the theory and technology of wastewater regeneration, the water-saving technology, and the solid waste treatment technology</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

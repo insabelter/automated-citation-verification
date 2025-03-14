@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Intelligent Secured Two-Way Image Transmission Using Corvus Corone Module over WSN</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2021-05-05">5 May 2021</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Bilal</forename><surname>Alhayani</surname></persName>
+							<email>bilalalhayani213@gmail.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Sara</forename><forename type="middle">Taher</forename><surname>Abbas</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Husam</forename><forename type="middle">Jasim</forename><surname>Mohammed</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Hemant</forename><forename type="middle">B</forename><surname>Mahajan</surname></persName>
+						</author>
+						<title level="a" type="main">Intelligent Secured Two-Way Image Transmission Using Corvus Corone Module over WSN</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2021-05-05">5 May 2021</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">FF5FE157EB6824068B1F273B9E1D0FB9</idno>
+					<idno type="DOI">10.1007/s11277-021-08484-2</idno>
+					<note type="submission">Accepted: 13 April 2021 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Chaotic encryption</term>
+					<term>Manchester coding</term>
+					<term>MIMO</term>
+					<term>Wireless channel</term>
+					<term>Two-way image transmission</term>
+					<term>Rayleigh fading channel</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Two-way image communication in a wireless channel needs to be viable with channel properties such as transfer speed, energy-effective, time usage, and security because image capability consumes a huge space in the gadget and is quite effective. Is required in a manner. The figure goes through attacks. In addition, the quiesical issue for additional time of pressure is that the auxiliary interaction of pressure occurs through the dewar receiving extra time. To address these issues, compressed sensing emerges, which packs the image into hours of sensing, is generated in an expedient manner that reduces time usage and saves the use of data transfer capability, however Bomb in transmission. A variety of examinations cleared a way for dealing with security issues in compressive sensing (CS) through giving security as an alternative negotiation. In addition, univariate factors opted for CS as the issue of rearranging image quality is because of the aggregation of clutter. Along these lines related to the above issues, this paper proposed two-way image transmission to the Corvus Coron module, which presents an energy-effective with the CS model, as an inbuilt interaction in the CS transmission through the security framework. Receives what was designated as the pack-protected plot. Impeccable entertainment with the famous arbitrary network conjecture in CS. The result of the test is that the practical module presents energy-efficient and conserved transmission in the form of low error rate with low computational time.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Image transmission through a wireless channel needs an image to be viable along the channel attributes, to such an extent that when images along more data are should have been sent over a significant distance, there is a requirement for effective usage of transfer speed <ref type="bibr" target="#b0">[1]</ref>, lesser force utilization, less time is taken, the negligible measure of room, consequently there emerges a need to pack the data; restricting the repetitive information <ref type="bibr" target="#b1">[2]</ref>. <ref type="bibr">1 3</ref> Degree of compression, distortion rate is some of the factor to be considered, when images are downloaded from the web <ref type="bibr" target="#b2">[3]</ref>. Compression leads to the quality of the image being degraded, so to overcome these quality-based issues preprocessing methods like enhancement, segmentation and representation need to be carried out <ref type="bibr" target="#b3">[4]</ref>. Once preprocessed, the image gets formatted through various techniques, resulting in digital form. These digital signals consume large space and more time when it moves through a wireless channel <ref type="bibr" target="#b4">[5]</ref>.</p><p>The following figure shows the image transmission process through the channel (Fig. <ref type="figure" target="#fig_8">1</ref>).</p><p>While image procurement, the accepted signal should be reformatted to acquire the first image sent, however, this sign would likewise incorporate excess data <ref type="bibr" target="#b1">[2]</ref>. Thus, a requirement for appropriate pressure strategy which would eliminate this repetitive information is required. <ref type="bibr" target="#b5">[6]</ref>. Compressive Sensing (CS) is a sensing methodology that packs the sign gained at the hour of sensing arises and wipes out the repetitive information <ref type="bibr" target="#b6">[7]</ref>. Signs can be addressed as inadequate or compressible from different areas <ref type="bibr" target="#b7">[8]</ref>. As a result of the meager idea of the signs, the Compressive sensing innovation permits us to test the sign, much underneath the Nyquist rate <ref type="bibr" target="#b8">[9]</ref>. Also, the remaking calculations of CS can loyally recreate the first sign back from less compressive estimations <ref type="bibr" target="#b9">[10]</ref>. The figure shows the compressive sensing in the channel (Fig. <ref type="figure">2</ref>).</p><p>The primary prerequisite of CS for appropriate recreation is that the estimations should take haphazardly for a legitimate choice of estimation grid. The overall estimation frameworks utilized in CS are the arbitrary networks drawn from Gaussian or Bernoulli dispersion and fractional Fourier lattices <ref type="bibr" target="#b10">[11]</ref>. These arbitrary grids are indistinguishable from some other premise, just as submit to the Restricted Isometric Property (RIP) state of wonderful recuperation <ref type="bibr" target="#b11">[12]</ref>. If Gaussian dissemination has a place along an orthonormal premise, the lattice will be Gaussian conveyed and consequently, we will want to recuperate the specific arrangement along high likelihood <ref type="bibr" target="#b12">[13]</ref>. Albeit, the CS has been assessed alongside irregular estimation networks the issue along arbitrary grids is that we can't store and repeat them at the collector <ref type="bibr" target="#b13">[14]</ref>. This framework should be communicated alongside the sign. So the specialists have redirected their consideration towards the plan of deterministic and organized estimation frameworks that can be utilized as CS estimation grids. Instances of such frameworks are circulant, Toeplitz, organized arbitrary networks, and so forth <ref type="bibr" target="#b14">[15]</ref>, which has made it conceivable to utilize CS for down-to-earth applications. The benefits of organized arbitrary frameworks are quicker obtaining, lesser capacity necessity, and reproducibility, and decreased transmission overhead, while the downside is its security worry during transmission <ref type="bibr" target="#b15">[16]</ref>.</p><p>CS remaking calculations attempt to discover the scanty assessment of the first input signal, from compressive estimations, in some appropriate premise or outline or dictionary <ref type="bibr" target="#b16">[17]</ref>. A great deal of examination has been done on this part of CS, to concoct betterperforming calculations. The exploration driving variables around there are the capacity to recuperate from the base number of estimations, commotion power, speed, intricacy, execution ensures, and so forth <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b17">18]</ref>. Because of the expansion of commotion in the wireless medium, the CS recreation stage crumbles in assessing the arbitrary estimations lattice taken through the CS. Wireless channel experiences blurring and take a multipath engendering to arrive at the collector <ref type="bibr" target="#b18">[19]</ref>. These outcomes in debasing the initially communicated signal, subsequently there is a requirement for tweaking the first sign before transmission. Interleaving procedures are crucial for battle the impact of burst mistakes because of blurring, impedance, and multipath engendering in wireless correspondence <ref type="bibr" target="#b19">[20]</ref>. Through utilizing linear minimum mean square error (LMMSE) adjustment at the recipient, they broke down the framework through utilizing helical and turbulent interleaving procedures <ref type="bibr" target="#b20">[21]</ref>. Because of perceptions utilizing peak signal to noise ratio (PSNR) and root mean square blunder (RMSE) they reasoned that tumultuous interleaving performs better compared to helical interleaving. <ref type="bibr" target="#b15">16</ref>-HQAM (Hierarchical Quadrature Amplitude Modulation) can be utilized for image transmission, which improves the transfer speed effectiveness along the shortfall of dc-part from the sent sign, and Median Filter can be utilized to lessen clamors at channel <ref type="bibr" target="#b21">[22]</ref>. HQAM is the high-level form of QAM at a similar information transmission rate along the improved assurance of the particular district in an image from the additional commotion in the channel. The area of interest (ROI) is planned at the main piece and the foundation is planned to the most un-huge piece positions, which improved image quality even at the lower signal-to-clamor proportion. Through the above conversation, plainly in the two-way image transmission, the expansion in the size of a piece pace of images added engendering time, power utilization along bandwidth usage. So for better usage, different pressure methods can be used to lessen the cycle size of an image however the utilization of additional time in pre-preparing brings about the arising of compressive sensing which packs the image through sensing along the idea of dimensional decrease and arbitrary projection. Any data through the channel needs pressure as well as security from the different code assailants like Data Exfiltration, Bad Data Injection, and so forth numerous sorts of exploration cleared a way to address the security issues in CS through giving the security as an optional interaction, proposing that as an inbuilt cycle in CS. Besides, while sending into the channel, the clamor, which added, ought to appropriately gauge on the beneficiary side so the information image could recreate into its unique structure. Hence, for better two-way image transmission, this paper plans a novel module to send the image along less energy utilization and greater security. The blueprint of this paper is summed up as follows. Segment 2 arrangements along related exploration work. Segment 3 talked about the proposed philosophy. Area 4 examined the outcome and execution assessment of this examination and end in segment 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Works</head><p>Liao et al. <ref type="bibr" target="#b22">[23]</ref> presented another method for distinct information covering up in encrypted pictures using CS and discrete Fourier change. As demonstrated through that technique, CS used to pack and encode secret message parts in order to hide the secret message. The estimate number for CS reproduction monotonically decreases along a decrease in the pressure factor rate. To keep the image exceptionally large, the rate of the suppressor factor must be small. Along these lines, it is not possible to address embedded information and retrieve notable pictures, along a reduction in the estimation number for CS reconstructions.</p><p>Ahmad et al. <ref type="bibr" target="#b23">[24]</ref> depicted a method considering the captivating properties of the asymmetrical network using the Gram Schmidt figuring. During the time spent square astute selfassertive change, the determined guide was used followed through the dispersal system. The technique makes explicit in encryption and decryption performance using symmetric keys, for example, the encryption and comparative keys (secret keys) used in the uncompressed side. Scrambled images along a secret key may be unbearable along just a comparable secret key. The possibility of spatiotemporal dislocation may extend partners so as to improve the security adequacy of the system. Song et al. <ref type="bibr" target="#b24">[25]</ref> introduced two powerful systems for image transmission over dual channels along additional substance burst oscillations shown through the restricted memory polA (transition) channel. Processes, which consider the channel-streamlined scalar quantification (COSQ) of the wave-driven transformation coefficient, misuse channel memory to offer better performance over the various additional astonishing structures expected for the interleaved channel.</p><p>Hassen <ref type="bibr" target="#b25">[26]</ref> portrayed the square blurring channels along transfer helped distributed spatial variety and uncovered through joint-source -channel coding plans. Lixiang et al. <ref type="bibr" target="#b26">[27]</ref> clarified another technique through incorporating QR decay and packed sensing to take care of the reproduction issue of complex networks along the help of the information commotion. The strategy built the estimation lattice along the guide of Gaussian commotion so the scanty information network can be remade through packed sensing. At long last, the work requested without the control input, the strategy for compacted sensing couldn't prevail along regards to reproducing such complex networks in which the conditions of nodes were created through the straight network framework.</p><p>The above works recognize significantly testing issues for two-way image transmission. The center thought regarding the Liao et al. <ref type="bibr" target="#b22">[23]</ref> and Ahmed et al. <ref type="bibr" target="#b23">[24]</ref>. Protecting the image in CS through encryption and decryption, which needs to be communicated. They illustrate the way images are ensured through symmetric key planning and transformation interactions, although neglecting their functions to focus the remaking of unique information along less quantitative.</p><p>In like manner, issues in the channels are distinguished and to some degree amended through crafted through Song et al. <ref type="bibr" target="#b24">[25]</ref>, Hassan <ref type="bibr" target="#b25">[26]</ref>, and Lixiang et al. <ref type="bibr" target="#b26">[27]</ref>. From the nitty-gritty examination, it comes to realize that there is as yet ailing in the papers for giving security as an inbuilt cycle in CS and the legitimate assessment of clamor in the irregular quantifiable of the reproduction stage <ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Proposed Methodology</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">System Design</head><p>The two-way image communication framework emerges the issue of burning-through more energy because of the huge transfer speed use through a colossal number of pieces and goes through different interaction like securing, pressure, the change needs extra computational time along these lines, way decreases the speed of the handling time. Subsequently, to defeat as a joined hotspot for procurement, pressure, and change, the idea of compressive sensing is used through their tendency of dimensional decrease and irregular projection, which detected itself and lessens the transfer speed use. Concerning CS, the underlying choice of irregular factors for image obtaining is a significant factor because the ill-advised determination of arbitrary factors in CS makes confound to recover the image because of the expansion of commotion and inferable from the idea of the dimensional decrease and arbitrary projection, the method doesn't hold the security boundaries though if the security gave after the pressure interaction, it takes additional time. Thus, to extricate the above all around said issues cleverly, the exploration has curiously proposed a Corvus Corone two-way image transmission module. This module performs less data transmission use through quantization along choosing the irregular variable in the spatial space as a regularized structure utilizing least squares models and uncovers a considerable sum about the conduct of the assessors in de-quantization. Figure <ref type="figure" target="#fig_1">3</ref> shows the proposed two-way helpful image transmission model. In addition, the dispersion and dispersion of a Tughlaq property in a booby ringer is used as a planning condition in quantization, claiming to see only those familiar along the language of the pixies so that the image bits. Image attackers later provide high security to image bits. To send these pieces along bending without a signal, at that point, the idea of modulation for broadcasting in the MIMO channel needs to be met, which is allowed to arrive in the full-duplex channel that communicates in two ways.</p><p>The additive white Gaussian noise (AWGN) is added when communicating through the channel, so it can be properly squeezed into the remaking stage to retrieve the first encoded bits. Appropriately, in this proposed module, the use of mid-rate bit coding of modulation can reproduce the first fragments along their clock property through realizing the state of the first pieces and the paired clutter state. As a result, clever modules will reduce the need for new separation strategies, which burn along extra time, here. Through normal construction, the Corvus Coron module delivers superior energy effectiveness and achieves two-way image transmission through its cycle of volume along safety and transmission. The general plan of the proposed two-way image transmission is depicted below. In Fig. <ref type="figure" target="#fig_1">3</ref>, client 1 and client 2 associates along two-way correspondence through the proposed Corvus Corone Module transmission framework. On the transmitter side, the client sends the image through developing the arbitrary variable as a packed structure from the first image, and afterward utilizing the turbulent property of the dabbling ringer the factors in the image get scrambled. The numerical clarification for the proposed module is given beneath in the accompanying area.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Image at Transmitter</head><p>Let us consider the image I m which has to be transmitted through the users is given through the Eq. ( <ref type="formula">1</ref>) as, Here i, j = 1, 2, 3, …, n. If the image is transmitted from user 1 to user 2, due to the high number of bits in Im, the bandwidth usage in the channel increases thus increasing the energy requirement and affecting the entire transmission system. So to get energy efficient and low bandwidth usage, the required image I m is needs to be compressed. Now, the proposed module introduced a security matrix in CS as an inbuilt process that was designated as a compressed security matrix. To generate a compressed safety matrix,, C ', Image I m In Eq. 5, the random measurement matrix is multiplied together along the input image and the security matrix which can be described mathematically and are given below.</p><p>where</p><formula xml:id="formula_0">∈ I i×j m or P i×j ij is the random measurement matrix, c ∈ I i×j m or P i×j ij</formula><p>is the compressed security measurement vector of length i and a ∈ I i×j m is the security matrix of area i × j . Here, the number of measurements taken are much lesser than the length of input image, i.e., i &lt; j. The size of measurement matrix and the number of measurements is proportional to the sparsity of input signal. The procedures for constructing the compressed secured matrix using the proposed module are given below:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.1">Step 1: Sensing İnput Image for Transmission</head><p>The input image I m is sensed for the transmission which can represented through the pixel value P ij . The property of the pixel P ij is given through ( <ref type="formula">1</ref>)</p><formula xml:id="formula_1">I m = ⎡ ⎢ ⎢ ⎢ ⎣ P 1,1 P 1,2 P 1,j P 2,1 ⋮ P 2,2 P 2,j P i,1 P i,2 P i,j ⎤ ⎥ ⎥ ⎥ ⎦ (2) C = a ωI m</formula><p>Here a, b, …, z represents the features of the image I m .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.2">Step 2: Construction of Random Measurement</head><p>In the construction phase of the proposed module, it is important to select random measurements because improper selection of random measurements leads to incomplete retrieval of the image. Random measurements are therefore constructed to improve the prediction accuracy and the interpretation of the regression model through altering the fitting process of the model. Let us consider the features from the image pixel P i = [a i , b i , c i , … , z i ] and construct the random measurable for i is given through:</p><p>where Pi = (Pi) T are predictive features variable, xi are responses and retrieved parameters for prediction accuracy and interpretation. In Eq. 4, the module selects a subset of covalents to achieve both of these goals, the sum of the absolute values of the regression coefficients being a smaller amount than a fixed value, which drives some coefficients to be set to zero. Is, effectively choosing a simple model where the coefficient is not included. Through selecting these coefficients along predictive accuracy and interpreting the parameters, random variables can be easily identified and reconstructed in the final step. To protect these variables from various cipher attacks, the need for encryption arises, which can be explained in the following procedure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.3">Step 3: Construction of Security Matrix</head><p>The security matrix along a 2-D discrete-time dynamic system obtained from Eq. 5 is subject to the current chaotic values AI, followed through the next chaotic values binding its control parameters p, q, r, s, which helps to confuse.. and the attackers are given through equations</p><p>The initial values are assumed to be a0, bo and parameters p = 0.9, q = -0.6013, r = 2.0, s = 0.50. Through their confusion and diffusion property along the features, the pixel values in the image are encrypted and are protected from attackers of each and every kind in the image pixel. The chaotic values of Eq. ( <ref type="formula">5</ref>) and ( <ref type="formula">6</ref>) make the pixels in tinkering bells in encrypted form and provide confusing information about the data, adding more complexity to attackers. The following mathematical evaluation was then performed to produce the compressed safe form of an image.</p><p>(3)</p><formula xml:id="formula_2">p ij = ⎡ ⎢ ⎢ ⎣ a 1 a 2 a m b 1 ⋮ b 2 b m z 1, z 2, z m ⎤ ⎥ ⎥ ⎦ (4) i = 1 N N ∑ i=1 f (P i ,P ij , , ) (5) a i+1 = a 2 i -b 2 i + pa i + qb i (6) b i+1 = 2a i b i + ra i + sb i</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.4">Step 4: Creation of Compressed Secured İmage</head><p>In accordance along the above design the input scenario from the image in Eq. 1, the matrix formed through the random medial in Eq. 5 and the chaotic values obtained in Eqs. 5 and 6 are multiplied and the compressed safe matrix output given through Eq. 7 creates the output:</p><p>Through the above Eq. 7, the obtained matrix is in the compressed form of: Accordingly as expressed over, the image is compacted as a solitary framework, subsequently the quantity of pieces gets decreased, which in-turns produce energy-proficient transmission along less use of data transfer capacity. Additionally through the change of the pixel esteems into turbulent qualities, every one of the pixels get scrambled, subsequently it shields the image information from the aggressors. The pseudo-code for the development for packed security is given in Fig. <ref type="figure">4</ref>. Figure <ref type="figure">4</ref> clarifies that in the primary stage the image that must be communicated is chosen through addressing every one of the qualities as a pixel portrayal. At that point the arbitrary estimation chose as a unit line or section grid gets used. At long last, for security, tumultuous qualities are produced, and through the multiplicative factor, the last packed got grid is shaped. Presently the compacted got yield must be communicated into the MIMO channel along the goal that client 2 can get the image of client 1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.5">Image Transmission Using MIMO</head><p>To improve framework limits and dependencies, the module uses the MIMO method. Along the advancement of radio wire, MIMO and interruption alternation methods, it is possible to understand synchronous transmission on a similar band simultaneously. In addition, the clandestine terminal issue, the interruption issue brought about through the MAC scheme, and the huge postpone issue in multi-jump wireless networks can be fixed in MIMO. The boundaries considered for the direct transmission appearing in Table <ref type="table" target="#tab_0">1</ref>. The process of image transmission via MIMO explained in Fig. <ref type="figure">5</ref>.</p><p>Modulation encoding exercises the inverse in the middle of each bit interval for both synchronization and bit representation. Using a dual-purpose single transition, modulation encoding achieves the same level of synchronization as RZ along only two dimensions. According to existing coding methods, the modulation code overcomes an algorithm for data encoding. This algorithm performs as follows: The data representation is the line transition. A logic 0 is denoted through a transition from high to LOW, and an argument is vice versa. The representation of the modulation encoder is given through Through obtaining the number of bits the BPSK modulation done for the full duplex MIMO channel which is given through <ref type="bibr" target="#b6">(7)</ref> </p><formula xml:id="formula_3">c i = � a i b i � � 1 N N � i=1 f (P ij ,x i , , ) � ⎡ ⎢ ⎢ ⎣ p 11 p 12 p 1j ⎤ ⎥ ⎥ ⎦ (8) c i = ⎡ ⎢ ⎢ ⎣ c 11 c 12 c 1j ⎤ ⎥ ⎥ ⎦ . (9) K(t) = c i ⊕ CL</formula><p>where 2 q c t frequency term, b s is the number of bits per seconds.</p><p>For image communication, the framework comprises two nodes, and every node has two reception apparatuses that can send and get information. Regarding a node, the MIMO sending the signal-modulating module converts the advanced signal into two branches. This framework allows the node to communicate and receive all parcels and (10)</p><formula xml:id="formula_4">(t) = K(t) √ 2 b s cos(2 q c t) Compressed Security Output Matrix C</formula><p>Fig. <ref type="figure">4</ref> Functionality of compressed security matrix can improve the unbreakable quality and information rate of the framework through additional coding and space diversity processes. In view of adjusting the signal, they are routed through the Rayleigh blurring channel, and AWGN noise is added. Through using the MIMO channel along full-duplex access, the framework's dependency and information speed are improved. BPSK modulation is completed for coding modulation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The diagram diagram for the broadcast channel is given below:</head><p>To recuperate the first image, the remaking eliminate is conveyed that can be clarified in the accompanying segment. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Encrypted Image Encoding by Manchester coding</head><note type="other">Rayleigh</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.6">Image Reconstruction Phase</head><p>After transmitting the adjusted image signal to the MIMO channel along full-duplex access, the signal is expanded from the channel to the AWGN's Rale Fading channel where e is the AWGN, The noise that added could estimate properly, so that it is easy to regain the original modulated signal. The estimation noise in the channel given through</p><p>Here U V is the signal to noise ratio. The retrieval of the modulated signal along the estimation of the noise in Eq. ( <ref type="formula">5</ref>) given through</p><p>The signal get demodulated through the BPSK that is given through After the signals are collapsed in the remaking phase, the signal that is encoded along the modulation coding is decoded through the modulation's clock recoupment property.</p><p>Presently the first adjusted sign gets decoded. At that point to recover the first image the accompanying precise strategies were used through isolating every lattice to acquire the first image. The choice of safety grid can unscramble through the converse capacity of the tumultuous benefits of the fiddling chime. Through knowing the underlying tumultuous qualities, the decoding of the lattice is finished through the qualities which have been set done at first is given through Then the random matrix, which was obtained through the condition of the regression principle can be predicted through Hence through foreseeing the arbitrary grid through the relapse rule, unscrambling the tumultuous qualities and the legitimate assessment of commotion, the first image got in the recreation stage is given through relating the condition 11, 12, and 13 is (11</p><formula xml:id="formula_5">) (t) = (t) + e (12) e = 1 2 q c t √ U V ,<label>(13)</label></formula><formula xml:id="formula_6">∧ (t) = (t) - 1 2 q c t √ U V<label>(14)</label></formula><p>∧</p><formula xml:id="formula_7">K(t) = ∧ (t) √ 2 b s cos(2 q c t) (15) ∧ c i = CL ⊕ ∧ K(t) (16) ∧ = a i b i -1<label>(17)</label></formula><formula xml:id="formula_8">∧ 𝜛 = Min 𝜏,𝜐 = 1 N N � i=1 f (P ij ,C ij , 𝜏, 𝜐) Subjected to ‖𝜐‖ &lt; t 1 3</formula><p>where I m is the original image reconstructed through the proposed Corvus Corone Module. The pseudo code for the reconstruction phase of the proposed module is showing in Fig. <ref type="figure">6</ref>. Figure <ref type="figure">6</ref> clarifies that to unscramble the image, the reproduction of the compacted got lattice is completed, at which the reverse estimation for the tumultuous benefits of the fiddling ringer is determined at first, and afterward utilizing the expectation of the relapse guideline the irregular framework are remade precisely. This guideline assists along getting the first image as a yield. The general calculation for the proposed Corvus Corone Model is given underneath in Algorithm 1.   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Experimental Results</head><p>The proposed two-way transmission of the Corvus Corone module has implemented using the well-known image processing tool MATLAB. We have implemented the proposed model using MATLAB 2015 on Windows 10. The processor is Intel I5 along RAM 8 GB. Through this specification, the detailed explanation of the implementation result and its performance has analyzed in the following section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Visual Outcomes</head><p>The performance has analyzed in the three stages such as construction, transmission, and reconstruction through the proposed Corvuscorone module that has shown below (Fig. <ref type="figure">7</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1">Construction of Compressed Security</head><p>The construction of the compressed security matrix carried out through the proposed Cor-vusCorone module is shown below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.1.1">Step 1: Input Image</head><p>To validate the process, six input images such as cameraman, barbara, man, couple, leena, and ship images are considered for transmission as shown in Fig. <ref type="figure">8</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4.1.1.2</head><p>Step 2: Selection of Random Matrix Then as stated above in the Sect. 3, for the selection of the random variables regression principles carried out for the input images. The Fig. <ref type="figure">9</ref> above shows the representation of the random matrix made through the random variable regression principles for the six input images. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.2">Transmission of Compressed Secured Image</head><p>The process is executed on considering certain parameters, which are tabulated below in Table <ref type="table" target="#tab_1">2</ref>.</p><p>The proposed model executes along 2 × 2 MU-MIMO channels along 1024 bits in a single packet size. The process was evaluated through the BPSK modulation scheme When the above signals are transmitted through the channel, the additive white Gaussian noise is added along along the signal. After the addition of those noises, the signals are replaced which is indicated in the following Fig. <ref type="figure" target="#fig_0">12</ref>.</p><p>Figure <ref type="figure" target="#fig_0">12</ref> shows that Rayleigh changes the signals in the channel other than the AWGN in the channel. Hence to ensure that the reconstruction process is completed which can be explained through the following steps.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.3">Reconstruction of Compressed Security</head><p>After AWGN was included in the channel, BER was estimated to retrieve the original signal encoded through Manchester coding. For that Manchester's clock recovery is used to decode the original signal. Then the random variable that is selected at the initial stage is recovered using the forecasting and integrality function of the regression theory (Figs. <ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b13">14)</ref>.</p><p>After decrypting the random variables through the chaotic values of the tinkering bell would result in the below Fig. <ref type="figure" target="#fig_8">15</ref>.</p><p>The outcome of the original image after reshaping the obtained value is shown through the Fig. <ref type="figure" target="#fig_8">16</ref>. From Fig. <ref type="figure" target="#fig_8">16</ref>, it is proved that using the proposed Corvus Coron module, the input image that is transmitted through the user through a two-way communication channel receives less energy, is safer and encapsulates less energy and Finally reconstructs the output image. The input image is then evaluated seven parameters to evaluate the performance results of the proposed module as shown below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Performance Analysis</head><p>This section presents the performance evaluation proposed approach in various parameters like PSNR (Peak to Signal Noise Ratio), SNR (Signal to Noise Ratio), Channel Capacity, BER (Bit Error Rate), Time, etc.</p><p>Mean Square Error (MSE): The MSE is the cumulative squared error between the compressed and the original image where I (x, y) is the original image, I′ (x, y) is the approximate version (which is the actally decompressed image) and M is the dimensions of N images. The difference between I (x, y) and I′ (x, y) will give error. Here, dimensions of M, Nim image.</p><p>Root Mean Squared Error (RMSE): Root mean square was calculated through taking the root of mean square error:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mean Absolute Error (MAE): Mean Absolute Error takes the mean difference of the absolute values of the error</head><p>Bit Error Rate (BER): It is defined as during transmission, the number of bit errors is the number of received bits of a data stream on the communication channels that have been changed due to noise, interference, distortion: Symbol Error Rate (SER): It can be said as the amount of errors present in each symbol, decoded at the receiver end. The relation between symbol error rate and bit error rate is as below where M is the number of signals, M = 2 k, k is the number of bits transmitted.</p><p>Peak to Signal Noise Ratio: It is defined as a peak signal to noise ratio between the input and output signals. Peak Signal to Noise Ratio is the ratio of maximal intensity of the image to the amount of error present as in terms of mean square.</p><p>Correlation Coefficient: Correlation provides an association between the two variables as well as its relationship, a +ve correlation value indicates better relation while a -ve correlation value least correlation. The value of correlation varies from + 1 to -1; we considered three correlation types.</p><p>Spearman Correlation: Spearman rank correlation is a one of the correlation methods that is used to measure the degree of association between the two variables.</p><p>where ρ-Spearman's rank correlation, di, is the difference between the ranks of the variances and n is the number of data seen in the image Pearson correlation: Pearson action correlation is a correlation statistic to measure the degree of relationship between linear relational variables.</p><p>where γ is the Pearson correlation coefficient, N would be the total number of observed data from the image.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>∑</head><p>xy is the sum of the product of paired scores, ∑</p><p>x is the sum of x scores, ∑ y is the sum of y scores, ∑ x 2 is the sum of squared x scores. ∑ y 2 is the sum of squared y scores.</p><formula xml:id="formula_9">= 1 - 6 ∑ d 2 i n � n 2 -1 � (26) = N ∑ xy - ∑ (x)(y) � � N ∑ x 2 - ∑ � x 2 ��� N ∑ y 2 - ∑ � y 2 ��<label>(25)</label></formula><p>Kendall Correlation: Kendall rank correlation is a test that measures the strength of dependence between two variables.</p><p>where n c is the number of elements which are ordered in similar manner, n d is the number of elements which are ordered in dissimilar manner.</p><p>Moment Generating Function (MGF): Moments describes about the image content along respect to its axes, they help capture the global and detailed geometric information about the image. Considering a moment of order (p, q) spread over a plane S, along basis function Ψ p,q which in turn produces a weighted description over the plane same 's'. These functions have properties that get passed to the moments, producing descriptions which are invariant under translation, orientation and rotation.</p><p>where P xy is the multiple of image intensity over each pixel.</p><p>Structural Similarity (SSIM): Structural similarity is a similarity measurement index that is useful for finding the similarity among the predicted/reconstructed/compressed image along a reference /uncompressed/original image as reference.                From Tables <ref type="table" target="#tab_11">3,</ref><ref type="table" target="#tab_3">4</ref>, and 5, analyzing the parameters such as PSNR, BER, normalized SNR, channel capacity, argotic and outage values considering along and without CSI (Channel State Information), time, the proposed CorvusCorone module, shows the effective values for the six images (Table <ref type="table">6</ref>).</p><formula xml:id="formula_10">(27) = n c -n d 1 2 n(n -1) (28) M pq = ∑ x ∑ y Ψ pq (x, y)P xy ; p, q = 0, 1, 2, … , ∞ (29) SSim (x, y) = (2 x y + c 1 )(2 xy + c 2 ) ( 2 x + 2 y + c 1 )( 2 x + 2 y + c 2 )</formula><p>The above Fig. <ref type="figure" target="#fig_9">17</ref> shows the mean squared error, root mean squared error and mean absolute error of the proposed methodology. The values squared errors points the value     <ref type="table" target="#tab_5">7</ref>). The above table describes the symbol error rate obtained for those input images fed to the proposed system. It can be seen that the symbol error rate close to 8.4 × e 5 for all the images, suggesting that all the 6 images have close resemblance in SER (Figs. <ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22,</ref><ref type="bibr" target="#b22">23)</ref>.</p><p>The above correlation coefficients are all positive indicating the better correlation among the reconstructed and original input image. Considering all the correlation, the maximal correlation happened for the Lena image, where as the lesser correlation occurred for the ship (Tables <ref type="table" target="#tab_6">8,</ref><ref type="table">9</ref>).</p><p>The table describes the SSIM obtained for the 6 input images, along the maximum SSIM seen for the doubles image and the least for the cameraman (Figs. <ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b24">25)</ref>.</p><p>The Table <ref type="table" target="#tab_7">10</ref> describes the MGF obtained for the 6 input images, the image Ship had the highest MGF of 8.40572 × e 07 .</p><p>The above Table <ref type="table" target="#tab_8">11</ref> describes the BER versus PSNR of all the 6 input images and their corresponding line graphs, it can be seen that the PSNR values remains high when BER is low, and the PSNR value decreases when BER turns to be high.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.1">Similar Method Analysis</head><p>This section presents the comparative study of proposed model along recent similar methods.</p><p>From Fig. <ref type="figure">26</ref> and Table <ref type="table" target="#tab_9">12</ref>, the proposed methodology combined Singh et al. Hybrid watermarking, JSCC, ES, DP, and DP along their BER in the context of BB, compared to other existing methodologies. It seems that Singh et al.'s existing methodology and hybrid watermarking techniques along 0.02, 0 and 0.01 make a big difference for their im-Leena and Barbara. 0. It has a value of 0.303032 as compared to the proposed method. Lina and 0.0003089 for Barbara show that due to proper modulation and transmission the module becomes effective.</p><p>From Fig. <ref type="figure" target="#fig_16">27</ref> and Table <ref type="table" target="#tab_10">13</ref>, the proposed methodology compared the other two existing methodologies along reference to other PSNRs. Our model has a PSNR value of 41.9455 for Lina 41.7718 for Barbara compared to some of the proposed methodology and 41.154 works well compared to others to show the proposed system.</p><p>Communication time is the total time it takes for a communication process to occur when transmitting user data from one location to another. Table <ref type="table" target="#tab_12">14</ref> and Fig. <ref type="figure" target="#fig_16">27</ref> show the results of communication analysis along existing methods.</p><p>From Figs. 28 and Table <ref type="table" target="#tab_12">14</ref>, the proposed methodology compares to other existing methodologies in terms of their communication time. It seems that the current working of JPEG2000, SS, DCT, SPIHT, JPEG is 366, 900, 473, 331, 544 ms. This is compared to the proposed methodology along a value of 275 ms and shows that due to proper modulation and transmission the module becomes effective and possesses shorter communication time.</p><p>Further we computed the energy consumption for comparative analysis. It is the total amount of energy consumed during the transmission process. Table <ref type="table" target="#tab_13">15</ref> and Fig. <ref type="figure">29</ref> demonstrate its outcome.</p><p>From Fig. <ref type="figure">29a</ref>, b, the proposed methodology compared to other existing methodology in terms of their energy consumption and energy saving. The current methodology seems to have higher energy consumption and lower N-allergen savings. It consumes <ref type="bibr">1 3</ref> 386 MJ of energy as compared to the proposed methodology and saves energy of 98.54% indicating efficient energy usage through the proposed module.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusion and Future Work</head><p>The energy-efficient transmission along a security problem in the two-way image transmission was challengingly solved through the proposed Corvus Corone module through their compressed security matrix which increases the security, consumes less energy, and prevents the signals from unwanted noise. The evaluation and comparison results paraded that the proposed module achieves the process within 1.42 s along an enhanced channel capacity of 96.684 and leads to the less BER value of 0.0003 compared to the other techniques respectively.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 Fig. 2</head><label>12</label><figDesc>Fig. 1 Example of transmission of image in WSN</figDesc><graphic coords="2,92.41,57.84,254.54,83.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Architecture of Corvus Corone based two-way image tranmission</figDesc><graphic coords="5,49.59,382.75,340.20,216.60" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 5 Fig. 6</head><label>56</label><figDesc>Fig. 5 Illustration of image tranmission via MIMO</figDesc><graphic coords="10,50.11,57.72,339.14,174.26" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 7 Fig. 8</head><label>78</label><figDesc>Fig. 7 Graphical user interface model</figDesc><graphic coords="12,49.59,57.85,340.20,180.72" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 9 Fig. 10</head><label>910</label><figDesc>Fig. 9 Selection of random variables for input image (Camera-man)</figDesc><graphic coords="14,77.97,57.85,283.44,167.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 12 4 . 1 . 1 . 3 Step 3 :</head><label>1241133</label><figDesc>Fig. 12 Addition of AWGN</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 13 Fig. 14</head><label>1314</label><figDesc>Fig.<ref type="bibr" target="#b12">13</ref> After Manchester decoding (cameraman)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 15 Fig. 16</head><label>1516</label><figDesc>Fig. 15 After decrypting the decoded value (cameraman)</figDesc><graphic coords="18,165.80,57.85,226.80,198.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>1 |I</head><label>1</label><figDesc>, y) -I 1 (x, y) (x, y) -I � (x, y)| (22) BER = Number of error Number of bits sent (23) SER = log 2 M * BER (24) PSNR = 20 * log 10 (255∕sqrt(MSE))</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 17</head><label>17</label><figDesc>Fig. 17 Performance proposed models performance in terms of Channel capacity, Normalized SNR and PSNR respectively</figDesc><graphic coords="22,183.79,67.71,208.82,129.86" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Fig. 18</head><label>18</label><figDesc>Fig. 18 Corresponds to the proposed models performance in terms of channel capacity (Ergodic and Outage) along no channel side information and along channel side information</figDesc><graphic coords="23,178.13,66.11,214.58,161.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Fig. 19</head><label>19</label><figDesc>Fig.<ref type="bibr" target="#b18">19</ref> The proposed models performance in terms of bit error rate and time taken</figDesc><graphic coords="24,105.28,301.44,242.06,191.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Fig. 21</head><label>21</label><figDesc>Fig. 21 Symbol error rate the input images</figDesc><graphic coords="25,91.94,422.43,269.54,155.54" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Fig. 22 Fig. 23</head><label>2223</label><figDesc>Fig. 22 Correlation coefficients the input images</figDesc><graphic coords="26,110.67,307.18,236.66,147.26" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Fig. 24</head><label>24</label><figDesc>Fig. 24 MGF of the input images</figDesc><graphic coords="27,91.84,197.68,269.66,142.46" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>3 Fig. 26</head><label>326</label><figDesc>Fig. 26 Comparison of BER along the existing techniques</figDesc><graphic coords="28,72.02,395.39,317.78,194.18" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Fig. 27</head><label>27</label><figDesc>Fig. 27 Comparison of PSNR along the existing techniques</figDesc><graphic coords="29,70.10,209.90,319.70,184.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Fig. 28</head><label>28</label><figDesc>Fig. 28 Comparison of communication time along the existing techniques</figDesc><graphic coords="30,97.48,206.19,264.02,139.10" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>( a )Fig. 29 3</head><label>a293</label><figDesc>Fig. 29 Comparison of energy consumption and energy saved along the existing respectively</figDesc><graphic coords="31,136.14,295.63,185.06,150.74" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="9,49.57,57.84,340.22,298.34" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Parameters for MIMO</figDesc><table><row><cell>image transmission</cell><cell>Terms</cell><cell>Method considered</cell></row><row><cell></cell><cell>Transmission/receiving scheme</cell><cell>MIMO</cell></row><row><cell></cell><cell>Channel access</cell><cell>Full duplexing</cell></row><row><cell></cell><cell>Modulation scheme</cell><cell>BPSK</cell></row><row><cell></cell><cell>Coding scheme</cell><cell>Modulation coding</cell></row><row><cell></cell><cell>Fading channel</cell><cell>Rayleigh fading channel</cell></row><row><cell></cell><cell>Noise considered</cell><cell>Additive white Gauss-</cell></row><row><cell></cell><cell></cell><cell>ian noise (AWGN)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Processing parameter Parameter Description</figDesc><table><row><cell>Channel type</cell><cell>Downlink/uplink</cell></row><row><cell>Number of transmitting station</cell><cell>2</cell></row><row><cell>Number of receiving station</cell><cell>2</cell></row><row><cell>Number of users</cell><cell>2</cell></row><row><cell>Number of bits transmitted</cell><cell>1024 bits/packets</cell></row><row><cell>Bit rate</cell><cell>1 kb/s</cell></row><row><cell>Modulation scheme</cell><cell>BPSK (Manchester coding)</cell></row><row><cell>Noise considered</cell><cell>Additive white Gaussian</cell></row><row><cell></cell><cell>noise ( AWGN)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Performance evaluation for the proposed module in terms of PSNR, SNR and channel capacity</figDesc><table><row><cell>Images</cell><cell>PSNR</cell><cell>Normalized</cell><cell>Channel</cell><cell cols="2">Images PSNR</cell><cell>Normalized</cell><cell>Channel</cell></row><row><cell></cell><cell></cell><cell>SNR</cell><cell>capacity</cell><cell></cell><cell></cell><cell>SNR</cell><cell>capacity</cell></row><row><cell>Couple</cell><cell cols="2">41.7653 1.0532</cell><cell>96.7194</cell><cell>Lena</cell><cell cols="2">41.9455 1.0486</cell><cell>96.7172</cell></row><row><cell>Barbara</cell><cell cols="2">41.7718 1.0376</cell><cell>96.7194</cell><cell>Man</cell><cell cols="2">41.1403 0.9922</cell><cell>96.7183</cell></row><row><cell cols="3">Cameraman 33.7585 1.0562</cell><cell>96.5173</cell><cell>Ship</cell><cell cols="2">42.3830 1.0365</cell><cell>96.7133</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Performance evaluation of the proposed module based on channel state ınformation</figDesc><table><row><cell>S. nos.</cell><cell>Images</cell><cell>No CSI</cell><cell></cell><cell>Along CSI</cell><cell></cell></row><row><cell></cell><cell></cell><cell>Ergodic capacity</cell><cell>Outage capacity</cell><cell>Ergodic capacity</cell><cell>Outage capacity</cell></row><row><cell>1</cell><cell>Couple</cell><cell>32.9593</cell><cell>30.3737</cell><cell>24.9593</cell><cell>22.3798</cell></row><row><cell>2</cell><cell>Barbara</cell><cell>33.8944</cell><cell>31.2659</cell><cell>25.6541</cell><cell>23.8478</cell></row><row><cell>3</cell><cell>Cameraman</cell><cell>35.3654</cell><cell>32.8946</cell><cell>22.6365</cell><cell>20.5484</cell></row><row><cell>4</cell><cell>Lena</cell><cell>35.6554</cell><cell>32.4914</cell><cell>23.64415</cell><cell>20.9854</cell></row><row><cell>5</cell><cell>Man</cell><cell>33.9854</cell><cell>31.8944</cell><cell>25.2846</cell><cell>21.3565</cell></row><row><cell>6</cell><cell>Ship</cell><cell>36.3454</cell><cell>30.8458</cell><cell>24.3655</cell><cell>22.6794</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Performance evaluation of the proposed module based time and BER</figDesc><table><row><cell>Image</cell><cell>Time</cell><cell>BER</cell><cell>Image</cell><cell>Time</cell><cell>BER</cell></row><row><cell>Couple</cell><cell>1.4056949</cell><cell>0.0003052</cell><cell>Lena</cell><cell>1.4527804</cell><cell>0.0003032</cell></row><row><cell>Barbara</cell><cell>1.4202456</cell><cell>0.0003089</cell><cell>Man</cell><cell>1.5079328</cell><cell>0.0003084</cell></row><row><cell>Camera-man</cell><cell>1.5236545</cell><cell>0.0003022</cell><cell>Ship</cell><cell>1.5636474</cell><cell>0.0003062</cell></row><row><cell cols="2">Table 6 Performance of MSE, RMSE, and MAE</cell><cell>Images</cell><cell>MSE</cell><cell>RMSE</cell><cell>MAE</cell></row><row><cell></cell><cell></cell><cell>Barbara</cell><cell>340.234</cell><cell>18.4454</cell><cell>14.7186</cell></row><row><cell></cell><cell></cell><cell>Cameraman</cell><cell>555.099</cell><cell>23.5605</cell><cell>18.8618</cell></row><row><cell></cell><cell></cell><cell>Couple</cell><cell>208.205</cell><cell>14.4296</cell><cell>11.5139</cell></row><row><cell></cell><cell></cell><cell>Ship</cell><cell>228.242</cell><cell>15.1077</cell><cell>11.9529</cell></row><row><cell></cell><cell></cell><cell>Lena</cell><cell>268.644</cell><cell>16.3904</cell><cell>12.9067</cell></row><row><cell></cell><cell></cell><cell>Man</cell><cell>287.221</cell><cell>16.9476</cell><cell>13.417</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 7</head><label>7</label><figDesc>Performance of SER</figDesc><table><row><cell>Images</cell><cell>SER</cell></row><row><cell>Barbara</cell><cell>8.46127 × e -05</cell></row><row><cell>Cameraman</cell><cell>8.462147 × e -05</cell></row><row><cell>Couple</cell><cell>8.46185 × e -05</cell></row><row><cell>Ship</cell><cell>8.46156 × e -05</cell></row><row><cell>Lena</cell><cell>8.46173 × e -05</cell></row><row><cell>Man</cell><cell>8.46121 × e -05</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 8</head><label>8</label><figDesc>Performance of SER</figDesc><table><row><cell>Images</cell><cell>Pearson</cell><cell>Spearman</cell><cell>Kendall</cell></row><row><cell>Barbara</cell><cell>0.931310</cell><cell>0.933131</cell><cell>0.773216</cell></row><row><cell>Cameraman</cell><cell>0.955553</cell><cell>0.896281</cell><cell>0.720296</cell></row><row><cell>Couple</cell><cell>0.933510</cell><cell>0.913297</cell><cell>0.753469</cell></row><row><cell>Ship</cell><cell>0.932259</cell><cell>0.863025</cell><cell>0.695773</cell></row><row><cell>Lena</cell><cell>0.935225</cell><cell>0.937098</cell><cell>0.780140</cell></row><row><cell>Man</cell><cell>0.925844</cell><cell>0.928689</cell><cell>0.762114</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 10</head><label>10</label><figDesc></figDesc><table><row><cell>Moment generating function value</cell><cell>Images</cell><cell>MGF</cell></row><row><cell></cell><cell>Barbara</cell><cell>1.06838 × e 07</cell></row><row><cell></cell><cell>Cameraman</cell><cell>6.80244 × e 07</cell></row><row><cell></cell><cell>Couple</cell><cell>5.22359 × e 07</cell></row><row><cell></cell><cell>Ship</cell><cell>8.40572 × e 07</cell></row><row><cell></cell><cell>Lena</cell><cell>6.7065 × e 07</cell></row><row><cell></cell><cell>Man</cell><cell>6.21233 × e 07</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 11</head><label>11</label><figDesc></figDesc><table><row><cell></cell><cell cols="2">BER versus PSNR</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Couple</cell><cell>Barbara</cell><cell>Cameraman</cell><cell>Lena</cell><cell>Man</cell><cell>Ship</cell></row><row><cell>PSNR</cell><cell>42</cell><cell>42</cell><cell>33</cell><cell>42</cell><cell>41</cell><cell>42</cell></row><row><cell></cell><cell>41</cell><cell>40</cell><cell>31</cell><cell>39</cell><cell>39</cell><cell>36</cell></row><row><cell></cell><cell>39</cell><cell>37</cell><cell>30</cell><cell>36</cell><cell>35</cell><cell>34</cell></row><row><cell></cell><cell>36</cell><cell>34</cell><cell>27</cell><cell>31</cell><cell>31</cell><cell>30</cell></row><row><cell></cell><cell>35</cell><cell>29</cell><cell>24</cell><cell>26</cell><cell>25</cell><cell>27</cell></row><row><cell>BER</cell><cell>0.0305 × e</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 12</head><label>12</label><figDesc></figDesc><table><row><cell>Comparison of BER along the existing techniques</cell><cell>Methods</cell><cell>Lena</cell><cell>Barbara</cell><cell>Man</cell></row><row><cell></cell><cell>Singh et al. [28]</cell><cell>0.02</cell><cell>0</cell><cell>0.01</cell></row><row><cell></cell><cell cols="2">Hybrid water marking [29] 0.01</cell><cell>0</cell><cell>0.005</cell></row><row><cell></cell><cell>JSCC</cell><cell>0.015</cell><cell>0.0145</cell><cell>0.1</cell></row><row><cell></cell><cell>ES</cell><cell>0.0.056</cell><cell>0.075</cell><cell>0.078</cell></row><row><cell></cell><cell>DP</cell><cell>0.056</cell><cell>0.0075</cell><cell>00.075</cell></row><row><cell></cell><cell>DP and BB</cell><cell>0.0781</cell><cell>0</cell><cell>0.089</cell></row><row><cell></cell><cell>Proposed</cell><cell cols="2">0.0003032 0.0003089</cell><cell>0.0003054</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head>Table 13 Comparison</head><label>13</label><figDesc></figDesc><table><row><cell>of PSNR along the existing techniques</cell><cell>Methods</cell><cell>Lena</cell><cell>Barbara</cell><cell>Man</cell></row><row><cell></cell><cell>Peak to signal noise ratio</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Singh et al. [28]</cell><cell>37.23</cell><cell>28.35</cell><cell>26.85</cell></row><row><cell></cell><cell>Hybrid water marking [29]</cell><cell>31.06</cell><cell>26.86</cell><cell>27.86</cell></row><row><cell></cell><cell>JSCC</cell><cell>36.20</cell><cell>32.87</cell><cell>35.92</cell></row><row><cell></cell><cell>ES</cell><cell>27.48</cell><cell>29.95</cell><cell>32.65</cell></row><row><cell></cell><cell>DP</cell><cell>29.08</cell><cell>31.95</cell><cell>31.88</cell></row><row><cell></cell><cell>DP and BB</cell><cell>29.01</cell><cell>31.65</cell><cell>34.83</cell></row><row><cell></cell><cell>Proposed</cell><cell>41.9455</cell><cell>41.7718</cell><cell>41.154</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11"><head>Table 3</head><label>3</label><figDesc>demonstrates the outcome of PSRN, SNR and Channel capacity parameters for different images tested.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12"><head>Table 14</head><label>14</label><figDesc></figDesc><table><row><cell>Comparison of communication time along the existing techniques</cell><cell>Methods</cell><cell>Time con-sumption (ms)</cell></row><row><cell></cell><cell>JPEC2000</cell><cell>366</cell></row><row><cell></cell><cell>SS</cell><cell>900</cell></row><row><cell></cell><cell>DCT</cell><cell>473</cell></row><row><cell></cell><cell>SPIHT</cell><cell>331</cell></row><row><cell></cell><cell>JPEG</cell><cell>544</cell></row><row><cell></cell><cell>Proposed</cell><cell>275</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_13"><head>Table 15</head><label>15</label><figDesc>Comparison of energy consumption along the existing techniques</figDesc><table><row><cell>Methods</cell><cell>Energy consumption</cell><cell>% Energy saving</cell></row><row><cell></cell><cell>(mJ)</cell><cell></cell></row><row><cell>Lucire et al. [31]</cell><cell>1252.6</cell><cell>87.47</cell></row><row><cell>Nasri et al. [32]</cell><cell>1252.6</cell><cell>87.47</cell></row><row><cell>WMSN</cell><cell>411.3</cell><cell>95.88</cell></row><row><cell>Proposed</cell><cell>386.9</cell><cell>98.54</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_0"><p>Research Analyst and Data Scientists, University of Technology, Pune, India</p></note>
+		</body>
+		<back>
+
+			
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Funding No funding.</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Declarations</head></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest All authors declares that they has no conflict of interest.</head><p>Ethical approval This article does not contain any studies along human participants performed through any of the authors. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Authors and Affiliations</head><p>Bilal Alhayani  </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Image transmission through wireless channel: A review</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chandra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bansal</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/icpeices.2016.7853121</idno>
+		<ptr target="https://doi.org/10.1109/icpeices.2016.7853121" />
+	</analytic>
+	<monogr>
+		<title level="m">IEEE 1st ınternational conference on power electronics, ıntelligent control and energy systems (ICPEICES)</title>
+		<imprint>
+			<date type="published" when="2016">2016. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Application of ınternet of things for smart precision farming: Solutions and challenges</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>Mahajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Badarla</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Science and Technology</title>
+		<imprint>
+			<biblScope unit="page" from="37" to="45" />
+			<date type="published" when="2018">2018. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Haar wavelet based approach for ımage compression and quality assessment of compressed ımage</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Talukder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Harada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IAENG International Journal of Applied Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Film grain noise superimposition for film grain management</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hepper</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICCE.2014.6775992</idno>
+		<ptr target="https://doi.org/10.1109/ICCE.2014.6775992" />
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="252" to="255" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Multimedia cloud transmission and storage system based on internet of things</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lv</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11042-015-2967-9</idno>
+		<ptr target="https://doi.org/10.1007/s11042-015-2967-9" />
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools and Applications</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="17735" to="17750" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Compressive sensing: From theory to applications, a survey</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Qaisar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Bilal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Iqbal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Naureen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/JCN.2013.000083</idno>
+		<ptr target="https://doi.org/10.1109/JCN.2013.000083" />
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Communications and Networks</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="443" to="456" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A review of compressive sensing in information security field</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>He</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/access.2016.2569421</idno>
+		<ptr target="https://doi.org/10.1109/access.2016.25694" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="2507" to="2519" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A unified approach to sparse signal processing</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Marvasti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Amini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Haddadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Soltanolkotabi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">H</forename><surname>Khalaj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aldroubi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chambers</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/1687-6180-2012-44</idno>
+		<ptr target="https://doi.org/10.1186/1687-6180-2012-44" />
+	</analytic>
+	<monogr>
+		<title level="j">EURASIP Journal on Advances in Signal Processing</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Analysis of energy efficiency of compressive sensing in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Karakus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Gurbuz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Tavli</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/jsen.2013.2244036</idno>
+		<ptr target="https://doi.org/10.1109/jsen.2013.2244036" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Sensors Journal</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1999" to="2008" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Image compressive sensing recovery via collaborative sparsity</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/jetcas.2012.2220391</idno>
+		<ptr target="https://doi.org/10.1109/jetcas.2012.2220391" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Journal on Emerging and Selected Topics in Circuits and Systems</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="380" to="391" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Compressive sensing and structured random matrices</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fornasier</surname></persName>
+		</author>
+		<idno type="DOI">10.1515/9783110226157.1</idno>
+		<ptr target="https://doi.org/10.1515/9783110226157.1" />
+	</analytic>
+	<monogr>
+		<title level="s">Radon Series on Computational and Applied Mathematics</title>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Signal recovery from random measurements via orthogonal matching pursuit</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Tropp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Gilbert</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/tit.2007.909108</idno>
+		<ptr target="https://doi.org/10.1109/tit.2007.909108" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Information Theory</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="4655" to="4666" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Near-optimal signal recovery from random projections: Universal encoding strategies</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Candes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tao</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/tit.2006.885507</idno>
+		<ptr target="https://doi.org/10.1109/tit.2006.885507" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Information Theory</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="5406" to="5425" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Low-rank plus sparse matrix decomposition for accelerated dynamic MRI along separation of background and dynamic components</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Otazo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Candès</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Sodickson</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mrm.25240</idno>
+		<ptr target="https://doi.org/10.1002/mrm.25240" />
+	</analytic>
+	<monogr>
+		<title level="j">Magnetic Resonance in Medicine</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1125" to="1136" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Toeplitz compressed sensing matrices along applications to sparse channel estimation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Haupt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">U</forename><surname>Bajwa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Raz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nowak</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/tit.2010.2070191</idno>
+		<ptr target="https://doi.org/10.1109/tit.2010.2070191" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Information Theory</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="5862" to="5875" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Compressive sensing based image compression-encryption using Novel 1D-Chaotic map</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ponuma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Amutha</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11042-017-5378-2</idno>
+		<ptr target="https://doi.org/10.1007/s11042-017-5378-2" />
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools and Applications</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="19209" to="19234" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Ultra-wideband compressed sensing: Channel estimation</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Paredes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Arce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/jstsp.2007.906657</idno>
+		<ptr target="https://doi.org/10.1109/jstsp.2007.906657" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Journal of Selected Topics in Signal Processing</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="383" to="395" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Highly undersampled magnetic resonance image reconstruction via homotopic 0 -minimization</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Trzasko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Manduca</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TMI.2008.927346</idno>
+		<ptr target="https://doi.org/10.1109/TMI.2008.927346" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE transactions on Medical Imaging</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="106" to="121" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Mitigating multipath fading through channel hopping in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Watteyne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lanzisera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mehta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pister</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICC.2010.5502548</idno>
+		<ptr target="https://doi.org/10.1109/ICC.2010.5502548" />
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="1" to="5" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Spread spectrum access methods for wireless communications</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kohno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Meidan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Milstein</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/35.339882</idno>
+		<ptr target="https://doi.org/10.1109/35.339882" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Communications Magazine</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="58" to="67" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Efficient image transmission along multi-carrier CDMA</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>El-Bakary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Hassan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Zahran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>El-Dolil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">E A</forename><surname>El-Samie</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11277-012-0622-6</idno>
+		<ptr target="https://doi.org/10.1007/s11277-012-0622-6" />
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Personal Communications</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="979" to="994" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Image transmission over erroneous wireless mobile channels using HQAM techniques</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Almagdob</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Abdurrhman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Nasir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Abughres</surname></persName>
+		</author>
+		<idno type="DOI">10.51984/jopas.v19i3.773</idno>
+		<ptr target="https://doi.org/10.51984/jopas.v19i3.773" />
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Pure &amp; Applied Sciences</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="7" to="12" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Separable data hiding in encrypted image based on compressive sensing and discrete Fourier transform</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yin</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11042-016-3971-4</idno>
+		<ptr target="https://doi.org/10.1007/s11042-016-3971-4" />
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools and Applications</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<biblScope unit="page" from="20739" to="20753" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">A compression sensing and noise-tolerant image encryption scheme based on chaotic maps and orthogonal matrices</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">O</forename><surname>Hwang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Khan</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00521-016-2405-6</idno>
+		<ptr target="https://doi.org/10.1007/s00521-016-2405-6" />
+	</analytic>
+	<monogr>
+		<title level="j">Neural Computing and Applications</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="953" to="967" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Capacity of Burst Noise-Erasure Channels Along and Without Feedback and Input Cost</title>
+		<idno type="DOI">10.1109/tit.2018.2862354</idno>
+		<ptr target="https://doi.org/10.1109/tit.2018.2862354" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Information Theory</title>
+		<imprint>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Performances of orthogonal wavelet division multiplex (OWDM) system under AWGN, Rayleigh &amp; Ricean channel conditions</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tarique</surname></persName>
+		</author>
+		<idno type="DOI">10.5121/ijcnc.2016.8307</idno>
+		<ptr target="https://doi.org/10.5121/ijcnc.2016.8307" />
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computer Networks and Communications</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Reconstruction of complex network based on the noise via QR decomposition and compressed sensing</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kurths</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41598-017-15181-3</idno>
+		<ptr target="https://doi.org/10.1038/s41598-017-15181-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Scientific Reports</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Improved hybrid algorithm for robust and imperceptible multiple watermarking using digital images</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Singh</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11042-016-3514-z</idno>
+		<ptr target="https://doi.org/10.1007/s11042-016-3514-z" />
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools and Applications</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="8881" to="8900" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Hybrid technique for robust and imperceptible multiple watermarking using medical images</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dave</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mohan</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11042-015-2754-7</idno>
+		<ptr target="https://doi.org/10.1007/s11042-015-2754-7" />
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia Tools and Applications</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="8381" to="8401" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">CL-IoT: Cross-layer Internet of Things protocol for intelligent manufacturing of smart farming</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">B</forename><surname>Mahajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Badarla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Junnarkar</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s12652-020-02502-0</idno>
+		<ptr target="https://doi.org/10.1007/s12652-020-02502-0" />
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Ambient Intelligence and Humanized Computing</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Energy efcient image transmission in sensor networks</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lecuire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Duran-Faundez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Krommenacker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Sensor Networks</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="37" to="47" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Adaptive image transfer for wireless sensor networks (WSN)</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nasri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Helali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sghaier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Maaref</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE 5th International conference on design and technology of integrated systems in nanoscale era (DTIS)</title>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="1" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><surname>Dr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Hemant</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Mahajan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Deep Learning, Artificial Intelligence, and Security</title>
+		<editor>
+			<persName><forename type="first">B</forename><surname>Sc</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2003">2003. 2006. 2008</date>
+			<pubPlace>India; India; Pune (India) since</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Comp. Sci.) degree from Savitribai Phule Pune University ; Comp. Sci.) from Savitribai Phule Pune University ; Computer Science from the University of Technology (UOT), India</orgName>
+		</respStmt>
+	</monogr>
+	<note>M. Sc.. He is currently pursuing doctorate in. He is working as a research analyst and data scientist in Godwit Technologies. He is having 12+ years of experience in Research and Development across different domains. His area of expertise includes but is not limited to wireless communications, network security, image processing, biomedical, data mining, cloud computing, signal (audio/video) processing, and machine learning. His current area of interest is IoT-enabled communications, Healthcare 4.0, Industry 4.0. 7 articles in peer reviewed journals and 5 Indian patents</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

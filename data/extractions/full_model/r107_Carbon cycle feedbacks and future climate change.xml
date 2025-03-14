@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Carbon cycle feedbacks and future climate change</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Pierre</forename><surname>Friedlingstein</surname></persName>
+							<email>p.friedlingstein@exeter.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">College of Engineering</orgName>
+								<orgName type="department" key="dep2">Mathematics and Physical Sciences</orgName>
+								<orgName type="institution">University of Exeter</orgName>
+								<address>
+									<postCode>EX4 4QE</postCode>
+									<settlement>Exeter</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Carbon cycle feedbacks and future climate change</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8E7108ED9D8A6D72F122A35FAA2663BC</idno>
+					<idno type="DOI">10.1098/rsta.2014.0421</idno>
+					<note type="submission">Accepted: 5 August 2015</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:59+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>global carbon cycle</term>
+					<term>climate change</term>
+					<term>climate-carbon cycle feedbacks</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Climate and carbon cycle are tightly coupled on many timescales, from interannual to multi-millennial timescales. Observations always evidence a positive feedback, warming leading to release of carbon to the atmosphere; however, the processes at play differ depending on the timescales. State-of-theart Earth System Models now represent these climate-carbon cycle feedbacks, always simulating a positive feedback over the twentieth and twentyfirst centuries, although with substantial uncertainty. Recent studies now help to reduce this uncertainty. First, on short timescales, El Niño years record larger than average atmospheric CO 2 growth rate, with tropical land ecosystems being the main drivers. These climate-carbon cycle anomalies can be used as emerging constraint on the tropical land carbon response to future climate change. Second, centennial variability found in last millennium records can be used to constrain the overall global carbon cycle response to climatic excursions. These independent methods point to climate-carbon cycle feedback at the low-end of the Earth System Models range, indicating that these models overestimate the carbon cycle sensitivity to climate change. These new findings also help to attribute the historical land and ocean carbon sinks to increase in atmospheric CO 2 and climate change.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The physical mechanisms describing the link between change in atmospheric CO 2 concentration and global temperature were first described more than a century ago <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. Over the second part of the twentieth century, much evidence has confirmed the human perturbation of the global carbon cycle and its potentially large implication on the climate system.</p><p>2015 The Author(s) Published by the Royal Society. All rights reserved. Probably the most striking evidence was the atmospheric measurements of carbon dioxide initiated by R. Revelle and C.D. Keeling in the late 1950s <ref type="bibr" target="#b2">[3]</ref>. The CO 2 record at the Mauna Loa Observatory, now known as the Keeling Curve, showed two prominent features of the global carbon cycle. First, the seasonal pulse of the terrestrial biosphere faithfully captured by atmospheric CO 2 , with lower than average atmospheric CO 2 during the Northern Hemisphere summer and conversely during the winter. The second unambiguous signal from the Keeling Curve is the gradual increase in atmospheric CO 2 concentration from year to year. When Keeling started the measurements at Mauna Loa, atmospheric CO 2 concentration was around 315 ppm, it passed the symbolic 400 ppm level in 2014, with a current rate of CO 2 increase of about 2 ppm per year <ref type="bibr" target="#b3">[4]</ref>.</p><p>Additional, as powerful, evidence came from ice cores measurements in the early 1980s; spectrometric measurements of air bubbles captured in ice cores allowed to reconstruct the atmospheric CO 2 concentration <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b5">6]</ref>. Parallel measurements of isotopic composition of the ice allowed the Antarctic temperature to be inferred. The ice-core measurements were essential (i) to demonstrate how unusual are the current level of atmospheric CO 2 and (ii) to illustrate how closely CO 2 and temperature varied in the past. Ice-core records are now going back 800 000 years, spanning eight glacial-interglacial cycles and clearly indicate that 'The atmospheric concentrations of carbon dioxide, methane, and nitrous oxide have increased to levels unprecedented in at least the last 800 000 years' <ref type="bibr" target="#b6">[7]</ref>.</p><p>Climate models are the third essential elements of the climate story, their development started in the 1960s <ref type="bibr" target="#b7">[8]</ref> being continuously improved since, and used to primarily address two key questions. (i) Can we attribute the climate change observed over the instrumental period to human activities or could it be due to natural variations of the Earth system. The answer to that question is now unambiguous: 'human influence on the climate system is clear', and more precisely, 'It is extremely likely <ref type="foot" target="#foot_0">1</ref> that more than half of the observed increase in global average surface temperature from 1951 to 2010 was caused by the anthropogenic increase in greenhouse gas concentrations and other anthropogenic forcings together' <ref type="bibr" target="#b6">[7]</ref>. (ii) What is the response of the climate system to an increase in greenhouse gases concentrations and other forcing agents? In the early days, this was investigated looking at the response of atmospheric general circulation models (GCMs) to a doubling of the atmospheric CO 2 concentration <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b9">10]</ref>. Nowadays, the climate community uses Earth System Models (ESMs), which couple the atmosphere-ocean-land physical system to the global carbon cycle and atmospheric chemistry (including aerosols). These models simulate the transient response of the climate system over the twentieth and twentyfirst centuries, assuming different scenarios of greenhouse gases and aerosols emissions for the future <ref type="bibr" target="#b10">[11]</ref>.</p><p>Despite the tremendous effort from the climate community to address that second question of central policy relevance, the uncertainty on climate projection remains high. There is obviously a large uncertainty in the future of greenhouse gases emissions, depending on future socioeconomic development, climate mitigation policies, etc. However, there is a large uncertainty coming from the climate response itself, for a given change in the radiative forcing. That uncertainty, primarily due to physical feedbacks, has been a major concern for several decades. In 1979, the US National Academy of Science report led by J. Charney entitled 'Carbon dioxide and Climate, a scientific assessment' estimated 'the most probable global warming for a doubling of atmospheric CO 2 to be near 3 K with a probable error of ±1.5 K <ref type="bibr" target="#b11">[12]</ref>. The latest estimate reported in the Intergovernmental Panel on Climate Change Fifth Assessment Report (IPCC AR5) happens to be identical with an equilibrium climate sensitivity<ref type="foot" target="#foot_1">foot_1</ref> likely range of 1.5-4.5 K <ref type="bibr" target="#b6">[7]</ref>. A large fraction of this uncertainty comes from the unknown fate of clouds in a warming world and their net radiative forcing <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b13">14]</ref>.</p><p>The 'other side of the coin', i.e. the effect of climate change on atmospheric CO 2 only emerged as a scientific concern in the late 1980s-early 1990s. Probably, the first paper that described and attempted to quantify the climate-carbon cycle feedback was written by Lashof in 1989 <ref type="bibr" target="#b14">[15]</ref>. Lashof identified several biogeochemical feedbacks defined as 'those that involve the response of the biosphere and components of the geosphere not considered in typical climate models'. He listed 10 potential biogeochemical feedbacks involving ocean and terrestrial systems (see table <ref type="table" target="#tab_0">1</ref> in <ref type="bibr" target="#b14">[15]</ref>). With great intuition, he wrote, 'ideally these feedbacks should be analysed by incorporating their effects . . . into a dynamic model that includes the general circulation of the atmosphere and oceans, marine chemistry and biology, atmospheric chemistry, and terrestrial ecosystems. Such an approach would allow explicit consideration of the time dependence of each feedback process, but is not feasible at this time'. Nevertheless, he provided an original, back of the envelope calculation of these biogeochemical feedbacks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Modelling 'evidences'</head><p>Global simulations of biogeochemical processes embedded in climate models only appeared at the turn of the century <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b16">17]</ref>. These new models coupled standard GCMs with land and ocean carbon cycle models in order to interactively simulate the evolution of atmospheric CO 2 (as opposed to prescribe it in a standard GCMs). These developments occurred almost simultaneously at the Hadley Centre, UK and at the Institut Pierre-Simon Laplace (IPSL), France. Although these new models and their main result, there is a positive feedback between climate change and the global carbon cycle, had a profound impact on the climate modelling community; in retrospect, they were only the natural outcome of growing evidences that pointed to the sensitivity of the global carbon cycle to climate change.</p><p>Both on the ocean and on the land side, global models have been developed, starting from simple box models in the early days <ref type="bibr" target="#b17">[18,</ref><ref type="bibr" target="#b18">19]</ref>, to full three-dimensional models for the ocean biogeochemistry <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref> and spatially explicit models of terrestrial ecosystems <ref type="bibr" target="#b21">[22,</ref><ref type="bibr" target="#b22">23]</ref>. The first objective of these models was to quantify the contribution of ocean and land ecosystems to the current or historical global carbon budget. Indeed, C. D. Keeling was the first to quantify the airborne fraction, the fraction of the anthropogenic CO 2 emissions that remains in the atmosphere, to be about 60% of the fossil fuel emissions <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b23">24]</ref>. That implied that the ocean and the terrestrial ecosystems sequestered a significant fraction of the perturbed atmospheric CO 2 . It was initially believed that the ocean was the main sink of carbon until it became clear that a land sink was needed to close the carbon budget <ref type="bibr" target="#b24">[25]</ref>. It is now admitted that both the land and the ocean play a comparable role, each removing from the atmosphere about 25% of the anthropogenic CO 2 emissions <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b26">27]</ref>.</p><p>However, the obvious question is whether the ocean and the land ecosystems will continue to provide such a service to humanity, removing about half of the CO 2 emitted by human activities. Without these land and ocean sinks, the atmospheric CO 2 increase would be about twice as fast; current atmospheric CO 2 concentration would be already above 500 ppm, inducing a warming of more than 2 K above pre-industrial level (assuming a median estimate of 3 K for the climate sensitivity). There was, and there still is, an urgent need to better understand the process governing these carbon sinks and whether they would continue to operate in the future. Global land and ocean models were used to investigate the fate of ocean or land carbon storage under future change in environmental conditions, mainly elevated atmospheric CO 2 and climate change. Global ocean models forced with a scenario of atmospheric CO 2 over the twenty-first century would simulate a continuous increase in ocean CO 2 uptake, driven by the growing imbalance of CO 2 partial pressure between the atmosphere and the ocean surface. When the same models would additionally account for climate change (changes in ocean temperature, salinity, ocean circulation, etc.), they would show a significant reduction of carbon uptake, primarily driven by the ocean stratification, and reduced ocean thermohaline circulation <ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref>. Terrestrial models also investigated the effect of CO 2 and climate, always agreeing on the positive response of land carbon storage to atmospheric CO 2 increase (the so-called fertilization effect), but not reaching consensus on the terrestrial ecosystem response to the associated climate change. Some earlier studies found an enhanced terrestrial productivity <ref type="bibr" target="#b30">[31]</ref> while later studies found the opposite <ref type="bibr" target="#b31">[32,</ref><ref type="bibr" target="#b32">33]</ref>. The third assessment report of IPCC concluded that, by mid-twenty-first century, climate change would reduce the land carbon uptake by 21% to 43% and the ocean carbon uptake by 6% to 25%, relative to CO 2 only driven uptakes <ref type="bibr" target="#b33">[34]</ref>. This IPCC range was very conservative, as further discussed below.</p><p>Nevertheless, all these studies gave a clear signal to the climate modelling community: one cannot simulate future climate change assuming atmospheric CO 2 can be known, a priori, from the CO 2 emissions trajectory. The evolution of atmospheric CO 2 results from the balance between the CO 2 emissions and the land and ocean carbon sinks, these last ones being a complex function of atmospheric CO 2 and climate. Hence the CO 2 -climate system is coupled, future climate change depends on atmospheric CO 2 increase (and other forcing agents); but in return, atmospheric CO 2 increase depends on climate change.</p><p>The two above-mentioned coupled climate-carbon cycle models from the Hadley Centre and the IPSL modelling groups just did this. Both modelling groups performed similar simulations; first a fully coupled twentieth and twenty-first centuries run with twenty-first century CO 2 emissions following either the IPCC IS92a (Hadley) or the SRESA2 (IPSL) scenario; second, an uncoupled run with the same emission scenario, but holding the radiative forcing from CO 2 at pre-industrial level. In both runs, the models compute atmospheric CO 2 as the difference between the prescribed emissions and the simulated land and ocean carbon sinks. However, in the coupled runs the land and ocean carbon cycle are 'seeing' both CO 2 increase and climate change (as the climate evolves as the simulated atmospheric CO 2 increases); while in the uncoupled runs the land and ocean carbon cycle are only 'seeing' the atmospheric CO 2 increase (as the climate is held at its pre-industrial level). From the coupled and uncoupled simulation, one can compare the simulated atmospheric CO 2 ; any difference will be due to the effect of climate change on the carbon sinks. Indeed, the difference in simulated atmospheric CO 2 is a measure of the gain of the climate-carbon cycle feedback:</p><formula xml:id="formula_0">g = C cou a -C unc a C cou a ,<label>(2.1)</label></formula><p>where C cou a and C unc a are the increase in atmospheric CO 2 relative to pre-industrial in the coupled and uncoupled simulations, respectively, and g is the gain of the climate-carbon cycle system. The gain of the Hadley centre model was about 0.4 while the gain of the IPSL model amounted to 0.17. In units of atmospheric CO 2 , the Hadley model simulated a CO 2 concentration about 250 ppm higher in the coupled simulation than in the uncoupled simulation, while the IPSL model 'only' simulated an 75 ppm higher concentration in the coupled simulation <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b35">36]</ref>.</p><p>This wide range, although only based on two models, generated a worldwide interest in climate-carbon cycle modelling. Quite rapidly the Climate Carbon Cycle Model Intercomparison Project (C 4 MIP) was set up <ref type="bibr" target="#b36">[37,</ref><ref type="bibr" target="#b37">38]</ref> and within less than 5 years, 11 models had performed similar experiments <ref type="bibr" target="#b38">[39]</ref>. The bad news is that the uncertainty increased, with some models simulating near zero climate-carbon cycle gain (although still positive). Most of the uncertainty originated from the land biosphere and its response to atmospheric CO 2 increase and climate change. The fertilization effect, that largely contributes to the current land carbon sinks showed a factor of 10 uncertainty in the future, with a sensitivity (called β l ) ranging by 2100 between 0.2 and 2.8 GtC per ppm. Likewise, the climate effect on the carbon cycle (called γ l ) showed a similar uncertainty, ranging between -20 and -177 GtC per K. Mathematically, these two terms can be estimated from the coupled and uncoupled simulations, assuming that the carbon cycle responds linearly to atmospheric CO 2 and climate change: </p><formula xml:id="formula_1">C l = β l C a + γ l T, (<label>2</label></formula><formula xml:id="formula_2">C o = β o C a + γ o T. (2.</formula><p>3)</p><p>The sensitivity terms β and γ for the land and ocean can be diagnosed successively, solving for β from the uncoupled simulation (above equations where T equals zero), and then solving for γ from the coupled simulation (above equations). Despite the large uncertainty, all models agreed that climate change would reduce carbon storage (i.e. γ is negative), primarily due to an enhancement of soil organic decomposition under a warming world <ref type="bibr" target="#b38">[39]</ref>. Almost 10 years later, within the Coupled Model Intercomparison Project Phase 5 (CMIP5), a similar analysis was performed with CMIP5 ESMs, giving essentially the same conclusion, the land carbon cycle response to atmospheric CO 2 and climate change is still poorly constrained <ref type="bibr" target="#b39">[40]</ref>. New ESMs now include a representation of the nitrogen cycle. This has two opposite effects on land carbon storage. First, accounting for nitrogen leads to a lower response to atmospheric CO 2 ; as nitrogen limitations reduce the photosynthesis enhancement under increasing atmospheric CO 2 . Second, nitrogen also reduces the carbon loss due to climate change; as soil warming leads to increased nitrogen mineralization, hence increasing nitrogen availability to the plant <ref type="bibr" target="#b40">[41,</ref><ref type="bibr" target="#b41">42]</ref>.</p><p>The Summary for Policy Makers of the Working Group I of the IPCC AR5 headlined that 'Climate change will affect carbon cycle processes in a way that will exacerbate the increase of CO 2 in the atmosphere (high confidence)'. More specifically, it stated 'Based on Earth System Models, there is high confidence that the feedback between climate and the carbon cycle is positive in the 21st century; that is, climate change will partially offset increases in land and ocean carbon sinks caused by rising atmospheric CO 2 . As a result more of the emitted anthropogenic CO 2 will remain in the atmosphere. A positive feedback between climate and the carbon cycle on century to millennial timescales is supported by palaeoclimate observations and modelling.'</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Observational constraints</head><p>Clearly, models alone are not helping to constrain the carbon cycle feedbacks; observations are needed to reduce uncertainties. However, there is a fundamental issue when trying to constrain feedbacks from observations. As by definition, a feedback is estimated from the difference between a coupled system and the theoretical system where this feedback does not operate, one cannot directly observe and measure a feedback. Observations are made in the real world where all feedbacks operate. Nevertheless, there are at least two methods that have been used to help constraining the carbon cycle feedbacks.</p><p>The first method makes use of concurrent records of atmospheric CO 2 and temperature over given timescales (figure <ref type="figure" target="#fig_3">1</ref>). The analysis of the covariance of the two records informs on relationship between the climate system and the carbon cycle. The first who explored that route was G. Woodwell <ref type="bibr" target="#b42">[43,</ref><ref type="bibr" target="#b43">44]</ref>, who used past records of atmospheric CO 2 and temperature to try to infer the strength of the climate-carbon cycle feedback. Using the ice-core data of atmospheric CO 2 and Antarctic temperature from the Vostok record over the last 150 000 years, he quantified the strength of climate-carbon cycle feedback <ref type="bibr" target="#b5">[6]</ref>. Ice-core data clearly show the natural swing between glacial stages characterized cold temperature associated with low atmospheric CO 2 concentration and interglacial stages characterized with warmer temperature and higher CO 2 levels. Woodwell wrote 'the record for the Vostok core suggests that a change of 1 K in this period was equivalent to a change of 10-15 ppmv of carbon dioxide or about 25 GtC in the atmosphere'. Such analysis has been reproduced since by several authors, giving essentially the same estimate <ref type="bibr" target="#b44">[45,</ref><ref type="bibr" target="#b45">46]</ref>.</p><p>The sensitivity estimate from ice-core records, i.e. a change in atmospheric CO 2 due to a change in global temperature is not directly comparable to γ , the climate-carbon cycle sensitivity as estimated by ESMs.</p><p>The ice-core sensitivity describes an atmospheric CO 2 change while γ describes a change in land (or ocean) carbon stores. These two quantities are different as not all of carbon loss by the land and ocean reservoirs stays in the atmosphere forever; a large fraction is reabsorbed by these two reservoirs in response to the atmospheric concentration perturbation induced by this initial carbon release. For example, if the glacial-interglacial warming induces a release of carbon from the ocean, atmospheric CO 2 will increase, inducing a land and ocean uptake of carbon. What remains in the atmosphere, and hence measured from the ice-core record, is the final outcome of these concurrent processes. Mathematically this can be written as The implication is that one need to know the β factors to translate the change in atmospheric CO 2 per unit of warming into a change in carbon store per unit of warming (γ ). β is not directly observed, one needs a carbon cycle model to estimate it, and to make it more complicate, β changes with the timescale considered as it represents the uptake of carbon by land and ocean following an increase in atmospheric CO 2 . CO 2 is a complex gas in the sense that it does not have one single residence time in the atmosphere. Several processes occurring on dramatically different timescales are responsible for the removal of CO 2 from the atmosphere. Assume a step increase in atmospheric CO 2 , about 50% of this increase is still in the atmosphere after 100 years, about 20% is still in the atmosphere after 1000 years, and about 5-10% remains after 10 000 years <ref type="bibr" target="#b46">[47,</ref><ref type="bibr" target="#b47">48]</ref>.</p><formula xml:id="formula_3">C a T = ( C o+l / T) (1 + β o + β l ) , (<label>3</label></formula><p>The implication is that the estimate of 'about 25 GtC in the atmosphere per 1K' does not directly translate in an unequivocal change in the land and ocean reservoir. In addition, the glacialinterglacial changes in the carbon cycle involve processes, predominantly occurring in the ocean, not directly relevant for the anthropogenic perturbation of the twentieth and twenty-first century. The Vostok ice-core is an unambiguous indication that the carbon cycle does respond to climate change, it also confirms that there is a positive feedback on these long timescales, warming release carbon to the atmosphere, but it does not directly help constraining the carbon cycle feedback of the twenty-first century.</p><p>Much more encouraging is the analysis of the last millennium. The principle is the same as for glacial-interglacial cycles; ice-core records of the last millennium show variability of atmospheric CO 2 , of the order of a couple of ppm, associated with variability of the climate system <ref type="bibr" target="#b48">[49]</ref>. The last millennium record offers the advantage that climate and CO 2 fluctuations are relatively small, and operate on centennial timescales, i.e. more relevant for the current anthropogenic perturbation. However, as opposed to the glacial-interglacial cycles that are entirely natural, over the last millennium there is a possibility that the anthropogenic perturbation is already at play and contributes to the fluctuations in atmospheric CO 2 . In particular, it had been argued that early land-use change (mainly agriculture in Eurasia) had a significant impact on atmospheric CO 2 with large release of carbon (approx. 300 GtC) from early agriculture <ref type="bibr" target="#b49">[50]</ref>. However, it has since been shown that pre-industrial CO 2 emissions from land use were much lower (approx. 50 GtC at most) (e.g. <ref type="bibr" target="#b50">[51]</ref>) and were not a major concern in an analysis that focuses on variability rather than long-term trends. The study by Frank et al. <ref type="bibr" target="#b48">[49]</ref> combined three ice-core data with multiple reconstruction of temperature from tree ring data. They found a clear positive correlation emerging from the CO 2 and temperature datasets, allowing a quantification of the global carbon sensitivity to climate. They reported a C a / T (misleadingly named γ in their paper) of 7.7 ppm CO 2 per K warming, with a likely range of 1.7-21.4 ppm CO 2 per K. When compared with the C a / T simulated by the C 4 MIP models over the twentieth century, they concluded that their observation-based estimate was compatible with the lower end of the range simulated by the C 4 MIP models, i.e. large values of the climate-carbon cycle feedback were unlikely compatible with their finding.</p><p>A complete different approach, but still based on observations, uses the concept of emerging constraints. The approach relies on the finding that there is an emerging quasi-linear relationship between the response of tropical land carbon storage to twenty-first century warming (γ ) and the sensitivity of the year-to-year growth rate of atmospheric CO 2 to tropical temperature anomalies (called γ IAV ). As the latter is observed, this relationship allows to constraint γ over the twenty-first century <ref type="bibr" target="#b51">[52]</ref>. The rise of atmospheric CO 2 vary from year to year, and is due to climate variability such as the El Niño Southern Oscillation. This has been known for several decades, and attributed to the tropical land biosphere <ref type="bibr" target="#b52">[53,</ref><ref type="bibr">54]</ref>. ESMs do simulate interannual variability of atmospheric CO 2 in response to the simulated natural climate variability. The emerging relationship emerges as models that tend to simulate a weak tropical land carbon cycle response to ENSO anomalies (low γ IAV ) tend to simulate a weak tropical land carbon response to climate change over the twenty-first century (low γ ). Conversely, models with a large γ IAV simulate a large twenty-first century γ . This was first demonstrated for the earlier C 4 MIP models <ref type="bibr" target="#b51">[52]</ref>, and subsequently reproduced with the more recent CMIP5 ESMs <ref type="bibr" target="#b53">[55]</ref>. The observed sensitivity of the carbon cycle on interannual timescale, derived from the Mauna Loa atmospheric CO 2 records allows to constraint the tropical land γ to 53 ± 17 GtC per K warming. Again, this estimate is consistent with the lower end of the C 4 MIP and CMIP5 ESMs estimates.</p><p>These two, completely independent, approaches, one based on millennium variability, and one based on interannual variability agree on two important findings. First, the climate-carbon cycle feedback is positive; and second, the feedback is not as large as simulated by most of the comprehensive models, it is more likely to be in the lower end of the models range.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">What are we missing?</head><p>The emerging constraint presented above only applies for the tropical land carbon, as the interannual variability of atmospheric CO 2 is essentially dominated by tropical land ecosystems. One cannot rule out additional carbon cycle feedbacks arising from non-tropical ecosystems. In particular, permafrost ecosystems are 'the elephant in the room' of the global carbon cycle. Permafrost contains the largest amount of carbon on land, about 1700 GtC of organic soils are estimated for the northern permafrost regions <ref type="bibr" target="#b54">[56]</ref>. Global warming, exacerbated in high latitudes, is anticipated to induce a thawing of permafrost soils, potentially leading to decomposition of soil carbon currently isolated from the atmosphere. None of the C 4 MIP or CMIP5 models included permafrost carbon. Hence the estimations of the climate-carbon feedback for lands are probably conservative for high latitude ecosystems. The same applies for the observation-based estimates; the last millennium climate probably explores a too narrow range of climate variations to trigger large release of carbon from permafrost, and, as mentioned above, the emerging constraint is limited to tropical ecosystems.</p><p>Although not included in ESMs yet, permafrost ecosystems are now being represented in land surface models, and estimate of the potential release of carbon from these systems have been made recently <ref type="bibr" target="#b55">[57]</ref><ref type="bibr" target="#b56">[58]</ref><ref type="bibr" target="#b57">[59]</ref><ref type="bibr" target="#b58">[60]</ref>. Estimates vary widely due to uncertainty in the processes at play (rate of soil thawing, fine-scale processes, fraction of carbon released, potential mitigating role of nutrient, etc.). The IPCC AR5 concluded, 'There is high confidence that reductions in permafrost extent due to warming will cause thawing of some currently frozen carbon. However, there is low confidence on the magnitude of carbon losses through CO 2 and CH 4 emissions to the atmosphere, with a range from 50 to 250 GtC between 2000 and 2100 under the RCP8.5 scenario' <ref type="bibr" target="#b3">[4]</ref>. The climatepermafrost carbon gain is hence very uncertain; as the RCP8.5 emissions are about 2000 GtC for the twenty-first century, the permafrost carbon release, 50-250 GtC, translates into a gain ranging between 2.5% and 12.5%. CO 2 fertilization, i.e. the increase of terrestrial plants productivity as a response to atmospheric CO 2 increase, remains one of the major source of uncertainty in the CMIP5 ESMs carbon cycle projections <ref type="bibr" target="#b39">[40]</ref>. Although the basic process is relatively well understood: elevated CO 2 stimulates plant photosynthesis, increasing biomass production and hence carbon uptake, the quantification at the global scale remains poorly constrained. There are no long-term global observations of photosynthesis yet that could be used to evaluate models responses. In addition, the induced carbon sink does not only depends on the rate of increase of photosynthesis, it also depends on the residence time of carbon in biomass and soils, delaying the increase in heterotrophic decomposition. Surprisingly, CMIP5 ESMs showed a very wide range of residence time and hence global vegetation and soil carbon estimates <ref type="bibr" target="#b59">[61,</ref><ref type="bibr" target="#b60">62]</ref>. For example, simulated global soil carbon ranged between about 500 and 3000 GtC while the observation-based estimate is around 1300 GtC. This is clearly an area where models improvement and evaluation is essential and does not seem out of reach.</p><p>On a related topic, nitrogen control on terrestrial plant productivity and hence on carbon sink was not represented in any of the earlier C 4 MIP models. For CMIP5, it was introduced in only one land surface model, CLM, which was common to two CMIP5 ESMs (CESM and NorESM). These two models simulated a much lower CO 2 -carbon cycle sensitivity (β) and a much lower climate-carbon cycle sensitivity (γ ) than the carbon-only ESMs. Although such results were As mentioned earlier, direct observations of biogeochemical feedbacks or sensitivities (β, γ ) are by definition inexistent, one has to rely either on indirect evidences (correlations or emerging constraints) or on direct evidences of other quantities that potentially include other processes. For example, we have a reasonably good understanding of the global ocean and land carbon sinks, but the attribution of these sinks to CO 2 , increase, change in climate, atmospheric deposition of nutrients, or changes in land management cannot be directly measured. Nevertheless, there is hope that remote sensing of atmospheric CO 2 could provide better spatial and temporal coverage of atmospheric CO 2 and hence carbon sinks, allowing the attribution of their spatial-temporal patterns to their drivers, in a similar way that attribution of climate change.</p><p>Benchmarking of carbon cycle models is now possible, several datasets can be used to constrain global carbon cycle models, both for the land and the ocean <ref type="bibr" target="#b59">[61,</ref><ref type="bibr" target="#b61">63]</ref>. Although they cannot directly constrain the carbon cycle sensitivities, they can help evaluate to ability of models to simulate the mean state of the system, such as gross fluxes and reservoirs.</p><p>Finally, there are numerous other biological processes that can be affected by climate change, and potentially induce a feedback on the human induced warming, such as N 2 O emissions, isoprene and ozone chemistry, fires and aerosols emissions. A recent review of these candidates showed a very low confidence in their estimate as often based on very few studies, but fail to find large potential feedbacks others than the ones already discussed here <ref type="bibr" target="#b62">[64]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Putting the pieces together</head><p>Combining the model-based estimates of the carbon cycle feedbacks with the recent observationbased studies allows drawing several important conclusions from which one can tentatively revisit the historical global carbon budget (figure <ref type="figure" target="#fig_2">2</ref>).</p><p>The CO 2 -carbon cycle feedback is negative, both for land and ocean systems; an increase in CO 2 concentration induces an increase in land and ocean carbon uptake, mitigating the atmospheric growth rate of CO 2 .</p><p>The climate-carbon cycle feedback is positive, both for land and ocean systems; global warming induces a reduction of land and ocean carbon uptake, enhancing the atmospheric growth rate of CO 2 .</p><p>Over the historical period, the CO 2 -induced feedbacks are by far dominant; land and ocean act as strong carbon sinks.</p><p>Oceanic inventories confirm the large uptake of the global ocean, about 155 ± 30 GtC between 1750 and 2011 <ref type="bibr" target="#b63">[65,</ref><ref type="bibr" target="#b64">66]</ref>. This estimate of ocean carbon sink allows putting some new constraint on the ocean CO 2 -carbon cycle sensitivity term (β o ). As the atmospheric CO 2 concentration increased by about 100 ppm since 1750, β o is estimated to amount 1.55 ± 0.3 GtC ppm -1 (or 0.7 ± 0.15 ppm ppm -1 ). This estimate should be seen as conservative as it does not include any climate effect on ocean carbon uptake. However, the climate effect is probably of second order for the ocean and within the uncertainty on the ocean uptake estimate. Assuming a climateocean carbon sensitivity (γ o ) of -8 ± 3 GtC K -1 (CMIP5 multi-model mean and s.d.), the historical warming (0.85 ± 0.2 K) leads to an ocean carbon loss of only about 7 ± 4 GtC, having virtually no effect on the above estimate of β o .</p><p>The quantification of the land carbon cycle sensitivity of CO 2 , β l , is less trivial as the contribution from historical climate change on the land carbon cannot be neglected anymore. Both the estimate based on the last millennium CO 2 and climate variability, and the emerging constraint estimate based on the interannual variability of atmospheric CO 2 point to a γ l towards the low-end of the ESM range. The last millennium estimate, C a / T of 7.7 ppm K -1 implies a combined (γ o + γ l ) of about -36 GtC K -1 for the twentieth century, broadly consistent with the emerging constraint estimate of a γ l for the tropics of about -50 ± 20 GtC K -1 by 2100, when considering that γ l does increase with global temperature <ref type="bibr" target="#b39">[40]</ref>. Assuming the same γ o of -8 GtC K -1 for the ocean, this gives a climate-land carbon sensitivity (γ l ) of about -28 GtC K -1 Downloaded from <ref type="url" target="https://royalsocietypublishing.org/">https://royalsocietypublishing.org/</ref> on 04 March 2025    emissions from fossil fuel burning and the land-use change (375 ± 30 GtC and 180 ± 80 GtC for the 1750-2011 period, respectively) and the accumulation in the atmosphere and the oceans (240 ± 10 GtC and 155 ± 30 GtC for the same period, respectively) leaves a residual of 160 ± 90 GtC, attributed to the land carbon sink. This sink results from the combined effect of land response to atmospheric CO 2 and to climate change (assuming here that other factors, such as nitrogen deposition are of second order for driving the land carbon sink <ref type="bibr" target="#b65">[67]</ref>). Taking a climate-induced land loss of 25 ± 10 GtC as derived above implies a CO 2 -induced land sink of 185 ± 90 GtC. Given the atmospheric CO 2 increase of about 100 ppm since 1750, β l is estimated to amount 2 ± 0.9 GtC ppm -1 (or 0.9 ± 0.4 ppm ppm -1 ).</p><p>These estimate of land and ocean sensitivities allow revisiting the historical global carbon budget, and attributing land and ocean net carbon fluxes to their two primarily drivers, atmospheric CO 2 and climate change (figure <ref type="figure" target="#fig_2">2</ref>; table 1).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Concluding remarks</head><p>The anthropogenic perturbation, through the increase of greenhouse gases, primarily carbon dioxide, is very likely to be responsible for the observed climate change. Further CO 2 emissions will inevitably lead to additional warming over the twenty-first century. The anthropogenic perturbation has a profound impact on the natural global carbon cycle with all reservoirs, the atmosphere, the land ecosystems and the global ocean, being pushed away from their preindustrial quasi-steady state. Increase in atmospheric CO 2 leads to land and ocean uptake of CO 2 , a strong negative feedback on the anthropogenic perturbation. Only about half of CO 2 emissions currently remain in the atmosphere. Without the service provided by the land and ocean systems, atmospheric CO 2 would already be above 500 ppm today. However, climate change also has an impact on the land and ocean carbon cycle, which operates in the opposite direction, warming leads to carbon release from both land and ocean, a positive feedback on the anthropogenic perturbation. The quantification of these four terms, the ocean and land carbon cycle sensitivity to atmospheric CO 2 (β o , β l ), and the ocean and land carbon cycle sensitivity to climate change (γ o , γ l ) has been impeding progress in Earth System science for the last decade. Recent use of observations gives some hope on constraining the most uncertain term, γ l .</p><p>For the historical period, the land and ocean sinks are primarily due to the response to atmospheric CO 2 increase, with the historical warming inducing a non-negligible release of carbon from the land.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>. 2 )</head><label>2</label><figDesc>where C l is the change in the land carbon store, C a the change in atmospheric CO 2 and T the change in global temperature; a similar equation applying for the change in the ocean carbon rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . storage C o :</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Relationship between global temperature and atmospheric CO 2 across multiple timescales. Top panel shows the Vostok ice core with atmospheric CO 2 (red) and global temperature (blue); middle panel shows last millennium temperature reconstruction (top) and atmospheric CO 2 from several ice cores (bottom); bottom panel shows atmospheric CO 2 annual growth rate from the Mauna Loa record, and global average surface temperature.</figDesc><graphic coords="6,251.27,390.91,133.48,87.86" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>. 1 )</head><label>1</label><figDesc>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . with C a being the change in atmospheric CO 2 , C o+l the change in the ocean and land carbon stores for a given T, while β o and β l are the CO 2 -carbon cycle sensitivity terms described above.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head></head><label></label><figDesc>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . expected, see discussion before, it is too premature to conclude on the actual strength of the nitrogen limitation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Global carbon budget over the historical period (1750-2011) adapted from IPCC AR5. Fossil fuel (black arrow) and landuse changes emissions (brown arrow) as in IPCC and attribution of land and ocean carbon sinks to atmospheric CO 2 increase (blue arrows) and climate change (orange arrows) as done in this study. All fluxes are in GtC and rounded to the nearest 5. Top panels show atmospheric CO 2 increase since 1750 and global average surface temperature since 1880 for illustration.</figDesc><graphic coords="10,65.63,164.11,300.02,135.74" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head></head><label></label><figDesc>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . for the twentieth century, implying that the terrestrial biosphere already lost about 25 ± 10 GtC in response to the historical warming. Finally, combining this estimate with the historical global carbon budget reported in the IPCC AR5 allows a quantification of β l over the historical period. The difference between the CO 2 rsta.royalsocietypublishing.org Phil. Trans. R. Soc. A 373: 20140421 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Global carbon budget over the historical period (1750-2011) as in IPCC and attribution of land and ocean carbon sinks to atmospheric CO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . sinks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</figDesc><table><row><cell>fossil fuel emissions</cell><cell>375 ± 30</cell></row><row><cell>net land-use change</cell><cell>180 ± 80</cell></row><row><cell>atmospheric increase</cell><cell>240 ± 10</cell></row><row><cell>oceanic uptake</cell><cell>-155 ± 30</cell></row><row><cell>CO 2 driven</cell><cell>-160 ± 30</cell></row><row><cell>climate driven</cell><cell>+5 ± 5</cell></row><row><cell>land uptake</cell><cell>-160 ± 90</cell></row><row><cell>CO 2 driven</cell><cell>-185 ± 90</cell></row><row><cell>climate driven</cell><cell>+25 ± 10</cell></row></table><note><p>2 increase and climate change as done in this study. All fluxes are in GtC and rounded to the nearest 5, sign convention is positive when to the atmosphere. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . sources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0"><p>In the IPCC terminology, extremely likely indicates a likelihood above 95%.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1"><p>The equilibrium climate sensitivity is defined as the change in global mean surface temperature at equilibrium that is caused by a doubling of atmospheric CO 2 concentration.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>Downloaded from https://royalsocietypublishing.org/ on 04 March 2025</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Competing interests. I have no competing interests. Funding. The author was supported by supported by the European Commission's 7th Framework Programme under grant agreements 282672 (EMBRACE) and 603864 (HELIX).</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">On the influence of carbonic acid in the air upon the temperature of the ground</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Arrhenius</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/14786449608620846</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Mag</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="237" to="276" />
+			<date type="published" when="1896">1896</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">The artificial production of carbon dioxide and its influence on temperature</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Callendar</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/qj.49706427503</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Q. J. R. Meteorol. Soc</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page" from="223" to="240" />
+			<date type="published" when="1938">1938</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Atmospheric carbon dioxide variations at Mauna Loa Observatory</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Keeling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Bacastow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Bainbridge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Ekdhal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Guenther</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">S</forename><surname>Waterman</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/j.2153-3490.1976.tb00701.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Hawaii. Tellus</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="538" to="551" />
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Carbon and other biogeochemical cycles</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ciais</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Physical Science Basis Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</title>
+		<editor>
+			<persName><surname>Stocker</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="465" to="570" />
+		</imprint>
+	</monogr>
+	<note>Climate Change</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Polar ice evidence that atmospheric CO 2 20,000yr BP was 50% of present</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Delmas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-M</forename><surname>Ascencio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Legrand</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/284155a0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="page" from="155" to="157" />
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Vostok ice core provides 160,000-year record of atmospheric CO 2</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Barnola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Raynaud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Korotkevich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lorius</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/329408a0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">329</biblScope>
+			<biblScope unit="page" from="408" to="414" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Summary for Policymakers</title>
+		<author>
+			<persName><surname>Ipcc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Climate Change 2013: The Physical Science Basis Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</title>
+		<editor>
+			<persName><surname>Stocker</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="1" to="29" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Thermal equilibrium of the atmosphere with a convective adjustment</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Strickler</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/1520-0469(1964)021&lt;0361:TEOTAW&gt;2.0.CO;2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Atmos. Sci</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="361" to="385" />
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Sensitivity of a global climate model to an increase of CO 2 concentration in the atmosphere</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Stouffer</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/JC085iC10p05529</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="5529" to="5554" />
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Climate sensitivity: analysis of feedback mechanisms</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Climate processes and climate sensitivity</title>
+		<title level="s">AGU Geophysical Monograph</title>
+		<editor>
+			<persName><forename type="first">T</forename><surname>Hansen</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Takahashi</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Washington, DC</addrLine></address></meeting>
+		<imprint>
+			<publisher>American Geophysical Union</publisher>
+			<date type="published" when="1984">1984</date>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="130" to="163" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Long-term climate change: projections, commitments and irreversibility</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Collins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Physical Science Basis Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</title>
+		<editor>
+			<persName><surname>Stocker</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="1029" to="1136" />
+		</imprint>
+	</monogr>
+	<note>Climate Change</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Charney</surname></persName>
+		</author>
+		<title level="m">Carbon dioxide and climate: a scientific assessment</title>
+		<meeting><address><addrLine>Washington, DC</addrLine></address></meeting>
+		<imprint>
+			<publisher>National Academy of Science</publisher>
+			<date type="published" when="1979">1979</date>
+			<biblScope unit="page">22</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">How well do we understand and evaluate climate change feedback processes?</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bony</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI3819.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="3445" to="3482" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Evaluation of Climate Models</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Flato</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Physical Science Basis Contribution of Working Group I to the Fifth Assessment Report of the Intergovernmental Panel on Climate Change</title>
+		<editor>
+			<persName><surname>Stocker</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="741" to="866" />
+		</imprint>
+	</monogr>
+	<note>Climate Change</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">The dynamic greenhouse: feedback processes that may influence future concentrations of atmospheric trace gases and climatic change</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Lashof</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF00134964</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Change</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="213" to="242" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Acceleration of global warming due to carbon-cycle feedbacks in a coupled climate model</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Betts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Spall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">J</forename><surname>Totterdell</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/35041539</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">408</biblScope>
+			<biblScope unit="page" from="184" to="187" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Positive feedback between future climate change and the carbon cycle</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bopp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ciais</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-L</forename><surname>Dufresne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fairhead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Letreut</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Monfray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Orr</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2000GL012015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="1543" to="1546" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Requirements for a satisfactory model of the global carbon cycle and current status of modeling efforts</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bolin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The changing carbon cycle</title>
+		<editor>
+			<persName><surname>Jr Trabalka</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>De Reichle</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York, NY</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1975">1975</date>
+			<biblScope unit="page" from="403" to="424" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Box diffusion-model to study carbon-dioxide exchange in nature</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Oeschger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Siegenthaler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Schotterer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gugelmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/j.2153-3490.1975.tb01671.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Tellus</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="168" to="192" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Transport and storage of CO 2 in the ocean -an inorganic ocean-circulation carbon cycle model</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Maier-Reimer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hasselmann</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF01054491</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Dyn</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="63" to="90" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Three-dimensional ocean models for predicting the distribution of carbon dioxide between the ocean and atmosphere</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Sarmiento</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The changing carbon cycle</title>
+		<editor>
+			<persName><surname>Jr Trabalka</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>De Reichle</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York, NY</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1986">1986</date>
+			<biblScope unit="page" from="279" to="294" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A general biogeochemical model describing the responses of the c-cycle and n-cycle in terrestrial ecosystems to changes in CO 2 , climate, and n-deposition</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">B</forename><surname>Rastetter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Ryan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Shaver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Melillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Nadelhoffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Hobbie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Aber</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/treephys/9.1-2.101</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Tree Physiology</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="101" to="126" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Terrestrial ecosystem production-a process model-based on global satellite and surface data</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Potter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Randerson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">B</forename><surname>Field</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Matson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Vitousek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Mooney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Klooster</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/93GB02725</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="811" to="841" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">The carbon dioxide cycle: reservoir models to depict the exchange of atmospheric carbon dioxide with the oceans and land plants</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Keeling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Chemistry of the lower atmosphere</title>
+		<editor>
+			<persName><surname>Si Rasool</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York, NY</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1973">1973</date>
+			<biblScope unit="page" from="251" to="329" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Observational constraints on the global atmospheric CO 2 budget</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Tans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">Y</forename><surname>Fung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Takahashi</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.247.4949.1431</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">247</biblScope>
+			<biblScope unit="page" from="1431" to="1438" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Trends in the sources and sinks of carbon dioxide</title>
+		<author>
+			<persName><forename type="first">Le</forename><surname>Quere</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo689</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="831" to="836" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">The global carbon budget 1959-2011</title>
+		<author>
+			<persName><forename type="first">Le</forename><surname>Quéré</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename></persName>
+		</author>
+		<idno type="DOI">10.5194/essd-5-165-2013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Earth System Science Data</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="165" to="186" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Oceanic carbon dioxide uptake in a model of century-scale global warming</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Sarmiento</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lequere</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.274.5291.1346</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">274</biblScope>
+			<biblScope unit="page" from="1346" to="1350" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Simulated response of the ocean carbon cycle to anthropogenic climate warming</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Sarmiento</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Tmc</forename><surname>Hughes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Stouffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Manabe</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/30455</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">393</biblScope>
+			<biblScope unit="page" from="245" to="249" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Future ocean uptake of CO 2 : interaction between ocean circulation and biology</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Maier-Reimer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Mikolajewicz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Winguth</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s003820050138</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Dyn</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="711" to="722" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Global climate-change and terrestrial net primary production</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Melillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Mcguire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Kicklighter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Vorosmarty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Schloss</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/363234a0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">363</biblScope>
+			<biblScope unit="page" from="234" to="240" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Net primary and ecosystem production and carbon stocks of terrestrial ecosystems and their responses to climate change</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">I</forename><surname>Woodward</surname></persName>
+		</author>
+		<idno type="DOI">10.1046/j.1365-2486.1998.00125.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Change Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="185" to="198" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Dynamic responses of terrestrial ecosystem carbon cycling to global climate change</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">I</forename><surname>Woodward</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/30460</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">393</biblScope>
+			<biblScope unit="page" from="249" to="252" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">The carbon cycle and atmospheric carbon dioxide</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">C</forename><surname>Prentice</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Scientific Basis Contribution of Working Group I to the Third Assessment Report of the Intergovernmental Panel on Climate Change</title>
+		<editor>
+			<persName><forename type="first">Y</forename><surname>Jt Houghton</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Ding</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Griggs</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Noguer</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">X</forename><surname>Van Der Linden</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Dai</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2001">2001. 2001</date>
+			<biblScope unit="page" from="183" to="237" />
+		</imprint>
+	</monogr>
+	<note>Climate Change</note>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">On the magnitude of positive feedback between future climate change and the carbon cycle</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dufresne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Berthelot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bopp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ciais</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fairhead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Monfray</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2001GL013777</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">43</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">How positive is the feedback between climate change and the carbon cycle?</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dufresne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rayner</surname></persName>
+		</author>
+		<idno type="DOI">10.1034/j.1600-0889.2003.01461.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Tellus</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="692" to="700" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Modelling climate-carbon cycle feedbacks: a cross disciplinary collaboration priority</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rayner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IGBP Glob. Change Newslett</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="12" to="14" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Full-form earth system models: coupled carbon-climate interaction experiment (the flying leap)</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Fung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rayner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Sahagian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IGBP Glob. Change Newslett</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="7" to="8" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Climate-carbon cycle feedback analysis: results from the C 4 MIP model intercomparison</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI3800.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="3337" to="3353" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Carbon-concentration and carbon-climate feedbacks in CMIP5 Earth System Models</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Arora</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI-D-12-00494.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="5289" to="5314" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Terrestrial nitrogen feedbacks may accelerate future climate change</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zaehle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Friend</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2009GL041345</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page">1401</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Carbon and nitrogen cycle dynamics in the O-CN land surface model: 2. Role of the nitrogen cycle in the historical terrestrial carbon balance</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zaehle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Friend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Dentener</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Peylin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schulz</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2009GB003522</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">1006</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Woodwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">T</forename><surname>Mackenzie</surname></persName>
+		</author>
+		<title level="m">Biotic feedbacks in the global climatic system: will the warming feed the warming?</title>
+		<meeting><address><addrLine>Oxford, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Biotic feedbacks in the warming of the earth</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Woodwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">T</forename><surname>Mackenzie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Houghton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Apps</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gorham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Davidson</forename><forename type="middle">E</forename></persName>
+		</author>
+		<idno type="DOI">10.1023/A:1005345429236</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Change</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="495" to="518" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Positive feedback between global warming and atmospheric CO 2 concentration inferred from past climate change</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Scheffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Brovkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Cox</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2005GL025044</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page">10702</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Missing feedbacks, asymmetric uncertainties, and the underestimation of future warming</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Torn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Harte</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2005GL025540</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geophys. Res. Lett</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page">10703</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Time-dependent response of the global ocean clathrate reservoir to climatic and anthropogenic forcing</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Archer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Buffett</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2004GC000854</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geochem. Geophys. Geosyst</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">3002</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Carbon dioxide and climate impulse response functions for the computation of greenhouse gas metrics: a multi-model analysis</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Joos</surname></persName>
+		</author>
+		<idno type="DOI">10.5194/acp-13-2793-2013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Atmos. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="2793" to="2825" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+	<note>Trans. R. Soc. A</note>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Ensemble reconstruction constraints on the global carbon cycle sensitivity to climate</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Esper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Raible</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Büntgen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Trouet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Stocker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Joos</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature08769</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">463</biblScope>
+			<biblScope unit="page" from="527" to="530" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">The anthropogenic greenhouse era began thousands of years ago</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Ruddiman</surname></persName>
+		</author>
+		<idno type="DOI">10.1023/B:CLIM.0000004577.17928.fa</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Clim. Change</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="261" to="293" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Effects of anthropogenic land cover change on the carbon cycle of the last millennium</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pongratz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Reick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Raddatz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Claussen</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2009GB003488</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Biogeochem.Cycles</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page">4001</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Sensitivity of tropical carbon to climate change constrained by carbon dioxide variability</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pearson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Booth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Huntingford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Luke</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature11882</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">494</biblScope>
+			<biblScope unit="page" from="341" to="344" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Interannual extremes in the rate of rise of atmospheric carbon-dioxide since 1980</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Bacastow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Keeling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Whorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wahlen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vanderplicht</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/375666a0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">375</biblScope>
+			<biblScope unit="page" from="666" to="670" />
+			<date type="published" when="1976">1976. 1995</date>
+		</imprint>
+	</monogr>
+	<note>Modulation of atmospheric carbon dioxide by the Southern Oscillation</note>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Emergent constraints on climatecarbon cycle feedbacks in the CMIP5 Earth system models</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wenzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Eyring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/2013JG002591</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="794" to="807" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Soil organic carbon pools in the northern circumpolar permafrost region</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tarnocai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Canadell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schuur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kuhry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mazhitova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zimov</surname></persName>
+		</author>
+		<idno type="DOI">10.1029/2008GB003327</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Biogeochem. Cycles</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<date type="published" when="2009">2009. 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Significant contribution to climate warming from the permafrost carbon feedback</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Macdougall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Avis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Weaver</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo1573</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="719" to="721" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Permafrost carbon-climate feedbacks accelerate global warming</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Koven</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ringeval</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedlingstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ciais</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cadule</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Khvorostyanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Krinner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tarnocai</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1103910108</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="14" to="769" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Estimating the permafrost-carbon-climate response in the CMIP5 climate models using a simplified approach</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Burke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Koven</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI-D-12-00550.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="4897" to="4909" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Estimating the near-surface permafrost-carbon feedback on global warming</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schneider Von Deimling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Meinshausen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Levermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Frieler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lawrence</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Brovkin</surname></persName>
+		</author>
+		<idno type="DOI">10.5194/bg-9-649-2012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biogeosciences</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="649" to="665" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Evaluating the land and ocean components of the global carbon cycle in the CMIP5 Earth System Models</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Anav</surname></persName>
+		</author>
+		<idno type="DOI">10.1175/JCLI-D-12-00417.1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clim</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="6801" to="6843" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Global covariation of carbon turnover times with climate in terrestrial ecosystems</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Carvalhais</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature13731</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">514</biblScope>
+			<biblScope unit="page" from="213" to="217" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Systematic assessment of terrestrial biogeochemistry in coupled climate-carbon models</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Randerson</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/j.1365-2486.2009.01912.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Glob. Change Biol</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="2462" to="2484" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Terrestrial biogeochemical feedbacks in the climate system</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arneth</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo905</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="525" to="532" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">The oceanic sink for anthropogenic CO 2</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Sabine</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.1097403</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">305</biblScope>
+			<biblScope unit="page" from="367" to="371" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Global ocean storage of anthropogenic carbon</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Khatiwala</surname></persName>
+		</author>
+		<idno type="DOI">10.5194/bg-10-2169-2013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Biogeosciences</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="2169" to="2191" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Carbon benefits of anthropogenic reactive nitrogen offset by nitrous oxide emissions</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zaehle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ciais</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Friend</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Prieur</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ngeo1207</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Geosci</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="601" to="605" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

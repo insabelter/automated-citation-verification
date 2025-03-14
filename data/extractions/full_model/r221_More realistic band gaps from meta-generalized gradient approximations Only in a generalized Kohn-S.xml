@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">More-Realistic Band Gaps from Meta-Generalized Gradient Approximations: Only in a Generalized Kohn-Sham Scheme</title>
+				<funder>
+					<orgName type="full">Energy Frontier Research Center</orgName>
+					<orgName type="abbreviated">EFRC</orgName>
+				</funder>
+				<funder ref="#_X7hkw8b">
+					<orgName type="full">U.S. Department of Energy, Office of Science, Basic Energy Sciences</orgName>
+				</funder>
+				<funder ref="#_k3jqZub">
+					<orgName type="full">National Science Foundation</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">EFRC</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Center for the Computational Design of Functional Layered Materials</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Zeng-Hui</forename><surname>Yang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Temple University</orgName>
+								<address>
+									<postCode>19122</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Haowei</forename><surname>Peng</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Temple University</orgName>
+								<address>
+									<postCode>19122</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jianwei</forename><surname>Sun</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Temple University</orgName>
+								<address>
+									<postCode>19122</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Temple University</orgName>
+								<address>
+									<postCode>19122</postCode>
+									<settlement>Philadelphia</settlement>
+									<region>PA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">More-Realistic Band Gaps from Meta-Generalized Gradient Approximations: Only in a Generalized Kohn-Sham Scheme</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BAF2580A311A9A9900ABD7BD7AFA03EE</idno>
+					<idno type="DOI">10.1103/PhysRevB.93.205205</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:53+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>numbers: 71</term>
+					<term>15 Mb, 31</term>
+					<term>15 es</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Unlike the local density approximation (LDA) and the generalized gradient approximation (GGA), calculations with meta-generalized gradient approximations (meta-GGA) are usually done according to the generalized Kohn-Sham (gKS) formalism. The exchange-correlation potential of the gKS equation is non-multiplicative, which prevents systematic comparison of meta-GGA bandstructures to those of the LDA and the GGA. We implement the optimized effective potential (OEP) of the meta-GGA for periodic systems, which allows us to carry out meta-GGA calculations in the same KS manner as for the LDA and the GGA. We apply the OEP to several meta-GGAs, including the new SCAN functional [Phys. Rev. Lett. 115, 036402 (2015)]. We find that the KS gaps and KS band structures of meta-GGAs are close to those of GGAs. They are smaller than the more realistic gKS gaps of meta-GGAs, but probably close to the less-realistic gaps in the band structure of the exact KS potential, as can be seen by comparing with the gaps of the EXX+RPA OEP potential. The well-known grid sensitivity of meta-GGAs is much more severe in OEP calculations.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>Semiconductor devices play an important role in modern technologies, and the rapid development of electronic structure theory methods has made computational design of such devices possible. The band gap and the band structure are undoubtly the most important properties of semiconductors, since these are the properties that distinguish semiconductors from other periodic systems <ref type="bibr" target="#b0">1</ref> . Computational evaluation of the band gap and the band structure is thus a topic of active research.</p><p>The fundamental band gap is a ground-state property, and it is defined as E g = I -A, where I is the ionization energy, and A is the electron affinity. I and A are groundstate energy differences. E g is also an excited-state property since it is the unbound limit of the exciton series. E g is very difficult to calculate for periodic systems, since there is no systematic way of adding/removing one electron to/from the solid in a periodic calculation, and the bulk limit can only be approached by the calculation of very big clusters. Many-body methods such as the GW method 2 calculate E g and the quasiparticle band structure accurately, but the computational cost is high.</p><p>The density-functional theory (DFT) <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref> is a formally exact electronic structure method for the ground-state energy and electron density with an excellent balance of accuracy and computational efficiency, which is achieved by mapping the real interacting system to a fictitious Kohn-Sham (KS) system of non-interacting electrons with a multiplicative effective exchange-correlation (xc) potential (the functional derivative of the exchangecorrelation energy with respect to the density). The exact Kohn-Sham potential yields the exact density but not the exact quasi-particle band structure and gap. Though the exact energy functional of the DFT is unknown, there exists a plethora of approximations, which has been ordered into the 'Jacob's ladder' <ref type="bibr" target="#b5">6</ref> hierarchy. The first and the second rungs of the Jacob's ladder are the local density approximation (LDA) and the generalized gradient approximation (GGA), and they severely underestimate the fundamental gap in periodic systems. For periodic systems, KS DFT cannot calculate E g from its definition, and one commonly approximates E g with the KS gap E KS g = ǫ KS LUMO -ǫ KS HOMO , where ǫ KS HOMO and ǫ KS LUMO are the KS orbital energies of the highest occupied orbital and of the lowest unoccupied orbital, respectively. However, E KS g is not equal to E g even with the exact functional, due to the derivative discontinuity (DD) <ref type="bibr" target="#b6">7</ref> . The band gap problem has been an obstacle in the application of DFT to periodic systems.</p><p>The generalized Kohn-Sham (gKS) <ref type="bibr" target="#b7">8</ref> scheme is a different formulation of the DFT, which allows a nonmultiplicative but still Hermitian xc potential operator. The gKS gap E gKS g = ǫ gKS LUMO -ǫ gKS HOMO can be a better approximation to E g than is the KS gap <ref type="bibr" target="#b8">9</ref> . The third rung of the Jacob's ladder, the meta-generalized gradient approximation (meta-GGA), is commonly implemented in the gKS scheme according to the method of Neumann, Nobes and Handy (also denoted as gKS in this paper) <ref type="bibr" target="#b9">10</ref> . The gKS meta-GGA band gap of periodic systems improves <ref type="bibr" target="#b10">11</ref> over the KS GGA gaps as expected. In this work we find that, with the recently proposed strongly constrained and appropriately normed (SCAN) functional <ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13</ref> , the gKS meta-GGA gap corrects about 20%∼50% of the difference between the experimental fundamental gap and the GGA KS gap.</p><p>Due to the restriction in the functional form of GGA, a GGA cannot perform well for finite systems and periodic systems at the same time. 14 On the other hand, the functional form of meta-GGA can satisfy more exact conditions and has a wider range of applicability than the GGA form. The SCAN functional is a non-empirical functional that satisfies all known exact constraints appropriate to a semilocal functional, and is expected to perform well for systems with very different kinds of bonds. The computational accuracies of the SCAN functional for many properties improve over those of the GGAs, with only marginal increase of computational cost. <ref type="bibr" target="#b11">12</ref> We find that SCAN also improves band gaps, but the comparsion is between meta-GGA gKS gaps and GGA KS gaps, which are not the same quantity. It is unclear whether the KS gap itself is improved, or just the gKS gap is improved. One needs to do meta-GGA calculations in the KS scheme to be able to have a systematic comparsion of the KS band gaps between meta-GGA and GGA.</p><p>In the gKS formalism for an orbital functional such as a meta-GGA or hybrid functional, we find the "optimal variational potential", a non-multiplicative self-adjoint operator that minimizes the energy functional with respect to the orbitals. This potential is a differential operator for a meta-GGA and an integral operator for a hybrid functional. In the KS formalism for an orbital functional, we find the optimized effective potential (OEP) <ref type="bibr" target="#b13">15,</ref><ref type="bibr" target="#b14">16</ref> , the multiplicative xc potential that minimizes the energy. The OEP meta-GGA yields the KS gap of the meta-GGA, which can be compared directly with the GGA KS gap. With the OEP, the meta-GGA xc potential also becomes comparable with that of the GGA. The OEP meta-GGA has been studied only in finite systems previously. <ref type="bibr" target="#b15">17,</ref><ref type="bibr" target="#b16">18</ref> In this work, we provide the first study of the OEP meta-GGA in periodic systems. We find that the meta-GGA KS gap is not significantly improved over the GGA KS gaps, and the band structure of the OEP meta-GGA is very close to that of the GGA (and presumably to that of the exact KS potential). The xc potential of the meta-GGA has more details than that of the GGA, but the change is not as big as the change between the LDA and the GGA. Though the gKS meta-GGA is known to be sensitive to the real-space grid used in the calculation, we find that the OEP meta-GGA has worse grid sensitivity. The reason for the grid sensitivity is discussed in this work.</p><p>Within the gKS implementation of the meta-GGA form, it is possible to fit to energy gaps of solids <ref type="bibr" target="#b17">19</ref> , and the result can be useful for the prediction of gaps <ref type="bibr" target="#b18">20</ref> . But the fact that a property can be fitted in DFT is not evidence that it should be, or that other and more appropriate properties will not deteriorate as a result.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. OEP META-GGA IN PERIODIC SYSTEMS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Theory</head><p>The meta-GGA xc energy functional has the form</p><formula xml:id="formula_0">E XC [n ↑ , n ↓ ] = d 3 re XC [n ↑ (r), n ↓ (r), ∇n ↑ (r), ∇n ↓ (r), τ ↑ (r), τ ↓ (r)],<label>(1)</label></formula><p>where e XC is the xc energy density, and n σ and τ σ are the spin density and the kinetic energy density of spin σ respectively. n σ and τ σ are</p><formula xml:id="formula_1">n σ (r) = 1 Ω BZ i BZ d 3 k θ iσ (k) |ψ ikσ (r)| 2 ,<label>(2)</label></formula><formula xml:id="formula_2">τ σ (r) = 1 2Ω BZ i BZ d 3 k θ iσ (k) |∇ψ ikσ (r)| 2 , (<label>3</label></formula><formula xml:id="formula_3">)</formula><p>where Ω BZ is the volume of the first Brillouin zone (BZ), i is the band index, ψ ikσ is the KS orbital normalized in one unit cell, and </p><formula xml:id="formula_4">θ iσ (k) = θ[E F -ǫ ikσ ]</formula><formula xml:id="formula_5">v XC,σ (r) = δE XC δn σ (r) = ∂e XC ∂n σ (r) -∇ • ∂e XC ∂∇n σ (r) + d 3 r ′ ∂e XC ∂τ σ (r ′ ) δτ σ (r ′ ) δn σ (r) .<label>(4)</label></formula><p>Eq. ( <ref type="formula" target="#formula_5">4</ref>) can be partitioned into a GGA-like part and a τ -dependent part:</p><formula xml:id="formula_6">v XC,σ (r) = v GGA XC,σ (r) + v τ -dep XC,σ (r). (<label>5</label></formula><formula xml:id="formula_7">) v GGA XC,σ is a multiplicative potential, but v τ -dep XC,σ</formula><p>does not have a closed form. v τ -dep XC,σ can be written as</p><formula xml:id="formula_8">v τ -dep XC,σ (r) = 1 Ω BZ i BZ d 3 k V cell d 3 r ′ d 3 r ′′ ∂e XC ∂τ σ (r ′ ) × δτ σ (r ′ ) δψ ikσ (r ′′ ) δψ ikσ (r ′′ ) δn σ (r) + c.c. .<label>(6)</label></formula><p>On one hand, the gKS meta-GGA potential operator is obtained by multiplying both side of Eq. ( <ref type="formula" target="#formula_8">6</ref>) by δn σ (r)/δψ ik ′ σ ′ (r 1 ) + c.c and integrating over r:</p><formula xml:id="formula_9">v τ -dep XC,σ (r)ψ ikσ (r) = - 1 2 ∇ • ∂e XC ∂τ σ (r)∇ψ ikσ (r) ≡ vgKS XC,σ ψ ikσ (r).<label>(7)</label></formula><p>On the other hand, inserting</p><formula xml:id="formula_10">δψ ikσ (r ′′ ) δn σ (r) = V cell d 3 r 1 δψ ikσ (r ′′ ) δv S,σ (r 1 ) δv S,σ (r 1 ) δn σ (r) ,<label>(8)</label></formula><p>where v S is the KS potential, into Eq. ( <ref type="formula" target="#formula_8">6</ref>) yields the OEP integral equation for v τ -dep XC,σ :</p><formula xml:id="formula_11">V cell d 3 r v τ -dep XC,σ (r) δn σ (r) δv S,σ (r 1 ) + c.c. = 1 Ω BZ i BZ d 3 k V cell d 3 r ′ d 3 r ′′ ∂e XC ∂τ σ (r ′ ) δτ σ (r ′ ) δψ ikσ (r ′′ ) δψ ikσ (r ′′ ) δv S,σ (r 1 ) + c.c..<label>(9)</label></formula><p>Though a direct solution for the OEP is possible <ref type="bibr" target="#b16">18,</ref><ref type="bibr" target="#b19">21</ref> , it is both computationally expensive and numerically unstable. The common practice is to approximate the solution of Eq. ( <ref type="formula" target="#formula_11">9</ref>). Ref. 17 employed the local-Hartree-Fock (LHF) <ref type="bibr" target="#b20">22</ref> approximation to derive approximated v τ -dep XC,σ of meta-GGA for finite systems. Here we do the derivation with the effective local potential (ELP) <ref type="bibr" target="#b21">23,</ref><ref type="bibr" target="#b22">24</ref> approximation. The ELP is equivalent to the LHF and the common-energy-denominator approximation (CEDA) <ref type="bibr" target="#b23">25,</ref><ref type="bibr" target="#b24">26</ref> , and the Krieger-Li-Iafrate (KLI) <ref type="bibr" target="#b25">27</ref> approximation is their simplification.</p><p>The ELP minimizes the matrix norm of the commutator</p><formula xml:id="formula_12">S σ = [ Dσ , ρσ ], where Dσ = v τ -dep XC,σ -vgKS XC,σ , and ρσ = 1 ΩBZ i d 3 k θ iσ (k) |ψ ikσ ψ ikσ |</formula><p>is the spin density matrix. ρσ becomes valid for both the KS and the gKS system when S σ = 0. S σ is minimized when</p><formula xml:id="formula_13">δS σ /δv τ -dep XC,σ (r) = 0, which yields the ELP approxima- tion of v τ -dep XC,σ : v τ ELP XC,σ (r) = 1 2Ω BZ n σ (r) BZ d 3 k i θ iσ (k)ψ * ikσ (r)v gKS XC,σ ψ ikσ (r) + 1 Ω BZ BZ d 3 k ′ ij θ iσ (k)θ jσ (k ′ )ψ * ikσ (r)ψ jk ′ σ (r) × ψ jk ′ σ Dσ ψ ikσ + c.c. (<label>10</label></formula><formula xml:id="formula_14">)</formula><p>The ELP approximates the OEP in a least-squares sense <ref type="bibr" target="#b22">24</ref> .</p><p>Ref. 24 shows that the ELP approximation is equivalent to the CEDA, which reduces to the KLI approximation by setting i = j in Eq. ( <ref type="formula" target="#formula_13">10</ref>) <ref type="bibr" target="#b23">25</ref> . If only the first term of Eq. ( <ref type="formula" target="#formula_13">10</ref>) is kept, one obtains the so-called Slater approximation <ref type="bibr" target="#b26">28</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Implementation in the BAND code</head><p>The most efficient methods for calculating periodic systems are pseudopotential methods with planewave basis sets, with the widely used PAW method as an extension <ref type="bibr" target="#b27">29,</ref><ref type="bibr" target="#b28">30</ref> , but the OEP is hard to implement in such codes. The sum over bands in Eq. ( <ref type="formula" target="#formula_13">10</ref>) also includes the core bands, which are not directly available in pseudopotential codes. Furthermore, the OEP is inherently incompatible with the PAW formalism. The charge density in the PAW formalism is composed of the pseudo-chargedensity, the on-site all-electron density, and the on-site pseudo-charge-density <ref type="bibr" target="#b27">29,</ref><ref type="bibr" target="#b28">30</ref> , and the xc energy and potential are partitioned into three parts accordingly, with each part only depending on the corresponding part of the density. However, the OEP of meta-GGA is hard to partition this way. Due to these obstacles, we implement the OEP meta-GGA in the BAND code <ref type="bibr" target="#b29">[31]</ref><ref type="bibr" target="#b30">[32]</ref><ref type="bibr" target="#b31">[33]</ref><ref type="bibr" target="#b32">[34]</ref><ref type="bibr" target="#b33">[35]</ref> .</p><p>BAND is an all-electron DFT code for periodic systems. It uses atom-centered numerical functions as the basis set. All the real-space integrations are done numerically on a Becke fuzzy-cell grid <ref type="bibr" target="#b34">36</ref> . The BZ is discretized with the commonly used Monkhorst-Pack grid <ref type="bibr" target="#b35">37</ref> , so the k-integrations of Eq. ( <ref type="formula" target="#formula_13">10</ref>) become sums over k-points in the irreducible Brillouin zone (IBZ):</p><formula xml:id="formula_15">1 Ω BZ d 3 k g iσ (k)θ iσ (k) = 1 N G IBZ k Ŝ w kf i kσ g iσ ( R-1 k)<label>(11</label></formula><p>) where g iσ (k) is the contribution to the integral from the orbital ψ ikσ , f i kσ is the occupation number, w k is the weight of the k-point times the k-space integration weight in BAND <ref type="bibr" target="#b30">32</ref> , N G is the total number of symmetry operations, Ŝ = { R, t} is the space-group symmetry operator, and R is the rotational part of Ŝ.</p><p>The Dσ matrix elements in Eq. ( <ref type="formula" target="#formula_13">10</ref>) vanish for k = k ′ , since Dσ has the perodicity of the unit cell. Eq. ( <ref type="formula" target="#formula_13">10</ref>) is implemented in the BAND code as</p><formula xml:id="formula_16">v τ ELP XC,σ (r) = 1 N G n σ (r) IBZ k Ŝ i w kf i kσ × ℜ - 1 2 ψ * i kσ (r) ∇ r ∂e XC ∂τ σ (r) • R-1 ∇ r ′ ψ i kσ (r ′ )| r ′ = Ŝr + ∂e XC ∂τ σ (r) tr R-1 • ∇ r ′ ⊗ ∇ r ′ ψ i kσ (r ′ ) • R r ′ = Ŝr + j f j kσ ψ * i kσ ( Ŝr)ψ j kσ ( Ŝr)(I ij kσ -J ij kσ ) ,<label>(12)</label></formula><p>where I and J are</p><formula xml:id="formula_17">I ij kσ = V cell d 3 r ψ * i kσ (r)v τ ELP XC,σ (r)ψ j kσ (r),<label>(13)</label></formula><formula xml:id="formula_18">J ij kσ = 1 2 V cell d 3 r ∂e XC ∂τ σ (r)∇ψ * i kσ (r) • ∇ψ j kσ (r), (<label>14</label></formula><formula xml:id="formula_19">)</formula><p>and ∇ r ′ ⊗∇ r ′ ψ i kσ (r ′ ) denotes the Hessian matrix of ψ i kσ .</p><p>The integrals are done as discrete sums on the real-space grid. The I ij kσ depend on v τ ELP XC,σ , which is unknown beforehand. They can be determined by solving linear equations <ref type="bibr" target="#b15">17</ref> , but this is costly for perodic systems. Instead, we determine the I integrals and v τ ELP XC,σ iteratively by the following steps:</p><p>1. Set the I integrals to 0.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Calculate v τ ELP</head><p>XC,σ with Eq. ( <ref type="formula" target="#formula_16">12</ref>) using the I integrals of the last iteration.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Calculate the I integrals using the new</head><formula xml:id="formula_20">v τ ELP XC,σ . 4. Repeat step 2 and 3 if d 3 r v τ ELP(i) XC,σ (r) -v τ ELP(i-1)</formula><p>XC,σ (r) &gt; T , where i is the iteration count, and T is the error tolerance.</p><formula xml:id="formula_21">v τ ELP XC,σ</formula><p>is only determined up to an additive constant c, since v τ ELP XC,σ + c yields the same band structure. c has to be fixed for determining the convergence. The I integrals contain v τ ELP XC,σ , so their values include c. We fix c by requiring that the term of v τ ELP XC,σ containing the I integrals averages to 0, i.e. the constant c is determined by</p><formula xml:id="formula_22">1 V cell V cell d 3 r 1 N G n σ (r) IBZ k Ŝ i w kf i kσ j f j kσ × ψ * i kσ ( Ŝr)ψ j kσ ( Ŝr) I ij kσ + cδ ij = 0 (15)</formula><p>In practice, the iterative procedure converges after 200 iterations on average for T = 10 -10 . Ref. 26 finds that the total energies and orbital energies obtained from CEDA and KLI are very close for atoms and molecules. We find that the same is true for periodic systems. The ELP is equivalent to the CEDA <ref type="bibr" target="#b22">24</ref> , and its total energy is always lower than that of the KLI, but the total energy differences and the KS gap differences of the materials in Table <ref type="table" target="#tab_2">I</ref> between that of the ELP and that of the KLI are at most 1 meV. Since the improvement of the ELP over the KLI is insignificant, we only report the KLI results in the following.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULTS</head><p>We calculate the KS and gKS gaps of 20 semiconductors and insulators with the SCAN, meta-GGA made simple 2 (MS2) <ref type="bibr" target="#b36">38,</ref><ref type="bibr" target="#b37">39</ref> , meta-GGA made very simple (MVS) <ref type="bibr" target="#b38">40</ref> and TPSS 41 meta-GGAs and the PBE <ref type="bibr" target="#b40">42</ref> GGA, and the results are collected in Table <ref type="table" target="#tab_2">I</ref>. Ge, CdO, and InN are not listed since their calculated gaps vanish. All the calculations are done with the TZ2P basis set <ref type="bibr" target="#b41">43</ref> . A 9 × 9 × 9 Monkhorst-Pack k-grid 37 is used for most of the materials except InN, CdS and CdSe, for which a 9×9×5 k-grid is used. We find that the OEP meta-GGA is sensitive to the real-space grid, and large grids are used to ensure convergence. The details of the grid problem are discussed in Section IV. Though GGA and gKS meta-GGA converge properly with smaller grids, we use the same grid as the OEP meta-GGA, so that the results are comparable.</p><p>The scalar relativistic effect is included in the calculations by the ZORA <ref type="bibr" target="#b42">44</ref> method. We ignore the spin-orbit coupling since the effect is small (0.03 eV for InP). The relativistic effect is implicitly included through the pseudopotential in planewave codes, but it needs to be explicitly included in BAND. We find that the scalar relativistic effect has a big impact on the KS and gKS gaps, since it shifts down the orbital energies of s-type bands, such as the lowest conduction band of GaAs <ref type="bibr" target="#b43">45</ref> . The change in the KS and gKS gaps due to the scalar relativistic effect can be as big as 0.7 eV (GaAs).</p><p>Figs. 1 and 2 compare the OEP of SCAN meta-GGA and the LDA and the PBE xc potentials for the Ne atom and bulk Si, respectively. The exact xc potential of the Ne atom <ref type="bibr" target="#b44">46</ref> is plotted as a reference. The exact xc potential of Ne has a bump between the two shells of the charge density. The v XC of LDA does not have this feature. The v XC 's of PBE and SCAN both have this bump, and they are roughly in the same position as that of the exact v XC , but these v XC 's are shallower than the exact v XC . The v XC 's of SCAN also have a few small bumps that are not in the exact v XC . In the asymptotic region, the exact v XC decays as -1/r, and the v XC 's of all the semi-local functionals decay exponentially. Fig. <ref type="figure" target="#fig_0">1</ref> shows that the v XC of SCAN has the same decay as that of LDA and PBE. For periodic systems, there is no asymptotic region, and the approximated v XC 's of bulk Si in Fig. <ref type="figure" target="#fig_1">2</ref> can be expected to be closer to the exact v XC than those in Fig. <ref type="figure" target="#fig_0">1</ref>. In Fig. <ref type="figure" target="#fig_1">2</ref>, the v XC of SCAN are similar to the v XC of PBE, and they only differ in small details. Similar to Fig. <ref type="figure" target="#fig_0">1</ref>, the v XC 's of SCAN for bulk Si also have small bumps. Though the meta-GGA is a higher rung functional on the Jacob's ladder than the GGA, the improvement in v XC is small going from GGA to meta-GGA, unlike going from LDA to GGA. The differences between the KS meta-GGA gaps and the PBE gaps in Table I are small as a consequence. The band structures of Si and GaAs calculated with PBE and SCAN are plotted in Figs. <ref type="figure" target="#fig_2">4</ref> and<ref type="figure" target="#fig_3">5</ref>. The KS(KLI) SCAN band structure is very close to the PBE band structure, due to the corresponding v XC being similar to the PBE v XC . The gKS SCAN band structure has the same overall shape as that of the PBE and the  ). All energies are in eV. The experimental gaps are from Ref. 47. The BAs GW gap is from Ref. 48. The mean absolute errors (MAE) and mean absolute relative error (MARE) for the band gaps are listed. HSE <ref type="bibr" target="#b47">[49]</ref><ref type="bibr" target="#b48">[50]</ref><ref type="bibr" target="#b49">[51]</ref> gaps calculated with the VASP 30,52-55 code are also listed for reference. The PBE and SCAN gaps of Ge, CdO, and InN are vanishing, so they are not listed. Their experimental gaps are 0.74 eV, 0.84 eV, and 1.95 eV, respectively. Their HSE gaps are 0.65 eV, 0.94 eV, and 0.77 eV, respectively. The KS(KLI) TPSS results are not listed as most calculations fail to converge. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>KS(KLI), and the main difference is in the band gap.</head><p>Though the gKS meta-GGA band gaps improve over the PBE gaps in general, it is disappointing that gKS meta-GGA gaps for Ge, InN, and CdO still vanish. However, it is possible for meta-GGAs to open the gap for The improvement of the band gap occurs since, unlike the KS gap, the gKS gap is an approximation to the fundamental gap of the meta-GGA. A Janak-type 59 theorem has been proven for the OEP <ref type="bibr" target="#b8">9</ref> , and it states that the gKS gap approximately equals the fundamental gap for the same functional, assuming fixed orbitals. This assumption does not apply to finite systems, but it is true for periodic systems, since the charge density and the orbitals of a periodic system undergo only an infinitesimal change when the number of electrons changes by one.</p><p>GGA band gaps should be compared with the OEP meta-GGA band gaps for a fair comparison between approximated functionals, since the OEP meta-GGA band gap is the KS gap. The SCAN functional is the only functional that satisfies all the known exact conditions, but the KS(KLI) SCAN gaps do not have significant improvements over the PBE gaps. This is probably due to the fact that the GGA and SCAN OEP gaps closely approximate the exact KS gap, which underestimates the fundamental gap. This has been illustrated in Fig. <ref type="figure">3</ref>, where the errors of the EXX+RPA(OEP) KS gaps 56 are also plotted. EXX+RPA (exact exchange plus random phase approximation for correlation) is a high-level (fifth rung) method, and its OEP gaps are expected to be very close to those of the corresponding exact KS potential. Fig. <ref type="figure">3</ref> shows that both PBE and KS SCAN gaps are already good approximations to the exact KS gap. Some of the gKS band gaps of MS2 and TPSS are smaller than the corresponding OEP band gaps. We do find this behavior in other functionals. Many of the KS(KLI) TPSS calculations fail to converge. This is probably a numerical issue in the calculation of ∇(∂e XC /∂τ σ ), due to the complicated functional form of TPSS. The energy functional of the exact DFT has derivative discontinuities ∆ XC at integer electron numbers <ref type="bibr" target="#b6">7</ref> , where</p><formula xml:id="formula_23">∆ XC = E g -E KS</formula><p>g . The exact KS potential jumps up by the positive constant ∆ XC as the electron number crosses the value that makes the solid electrically neutral. LDA and GGA miss much or all of the derivative discontinuity due to the convexity of the approximated energy functional <ref type="bibr" target="#b58">60</ref> , and they underestimate the gap as a consequence. In periodic systems, such discontinuities are only visible at band gaps. Though the derivative discontinuity has been thoroughly studied for atoms and molecules, it is difficult to obtain for periodic systems, since I and A cannot be calculated directly.</p><p>With the OEP meta-GGA provided in this work, we are able to estimate the ∆ XC of solids. E g can be approximated by the derivative gap E deriv g = ∂E/∂N | N+ -∂E/∂N | N-, which is equal to the gKS meta-GGA gap <ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b58">60,</ref><ref type="bibr" target="#b59">61</ref> . E KS g is the OEP meta-GGA gap. The results are shown in Table <ref type="table" target="#tab_2">I</ref>.</p><p>Comparison of the ∆ XC 's of meta-GGAs with the exact ∆ XC is impossible for periodic systems, since no exact KS potential is available. However, Ref. 62 provides an OEP of the GW method of bulk Si, and its ∆ XC can be seen as a good approximation to the exact ∆ XC . The ∆ XC of bulk Si in Ref. 62 is 0.58 eV, which is larger than that of all the meta-GGAs in Table <ref type="table" target="#tab_2">I</ref>. This is not unexpected because the meta-GGA's tested in this work are not exact for I -A in a solid.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. REAL-SPACE GRID DEPENDENCY</head><p>The gKS meta-GGA requires a larger real-space integration grid than GGA <ref type="bibr" target="#b61">63</ref> , and this is caused by the sharp variation in regions far away from nuclei of quantities containing τ , such as z = τ W /τ used in TPSS, and α = (τ -τ W )/τ 0 used in SCAN, MS2 and MVS, where τ W = |∇n| 2 /(8n) is the von Wiezsäcker kinetic energy density, and τ 0 = (3/10)(3π 2 ) 2/3 n 5/3 is the kinetic energy density of the uniform electron gas. The Becke fuzzy-cell grid is used as the real-space integration grid in most of the DFT codes. It is constructed by combining atom- centered spherical grids. The radial part of the spherical grid is dense near the nuclei, and is sparse away from the nuclei. The integration weights for the grid points in the sparse region would be larger than those in the dense region. Therefore a function with sharp features in regions away from the nuclei cannot be properly represented on the grid, and the error of integrations involving this function would be large. One needs larger grids in gKS meta-GGA calculations than those used in GGA calculations.</p><p>We find that the OEP meta-GGA is more sensitive to the real-space integration grid than the gKS meta-GGA. In the gKS case, the sensitivity to the grid shows up in the potential energy surface <ref type="bibr" target="#b61">63,</ref><ref type="bibr" target="#b62">64</ref> as spurious oscillations, but the sensitivity is not obvious in a single-point calculation. In the OEP case, a single-point calculation is enough to demonstrate the grid sensitivity by comparing the total energy. The total energy of the OEP meta-GGA variationally minimized with respect to the charge density, but the total energy of the gKS meta-GGA is variationally minimized with respect to the orbitals. Since the gKS has bigger variational degrees of freedom, the gKS total energy should always be lower than the OEP total energy, and both should be lower than the meta-GGA total energy evaluated with non-variational orbitals. However, though the built-in integration grids in the BAND code are good enough for gKS calculations, they are not sufficient for an OEP calculation: the OEP total energy calculated with these grids is always higher than the total energy evaluated with PBE orbitals. For example, the best built-in grid in BAND for the Ne atom has 120 radial points, but at least 266 radial points are required for the SCAN OEP total energy to be lower than the SCAN total energy evaluated with PBE orbitals, and 504 radial points are required for the SCAN OEP total energy to converge with respect to the grid (error&lt;0.01 meV). The total energy is not sensitive to the number of angular grid points. Table II lists the total energy differences using different grids.</p><p>The OEP v XC of the Ne atom, Ar 2 dimer, and bulk Si (along the Si-Si bond) are plotted in Figs. <ref type="figure">6,</ref><ref type="figure">7</ref>, and 8. The OEP v XC develops unnatural peaks close to nuclei when too few grid points are used. These peaks have a strong effect on the KS band gap and the total energy. For bulk Si with 134 points (dashed line in Fig. <ref type="figure">8</ref>), the system becomes gapless.</p><p>The grid-dependence of the OEP meta-GGA is caused by ∇∂e XC /∂τ σ in Eq. ( <ref type="formula" target="#formula_16">12</ref>). Figs. 6, 7, and 8 show that ∇∂e XC /∂τ σ has very sharp oscillations both close to and away from the nucleus. The dots in these plots show the grid point locations when the calculation is done with a built-in grid in BAND. These grid points are sufficient for an gKS meta-GGA calculation since they are dense enough to properly describe the oscillations in α, but they are insufficient for an OEP meta-GGA calculation since the peaks in ∇∂e XC /∂τ σ are much narrower than those of α. Fig. <ref type="figure" target="#fig_6">9</ref> shows ∇∂e XC /∂τ of the Ne atom for SCAN, TPSS, MS2, and MVS functionals. Though ∇∂e XC /∂τ of all functionals have oscillations, the sharpness of the peaks is different, and consequently the numbers of grid points required for convergence are also different: SCAN has very sharp peaks, and it requires 352 points to converge the total energy within 1% error; The peaks in MVS are broader, and it only requires 252 points to converge with the same error criterion.</p><p>The oscillations in ∇∂e XC /∂τ for SCAN, MS2 and MVS are centered at or close to α = 1 in Fig. <ref type="figure" target="#fig_6">9</ref>. All these functionals use α to incorporate the kinetic energy density into the functional, and their energy densities all have the form e XC = e xc,1 + f (α)(e xc,0 -e xc,1 ), where e xc,0 and e xc,1 are e XC constructed for α = 0 and α = 1, and f (α) is an interpolation function that decreases mono- tonically with α from 1 at α = 0 to 0 at α = 1 to negative values for α &gt; 1. The oscillation in ∇∂e XC /∂τ then implies a peak in df (α)/dα. α = 1 corresponds to the uniform electron gas limit, and the f (α) of SCAN and MS2 are constructed to have d 2 f (α)/dα 2 = 0 there to recover the gradient expansion approximation <ref type="bibr" target="#b36">38</ref> . Therefore df (α)/dα has a flat-or linearly-topped peak at α = 1, which explains the oscillation. For MVS, d 2 f (α)/dα 2 vanishes at α = 0.77, and its oscillation in ∇∂e XC /∂τ occurs there. By choosing other functional forms for f (α), it is possible to get rid of the oscillations and the grid sensitivity. TPSS does not have this feature since it uses z instead of α. Even though a small grid cannot properly represent the oscillations in ∇∂e XC /∂τ , Fig. <ref type="figure" target="#fig_7">10</ref> shows that the v XC of the Slater approximation (which contains ∇∂e XC /∂τ explicitly) evaluated on a small grid is already similar to the KLI v XC evaluated on a big grid. The KLI approxiis supposed to be an improvement over the Slater approximation, but it introduces big errors in v XC when using a small grid. The grid sensitivity actually enters the OEP indirectly through the I integrals of Eq. ( <ref type="formula" target="#formula_18">14</ref>). Since the Slater term contains ∇∂e XC /∂τ , the I integrals cannot be done accurately with a small grid.</p><p>The gKS meta-GGA potential operator in Eq. ( <ref type="formula" target="#formula_9">7</ref>) also contains ∇∂e XC /∂τ , but the grid sensitivity of gKS is much lower than that of OEP. There is no contradiction since ∇∂e XC /∂τ does not have to be evaluated directly in gKS meta-GGA. Using integration by parts, the matrix elements ψ ikσ vgKS XC,σ ψ jkσ becomes</p><formula xml:id="formula_24">- 1 2 d 3 rψ * ikσ (r)∇ • ∂e XC ∂τ σ (r)∇ψ jkσ (r) = 1 2 d 3 r ∂e XC ∂τ σ (r)∇ψ * ikσ (r) • ∇ψ jkσ (r),<label>(16)</label></formula><p>and ∂e XC /∂τ is less sensitive to the grid than ∇∂e XC /∂τ . The grid sensitivity of the OEP is also expected to show up in the time-dependent density-functional theory (TDDFT) <ref type="bibr" target="#b63">65</ref> with a meta-GGA xc kernel.</p><p>Aside from the grid problem, we find that the OEP meta-GGA in general needs more self-consistent-field (SCF) cycles to reach convergence than the gKS meta-GGA. For small gap materials, the OEPs of some meta-GGA functionals do not converge, while the corresponding gKS calculations converge normally. We tested SCAN, MS2, MVS, and TPSS functionals, and SCAN has the least convergence problem. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. CONCLUSION</head><p>In conclusion, we implemented the ELP and the KLI approximations for the OEP meta-GGA of periodic systems, with which we study the meta-GGA band gaps of 20 semiconductors and insulators. Comparing with the GGA band gaps, the new SCAN meta-GGA in a generalized Kohn-Sham scheme is found to improve the band gaps over the GGA band gaps. The non-empirical SCAN meta-GGA outperforms the nonempirical PBE GGA, not only for diversely-bonded materials near equilibrium <ref type="bibr" target="#b11">12</ref> , but also for the band gaps of solids. The improvement is achieved without using the expensive exact exchange, as in fourth-rung hybrid functionals. For materials wrongly predicted to be gapless in GGA, the result 57 of β-MnO 2 with SCAN shows that meta-GGAs can open the gap.</p><p>Consider the ratio of the calculated to the experimental energy gap. For the 17 solids of Table <ref type="table" target="#tab_2">I</ref>, this ratio varies from 0.35 to 0.79 with an average of 0.60 for the PBE GGA, from 0.53 to 0.94 with an average of 0.73 for the SCAN meta-GGA, and from 0.72 to 1.07 with an average of 0.89 for the HSE hybrid functional. The ratio improves uniformly from PBE to SCAN to HSE. While the hybrid functional is more accurate for the gap than SCAN is, it is also more empirical and more computationally expensive.</p><p>For periodic systems, the OEP or ungeneralized Kohn-Sham v XC 's of meta-GGAs are close to the GGA v XC 's, and they only differ in small details. Consequently the OEP meta-GGA gaps (like the OEP EXX+RPA gaps where available) are not improved significantly over the GGA gaps, and the band structures of OEP meta-GGAs are similar to those of GGAs. We think it is likely that the band gap and band structure in the exact Kohn-Sham potential are close to those of GGA and OEP meta-GGA (and of the OEP hybrid) in periodic systems. Aside from the band gap, the gKS meta-GGA band structures are also similar to the GGA band structures.</p><p>Due to the sharp features in ∇∂e XC /∂τ σ , the OEP meta-GGA is sensitive to the real-space grid used in computation, more so than the gKS meta-GGA. Different meta-GGAs have different requirements for the minimal grid, and in general SCAN needs the biggest grid to converge of the meta-GGAs tested in this work. TDDFT with meta-GGA xc kernels is also expected to show this grid sensitivity. It is possible to avoid the grid sensitivity in the design of the functional, although this may interfere with the satisfaction of some exact conditions.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG. 1. (color online) Comparison of vXC's of the Ne atom for SCAN, LDA, and GGA. The exact vXC is from Ref. 46.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 2 .</head><label>2</label><figDesc>FIG. 2. (color online) Comparison of vXC's of bulk Si along the Si-Si bond for SCAN, LDA, and GGA. The Si atoms are located at r = 0 and r = 2.35 Å. The vertical dashed line is a numerical artifact and does not affect the band structure.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIG. 4 .</head><label>4</label><figDesc>FIG. 4. (color online) The band structure of Si calculated with PBE, gKS SCAN, and KS(KLI) SCAN.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIG. 5 .</head><label>5</label><figDesc>FIG. 5. (color online) The band structure of GaAs calculated with PBE, gKS SCAN, and KS(KLI) SCAN.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>FIG. 6. (color online)The KS(ELP) SCAN vXC (a.u.), the radial component of ∇∂eXC/∂τ (a.u.), and α of the Ne atom evaluated with two different grids. The solid lines are results obtained by using 504 radial grid points, and the dots and dashed lines are results obtained by using 65 radial grid points.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>FIG. 7. (color online)The KS(KLI) SCAN vXC (a.u.), the x component of ∇∂eXC/∂τ (a.u.), and α of the Ar dimer evaluated with two different grids, plotted along the Ar-Ar axis. The Ar atoms are located at x = ±1.88 Å, so that comparison with Ref. 63 is possible. Since the system is symmetric, only the x ∈ [0, 4] part is plotted. The solid lines are results obtained by using 806 radial grid points, and the dots and dashed lines are results obtained by using 134 radial grid points.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIG. 9 .</head><label>9</label><figDesc>FIG. 9. (color online) The radial component of ∇∂eXC/∂τ of the Ne atom of different functionals. α's of different functionals are similar, so only that of SCAN is plotted.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>FIG. 10 .</head><label>10</label><figDesc>FIG. 10. (color online) KS(KLI) SCAN vXC of bulk Si along the Si-Si bond. The Si atoms are located at r = 0 and r = 2.35 Å.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE I</head><label>I</label><figDesc></figDesc><table /><note><p>. Calculated KS/gKS gaps and the derivative discontinuities (∆XC = E gKS g -E KS(KLI) g</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE II .</head><label>II</label><figDesc>Material solid Ar LiF NaCl MgO CaO BN C a ZnS β-GaN CdS GaP BP CdSe BAs GaAs InP Si The total energy differences between KS(KLI) SCAN and SCAN with PBE orbitals of different grids. Nr is the number of radial grid points. ∆E = E</figDesc><table><row><cell>Nr</cell><cell>69</cell><cell>169</cell><cell>82</cell><cell>74</cell><cell>87</cell><cell>74</cell><cell>65</cell><cell>153</cell><cell>209</cell><cell>96</cell><cell>91</cell><cell>74</cell><cell>96</cell><cell>87</cell><cell>169</cell><cell>177 137</cell></row><row><cell>∆E</cell><cell>0.06</cell><cell cols="8">0.09 0.22 0.59 0.54 0.27 0.17 0.0008 0.03</cell><cell>0.17</cell><cell cols="6">0.05 0.03 0.14 0.01 0.03 0.06 0.10</cell></row><row><cell>Nr</cell><cell>537</cell><cell cols="2">705 638</cell><cell cols="4">571 672 571 504</cell><cell>638</cell><cell>873</cell><cell>739</cell><cell cols="5">705 571 739 672 672</cell><cell>739 571</cell></row><row><cell>∆E</cell><cell cols="16">-0.003 -0.01 -0.005 -0.002 -0.01 -0.02 -0.02 -0.006 -0.03 -0.0007 -0.002 -0.02 -0.05 -0.02 -0.01 -0.001 -0.02</cell></row><row><cell>a diamond</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">KS(KLI) SCAN</cell><cell cols="2">-E PBE orb.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table><note><p><p>SCAN</p>. All energies are in eV.</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>ZY, JS and JPP are supported by the <rs type="funder">National Science Foundation</rs>(Grant No. <rs type="grantNumber">DMR-1305135</rs>). HP, JS, and JPP are also supported by the <rs type="funder">Center for the Computational Design of Functional Layered Materials</rs>, an <rs type="funder">Energy Frontier Research Center (EFRC)</rs> funded by the <rs type="funder">U.S. Department of Energy, Office of Science, Basic Energy Sciences</rs> under Award No. <rs type="grantNumber">DE-SC0012575</rs>. The <rs type="funder">EFRC</rs> grant contributed to the computational aspects of this work. We thank <rs type="person">Kieron Burke</rs> for suggestions on the manuscript.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_k3jqZub">
+					<idno type="grant-number">DMR-1305135</idno>
+				</org>
+				<org type="funding" xml:id="_X7hkw8b">
+					<idno type="grant-number">DE-SC0012575</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">Y</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cardona</surname></persName>
+		</author>
+		<title level="m">Fundamentals of semiconductors: physics and materials properties</title>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hedin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">139</biblScope>
+			<biblScope unit="page">796</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hohenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kohn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page">864</biblScope>
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Sham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">140</biblScope>
+			<biblScope unit="page">1133</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+	</analytic>
+	<monogr>
+		<title level="m">A primer in density functional theory</title>
+		<title level="s">Lecture notes in physics</title>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Fiolhais</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">F</forename><surname>Nogueira</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Marques</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Density functional theory and its application to materials</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Schmidt</surname></persName>
+		</author>
+		<editor>V. van Doren, C. van Alsenoy, and P. Geerlings</editor>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<publisher>AIP Press</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Parr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L J</forename><surname>Balduz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">1691</biblScope>
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Seidl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Görling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vogl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Majewski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Levy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page">3764</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Casida</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">4694</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Neumann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Nobes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Handy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Phys</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">130</biblScope>
+			<biblScope unit="page">74103</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ruzsinszky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">36402</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Remsing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ruzsinszky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Waghmare</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Nature</forename><forename type="middle">; E</forename><surname>Chem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Constantin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Burke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">136406</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Sharp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Horton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">317</biblScope>
+			<date type="published" when="1953">1953</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Talman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Shadwick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">36</biblScope>
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Arbuznikov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kaupp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">381</biblScope>
+			<biblScope unit="page">495</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">G</forename><surname>Eich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hellgren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page">224107</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Tran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Blaha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">226401</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Kosobutsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Gordienko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Solid State</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">1972</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ivanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hirata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Bartlett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">5455</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Della</forename><surname>Sala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Goerling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">5718</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Staroverov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Davidson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page">81104</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Izmaylov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Staroverov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Davidson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Stoltz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Cancès</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page">84107</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Gritsenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">42506</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Grüning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Gritsenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page">6435</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Krieger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Iafrate</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">101</biblScope>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Slater</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">385</biblScope>
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Blöchl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">17953</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Joubert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">1758</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Velde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">7888</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wiesenekker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Cond. Matt</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">6721</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Franchini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H T</forename><surname>Philipsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Visscher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">1818</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Franchini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H T</forename><surname>Philipsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Lenthe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Visscher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Theory Comput</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">1994</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Band2014 (a modified version is used)</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H T</forename><surname>Philipsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Velde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Berger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>De Boeij</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Franchini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Groeneveld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Kadantsev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Klooster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Kootstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Romaniello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Skachkov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Snijders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J O</forename><surname>Verzijl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wiesenekker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ziegler</surname></persName>
+		</author>
+		<ptr target="http://www.scm.com" />
+	</analytic>
+	<monogr>
+		<title level="s">SCM, Theoretical Chemistry</title>
+		<imprint/>
+		<respStmt>
+			<orgName>Vrije Universiteit</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">2547</biblScope>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Monkhorst</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Pack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">5188</biblScope>
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ruzsinszky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">137</biblScope>
+			<biblScope unit="page">51101</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Haunschild</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">W</forename><surname>Bulik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">138</biblScope>
+			<biblScope unit="page">44113</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ruzsinszky</surname></persName>
+		</author>
+		<title level="m">Proc. Nat. Acad. Sci</title>
+		<meeting>Nat. Acad. Sci</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">685</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Staroverov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">146401</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Burke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ernzerhof</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">3865</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Lenthe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Chem</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">1142</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H T</forename><surname>Philipsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Lenthe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Snijders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Baerends</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">13556</biblScope>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Bachelet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Christensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page">879</biblScope>
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">G</forename><surname>Ryabinkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Staroverov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">137</biblScope>
+			<biblScope unit="page">164113</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<author>
+			<persName><forename type="first">O</forename><surname>Madelung</surname></persName>
+		</author>
+		<title level="m">Semiconductors: Data Handbook</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Surh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Louie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Cohen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">9126</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Heyd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ernzerhof</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page">8207</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Heyd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Peralta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page">174101</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Heyd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Scuseria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ernzerhof</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page">219906</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">558</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page">14251</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Furthmüller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Mat. Sci</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">15</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Furthmüller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page">11169</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Grüning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rubio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page">154108</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Kitchaev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ceder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page">45132</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Peverati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Truhlar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page">134704</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Janak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">7165</biblScope>
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mori-Sánchez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">146401</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mori-Sánchez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">136</biblScope>
+			<biblScope unit="page">204111</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Godby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schlüter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Sham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">2415</biblScope>
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Becke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Sherrill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dilabio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page">34111</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Wolkow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dilabio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">394</biblScope>
+			<biblScope unit="page">334</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Runge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K U</forename><surname>Gross</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">997</biblScope>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

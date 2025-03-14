@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+				<funder ref="#_nF5rKnX">
+					<orgName type="full">Key Research and Development Plan, Major Scientific and Technological Innovation Projects of ShanDong Province</orgName>
+				</funder>
+				<funder ref="#_eRMA4yR">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_bDfbN94">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Zhihan</forename><surname>Lv</surname></persName>
+							<email>lvzhihan@gmail.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Yang</forename><surname>Han</surname></persName>
+							<email>hanyang@ncst.edu.cn</email>
+						</author>
+						<author>
+							<persName><forename type="first">Amit</forename><forename type="middle">Kumar</forename><surname>Singh</surname></persName>
+							<email>amit_245singh@yahoo.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Gunasekaran</forename><surname>Manogaran</surname></persName>
+							<email>gmanogaran@asia.edu.tw</email>
+						</author>
+						<author>
+							<persName><forename type="first">Haibin</forename><surname>Lv</surname></persName>
+							<email>lvhaibin@ncs.mnr.gov.cn</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Data Science and Software Engi- neering</orgName>
+								<orgName type="institution">Qingdao University</orgName>
+								<address>
+									<postCode>266071</postCode>
+									<settlement>Qingdao</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">College of Metallurgy and Energy</orgName>
+								<orgName type="institution">North China University of Science and Technology</orgName>
+								<address>
+									<postCode>063009</postCode>
+									<settlement>Tangshan</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Computer Science and Engineering</orgName>
+								<orgName type="institution">National Institute of Technology Patna</orgName>
+								<address>
+									<postCode>800005</postCode>
+									<region>Bihar</region>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="department">College of Information and Electri- cal Engineering</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>95616</postCode>
+									<settlement>Davis</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="institution">Asia University</orgName>
+								<address>
+									<postCode>41354</postCode>
+									<settlement>Taichung City</settlement>
+									<country>Taiwan North China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff5">
+								<orgName type="institution" key="instit1">Sea Offshore Engineering Sur- vey Institute</orgName>
+								<orgName type="institution" key="instit2">Ministry of Natural Resources North Sea Bureau</orgName>
+								<address>
+									<postCode>266061</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">DB948D04BF24D93CEDA0A278EE0D1DF1</idno>
+					<idno type="DOI">10.1109/TII.2020.2994747</idno>
+					<note type="submission">received March 29, 2020; accepted April 12, 2020. Date of publication May 14, 2020; date of current version November 18, 2020</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Trustworthiness in Industrial IoT Systems</head><p>Based on Artificial Intelligence Zhihan Lv , Senior Member, IEEE, Yang Han , Amit Kumar Singh , Senior Member, IEEE, Gunasekaran Manogaran , and Haibin Lv</p><p>Abstract-The intelligent industrial environment developed with the support of the new generation network cyberphysical system (CPS) can realize the high concentration of information resources. In order to carry out the analysis and quantification for the reliability of CPS, an automatic online assessment method for the reliability of CPS is proposed in this article. It builds an evaluation framework based on the knowledge of machine learning, designs an online rank algorithm, and realizes the online analysis and assessment in real time. The preventive measures can be taken timely, and the system can operate normally and continuously. Its reliability has been greatly improved. Based on the credibility of the Internet and the Internet of Things, a typical CPS control model based on the spatiotemporal correlation detection model is analyzed to determine the comprehensive reliability model analysis strategy. Based on this, in this article, we propose a CPS trusted robust intelligent control strategy and a trusted intelligent prediction model. Through the simulation analysis, the influential factors of attack defense resources and the dynamic process of distributed cooperative control are obtained. CPS defenders in the distributed cooperative control mode can be guided and select the appropriate defense resource input according to the CPS attack and defense environment.</p><p>Index Terms-Against and attack, cyber-physical system (CPS) and artificial intelligence (AI), industrial environments, Internet of things, trustworthiness model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>T HE PROPOSAL and development of cyber-physical sys- tems (CPSs) provide a new idea and approach for the deep integration of a computer system, information system, and communication system. CPS is an intelligent system in which the computing units and physical objects are highly integrated and interacted in a network environment <ref type="bibr" target="#b0">[1]</ref>- <ref type="bibr" target="#b2">[3]</ref>. CPS, which includes the Internet of Things (IoT), information physical integration energy system or energy Internet, smart grid, intelligent transportation system, intelligent manufacturing system, intelligent logistics systems, etc., has become the core technology to support and lead a new round of industrial transformation <ref type="bibr" target="#b3">[4]</ref>, <ref type="bibr" target="#b4">[5]</ref>. In artificial intelligence and machine learning, the data and application scenarios are very important. If the application scenario can be abstracted into a model, the data can be used, and the correct algorithm can be combined, then the information trusted application will greatly improve the credibility of the network information, which has become one of the key issues in the development and application of the Internet. Whether artificial intelligence can be successfully applied to the field of credibility, including several measurable factors, such as adaptability, interpretability and the feasibility of algorithm training Enforceability <ref type="bibr" target="#b5">[6]</ref>- <ref type="bibr" target="#b9">[10]</ref>. The traditional physical systems (such as industrial control systems, drive systems, and medical devices) are relatively difficult to access, penetrate, and enforce attacks by the attackers because of their relatively isolated operating environment and the use of dedicated channels for communication. Due to the need of informatization and intelligence, the traditional physical systems have gradually evolved into CPS, and the operating environment of the system has been opened and interconnected through closure and isolation <ref type="bibr" target="#b10">[11]</ref>- <ref type="bibr" target="#b12">[13]</ref>. While improving operational efficiency, it also provides new attack channels for the attackers, making CPS more vulnerable to internal or external attacks. For example, Stuxnet attacks invade nuclear facility control systems through U disk ferries, while WindShark directly accesses through physics. In a manned wind farm control system, once an attacker breaks through the CPS network boundary and enters the internal network, the attack success rate may be higher than the Internet attack, and the threat may be greater <ref type="bibr" target="#b13">[14]</ref>- <ref type="bibr" target="#b16">[17]</ref>. Most physical systems design fault diagnosis and safety emergency measures from an engineering safety perspective. For example, the Stuxnet attack tampers with the reported system measurement data, making the control center unable to detect system anomalies, black energy destroys the system communication module and uses the denial of service attacks interfere with grid calls <ref type="bibr" target="#b17">[18]</ref>- <ref type="bibr" target="#b19">[20]</ref>. The service system makes the system's default emergency response and defense strategies not implemented effectively. The common features of these attacks are formulating the corresponding attack strategies for specific business processes and the trusted plans of physical systems, using a network attack technology to implement coordinated attacks on multiple targets, and bypassing physical trusted systems to disrupt the normal operation of the system, even destroying physical equipment <ref type="bibr" target="#b20">[21]</ref>- <ref type="bibr" target="#b23">[24]</ref>. In the future, based on artificial-intelligence-based autonomous learning and powerful database analysis capabilities, people can anticipate dangers in advance and truly kill threats in the cradle, thereby greatly improving the agility of network physical credibility. The credible control of CPS is shifting from physical credibility to physical and social factors integrated disaster prevention <ref type="bibr" target="#b24">[25]</ref>- <ref type="bibr" target="#b27">[28]</ref>. However, due to the characteristics of CPS, such as large-scale data processing, continuous online operation of the system, the operators can only conduct closed feedback, and so on, it is urgent to realize the real-time reliability evaluation of CPS. To promote the in-depth integration of informatization and industrialization is to profoundly grasp the characteristics of the era of global informationization and the process of accelerating the convergence of industrialization.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RESEARCH STATUS OF TRUSTWORTHINESS MODEL</head><p>The security status of the industrial IoT system is a comprehensive appearance under time accumulation. It is necessary to comprehensively consider the time-series evolution law of the key parameters of system operation. Therefore, the space-time analysis method is needed, and the differential equation model is an effective model to describe the spatiotemporal distribution of parameters. In order to eliminate the limitations of the differential equation model for only a few key parameters, this article considers the other redundant parameters of the system state to correct and compensate for the deficiency of the differential equation model <ref type="bibr" target="#b28">[29]</ref>, <ref type="bibr" target="#b29">[30]</ref>. The accuracy of system security status detection and forecasting is measured by the length of equipment life extension and system operation stability. These two indicators are also the most critical indicators for the practical application of the industrial IoT.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Typical CPS Control Model</head><p>The ability to defend against information network attacks is an important measure of CPS performance. Trustworthiness events in recent years have shown that the means of attack faced by CPS are constantly being updated, and its diversity and concealment greatly increase the cost and cost of defense. Successful systems defense is usually based on a thorough understanding of the system architecture and attacks. Therefore, it is necessary to fully understand the characteristics of CPS attacks and existing anomaly detection mechanisms and develop the targeted defense strategies to enhance system trustworthiness <ref type="bibr" target="#b28">[29]</ref>, <ref type="bibr" target="#b29">[30]</ref>.</p><p>The coupling of the information system and the physical system is the difficulty in establishing the CPS-integrated trustworthiness model. It not only analyzes the topology structure and A typical CPS consists of a control center, physical equipment, actuators, and sensors, as shown in Fig. <ref type="figure" target="#fig_0">1</ref>. When the system state changes within a certain range, CPS can be approximated as a linear system. Since linear system theory and methods are mature, the linear time-invariant (LTI) system of discrete time is taken as an example to illustrate the modeling ideas and methods. Specifically, the LTI model can be described as follows:</p><formula xml:id="formula_0">x[k + 1] = Ax[k] + Bu[k] + ω y [k]</formula><p>(1)</p><formula xml:id="formula_1">y[k] = Cx[k] + ω y [k].<label>(2)</label></formula><p>x[k] and y[k] represent the state of the system and the measured value of the sensor, u[k] represents the control signal, and A, B, and C represent the system matrix, the control matrix, and the measurement matrix respectively. ω x [k] and ω y [k] both obey the zero-mean multivariate Gaussian distribution, and the covariance matrix is Q and R. Both the control signal u[k] and the sensor measurement y[k] are transmitted by the communication network.</p><p>The formula, as presented in Fig. <ref type="figure" target="#fig_0">1</ref>, is a schematic diagram of the time-domain equation of physical parameters as a function of time. In practical applications, these formulas use Laplace transform to transform differential equations into algebraic equations, and the solution process and analysis process can be realized.</p><p>The measurement data of the industrial control system need to be preprocessed, mainly including a state estimator and an anomaly detector. The detection principle can be divided into two categories: one is to use the state of the system past time to predict the future state, and according to the prediction results, measurement results were used to detect the abnormal data. In this article, it was named as time-dependent detection. The other type was cross validation through the correlation between the different sensors of the system to achieve the purpose of detection. This article named it space-dependent detection.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Time-Dependent and Spatially Correlated Detection Models</head><p>The main members of the steel product traceability system include steel companies, distribution, product users, quality regulators, etc. The information of the steel enterprise includes the registration information of the enterprise, the raw material composition of the product, the production process data of the product, the product quality data, etc. The information of the distribution includes the batch, packaging, and the logistics date, etc. The information on the product user includes the required product category, use, quality traceability, etc. As a result, a part of the data relationship between the product manufacturing chain and the supply chain is shown in Fig. <ref type="figure" target="#fig_1">2</ref>, and when a problem occurs at a node, the impact can be traced back or up along the data relationship network to improve the product supply and related dispute resolution efficiency.</p><p>At present, the graph computing system generally adopts the node centered programming model or interface. The user can customize a node update function update(), and the graph calculation system will complete the calculation task by calling the update function for each node. This function describes the operations that a node needs to perform in a round of iterations. A typical node update function update() follows the pseudocode, as shown in Fig. <ref type="figure" target="#fig_2">3</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Comprehensive Trustworthiness Model Analysis</head><p>This section mainly analyzes the CPS-integrated trustworthiness model in the attack scenario. In order to ensure the universality of the analysis, the attack scenario where the control signal and the measured value are simultaneously tampered with is considered. The symbol is used to indicate the normal state. The physical quantity underneath define the amount of attack the system suffers as follows (to facilitate the omission of the time index in the definition of this section).</p><p>1) Use x a and y a to represent the actual system status and the sensor measurements, respectively. 2) Use xm , ŷm , ε m , and u m to represent the state estimation value of the control center, the predicted value of the sensor measurement, the anomaly detector residual, and the determined control signal, respectively. 3) Use u a to indicate the actual control signal received by the actuator. This signal has been tampered with by the attacker. Specifically, u a = u m + a u , where u m is the control command issued by the control center, and a u ∈ R l is the malicious injected in u m control signal. 4) Use y m to indicate the measured value of the sensor received by the control center. This signal has also been tampered with by the attacker. Specifically, y m = y a + a y , where a y ∈ R m represents the malicious signal injected into the actual measured value of the sensor y a . From the point of view of the controlled physical system, the control commands received by the physical system have been tampered with by the attacker, and the physical system makes an erroneous decision based on the instruction. At the same time, the measured value of the current state is also tampered with by the attacker.</p><p>At time k, the control commands, the system state equations, and the measurement results accepted can be expressed as follows:</p><formula xml:id="formula_2">u a = u m + a u (3) x a [k + 1] = Ax a [k] + Bu a [k] + w x [k] (4) y a [k] = Cx a [k] + w y [k].<label>(5)</label></formula><p>From the control center, the measured value y m received by the attacker has been changed to the data under normal conditions. The control center detects the abnormality of the received measured value. After it is determined to be normal, it will send according to the control policy control signal u m . At time k, the tamper-received sensor measurement will affect the system state estimation process, as shown in ( <ref type="formula" target="#formula_1">2</ref>) and (3), and the anomaly detection, as shown in ( <ref type="formula">4</ref>) and <ref type="bibr" target="#b4">(5)</ref>. The control algorithm can be expressed as</p><formula xml:id="formula_3">xm [k + 1] = L 1 ( Xm [k], U m [k], Y m [k + 1]) (6) ŷm [k+1] = L 2 ( Xm [k],U m [k],Y m [k])<label>(7</label></formula><p>)</p><formula xml:id="formula_4">ε m [k + 1] = y m [k + 1] -ŷm [k + 1] (<label>8</label></formula><formula xml:id="formula_5">)</formula><formula xml:id="formula_6">u m [k + 1] = L 3 ( Xm [k + 1], U m [k], Y m [k + 1], x 0 ). (<label>9</label></formula><formula xml:id="formula_7">)</formula><p>The differential equation model with the same structure is adopted, and the model analysis method is consistent with the previous method. The threat model under a time-varying attack is taken as an example of the analysis. In addition, the threat model under the space-related data integrity attack is similar to the threat model under the time-related attack, which is not described here.</p><p>The core idea of the CPS-integrated trust model designed in this article is to abstract the possible situation of CPS attack from the perspective of the system administrator, abstract it into the system control flow, and adaptively modify the measured values and the control commands. The constructed credibility constraint space is a defensive measure that CPS can take during the attack. It provides a feasible theoretical way for researchers and managers to understand the comprehensive reliability of CPS.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESEARCH STATUS OF SAFETY PERFORMANCE ANALYSIS</head><p>This article proposes a new power CPS security risk assessment framework, as shown in Fig. <ref type="figure" target="#fig_3">4</ref>, which aims to estimate the credibility of industrial IoT systems and provide guidance for the prevention of system security risks. The preferred subject model of attack prediction and defense strategy is the differential equation model. To compensate for the defects of the main model, the data-driven and artificial intelligence algorithms are used to correct the attack prediction model to obtain the optimal defense strategy. The typical case has three parts. Part A introduces the case application framework, Part B introduces the key principles and theoretical analysis, and Part C shows the practical application effect, and the three progress in layers to clearly define trustworthiness in industrial IoT systems based on the artificial intelligence.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. CPS Trustworthiness Robust Control Strategy</head><p>For the attack defense trustworthiness problem of the CPS network, this section proposes a virtual power plant (VPP) distributed economic scheduling strategy. Based on the designed strategy, even in the network attack threat environment, the microincreasing rate of the distribute generation (DG) group can converge to the optimal solution of the optimization problem according to the convergence rule. In this strategy, a distributed credibility manager is set up to monitor the status of the credibility information of each DG through the designed observing communication network. When the confidence value of a DG falls below the set threshold, it will be isolated by the modulation and coding scheme (NCS) to avoid the serious harm that the malicious attack may cause to the CPS.</p><p>1) Network to CPS Attack Detection Process: To achieve the detection of maliciously following DG n, DG i ∈ N + n uses the N -information from the observed communication subnetwork to assess the feasible range of its rate of increase. In terms of implementation technology, this information can be added to the transmission packet of DG n and sent to all DG i ∈ N + n . When certain conditions are met, by virtue of the information in the observed communication subnetwork, any DG i = {1, . . . , N} can estimate the upper and lower limits of the microincrement rate in the next iteration of any of its receiving neighbors DG j = N - n . where η is the lower bound of the adjacency matrix element; λ max j (k) and λ min j (k) are defined as λ max</p><formula xml:id="formula_8">j (k) = max{λ l (k)|∀l ∈ N - j }, λ min j (k) = min{λ l (k)|∀l ∈ N - j }, and D max j (k) D min j (k) are defined as D max j (k) = {l|λ l (k) = λ max j (k)}, D min j (k) = {l|λ l (k) = λ min j (k)}.</formula><p>The above formula gives the maximum and minimum possible reasonable values of the microincrement rate of DG j in the next iteration period. If the following inequality is not true</p><formula xml:id="formula_9">λ low j (k) ≤ λ j (k) ≤ λ up j (k)<label>(10)</label></formula><p>then DG i suspects that it receives the neighbor DG j state abnormality, determines that it is a suspicious node, and prepares to initiate the edge and isolation process; where λ j (k) is the microincrement rate information that DG i receives from DG j. This establishes a detection mechanism for the following DG.</p><p>On the other hand, in the mechanism for detecting the malicious leader DG, one of the neighboring DGs of the leader DG can be set as the agent leader DG, which is responsible for direct monitoring. Take the denial of service (DoS) attack and the replay attack as an example. The detection principle is as follows.</p><p>If the following relationship is true</p><formula xml:id="formula_10">λ l (k) = φ. (<label>11</label></formula><formula xml:id="formula_11">)</formula><p>It is believed that the leading DG is attacked by DoS.</p><p>If the following relationship is true</p><formula xml:id="formula_12">|P ref -P out | &gt; e conv and λ l (k) ≡ λ l (k + 1) . (<label>12</label></formula><formula xml:id="formula_13">)</formula><p>The leader DG is considered to be replayed, where e conv is a reasonable convergence error constant.</p><p>2) Marginalization and Isolation Process: The deep&amp;cross network link manager (DCLM) located local to each DG information terminal can maintain and update the confidence</p><formula xml:id="formula_14">c ij (k)(∀j ∈ N - i )</formula><p>of its receiving neighbor DG j. The initial value of the credibility is set to c ij (0). The credibility update principle is</p><formula xml:id="formula_15">c ij (k + 1) max {c ij (k) -1, 0} , If DG j Suspicious c ij (k) ,</formula><p>Other .</p><p>(13) For the malicious DG j that is attacked, the sending neighbor DG i will gradually reduce its credibility. At this time, DG j will be gradually marginalized according to the following rules:</p><formula xml:id="formula_16">a ij (k) = [c ij (k)] + cij l∈N - i [c ij (k)] + cij (<label>14</label></formula><formula xml:id="formula_17">)</formula><p>where c ij is the threshold of credibility c ij (k), which can be calculated by an advanced intelligent algorithm; [x] + y is defined as</p><formula xml:id="formula_18">[x] + y = x, if x ≥ y 0, other . (<label>15</label></formula><formula xml:id="formula_19">)</formula><p>Assume that the adjacency matrix A(k) is a row random. According to the above principle, the weight of the control communication line connected to the malicious DG will gradually decrease until it is finally 0 in which time its transmitting neighbor will disconnect all communication lines between them. When all relevant control communication lines are removed, the malicious DG is also completely isolated from the communication network. At the same time, the malicious DG is also physically isolated from the distribution network, completely preventing its possible harmful effects on the entire system.</p><p>It should be noted that in the case where the leader DG is attacked when the original malicious leader DG is isolated, the agent leader DG starts to receive the information P ref = P out delivered by the superior express mail service (EMS) so that the VPP is again controllable. The VPP distributed economic scheduling strategy robust to network attacks proposed by this research has strong convergence characteristics and can resist various types of network attacks, including noncollusion and collusion network attacks, and various types of communication failures. Baton. When a malicious DG violates the above conditions, it will be gradually marginalized and isolated from the NCS. When the output random disturbance is added to the input, the output is still stable, robustness' intuitive expression is shown in Fig. <ref type="figure" target="#fig_4">5</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. CPS Trustworthiness Assessment Method</head><p>The traditional grid risk assessment is generally based on historical data or current data. The results obtained are "static" results in the current state of a single time scale, which are transient short-term scale risks, while multitime scale risk assessments are required. Consider the risk of the system for a period of time in the future, namely the long-term scale risk. The power CPS trustworthiness assessment proposed in this article comprehensively considers the single-domain trustworthiness and the cross-domain trustworthiness. The former represents the direct loss caused by the attack on single information and physical systemand only considers the current vulnerability of the system and the risk of being attacked. The static short-time scale risk can guide the defender to protect the relevant equipment in time; the latter considers the fault propagation process caused by the attack, and studies the system risk in the future period after the attack occurs, which belongs to the long-term scale risk, and the power CPS. The replanning of the safety structure has important guiding significance. Therefore, the combination of the two can more fully understand the trustworthiness of CPS.</p><p>The safety risk calculation method in this article adopts the classic risk assessment model-the Rand risk assessment model: RT = PVC. RT is the expected value of the ultimate loss of the target, representing the risk; P is the probability of a target being attacked, "threatening"; V is the probability that a target will eventually be destroyed after being attacked, "vulnerability"; C is a target. The magnitude of the damage caused by the attack, and eventually being destroyed, represents the consequences.</p><p>The cross-domain trustworthiness assessment method adopted in this article first establishes an information system network model N 1 = (V 1 ,α 1 ) and a power system network model N P = (V P , α P ) based on the complex network theory. Among them, V 1 is a set of middle nodes in N 1 , where N 1 satisfies the idempotent rate, that is, the proportion of nodes whose degree is k in the network N 1 is P 1 (k). Then, using the attack prediction result as input, combined with the power CPS network topological degree distribution characteristics and the information physical interaction system cross-domain connection characteristics, the probability model of the attack fault cross-domain propagation process is established, and the dynamic fault probability is calculated. The times of successes are positive, and the times of failures are negative. The attack experimental warning is shown in Fig. <ref type="figure" target="#fig_5">6</ref>.</p><p>The online queuing algorithm is used to predict the system state in real time. The online queuing algorithm can evaluate CPS transparently and automatically. It can work in parallel with CPS without any influence. It has high feasibility. The whole evaluation process works online and circularly, keeping synchronous with the operation of the CPS system, which can effectively improve the system reliability. The workflow steps are as follows.</p><p>Step 1: Obtain system status information and component experience data set information from CPS.</p><p>Step 2: According to the collection and information, the online queuing algorithm is used to build the prediction queue to evaluate the reliability of the system.</p><p>Step 3: As the evaluation result, the predicted queue is fed back to the operator's visual interface in the form of an alarm.</p><p>Step 4: The operator shall refer to the alarm information and take corresponding improvement measures for specific components of the components that may trigger the next system fault to ensure that the CPS operates without fault.</p><p>In CPS, a physical system node is called a power element, an information system node is called an information element, a power element that provides power support for an information element is called a supporting power element, and an information element that provides control support for a power element is called a supporting information element. Define the meaning of the power element/information element fault to avoid confusion with the traditional faults.</p><p>The pseudocode of the online queuing algorithm is shown in Fig. <ref type="figure" target="#fig_6">7</ref>.</p><p>Because the system will not fail only if its own node is not faulty and at least one neighbor node is not faulty, that is, the nonfault probability is 1 -γ = (1 -θ)(1 -ρ), so the average failure probability of the node is</p><formula xml:id="formula_20">γ = 1 -(1 -θ)(1 -ρ) = θ + ρ + θρ. (<label>16</label></formula><formula xml:id="formula_21">)</formula><p>After the above attack failure cross-domain propagation algorithm, the final power CPS failure probability is obtained (γ 1 , γ p ). Since the fault loss is the product of the node average failure probability γ and the total node value C, the final crossdomain trustworthiness can be calculated according to the power element and information element value and the vulnerability index C p i , V p i and C i j , V i j , obtained from the single-domain trustworthiness assessment phase.</p><formula xml:id="formula_22">R c = γ 1 C I i V I i + γP C P j V P j . (<label>17</label></formula><formula xml:id="formula_23">)</formula><p>The security protocol research includes two aspects: node security and information security between the nodes. The main solutions for current node security include trusted root-based identity authentication, which uses the trusted platform module as a built-in trusted root and uses this as a starting point, combined with secure boot, data storage protection, integrity metrics, and trusted delivery. And other technologies adopt step-by-step measurement, verification, and delivery methods to complete node credibility evaluation. In this article, a secure link state routing protocol based on the node credibility is applied. By introducing trust and complex process capability index (CPK)-based security authentication mechanisms in the network, the security of information interaction is enhanced on the one hand, and the node is considered comprehensively in routing decision. Credibility and path credibility are the paths to choose high-security credibility for information transmission.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Analysis of Safety Risk Assessment Results</head><p>In the experiment, the appsim simulation platform is used, the MATLAB/Simulink software is integrated, the data classification, redundancy check, and trend monitoring are used to build the model, and self-tuning is realized by this method. For the acquired system state information, 80% of the data are used for classification model training, and 20% of the data are used for a blind test. In order to check the redundancy, first, the history and test system state information instances are transformed into vector groups by using a vector space model. Fig. <ref type="figure" target="#fig_7">8</ref> shows the cascade mean failure probability change caused by the attack. It is known that θ is the probability of failure caused by the failure of the node itself in the system, ρ is the failure probability caused by all the failures of the neighbor nodes in the system, and γ is the probability that any node in the system will leave the maximum connectivity graph of the network due to the failure, that is, the average failure of the node probability.</p><p>The total number of offensive and defensive resources S A and S D are two key factors affecting the level of system vulnerability during the game phase. The sensitivity analysis of them is shown in Fig. <ref type="figure" target="#fig_8">9</ref>.</p><p>The simulation results and the analysis conclusions of this section can help guide the CPS defenders of the distribution network with distributed collaborative control mode and choose how to invest the appropriate amount of defense resources according to the CPS attack and defense environment.</p><p>In the game phase, in addition to the influencing factors of the network attack and defense, the dynamic convergence process of the distributed collaborative control itself will also affect the system vulnerability assessment results. The following is a description of the influence mechanism through the simulation example and then the sensitivity analysis.  The simulation analysis of the impact of network attack time and control scheduling commands on the vulnerability of distribution network CPS.</p><p>The simulation results are shown in Fig. <ref type="figure" target="#fig_9">10</ref>, where the scheduling ratio is defined as the ratio of the reference power P ref to the maximum allowable output of the VPP, which shows that the VPP dynamically adjusts according to each control scheduling command, and the attack and defense game is performed at each moment. Corresponding system vulnerability: It can be seen from the figure that in the process of VPP accepting a certain instruction P ref scheduling, the system vulnerability changes obviously at the beginning stage and gradually becomes fixed after a period of time; meanwhile, as the P ref increases, the system vulnerability gradually increases. Upgrade: This is because under the new scheduling command, each DG will initially adjust its own output quickly, and P ref is positively correlated with the value of the scheduling command. According to this, the grid defender can prearm according to the VPP scheduling situation and reasonably plan the investment timing of the defense resources according to the vulnerability of the system.</p><p>It can be seen that the control system has strong fault tolerance under a certain (structure and size) parameter perturbation and maintains the system's strong defensiveness. According to the different definitions of performance, it can be divided into stable robustness and performance robustness. The defense robustness obtained in this article not only has its own stable robustness but also has the performance robustness.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. CONCLUSION</head><p>In this article, the reliability of CPS was studied, and an automatic online evaluation method of CPS reliability based on machine learning was proposed. In one step, the article mainly focused on the CPS model, algorithm, and implementation tools.</p><p>With the continuous development of CPS in recent years, the development of high real-time, automatic, and intelligent CPS had gradually become the common demand of various industries. With the application of information network technology, such as sensor, embedded processing, digital communication, artificial intelligence, and so on, the various vulnerabilities and vulnerabilities in the information network seriously affected the safe operation of CPS and caused great losses while improving the performance and efficiency of existing systems. With the maturity of artificial intelligence technology, the application of artificial intelligence in the field of network physical space credibility not only improves the response speed and the response speed of various threats in cyberspace but also improves the predictability and accuracy of risk prevention in an all-round way. Therefore, artificial intelligence technology had been fully applied in the field of CPS and played a great potential in dealing with all kinds of human integrity problems in the intelligent era.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. CPS control model.</figDesc><graphic coords="2,306.45,66.60,240.00,175.92" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Partial data structure relationship between the iron and steel product traceability system.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Typical node update function update() follows a logical algorithm.</figDesc><graphic coords="3,59.65,66.32,216.00,265.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Overall frame map.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Robustness.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. Attack experimental warning.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Pseudocode of the online queuing algorithm.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. Cascade mean failure probability change caused by the attack.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. 3-D map of the impact of changes in total offensive and defensive resources on system vulnerability.</figDesc><graphic coords="7,346.17,66.24,168.96,146.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 10 .</head><label>10</label><figDesc>Fig. 10. 3-D map of the impact of collaborative control dynamic processes on system vulnerability.</figDesc><graphic coords="7,334.16,269.97,193.32,161.28" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Authorized licensed use limited to: Hochschule Mannheim. Downloaded on March 04,2025 at 12:20:37 UTC from IEEE Xplore. Restrictions apply.</p></note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>This work was supported in part by the <rs type="funder">National Natural Science Foundation of China</rs> under Grant <rs type="grantNumber">61902203</rs> and in part by the <rs type="funder">Key Research and Development Plan, Major Scientific and Technological Innovation Projects of ShanDong Province</rs> under Grant <rs type="grantNumber">2019JZZY020101</rs>. Paper no. <rs type="grantNumber">TII-20-1592</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_bDfbN94">
+					<idno type="grant-number">61902203</idno>
+				</org>
+				<org type="funding" xml:id="_nF5rKnX">
+					<idno type="grant-number">2019JZZY020101</idno>
+				</org>
+				<org type="funding" xml:id="_eRMA4yR">
+					<idno type="grant-number">TII-20-1592</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>He is currently a Professor with the North China Sea Offshore Engineering Survey Institute, Ministry of Natural Resources North Sea Bureau, Beijing, China.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Tunable V-cavity lasers integrated with a cyclic echelle grating for distributed routing networks</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-J</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Photon. Technol. Lett</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="943" to="946" />
+			<date type="published" when="2019-06-15">Jun. 15, 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A multi-sensor data fusion enabled ensemble approach for medical data from body sensor networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Muhammad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Talat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Sodhro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pirbhulal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Fusion</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="155" to="164" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Terahertz transmittance of cobalt-doped VO $_2$ thin film: Investigated by terahertz spectroscopy and effective medium theory</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-N</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. THz Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="177" to="185" />
+			<date type="published" when="2019-03">Mar. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Development of advanced manufacturing cloud of things (AMCoT)-A intelligence manufacturing platform</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Robot. Autom. Lett</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1809" to="1816" />
+			<date type="published" when="2017-07">Jul. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A novel automated construction scheme for efficiently developing cloud manufacturing services</title>
+		<author>
+			<persName><forename type="first">C.-C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-H</forename><surname>Hung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P.-Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-C</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F.-T</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Robot. Autom. Lett</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1378" to="1385" />
+			<date type="published" when="2018-07">Jul. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A first step toward network security virtualization: From concept to prototype</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Gu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Inf. Forensics Secur</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2236" to="2249" />
+			<date type="published" when="2015-10">Oct. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A decentralised approach to privacy preserving trajectory mining</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Talat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Obaidat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Muzammal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Sodhro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pirbhulal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Gener. Comput. Syst</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="382" to="392" />
+			<date type="published" when="2020-01">Jan. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Data collection for security measurement in wireless sensor networks: A survey</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Atiquzzaman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Internet Things J</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="2205" to="2224" />
+			<date type="published" when="2019-04">Apr. 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Physical layer security in heterogeneous cellular networks</title>
+		<author>
+			<persName><forename type="first">H.-M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-X</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Towsley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Commun</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1204" to="1219" />
+			<date type="published" when="2016-03">Mar. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">General theory of security and a study case in internet of things</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Niu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Internet Things J</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="592" to="600" />
+			<date type="published" when="2017-04">Apr. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Intelligent security planning for regional distributed energy internet</title>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">H</forename><surname>Lv</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Ind. Informat</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="3540" to="3547" />
+			<date type="published" when="2020-05">May 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">PUF sensor: Exploiting PUF unreliability for secure wireless sensing</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Abbott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Al-Sarawi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Circuits Syst. I, Reg. Papers</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2532" to="2543" />
+			<date type="published" when="2017-09">Sep. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Distributed contaminant detection and isolation for intelligent buildings</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kyriacou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Michaelides</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Reppa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Timotheou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Panayiotou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Polycarpou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Control Syst. Technol</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1925" to="1941" />
+			<date type="published" when="2018-11">Nov. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">iLOC: An invisible localization attack to internet threat monitoring systems</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Parallel Distrib. Syst</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="1611" to="1625" />
+			<date type="published" when="2009-11">Nov. 2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Blockchain world-Feeding the blockchain beast if bitcoin ever does go mainstream, the electricity needed to sustain it will be enormous</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fairley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Spectr</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="36" to="59" />
+			<date type="published" when="2017-10">Oct. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Industrial IoT for intelligent steel making with converter mouth flame spectrum information processed by deep learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-C</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Ind. Informat</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="2640" to="2650" />
+			<date type="published" when="2020-04">Apr. 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Intelligent security planning for regional distributed energy internet</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Ind. Inform</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="3540" to="3547" />
+			<date type="published" when="2020-05">May 2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Application of Internet of Things technology and convolutional neural network model in bridge crack detection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="39442" to="39451" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Cyberphysical interdependency in dynamic software-defined optical transmission networks</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rastegarfar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Kilper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Glick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Peyghambarian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE/OSA J. Opt. Commun. Netw</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1126" to="1134" />
+			<date type="published" when="2015-12">Dec. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Transitioning from standard automation solutions to cyber-physical production systems: An assessment of critical conceptual and technical challenges</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ribeiro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bjorkman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Syst. J</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="3816" to="3827" />
+			<date type="published" when="2018-12">Dec. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Semanticspreserving cosynthesis of cyber-physical systems</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Mitter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chakraborty</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. IEEE</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="171" to="200" />
+			<date type="published" when="2018-01">Jan. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Real-time wireless sensor-actuator networks for industrial cyber-physical systems</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. IEEE</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1013" to="1024" />
+			<date type="published" when="2016-05">May 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Eigen-analysis of large delayed cyber-physical power system by time integration-based solution operator discretization methods</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Mou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Power Syst</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="5968" to="5978" />
+			<date type="published" when="2018-11">Nov. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Cyber-physical modeling and cyber-contingency assessment of hierarchical control systems</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Smart Grid</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2375" to="2385" />
+			<date type="published" when="2015-09">Sep. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">WAMS cyber-physical test bed for power system, cybersecurity study, and data mining</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Adhikari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Morris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Smart Grid</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2744" to="2753" />
+			<date type="published" when="2017-11">Nov. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Informationenergy flow computation and cyber-physical sensitivity analysis for power systems</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Emerg. Sel. Topics Circuits Syst</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="329" to="341" />
+			<date type="published" when="2017-06">Jun. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">CPS oriented control design for networked surveillance robots with multiple physical constraints</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Shao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Comput.-Aided Des. Integr. Circuits Syst</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="778" to="791" />
+			<date type="published" when="2016-05">May 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Leveraging biologically inspired models for cyber-physical systems analysis</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Keller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Syst. J</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="3597" to="3607" />
+			<date type="published" when="2018-12">Dec. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Fast protection-domain crossing in the CHERI capability-system architecture</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Watson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Micro</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="38" to="49" />
+			<date type="published" when="2016-10">Sep./Oct. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Power system risk assessment in cyber attacks considering the role of protection systems</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shahidehpour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Smart Grid</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="572" to="580" />
+			<date type="published" when="2017-03">Mar. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

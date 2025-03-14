@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">An Effective Image Representation Method using Kernel Classification</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Haoxiang</forename><surname>Wang</surname></persName>
+							<email>wanghaoxiang1102@hotmail.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">School of Electronic Engineering</orgName>
+								<orgName type="institution">Xidian University</orgName>
+								<address>
+									<postCode>710126</postCode>
+									<settlement>Xi&apos; an</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jingbin</forename><surname>Wang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">National Time Service Center</orgName>
+								<orgName type="institution">Chinese Academy of Sciences</orgName>
+								<address>
+									<postCode>710600</postCode>
+									<settlement>Xi&apos; an</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">An Effective Image Representation Method using Kernel Classification</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8C0EB0E531269D02D3A01B2E91E542CC</idno>
+					<idno type="DOI">10.1109/ICTAI.2014.131</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:02+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Image Retrieval</term>
+					<term>Image Representation</term>
+					<term>Kernel Classification</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The learning of image representation is always the most important problem in computer vision community. In this paper, we propose a novel image representation method by learning and using kernel classifiers. We firstly train classifiers using the one-against-all rule, then use them classify the candidate images, and finally using the classification responses as the new representations. The Euclidean distance between the classification response vectors are used as the new similarity measure. The experimental results from a large scale image database show that the proposed algorithm can outperform the original feature on image retrieval problem.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>In modern times, countless digital photos are being taken everyday, and the problem of how to store, represent and retrieval them raises <ref type="bibr" target="#b0">[1]</ref>- <ref type="bibr" target="#b4">[5]</ref>. In recent years, the digital management system of images has been proposed to effectively handle this problem <ref type="bibr" target="#b5">[6]</ref>, <ref type="bibr" target="#b6">[7]</ref>. Many online systems are developed to store, manage and share the images. For example the google image engine <ref type="bibr" target="#b7">[8]</ref>, <ref type="bibr" target="#b8">[9]</ref> can that allows users to search the Web for image content. Using such services, we can classify the images correctly according to the concept of them. In figure <ref type="figure" target="#fig_0">1</ref>, we shown some examples of classified image using google image engine. These classified images can provide effective information of image concept, by containing more themes information. Furthermore, Flickr groups can represent richer themes <ref type="bibr" target="#b9">[10]</ref>, <ref type="bibr" target="#b10">[11]</ref>.</p><p>In this paper, an effective representation is learned for an image by using these Google image class memberships. If two images share a set of similar class memberships, we regard them as a pair of similar images. Thus we use the class memberships to construct the new representation of the image. Based on this new presentation, we could gain an accurate retrieval of images from a image database <ref type="bibr" target="#b11">[12]</ref>- <ref type="bibr" target="#b13">[14]</ref>. A kernel classifier is used to measure the membership of an image to a special image class. The number of images in each class is always tremendous, thus the training of kernel classifier may takes a long time <ref type="bibr" target="#b14">[15]</ref>- <ref type="bibr" target="#b17">[18]</ref>. To solve this problem, an efficient algorithm is needed. In this paper, we develope a new iterative algorithm to learn the kernel classifier, which is an efficient fast implementation of support vector machine (SVM) <ref type="bibr" target="#b18">[19]</ref>- <ref type="bibr" target="#b20">[21]</ref>. We try to develop the fast algorithm by using both the stochastic learning strategy <ref type="bibr" target="#b21">[22]</ref>- <ref type="bibr" target="#b23">[24]</ref> and the support vector approximation technology <ref type="bibr" target="#b24">[25]</ref>, <ref type="bibr" target="#b25">[26]</ref>. The developed classifier is fast and robust, which makes the learning from a large number of images possible. Because the training images are input into the algorithm one by one, thus it does not takes much memory, and it is also a online algorithm. Moreover, we use the Histogram Intersection Kernel (HIK) <ref type="bibr" target="#b26">[27]</ref>- <ref type="bibr" target="#b28">[29]</ref>, which is also easy and fast to calculate for histogram features vectors of multi-instance based image representation <ref type="bibr" target="#b29">[30]</ref>- <ref type="bibr" target="#b31">[32]</ref>.</p><p>Using the proposed kernel classifiers, and with a candidate image, we firstly input it into the classifiers of different classes and obtain the classification responses. Then the classification responses are connected to form a classification response vector. Finally, a pair of images are compared by consulating the Euclidean distance <ref type="bibr" target="#b32">[33]</ref>- <ref type="bibr" target="#b35">[36]</ref> between show that this method is both efficient and effective for the kernel classifier learning. However, the goal of kernel classification is not to learn good classifiers themselves, but to use the classifier for the representation of images. We also show that the proposed kernel classification response vector performs better than the original histogram features. We use the proposed method to retrieve images from large scale images. It is shown that it outperforms other methods. The contribution of this paper is summarized as follows:</p><p>• In this paper, we demonstrate a new approach to use the image of different classes to represent a new image. • Moreover, we develop a novel iterative algorithm to learn the kernel classifier by using the training samples one by one. It could also be used to learn other types of classifiers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. REPRESENTATION BY KERNEL CLASSIFICATION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Overview</head><p>The overview and framework of the proposed method is shown in figure <ref type="figure" target="#fig_1">2</ref>. We first download many images of different classes from internet and then train SVM classifiers to separate the images of each class to other classes using the one-against-all rule [37]- <ref type="bibr" target="#b39">[40]</ref>. Given a test image, we apply the SVM classifiers to compute its response, and then the response vector is used as the new representation. Finally, the image dissimilarity is measured using the Euclidean distance between the response vectors <ref type="bibr" target="#b40">[41]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Kernel Classifier Learning</head><p>For each image class, we train a kernel classifier to distinguish the images of this class against the images of other classes. To this end, we first download a large number of images of this class, and also a great deal of images of different classes. Then, we extract the histogram feature vector from each image. The set of extracted image histogram vectors are presented as {x i } N i=1 , where</p><formula xml:id="formula_0">x i = [x i1 , • • • , x id ] ∈ R d is the d dimensional vector of the i-th image,</formula><p>and N is the number of images. A HIK kernel is used to match a pair of histograms as</p><formula xml:id="formula_1">K(x i , x j ) = k min(x ik , x jk )<label>(1)</label></formula><p>Finally, based on this kernel, we design a classifier to predict if an image x belongs to this class or not.</p><formula xml:id="formula_2">f (x) = N i=1 α i φ(x i ) φ(x) = N i=1 α i K(x i , x) =α K(•, x)<label>(2)</label></formula><p>where φ(x ) is an implicit nonlinear mapping function so that φ(</p><formula xml:id="formula_3">x i ) φ(x) = K(x i , x), α i is the weight for i- th training image, α = [α 1 , • • • , α N ] , and K(•, x) = [K(x 1 , x), • • • , K(x N , x)]</formula><p>. The kernel classifier parameter α is learned by minimizing the objective function as</p><formula xml:id="formula_4">min α 1 2 α 2 2 + C 1 N N i=1 (f (x i ), y i )<label>(3)</label></formula><p>where is a loss function for the classifier, y i ∈ {+1, -1} is the class label of i-th image. Here we use the hinge-loss</p><formula xml:id="formula_5">(f (x i ), y i ) = max(0, 1 -y i f (x i ))<label>(4)</label></formula><formula xml:id="formula_6">α 2</formula><p>2 is introduced to control the complexity of the classifier, so that the structural loss can also be minimized <ref type="bibr" target="#b41">[42]</ref>.</p><p>We write the objective function in <ref type="bibr" target="#b2">(3)</ref> as</p><formula xml:id="formula_7">O(α) = 1 2 α 2 2 + C 1 N N i=1 (f (x i ), y i ) = 1 2 α α + C 1 N N i=1 β i 1 -y i α K(•, x i )<label>(5)</label></formula><p>β i is defined as</p><formula xml:id="formula_8">β i = 1, if 1 -y i α K(•, x i ) ≥ 0 0, e l s e<label>(6)</label></formula><p>We try to use the gradient descent method <ref type="bibr" target="#b42">[43]</ref>- <ref type="bibr" target="#b44">[45]</ref> to update the classifier parameter α in an iterative algorithm. However, for the hinge loss has no close form of derivative with regarding to α, thus we fix β i as the previous one. In the t-th iteration, we first compute β t-1 i as</p><formula xml:id="formula_9">β t-1 i = 1, if 1 -y i α t-1 K(•, x i ) ≥ 0 0, e l s e<label>(7)</label></formula><p>then fix it and compute the derivative of O(α) with regarding to α, as</p><formula xml:id="formula_10">∂O(α) ∂α = α -C 1 N N i=1 β t-1 i y i K(•, x i )<label>(8)</label></formula><p>Then α is updated as follows where τ t is the descent step at t-th iteration. It can be concluded that in each iteration, all the training images are used to compute ∂O(α)   ∂α α=α t-1 . When the training image number N is large, the computational cost could be very expensive.</p><formula xml:id="formula_11">α t = α t-1 -τ t ∂O(α) ∂α α=α t-1 = α t-1 -τ t α t-1 -C 1 N N i=1 β t-1 i y i K(•, x i ) = 1 -τ t α t-1 -τ t C 1 N N i=1 β t-1 i y i K(•, x i )<label>(9)</label></formula><p>1) Fast updating method: To accelerate the updating procedure, we develop a novel and efficient algorithm for this problem. The training images are given to the algorithm one by one. In each iteration, only one image is used. We assume that in t-th iteration, x i t is used, and the objective function is constructed using only x i t as</p><formula xml:id="formula_12">O(α) = 1 2 α 2 2 + C (f (x i t ), y i t ) = 1 2 α α + Cβ i t 1 -y i t α K(•, x i t )<label>(10)</label></formula><p>The derivative of O(α) with regarding to α is as</p><formula xml:id="formula_13">∂O(α) ∂α = α -Cβ i t y i t K(•, x i t )<label>(11)</label></formula><p>where β i t is also computed using the previous α t-1 as</p><formula xml:id="formula_14">β i t = 1, if 1 -y i t α t-1 K(•, x i t ) ≥ 0 0, e l s e<label>(12)</label></formula><p>In the t-th iteration, α is updated as</p><formula xml:id="formula_15">α t = α t-1 -τ t ∂O(α) ∂α α=α t-1 = α t-1 -τ t α t-1 -Cβ i t y i t K(•, x i t ) = 1 -τ t α t-1 -τ t Cβ i t y i t K(•, x i t ) (13)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Classification Response Vector</head><p>Given M classes of images, we train M SVM classifiers denoted as {f m (x)} M m=1 using the developed efficient algorithm. When a test image comes, its feature vector is extracted as x, and its response to M classifiers are given as</p><formula xml:id="formula_16">f m (x), m = 1 • • • M . These classification responses are further organized in a vector f = [f 1 (x), • • • , f M (x)] .</formula><p>When a pair of images x i and x j are available, they are firstly represented as</p><formula xml:id="formula_17">f i = [f 1 (x i ), • • • , f M (x i )] and f j = [f 1 (x j ), • • • , f M (x j )]</formula><p>, then we compute the Euclidean distance to compare the similarity between them</p><formula xml:id="formula_18">Dist(f i , f j ) = m (f m (x i ) -f m (x j )) 2<label>(14)</label></formula><p>III. EXPERIMENTS Moreover, we collected a large scale database of 10,000 images from google image engine which are classified according to google keywords. Some example images of our database are given in figure <ref type="figure" target="#fig_2">3</ref>.</p><p>We test our algorithm on the database retrieval task of the collected data set. We randomly selected 1,000 images as queries and leave the remaining ones as the database images. We define an image in the database as a relevant image to the query image if they belong to the same class. We compare our method to the method based on original histogram feature and HIK as similarity measure. The compared method is denoted as "Histogram+HIK". Our method is denoted as "Kernel Classification Representation". The average retrieval precision (ARP) <ref type="bibr" target="#b45">[46]</ref>- <ref type="bibr" target="#b47">[48]</ref> of different retrieved images is given in figure <ref type="figure" target="#fig_4">4</ref>.  The retrieval ARP of the proposed method and compared method.</p><p>In the experiment, a precision value is calculated for each query image, an then they are averaged to obtain the final ARP. The original histogram feature, the precision value at one retrieved image is 0.4620. But when the kernel classifier is used to represent the images, it is improved to 0.7164. Such a significant improvement is archived by including the discriminant information provided by the classifier. A much more accurate representation of image is provided by using the kernel classifier trained from the images of different  In figure <ref type="figure">5</ref>, the top nine nearest neighbor images of a query image is shown. On the top of the figure, the query image is presented, and the retrieved nearest neighbors are presented below. It is clear that the proposed method can relevant images from the database.</p><p>We also compare the proposed fast updating algorithm with the original updating one. The training time is given in figure <ref type="figure">6</ref>. It is indicated that the proposed algorithm can reduce the training time significantly.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. CONCLUSION</head><p>In this paper, we propose a novel method to represent image using the kernel classifiers. The motivation behind this is that two images are regarded as similar to each other if their response to a classifier are similar. We developed a fast and effective iterative algorithm to train the kernel classifier when the training image number is tremendous. The presented experiment results show the proposed presentation method outperforms the original features. In addition, our methodfig2 reduce the training time eminently.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Classified Images of Google Image Engine</figDesc><graphic coords="1,314.08,465.62,249.74,233.94" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Overview of the proposed method.</figDesc><graphic coords="3,55.46,60.11,499.10,211.37" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Example images of collected image data set.</figDesc><graphic coords="4,55.71,70.66,249.39,185.11" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4.The retrieval ARP of the proposed method and compared method.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 .Figure 6 .</head><label>56</label><figDesc>Figure 5. The nearest neighbors of an query image.</figDesc><graphic coords="4,313.98,70.54,249.50,240.59" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head></head><label></label><figDesc>classes.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Authorized licensed use limited to: Hochschule Mannheim. Downloaded on March 05,2025 at 13:43:33 UTC from IEEE Xplore. Restrictions apply.</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Decision fusion of sparse representation and support vector machine for sar image target recognition</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="97" to="104" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A robust multiwavelet-based watermarking scheme for copyright protection of digital images using human visual system</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vundela</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Sourirajan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Arab Journal of Information Technology</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Bioinformatics clouds for big data manipulation</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biology direct</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">43</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Non-negative matrix factorization by maximizing correntropy for cancer clustering</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">-Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">107</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Multiple graph regularized nonnegative matrix factorization</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">-Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bensmail</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2840" to="2847" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Signal activity estimation with built-in noise management in raw digital images</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bosco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Giacalone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bruna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Battiato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Rizzo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">VISAPP 2013 -Proceedings of the International Conference on Computer Vision Theory and Applications</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="118" to="121" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Illinois firefighter line of duty deaths digital image collection database: A knowledge management initiative</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ruan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Groves</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fire Technology</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="163" to="173" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A co-boost framework for learning object categories from google images with 1st and 2nd order features</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z.-P</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z.-Z</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Visual Computer</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Google image search refinement: Finding text in images using local features</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE International Conference on Computer Science and Automation Engineering</title>
+		<imprint>
+			<date type="published" when="2012">2012. 2012</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="98" to="101" />
+		</imprint>
+	</monogr>
+	<note>CSAE 2012 -Proceedings</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Cider: Concept-based image diversification, exploration, and retrieval</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Hoque</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Hoeber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Processing and Management</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Harvesting visual concepts for image search with complex queries</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Nie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-S</forename><surname>Chua</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">MM 2012 -Proceedings of the 20th ACM International Conference on Multimedia</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="59" to="68" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Multiple graph regularized protein domain ranking</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bensmail</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">307</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Accurate image retrieval algorithm based on color and texture feature</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Multimedia</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="277" to="283" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">ProClusEnsem: Predicting membrane protein types by fusing different modes of pseudo amino acid composition</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>You</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Man</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in biology and medicine</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="564" to="574" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Face recognition with texture facial features classification using kernel fisher classifier</title>
+		<author>
+			<persName><forename type="first">X.-F</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advancements in Computing Technology</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="259" to="266" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Learning sparse kernel classifiers for multi-instance classification</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Extension of a kernel-based classifier for discriminative spoken keyword spotting</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tabibian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Nasersharif</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Processing Letters</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="24" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Simultaneous learning of localized multiple kernels and classifier with weighted regularization</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Inoue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yamashita</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">7626</biblScope>
+			<biblScope unit="page" from="354" to="362" />
+			<date type="published" when="2012">2012</date>
+			<publisher>LNCS</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Enhanced pose normalization and matching of non-rigid objects based on support vector machine modelling</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Papadakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Automated seizure detection from multichannel eeg signals using support vector machine and artificial neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Asha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sudalaimani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Devanand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sudhamony</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings -2013 IEEE International Multi Conference on Automation, Computing, Control, Communication and Compressed Sensing</title>
+		<meeting>-2013 IEEE International Multi Conference on Automation, Computing, Control, Communication and Compressed Sensing</meeting>
+		<imprint>
+			<date type="published" when="2013">4s 2013. 2013</date>
+			<biblScope unit="page" from="558" to="563" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Daily forecasting of dam water levels: Comparing a support vector machine (svm) model with adaptive neuro fuzzy inference system (anfis)</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hipni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>El-Shafie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Najah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Karim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hussain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mukhlisin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Resources Management</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="3803" to="3823" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Uncovering overlapping cluster structures via stochastic competitive learning</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Abductive learning of quantized stochastic processes with probabilistic finite automata</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Chattopadhyay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lipson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</title>
+		<imprint>
+			<biblScope unit="volume">371</biblScope>
+			<date type="published" when="1984">1984. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Wavpeak: picking nmr peaks through wavelet-based smoothing and volumebased filtering</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abbas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B.-Y</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="914" to="920" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Multiphase support vector regression for function approximation with breakpoints</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jeong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Operational Research Society</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="775" to="785" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Reducing the number of support vectors of svm classifiers using the smoothed separable case approximation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Geebelen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Suykens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vandewalle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="682" to="688" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Rapid uncertainty computation with gaussian processes and histogram intersection kernels</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Freytag</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Rodner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bodesheim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Denzler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<imprint>
+			<biblScope unit="volume">7725</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="511" to="524" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Efficient semantic segmentation with gaussian processes and histogram intersection kernels</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Freytag</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Frohlich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Rodner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Denzler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings -International Conference on Pattern Recognition</title>
+		<meeting>-International Conference on Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="3313" to="3316" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">The sift image feature reduction method using the histogram intersection kernel</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Usui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kondo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ISPACS 2009 -2009 International Symposium on Intelligent Signal Processing and Communication Systems, Proceedings</title>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="517" to="520" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">A novel image annotation method using region-based multi-instance semi-supervised learning</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="3667" to="3674" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Combining local features and multi-instance learning for ultrasound image classification</title>
+		<author>
+			<persName><forename type="first">J.-R</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-T</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zidonghua Xuebao/Acta Automatica Sinica</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="861" to="867" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Joint learning and weighting of visual vocabulary for bag-of-feature based tissue classification</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">-Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bensmail</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="3249" to="3255" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A modified multiplicative update algorithm for euclidean distance-based nonnegative matrix factorization and its global convergence</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hibi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Takahashi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">LNCS</title>
+		<imprint>
+			<biblScope unit="volume">7063</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="655" to="662" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Ultra low power hardware for computing squared euclidean distances</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nilsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Hertz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2011 20th European Conference on Circuit Theory and Design</title>
+		<meeting><address><addrLine>ECCTD</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011">2011. 2011</date>
+			<biblScope unit="page" from="580" to="583" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Video summarization by clustering using euclidean distance</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ajith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Deepa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2011 -International Conference on Signal Processing, Communication, Computing and Networking Technologies</title>
+		<meeting><address><addrLine>ICSCCN-</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011">2011. 2011</date>
+			<biblScope unit="page" from="642" to="646" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Distance metric learning for multi-camera people matching</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Shkjezi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Hoxha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advanced Computational Intelligence (ICACI)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2013">2013. 2013</date>
+			<biblScope unit="page" from="140" to="143" />
+		</imprint>
+	</monogr>
+	<note>Sixth International Conference on</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">The one-against-all partition based binary tree support vector machine algorithms for multi-class classification</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Guo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="1" to="7" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Reduced one-against-all method for multiclass svm classification</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="14" to="238" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">One-against-all-based multiclass svm strategies applied to vehicle plate character recognition</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mota</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Thomé</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the International Joint Conference on Neural Networks</title>
+		<meeting>the International Joint Conference on Neural Networks</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="2153" to="2159" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Existence of three solutions for a nonlocal elliptic system of-kirchhoff type</title>
+		<author>
+			<persName><forename type="first">G.-S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-Y</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D.-Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-X</forename><surname>Jiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Boundary Value Problems</title>
+		<imprint>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2013">2013. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">ProDis-ContSHC: learning protein dissimilarity measures and hierarchical context coherently for protein-protein comparison in protein database retrieval</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">Suppl 7</biblScope>
+			<biblScope unit="page">2</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Progressive loss of retinal ganglion cell function precedes structural loss by several years in glaucoma suspects</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Banitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ventura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Feuer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Savatovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Luna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Shif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bosse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Porciatti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Investigative Ophthalmology and Visual Science</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="2346" to="2352" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Efficient gradient descent algorithm for sparse models with application in learning-to-rank</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowledge-Based Systems</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="190" to="198" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A hybrid method of modified cat swarm optimization and gradient descent algorithm for training anfis</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Orouskhani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mansouri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Orouskhani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Teshnehlab</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computational Intelligence and Applications</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">An approximate gradient descent algorithm for wireless sensor signal reconstruction</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Information and Computational Science</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="2437" to="2444" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Threshold average precision (tap-k): A measure of retrieval designed for bioinformatics</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Carroll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sheetlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Spouge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="1708" to="1713" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Feature fusion based on the average precision in image retrieval</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Jisuanji Yanjiu yu Fazhan/Computer Research and Development</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1640" to="1646" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Property of average precision and its generalization: An examination of evaluation indicator for information retrieval experiments</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kishida</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">NII Technical Reports</title>
+		<imprint>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="1" to="19" />
+			<date type="published" when="2005">2005. 2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

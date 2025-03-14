@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Synthesis of passive lossless metasurfaces using auxiliary fields for reflectionless beam splitting and perfect reflection</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-06-14">June 14, 2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Ariel</forename><surname>Epstein</surname></persName>
+							<email>ariel.epstein@utoronto.ca</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">University of Toronto</orgName>
+								<address>
+									<postCode>M5S 2E4</postCode>
+									<settlement>Toronto</settlement>
+									<region>ON</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">George</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">University of Toronto</orgName>
+								<address>
+									<postCode>M5S 2E4</postCode>
+									<settlement>Toronto</settlement>
+									<region>ON</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">The</forename><forename type="middle">Edward S</forename><surname>Rogers</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Electrical and Computer Engineering</orgName>
+								<orgName type="institution">University of Toronto</orgName>
+								<address>
+									<postCode>M5S 2E4</postCode>
+									<settlement>Toronto</settlement>
+									<region>ON</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Synthesis of passive lossless metasurfaces using auxiliary fields for reflectionless beam splitting and perfect reflection</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016-06-14">June 14, 2016</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">6D9C82241027DDE18E0F532A62F3D046</idno>
+					<idno type="arXiv">arXiv:1607.02954v2[physics.optics]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:49+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>numbers: 41.20.Jb</term>
+					<term>42.25.Fx</term>
+					<term>81.05.Xj</term>
+					<term>03.50.De</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We introduce a paradigm for accurate design of metasurfaces for intricate beam manipulation, implementing functionalities previously considered impossible to achieve with passive lossless elements. The key concept involves self-generation of auxiliary evanescent fields which facilitate the required local power conservation, without interfering with the device performance in the far field.</p><p>We demonstrate our scheme by presenting exact reactive solutions to the challenging problems of reflectionless beam splitting and perfect reflection, verified via full wave simulations.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Thin planar arrangements of polarizable subwavelength particles (metasurfaces) have been attracting significant attention lately due to their demonstrated ability to efficiently implement a variety of electromagnetic functionalities <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>. Many innovative low-profile devices manipulating the phase, magnitude, and polarization of aperture fields have been reported in recent years <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref>, pointing out the immense potential of these surfaces in optics and microwave physics and engineering.</p><p>While the first demonstrations used a single layer of electrically polarizable particles (meta-atoms) <ref type="bibr" target="#b5">[6]</ref>, it was soon found that these suffer from a limited transmission efficiency.</p><p>To achieve a unity transmission magnitude with arbitrary transmission phase, both electrically and magnetically polarizable meta-atoms must be used <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b16">17]</ref>. When illuminated by an incident field, such metasurfaces induce orthogonal electric and (equivalent) magnetic currents on the surface, forming Huygens' sources, capable of unidirectional radiation (i.e., full transmission) <ref type="bibr" target="#b8">[9]</ref>. This phenomenon can be fully accounted for by the generalized sheet transition conditions (GSTCs) <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>, formulating the equivalent boundary conditions posed by the metasurface. These so-called Huygens' metasurfaces (HMSs) inspired a large number of reports, utilizing unit cells with collocated electric and magnetic polarizability to achieve full transmission with a given phase profile (cf. <ref type="bibr" target="#b4">[5]</ref>).</p><p>Nevertheless, it was recently recognized that this common phase-stipulation design scheme is not accurate <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>. The basic problem lies in the fact that Maxwell's equations demand that any modification of the phase profile on an aperture will be accompanied by a suitable change in the field amplitudes, due to the inevitable variation of the wave impedance <ref type="bibr" target="#b17">[18]</ref>. Thus, stipulating transmitted fields with uniform (unity) amplitude and arbitrary phase is not valid. This recognition has dramatic implications. For instance, when the GSTCs for passive lossless HMSs are rigorously examined, it turns out that plane-wave refraction cannot in general be realized with zero reflection, as the metasurface symmetric structure can only be matched to a single wave impedance value <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b18">19]</ref>. Indeed, the formulation in <ref type="bibr" target="#b17">[18]</ref> showed that sufficient conditions to ensure passive and lossless design in this case include local power conservation and local wave-impedance equalization, requiring at least one additional diffraction mode, e.g. specular reflection. Although this reflection is minor for small-tomoderate angle refraction, it becomes significant when wide-angle refraction is considered.</p><p>These observations raised serious questions regarding previously-reported achievements.</p><p>Primarily, could passive lossless metasurfaces achieve truly-reflectionless engineered refraction? In a recent paper, Wong et al. <ref type="bibr" target="#b19">[20]</ref> provided a positive answer to that question. Relying on generalized scattering matrix theory, the authors showed that an asymmetric stacking of three reactance sheets could be designed to simultaneously match the wave impedance of both the incident and refracted plane waves, leading to zero reflections even in the case of wide-angle refraction. This approach was generalized in <ref type="bibr" target="#b20">[21]</ref>, showing that this structure corresponds to an omega-type bianisotropic metasurface (O-BMS). In O-BMSs, meta-atoms exhibit electric and magnetic polarizabilities as in HMSs, but also feature magnetoelectric coupling <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b21">22]</ref>. This additional degree of freedom allows passive and lossless implementation of metasurfaces which are matched to different wave impedances on their top and bottom facets; similarly, O-BMSs can be used for achieving asymmetric reflection properties <ref type="bibr" target="#b22">[23]</ref>.</p><p>The wave impedance perspective, thus, can be used to find a passive and lossless solution for transforming a given incident plane wave to a desirable transmitted plane wave. But what happens when more than one mode exists below or above the metasurface? When the incident plane wave is to be splitted into two transmitted beams, or reflected in a different direction, the interference between the modes does not allow a proper definition of two distinctive network ports for the top and bottom metasurface facets; this prevents utilization of microwave network theory as in <ref type="bibr" target="#b19">[20]</ref>. In fact, these fundamental diffraction engineering problems have very recently been examined by several authors, which either concluded that inclusion of lossy or active meta-atoms is required for the implementation, or suggested an approximate approach which does not form a valid solution to Maxwell's equations <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b23">24]</ref>. To the best of our knowledge, whether or not an accurate design of passive lossless metasurfaces for such applications is possible remains an open question.</p><p>In this Letter, we propose a different paradigm to tackle these problems. The solution relies on the theorem proved in <ref type="bibr" target="#b20">[21]</ref>, indicating that any field transformation that locallyconserves the real power can be implemented by passive and lossless O-BMSs. Once this is established, designing a reflectionless refracting metasurface becomes trivial, as both the incident and transmitted plane waves feature a uniform power profile on the metasurface; local power conservation is thus achieved by proper stipulation of the field amplitudes <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref> (this result was independently derived in <ref type="bibr" target="#b23">[24]</ref>). On the other hand, trying to apply this theorem naively for the cases of beam splitting or engineered reflection will fail, as the simple stipulation of the incident and diffracted fields forms non-trivial spatially-varying power profiles on the metasurface, which do not match, in general.</p><p>Hence, the key concept underlying our solution is the use of auxiliary fields to achieve local power conservation. This approach dictates a judicious stipulation of evanescent field components, additional to the prescribed excitation and desirable scattered fields, such that the interference between all modes guarantees the continuity of the real power at each point on the metasurface plane, without affecting the overall functionality of the metasurface device in the far field. The electromagnetic fields analytically stipulated by this scheme form an exact solution to Maxwell's equations, supported by a suitable passive and lossless O-BMS design.</p><p>To demonstrate the versatility of our concept we present solutions to two basic diffraction engineering problems, namely, wide-angle beam splitting and engineered plane-wave reflection, featuring qualitatively-different power profiles. The designed metasurfaces are implemented in a commercially-available finite-element solver (ANSYS HFSS) following the scheme introduced in <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref>, showing excellent agreement between the analytical predictions and full-wave simulations. It should be stressed that the physical rationale explored herein is general, and can be applied to a wide range of metasurface problems. The applications addressed in the paper were chosen to emphasize the conceptual leap required to implement challenging functionalities via passive lossless metasurfaces, deliberately introducing auxiliary fields to facilitate the solution.</p><p>For simplicity, we consider a two-dimensional configuration (∂/∂x = 0) with transverse electric (TE) fields (E z = E y = H x = 0), where an O-BMS occupies the plane z = 0, surrounded by homogeneous medium with permittivity ǫ and permeability µ [Figs. <ref type="figure" target="#fig_0">1(a),</ref><ref type="figure" target="#fig_1">2(a)</ref>].</p><p>The O-BMS is characterized by its electric surface impedance Z se (y), magnetic surface admittance Y sm (y), and magnetielectric coupling coefficient K em (y). The wave impedance and wave number are given, respectively, by η = µ/ǫ and k = ω √ µǫ, assuming a time-harmonic dependency of e jωt . The fields below (z &lt; 0) and above (z &gt; 0) the metasurface are denoted as E &lt; x (y, z) , H &lt; y (y, z) , H &lt; z (y, z) and E &gt; x (y, z) , H &gt; y (y, z) , H &gt; z (y, z) , respectively.</p><p>The relation between the tangential fields on the bottom (z → 0 -) and top (z → 0 + ) facets of the metasurface is given by the omega-type bianisotropic sheet transition conditions</p><formula xml:id="formula_0">(O-BSTCs) [21, 22] 1 2 (E + x +E - x ) = -Z se H + y -H - y -K em (E + x -E - x ) 1 2 H + y +H - y = -Y sm (E + x -E - x )+K em H + y -H - y ,<label>(1)</label></formula><p>where we define</p><formula xml:id="formula_1">E - x (y) = E &lt; x (y, z)| z→0 -, E + x (y) = E &gt;</formula><p>x (y, z)| z→0 + (and analogously for H ± x ), and the y dependency is omitted for brevity.</p><p>As discussed in <ref type="bibr" target="#b20">[21]</ref>, if the fields just below and above the metasurface locally conserve the real power P z (y), namely,</p><formula xml:id="formula_2">P - z (y) = 1 2 ℜ E - x H - * y = 1 2 ℜ E + x H + * y = P + z (y),<label>(2)</label></formula><p>for each y on the metasurface, then there exists a passive and lossless solution (ℜ{Z se } = ℜ{Y sm } = ℑ{K em } = 0 <ref type="bibr" target="#b21">[22]</ref>) to the O-BSTCs, given by</p><formula xml:id="formula_3">             K em = 1 2 ℜ{E + x H - y * -E - x H + y * } ℜ{(E + x -E - x )(H + y -H - y ) * } Y sm = -j 1 2 ℑ H + y +H - y E + x -E - x -K em ℑ H + y -H - y E + x -E - x Z se = -j 1 2 ℑ E + x +E - x H + y -H - y + K em ℑ E + x -E - x H + y -H - y .<label>(3)</label></formula><p>In other words, the passive lossless O-BMS given by Eq. (3) will support the transformation between E &lt; x (y, z) , H &lt; y (y, z) , H &lt; z (y, z) and E &gt; x (y, z) , H &gt; y (y, z) , H &gt; z (y, z) , provided these fields satisfy Eq. (2).</p><p>Our first goal is to design a passive and lossless O-BMS that splits a normally-incident plane wave to two equal-power plane waves propagating towards θ = ±θ out [Fig. <ref type="figure" target="#fig_0">1(a)</ref>].</p><p>According to the derivation in Eqs. ( <ref type="formula" target="#formula_0">1</ref>)-( <ref type="formula" target="#formula_3">3</ref>), to achieve this goal we need to stipulate the fields below and above the metasurface such that (i) they obey Maxwell's equations in the respective regions, (ii) they satisfy local power conservation [Eq. ( <ref type="formula" target="#formula_2">2</ref>)], and (iii) they coincide with the given incident and desirable transmitted fields in the far-field region.</p><p>To understand the challenge underlying these requirements, we examine the power profiles on the two facets of the metasurface. The desirable fields above the metasurface (z &gt; 0) are a superposition of two plane waves with equal amplitudes E out , namely,</p><formula xml:id="formula_4">E &gt;</formula><p>x (y, z)=E out e -jkz cos θout e -jky sin θout +e jky sin θout H &gt; y (y, z)= Eout Zout e -jkz cos θout e -jky sin θout +e jky sin θout , where Z out = η/ cos θ out is the TE wave impedance. The real power profile just above the metasurface (z → 0 + ) is thus given by [Eq. ( <ref type="formula" target="#formula_2">2</ref>)]</p><formula xml:id="formula_6">P + z (y) = 4 |E out | 2 Z out cos 2 (ky sin θ out ) ,<label>(5)</label></formula><p>spatially varying following a squared cosine. On the other hand, a simple plane wave normally-incident upon the metasurface from below (z &lt; 0) would form a uniform power profile on the bottom facet (z → 0 -).</p><p>Therefore, to match the power profiles on the two facets of the metasurface, auxiliary fields are required. The idea is to introduce suitable evanescent modes to the region below the metasurface such that their interference with the incident field would redistribute the (otherwise uniform) real power on the bottom facet P - z (y), leading to the desirable squaredcosine modulation matching P + z (y). Being evanescent, these auxiliary fields would not affect the performance in the far field, as required.</p><p>One possible choice is to add surface waves propagating at opposite directions (towards y → ±∞) on the bottom facet of the metasurface. With this choice, the fields below the metasurface (z &lt; 0) would be E &lt;</p><p>x (y, z) = E in e -jkz + E sw e αsw z e -2jky sin θout + e 2jky sin θout H &lt; y (y, z) = E in Z in e -jkz + j αswEsw kη e αswz e -2jky sin θout + e 2jky sin θout ,</p><p>where E in is the (given) amplitude of the incident field, Z in = η/ cos θ in is the wave impedance (θ in = 0), E sw is the amplitude of the surface waves, and α sw = k 4 sin 2 θ out -1 ∈ R is the surface wave decay constant. The latter definition implies that this design scheme is valid only for wide-angle beam splitting (θ out &gt; 30 • ), for which the auxiliary fields are evanescent.</p><p>Assuming the field amplitudes are related via E sw = aE in , a ∈ R, the real power on the bottom facet of the metasurface (z → 0 -) will be given by</p><formula xml:id="formula_8">P - z (y) = |E in | 2 Z in [1 + 2a cos (2ky sin θ out )] .<label>(7)</label></formula><p>Comparing Eq. ( <ref type="formula" target="#formula_6">5</ref>) with Eq. ( <ref type="formula" target="#formula_8">7</ref>) indicates that local power conservation Eq. ( <ref type="formula" target="#formula_2">2</ref>) may be</p><formula xml:id="formula_9">achieved if we choose E out = 1 √ 2 E in e -jξout Z out /Z in and a = 1 2</formula><p>, where ξ out is a possible uniform phase shift. This step finalizes the design procedure. Fixing the amplitudes as prescribed allows evaluation of the fields everywhere in space via Eq. ( <ref type="formula" target="#formula_7">6</ref>) and Eq. ( <ref type="formula" target="#formula_5">4</ref>), and in particular on the metasurface facets (z → 0 ± ). As these fields satisfy Maxwell's equations and local power conservation [Eq. ( <ref type="formula" target="#formula_2">2</ref>)], we may substitute them into Eq. ( <ref type="formula" target="#formula_3">3</ref>) to assess the (passive lossless) O-BMS specifications that implement the required field transformation.</p><p>To verify our theory, we follow the outlined procedure and design an O-BMS that couples a normally-incident plane wave to two plane waves propagating towards θ = ±θ out = ±71.81 • with equal power, incurring a phase shift of ξ out = 145 • . The design is implemented in ANSYS HFSS following the scheme introduced in <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21]</ref>, based on three reactive sheets defined on two 5mil-thick Rogers RO3010 substrates <ref type="bibr">[25]</ref>. In the design frequency f = 20GHz, the unit cell size is ∆y = λ/9.5 and the metasurface thickness is λ/59.</p><p>One period of the metasurface Λ = λ/ sin θ out = 10∆y was simulated with periodic boundary conditions, indicating that 49.5% of the incident power is coupled to each of the transmitted plane waves, while as little as 1% is specularly reflected. The analyticallypredicted field distributions |ℜ{E x (y, z)}| [Fig. <ref type="figure" target="#fig_0">1(b)</ref>] agree very well with the simulated ones [Fig. <ref type="figure" target="#fig_0">1(c)]</ref>, verifying that the normally-incident wavefront is transformed to two beams propagating towards ±71.81 • , yielding a typical interference pattern above the metasurface. The field distribution clearly shows the auxiliary surface waves formed just below the metasurface, as stipulated in Eq. ( <ref type="formula" target="#formula_7">6</ref>).</p><p>The role of the auxiliary fields is further highlighted in Fig. <ref type="figure" target="#fig_0">1(d)</ref> and<ref type="figure">(e)</ref>, where the real part of the z-directed Poynting vector P z (y, z) is depicted. The normally-incident plane wave carries uniform power in the far field, but as the interference with the auxiliary surface wave becomes more significant near the O-BMS, the power is redistributed to match the power profile P + z (y) of the splitted beam above the aperture. This is emphasized by the gray lines following the power flow, indicating the diversion of power towards the peaks (red) and away of the valleys (blue) of the sqaured cosine of Eq. ( <ref type="formula" target="#formula_6">5</ref>). We stress that the fields stipulated in Eqs. ( <ref type="formula" target="#formula_5">4</ref>)-( <ref type="formula" target="#formula_6">5</ref>) form an exact solution to Maxwell's equations with the relevant boundary conditions, such that the passive lossless O-BMS design is strictly accurate.</p><p>The second functionality we consider is "perfect" engineered reflection <ref type="bibr" target="#b23">[24]</ref>. In this case, we desire to fully couple a plane wave with an angle of incidence θ in to a plane wave reflected towards θ out [Fig. <ref type="figure" target="#fig_1">2(a)</ref>]. The fields below the metasurface can be thus written as</p><formula xml:id="formula_10">E &lt;</formula><p>x (y, z) = E in e -jkz cos θ in e -jky sin θ in -E out e jkz cos θout e -jky sin θout H &lt; y (y, z) = E in Z in e -jkz cos θ in e -jky sin θ in + Eout Zout e jkz cos θout e -jky sin θout ,</p><p>where E in and E out are the amplitudes of the incident and reflected plane waves, respectively. To guarantee global power conservation (integrated over the aperture), we set E out =</p><p>E in e -jξout Z out /Z in , where ξ out is a possible phase shift. Hence, the real power [Eq. ( <ref type="formula" target="#formula_2">2</ref>)] on the bottom facet of the metasurface (z → 0 -) is given by</p><formula xml:id="formula_12">P - z (y) = |E in | 2 2Z in Z in Z out - Z out Z in cos (ky∆ sin +ξ out ),<label>(9)</label></formula><p>where we define ∆ sin = sin θ out -sin θ in .</p><p>This power profile is even more intricate than the one examined before [Eq. ( <ref type="formula" target="#formula_6">5</ref>)], as it changes signs along the metasurface plane: power is crossing the metasurface from bottom to top at one half of a period, whereas in the other half, power is crossing the metasurface from top to bottom. This means that to support such a field transformation, which deflects all the power incident from θ in towards θ out , with a passive lossless O-BMS, it is required to conceive a mechanism which draws the power from below at one half-period and pushes it back to the bottom half-space at the other half-period.</p><p>Naively trying to stipulate zero fields on the top facet would lead, in general, to lossy and active design requirements <ref type="bibr" target="#b23">[24]</ref>, as it would violate local power conservation [Eq. ( <ref type="formula" target="#formula_2">2</ref>)].</p><p>However, introducing auxiliary evanescent modes above the metasurface can assist matching the desirable power profile of Eq. ( <ref type="formula" target="#formula_12">9</ref>) without any effect on the device functionality. The idea is to achieve the oscillating power profile via interference between two surface waves travelling on the top facet of the metasurface. As surface waves do not generally carry real power perpendicular to their propagation direction, it is required to introduce a π/2 phase shift between them. Correspondingly, we define the fields above the O-BMS as</p><formula xml:id="formula_13">E &gt; x (y, z) = E sw,1 e -α 1 z e -jk t,1 y +jE sw,2 e -α 2 z e -jk t,2 y H &gt; y (y, z) = -j α 1 E sw,1 kη e -α 1 z e -jk t,1 y + α 2 E sw,2 kη e -α 2 z e -jk t,2 y ,<label>(10)</label></formula><p>where E sw,n , |k t,n | &gt; k, and α n = k 2 t,n -k 2 &gt; 0, are the amplitude, transverse wavenumber, and decay coefficient of the nth surface wave, respectively. Without loss of generality, we define E sw,2 = be -jξ E sw,1 (b ∈ R), yielding the following power profile on the top facet</p><formula xml:id="formula_14">P + z (y) = b |E sw,1 | 2 2η α 2 -α 1 k cos [(k t,2 -k t,1 ) y + ξ] .<label>(11)</label></formula><p>Comparing Eq. ( <ref type="formula" target="#formula_14">11</ref>) with Eq. ( <ref type="formula" target="#formula_12">9</ref>) reveals that local power conservation [Eq. ( <ref type="formula" target="#formula_2">2</ref>)] may be achieved by setting k t,2 = k t,1 + k∆ sin , ξ = ξ out , and b =</p><formula xml:id="formula_15">kη|E in | 2 (α 2 -α 1 )Z in |E sw,1 | 2 Z in Zout -Zout Z in .</formula><p>The parameters k t,1 and E sw,1 can be chosen at will, as long as |k t,n | &gt; k.</p><p>As for the beam-splitter application, once we achieve local power conservation the design procedure is completed. The stipulated fields in Eqs. ( <ref type="formula" target="#formula_11">8</ref>) and ( <ref type="formula" target="#formula_13">10</ref>) can be evaluated on the metasurface facets (z → 0 ± ) and substituted into Eq. ( <ref type="formula" target="#formula_3">3</ref>) to yield the O-BMS specifications.</p><p>To verify this scheme, we follow the procedure outlined in Eqs. ( <ref type="formula" target="#formula_11">8</ref>)-( <ref type="formula" target="#formula_14">11</ref>) to design a perfect reflector which fully couples a plane wave incident from θ in = 0 to a plane wave reflected towards θ out = 71.81 • , imposing a phase shift of ξ out = 90 • ; for simplicity, we choose k t,1 = 2k, E sw,1 = E in . One period of the O-BMS Λ = λ/∆ sin = 10∆y is once more implemented in ANSYS HFSS using cascaded reactive sheets <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr">25]</ref>. The z-directed Poynting vector P z (y, z) shown in Fig. <ref type="figure" target="#fig_1">2(d</ref>) and (e) indicates that the auxiliary fields guarantee its continuity on the aperture, shifting power upwards (red) and downwards (blue) alternately. The gray power-flow streamlines demonstrate that, indeed, the interference between the auxiliary surface waves above the O-BMS forms the mechanism by which power can circulate between the bottom and top facets, establishing local power conservation.</p><p>To conclude, we have presented a paradigm for synthesis of O-BMSs for prescribed beam manipulation, without requiring active or lossy components, and without any compromise on device performance. Our approach makes use of auxiliary fields to facilitate the local power conservation required for achieving reactive designs; being evanescent, these fields do not interfere with the device functionality in the far field. We have demonstrated this concept by designing O-BMSs for reflectionless beam splitting and perfect reflection, functionalities that were considered impossible to implement accurately with passive lossless metasurfaces.</p><p>It should be stressed that the fields analytically stipulated using this approach are exact solutions to Maxwell's equations with the O-BSTCs, and no approximation is used in the process. Importantly, no external sources are required to excite the auxiliary fields: they are self-consistently generated by the currents induced on the metasurface due to the incident fields <ref type="bibr">[25]</ref>. Integrating this unorthodox approach into metasurface synthesis would allow accurate reactive solutions for many other challenging applications. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG. 1. O-BMS for reflectionless wide-angle beam splitting. (a) Physical configuration. (b) Analytically predicted [Eqs. (4) and (6)] and (c) simulated electric field distribution |ℜ {E x (y, z)}|. (d) Analytically predicted and (e) simulated z-directed real power P z (y, z) = 1 2 ℜ E x H * y ; gray streamlines indicate flow of real power from bottom to top.</figDesc><graphic coords="6,72.02,72.06,467.67,106.12" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 2 .</head><label>2</label><figDesc>FIG. 2. O-BMS for perfect reflection. (a) Physical configuration. (b) Analytically predicted [Eqs.(8) and (10)] and (c) simulated electric field distribution |ℜ {E x (y, z)}|. (d) Analytically predicted and (e) simulated z-directed real power P z (y, z) = 1 2 ℜ E x H * y ; gray streamlines indicate flow of real power from left to right.</figDesc><graphic coords="9,72.02,72.12,467.64,107.02" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>The analytically-predicted field distribution |ℜ{E x (y, z)}| [Fig.2(b)] agrees well with the simulated one [Fig.2(c)], indicating that 98.5% of the power is successfully coupled from the incident mode to the reflected one. The interference patterns of the incident and reflected fields below and the surface waves above the O-BMS are clearly observed.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>EPJ Appl.Metamaterials 2, 12 (2015).</figDesc><table><row><cell>"Synthesis</cell><cell>of</cell><cell>electromagnetic</cell><cell>metasurfaces:</cell><cell>principles</cell><cell>and</cell><cell>illustrations,"</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">An overview of the theory and applications of metasurfaces: the two-dimensional equivalents of metamaterials</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Holloway</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Kuester</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Gordon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>O'hara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Booth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Smith</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MAP.2012.6230714</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Antennas Propag. Mag</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="10" to="35" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Metasurfaces for general transformations of electromagnetic fields</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phil. Trans. R. Soc. A</title>
+		<imprint>
+			<biblScope unit="volume">373</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Achouri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lavigne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Salem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Caloz</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Recent progress in gradient metasurfaces</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">Mohammadi</forename><surname>Estakhri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alù</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/JOSAB.33.000A21</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Opt. Soc. Am. B</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="21" to="A30" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Huygens&apos; metasurfaces via the equivalence principle: design and applications</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Opt. Soc. Am. B</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="31" to="A50" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Light propagation with phase discontinuities: generalized laws of reflection and refraction</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Genevet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Kats</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Aieta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-P</forename><surname>Tetienne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Capasso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Gaburro</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.1210713</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">334</biblScope>
+			<biblScope unit="page" from="333" to="337" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Discontinuous electromagnetic fields using orthogonal electric and magnetic currents for wavefront manipulation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Selvanayagam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+		<idno type="DOI">10.1364/OE.21.014409</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="14409" to="14429" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Full control of nanoscale optical transmission with a composite metascreen</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Monticone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Estakhri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alù</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">203903</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Metamaterial Huygens&apos; surfaces: tailoring wave fronts with reflectionless sheets</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Pfeiffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Grbic</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.110.197401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">197401</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Metasurfing: Addressing waves on impenetrable metasurfaces</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Maci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Minatti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Casaletti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bosiljevac</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LAWP.2012.2183631</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Antennas Wireless Propag. Lett</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1499" to="1502" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Multiwavelength achromatic metasurfaces by dispersive phase compensation</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Aieta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Kats</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Genevet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Capasso</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.aaa2494</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">347</biblScope>
+			<biblScope unit="page" from="1342" to="1345" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">High performance bianisotropic metasurfaces: Asymmetric transmission of light</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Pfeiffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Grbic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">23902</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Controlling vector Bessel beams with metasurfaces</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Pfeiffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Grbic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Appl</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">44012</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Functional metamirrors using bianisotropic elements</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Asadchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ra'di</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vehmas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">95503</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Broadband reflectionless metasheets: Frequency-selective transmission and perfect absorption</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Asadchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Faniayeu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ra'di</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Khakhomov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">V</forename><surname>Semchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevX.5.031005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. X</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">31005</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Cavity-excited Huygens&apos; metasurface antennas for near-unity aperture efficiency from arbitrarily large apertures</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P S</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Commun</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">10360</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Circuit modelling of Huygens surfaces</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Selvanayagam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LAWP.2013.2293631</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Antennas Wireless Propag. Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="1642" to="1645" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Passive lossless Huygens metasurfaces for conversion of arbitrary source field to directive radiation</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAP.2014.2354419</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Antennas Propag</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="5680" to="5695" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Floquet-Bloch analysis of refracting Huygens metasurfaces</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">235127</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Reflectionless wide-angle refracting metasurfaces</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P S</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LAWP.2015.2505629</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Antennas Wireless Propag. Lett</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1293" to="1296" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">V</forename><surname>Eleftheriades</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.01100</idno>
+		<title level="m">Arbitrary power-conserving field transformations with passive lossless omega-type bianisotropic metasurfaces</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Balanced and optimal bianisotropic particles: maximizing power extracted from electromagnetic fields</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">New J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">53008</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Tailoring reflections from thin composite metamirrors</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ra'di</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Asadchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAP.2014.2319851</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Antennas Propag</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="3749" to="3760" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Perfect control of reflection and refraction using spatially dispersive metasurfaces</title>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Asadchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Albooyeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Tcvetkova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Diaz-Rubio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ra'di</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Tretyakov</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1605.02044</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Pin Angle Thermal Effects on Friction Stir Welding of AA5058 Aluminum Alloy: CFD Simulation and Experimental Validation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2021-12-09">9 December 2021</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Supat</forename><surname>Chupradit</surname></persName>
+							<email>supat.c@cmu.ac.th</email>
+							<idno type="ORCID">0000-0002-8596-2991</idno>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Occupational Therapy</orgName>
+								<orgName type="department" key="dep2">Faculty of Associated Medical Sciences</orgName>
+								<orgName type="institution">Chiang Mai University</orgName>
+								<address>
+									<addrLine>Chiang Mai</addrLine>
+									<postCode>50200</postCode>
+									<country>Thailand;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dmitry</forename><forename type="middle">Olegovich</forename><surname>Boko</surname></persName>
+							<idno type="ORCID">0000-0003-2968-2466</idno>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Pharmacy</orgName>
+								<orgName type="institution">Sechenov First Moscow State Medical University</orgName>
+								<address>
+									<postCode>119991</postCode>
+									<settlement>Moscow</settlement>
+									<country>Russia;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Wanich</forename><surname>Suksatan</surname></persName>
+							<email>wanich.suk@pccms.ac.th</email>
+							<idno type="ORCID">0000-0003-1797-1260</idno>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Faculty of Nursing</orgName>
+								<orgName type="department" key="dep2">HRH Princess Chulabhorn College of Medical Science</orgName>
+								<orgName type="institution">Chulabhorn Royal Academy</orgName>
+								<address>
+									<postCode>10210</postCode>
+									<settlement>Bangkok</settlement>
+									<country>Thailand;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michał</forename><surname>Landowski</surname></persName>
+							<email>michal.landowski@pg.edu.pl</email>
+							<idno type="ORCID">0000-0002-7926-9410</idno>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Faculty of Mechanical Engineering and Ship Technology</orgName>
+								<orgName type="department" key="dep2">Institute of Manufacturing and Materials Technology</orgName>
+								<orgName type="institution">Gda ńsk University of Technology</orgName>
+								<address>
+									<postCode>80-233</postCode>
+									<settlement>Gda ńsk</settlement>
+									<country>Poland;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Dariusz</forename><surname>Fydrych</surname></persName>
+							<email>dariusz.fydrych@pg.edu.pl</email>
+							<idno type="ORCID">0000-0002-2557-8568</idno>
+							<affiliation key="aff3">
+								<orgName type="department" key="dep1">Faculty of Mechanical Engineering and Ship Technology</orgName>
+								<orgName type="department" key="dep2">Institute of Manufacturing and Materials Technology</orgName>
+								<orgName type="institution">Gda ńsk University of Technology</orgName>
+								<address>
+									<postCode>80-233</postCode>
+									<settlement>Gda ńsk</settlement>
+									<country>Poland;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mahmoud</forename><forename type="middle">E</forename><surname>Abdullah</surname></persName>
+							<idno type="ORCID">0000-0002-6863-1584</idno>
+							<affiliation key="aff4">
+								<orgName type="department" key="dep1">Mechanical Department</orgName>
+								<orgName type="department" key="dep2">Faculty of Technology and Education</orgName>
+								<orgName type="institution">Beni-Suef University</orgName>
+								<address>
+									<addrLine>Beni-Suef</addrLine>
+									<postCode>62511</postCode>
+									<country>Egypt;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hesamoddin</forename><forename type="middle">Aghajani</forename><surname>Derazkola</surname></persName>
+							<affiliation key="aff5">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution">University of Mazandaran</orgName>
+								<address>
+									<postCode>47415</postCode>
+									<settlement>Mazandaran</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Pin Angle Thermal Effects on Friction Stir Welding of AA5058 Aluminum Alloy: CFD Simulation and Experimental Validation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2021-12-09">9 December 2021</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">279E15ADB56B516638D700D032D6E298</idno>
+					<idno type="DOI">10.3390/ma14247565</idno>
+					<note type="submission">Received: 14 November 2021 Accepted: 7 December 2021</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:52+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>friction stir welding</term>
+					<term>AA5058 aluminum alloy</term>
+					<term>tool pin angle</term>
+					<term>thermo-mechanical modeling</term>
+					<term>CFD simulation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The friction stir welding (FSW) of tool pin geometry plays a critical role in the final properties of the produced joint. The tool pin geometry directly affects the generation of heat and the flow of internal materials during the FSW process. The effects of the FSW tool pin angle on heat generation and internal flow have not been quantitatively investigated in detail. In this manuscript, a validated Computational Fluid Dynamic (CFD) model was implemented to analyze the effects of pin angle on the thermo-mechanical action during the FSW process of AA5058 Al-Mg alloy. Experimental test results validate the thermal outcomes of the used model. The obtained results revealed that, when the pin angle is increased, the heat generation decreases while the mechanical action of the tool increases. The internal heat distribution at a higher pin angle is symmetrical. The higher mechanical action of the tool decreases the viscosity of the internal materials and increases stirring action (materials flow) around the pin. Furthermore, plastic flow near the tool increased stirring action and formed a larger stir zone in the joint area.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>One of the main benefits of friction stir welding (FSW) is the possibility of joining of non-weldable alloys <ref type="bibr" target="#b0">[1]</ref>. With the FSW processes, various metallic and non-metallic materials can be similarly or dissimilarly joined <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref>. The quality of the final FSW product depends on many process parameters like rotational tool speed, tool traverse velocity, tool tilt angle, and tool plunge depth <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b10">11]</ref>. On the other hand, some other parameters can affect the final properties of the FSW joints <ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. FSW tool pin profile is one of the essential factors that alter the internal flow of stir zone (SZ) and consequently changes welded samples' heat generation rate and mechanical properties. Various experimental studies have shown that the FSW pin shape and pin size have affected the thermal cycles, internal flow behaviors of material, and tool loads during the FSW process. These factors determine the final joint properties <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. Until now, leading research focused on investigating FSW tool pin shape effects on the final properties of the FSWed sample <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>. The straight cylinder triangle, square and hexagonal shapes are the main FSW pin profiles investigated experimentally. On the other hand, limited research output is available that simulated effects of FSW pin profile on thermo-mechanical properties of final joint <ref type="bibr" target="#b17">[18]</ref>. The results indicated that the pin with more edges (like square or hexagonal pin) improves mechanical properties and internal material flow in joint line. On the other hand, it is shown that the size of the FSW tool pin also has a crucial impact on the thermo-mechanical behaviors in FSW joint line <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref>. During the FSW process, the bigger pin diameter increased axial force, traverse force, and maximum heat generation <ref type="bibr" target="#b25">[26,</ref><ref type="bibr" target="#b26">27]</ref>. Instead, the larger tool pin diameter decreases the fatigue strength of the FSWed joint and decreases the mechanical properties of the dissimilar joint between aluminum and steel <ref type="bibr" target="#b27">[28]</ref>. Among various geometrical parameters of the FSW tool, the pin trapped angle plays an important role. The available information on this issue is minimal. Zhang et al. considered various pin thicknesses and stated that for better pin effects during the FSW process, the ratio of shoulder to pin should be 3. Their report shows that the pin angle is related to the shoulder diameter to be effective during the FSW joining process <ref type="bibr" target="#b28">[29]</ref>. Chen et al. employed a thermo-mechanical coupling model to investigate the effect of the FSW pin angle on the materials flow during FSW. They used 2024-T3 aluminum alloy as base metal and used three pins diameters. According to their results, at the higher pin angle, the heat generation and the materials flow are increased. They stated that the plastic flow near the tool increases at a higher pin diameter <ref type="bibr" target="#b29">[30]</ref>. Buffa et al. reported that at a higher pin angle, the generation heat increased and consequently bigger heat-affected zone (HAZ) and thermo-mechanical affected zone (TMAZ) are formed in joint lines <ref type="bibr" target="#b30">[31]</ref>.</p><p>The tool pin angle plays a significant role in determining materials' thermal changes and flows during the FSW process. Until now, many issues about the effects of tool pin angle effects are not understood comprehensively. On the other hand, various types of materials can have different plastic flow behavior. Due to available literature effects of FSW pin angle on the heat generation and material flow during FSW of Al-Mg alloys have not been considered. In this issue, this article aims to study the effects of FSW tool pin angle on thermo-mechanical mechanism during FSW of AA5058 aluminum alloy. In this study, a validated computational fluid dynamic (CFD) model has been implemented to quantitatively analyze the effect of FSW pin angle on the heat generation and flow properties in FSW of AA5058 aluminum alloy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Process Modeling</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Model Description</head><p>A three-dimensional (3D) coupled material flow and heat model was utilized in steady-state conditions in the present study. The simulation procedure was done on the commercially ANSYS FLUENT software under the computational fluid dynamics (CFD) approach. The simulation domain dimension and geometry are defined according to the experimental tests, as shown in Figure <ref type="figure" target="#fig_1">1a</ref>. A 3D Cartesian system for the welded material (WM) and the FSW tools was established. All geometries and process parameters were selected according to the experimental tests. The origin was set at the middle point of the FSW tool shoulder. The x-axis indicated the welding direction, and the z-axis indicated the FSW tool normal axis. The FSW tool had rotational movement, and the interior domain was set to move according to the welding tool speed. The interior domain had the same velocity as the welding tool by the velocity inlet side. The sidewalls, along with the top and bottom, had the same velocity as the velocity of the inlet. The outer plate of the workpiece was set at zero pressure to avoid the reverse flow at the pressure outlet. The WM is assumed to be a non-Newtonian single-phase fluid representing the quasi-static thermal and fluid flow boundary problem. In this case, it is necessary to solve Navier-Stokes equations <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref>. In this regard's conservation equations for continuity, energy and momentum are used to solve the materials flow. Equations ( <ref type="formula">1</ref>)-(3) indicated that the continuity, energy and momentum, respectively:</p><formula xml:id="formula_0">∂u i ∂x i = 0 (1)</formula><p>u indicated plastic velocity of material and i = 1, 2 and 3 presenting x, y and z direction.</p><formula xml:id="formula_1">∂u i u j ∂x i = - ∂P ∂x j + ∂ ∂x i µ ∂u j ∂x i + µ ∂u i ∂x i -ρu 1 ∂u j ∂x j (2) 1 i j j j i i j i i i j u u u u u P u x x x x x x μ μ ρ ∂ ∂ ∂   ∂ ∂ ∂ = - + + -   ∂ ∂ ∂ ∂ ∂ ∂  <label>(2)</label></formula><p>In Equation ( <ref type="formula" target="#formula_1">2</ref>), the ρ, P and u1, presented density, pressure and welding velocity, respectively. ( ) ( )</p><formula xml:id="formula_2">1 i p p i f i i i i u T T T C Cu K d d x x x x ρ ρ ∂   ∂ ∂ ∂ = - + + +   ∂ ∂ ∂ ∂  <label>(3)</label></formula><p>In Equation (3), the Cp, K, di and dp, represents the specific heat, thermal conductivity, generated heat by friction and generated heat by plastic deformation, respectively. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Material Model</head><p>In this model, AA5058 aluminum alloy is considered as the WM. The density and temperature-dependent thermo-mechanical properties are adapted for WM. As mentioned, the WM is assumed as Non-Newtonian viscosity, which correlates the deviatoric stress and the strain rate tensors. Non-Newtonian viscosity is assumed to change with the temperature and strain rate. For this reason, the viscosity of WM (µ) as a function of flow stress and strain rate can be defined <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>:</p><formula xml:id="formula_3">3 f σ μ ε = <label>(4)</label></formula><p>The σf indicates flow stress of WM that can be presented as <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref>: In Equation ( <ref type="formula" target="#formula_1">2</ref>), the ρ, P and u 1 , presented density, pressure and welding velocity, respectively.</p><formula xml:id="formula_4">ρC p ∂(u i T) ∂x i = -ρC p u 1 ∂T ∂x i + ∂ ∂x i K ∂T ∂x i + d i + d f<label>(3)</label></formula><p>In Equation (3), the C p , K, d i and d p , represents the specific heat, thermal conductivity, generated heat by friction and generated heat by plastic deformation, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Material Model</head><p>In this model, AA5058 aluminum alloy is considered as the WM. The density and temperature-dependent thermo-mechanical properties are adapted for WM. As mentioned, the WM is assumed as Non-Newtonian viscosity, which correlates the deviatoric stress and the strain rate tensors. Non-Newtonian viscosity is assumed to change with the temperature and strain rate. For this reason, the viscosity of WM (µ) as a function of flow stress and strain rate can be defined <ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>:</p><formula xml:id="formula_5">µ = σ f 3 . ε (4)</formula><p>The σ f indicates flow stress of WM that can be presented as <ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref><ref type="bibr" target="#b40">[41]</ref><ref type="bibr" target="#b41">[42]</ref>:</p><formula xml:id="formula_6">σ f = 1 α sinh -1 Z A 1 n = 1 α Z A 1 n + 1 + Z A 2 n<label>(5)</label></formula><p>In Equation <ref type="bibr" target="#b4">(5)</ref>, Z is the Zener-Holloman parameter used for the calculation of the temperature-dependent strain rate <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b42">43]</ref>:</p><formula xml:id="formula_7">Z = . ε Q RT<label>(6)</label></formula><p>The A, n, and α are material constitutive constants. The raw materials undergo hot compression tests at various temperature and strain rates. The hot compression test procedure was followed by ASTM E9 standard number. After testing, the A, n, and α constants were reached by curve fitting. In this study, A, n, and α considered 1, 6.12 × 10 10 , and 5.63, respectively. Q and R are the activation energy and universal gas constant, respectively. The strain rate equation can be calculated by <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b44">45]</ref> </p><p>where u, v, and w are present the material velocities in the x, y, and z directions. With combination Equations of ( <ref type="formula" target="#formula_6">5</ref>)-( <ref type="formula" target="#formula_8">7</ref>) and put into (4), the viscosity of WM can be presented by <ref type="bibr" target="#b42">[43,</ref><ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b45">46]</ref>:</p><formula xml:id="formula_9">µ = 1 3εα Z(T, α) A 1 n + 1 + Z A 2 n (8)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Boundary Conditions</head><p>Where there is a difference in the thermal conductivity between the WM and the FSW tool, the heat transferred to the FSW tool from WM should be considered. The partition of the generated heat is transferred by the FSW tool at the interface of WM. For this reason, the conduction heat transfer model is set on the interface of the tool-workpiece. The heat losses at the walls (top, sides, and bottom surfaces of WM) include the convection and radiation heat transfer during the FSW <ref type="bibr" target="#b46">[47]</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref>. The sides walls and bottom surface of the workpiece are connected to the welding fixture and conduction heat transfer in those areas set. At the top surface of WM, radiation and convection heat transfer models were implemented. The meshed domain is depicted in Figure <ref type="figure" target="#fig_1">1b</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Experimental Procedure</head><p>The 4 mm thickness AA5058 alloy aluminum alloy was selected as WM. The weld metal properties are evaluated in the laboratory in order to use in the simulation section. Mechanical and thermal properties of used WM are presented in Table <ref type="table" target="#tab_1">1</ref>. The WM fixed in welding setup for the FSW process to remove any movement during the FSW process. The picture of the welding fixture and WM is depicted in Figure <ref type="figure" target="#fig_3">2a</ref>. A modified milling machine (EF16, Tabriz, Iran) was used for the FSW process. After several trials and error testing plans, the optimum process parameters were selected during the experimental procedures. The tool rotational and traverse velocities were 850 rpm and 30 mm/min. The tool plunge depth and tilt angles were 0.2 mm and 2 • , respectively. For evaluation of simulation results, a thermal monitoring system is employed to record maximum heat generation during the FSW process. For this reason, two K-type thermocouples (Omega, Oakland, CA, USA) were placed on the WM's surface to record the temperature during the FSW procedure. One thermocouple is placed on the advancing side (AS) of WM and one on the retreating side (RS) of WM. The thermocouples were fixed at a 10.5 mm distance from the interface of base metals. The fixed thermocouple in AS is named T1, and the fixed thermocouple in RS is named T2. For further investigation, the obtained output from thermocouples reported as T1 and T2 results. To better understand the thermocouple's place, the location of thermocouples in WM is presented in Figure <ref type="figure" target="#fig_3">2b</ref>. The FSW tools were made from H13 steel with three-pin angles. In this study, the pin tip radius was kept constant, and 0 • , 30 • , and 60 • were selected for pin angle-the schematic view of FSW tools size presented in Figure <ref type="figure" target="#fig_3">2c</ref>. For better analysis of pin angle effects, the tool with 0 • , 30 • , and 60 • pin angle named Tool I, Tool II, and Tool III, respectively.</p><p>procedure. One thermocouple is placed on the advancing side (AS) of WM and one on the retreating side (RS) of WM.  The thermocouples were fixed at a 10.5 mm distance from the interface of base metals. The fixed thermocouple in AS is named T1, and the fixed thermocouple in RS is named T2. For further investigation, the obtained output from thermocouples reported as T1 and T2 results. To better understand the thermocouple's place, the location of thermocouples in WM is presented in Figure <ref type="figure" target="#fig_3">2b</ref>. The FSW tools were made from H13 steel with three-pin angles. In this study, the pin tip radius was kept constant, and 0°, 30°, and 60° were selected for pin angle-the schematic view of FSW tools size presented in Figure <ref type="figure" target="#fig_3">2c</ref>. For better analysis of pin angle effects, the tool with 0°, 30°, and 60° pin angle named Tool I, Tool II, and Tool III, respectively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results and Discussions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Heat Generation Rate</head><p>The main factor during the study of heat generation during the FSW process is the contact area between tools and workpieces <ref type="bibr" target="#b49">[50]</ref>. For this reason, it is necessary to analyze the experimental results from recorded temperature by comparing the experimental results with simulation data. In this section, first, the data from experimental results are </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results and Discussions</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Heat Generation Rate</head><p>The main factor during the study of heat generation during the FSW process is the contact area between tools and workpieces <ref type="bibr" target="#b49">[50]</ref>. For this reason, it is necessary to analyze the experimental results from recorded temperature by comparing the experimental results with simulation data. In this section, first, the data from experimental results are analyzed. The experimental results of recorded temperature by thermocouples number 1 and 2 are presented in Figure <ref type="figure" target="#fig_5">3</ref>.  To find the relation with parts of the tool and generated heat in the simulation model, the area of each part (Shoulder, pin body, and pin tip) was calculated. These areas are in To find the relation with parts of the tool and generated heat in the simulation model, the area of each part (Shoulder, pin body, and pin tip) was calculated. These areas are in straight contact with WM, and the calculated area for a different part of the tools is presented in Table <ref type="table" target="#tab_3">2</ref>. On the other hand, simulation results of generated heat from various parts of the tool were collected and reported in Table <ref type="table" target="#tab_3">2</ref>. In this case, it is possible to find the relation between the total area of different tools and total generated heat. The obtained results show that increasing the FSW tool pin angle the total surface of tool decreased. The geometrical analysis shows that the total surface area of Tool I, II, and III 0.04084, 0.04059, and 0.04027, respectively. The numbers show with increasing tool pin angle, the total area decreased near 1.5% from Tool I to Tool III. These geometric results revealed that with increasing tool pin body, the generated heat by FSW tool shoulder increased, and on the other hand, the total heat generation by pin body decreased <ref type="bibr" target="#b3">[4]</ref>. The geometrical results show that the area of Tool III shoulder is 11% smaller than Tool I shoulder, and the generated heat by Tool III shoulder is 13% lower than Tool I shoulder in simulation. It is notable that with increasing pin angle, the area of the pin body in Tool III increased 26% more than the Tool I pin body. The simulation results revealed that the total amount of generated heat by pin body of Tool III was 19% more than generated heat by pin body of Tool I.</p><p>All in all, keeping constant the tool pin tip diameter, the total amount of produced heat by this area was constant in all tools (61 • C). In a general point of view, the total amount of generated heat by increasing tool pin angle decrease.</p><p>The simulation results show that the total amount of generated heat with tools I, II, and III was 446 • C, 434 • C, and 416 • C, respectively (Figure <ref type="figure" target="#fig_8">4a</ref>). The total difference amount of recorded heat and simulated heat were lower than 2%, which indicated good agreements between experimental results and simulation. To better understand the effects of different pins, the heat flow at the surface of different tools was assessed. For the unification of data comparison, a plane was selected with 3.8 mm height from pin tip. A schematic view from the selected plan is shown in Figure <ref type="figure" target="#fig_8">4b</ref>. The simulation results of heat flow in the selected plan for the different tools are presented in Figure <ref type="figure" target="#fig_8">4c</ref>. The statistical results were collected from different points in the selected plan-the data presented according to the degree. The circular numbers show the temperature changes around the pin.</p><p>Due to obtained results, the maximum heat in all tool pins was produced in the front area of the advancing side (AS) and corner with the retreating side (RS). Due to simulation results, the heat generation and distribution around the tool pin were not uniform. During forward movements, the maximum heat of all samples was produced at a degree of 180 to the place in front of the tool.</p><p>of different pins, the heat flow at the surface of different tools was assessed. For the unification of data comparison, a plane was selected with 3.8 mm height from pin tip. A schematic view from the selected plan is shown in Figure <ref type="figure" target="#fig_8">4b</ref>. The simulation results of heat flow in the selected plan for the different tools are presented in Figure <ref type="figure" target="#fig_8">4c</ref>. The statistical results were collected from different points in the selected plan-the data presented according to the degree. The circular numbers show the temperature changes around the pin. Due to obtained results, the maximum heat in all tool pins was produced in the front area of the advancing side (AS) and corner with the retreating side (RS). Due to simulation results, the heat generation and distribution around the tool pin were not uniform. During forward movements, the maximum heat of all samples was produced at a degree of 180 to the place in front of the tool.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Heat Distribution</head><p>For a better understanding of the FSW tool pin angle on internal heat flow, the simulation results of the internal heat distribution of various pin angles are depicted in Figure <ref type="figure" target="#fig_10">5a</ref>. The simulation results revealed that the heat concentration in AS is higher than RS. Simulation results revealed this heat flow behavior was detected in joints that FSWed with </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Heat Distribution</head><p>For a better understanding of the FSW tool pin angle on internal heat flow, the simulation results of the internal heat distribution of various pin angles are depicted in Figure <ref type="figure" target="#fig_10">5a</ref>. The simulation results revealed that the heat concentration in AS is higher than RS. Simulation results revealed this heat flow behavior was detected in joints that FSWed with Tool I, Tool II and Tool III. This phenomenon is seen at surface heat flow for FSWed samples with Tool I, II, and III. The generated heat can diffuse equally on the metal surface, but the rotation movement of the FSW tool changes the heat flow with rotation of plasticized metals <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b4">5]</ref>. During rotational movements of FSW tool the plasticized aluminum alloy transferred from AS to RS of joint line <ref type="bibr" target="#b50">[51]</ref><ref type="bibr" target="#b51">[52]</ref><ref type="bibr" target="#b52">[53]</ref>. In this case, the hot plasticized aluminum alloy pressed and concentrates in RS and heat flow equality changes (Figure <ref type="figure" target="#fig_10">5b</ref>). This phenomenon is happened in all cases. The heat distribution in tool III is more uniform comparing others. The materials flow velocity at the selected plan described in Figure <ref type="figure" target="#fig_8">4b</ref> for Tool I, Tool II and Tool III is depicted in Figure <ref type="figure" target="#fig_10">5c</ref>. Due to obtained results from simulation, the maximum velocity of materials in Tool I, Tool II, and Tool III are 15.2 mm/s, 13.1 mm/s, and 11.1 mm/s, respectively. Unlike simulation results that maximum heat was generated in front of the tool; the maximum flow velocity is predicted in the middle of RS. It seems, therefore, from the stretching of plasticized materials in the AS and the compression of materials in the RS, that the velocity of materials does not have a linear relation with generated heat <ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref>.</p><p>for Tool I, Tool II and Tool III is depicted in Figure <ref type="figure" target="#fig_10">5c</ref>. Due to obtained results from simulation, the maximum velocity of materials in Tool I, Tool II, and Tool III are 15.2 mm/s, 13.1 mm/s, and 11.1 mm/s, respectively. Unlike simulation results that maximum heat was generated in front of the tool; the maximum flow velocity is predicted in the middle of RS. It seems, therefore, from the stretching of plasticized materials in the AS and the compression of materials in the RS, that the velocity of materials does not have a linear relation with generated heat <ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Flow of Materials</head><p>The materials flow in the FSW joining process is the consequence of materials velocity and heat generation during the stirring action of the FSW tool <ref type="bibr" target="#b57">[58]</ref><ref type="bibr" target="#b58">[59]</ref><ref type="bibr" target="#b59">[60]</ref><ref type="bibr" target="#b60">[61]</ref>. Due to a better understanding of thermo-mechanical outputs and relation with materials velocity results with the actual situation, it is necessary to investigate the surface flow of FSW joints. The surface flow of FSWed samples welded with Tool I, II, and III are presented in Figure <ref type="figure" target="#fig_12">6a</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Flow of Materials</head><p>The materials flow in the FSW joining process is the consequence of materials velocity and heat generation during the stirring action of the FSW tool <ref type="bibr" target="#b57">[58]</ref><ref type="bibr" target="#b58">[59]</ref><ref type="bibr" target="#b59">[60]</ref><ref type="bibr" target="#b60">[61]</ref>. Due to a better understanding of thermo-mechanical outputs and relation with materials velocity results with the actual situation, it is necessary to investigate the surface flow of FSW joints. The surface flow of FSWed samples welded with Tool I, II, and III are presented in Figure <ref type="figure" target="#fig_12">6a</ref>. The results show that all welds formed in appropriate form without any macro-scale defects. The comparative investigation of surface flow revealed that the flow rings in all samples are uniform and periodic, and these flow rings are results of angular and traverse velocities of the FSW tool <ref type="bibr" target="#b61">[62]</ref><ref type="bibr" target="#b62">[63]</ref><ref type="bibr" target="#b63">[64]</ref>. The high magnification image from surface flow revealed that the distance between flow rings in the joint FSWed by Tool I, II, and III are 0.3 mm, 0.26 mm, and 0.22 mm, respectively. Due to obtained results, the distance between flow rings decreases by increasing tool pin angle. The longitudinal section from the results of the flow path of materials is depicted in Figure <ref type="figure" target="#fig_12">6b</ref>.</p><p>The obtained results show that the softened area around the Tool increases with increasing tool pin angle. These phenomena show that the higher the mechanical works by tool, the more the pin angle increased the plasticized area and consequently, the shaping of the raw materials by the FSW tool increased <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. The obtained results revealed that the deformed area front of Tool III is much bigger than Tool I case. On the other hand, the stirring action of plasticized metals in the backside of Tool III is bigger than Tool I. These effects revealed that the mechanical works applied in the joint line increased with increasing FSW tool pin angle.</p><p>creasing tool pin angle. These phenomena show that the higher the mechanical works by tool, the more the pin angle increased the plasticized area and consequently, the shaping of the raw materials by the FSW tool increased <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b7">8]</ref>. The obtained results revealed that the deformed area front of Tool III is much bigger than Tool I case. On the other hand, the stirring action of plasticized metals in the backside of Tool III is bigger than Tool I. These effects revealed that the mechanical works applied in the joint line increased with increasing FSW tool pin angle. The cross-section view of simulation results from internal flow path in joint with various tool pins (Tool I, II and III) is depicted in Figure <ref type="figure" target="#fig_14">7a</ref>. Due to obtained results, the stirring of WM increased at a higher pin angle. This result was detectable in longitudinal section as well. The cross-section view of simulation results from internal flow path in joint with various tool pins (Tool I, II and III) is depicted in Figure <ref type="figure" target="#fig_14">7a</ref>. Due to obtained results, the stirring of WM increased at a higher pin angle. This result was detectable in longitudinal section as well.</p><p>The stir zone area in the joint that FSWed with Tool III was 35% bigger than in the joint that FSWed with the tool I. On the other hand, the obtained results revealed that, the materials flow is concentrated in RS, and the stirring action is higher in RS in all FSWed samples. This phenomenon shows why materials velocity in RS was higher than AS. The rotational FSW tool stretched plasticized materials from AS to RS <ref type="bibr" target="#b53">[54,</ref><ref type="bibr" target="#b64">[65]</ref><ref type="bibr" target="#b65">[66]</ref><ref type="bibr" target="#b66">[67]</ref>. The simulation results of flow path show that the concentration of materials in RS increased at higher pin angle, and the shape of stir zone tended to form asymmetry. Due to obtained results from simulation, the mechanical work by pin in SZ increased with increasing pin angle. For this reason, the higher angle increases the stirring action in SZ. The materials viscosity changes around the selected plan are depicted in Figure <ref type="figure" target="#fig_14">7b</ref>. Due to obtained results, the generated heat and materials flow velocity caused the viscosity of materials in points with higher temperatures (RS front and AS front) to decrease at the lowest amounts.</p><p>tion results of flow path show that the concentration of materials in RS increased at higher pin angle, and the shape of stir zone tended to form asymmetry. Due to obtained results from simulation, the mechanical work by pin in SZ increased with increasing pin angle. For this reason, the higher angle increases the stirring action in SZ. The materials viscosity changes around the selected plan are depicted in Figure <ref type="figure" target="#fig_14">7b</ref>. Due to obtained results, the generated heat and materials flow velocity caused the viscosity of materials in points with higher temperatures (RS front and AS front) to decrease at the lowest amounts. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>In this research, the heat generation and internal materials flow during the FSW process of AA5058 aluminum alloy with various tool pin angles were simulated. The thermal results were simulated and validated by experimental results. The obtained results can be summarized as follows: 1. The heat generation at a lower pin angle is more than a higher pin angle. With a higher pin angle, the total surface of the tool shoulder and pin that are in contact with the workpiece decrease. For this reason, the frictional heat generation decreases. Due to obtained results, the maximum heat was generated with Tool I (446 °C) and the minimum heat produced by Tool III (416 °C). This difference was created due to the decreasing contact surface of Tool III (0.04027 m 2 ) compared to Tool I (0.04084 m 2 ) with the workpiece. 2. The internal head distributes uniformly at a higher Tool pin angle. Due to the rotational direction of the tool, the materials stretched from AS to RS, and the concentration of plasticized material and heat in the RS was more than in the AS. This heat flow behavior is detected in internal and surface heat distribution. 3. The simulation results of internal materials flow revealed that with increasing the pin angle, the stirring action of the tool increase. The higher stirring action improves the </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>In this research, the heat generation and internal materials flow during the FSW process of AA5058 aluminum alloy with various tool pin angles were simulated. The thermal results were simulated and validated by experimental results. The obtained results can be summarized as follows:</p><p>1.</p><p>The heat generation at a lower pin angle is more than a higher pin angle. With a higher pin angle, the total surface of the tool shoulder and pin that are in contact with the workpiece decrease. For this reason, the frictional heat generation decreases. Due to obtained results, the maximum heat was generated with Tool I (446 • C) and the minimum heat produced by Tool III (416 • C). This difference was created due to the decreasing contact surface of Tool III (0.04027 m 2 ) compared to Tool I (0.04084 m 2 ) with the workpiece. 2.</p><p>The internal head distributes uniformly at a higher Tool pin angle. Due to the rotational direction of the tool, the materials stretched from AS to RS, and the concentration of plasticized material and heat in the RS was more than in the AS. This heat flow behavior is detected in internal and surface heat distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.</head><p>The simulation results of internal materials flow revealed that with increasing the pin angle, the stirring action of the tool increase. The higher stirring action improves the internal flow of materials. Bigger SZ with uniform flow pattern formed in stir zone of joint that FSWed with Tool III. Moreover, with the benefit of higher mechanical works and lower heat generation, the higher pin angle plays a positive role during the FSW process. Funding: Not applicable.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) FSW simulation domain, (b) Meshed area.</figDesc><graphic coords="3,47.99,158.72,497.50,182.40" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) FSW simulation domain, (b) Meshed area.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. (a) used FSW fixture in this study, (b) Schematic view of thermocouples place, (c) schematic view and image of used tool in this study.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. (a) used FSW fixture in this study, (b) Schematic view of thermocouples place, (c) schematic view and image of used tool in this study.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Materials 2021 ,</head><label>2021</label><figDesc>14, x FOR PEER REVIEW 6 of 14analyzed. The experimental results of recorded temperature by thermocouples number 1 and 2 are presented in Figure3.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. recorded temperature by thermocouple 1 and 2 at different tool pins. The experimental data from the advancing side (AS) are represented by T1, and the experimental data from the retreating side (RS) are represented by T2. The experimental results show that the maximum recorded temperature in AS of joint lines FSWed by tools I, II, and III were 450 °C, 440 °C, and 424 °C, respectively. On the other hand, the recorded temperature in RS of joint lines FSWed by tools I, II, and III were 445 °C, 436 °C, and 421 °C, respectively.To find the relation with parts of the tool and generated heat in the simulation model, the area of each part (Shoulder, pin body, and pin tip) was calculated. These areas are in</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Recorded temperature by thermocouple 1 and 2 at different tool pins. The experimental data from the advancing side (AS) are represented by T1, and the experimental data from the retreating side (RS) are represented by T2. The experimental results show that the maximum recorded temperature in AS of joint lines FSWed by tools I,</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. (a) simulation results of heat generation in stir zone, (b) schematic view of selected plan for recording data, (c) simulation results of heat distribution around various tools.</figDesc><graphic coords="7,49.24,94.20,497.50,355.68" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. (a) simulation results of heat generation in stir zone, (b) schematic view of selected plan for recording data, (c) simulation results of heat distribution around various tools.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. (a) internal heat distribution of various tools, (b) surface heat flow of joint that FSWed with tool III, (c) materials viscosity around various tool pin.</figDesc><graphic coords="8,49.06,96.89,497.50,342.47" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. (a) internal heat distribution of various tools, (b) surface heat flow of joint that FSWed with tool III, (c) materials viscosity around various tool pin.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. (a) surface materials flow of FSWed sample with Tool I, II and III, (b) longitudinal section from simulation results of internal flow of joint that FSWed with Tool I, II and III.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. (a) surface materials flow of FSWed sample with Tool I, II and III, (b) longitudinal section from simulation results of internal flow of joint that FSWed with Tool I, II and III.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. (a) cross section views of internal flow path obtained from simulation and (b) materials flow velocity around various tool pin.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. (a) cross section views of internal flow path obtained from simulation and (b) materials flow velocity around various tool pin.</figDesc><graphic coords="10,65.24,94.47,468.24,244.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Author Contributions:</head><label></label><figDesc>Conceptualization, S.C., D.O.B., W.S., M.E.A. and H.A.D.; methodology, S.C., D.O.B., W.S., M.E.A. and H.A.D.; software, H.A.D.; validation, S.C., D.O.B., W.S., M.E.A., H.A.D. and D.F.; formal analysis, S.C., D.O.B., W.S., M.E.A., M.L. and D.F.; investigation, S.C., D.O.B., W.S., M.E.A. and H.A.D.; resources, S.C., D.O.B., W.S., M.E.A., M.L. and D.F.; data curation, H.A.D.; writing-original draft preparation, H.A.D., M.L. and D.F.; writing-review and editing, H.A.D., M.L. and D.F.; visualization, W.S., M.E.A. and H.A.D.; supervision, H.A.D.; project administration, H.A.D. and D.F. All authors have read and agreed to the published version of the manuscript.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>:</figDesc><table><row><cell>. ε =</cell><cell>2 3</cell><cell>du dx</cell><cell>2</cell><cell>+</cell><cell>dv dy</cell><cell>2</cell><cell>+</cell><cell>dw dz</cell><cell>2</cell><cell>+</cell><cell>1 2</cell><cell>du dy</cell><cell>+</cell><cell>dv dx</cell><cell>2</cell><cell>+</cell><cell>du dz</cell><cell>+</cell><cell>dw dx</cell><cell>2</cell><cell>+</cell><cell>dw dy</cell><cell>+</cell><cell>dz du</cell><cell>2</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Mechanical Properties of WM.</figDesc><table><row><cell>Parameter</cell><cell>Density</cell><cell>Ultimate Tensile Strength</cell><cell>Elongation</cell><cell>Shear Strength</cell><cell>Melting Point</cell><cell>Thermal Conductivity at 25 • C</cell></row><row><cell>Value</cell><cell>2685 (kg/m 3 )</cell><cell>145 (MPa)</cell><cell>24%</cell><cell>103 (MPa)</cell><cell>591 ( • C)</cell><cell>193 (W/m × K)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 1 .</head><label>1</label><figDesc>Mechanical Properties of WM.</figDesc><table><row><cell>Parameter</cell><cell>Density</cell><cell>Ultimate Tensile Strength</cell><cell cols="2">Elongation Shear Strength</cell><cell>Melting Point</cell><cell>Thermal Conductivity at 25 °C</cell></row><row><cell>Value</cell><cell>2685 (kg/m 3 )</cell><cell>145 (MPa)</cell><cell>24%</cell><cell>103 (MPa)</cell><cell>591 (°C)</cell><cell>193 (W/m × K)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 2 .</head><label>2</label><figDesc>Area of various part of tools and related generated heat.</figDesc><table><row><cell></cell><cell></cell><cell>Area (m 2 )</cell><cell></cell><cell></cell><cell>Generated Heat ( • C)</cell><cell></cell></row><row><cell></cell><cell>I</cell><cell>II</cell><cell>III</cell><cell>I</cell><cell>II</cell><cell>III</cell></row><row><cell>Shoulder</cell><cell>0.02859</cell><cell>0.02721</cell><cell>0.0255</cell><cell>316</cell><cell>298</cell><cell>273</cell></row><row><cell>Pin Body</cell><cell>0.00942</cell><cell>0.01055</cell><cell>0.01194</cell><cell>69</cell><cell>75</cell><cell>82</cell></row><row><cell>Pin Tip</cell><cell>0.00283</cell><cell>0.00283</cell><cell>0.00283</cell><cell>61</cell><cell>61</cell><cell>61</cell></row><row><cell>Total</cell><cell>0.04084</cell><cell>0.04059</cell><cell>0.04027</cell><cell>446</cell><cell>434</cell><cell>416</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Data Availability Statement: Not applicable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest:</head><p>The authors declare no conflict of interest.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Effects of FSW tool plunge depth on properties of an Al-Mg-Si alloy T-joint: Thermomechanical modeling and experimental evaluation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Fydrych</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Fernandez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14164754</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">4754</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Analysis of friction stir welding tool offset on the bonding and properties of Al-Mg-Si alloy T-joints</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Murillo-Marrodán</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Lankarani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14133604</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">3604</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Friction spot extrusion welding on dissimilar materials AA2024-T3 to AA5754-O: Effect of shoulder plunge depth</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Paidar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">P</forename><surname>Mehta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Babaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Lankarani</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11665-020-05387-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Eng. Perform</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="334" to="345" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Effects of materials positioning and tool rotational speed on metallurgical and mechanical properties of dissimilar modified friction stir clinching of AA5754-O and AA2024-T3 sheets</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mehrez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Cooke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ojo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">O</forename><surname>Lankarani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.rinp.2021.103962</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Results Phys</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">103962</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Dissimilar welding of AA5083 to AZ31 Mg alloys using modified friction stir clinching brazing</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Paidar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mehrez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Babaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">O</forename><surname>Ojo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Lankarani</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.matlet.2021.129764</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Lett</title>
+		<imprint>
+			<biblScope unit="volume">301</biblScope>
+			<biblScope unit="page">129764</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note>CrossRef</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Thermo-mechanical simulation of underwater friction stir welding of low carbon steel</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tomków</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14174953</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">4953</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Friction spot extrusion welding-brazing of copper to aluminum alloy</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Paidar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">O</forename><surname>Samusenkov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Babaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">O</forename><surname>Ojo</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.matlet.2020.129160</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Lett</title>
+		<imprint>
+			<biblScope unit="volume">285</biblScope>
+			<biblScope unit="page">129160</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note>CrossRef</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Repairing of exit-hole in dissimilar Al-Mg friction stir welding: Process and microstructural pattern</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">P</forename><surname>Mehta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Patel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Vyas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vilaça</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mfglet.2020.01.002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Manuf. Lett</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="67" to="70" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Investigation of mechanical and microstructural properties of welded specimens of AA6061-T6 alloy with friction stir welding and parallel-friction stir welding methods</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ghiasvand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Yavari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tomków</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Grimaldo Guerrero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kheradmandan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dorofeev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Memon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14206003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">6003</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Induction assisted hybrid friction stir welding of dissimilar materials AA5052 aluminium alloy and X12Cr13 stainless steel</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Mohan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tomków</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gopi</surname></persName>
+		</author>
+		<idno type="DOI">10.2478/adms-2021-0015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="17" to="30" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Influence of tool pin profiles on the filler added friction stir spot welded dissimilar aluminium alloy joints</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Balamurugan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Mohan</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/2053-1591/ac2771</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Res. Express</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">96531</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">A Weighting grade-based optimization method for determining refill friction stir spot welding process parameters</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kluz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kubit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Trzepiecinski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Faes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Bochnowski</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11665-019-04378-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Eng. Perform</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="6471" to="6482" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Microstructure and low cycle fatigue properties of AA5083 H111 friction stir welded joint</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Torzewski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Grzelak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wachowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kosturek</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma13102381</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">2381</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Internal flow behaviour and microstructural evolution of the bobbin-FSW welds: Thermomechanical comparison between 1xxx and 3xxx aluminium grades</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tamadon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Pons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sued</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Clucas</surname></persName>
+		</author>
+		<idno type="DOI">10.2478/adms-2021-0010</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="40" to="64" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Heat input and mechanical properties investigation of friction stir welded AA5083/AA5754 and AA</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M Z</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ataya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>El-Sayed Seleman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M A</forename><surname>Mahdy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Alsaleh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ahmed</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/met11010068</idno>
+		<idno>5083/AA7020</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Metals</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">68</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Shoulder related temperature thresholds in FSSW of aluminium alloys</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Andrade</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sabari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Leitão</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Rodrigues</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14164375</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">4375</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Submerged dissimilar friction stir welding of AA6061 and AA7075 aluminum alloys: Microstructure characterization and mechanical property</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Heidarzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Javidani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mofarrehi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Farzaneh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-G</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/met11101592</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Metals</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">1592</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Development of fed friction-stir (FFS) process for dissimilar nanocomposite welding between AA2024 aluminum alloy and polycarbonate (PC)</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2020.03.020</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="262" to="273" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">UFSW tool pin profile effects on properties of aluminiumsteel joint</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Demiral</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Zain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Khan</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.vacuum.2021.110460</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Vacuum</title>
+		<imprint>
+			<biblScope unit="volume">192</biblScope>
+			<biblScope unit="page">110460</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Experimental and thermomechanical analysis of the effect of tool pin profile on the friction stir welding of poly(methyl methacrylate) sheets</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2018.06.015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="412" to="423" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">The effect of pin profiles on the microstructure and mechanical properties of underwater friction stir welded AA2519-T87 aluminium alloy</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Sabari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Malarvizhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Balasubramanian</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s40712-016-0058-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mech. Mater. Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">5</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Numerical simulation for the optimization of polygonal pin profiles in friction stir welding of aluminum</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s40195-021-01198-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Metall. Sin. Engl. Lett</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1065" to="1078" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Effects of processing parameters on the characteristics of dissimilar friction-stir-welded joints between AA5058 aluminum alloy and PMMA polymer</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kashiry Fard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s40194-017-0517-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Weld. World</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="117" to="130" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Fabrication of a nanostructured high strength steel tube by friction-forging tubular additive manufacturing (FFTAM) technology</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Gerlich</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2020.08.070</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="724" to="735" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Processing and characterizations of polycarbonate/alumina nanocomposites by additive powder fed friction stir processing</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.tws.2020.107086</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Thin-Walled Struct</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="page">107086</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note>CrossRef</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Weldability of AA6061-T6 and AISI 304 by underwater friction stir welding</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Mahto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kinjawadekar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Meena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Pal</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2019.01.028</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page" from="370" to="386" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Peak temperature correlation and temperature distribution during joining of AZ80A Mg Alloy by FSW-A numerical and experimental investigation</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sevvel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Dhanesh Babu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Senthil Kumar</surname></persName>
+		</author>
+		<idno type="DOI">10.5545/sv-jme.2020.6566</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Stroj. Vestn. J. Mech. Eng</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="395" to="407" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Numerical simulation of fatigue crack growth in friction stir welded T joint made of Al 2024 T351 alloy</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kredegh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sedmak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Grbovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Milosevic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Danicic</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.prostr.2016.06.383</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Procedia Struct. Integr</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="3065" to="3072" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Review of tools for friction stir welding and processing</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">N</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Larose</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Wanjara</surname></persName>
+		</author>
+		<idno type="DOI">10.1179/1879139512Y.0000000015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Can. Metall. Q</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="250" to="261" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">The effect of tool pin size and taper angle on the thermal process and plastic material flow in friction stir welding</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00170-021-07650-x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Adv. Manuf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page" from="2847" to="2860" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Material Flow in FSW of T-joints: Experimental and numerical analysis</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Buffa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fratini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Micari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shivpuri</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s12289-008-0137-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mater. Form</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="1283" to="1286" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Evaluation of a polymer-steel laminated sheet composite structure produced by friction stir additive manufacturing (FSAM) technology</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.polymertesting.2020.106690</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Polym. Test</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">106690</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Effects of friction stir welding tool tilt angle on properties of Al-Mg-Si alloy T-joint</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kordani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cirpj.2021.03.015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">CIRP J. Manuf. Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="264" to="276" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Investigations of tool tilt angle on properties friction stir welding of A441 AISI to AA1100 aluminium</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elyasi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hosseinzadeh</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/0954405416645986</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Inst. Mech. Eng. Part B J. Eng. Manuf</title>
+		<imprint>
+			<biblScope unit="volume">230</biblScope>
+			<biblScope unit="page" from="1234" to="1241" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Experimental and thermomechanical analysis of friction stir welding of poly(methyl methacrylate) sheets</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/13621718.2017.1364896</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Technol. Weld. Join</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="209" to="218" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Experimental and thermomechanical study on FSW of PMMA polymer T-joint</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elyasi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00170-018-1847-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Adv. Manuf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="1445" to="1456" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Friction-stir lap-joining of aluminium-magnesium/poly-methyl-methacrylate hybrid structures: Thermo-mechanical modelling and experimental feasibility study</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/13621718.2017.1323441</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Technol. Weld. Join</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="35" to="49" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Friction Stir Welding and Friction Spot Stir Welding Processes of Polymers-State of the Art</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lambiase</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma13102291</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<date type="published" when="2020">2020. 2291</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Underwater friction stir welding of PC: Experimental study and thermo-mechanical modelling</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elyasi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2021.03.034</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="161" to="173" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">An investigation on the dissimilar friction stir welding of T-joints between AA5754 aluminum alloy and poly(methyl methacrylate)</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.tws.2018.11.027</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Thin-Walled Struct</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="376" to="384" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Underwater submerged dissimilar friction-stir welding of AA5083 aluminum alloy and A441 AISI steel</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00170-019-03544-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Adv. Manuf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="4383" to="4395" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Monte Carlo simulation of grain refinement during friction stir processing</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Gerlich</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10853-020-04963-2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="13438" to="13456" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Underwater friction stir welding of Al-Mg alloy: Thermo-mechanical modeling and validation</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Talebizadehsardari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Musharavati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Sebaey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eyvaziana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mtcomm.2020.101965</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Today Commun</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">101965</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+	<note>CrossRef</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Submerged friction stir welding of dissimilar joints between an Al-Mg alloy and low carbon steel: Thermo-mechanical modeling, microstructural features, and mechanical properties</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eyvazian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2019.12.035</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="68" to="79" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Study on the effects of tool tile angle, offset and plunge depth on friction stir welding of poly(methyl methacrylate) T-joint</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eyvazian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Hamouda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elyasi</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/0954405419889180</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Inst. Mech. Eng. Part B J. Eng. Manuf</title>
+		<imprint>
+			<biblScope unit="volume">234</biblScope>
+			<biblScope unit="page" from="773" to="787" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A new procedure for the fabrication of dissimilar joints through injection of colloidal nanoparticles during friction stir processing: Proof concept for AA6062/PMMA joints</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2019.12.008</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="335" to="343" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Simulation and experimental study of underwater dissimilar friction-stir welding between aluminium and steel</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eyvazian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hamouda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Tarlochan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmrt.2020.02.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Res. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="3767" to="3781" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Intermetallic compounds (IMCs) formation during dissimilar friction-stir welding of AA5005 aluminum alloy to St-52 steel: Numerical modeling and experimental study</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00170-018-2879-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Adv. Manuf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="2401" to="2422" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Modeling and experimental validation of material flow during FSW of polycarbonate</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Eyvazian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mtcomm.2019.100796</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Today Commun</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">100796</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note>CrossRef</note>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">A novel fed friction-stir (FFS) technology for nanocomposite joining</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/13621718.2019.1631534</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Technol. Weld. Join</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="89" to="100" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Friction stir welding of polycarbonate lap joints: Relationship between processing parameters and mechanical properties</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Simchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lambiase</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.polymertesting.2019.105999</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Polym. Test</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">105999</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Friction-forging tubular additive manufacturing (FFTAM): A new route of solid-state layer-upon-layer metal deposition</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aghajani Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Gerlich</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmrt.2020.10.105</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Res. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="15273" to="15285" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Analysis of process parameters effects on dissimilar friction stir welding of AA1100 and A441 AISI steel</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Derazkola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Aval</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elyasi</surname></persName>
+		</author>
+		<idno type="DOI">10.1179/1362171815Y.0000000038</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. Technol. Weld. Join</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="553" to="562" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Strengthening mechanism of friction stir welded alpha titanium alloy specially designed T-joints</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vairis</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2020.03.032</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Modified friction stir clinching of AA5754-O to AA6061-T6: The role of shoulder feature on the metallurgical and mechanical properties</title>
+		<author>
+			<persName><forename type="first">Ashraff</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Mehrez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ojo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">O</forename><surname>Mohanavel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Yoganandam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ravichandran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+		<idno type="DOI">10.1016/j.vacuum.2021.110109</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Vacuum</title>
+		<imprint>
+			<biblScope unit="volume">187</biblScope>
+			<biblScope unit="page">110109</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Effect of tool tilt angle on strength and microstructural characteristics of friction stir welded lap joints of AA2014-T6 aluminum alloy</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Rajendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Srinivasan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Balasubramanian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Balaji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Selvaraj</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S1003-6326(19)65090-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Nonferrous Met. Soc. China</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1824" to="1835" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Review on underwater friction stir welding: A variant of friction stir welding with great potential of improving joint properties</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Wahid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Siddiquee</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S1003-6326(18)64653-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Nonferrous Met. Soc. China</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="193" to="219" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Influence of tool geometry and process parameters on the properties of friction stir spot welded multiple (AA 5754 H111) aluminium sheets</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Labus Zlatanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Balos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Bergmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rasche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pecanac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Goel</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ma14051157</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Materials</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">1157</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Investigations of multi-pass friction stir welding for Al-Zn-Mg alloy</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ghangas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Singhal</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.matpr.2018.04.118</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Today Proc</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="17107" to="17113" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Fully coupled thermomechanical simulation of friction stir welding of aluminum 6061-T6 alloy T-joint</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">N</forename><surname>Salloomi</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2019.06.030</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="746" to="754" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Potentials and strategies of solid-state additive friction-stir manufacturing technology: A critical review</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khodabakhshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Gerlich</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmapro.2018.09.030</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Manuf. Process</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="77" to="92" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Effect of tool eccentricity on the properties of friction stir welded AA6061 aluminum alloys</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Walbridge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gerlich</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.mfglet.2017.12.019</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Manuf. Lett</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="14" to="17" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Effect of tilt angle in FSW of polycarbonate sheets in butt configuration</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lambiase</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Grossi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paoletti</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00170-020-05106-2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Adv. Manuf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="489" to="501" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Effects of the Reversely rotating assisted shoulder on microstructures during the reverse dual-rotation friction stir welding</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmst.2014.07.020</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="375" to="383" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">CFD modelling of temperature distribution and material flow investigation during FSW of DH36 shipbuilding grade steel</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tiwari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pankaj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Suman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Biswas</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s12666-020-02030-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Indian Inst. Met</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="2291" to="2307" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Influence of plate position, tool offset and tool rotational speed on mechanical properties and microstructures of dissimilar Al/Cu friction stir welding joints</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">K</forename><surname>Sahu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Pal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jain</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmatprotec.2016.04.014</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Process. Technol</title>
+		<imprint>
+			<biblScope unit="volume">235</biblScope>
+			<biblScope unit="page" from="55" to="67" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">EBSD study of underwater friction stir welded AA7003-T4 and AA6060-T4 dissimilar joint</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jmrt.2020.02.056</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Res. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="4309" to="4318" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

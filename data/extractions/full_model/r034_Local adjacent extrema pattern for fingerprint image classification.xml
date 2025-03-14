@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Local adjacent extrema pattern for fingerprint image classification</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Adhiyaman</forename><surname>Manickam</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Mathematics</orgName>
+								<orgName type="department" key="dep2">School of Advanced Sciences</orgName>
+								<orgName type="institution">VIT University</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<settlement>Vellore-</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">D</forename><surname>Ezhilmaran</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Mathematics</orgName>
+								<orgName type="department" key="dep2">School of Advanced Sciences</orgName>
+								<orgName type="institution">VIT University</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<settlement>Vellore-</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rajkumar</forename><surname>Soundrapandiyan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Software System</orgName>
+								<orgName type="department" key="dep2">School of Computer Science and Engineering</orgName>
+								<orgName type="institution">VIT University</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<settlement>Vellore-</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Local adjacent extrema pattern for fingerprint image classification</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">98B4C8896EC63C7CBD92359B1C8DEBD8</idno>
+					<idno type="DOI">10.1088/1757-899X/263/4/042143</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:03+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Fingerprint classification is as yet difficult issue due to incomplete information in ridges and low quality images. To address these problems, we propose a new and robust Local Adjacent Extrema Pattern (LAEP) is a feature descriptor for fingerprint classification. The proposed descriptor finds it values based on indexes of local adjacent extremas using first order derivatives. The intensity values of the local extremas are compared with center pixel intensity value to employ the correlation of central pixel with its neighbors. Finally, the descriptor is generated on the support of the indexes and local extremas values. Support Vector Machine (SVM) is utilized for classification of fingerprint images into five classes. To prove the effectiveness of the proposed descriptor, we have tested on Indraprastha Institute of Information Technology (IIIT) -Indian rural fingerprint database for classification. In addition, the classification results of the proposed descriptor are compared with the existing methods. The resultant LAEP descriptor proved better classification accuracy than the previous methods.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>To distinguish the human biometric security is known by two ways such as physical attributes and behavior. There have been different biometric traits were used for recognition. The biometric traits, for example: fingerprint, palm veins, iris recognition, retina, face recognition, Deoxyribonucleic Acid (DNA), palm print, hand geometry, odor, typing rhythm, gait, and voice which is very appropriate for human recognition because of their singularity, integrality and uniformity. Among all other biometric techniques, fingerprints have the elevated amount of dependability and widely utilized by criminological specialists as a part of criminal examinations. To maintain the security is computationally challenging task for large database. Hence, fingerprint indexing scheme is needed for match the query image against every one of the fingerprints in database. Fingerprints are classified into pre specified categories using fingerprint classification algorithms which give an indexing scheme to encourage proficient coordinating for large fingerprint database.</p><p>To obtain the index, the following fingerprint features such as incipient ridges, minutiae, pores, singular points, ridge orientation map, singular points, dots and frequency map are used for recognition to identify the person.</p><p>The features are inherent in the following three types of patterns like arch, loop and whorl. It has classified in to nine classes such as arch, tent arch, right loop, left loop, double loop, right pocket loop, left pocket loop, whorl, mixed figure <ref type="bibr" target="#b0">[1]</ref> (see Figure <ref type="figure" target="#fig_0">1</ref>). Among all other feature, singular points are commonly used for classification. Arch -fingerprint do not contains singularities. Left loop, right loop A fingerprint classification of the comprehensive survey was explained by Yagar and Amin <ref type="bibr" target="#b1">[2]</ref>. It consists different feature extraction and classification techniques for obtain better performance. Fingerprint classification algorithm was proposed by Jung and Lee <ref type="bibr" target="#b2">[3]</ref> for ably classify noisy and incomplete fingerprints. Galar et al <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref> surveyed complete fingerprint classification based on feature extraction method, learning models and experimental results. Orientation extraction and classification for fingerprint image was proposed by Cao et al <ref type="bibr" target="#b5">[6]</ref>. Rule based fingerprint classification was proposed by Guo et al <ref type="bibr" target="#b6">[7]</ref>. Li et al <ref type="bibr" target="#b7">[8]</ref> proposed combining singular points and constrained nonlinear orientation image information for fingerprint classification. Adaboost learning methodology was used by Liu <ref type="bibr" target="#b8">[9]</ref> in fingerprint classification algorithm to model multiple types of singularity features. Karu and Jain <ref type="bibr" target="#b9">[10]</ref> proposed fingerprint classification based on extracting the singular points such as core and delta.</p><p>Still, many researchers are working on extracting the singular points for classification but it is challenging to obtain the better result. To lead the issue, the texture patterns are used for any image classification. A few researchers are working on fingerprint classification to extract the patterns with learning methodologies such as SVMs, neural network, etc.</p><p>The Local Binary Patterns (LBP) <ref type="bibr" target="#b10">[11]</ref> worked based on sign of difference between central pixels with its local neighbours. It helps to illustrate the local feature of the image. Various LBP are exist in the literature such as a Local Ternary Pattern (LTP) <ref type="bibr" target="#b11">[12]</ref>, Center Symmetric Local Binary Pattern (CSLBP) <ref type="bibr" target="#b12">[13]</ref>, Data Driven Local Binary Pattern (DDLBP) <ref type="bibr" target="#b13">[14]</ref>, Local Neighboring Intensity Relationship Pattern (LNIRP) <ref type="bibr" target="#b14">[15]</ref>, Local Diagonal Extrema Pattern (LDEP) <ref type="bibr" target="#b15">[16]</ref>, Multichannel Decoded Local Binary Patterns (MDLBP), Directional Extrema Pattern (DEP) <ref type="bibr" target="#b16">[17]</ref>, Local Ternary Co -Occurrence Patterns (LTCoP) <ref type="bibr" target="#b17">[18]</ref> etc. Burges <ref type="bibr" target="#b18">[19]</ref> introduced the concepts on support vector machine for pattern recognition. Object recognition, face recognition and text categorization are worked with the help of learning methodology such as SVMs in pattern recognition. Fingerprint matching using SVM-based similarity measure was introduced by Fei et al <ref type="bibr" target="#b19">[20]</ref>. The classification is challenging task because it used to reduce the search time of automatic fingerprint matching in large database as a preliminary stage. To facilitate high performance classification, in this paper, we used only adjacent neighbours because it reduces the dimension of the descriptor and contain most of the local edge information.</p><p>The remaining sections of this research paper include, section 2 proposes a descriptor based fingerprint classification model using local adjacent extrema pattern. Section 3 describes about SVM. Section 4 presents classification results and performance analysis. Finally, Section 5 concludes the paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Local Adjacent Extrema Pattern</head><p>Local adjacent extrema pattern has derived as a new feature descriptor for fingerprint classification form center pixel and its local neighbours. The first order local adjacent derivative is used to extract the local adjacent extrema (maxima and minima) pattern. The connection of local adjacent extrema with the center pixel plays a major role to encode the LAEP descriptor. Local adjacent extrema are extracted of any center pixel by using first order local adjacent derivatives.   </p><formula xml:id="formula_0">sign     </formula><p>where sign is a function and the formula to find the sign of a pixel values and given as follows,</p><formula xml:id="formula_1">1, 0 () 0, 0 sign         </formula><p>The values and indexes of the local adjacent extremas has derived for finding the local adjacent extrema pattern. We represented the LAEP for , ij Q with a binary pattern </p><formula xml:id="formula_2">          The extrema-center relationship factor is denoted by  . The , ij</formula><p>LAEP pattern is all 0's and 1's. The positions of the 1 are determined by the relationship of local extrema with the centre pixel. The extrema-centre relationship factor can be defined as equation   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Experimental results and performance analysis</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Dataset used</head><p>The proposed method is tested on public available database namely Indraprastha Institute of Information Technology (IIIT) Rural Indian Fingerprint database. It contains 75 subjects (for each individual, we capture right and left index finger). Each subject has 10 samples. Each image is of 508 × 661 pixel in size and has been scanned at 1000 pixels per inch as a gray -scale image. Total number of images in rural database is 1500. The challenges in this dataset is having non feature (such as singular points) images. It motivates us to derive the extrema pattern for classification. As far as we know, the classification work has not yet been carried out on this database.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Perfomance evaluation measures</head><p>The performance evaluation is carried out on the basis of recall, precision and accuracy metrics. They have found extensive use in many forensic applications for evaluating the individual recognition. Quantity is measured by recall and defined as follows </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Experimental results</head><p>We used five major fingerprint classes for classification such as arch, tented arch, left loop, right loop and whorl. Classification is executed SVM linear kernel function. For training 200 images having the classes and 1300 images having the non-classes were used.</p><p>To test the robustness of our algorithm, we have compared with previous popular feature based classification methods such as Gray-Level Co-occurrence Matrix (GLCM) <ref type="bibr" target="#b20">[21]</ref>, Local Binary Pattern (LBP) <ref type="bibr" target="#b12">[13]</ref>, Local Directional Pattern (LDP) <ref type="bibr" target="#b21">[22]</ref>, Local Diagonal Extrema Pattern (LDEP) <ref type="bibr" target="#b15">[16]</ref> using SVM with linear kernel function. The feature descriptors, namely, GLCM, LBP and LDP are generally used in computer vision and image processing for pattern LBP and LDP is simple and  </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. a) Left Loop, B) Right Loop, C) Whorl, D) Arch, and E) Tented Arch; Squares Represents Core and Triangles Represents Delta.</figDesc><graphic coords="3,209.18,467.57,191.92,146.10" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 . 1   and anticlockwise 2 Q</head><label>212</label><figDesc>Figure 2. The computation of</figDesc><graphic coords="4,148.42,226.59,299.45,194.15" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 (</head><label>2</label><figDesc>c) shows the values of the local diagonal extremas and center pixel.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>Conf. Series: Materials Science and Engineering 263 (2017) 042143 doi:10.1088/1757-899X/263/4intensity pixel values respectively, where max and min are the indexes of the local adjacent maxima and minima of , ij Q respectively. Figure 2(d) displayed the indexes of the local adjacent extremas and defined as follows,</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>are the local diagonal and extrema-center pixel difference factor for , max ij f and , min ij f respectively and computed as follows (see Figure 2 (e)), The maximum possible value of t is 24 and it depends on the values of min and . The binary , ij LAEP pattern is a 24 bit number, where twenty two places hold the value 0 and the remaining two places have the value 1. The computed local adjacent extrema pattern for the pixel , ij P is , ij LAEP . The enhanced adjacent extrema pattern over the image (M) as below,</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>Where t LAEP is the th t element of LAEP given as follows, Conf. Series: Materials Science and Engineering 263 (2017) 042143 doi:10.1088/1757-899X/263/4/042143 3. SVM classification Support Vector Machine (SVM) has been used for recognizing two class problems by the separating hyper plane with maximal distance to the closest points of the training set. Increase the margin between the classes and classification and classification error is reduced with the help of SVM. Linear kernel function is given as below ' is the kernel function and i x is the training data. ' i x is the transform of the training data.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. (a), (b) and (c) Comparison of TPR, PPV and ACC values of the different features in the classification stage for total sequences</figDesc><graphic coords="7,72.40,476.98,210.35,119.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="1,37.50,454.29,520.00,336.41" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Series: Materials Science and Engineering 263 (2017) 042143 doi:10.1088/1757-899X/263/4/042143 and tented arch fingerprints are containing one loop and one delta. Whorl fingerprint contains two loops and two delta.</figDesc><table><row><cell>14th ICSET-2017</cell><cell>IOP Publishing</cell></row><row><cell>IOP Conf.</cell><cell>1234567890</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 1 .</head><label>1</label><figDesc>Series: Materials Science and Engineering 263 (2017) 042143 doi:10.1088/1757-899X/263/4/042143 efficient texture descriptor. GLCM is texture descriptor which works for highly textured images. Recall, precision and accuracy are used to conclude the performance of the results.In this experiment, we have tested for classification with different combination of images such as test-1, 2 and 3 respectively. Test -1 contains 1050 images for training and 450 images for testing. Similarly test -2 contains 900 images for training and 600 images for testing and test -3 contains 750 images for training and 750 images for testing. As far as we know, the dataset used in classification results are not yet reported. Due to this reason, we have used this dataset for experiment and classification results are carried out. Table1show that the LAEP descriptor method performs better than the existing methods. Recall, Precision and Accuracy of the fingerprint classification for all the sequences GLCM 66.47 63.<ref type="bibr" target="#b20">21</ref> 51.21 67.28 61.21 53.23 65.21 60.23 52.31 LBP 73.00 73.00 58.02 75.12 73.00 59.08 71.08 71.02 55.13 LDP 74.21 73.01 58.33 73.31 72.21 60.01 71.29 71.09 55.12 LDEP 74.44 72.00 58.26 74.13 73.09 59.18 71.31 70.13 55.25 LAEP 75.00 74.13 59.72 76.12 73.97 60.92 72.00 71.42 56.00</figDesc><table><row><cell>1234567890</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Handbook of biometrics</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Flynn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ross</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>Springer Science &amp; Business Media</publisher>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yager</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Amin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="77" to="93" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="473" to="484" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Galar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Derrac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Peralta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Triguero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Paternain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopez-Molina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>García</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Benítez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pagola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Barrenechea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bustince</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Based. Syst</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="98" to="109" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Galar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Derrac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Peralta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Triguero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Paternain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lopez-Molina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>García</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Benítez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pagola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Barrenechea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bustince</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Based. Syst</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="76" to="97" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="3186" to="3197" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="752" to="764" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Y</forename><surname>Yau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="353" to="366" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="1062" to="1070" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Karu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jain</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="389" to="404" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ojala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pietikainen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Maenpaa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Pattern Anal. Mach. Intell</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="971" to="987" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Triggs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Image Process</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="1635" to="1650" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Heikkilä</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pietikäinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Schmid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="425" to="436" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Signal Proc. Let</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="1346" to="1350" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Bichot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Signal Proc. Let</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="853" to="856" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Dubey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S K</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Signal Proce Let</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1215" to="1219" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Murala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Maheshwari R P, Balasubramanian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Multimed. Inf. Retr</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="191" to="203" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Murala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="399" to="412" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Burges</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Data Min. Knowl. Disc</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="121" to="167" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiaohui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Jianjiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anni</forename><forename type="middle">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chinese J Electron</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="459" to="463" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mohanaiah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sathyanarayana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gurukumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IJSRP</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Hasanul</forename><surname>Kabir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Chae</forename><forename type="middle">O</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Arab. J. Inf. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="382" to="391" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

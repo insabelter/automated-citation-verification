@@ -1,0 +1,2280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Thermoelectric alloys between PbSe and PbS with effective thermal conductivity reduction and high figure of merit</title>
+				<funder ref="#_6SwmuT8">
+					<orgName type="full">Natural Science Foundation Project of Chongqing CSTC</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">NASA/JPL</orgName>
+				</funder>
+				<funder ref="#_CzAaQfK">
+					<orgName type="full">Research Foundation of Chongqing University of Science &amp; Technology</orgName>
+				</funder>
+				<funder ref="#_Ypt68VA">
+					<orgName type="full">AFOSR</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2014-01-03">03 January 2014</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Heng</forename><surname>Wang</surname></persName>
+							<email>hengwang@caltech.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Materials Science</orgName>
+								<orgName type="institution">California Institute of Technology</orgName>
+								<address>
+									<postCode>91125</postCode>
+									<settlement>Pasadena</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jianli</forename><surname>Wang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="laboratory">Jiangsu Key Laboratory for Design and Manufacture of Micro/Nano Biomedical Instruments</orgName>
+								<orgName type="institution">Southeast University</orgName>
+								<address>
+									<postCode>210096</postCode>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xianlong</forename><surname>Cao</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Metallurgy and Materials Engineering</orgName>
+								<orgName type="institution">Chongqing University of Science and Technology</orgName>
+								<address>
+									<postCode>401331</postCode>
+									<settlement>Chongqing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">G</forename><forename type="middle">Jeffrey</forename><surname>Snyder</surname></persName>
+							<email>jsnyder@caltech.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Materials Science</orgName>
+								<orgName type="institution">California Institute of Technology</orgName>
+								<address>
+									<postCode>91125</postCode>
+									<settlement>Pasadena</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Thermoelectric alloys between PbSe and PbS with effective thermal conductivity reduction and high figure of merit</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2014-01-03">03 January 2014</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">D197F446C5DBAF69A4BED5D0336A46DE</idno>
+					<idno type="DOI">10.1039/c3ta14929c</idno>
+					<note type="submission">Received 28th November 2013 Accepted 24th December 2013</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The n-type alloys between PbSe and PbS are studied. The effect of alloy composition on transport properties is evaluated and the results are interpreted with theories based on random atomic site substitution. The alloying in PbSe 1Àx S x brings thermal conductivity reduction, carrier mobility reduction as well as change of effective mass. When all these factors are evaluated, both experimentally and theoretically, the optimized thermoelectric performance is found to change gradually with alloy composition. High zT can be found in all PbSe 1Àx S x alloys. The possibility of achieving significant improvement of zT through alloying is also discussed.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Highly efficient thermoelectric materials are essential for waste energy recovery <ref type="bibr" target="#b0">1</ref> and the development of such materials characterized by high gure of merit zT, dened as zT ¼ S 2 sT/(k e +k L ) (S is the Seebeck coefficient, s is the electric conductivity, and k e and k L are the electron and lattice thermal conductivity, respectively), has been the focus of thermoelectric research. <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref> Alloying is one of the few proven strategies that lead to the best zTs in materials for high temperature applications. Among them are the well known SiGe <ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref> and TAGS <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref> alloys used in the radioisotope thermoelectric generators (RTGs) powering multiple spacecras for decades. Alloying in thermoelectrics provides a wide control of different material properties, including thermal conductivity, <ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref> the band structure, <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref> mechanical properties <ref type="bibr" target="#b20">21</ref> and even carrier density: <ref type="bibr" target="#b21">22,</ref><ref type="bibr" target="#b22">23</ref> all closely related to the thermoelectric performance and zT.</p><p>Lead chalcogenides is a family of compounds with promising zT at high temperatures. <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref> For PbTe, improved zT has been observed in different alloys such as PbTe 1Àx Se x , <ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b27">28</ref> Pb 1Àx Mg x Te (ref. 29) and Pb 1Àx Cd x Te (ref. 30). High zT was also found by different studies in PbTe-MTe <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref> (M: Ca, Mg, Sr, Ba) and PbTe-CdTe, <ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b35">36</ref> where they were shown to have nano-scale features that are also suggested as important for good thermoelectric properties. For the less studied chalcogenides, high zT was also reported for systems such as PbSe-PbS, <ref type="bibr" target="#b36">37</ref> PbSe-MSe <ref type="bibr" target="#b37">[38]</ref><ref type="bibr" target="#b38">[39]</ref><ref type="bibr" target="#b39">[40]</ref> (M: Ca, Sr, Ba), and PbS-XS <ref type="bibr" target="#b40">41,</ref><ref type="bibr" target="#b41">42</ref> (X: Ca, Sr, Zn, Cd), where similar nanostructures were also observed.</p><p>The old concept of solid solutions based on random atomic site substitution is however far from obsolete. Transport properties of many high zT materials from recent studies <ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b42">[43]</ref><ref type="bibr" target="#b43">[44]</ref><ref type="bibr" target="#b44">[45]</ref> have followed theories based on this concept. By studying a specic case of n-type PbTe 1Àx Se x , simple criteria <ref type="bibr" target="#b45">46</ref> were concluded for benecial disorder when there is no change in the band structure.</p><p>Like PbTe 1Àx Se x , PbSe and PbS also form complete solid solutions, according to the phase diagram. A previous study <ref type="bibr" target="#b36">37</ref> on PbS added to PbSe focused on the nano scale features induced by the small amount of PbS addition whereas a study of the entire composition range especially on the PbS rich side is still missing. Recently we have studied <ref type="bibr" target="#b46">47</ref> stoichiometric PbSe 1Àx S x , where the dependence of mobility and lattice thermal conductivity on alloy composition suggested zT improvement in the alloys. In this report we present a comprehensive study of PbSe 1Àx S x with different doping levels (by Cl substitution of the anion) and quantitative analysis based on the random solid solution model. The transport properties are well explained with this simple picture with a minimal number of tting parameters and the previously observed nano-scale feature in this system does not produce further lattice thermal conductivity reduction. With important material parameters determined for this alloy system the effect of disorder on thermoelectric performance was evaluated using the quality factor. We demonstrate that high zT can be found for any composition of PbSe 1Àx S x , while more signicant improvement will need additional material engineering.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results and discussion</head><p>All samples are single phase when examined with X-ray diffraction (Fig. <ref type="figure" target="#fig_1">1a</ref>). The lattice constant decreases with increasing S content following Vegard's law, consistent with the results on undoped samples <ref type="bibr" target="#b46">47</ref> (Fig. <ref type="figure" target="#fig_1">1b</ref>). Polished surfaces showed a homogeneous morphology (Fig. <ref type="figure" target="#fig_2">2</ref>) under SEM where S and Se are found evenly distributed throughout the matrix and no precipitates with enough compositional contrast down to 50 nm can be seen. These are behaviors of solid solutions with statistically random atomic distribution. Recently many lead chalcogenides <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b34">35,</ref><ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b38">39,</ref><ref type="bibr" target="#b47">[48]</ref><ref type="bibr" target="#b48">[49]</ref><ref type="bibr" target="#b49">[50]</ref><ref type="bibr" target="#b50">[51]</ref> (including PbSe with PbS addition &lt; 16%) are found with nanostructures on the &lt;10 nm scale using TEM. These features on the nanoscale are not necessarily in conict with our SEM observation at larger scales. We thus refer to the PbSe 1Àx S x system as "alloys", which includes the case of random solid solutions as well as mixtures with multiple phases. ). An abrupt change of DOS effective mass, which is oen an indication of band convergence <ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b54">55</ref> is not observed. Within experimental uncertainty the effective mass changes linearly, although there could be slight bowing (nonlinearity) as seen in some III-V semiconductor alloys. <ref type="bibr" target="#b55">56</ref> For dilute alloys the difference in effective mass is   comparable with experimental uncertainty, which is probably why no difference in effective mass was observed in ref. 37.</p><p>Besides having inuence on effective mass the random substitution also introduces lattice thermal conductivity reduction as well as mobility reduction, as discussed previously in the n-type PbTe 1Àx Se x system. <ref type="bibr" target="#b45">46</ref> Fig. <ref type="figure" target="#fig_3">3b</ref> shows the lattice thermal conductivity k L at both 300 K and 850 K for alloys with different sulfur contents. The 300 K data include k L calculated from doped samples (the diamonds) and undoped ones 47 (solid circles) in which k L dominates the measured total thermal conductivity k. The open circles are results reported by Stavitskaya <ref type="bibr" target="#b56">57</ref> for undoped/lightly doped samples and the open squares are results reported by Ioffe. <ref type="bibr" target="#b14">15</ref> For 850 K only the calculated k L values from doped samples are shown due to the bipolar conduction in undoped samples. For such calculation the Lorenz number L was calculated from the reduced chemical potentials (derived from Seebeck coefficients) under the SKB model with combined scattering mechanisms. For the optimum doped samples L decreases from 2.0 at 300 K to 1.4 at 850 K, with 5% variance among samples. Detailed equations are described in ref. 53.</p><p>At both temperatures the experimental results follow closely the calculated k L (solid curve) for disordered solid solutions. The calculation is based on the Klemens' model <ref type="bibr" target="#b57">58,</ref><ref type="bibr" target="#b58">59</ref> that links the lattice thermal conductivity of alloys with a perfect system without disorder. At high temperature if the dominant scattering mechanisms for phonons are Umklapp scattering and point defect scattering, then:</p><formula xml:id="formula_0">k L;alloy k L;pure ¼ arc tanðuÞ u ; u 2 ¼ pq D U 2h -v 2 k L;pure G<label>(1)</label></formula><p>k L,alloy and k L,pure are the lattice thermal conductivities of the alloy and the perfect (virtual) crystal without disorder, respectively. v is the average speed of sound, q D is the Debye temperature, and U is the volume per atom. The scattering parameter G includes inuence from mass difference, bonding force difference and strain eld induced by point defects for binary (A 1Àx B x type) or pseudo-binary (AB 1Àx C x type) systems: 13,60</p><formula xml:id="formula_1">G ¼ xð1 À xÞ " DM M 2 þ 3 a À a pure xa pure 2 #<label>(2)</label></formula><p>DM and Da are the differences in mass and lattice constants between the two binary compounds; M and a are the molar mass and lattice constant of the virtual crystal. The parameter 3 is related to the elastic properties and is generally treated as a tting parameter. <ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b60">61</ref> Nonetheless the value of 3 could be estimated using: 13,58,62</p><formula xml:id="formula_2">3 ¼ 2 9 À G þ 6:4g Á 1 þ r 1 À r ! 2<label>(3)</label></formula><p>where g is the Grüneisen parameter and r is the Poisson ratio. G is a ratio between the relative change of bulk modulus DK/K and the bonding length DR/R. The ratio G is relatively constant within similar material systems, <ref type="bibr" target="#b62">63,</ref><ref type="bibr" target="#b63">64</ref> for example for covalent IV and III-V structures G ¼ 4, for more ionic II-VI and I-VII structures G ¼ 3 and for complex oxide structures G ¼ 9.</p><p>For lead chalcogenides G ¼ 3 and 3 calculated for PbSe and PbS is 110 and 150, respectively. All properties of the virtual crystal are taken as the linear average of two binary compounds, which are listed in ref. 53. There are no tting parameters involved in the calculation of k L for the alloys between PbSe and PbS.</p><p>As shown in Fig. <ref type="figure" target="#fig_3">3b</ref> the reported 37 k L for PbSe with PbS addition (#16%), including those where nanostructures are observed, exhibit the same magnitude of reduction compared with results from this study both at 300 K and 850 K.</p><p>The effect coupled with thermal conductivity reduction in solid solutions is the mobility reduction due to the introduced alloy scattering of carriers, <ref type="bibr" target="#b64">[65]</ref><ref type="bibr" target="#b65">[66]</ref><ref type="bibr" target="#b66">[67]</ref><ref type="bibr" target="#b67">[68]</ref><ref type="bibr" target="#b68">[69]</ref> the magnitude of which in the case of PbSe 1Àx S x at both 300 K and 850 K is shown in Fig. <ref type="figure" target="#fig_3">3c</ref>. Both doped and undoped samples 47 are shown for 300 K (together with values reported by Stavitskaya <ref type="bibr" target="#b56">57</ref> ) and only doped samples are shown for 850 K. The observed mobility reduction is not symmetric: it decreases quickly as PbS is added to PbSe whereas only a marginal reduction in mobility is seen when PbSe is introduced to PbS, regardless of doping or temperature.</p><p>For both PbS and PbSe at room temperature, both deformation potential scattering (i.e. acoustic phonon scattering) and polar scattering from optical phonons are important. <ref type="bibr" target="#b52">53</ref> The relaxation time for each mechanism can be expressed as:</p><formula xml:id="formula_3">s ac ¼ ph -4 C l 2 1=2 m b *3=2 ðk B TÞ 3=2 X 2 À 3 þ 3 2 a Á À1=2 ð1 þ 23aÞ À1 Â " 1 À 8að3 þ 3 2 aÞ 3ð1 þ 23aÞ 2 # À1<label>(4)</label></formula><formula xml:id="formula_4">s po ¼ 4ph -2 3 1=2 2 1=2 ðk B TÞ 1=2 e 2 m b *1=2 À 3 N À1 À 3 0 À1 Áð1 þ 23aÞ À1 ð1 þ 3aÞ 1=2 Â ( 1 À d ln 1 þ 1 d ! À 2a3ð1 þ 3aÞ ð1 þ 23aÞ 2 Â 1 À 2d þ 2d 2 ln 1 þ 1 d ! ) À1 (5) dð3Þ ¼ e 2 m d *1=2 N 2=3 V 2 1=2 3ðk B TÞ 1=2 ph -3 N ð1 þ 3aÞ À10 L 1=2 1 (<label>6</label></formula><formula xml:id="formula_5">)</formula><p>where m * d is the total DOS effective mass. C l is the average longitudinal elastic constant. <ref type="bibr" target="#b69">70</ref> N v is the degeneracy of the conduction band. X is the deformation potential coefficient. 3 0 and 3 N are the static and high frequency dielectric constants, respectively. 3 is the reduced carrier energy E/k B T and a ¼ k B T/E g , where E g is the gap between two interacting bands at the L point of the Brillouin zone. These properties of alloys are also taken as the linear average of two binary compounds. The generalized Fermi integral n L m l is dened by:</p><formula xml:id="formula_6">n L m l ¼ ð N 0 À vf v3 3 n À 3 þ 3 2 a Á m ð1 þ 23aÞ l d3<label>(7)</label></formula><p>In alloys a new scattering mechanism is introduced due to the atomic substitution. Relaxation time of this alloy scattering in narrow gap semiconductors can be written as: <ref type="bibr" target="#b45">46,</ref><ref type="bibr" target="#b70">71,</ref><ref type="bibr" target="#b71">72</ref> </p><formula xml:id="formula_7">s alloy ¼ 8h -4 3 ffiffi ffi 2 p pUxð1 À xÞU 2 m b *3=2 ðk B TÞ 1=2 À 3 þ 3 2 a Á À1=2 ð1 þ 23aÞ À1 Â " 1 À 8að3 þ 3 2 aÞ 3ð1 þ 23aÞ 2 # À1<label>(8)</label></formula><p>U is the volume per atom. x is the percentage of substituted atoms. U is the alloy scattering potential, which is generally believed to be the energy offset of atomic levels that forms the conduction/valence band. Such a view cannot entirely explain why U is found <ref type="bibr" target="#b45">46</ref> to be around 1 eV for n-type PbTe 1Àx Se x while the conduction band offset <ref type="bibr" target="#b72">73</ref> between PbTe and PbSe is only 0.1 eV. In this study, U is taken as the only tting parameter and U ¼ 1 eV is determined. The similar U value is consistent with the similar conduction band offset, which is 73 0.15 eV between PbSe and PbS. The solid lines in Fig. <ref type="figure" target="#fig_3">3c</ref> show the calculated mobilities assuming a constant h ¼ E F /k B T of À0.3 (for undoped), 3.6 (for doped) and À0.2 (for doped samples at 850 K). The calculation, based on the classic concept of solid solutions, matches the observed results reasonably well in all cases. The asymmetrical mobility reduction is also reproduced by the calculation. The alloy scattering potential U is constant throughout the composition range, which means the asymmetry is not due to the different magnitude of scattering from S and Se. Actually, as shown by the Pisarenko relation, m * d changes (through change of m * b ) with the alloy composition which is responsible for the asymmetrical mobility reduction.</p><p>Fig. <ref type="figure" target="#fig_4">4a</ref> shows the zT value of the alloys at different temperatures. The carrier densities of samples shown are carefully controlled: n H,300 K ¼ 3 Â 10 19 cm À3 (AE10%) for alloys with x &lt; 0.5 and 5 Â 10 19 cm À3 (AE10%) for alloys with x $ 0.5. The Seebeck coefficient values at 850 K for these samples are about the same at À190 mV K À1 (AE10%). These will lead to zT values close to the optimized ones at 850 K for all compositions. At 850 K, zT is found to increase when substituting S in PbS with Se, while it is found to decrease when substituting Se in PbSe with S. Neither of these changes, however, is signicant especially when compared with the averaged zT from the rule of mixing between PbSe and PbS (the dashed lines).</p><p>A simple estimate <ref type="bibr" target="#b45">46</ref> of whether a disorder is thermoelectrically benecial or not can be done by evaluating:</p><formula xml:id="formula_8">d dx DB B pure x¼0 ¼ 7:2 Â 10 3 U 1=3 = Å ðT=KÞ Â ( 18:5 ðq D =KÞ ðk L;pure;300K =W m À1 K À1 Þ Â " DM M 2 þ 3 Da a 2 # À 0:038ðC l =GPaÞ U 2=3 = Å2 U X 2 )<label>(9)</label></formula><p>or</p><formula xml:id="formula_9">d dx DB B pure x¼0 ¼ pKU 4k B T ( 1 4g 2 " DM M 2 þ 3 Da a 2 # À 10:6 U X 2 )<label>(10)</label></formula><p>Both ( <ref type="formula" target="#formula_8">9</ref>) and (10), yielded negative values for the system of PbSe 1Àx S x for the two limiting cases of PbSe and PbS with a small addition of each other. So a noticeable increase of zT is not expected by theory as well when a solid solution is formed. Fig. <ref type="figure" target="#fig_4">4b</ref> shows the relative change of quality factor in solid solutions as a function of composition given by:</p><formula xml:id="formula_10">DB B pure ¼ u=arc tanðuÞ 1 þ 3p 2 xð1 À xÞC l U 8k B T U X 2 À 1<label>(11)</label></formula><p>Eqn (11) reduces to ( <ref type="formula" target="#formula_8">9</ref>) and (10) in the dilute limit. Being consistent with ( <ref type="formula" target="#formula_8">9</ref>) and (10), Fig. <ref type="figure" target="#fig_4">4b</ref> indicates that DB stays negative throughout the composition range. The calculated optimized zT based on the described models is shown as a dashed line in Fig. <ref type="figure" target="#fig_4">4b</ref>, much higher zT over the optimized ones of each binary compound is not very likely.</p><p>PbS and PbSe have different optimum values of zT, and the alloys between them have different effective masses depending on the composition. Nonetheless as m * d (thus m * I ) is approximated by a linear extrapolation between the two compounds, so will the quality factor of the virtual system to which the change in alloys is compared. In general cases when a gradual linear extrapolation is obeyed by all material properties (m * I , X, C l , and N v ) that depend on composition, the criteria ( <ref type="formula" target="#formula_8">9</ref>) and ( <ref type="formula" target="#formula_9">10</ref>) can still be applied to estimate the change of zT relative to the weighed average of optimum zT of the two compounds.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>n-type PbSe 1Àx S x (0 # x # 1) is studied and the observed transport properties can be well understood assuming random anion site substitution. The mobility shows asymmetrical reduction, which is due to the different effective masses in the alloys. Despite the signicant thermal conductivity reduction and high zT over the entire composition range, the alloys between PbSe and PbS do not produce signicant increase of zT over those of PbSe and PbS, which agree with the criteria of benecial disorder for thermoelectrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental methods</head><p>Samples are prepared by the conventional melting technique, with additional care to achieve homogenization while avoiding treatments that lead to microstructural formation or phase segregation. Elements were loaded into quartz ampoules and sealed under vacuum &lt;10 À4 torr. The dopant of Cl was added in the form of PbCl 2 and S was dehydrated. The ampoules were heated to 650 K in 4 hours and soaked for 2 hours to enable the initial reaction of Pb and S, the temperature was then increased to 1373 K and held for 72 hours followed by quenching and annealing at 900 K for 72 hours. Ingots were ground and pressed using an induction heated hot press <ref type="bibr" target="#b73">74</ref> under an Ar atmosphere at 823 K for 60 minutes with a 40 MPa load. The obtained disks were 12 mm in diameter, around 1 mm thick with relative densities above 98%. The temperature dependent resistivity and Hall coefficient within the plane were measured by the Van der Pauw method. <ref type="bibr" target="#b74">75</ref> Cross-plane Seebeck coefficient at different temperatures was measured under oscillating temperatures with Chromel-Nb thermocouples. <ref type="bibr" target="#b75">76</ref> Thermal conductivity was calculated as k ¼ dD T C p , with the thermal diffusivity D T measured along the cross-plane direction by the laser ash method (Netzsch LFA 457) under Argon ow using the Cowan model plus pulse correction. The heat capacity C p was determined using the equation C p /k B atom À1 ¼ 3.07 + 4.7 Â 10 À4 (T/K-300) by tting high quality measurement results. <ref type="bibr" target="#b76">77</ref> All properties are isotropic based on a previous study on PbSe. For each measurement data were collected during both heating and cooling and no hysteresis or change in properties were observed. The uncertainty of each measurement is about 5% which when combined could lead to a maximum of 20% uncertainty in the zT value.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 3a shows</head><label></label><figDesc>Fig. 3a shows the Seebeck coefficient as a function of Hall carrier density (the Pisarenko relation) for some different alloy compositions. The (density-of-state, DOS) effective masses (m * d ) are estimated under the assumption of a single Kane band (SKB) model 52 with combined carrier scattering of acoustic phonon scattering as well as polar scattering from optical phonons 53 and alloy scattering 46 (detailed equations for calculation can be found in ref. 53). The PbSe 1Àx S x alloys have different m * d values depending on the value of x, which can be explained by the different effective masses of the conduction band for binary PbSe 54 (0.27 m e ) and PbS 53 (0.39 m e ). As shown in the inset of Fig.3a, the effective mass increases with increasing S content, roughly following the linear extrapolation between two binary compounds (solid lines are calculated for each composition with m * d from this trend). An abrupt change of DOS effective mass, which is oen an indication of band convergence<ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b54">55</ref> is not observed. Within experimental uncertainty the effective mass changes linearly, although there could be slight bowing (nonlinearity) as seen in some III-V semiconductor alloys.<ref type="bibr" target="#b55">56</ref> For dilute alloys the difference in effective mass is</figDesc><graphic coords="2,336.59,325.25,183.07,345.54" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 The (a) XRD patterns and (b) lattice constants of PbSe 1Àx S x samples, following Vegard's law expected for solid solutions.</figDesc><graphic coords="2,88.21,50.57,158.10,210.05" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 2</head><label>2</label><figDesc>Fig. 2 The back scattered SEM images of PbSe 1Àx S x , 3 compositions are shown as examples: (a) and (b) PbSe 0.3 S 0.7 , (c) PbSe 0.5 S 0.5 , and (d) PbSe 0.7 S 0.3 . EDS mapping from (a) is also shown and no phase segregation or precipitates down to 50 nm can be found.</figDesc><graphic coords="2,71.49,508.76,191.49,171.95" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 The influence of alloy composition on transport properties: (a) Seebeck versus carrier density for different compositions, the inset shows the DOS effective mass m * d , uncertainties are estimated based on the number of samples studied. (b) Lattice thermal conductivity and (c) Hall mobility reduction at both 300 K and 850 K.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 4</head><label>4</label><figDesc>Fig. 4 (a) Measured zT versus composition at different temperatures for PbSe 1Àx S x . The dashed lines are the linear average between zT of the two binary compounds PbSe and PbS. The error bar represents a magnitude of 10% uncertainty on zT. (b) The relative change of quality factor with composition (blue line) and change of zT (red dashed line and squares) at 850 K with composition. The dashed line is the calculated maximum zT for each composition.</figDesc><graphic coords="4,316.12,50.57,223.87,270.26" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>This journal is © The Royal Society of Chemistry 2014</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements H. W. and G. J. S. would like to thank <rs type="funder">AFOSR</rs> <rs type="grantNumber">MURI FA9550-10-1-0533</rs> and <rs type="funder">NASA/JPL</rs> for funding. X. C. thanks the <rs type="funder">Natural Science Foundation Project of Chongqing CSTC</rs> (project no. <rs type="grantNumber">cstc2011jjA50011</rs>) and <rs type="funder">Research Foundation of Chongqing University of Science &amp; Technology</rs> (project no. <rs type="grantNumber">CK2010Z08</rs>) for funding.</p></div>
+<div><head>Notes and references</head></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Ypt68VA">
+					<idno type="grant-number">MURI FA9550-10-1-0533</idno>
+				</org>
+				<org type="funding" xml:id="_6SwmuT8">
+					<idno type="grant-number">cstc2011jjA50011</idno>
+				</org>
+				<org type="funding" xml:id="_CzAaQfK">
+					<idno type="grant-number">CK2010Z08</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">E</forename><surname>Bell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">321</biblScope>
+			<biblScope unit="page" from="1457" to="1461" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Salvador</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Q</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="7837" to="7846" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Toberer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="105" to="114" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Sootsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Angew. Chem., Int. Ed. Engl</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="8616" to="8639" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zebarjadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Esfarjani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Dresselhaus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">F</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Environ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="5147" to="5162" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">B</forename><surname>Vining</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="331" to="341" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Dismukes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ekstrom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Steigmeier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kudman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Beers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="2899" to="2907" />
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Rowe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Shukla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Savvides</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="765" to="766" />
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Skrabek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Trimmer</surname></persName>
+		</author>
+		<title level="m">CRC Handbook of Thermoelectrics</title>
+		<editor>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Rowe</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Boca Raton</addrLine></address></meeting>
+		<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page" from="267" to="275" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Levin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Bud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Schmidt-Rohr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="2766" to="2774" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Miao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">B</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electron. Mater</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="1719" to="1723" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhao</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/C3TA15147F</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Chem. A</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Abeles</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="1906" to="1911" />
+			<date type="published" when="1963">1963</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Bhandari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Rowe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. D: Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="59" to="L61" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Ioffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Ioffe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Solid State</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="719" to="728" />
+			<date type="published" when="1960">1960</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Batson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Morar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="3285" to="3287" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ben Zid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bhouri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Mejri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Said</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bouarissa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Lazzari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Avitaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Derrien</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica B</title>
+		<imprint>
+			<biblScope unit="volume">322</biblScope>
+			<biblScope unit="page" from="225" to="235" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Zaitsev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Fedorov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Gurieva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">S</forename><surname>Eremin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Konstantinov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Samunin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Vedernikov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter Mater. Phys</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">45207</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">166601</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Medvedeva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">G</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Freeman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter Mater. Phys</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">155211</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Case</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Timm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Schock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Mag</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="4907" to="4934" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gelbstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Dashevsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Dariel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">33702</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Toberer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ikeda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>May</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Kauzlarich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="2795" to="2800" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chem. Mater</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="648" to="659" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Today</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="526" to="532" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="6125" to="6135" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">473</biblScope>
+			<biblScope unit="page" from="66" to="69" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lukas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Opeil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Broido</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page" from="10031" to="10038" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Heinz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Iwanaga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="5674" to="5678" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Heinz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="670" to="675" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ohta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1117" to="1123" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">D</forename><surname>Blum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Seidman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">489</biblScope>
+			<biblScope unit="page" from="414" to="418" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Environ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="4675" to="4684" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Q</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wolverton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Environ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">3346</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="1218" to="1225" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Androulakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ballikaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">132</biblScope>
+			<biblScope unit="page" from="5227" to="5235" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Androulakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Todorov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="10920" to="10927" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">M</forename><surname>Gibbs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Takagiwa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Snyder</surname></persName>
+		</author>
+		<idno type="DOI">10.1039/C3EE43438A</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Environ. Sci</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Androulakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D.-Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="5152" to="5160" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wolverton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page" from="7364" to="7370" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wolverton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page" from="16327" to="16336" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Hogan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page" from="7902" to="7912" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="1238" to="1244" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="5123" to="5130" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jewell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Caillat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter Mater. Phys</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">235209</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">Z</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1586" to="1596" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">H</forename><surname>Ni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">F</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. D: Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">405301</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Girard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Funct. Mater</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="764" to="772" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Girard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Shoemaker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Jaworski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Uher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Heremans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="16588" to="16597" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Androulakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="343" to="347" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Johnsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Q</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Androulakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Dravid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Todorov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Kanatzidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="3460" to="3470" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">I</forename><surname>Ravich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Emova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Smirnov</surname></persName>
+		</author>
+		<title level="m">Semiconducting lead chalcogenides</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Plenum Press</publisher>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schechtel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Energy Mater</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="488" to="495" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Pei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. U. S. A</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="9705" to="9709" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Gaidukova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Erofeev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">N</forename><surname>Ovechkina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inorg. Mater</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="169" to="172" />
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vurgaman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Meyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Ram-Mohan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">5815</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">S</forename><surname>Stavitskaya</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+		<respStmt>
+			<orgName>A. F. Ioffe Physical-Technical Institute</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">DSc dissertation</note>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Klemens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Phy. Soc. London Sect A</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="1113" to="1128" />
+			<date type="published" when="1955">1955</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Klemens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="507" to="509" />
+			<date type="published" when="1960">1960</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">K</forename><surname>Zaitsev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">N</forename><surname>Tkalenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">N</forename><surname>Nikitin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phy. Solid State</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="221" to="224" />
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">T</forename><surname>Alekseeva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Emova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Ostrovskaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">S</forename><surname>Serebryannikova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Tsypin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phy. Semicond</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1122" to="1125" />
+			<date type="published" when="1971">1971</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Eshelby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Metall</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="487" to="490" />
+			<date type="published" when="1955">1955</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">L</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Nafe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="3951" to="3963" />
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">L</forename><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="3494" to="3500" />
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Makowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Glicksman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="487" to="492" />
+			<date type="published" when="1973">1973</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<monogr>
+		<author>
+			<persName><forename type="first">F</forename><surname>Herman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Glicksman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Parmenter</surname></persName>
+		</author>
+		<title level="m">Progress in semiconductors</title>
+		<editor>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Gibson</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Burgess</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Aigrain</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley&amp;Sons, INC</publisher>
+			<date type="published" when="1957">1957</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="3" to="33" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Nordheim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Phys</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="607" to="640" />
+			<date type="published" when="1931">1931</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Hauser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter Mater. Phys</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="5347" to="5350" />
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Tietjen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Weisberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="261" to="263" />
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Herring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Vogt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page">944</biblScope>
+			<date type="published" when="1956">1956</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Hauser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Littlejohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Glisson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="458" to="461" />
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Mehrotra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Klimeck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">173503</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zunger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter Mater. Phys</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="13605" to="13610" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ikeda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instrum</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">25104</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Borup</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Toberer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Zoltan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Nakatsukasa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Errico</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Fleurial</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Iversen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instrum</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">123902</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Iwanaga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Toberer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lalonde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instrum</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">63905</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Blachnik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Igel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Naturforsch</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="625" to="629" />
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+	<note>B: Chem. Sci.</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

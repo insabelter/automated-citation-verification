@@ -1,0 +1,1312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Ensemble Data Reduction Techniques and Multi-RSMOTE via Fuzzy Integral for Bug Report Classification</title>
+				<funder ref="#_fBbTUYW">
+					<orgName type="full">Public Welfare Funds for Scientific Research of Liaoning Province of China</orgName>
+				</funder>
+				<funder ref="#_RND3Q5K #_td4xHZ4">
+					<orgName type="full">Fundamental Research Funds for the Central Universities</orgName>
+				</funder>
+				<funder ref="#_XH3TawW #_vkkm3NU #_RJGSc6C">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_DhmjgDx">
+					<orgName type="full">Natural Science Foundation of Liaoning Province of China</orgName>
+				</funder>
+				<funder ref="#_HsrMFBp">
+					<orgName type="full">ANHUI Province Key Laboratory of Affective Computing &amp; Advanced Intelligent Machine</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Shikai</forename><surname>Guo</surname></persName>
+							<idno type="ORCID">0000-0002-8554-6365</idno>
+							<affiliation key="aff0">
+								<orgName type="department">College of Information Science and Technology</orgName>
+								<orgName type="institution">Dalian Maritime University</orgName>
+								<address>
+									<postCode>116026</postCode>
+									<settlement>Dalian</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Rong</forename><surname>Chen</surname></persName>
+							<email>rchen@dlmu.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">College of Information Science and Technology</orgName>
+								<orgName type="institution">Dalian Maritime University</orgName>
+								<address>
+									<postCode>116026</postCode>
+									<settlement>Dalian</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><roleName>Member, IEEE</roleName><forename type="first">Miaomiao</forename><surname>Wei</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Information Science and Technology</orgName>
+								<orgName type="institution">Dalian Maritime University</orgName>
+								<address>
+									<postCode>116026</postCode>
+									<settlement>Dalian</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hui</forename><surname>Li</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Information Science and Technology</orgName>
+								<orgName type="institution">Dalian Maritime University</orgName>
+								<address>
+									<postCode>116026</postCode>
+									<settlement>Dalian</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yaqing</forename><surname>Liu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Information Science and Technology</orgName>
+								<orgName type="institution">Dalian Maritime University</orgName>
+								<address>
+									<postCode>116026</postCode>
+									<settlement>Dalian</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="laboratory">ANHUI Province Key Laboratory of Affective Computing &amp; Advanced Intelligent Machine</orgName>
+								<orgName type="institution">Hefei University of Technology</orgName>
+								<address>
+									<postCode>230009</postCode>
+									<settlement>Hefei</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Ensemble Data Reduction Techniques and Multi-RSMOTE via Fuzzy Integral for Bug Report Classification</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">0B9168ECE63AED30784A45EA33AFC326</idno>
+					<idno type="DOI">10.1109/ACCESS.2018.2865780</idno>
+					<note type="submission">Received July 3, 2018, accepted August 5, 2018, date of publication August 16, 2018, date of current version September 7, 2018.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:01+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Mining software repositories</term>
+					<term>data reduction</term>
+					<term>imbalance distribution</term>
+					<term>fuzzy integral</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Due to the unavoidable bugs appearing in the most of the software systems, bug resolution has become one of the most important activities in software maintenance. To decrease the time cost in manual work, text classification techniques are applied to automatically identify severity of bug reports. In this paper, we address the problem of low-quality and class imbalance for identifying the severity of bug reports. First, we combine feature selection with instance selection to simultaneously reduce the bug report dimension and the word dimension, which could get small-scale and high-quality reduced data set. Then, an improve random oversampling technique, named, RSMOTE, which is presented to weaken the imbalancedness degree of class distribution. Finally, to avoid the random over-sampling uncertainty of RSMOTE, we develop an ensemble learning algorithm, which is based on Choquet fuzzy integral, to combine multiple RSMOTE. We empirically investigate the performance of data reduction on ten data sets of three large open source projects, namely, Eclipse, Mozilla, and GNOME. The results show that our approach can effectively reduce the data scale and improve the performance of identifying the severity of bug reports.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>Bug tracking systems, such as Bugzilla and JIRA, play an important role in the process of managing software bugs. According to statistics, software companies spend over 45 percent of development time in repairing bugs in software development <ref type="bibr" target="#b8">[9]</ref>, <ref type="bibr" target="#b20">[21]</ref>. Along with the increasing scale and complexity of software projects, a large-scale of bug reports are received daily by bug tracking systems. Due to bug repairing is a time-consuming and limited human resources, it is often difficult for developers to take care of all bug reports. In order to repair the bugs of software projects quickly, developers often need to prioritize the severe bug reports. Therefore, an automated technique to help developers to identify the severity of bug reports, would be more preferable to augment productivity.</p><p>Two challenges often arise during the automated technique to identify the severity of bug reports: (1) high-dimension (both bug report dimension and word dimension) is found in most bug repositories, and (2) class imbalance occurs for those datasets. High-dimension is caused by the bug reports are submitted by testers from all over the world, and for each tester, the understanding and natural language description of bugs are different, which could result in large-scale and low-quality bug reports in bug repositories <ref type="bibr" target="#b0">[1]</ref>. A number of problems may arise due to the large-scale and low-quality, such as extensive computation and a decline in predictive performance. Class imbalance occurs when the number of bug reports in one class (majority-class) is obviously more than the other class (minority-class). This problem is more prevalent in bug repository (such Eclipse, Mozilla, and GNOME), where the proportion of severe bug reports is relatively larger than nonsevere bug reports. The primary drawback of imbalanced dataset is that traditional classification algorithms tend to misclassify minority-class bug reports as majority-class bug reports. Some investigators have try to solve these problem <ref type="bibr" target="#b8">[9]</ref>, <ref type="bibr" target="#b16">[17]</ref>- <ref type="bibr" target="#b18">[19]</ref>. For the high-dimension problem, Gao et al. <ref type="bibr" target="#b16">[17]</ref> presents six filter-based feature ranking techniques to reduce the number of available software metrics. Xuan et al. <ref type="bibr" target="#b8">[9]</ref> combines feature selection algorithms with instance selection algorithms to reduce the scale of bug datasets as well as improve the data quality. For the class imbalance problem, Lamkanfi et al. <ref type="bibr" target="#b17">[18]</ref> selected an equal number of reports for each class for inclusion in the training and evaluation sets. However, the manual selection of bug reports from the original dataset may be lossy and result in weak generalizations of the trained classifier. Against imbalanced distribution of training set problem, Yang et al. <ref type="bibr" target="#b18">[19]</ref> investigated four widely used imbalanced learning strategies (ILS) to solve the imbalance distribution of bug reports from four different open source projects. However, few literatures consider both high-dimension and class imbalance problems that building an automated technique model without any affect by low-quality and imbalance distribution of bug reports.</p><p>In this study, we present a process of using two data preprocessing steps, data reduction (for addressing large-scale and low-quality problem) and data sampling (for addressing class imbalance problem) together in the context of identifying the severity of bug reports.</p><p>In data reduction step, we employ the combination of feature selection (FS) and instance selection (IS) to get small-scale and high-quality set of bug reports and improve the performance of our approach to identify the severity of bug reports. To avoid the bias of a single algorithm, we consider four commonly used feature selection algorithms, namely One Rule (OneR), Information Gain (IG), ChiSquared attribute selection (CHI), and Relief-F attribute selection (RF) and four instance selection algorithms, namely Condensed Nearest Neighor (CNN), Minimal Consistent Set (MCS), Edited Nearest Neighbor (ENN), and Iterative Case Filter (ICF) <ref type="bibr" target="#b0">[1]</ref>- <ref type="bibr" target="#b2">[3]</ref>.</p><p>In data sampling step, we propose a RSMOTE approach to balance the imbalance distribution of bug reports with respect to their severities. We select a bug report from minority-class as a center point, and then choose another bug report from minority-class with the minimum Euclidean distance as the edge point. Then, we randomly sample new bug report points in a multi-dimensional sphere, which is generated among the multi-dimensional rectangle with the center point and edge point as diagonal. In addition, the number of new synthetic bug reports is constrained by the imbalance degree of the original datasets. Furthermore, in order to solve the uncertainty of random sampling, we propose a multiple sampling strategy that applies RSMOTE approach to multiple sampling, then we train classifiers with the balanced datasets obtained from multiple samplings, respectively. Finally, we use Choquet fuzzy integral <ref type="bibr" target="#b19">[20]</ref> to integrate the trained classifiers to classify bug reports. Comprehensive experiments have been conducted on public datasets obtained from real-world bug repositories, and the experimental results indicate that our approach could efficiently improve the distribution of bug reports the quality of training datasets. In addition, our approach could efficiently improve the uncertainty of random sampling caused by RSMOTE, which could improve the classification accuracy of identifying the severity of bug reports with an imbalanced distribution. The main contributions of this paper are as follows:</p><p>1) We propose a combination of FS and IS to addressing the problem of data reduction. This can be viewed as a combination approach in bug repositories to reduce high-dimension (both bug report dimension and word dimension) and get small-scale and high-quality training dataset. 2) We propose a RSMOTE approach to balance the imbalanced distribution of bug reports. The new synthetic minority bug reports are generated in the neighbourhood of the remaining minority-class samples by RSMOTE. Several experimental shown that RSMOTE can effectively improve the generalization ability of classifiers to identify the severity of bug reports. 3) We propose a multiple sampling mechanism using RSMOTE to solve the random sampling uncertainty of RSMOTE. Firstly, we train the classifiers respectively with the balanced datasets obtained from RSMOTE. Then, we use fuzzy integral to integrate the trained classifiers to obtain the ultimate prediction results. To our knowledge this is the first study exploring to fusion of multi-RSMOTE with fuzzy integral to classify bug reports with an imbalanced distribution. 4) We evaluate our approach using data on ten components from three bug repository datasets (Eclipse, Mozilla, and GNOME). Several experiments demonstrate that our approach yields improved classification performance for identifying the severity of bug reports with imbalanced distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. METHODOLOGY</head><p>In this section, we present a detailed description of our approach to identify the severe bug reports with an imbalanced distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. MODEL DESCRIPTION</head><p>In this section, we propose a model for identifying severe bug reports with an imbalanced severity distribution, as shown in Figure <ref type="figure">1</ref>. The framework consists of three main phases. Firstly, employ the combination of FS and IS to get small-scale and high-quality set of bug reports (cf. Subsection III.B). Secondly, we use the RSMOTE approach to address the class imbalance problem (cf. Subsection III.C). Finally, duo to the new synthetic bug reports generated via RSMOTE are randomly generated in a certain area, which could cause the new synthetic bug reports to be noisy. To solve this problem, we combine of classifiers and fuzzy integral, while the classifiers are trained by training sets consisting of bug reports generated via RSMOTE (cf. Subsection III.D).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FIGURE 1.</head><p>The framework of our model for identifying severe bug reports with an imbalanced distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. DATA REDUCTION ALGORITHM</head><p>Since bug reports are submitted by people from all over the world and each person's description of natural language and understanding of bugs are different, resulting in excessive noise that affects classification performance. By preprocessing bug reports (Tokenization, Stopword removal, Stemming), we convert bug reports into a text matrix with two dimensions, namely the bug report dimension and the word dimension <ref type="bibr" target="#b8">[9]</ref>, <ref type="bibr" target="#b17">[18]</ref>. FS and IS are widely used techniques to remove the noisy or non-informative. For a given dataset in a certain application, FS aims to reduce the word dimension, which can obtain a subset of relevant words.</p><p>Instance selection aims to reduce the bug report dimension, which can obtain a subset of relevant bug reports <ref type="bibr" target="#b8">[9]</ref>. In our study, we employ combination of FS and IS to get small-scale and high-quality training reduced set. The reduced set is considered as the representative of the original dataset, which can be handled more easily by automatic techniques than the original dataset.</p><p>In our study, the orders of applying FS and IS are viewed as two different orders of bug reports reduction. We use FS IS to denote the bug data reduction, which first applies FS and then IS; on the other hand, IS FS denotes first applying IS and then FS. We briefly present how to reduce the bug reports based on FS IS in Algorithm 1, and the IS FS has the same process. To avoid the bias from a single algorithm, we examine results of four typical algorithms of feature selection algorithms (OneR, IG, CHI, and RF) and instance selection algorithms (CNN, MCS, ENN, and ICF), respectively.</p><p>In Algorithm 1, we briefly present how to reduce the bug data based on FS IS. Lines 1-5, FS is applied to reduce the number of bug reports. When all the words of bug reports are removed, we remove the bug reports from dataset (lines 6-7). Lines 8-10, IS is applied to reduce the number of words, and we get the reduction dataset by line 11.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. RSMOTE</head><p>In this section, we briefly present RSMOTE how to balance the imbalanced distribution of bug reports. As RSMOTE is an improve synthetic minority over-sampling Algorithm 1 FS→IS Input: T , original dataset, m I , the final number of bug reports, n F , the final number of words, Output: T FI , the reduction dataset. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>technique (SMOTE) to deal with imbalance distribution.</head><p>As can be seen in Figure <ref type="figure">2</ref>, SMOTE uses linear interpolation between two points to generate a new minority class sample, which limits the range of the sample generation. In order to solve this problem, the new synthetic minority activities are generated in the neighbourhood of the remaining minority-class examples in RSMOTE. Finally, two specified constraints control the new synthetic samples can be generated in robust manner. Compared with SMOTE, it has been improved obviously that the generalization ability of several classifiers by using the RSMOTE.</p><p>The RSMOTE algorithm is explained as follows (Algorithm 2). Lines 1-4, we initialization parameters and calculate the imbalance degree of dataset (Im_D). For each bug report, we use the Euclidean distance to find the k nearest neighbours' bug reports, and randomly select Im_D bug reports from the k nearest neighbours' bug reports (lines 5-7). We generate new synthetic minority-class bug reports from high-dimensional space (lines 8-17 NN←nearsetNeighbors(s, k) //Use the Euclidean distance to find the k nearest neighbours. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>For each m in</head><formula xml:id="formula_0">M 9. newSample ← ∅ 10. newValues ← ∅ 11.</formula><p>For each a in A <ref type="bibr">12.</ref> low ← value(s, a)-0.5 * abs(value(m, a)value(s, a))// abs is used to solve absolute value.  newValues ← newValues∪{(a, newValue)} </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>D. FUZZY INTEGRAL</head><p>In this section, we first introduce the notation and definitions used in our work and then present an approach of fusing multi-classifiers with fuzzy integrals (FC-FI).</p><p>Let Tr = {x|x ∈ R m } denote a training set, let Te = {x|x ∈ R m } denote a testing set, and let La = {La 1 , La 2 , . . . , La C } be a set of class labels, where C is the total number of class labels. Let E = {E 1 , E 2 , . . . , E L } be a set of classifiers trained on different training sets subTrs(subTrs = {Tr 1 , Tr 2 , . . . , Tr i , . . . , Tr L }), where L is the total number of training sets extended using the RSMOTE and E i is a basic classifier trained on the Tr i that has been extended using the RSMOTE approach (i ∈ [1, L]). For all x ∈ R m , E i assigns a class label from La to x. We define the classifier output as a C-dimensional vector consisting of support degrees for the classes, as follows <ref type="bibr" target="#b25">[26]</ref>.</p><formula xml:id="formula_1">E i (x) = e i1 (x) , e i2 (x) , . . . , e ij (x) , . . . , e iC (x) (2.1) where e ij (x) ∈ [0, 1] (1 ≤ i ≤ L, 1 ≤ j ≤ C) denotes</formula><p>the support degree assigned by classifier E i that x belongs to class La j . In this paper, e ij (x) is an estimate of the posterior probability p(La c |x). In the following, we will present some related definitions.</p><p>Definition 1:</p><formula xml:id="formula_2">Given E = {E 1 , E 2 , . . . , E L }, La = {La 1 , La 2 , .</formula><p>. . , La C }, and Te = {x|x ∈ R m }, for each x ∈ Te, the decision profile matrix is shown as follows:</p><formula xml:id="formula_3">DP (x) =         e 11 (x) • • • e 1j (x) • • • e 1C (x) . . . . . . . . . . . . . . . e i1 (x) • • • e ij (x) • • • e iC (x) . . . . . . . . . . . . . . . e L1 (x) • • • e Lj (x) • • • e LC (x)         (2.2)</formula><p>where the ith row of the matrix is the output of classifier E i and the jth column of the matrix consist of the support degrees from all classifiers E 1 , E 2 , . . . , E L for class La j . Definition 2:</p><formula xml:id="formula_4">Given E = {E 1 , E 2 , . . . , E L }, E i E, i [1, L], let g i = g({E i })</formula><p>. g i is called the fuzzy density of classifier E i . We use the following formula to calculate g i :</p><formula xml:id="formula_5">g i = p(E i ) L k=1 p(E k ) × d sum (2.3)</formula><p>where p(E i ) is the validation accuracy of E i and d sum is the desired sum of fuzzy densities. Definition 3:</p><formula xml:id="formula_6">Given E = {E 1 , E 2 , . . . , E L }, let P(E) be the power set of E. The fuzzy measure on E is a set function g: P(E) → [0, 1] such that g(∅) = 0, g({E}) = 1. (2.4) For ∀A, B ⊆ E, if A ⊂ B, then g(A) ≤ g(B). (2.5) Definition 4: Given E = {E 1 , E 2 , . . . , E L }, g is called a λ-fuzzy measure. The any subset (A k , k [1, L]) of g could be calculated by the following formulas. g (A 1 ) = g ({E 1 }) = g 1 , g ({E k }) = g k , λg (A k ) = g k + g (A k-1 ) + ×g k × g (A k-1 ) (2.6)</formula><p>where λ &gt; -1 and λ = 0. The value of λ can be determined using the following formula:</p><formula xml:id="formula_7">λ + 1 = L i=1 1 + ×g i (2.7)</formula><p>Definition 5: Given E = {E 1 , E 2 , . . . , E L }, g is the fuzzy measure on E, the Choquet fuzzy integral of function f j : E → [0, 1] with respect to g is defined as follows <ref type="bibr" target="#b43">[44]</ref>. The probability of the test sample in Te belongs to La j (u j ), j ∈ [1, C], which is calculated by combine the results of each sub-classifier with fuzzy integrals.</p><formula xml:id="formula_8">u j = (C) fdg = f j (E 1 ) + L i=2 f j (E i-1 ) -f j (E i ) ×g(A i-1 ) (2.8)</formula><p>where 0</p><formula xml:id="formula_9">≤ f (E 1 ) ≤ f (E 2 ) ≤ . . . ≤ f (E L ) ≤ 1, f (E 0 ) = 0, A i ⊆ E, A i = {E 1 , E 2 , . . . , E i }, g(A 0 ) = 0.</formula><p>In Algorithm 3, we briefly present how to use Chouqet fuzzy integral to integrate multi-RSMOTE. The algorithm 3 has two main stages: training process and integrated process, which is explained in detail in the follow.</p><p>In training process, lines 1-5, we apply RSMOTE approach to multiple sampling, then we train classifiers respectively with the balanced dataset obtained from multiple samplings. Then, we calculate the fuzzy densities based on the classification results of each classifier (lines 6-9). In integrated process, Lines 10-16, we calculate a decision profile (DP), which is based on fuzzy densities of the corresponding classifiers. We sort each line of DP in descending order to obtain a new decision profile matrix DP . Then, lines 17-19, we calculate the fuzzy measure based on DP'. Finally, we calculate the probability of the test bug reports for each category, and select the max value as the category of bug report (lines 20-23).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. EXPERIMENTAL DESIGN</head><p>The experimental design used to validate the performance of our approach is described in this section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. EXPERIMENTAL DATASET</head><p>We perform experiments on datasets from three open source projects, which are Eclipse <ref type="bibr" target="#b38">[39]</ref>, Mozilla <ref type="bibr" target="#b39">[40]</ref>, and GNOME <ref type="bibr" target="#b40">[41]</ref>. The projects are selected based on three criteria. Firstly, all the projects have a large number of reported issues, which is essential for a good research in the topic. Secondly, all the projects use Bugzilla <ref type="bibr" target="#b41">[42]</ref> as an issue tracking system, which leads to an easier manual labeling process. Thirdly, the projects are different from one another in the application domain, which is essential for a general investigation since the distribution of high-impact bugs can be very different in different application domains.</p><p>We selected ten components from three bug repositories in this study to validate FC-FI approach are presented in Table <ref type="table" target="#tab_3">1</ref>.</p><p>Severe bug reports include high-severity (e.g., 'blocker', 'critical', 'major') that represents critical errors and non-Severe (e.g., 'minor', 'trivial') that denotes unimportant bugs <ref type="bibr" target="#b17">[18]</ref>.  For each c in C 20.</p><p>U c ← U c ∪ calculateUc// calculating the probability for each category by using equation (2.8), <ref type="bibr" target="#b20">21</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>end for</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>22.</head><p>K ← K ∪ arg max 1≤c≤C {U c } // determine the category of te 23. end for <ref type="bibr">24.</ref> return K According to the results of <ref type="bibr" target="#b17">[18]</ref>, summary attribute of the bug reports contains useful and precise information of the bug, thus, in our study, we select the summary as the text content for classification <ref type="bibr" target="#b27">[28]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. EXPERIMENTAL SETUP</head><p>In our study, we compare the performance of RSMOTE to deal with the imbalance distribution of bug reports with four well-known strategies (RUS, ROS, SMOTE, CMA) <ref type="bibr" target="#b1">[2]</ref>. To evaluate the classifiers ensemble performance of FC-FI, we used well-known standard ensemble methods mentioned in the literature, including AdaBoost, bagging, and majority voting <ref type="bibr" target="#b43">[44]</ref>, <ref type="bibr" target="#b44">[45]</ref>.</p><p>We used stratified 3-fold cross-validation to validate the performance of our approach. In stratified 3-fold crossvalidation, each dataset is divided into 3 folds, with each fold containing the same proportion of sample instances belonging to each class. Next, 3 evaluation rounds are performed; in each round, two folds are used as the training dataset, and the remaining fold is used as the testing dataset. The results of all 3 evaluation rounds are aggregated to report the overall performance. Stratified cross-validation is a standard evaluation setting that is widely used in software engineering studies <ref type="bibr" target="#b45">[46]</ref>, <ref type="bibr" target="#b46">[47]</ref>.</p><p>In our experiments, we let the value of k be 5, and let N = round (M ) -1, where round (M ) represents the rounded imbalance degree M of the original bug reports. Our approach was implemented in the JAVA programming language for JDK 1.8 and executed on a machine with the following configuration: Intel R Xeon R CPU E5-2620 v3 @ 2.40 GHz, 16 G of RAM, running Windows 10. Many classification algorithms have been studied in the data mining field, each of which behaves differently in the same situation depending on its specific characteristics. In this study, we used six classifiers, namely, Naïve Bayes (NB), Naïve Bayes multinomial (NBM), Support Vector Machine (SVM), K-Nearest Neighbor (KNN), Decision Tree (J48), and Random Tree (RT), and, as implemented in the Weka toolkit <ref type="bibr" target="#b47">[48]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. EVALUATION METRICS</head><p>We use accuracy,precision, recall and the F-measure as our evaluation metrics. These metrics are commonly used measures for evaluating classification performance <ref type="bibr" target="#b22">[23]</ref>. They can be derived from the confusion matrix, which captures all four possible classification results, as presented in Table <ref type="table" target="#tab_5">2</ref>. The number of true positives (TP) is the number of verified surprise test reports that are correctly classified. The number of false positives (FP) is the number of verified non-surprise test reports that are incorrectly classified as surprise test reports. The number of false negatives (FN) is the number of verified surprise test reports that are incorrectly classified as non-surprise test reports. The number of true negatives (TN) is the number of verified non-surprise test reports that are correctly classified as non-surprise test reports. Based on the values of TP, FP, FN, and TN, the precision, recall and F-measure are calculated as follows.</p><p>• Accuracy: The accuracy of the model is the number of correct classifications divided by the total number of classifications. The accuracy is defined as follows:</p><formula xml:id="formula_10">Accuracy = TP + TN TP + FP + TN + FN × 100%.</formula><p>(5.1)</p><p>• Precision: Precision is the proportion of correctly predicted surprise bug reports to all bug reports predicted as surprise. We formally define the precision as follows:</p><formula xml:id="formula_11">Precision = TP TP + FP × 100%.</formula><p>(5.2)</p><p>• Recall: Recall is the proportion of the number of correctly predicted surprise bug reports to the actual number of surprise bug reports. Mathematically, recall is defined as:</p><formula xml:id="formula_12">Recall = TP TP + FN × 100%.<label>(5.3)</label></formula><p>• F-measure: F-measure is a summary measure that combines both precision and recall. It evaluates if an increase in precision (recall) outweighs a reduction in recall (precision). Mathematically, the F-measure is defined as follows:</p><formula xml:id="formula_13">F-measure = 2 × Precision × Recall Precision + Recall × 100%. (5.4)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. EXPERIMENTAL RESULTS</head><p>In this section, the experimental results are discussed in relation to the specific research questions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RQ1. Which variants of FS and IS with classifiers perform the best performance for identifying severity of bug reports?</head><p>In the first research question, we consider four feature selection (OneR, IG, CHI, RF) and four instance selection (CNN, MCS, ENN, ICF) approaches with six classification algorithms (RT, NB, NBM, KNN, SVM, J48), which can have totally 48 variants (i.e., combinations of one of the FS or IS approach with one of the classification algorithms). For each FS and IS approach, we select 30%, 50%, 70%, and 90% as the ratio of the final number of words, respectively. The ratio value set up is based on the study of text instance selection <ref type="bibr" target="#b15">[16]</ref>. We use two evaluation metrics mentioned above (accuracy, and F-measure) to compare the totally 48 variants. Tables 3-6 presents the performance of the FS and IS approaches with six classifiers to identify the severity of bug reports, respectively. We bold the best results of FS and IS for each variant. From Tables <ref type="table" target="#tab_6">3</ref><ref type="table" target="#tab_7">4</ref><ref type="table" target="#tab_9">5</ref><ref type="table" target="#tab_10">6</ref>, it can be found that the performance of identifying severity of bug reports by using four FS and four IS approaches all works much better than the original experiment, except identifying severity of DS-E4 by four IS approaches. For example, as shown in Table <ref type="table" target="#tab_6">3</ref> and<ref type="table" target="#tab_7">4</ref>, the accuracy and F-measure of CHI with 70% as the ratio of the final number of words to identify severity of bug reports for DS-E1 is 0.79 and 0.79. And, the accuracy and F-measure of original bug reports to identify severity of bug reports for DS-E1 is 0.78 and 0.75. The average best performance of four feature selection (OneR, IG, CHI, RF) are better than four instance selection (CNN, MCS, ENN, ICF) approaches to identify the severity of bug reports. From Table <ref type="table" target="#tab_6">3</ref>-6, we can see that the performance of identify the severity of bug reports is relatively stable, while FS under different reduction scales (30%, 50%, 70%, and 90%), however, the performance of identify the severity of bug reports becomes very poor, while IS under the reduction scale of 30%. This is caused by the bug reports removed after IS includes large number of words, and the available information to build the classification model  is too small. For all datasets, the highest accuracy of identifying the severity by using four FS approaches (OneR, IG, CHI, RF) is higher than original dataset 1.50%. Identifying the severity by using four IS approaches (CNN, MCS, ENN, ICF) and original datasets can get almost the same performance. In addition, the scales of datasets (including the number of words and the number of bug reports) has decreased. From Tables <ref type="table" target="#tab_6">3</ref><ref type="table" target="#tab_7">4</ref><ref type="table" target="#tab_9">5</ref><ref type="table" target="#tab_10">6</ref>, we can get that using FS and IS with classifiers perform the better performance than original datasets for identifying severity of bug reports. Furthermore, for each FS and IS approach, it is possible that different ratios can get different results. Thus, in the follow experiments, we set the percentages of selected words and bug reports based on the percentages, which get best performance in this experiment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RQ2. Compare with individual FS and IS, what the performance of data reduction (combine FS and IS) to identify the severity of bug reports?</head><p>According to RQ1, we can see that FS can reduce the number of words and IS can reduce the number of bug reports, and both FS and IS can improve the performance of identify the severity of bug reports. Compare with individual FS and IS, we want to reduce bug report dimension and the word dimension at the same time. Thus, in this research question, we employ combination of FS and IS with six classification algorithms (RT, NB, NBM, KNN, SVM, J48) to get smallscale and high-quality training reduced set, which is based on the basis results of RQ1. We use two evaluation metrics mentioned above (accuracy, and F-measure) to compare the performance of FS, IS, FS→IS, and IS→FS. We bold the best results of feature selection and instance selection for each variant.</p><p>From Tables <ref type="table" target="#tab_11">7</ref> and<ref type="table" target="#tab_12">8</ref>, we can see that the best performance of identify the severity of bug reports by using FS→IS and IS→FS are better than performance of using individual FS, IS, and original datasets, except DS-E3, and the accuracy of DS-E3 by using FS→IS and IS→FS is 0.68, and 0.67, and the accuracy of original DS-E3 is 0.70. In addition, for most datasets, the performance of using FS→IS is better than IS→FS, except DS-E4, and the accuracy of DS-E4 by using FS→IS is 0.80, and the accuracy of DS-E4 by using IS→FS is 0.82. The average performance of identifying the severity of bug reports from high to low is FS→IS, FS, IS, and IS→FS, respectively. However, for DS-E4, IS→FS could get the highest performance of identify the severity of bug reports, the accuracy of IS→FS is 0.82 and the F-measure of IS→FS is 0.78. From the Tables <ref type="table" target="#tab_11">7</ref> and<ref type="table" target="#tab_12">8</ref>, we can get that, FS→IS could not only reduce bug report dimension and the word dimension at the same time, but also improve the performance of identify the severity of bug reports. Compare to FS→IS, FS, and IS, the IS→FS get the worse performance, which is caused by the bug reports removed after IS includes large number of words, and the available information to identify the severity of bug reports is too small after FS.</p><p>RQ3. Can RSMOTE improve the performance of identifying the severity of bug reports with an imbalanced distribution?</p><p>Typical classification techniques may be adversely affected when the distribution of the bug reports is imbalanced. In order to solve this problem, in this study, we propose RSMOTE to weaken the imbalanced degree of bug reports. Thus, in this research question, we want to investigate which variants of imbalanced learning strategy and classifier perform the best for identifying the severity of bug reports. We consider five imbalanced learning strategies (RSMOTE, RUS, ROS, SMOTE and CMA) and six classification algorithms (NB, NBM, SVM, KNN, RT and J48), we can have totally 30 variants (i.e., combinations of one of the imbalanced learning strategies and one of the classification algorithms). Therefore, in this research question, we want to investigate which variants perform the best for identifying the severity of bug reports. Tables 9-10 present the performance of RSMOTE and the imbalanced learning strategies with six classifiers, respectively. We use the two evaluation metrics mentioned above (accuracy, and F-measure) to compare the totally 30 variants.</p><p>In Tables 9-10, to show the variants with the best performance, we highlight the highest result values in bold based on the results of the six classifiers for each imbalanced learning strategy. The highest classification results for each imbalanced learning strategy are duplicated in the MAX_ACC column, and the highest results in the MAX_ACC column are further highlighted in bold. To illustrate the overall improvement enabled by each imbalanced learning strategy for all six classifiers, the average of the results obtained by all six classifiers using each imbalanced learning strategy is reported in the AVG_ACC column, and the highest results in the AVG_ACC column are further highlighted in bold.</p><p>From Tables 9-10, we observe that RSMOTE approach could get maximum performance (MAX_ACC column) of identify the severity of bug reports with imbalance distribution than RUS, ROS, SMOTE and CMA. The RSMOTE could achieve the average maximum accuracy is 0.81, which was higher than imbalanced learning strategies (SMOTE, ROS, RUS, CMA, Original) by 3.83%, 5.02%, 8.93%, 2.19%, and 3.10%, respectively. The AVG_ACC column shows the generalization ability of ILS to balance the imbalanced distribution of bug reports. We can observe that the RSMOTE could achieve the average accuracy is 0.76, which was higher than imbalanced learning strategies (SMOTE, ROS, RUS, CMA, Original) by 3.01%, 5.10%, 11.84%, 3.01%, and 2.83%, respectively. Thus, it could represent that the balanced dataset by RSMOTE approach have better generalization capabilities than Original, SMOTE, RUS, and ROS. From Tables 9-10, we can find that RUS get the worse performance to balance the imbalance distribution. This is due to RUS removes the majority-class samples in dataset, which could loss information of original dataset. From Tables 9-10, we can see that SVM achieves the highest average performance and NB get the worse performance to identify the severity of bug reports after ILS balance the imbalance distribution. The highest average accuracy is 0.78, which was higher than other classifiers (RT, NB, NBM, KNN, J48) 4.87%, 4.27%, 1.20%, 11.16%, and 4.97%, respectively. Furthermore, different variants have significantly different performance of identifying the severity bug reports. For example, RSMOTE+J48, CMA+(NB or J48), and ROS+J48 are the top-3 best performing variants for identifying the severity of bug reports for DS-M6. RSMOTE+KNN, CMA+KNN, and Original+NBM are the top-3 best performing variants for identifying the severity of bug reports for DS-G8. From these results, we observe that in most cases, the classifiers achieved higher performance with RSMOTE than with the other ILS (RUS, ROS, SMOTE, and CMA). Therefore, RSMOTE approach could effectively improve the performance of identifying surprise bug reports of camel and wicket.</p><p>RQ4. Can combine RSMOTE with data reduction could improve the performance of identifying the severity of bug reports.</p><p>Due to original dataset are imbalance distribution, which could affect the basic classification performance of identifying the severity of bug reports. Based on RQ3, we can get that RSMOTE approach has better generalization capabilities than ILS (SMOTE, RUS, CMA and ROS). However, the random sampling uncertainty of RSMOTE and original dataset could contain large amounts of noise data. In order to solve this problem, according to RQ2, we could observe the best scale of data reduction (FS and IS) for each dataset, which could effectively reduce the noise and improve the performance of identify the severity of bug reports. Thus, in this research question, we employ combination of data reduction with RSMOTE to identify the severity of bug reports.</p><p>To answer this question, Firstly, we use the RSMOTE approach to balance the imbalance distribution of original datasets. Then, we use data reduction (combine FS and IS) to get small-scale and high-quality training reduced set from balanced datasets by RSMOTE, which could not only reduce bug report dimension and the word dimension at the same time, but also improve the performance of identify the severity of bug reports. We select the scale of data reduction based on the previous research questions (RQ2). Finally, we use the classification algorithms, which can be any one of six popular text classification algorithms (RT, NB, NBM, KNN, SVM, J48), to build classifiers. We use the two evaluation metrics mentioned above (accuracy and F-measure) to verify the performance of combining RSMOTE with data reduction to identify the severity of bug reports. We bold the best results for each variant. From Tables <ref type="table" target="#tab_15">11</ref> and<ref type="table" target="#tab_16">12</ref>, we can see that the best performance of identify the severity of bug reports by using combine RSMOTE with data reduction (FS→IS) are better than performance of using individual data reduction, RSMOTE, RSMOTE with data reduction (IS→FS), and original datasets, except DS-E2 and DS-M6. In addition, for most datasets, the performance of RSMOTE with data reduction (FS→IS) and RSMOTE is better than RSMOTE with data reduction (IS→FS). This is caused by the bug reports removed after IS includes large number of words, and RSMOTE has little available information to balance the imbalance distribution after FS. From Tables <ref type="table" target="#tab_15">11</ref> and<ref type="table" target="#tab_16">12</ref>, we can find that using RSMOTE with data reduction (FS→IS) to identify the severity of bug reports, most variants achieve the average values of 0.74-0.89 in terms of accuracy, and 0.73-0.88 in terms of F-measure.</p><p>From the Tables <ref type="table" target="#tab_15">11</ref> and<ref type="table" target="#tab_16">12</ref>, we can get that, using RSMOTE with data reduction (FS→IS) to identify the severity of bug reports could not only balance the imbalance distribution of bug reports, but also bug report dimension and the word dimension at the same time. There could reduce the impact of noise on identifying the severity of bug reports, while reducing reduce bug report dimension and the word dimension.</p><p>RQ5. Can the multi-classifier fuzzy-integral with RSMOTE approach outperform state-of-the-art approaches?</p><p>As discussed in regard to RQ4, RSMOTE with data reduction (FS→IS) can effectively improve the performance of identifying the severity of bug reports. in order to solve the random sampling uncertainty of RSMOTE, we use FC-FI approach to ensemble multi-RSMOTE. To better demonstrate the superiority of FC-FI approach, in this experiment, we compared the fusion of multi-RSMOTE with fuzzy integral approach with three classic classifier ensemble approaches: voting, bagging, and AdaBoost. In order to compare the performance of integrated methods, we use the balanced dataset obtained from RSMOTE approach. We used the accuracy and F-measure evaluation metrics defined above to verify the performance of the multi-classifier fuzzy-integral RSMOTE approach. We bold the best results for each variant.</p><p>In terms of the accuracy and F-measure values, the average performance of FC-FI approach is better than the performances of the RSMOTE with data reduction, major voting, bagging, and AdaBoost approaches with RSMOTE. In Tables <ref type="table" target="#tab_17">13</ref><ref type="table" target="#tab_18">14</ref>, which shows the severity prediction results  for the Eclipse bug reports, the average accuracy of fusion of multi-RSMOTE with fuzzy integral approach is higher than the average accuracies of the RSMOTE with data reduction, major voting, bagging, and AdaBoost approaches by 3.00%, 4.82%, 6.62%, and 4.70% respectively, and the average F-measure is similarly higher by 2.00%, 5.24%, 6.25%, and 3.59%, respectively. These experiments show that the performance of the proposed fusion of multi-RSMOTE with fuzzy integral approach achieves better performance than all three classic classifier ensemble approaches (voting, bagging, and AdaBoost).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>V. RELATED WORK</head><p>Automatic classification technology to support the bug reports could minimize the latent damage of software project in software maintenance activities.</p><p>Antoniol et al. <ref type="bibr" target="#b21">[22]</ref> builds automatic text classification techniques to identify whether a bug report contains real bug or not. They find that alternating decision trees, Naive Bayes classifier, and logistic regression could effective identify real bug from other kinds of bug reports. Menzies and Marcus <ref type="bibr" target="#b22">[23]</ref> proposes an automated approach, namely, SEVERity to help the test engineer assign the severity levels to bug reports, which is based on standard machine learning techniques and text mining. Guo et al. <ref type="bibr" target="#b37">[38]</ref> transfers the knowledge of labeled bug reports from bug repositories (Eclipse, Mozilla, GNOME) to identify the severity of Android bug reports, which compensates for the lack of labeled information for Android bug reports. Xia et al. <ref type="bibr" target="#b42">[43]</ref> proposes a ELBlocker to classification the blocker bug reports from bug repositories. According to the imbalance degree of original dataset, ELBlocker divides original dataset into multiple disjoint sets. Then ELBlocker combines the results of multiple classifiers, which are trained by multiple disjoint sets.</p><p>Xuan et al. <ref type="bibr" target="#b34">[35]</ref> analyzes the commenters of bug reports, and represents a ranking method to automatic recommend developer to solve the new bug reports in bug repository. Yang et al. <ref type="bibr" target="#b18">[19]</ref> compares the performance of four imbalance learning strategies and four classification algorithms to identify the high-impact bug reports with imbalanced distribution. In order to reduce the effort of bug report triage, Anvik and Murphy <ref type="bibr" target="#b24">[25]</ref> proposes an approach to assist triager to recommend the developers, which is based on machine learning. Tian et al. <ref type="bibr" target="#b48">[49]</ref> considers multiinformation (''temporal,'' ''textual,'' ''author,'' ''relatedreport,'' ''severity,'' and ''product'') to recommend the priority level of bug reports. Zhang et al. <ref type="bibr" target="#b27">[28]</ref> proposes an automatic method to identify the severity of bug reports and fixer recommendation. Firstly, for a new coming bug report, they find the top k nearest neighbors' bug reports based on K Nearest Neighbor (KNN) classification alogrithm. Then, they identify the severity of bug reports and fixer recommendation by extracting their features (e.g., assignees and similarity).</p><p>Feng et al. <ref type="bibr" target="#b29">[30]</ref> proposes a test report prioritization method to assist crowdsourced testing, which is based on three strategies. The three strategies could find the riskiest and most diverse bug reports to assist the developer find bugs, respectively. In their subsequent article, Feng et al. <ref type="bibr" target="#b30">[31]</ref> considers that the bug reports with screenshots and descriptive text. They could assist inspections of crowdsourced bug reports by using a multi-objective optimization-based prioritization technique. Wang et al. <ref type="bibr" target="#b31">[32]</ref> proposes a clusterbased classification approach to identify ''good'' bug reports from the crowdsoured testing bug reports. The approach could overcome the local bias of crowdsoured testing bug reports. In their subsequent article, Wang et al. <ref type="bibr" target="#b32">[33]</ref> proposes a method named Local-based Active Classification (LOAF) to address bug reports with the local bias problem and the lack of labeled information in crowdsoured testing.</p><p>To improve the data quality, Khoshgoftaar et al. <ref type="bibr" target="#b33">[34]</ref> and Gao et al. <ref type="bibr" target="#b16">[17]</ref> use six feature selection approaches to reduce the bug dataset, meanwhile, use three data sampling approaches (RUS, ROS, SMOTE) to handle imbalanced defect data. Shivaji et al. <ref type="bibr" target="#b5">[6]</ref> proposes a framework to examine multiple feature selection algorithms and remove noise features in classification-based defect prediction. Besides feature selection in defect prediction. Kim et al. <ref type="bibr" target="#b35">[36]</ref> introduced an approach to measure the noise resistance in defect prediction and how to detect noise data. Xu <ref type="bibr" target="#b26">[27]</ref> uses seven approaches to reduce the dimension of dataset, which could improve the performance of classification results. Yang et al. <ref type="bibr" target="#b28">[29]</ref> uses three commonly feature selection, IG, CHI, Correlation Coefficient to reduce the noise from 4 opensource components from Eclipse and Mozilla. <ref type="bibr">Zhang [3958]</ref> represents a concept profile-based approach to assign the severity of bug reports. They build the concept profiles based on historical bug reports. Then, the new bug reports come, they assign the severity of new coming bug report by measuring the similarity and severity concepts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>VI. CONCLUSION</head><p>In the context of software maintenance, a bug with high severity is typically associated with fatal errors and crashes. Therefore, the automatic prediction of the severity of bug reports could considerably reduce manpower requirements and improve the efficiency of bug resolution. However, two challenges often arise during the automated technique to identify the severity of bug reports: (1) high-dimensionality (both bug reports and words) is found in most bug repositories, and (2) class imbalance occurs for those datasets. In this paper, we address the problem of data reduction and data imbalance distribution for identify the severity of bug reports. We combine FS with IS to simultaneously reduce data scale on the bug report dimension and the word dimension to get small-scale and high-quality set of original dataset. Then, we improved random oversampling technique, named RSMOTE, is presented to weaken the imbalancedness degree of severity bug reports. And further, to avoid the uncertainty of random over-sampling, we develop an ensemble learning algorithm, which is based on Choquet fuzzy integral, to combine multiple RSMOTE. We empirically investigate the performance of data reduction on 10 datasets of three large open source projects, namely Eclipse, Mozilla and GNOME. The results show that our approach can effectively reduce the data scale and improve the performance of identify the severity of bug reports.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>7 .M</head><label>7</label><figDesc>←selectSamples(NN,Im_D) //use selectSamples(NN,Im_D) to select Im_D samples from NN randomly. 8.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>13 .</head><label>13</label><figDesc>up ← value(s, a)+0.5 * abs(value(m, a)value(s, a)) // value is used to get the value of s about a.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>14 .</head><label>14</label><figDesc>newValue ← value(s, a)+random(0,1) * (uplow)15.    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Algorithm 3</head><label>3</label><figDesc>FC-FI Algorithm Input: T FI , the reduction dataset, which is obtained by algorithm 1 IC, integrated classifiers C, the categories of T Te, test dataset Output: K , the results of identify severe bug reports. Training process:</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>1 .</head><label>1</label><figDesc>RT FI ← ∅ 2. For each t FI in T FI RT FI ← RT FI ∪ RSMOTE(t FI ) 3. end for 4. IC T FI ← train(IC, RT FI )// Train the classifiers by the RT FI , respectively 5. G ← ∅ each line of DP in descending order to obtain a new decision profile matrix DP . The fuzzy densities of the corresponding basic classifiers are denoted by (g z 1 , g z 2 • • • , g z L )</figDesc><table><row><cell cols="2">6. For each ic T FI in IC T FI 7. G ← G ∪ fuzzydensity(ic T FI )// calculate the fuzzy</cell></row><row><cell></cell><cell>density of each classifier by equation (2.3)</cell></row><row><cell cols="2">8. end for</cell></row><row><cell cols="2">9. L ← calculate λ (G)// calculate the value of λ using</cell></row><row><cell></cell><cell>equation (2.7).</cell></row><row><cell cols="2">Integrated process:</cell></row><row><cell cols="2">10. DP ← ∅</cell></row><row><cell cols="2">11. DP' ← ∅</cell></row><row><cell cols="2">12. For each te in Te</cell></row><row><cell>13.</cell><cell>DP← DP ∪ decisionprofile(te, IC T FI ) // Calculate</cell></row><row><cell></cell><cell>decision profile DP by equation(2.2)</cell></row><row><cell>14.</cell><cell>DP' ← sort(DP)</cell></row><row><cell cols="2">// sort 15. g(A 1 ) ← g z 1</cell></row><row><cell>16.</cell><cell>For each l in L</cell></row><row><cell>17.</cell><cell>g(A t ) ← fuzzymeasure (g(A 1 ), DP') // calculate</cell></row><row><cell></cell><cell>the fuzzy measure according to DP' by equation (2.6)</cell></row><row><cell>18.</cell><cell>end for</cell></row><row><cell>19.</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>TABLE 1 .</head><label>1</label><figDesc>Datasets of Eclipse, Mozilla, and GNOME.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>TABLE 2 .</head><label>2</label><figDesc>Confusion matrix, which can be used to calculate many evaluation metrics.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>TABLE 3 .</head><label>3</label><figDesc>The accuracy of variants to identify severity of bug reports by using feature selection.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>TABLE 4 .</head><label>4</label><figDesc>The F-measure of variants to identify severity of bug reports using feature selection.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>TABLE 5 .</head><label>5</label><figDesc>The accuracy of variants to identify severity of bug reports by using instance selection.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head>TABLE 6 .</head><label>6</label><figDesc>The F-measure of variants to identify severity of bug reports by using instance selection.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11"><head>TABLE 7 .</head><label>7</label><figDesc>The accuracy of identify severity of bug reports by using data reduction.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12"><head>TABLE 8 .</head><label>8</label><figDesc>The F-measure of identify severity of bug reports by using data reduction.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_13"><head>TABLE 9 .</head><label>9</label><figDesc>The accuracy of ILS performing variants for identifying the severity of bug reports.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_14"><head>TABLE 10 .</head><label>10</label><figDesc>The F-measure of ILS performing variants for identifying the severity of bug reports.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_15"><head>TABLE 11 .</head><label>11</label><figDesc>The accuracy of combining RSMOTE with data reduction to identify the severity of bug reports.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_16"><head>TABLE 12 .</head><label>12</label><figDesc>The F-measure of combining RSMOTE with data reduction to identify the severity of bug reports.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_17"><head>TABLE 13 .</head><label>13</label><figDesc>The accuracy of identifying the severity of bug reports.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_18"><head>TABLE 14 .</head><label>14</label><figDesc>The F-measure of identifying the severity of bug reports.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>2169-3536 2018 IEEE. Translations and content mining are permitted for academic research only.Personal use is also permitted, but republication/redistribution requires IEEE permission. See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="45936" xml:id="foot_2"><p>  VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="45942" xml:id="foot_3"><p>  VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="45944" xml:id="foot_4"><p>  VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="45948" xml:id="foot_5"><p>  VOLUME 6, 2018   </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="45950" xml:id="foot_6"><p>  VOLUME 6, 2018   </p></note>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>This work was supported in part by the <rs type="funder">National Natural Science Foundation of China</rs> under Grant <rs type="grantNumber">61672122</rs>,Grant <rs type="grantNumber">61602077</rs>, and Grant <rs type="grantNumber">61771087</rs>, in part by the <rs type="funder">Public Welfare Funds for Scientific Research of Liaoning Province of China</rs> under Grant <rs type="grantNumber">20170005</rs>, in part by the <rs type="funder">Natural Science Foundation of Liaoning Province of China</rs> under Grant <rs type="grantNumber">20170540097</rs>, in part by the <rs type="funder">Fundamental Research Funds for the Central Universities</rs> under Grant <rs type="grantNumber">3132016348</rs> and Grant <rs type="grantNumber">3132018194</rs>, and in part by the <rs type="funder">ANHUI Province Key Laboratory of Affective Computing &amp; Advanced Intelligent Machine</rs> under Grant <rs type="grantNumber">ACAIM20180001</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_XH3TawW">
+					<idno type="grant-number">61672122</idno>
+				</org>
+				<org type="funding" xml:id="_vkkm3NU">
+					<idno type="grant-number">61602077</idno>
+				</org>
+				<org type="funding" xml:id="_RJGSc6C">
+					<idno type="grant-number">61771087</idno>
+				</org>
+				<org type="funding" xml:id="_fBbTUYW">
+					<idno type="grant-number">20170005</idno>
+				</org>
+				<org type="funding" xml:id="_DhmjgDx">
+					<idno type="grant-number">20170540097</idno>
+				</org>
+				<org type="funding" xml:id="_RND3Q5K">
+					<idno type="grant-number">3132016348</idno>
+				</org>
+				<org type="funding" xml:id="_td4xHZ4">
+					<idno type="grant-number">3132018194</idno>
+				</org>
+				<org type="funding" xml:id="_HsrMFBp">
+					<idno type="grant-number">ACAIM20180001</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Discernibility matrix simplification with new attribute dependency functions for incomplete information systems</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Guo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="611" to="638" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A survey on instance selection for active learning</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="249" to="283" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">An introduction to variable and feature selection</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Guyon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Elisseeff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="1157" to="1182" />
+			<date type="published" when="2003-03">Mar. 2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Efficient greedy feature selection for unsupervised learning</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Farahat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ghodsi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Kamel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="285" to="310" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">High-performing feature selection for text classification</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rogati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. CIKM</title>
+		<meeting>CIKM</meeting>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page" from="659" to="661" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Reducing features to improve code change-based bug prediction</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Shivaji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Whitehead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Akella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="552" to="569" />
+			<date type="published" when="2013-04">Apr. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A review of feature selection methods on synthetic data</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bolón-Canedo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sánchez-Maroño</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alonso-Betanzos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowl. Inf. Syst</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="483" to="519" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Theoretical and empirical analysis of ReliefF and RReliefF</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Robnik-Šikonja</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kononenko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mach. Learn</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="23" to="69" />
+			<date type="published" when="2003-10">Oct. 2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Towards effective bug triage with software data reduction techniques</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Knowl. Data Eng</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="264" to="280" />
+			<date type="published" when="2015-01">Jan. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Restricted sequential floating search applied to object selection</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Olvera-López</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Martínez-Trinidad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Carrasco-Ochoa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. MLDM</title>
+		<meeting>MLDM</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="694" to="702" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Optimal reference subset selection for nearest neighbor classification by tabu search</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognit</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1481" to="1490" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">The condensed nearest neighbor rule (Corresp.)</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Inf. Theory</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="515" to="516" />
+			<date type="published" when="1968-05">May 1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Minimal consistent set (MCS) identification for optimal nearest neighbor decision systems design</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">V</forename><surname>Dasarathy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Syst., Man, Cybern</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="511" to="517" />
+			<date type="published" when="1994-03">Mar. 1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Another look at the edited nearest neighbor rule</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Penrod</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Wagner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Syst., Man, Cybern</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="92" to="94" />
+			<date type="published" when="1977-02">Feb. 1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Identifying competence-critical instances for instance-based learners</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Brighton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mellish</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Instance Selection and Construction for Data Mining</title>
+		<imprint>
+			<biblScope unit="volume">608</biblScope>
+			<biblScope unit="page" from="77" to="94" />
+			<date type="published" when="2001">2001</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Boston, MA, USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The Porter stemming algorithm: Then and now</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Program</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="219" to="223" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Impact of data sampling on stability of feature selection for software measurement data</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Khoshgoftaar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Napolitano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICTAI</title>
+		<meeting>ICTAI</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="1004" to="1011" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Predicting the severity of a reported bug</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lamkanfi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Demeyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Giger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Goethals</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. MSR</title>
+		<meeting>MSR</meeting>
+		<imprint>
+			<date type="published" when="2010-05">May 2010</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">High-impact bug report identification with imbalanced learning strategies</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-L</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="181" to="198" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Klir</surname></persName>
+		</author>
+		<title level="m">Fuzzy Measure Theory</title>
+		<meeting><address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Plenum</publisher>
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Pressman</surname></persName>
+		</author>
+		<title level="m">Software Engineering: A Practitioner&apos;s Approach</title>
+		<meeting><address><addrLine>New York, NY, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+	<note>7th ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Is it a bug or an enhancement: A text-based approach to classify change requests</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Antoniol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ayari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Di Penta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Khomh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-G</forename><surname>Guéhéneuc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. CASCON</title>
+		<meeting>CASCON</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">23</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Automated severity assessment of software defect reports</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Menzies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marcus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICSM</title>
+		<meeting>ICSM</meeting>
+		<imprint>
+			<date type="published" when="2008-09">Sep. 2008</date>
+			<biblScope unit="page" from="346" to="355" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Regularization, GSVD and truncated GSVD</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Hansen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BIT Numer. Math</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="491" to="504" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Reducing the effort of bug report triage: Recommenders for development-oriented decisions</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Anvik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Murphy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Trans. Softw. Eng. Methodol</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">10</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Ensemble dropout extreme learning machine via fuzzy integral for data classification</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">275</biblScope>
+			<biblScope unit="page" from="1043" to="1052" />
+			<date type="published" when="2018-01">Jan. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">A comparative study on feature selection in unbalance text classification</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ISISE</title>
+		<meeting>ISISE</meeting>
+		<imprint>
+			<date type="published" when="2012-12">Dec. 2012</date>
+			<biblScope unit="page" from="44" to="47" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Towards more accurate severity prediction and fixer recommendation of software bugs</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Luo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Syst. Softw</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="166" to="184" />
+			<date type="published" when="2016-07">Jul. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">An empirical study on improving severity prediction of defect reports using feature selection</title>
+		<author>
+			<persName><forename type="first">C.-Z</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-C</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-C</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I.-X</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. APSEC</title>
+		<meeting>APSEC</meeting>
+		<imprint>
+			<date type="published" when="2012-12">Dec. 2012</date>
+			<biblScope unit="page" from="240" to="249" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Test report prioritization to assist crowdsourced testing</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Xu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ESEC/SIGSOFT FSE</title>
+		<meeting>ESEC/SIGSOFT FSE</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="225" to="236" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Multi-objective test report prioritization using image understanding</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Fang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ASE</title>
+		<meeting>ASE</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="202" to="213" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Towards effectively test report classification to assist crowdsourced testing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ESEM</title>
+		<meeting>ESEM</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="6" to="7" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Local-based active classification of test report to assist crowdsourced testing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ASE</title>
+		<meeting>ASE</meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="190" to="201" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Attribute selection and imbalanced data: Problems in software defect prediction</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Khoshgoftaar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Seliya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICTAI</title>
+		<meeting>ICTAI</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="137" to="144" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Developer recommendation on bug commenting: A ranking approach for the developer crowd</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ren</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. China Inf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="72105" to="72106" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Dealing with noise in defect prediction</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. ICSE</title>
+		<meeting>ICSE</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="481" to="490" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Predicting severity of bug report by mining bug repository with concept profile</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T S</forename><surname>Chan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SAC</title>
+		<meeting>SAC</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="1553" to="1558" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Using knowledge transfer and rough set to predict the severity of Android test reports via text mining</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Symmetry</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page">161</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<author>
+			<orgName type="collaboration">Eclipse</orgName>
+		</author>
+		<ptr target="http://www.bugs.eclipse.org/bugs" />
+		<imprint>
+			<date type="published" when="2018-02">Jun. 2, 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<orgName type="collaboration">Mozilla</orgName>
+		</author>
+		<ptr target="http://www.bugzilla.mozilla.org" />
+		<imprint>
+			<date type="published" when="2018-02">Jun. 2, 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<orgName type="collaboration">GNOME</orgName>
+		</author>
+		<ptr target="http://www.bugzilla.gnome.org" />
+		<imprint>
+			<date type="published" when="2018-02">Jun. 2, 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title/>
+		<author>
+			<orgName type="collaboration">Bugzilla</orgName>
+		</author>
+		<ptr target="https://www.bugzilla.org/" />
+		<imprint>
+			<date type="published" when="2018-02">Jun. 2, 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">ELBlocker: Predicting blocking bugs with ensemble imbalance learning</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Shihab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf. Softw. Technol</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="93" to="106" />
+			<date type="published" when="2015-05">May 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Combining bagging, boosting and dagging for classification problems</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Kotsiantis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kanellopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. KES</title>
+		<meeting>KES</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="493" to="500" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Combining pattern classifiers: Methods and algorithms</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Bagui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Technometrics</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="517" to="518" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Towards more accurate multi-label software behavior learning</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. CSMR-WCRE</title>
+		<meeting>CSMR-WCRE</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="134" to="143" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Tag recommendation in software information sites</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. MSR</title>
+		<meeting>MSR</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="287" to="296" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Weka</surname></persName>
+		</author>
+		<ptr target="http://www.cs.waikato.ac.nz/ml/weka/" />
+		<imprint>
+			<date type="published" when="2018-02">Jun. 2, 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Automated prediction of bug report priority using multi-factor analysis</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Empirical Softw. Eng</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1354" to="1383" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

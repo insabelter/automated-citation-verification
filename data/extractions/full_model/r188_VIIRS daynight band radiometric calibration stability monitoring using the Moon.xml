@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">VIIRS day/night band radiometric calibration stability monitoring using the Moon</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2017">5 JUN 2017</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Zhipeng</forename><surname>Wang</surname></persName>
+							<email>zhipeng.wang@ssaihq.com</email>
+							<affiliation key="aff0">
+								<orgName type="department">Science Systems and Applications</orgName>
+								<orgName type="institution">Inc</orgName>
+								<address>
+									<settlement>Greenbelt</settlement>
+									<region>Maryland</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaoxiong</forename><surname>Xiong</surname></persName>
+							<idno type="ORCID">0000-0002-9108-9009</idno>
+							<affiliation key="aff1">
+								<orgName type="institution">NASA Goddard Space Flight Center</orgName>
+								<address>
+									<settlement>Greenbelt</settlement>
+									<region>Maryland</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Jon</forename><surname>Fulbright</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="institution">Arctic Slope Technical Services, Inc</orgName>
+								<address>
+									<settlement>Beltsville</settlement>
+									<region>Maryland</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ning</forename><surname>Lei</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Science Systems and Applications</orgName>
+								<orgName type="institution">Inc</orgName>
+								<address>
+									<settlement>Greenbelt</settlement>
+									<region>Maryland</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">VIIRS day/night band radiometric calibration stability monitoring using the Moon</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2017">5 JUN 2017</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">88EA08D07690D91F109737755F0A6B63</idno>
+					<idno type="DOI">10.1002/2016JD026372</idno>
+					<note type="submission">Received 14 DEC 2016 Accepted 15 MAY 2017 Accepted article online 22 MAY 2017</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:00+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The Visible Infrared Imaging Radiometer Suite (VIIRS) is a passive scanning spectroradiometer on board the Suomi-NPP satellite. It has 22 spectral bands including the day/night band (DNB), which is a panchromatic reflective solar band (RSB) covering a wavelength range of 500-900 nm. Similar to other RSBs, the radiometric calibration of the DNB is in reference to the sunlight reflected from an onboard solar diffuser (SD). As an independent validation to the SD measurement, lunar calibration has been regularly scheduled at nearly constant lunar phase. In this paper, the lunar calibration strategies developed for RSB are extended to DNB. The on-orbit gain coefficient, or the so-called F factor, is derived for DNB low-gain stage (LGS) from lunar data for each lunar calibration event. Its on-orbit change is compared with the change of the LGS SD F factor. For more accurate comparison, the impact of the on-orbit relative spectral responses (RSR) change, caused by the wavelength-dependent degradation of the optical throughput of VIIRS telescope mirrors, must be considered. This impact is more significant for DNB than other RSBs because of its wider bandwidth, and the impact to the SD and lunar calibrations are different due to different scene spectra. Simulation results show a gradually increased deviation of 1% between SD and lunar trends since launch till now and 0.3% deviation since 2 April 2012 lunar calibration, when the lunar F factor was firstly calculated, till now. Taking this effect into account, the on-orbit changes of the SD F factor and lunar F factor agree with each other in less than 0.3%. Our results validate the stability of the DNB SD calibration while demonstrating how the on-orbit RSR change should be considered in the radiometric calibration and data usage.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The Visible Infrared Imaging Radiometer Suite (VIIRS) is one of the key instruments aboard the Suomi National Polar-orbiting Partnership (S-NPP) satellite. It is a passive whiskbroom scanning imaging spectroradiometer, performing measurements from 0.4 to 12.2 μm in 15 reflective solar bands (RSB) including a panchromatic day/night band (DNB) and seven thermal emissive bands <ref type="bibr" target="#b17">[Schueler et al., 2001]</ref> to help scientists study large-scale global dynamics in the Earth's system of land, oceans, and atmosphere. VIIRS is a follow-on instrument to three existing sensors: the MODerate resolution Imaging Spectroradiometer (MODIS), the Advanced Very High Resolution Radiometer (AVHRR), and the Operational Linescan System (OLS). VIIRS is designed and manufactured by the same instrument vendor as MODIS. Therefore, its design and operation are strongly based on the MODIS heritage <ref type="bibr" target="#b0">[Barnes et al., 2003;</ref><ref type="bibr" target="#b23">Xiong et al., 2003;</ref><ref type="bibr" target="#b22">Xiong et al., 2014]</ref>.</p><p>DNB is a temperature-controlled charge-coupled device (CCD) that has 672 subpixel detectors along track, which are aggregated on board to create 16 along-track pixels (rows). The CCD covers the required dynamic range by viewing the scene with four detector arrays with three different radiometric gains: high-gain stage (HGS) A, high-gain stage B, midgain stage (MGS), and low-gain stage (LGS). Figure <ref type="figure" target="#fig_0">1</ref> is a sketch of the detector layout for VIIRS DNB, which is mounted adjacent to the visible/near-infrared (VIS/NIR) focal plane assembly (FPA) shown on the right. The CCD sensor operates in time delay integration (TDI) mode, 205 times for HGS and 3 times for MGS, in the along-scan direction to increase the signal-to-noise ratio (SNR). Redundant high gain A (HGA) and high gain B (HGB) further improve the signal. The images of subpixel detectors are then aggregated into 32 aggregation modes on each side of nadir in the along-scan direction. The details on the DNB subpixel aggregation can be found elsewhere <ref type="bibr" target="#b14">[Mills, 2010]</ref>.</p><p>The VIIRS DNB was originally designed to produce imagery of clouds continuously for the day, night, and twilight scenes. Now its applications have been expanded to many others related to nighttime imaging. radiances that span a vast dynamic range from 3.0 × 10 À5 W m À2 sr À1 to 200 W m À2 sr À1 with enhanced spatial resolution of 750 m across the entire swath of 3040 km wide. The key design specification of DNB is summarized in Table <ref type="table" target="#tab_0">1</ref>. While OLS is not radiometrically calibrated, the absolute calibration requirement specification for the DNB is 5% at half maximum radiance and 10% at maximum radiance <ref type="bibr" target="#b6">[Geis et al., 2012]</ref>.</p><p>The DNB sensor data record (SDR) of Earth view (EV) scene radiance is converted from the detector response in digital number (DN) using the calibrated detector gain coefficient or F factor. The calibration of the DNB LGS uses the solar diffuser (SD) view, and the procedure is similar to the one used for the other RSBs <ref type="bibr">[Lei et al., 2015a;</ref><ref type="bibr">Lei et al., 2015b]</ref>. As has been demonstrated for other RSBs as well, the Moon can be used as a source to independently perform the calibration and track the stability of the SD calibration <ref type="bibr" target="#b24">[Xiong et al., 2015]</ref>. In our study, the RSB lunar calibration algorithm is extended to DNB with the DNB LGS F factor calculated from the lunar images captured during VIIRS scheduled lunar calibrations.</p><p>The VIIRS design incorporates a rotating telescope assembly (RTA) that can protect the main optical elements from on-orbit contamination <ref type="bibr" target="#b21">[Weiss, 2011]</ref>. Due to tungsten contamination on the coating of the RTA mirrors, the S-NPP VIIRS has experienced strong wavelength-dependent throughput degradation since launch <ref type="bibr" target="#b1">[Barrie et al., 2012]</ref>. In addition to causing the decrease of the signal level and then SNR, the relative spectral response function (RSR) of VIIRS bands is altered by the degradation. Because the spectra of the SD calibration and lunar calibration are different, the on-orbit change of the DNB RSR is expected to introduce deviation between the detector gain changes tracked by SD calibration and lunar calibration. In this paper, the deviation is estimated and verified by the measurement.   <ref type="bibr" target="#b14">[Mills, 2010]</ref>.</p><p>Journal of Geophysical Research: Atmospheres</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">DNB LGS Calibration and Calibration Methodology</head><p>The DNB gain stages are automatically selected for EV images depending on the radiance level of each pixel.</p><p>The gain stage information is recorded on a pixel level. For a given pixel, which can be operated at any of the three gain stages, the equation that yields DNB top-of-atmosphere radiance is</p><formula xml:id="formula_0">L DNB ¼ F LGS;LUT Á P 2 i¼0 c i;LUT Ádn i DNB RVS DNB;LUT ;<label>(1)</label></formula><p>where the LGS F factor F LGS,LUT , the background DN offset,LUT , and the adjustment coefficients c i,LUT are regularly updated as look-up tables (LUT). Here dn DNB is background-subtracted detector response DN DNB À DN offset,LUT . The F factor is half angle mirror (HAM) side, detector, and aggregation mode dependent. In operation, linear equation is used so c 0 and c 2 are set to 0. Then c 1 is simply the gain ratio of the three gain stages relative to the LGS. This means that c 1 is a fixed at 1 for LGS. The typical values of c 1 are 0.0026 for MGS and 5.80 × 10 À6 for HGS, respectively. The strategies to calibrate these parameters are discussed elsewhere <ref type="bibr" target="#b9">[Lee et al., 2014;</ref><ref type="bibr" target="#b10">Lee et al., 2015;</ref><ref type="bibr" target="#b13">Liao et al., 2013]</ref>. RVS DNB is the response versus scan angle (RVS) for DNB, which is measured prelaunch and provided as LUT. A notable difference between the DNB and other RSBs is that the DNB SDR radiance is reported as the integrated radiance within its RSR, while the other RSBs use spectral radiance. The spectral radiance is defined as the radiance divided by the effective bandwidth. When the on-orbit RSR change exists, the impact of on-orbit RSR change to the F factor defined by radiance and the spectral radiance will be different, especially for DNB whose bandwidth is relatively wider.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">SD Calibration</head><p>During a period when the satellite approaches the South Pole, SD is fully illuminated by the Sun. The SD calibration compares the expected radiance on the SD, L SD , to the background-subtracted detector response dn SD . For each orbit, the DNB LGS F factor is computed for each HAM side, aggregation mode, and detector as follows</p><formula xml:id="formula_1">F LGS ¼ L SD dn SD HAM; agg; det ð Þ ÁRVS SD ¼ ∫ E SUN;λ ÁRSR λ ÁBRDF λ Áτ λ ÁH λ ÁdλÁ cosθ inc dn SD HAM; agg; det ð Þ ÁRVS SD ;<label>(2)</label></formula><p>where dn SD = DN SD À DN bkgd . The DN bkgd is derived from data of space view (SV) sector of the same scan as DN SD is acquired. L SD is radiance reflected from the SD, and E SUN,λ is the spectral irradiance of the Sun at the sensor. RSR λ is the relative spectral response of DNB. Bidirectional reflectance distribution function BRDF λ and τ λ are the wavelength-dependent bidirectional reflectance distribution function and the transmission of the SD screen, H λ , the so-called H factor, is the degradation of the SD monitored by an onboard solar diffuser stability monitor <ref type="bibr" target="#b5">[Fulbright et al., 2012]</ref>, and θ inc is the solar zenith angle on SD panel. RVS SD is the RVS at the mirror scan angle of SD with the angle of incidence (AOI) of 60.2°. Again, DNB LGS is calibrated based on the source radiance so there is no RSR normalization term in the denominator as other RSBs.</p><p>During the SD calibration, the HAM sides (2) and aggregation modes (32) of the data read out from the SD data sector switch from scan to scan for DNB. Since it takes more than 2 × 32 scans to complete a cycle, the SD calibration data from a single orbit does not cover all the combinations. Therefore, the DNB SD F factor is generated on a daily basis with the composite average of F factors from the 14 or 15 orbits within a day. The LUT, including F factor LUT, is updated on a monthly basis for the SDR processing at the NASA that builds upon the MODIS approach and infrastructure for science team support, product generation, and quality assessment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Lunar Calibration</head><p>Given the inherent stability of the lunar reflecting surface, the Moon has been widely used as an independent source for the radiometric and spatial calibration of the remote sensing instruments. VIIRS lunar observations are regularly scheduled primarily to track its RSB radiometric calibration stability <ref type="bibr" target="#b16">[Patt et al., 2005;</ref><ref type="bibr" target="#b19">Sun and Xiong, 2011]</ref>. During the calibration, the Moon is viewed by VIIRS detectors through its SV port. With the instrument coordinate system defined as the Z and X axis in the nadir and track directions, respectively, the SV is located in the Y-Z plane at a nominal angle of 24.325°below the Y axis (measured from the center of the SV port). The angular size of the SV sector is about 0.85°. Therefore, the view through the SV Journal of Geophysical Research: Atmospheres 10.1002/2016JD026372 port forms a cone with a vertex angle of 0.85°. As VIIRS moves along its nearly circular orbit, the cone forms an angular vertex as shown in Figure <ref type="figure" target="#fig_1">2</ref>. The Moon is viewed by the detectors when it passes through this angular vertex.</p><p>Because the lunar irradiance strongly depends on the illuminating and viewing geometry, especially lunar phase, VIIRS lunar calibration events are scheduled when the phase angle is within a limited range from À51.5°to À50.5°to minimize the brightness variation among calibrations. To ensure that the Moon passes the field of view of VIIRS detectors at this phase range, a spacecraft roll maneuver is usually implemented to change the field of view of the sensor, as is shown in Figure <ref type="figure" target="#fig_1">2</ref>. Since the launch of VIIRS in October 2011, 42 scheduled lunar calibrations have been successfully performed till June 2016.</p><p>For most of the lunar calibration events, data sector rotation (SR) is applied. This is done by adjusting the data collection timing of the EV data sector so that the images acquired through the SV are read out from the center of the EV data sector. The width the DNB EV nadir aggregation mode is 368 pixels, much wider than the DNB lunar images of nearly 9 pixels. Therefore, the lunar images are consistently read out in aggregation mode 1 at nadir, which makes it possible to calibrate the detector gain change of this aggregation mode. The SR was only applied to lunar calibrations since 2 April 2012 calibration. Therefore, only the data of the subsequent lunar calibrations are processed to calculate DNB lunar F factors.</p><p>At a phase angle of around À51°, the majority portion of the lunar disk is illuminated. Figure <ref type="figure" target="#fig_2">3</ref> shows a typical DNB 16 × 16 pixels lunar image captured by a scan at the middle time of a randomly selected 30 March 2015 lunar calibration. The horizontal direction corresponds to the along-scan direction, and the vertical direction corresponds to the along-track (cross-scan) direction. The gain stages of these pixels, recorded as 2 for LGS, 1 for MGS, and 0 for HGS, are plotted in Figure <ref type="figure" target="#fig_2">3a</ref>. The white pixels then correspond to LGS, and the black pixels correspond to MGS. Clearly, the pixels capturing lights from the lunar disk receive relatively high radiance so their gain stages are automatically switched to LGS. The pixels at the peripheral region receive low radiance and are commonly set at MGS. These pixels spread at a larger extent than the size of the lunar disk because the response of an imaging system is not perfect. The effect is quantified by the system's modulation transfer function or point spread function <ref type="bibr" target="#b20">[Wang and Xiong, 2014]</ref>. Within the region of this image, there is no pixel at HGS. The DNs of the pixels at LGS and MGS are plotted in Figures <ref type="figure" target="#fig_2">3b</ref> and<ref type="figure" target="#fig_2">3c</ref>, separately. The raw DN of MGS pixels, mostly at the peripheral region, are larger than the pixels of the main body of the Moon; even their corresponding radiance is smaller. This is because the detector gain at MGS is much larger than the LGS. Figure <ref type="figure" target="#fig_2">3d</ref> shows the radiance of pixel calculated from (1) with the LUTs provided. The stray light correction is not needed at the radiance level of the lunar images <ref type="bibr" target="#b15">[Mills et al., 2013]</ref>. The signals of rows 1 and 16 (top  Journal of Geophysical Research: Atmospheres and bottom rows) are contaminated by the electric crosstalk when they are at MGS, a phenomenon that has been identified at prelaunch characterization. Because of this, the pixels of these two rows are excluded from the lunar data processing.The VIIRS DNB F factor can be defined similar to SD F factor to relate the radiance at sensor L Moon to detector response dn Moon</p><formula xml:id="formula_2">F Moon ¼ L Moon dn Moon ÁRVS SV ¼ I ROLO =Ω B X row;col dn Moon Ác 1 ÁRVS SV ¼ CÁ∫E SUN;λ ÁA λ ÁRSR λ Ádλ Ω B Á X row;col DN Moon À DN offset;LUT À Á Ác 1 ÁRVS SV ;<label>(3)</label></formula><p>where RVS SV is the sensor RVS at the SV AOI. Ω B is the solid angle (in steradian) of each pixel. For VIIRS, the SV AOI and the SD AOI are the same. For each scan when the complete lunar image is captured by rows 2-15, the summation of dn Moon is performed over rows in track direction and columns in scan direction. When multiple scans are used, the dn summation are averaged over scans. A λ is the disk-equivalent reflectance and is provided by USGS. I ROLO in (3) is the lunar irradiance predicted by USGS RObotic Lunar Observatory (ROLO) <ref type="bibr" target="#b8">[Kieffer and Stone, 2005;</ref><ref type="bibr" target="#b4">Fulbright et al., 2014]</ref>. Its value depends on the detector RSR as well as the illumination and view geometry at the time of lunar calibration. C is a geometrical factor intrinsic to the model calculated by the ephemeris data of the satellite and the Moon.</p><p>Although the lunar images contain pixels from both MGS and LGS, the c 1 LUT, which is the gain ratio between gain stages, is applied on a pixel level to effectively convert the MGS dn into LGS dn. Also, considering the fact that the contribution from LGS pixels to the total radiance is more than 98.5% for all calibration events, the F Moon calculated from equation ( <ref type="formula" target="#formula_2">3</ref>) is for LGS. The F factors of MGS and HGS cannot be independently produced from the lunar calibration.</p><p>The absolute uncertainty of the ROLO model prediction can be as large as 5-10% for the short-wavelength bands and even larger for the NIR bands. However, for a given spectral band, the stability of the irradiance predicted by the ROLO model over a limited range of lunar phase angles and libration angles is much smaller <ref type="bibr" target="#b18">[Stone, 2008]</ref>. Since the lunar phase angle is confined within a limited range, the relative uncertainty of the lunar irradiance predicted by the ROLO model for VIIRS scheduled lunar observations is expected to be about 1%. Therefore, lunar calibration can track the on-orbit change of the detector gain with relatively good precision, while overcoming disadvantages attached to SD calibration, such as the error introduced from SD degradation monitoring and BRDF characterization. This has been demonstrated and confirmed by the MODIS and VIIRS RSB lunar calibration <ref type="bibr" target="#b24">[Xiong et al., 2015]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Impact of the Modulated RSR to DNB Calibration</head><p>A model has been developed to assess and predict sensor throughput degradation due to the tungsten contamination over its entire mission. The model is used to calculate the time-dependent modulated RSR for each spectral band including DNB <ref type="bibr" target="#b7">[Iona et al., 2012;</ref><ref type="bibr" target="#b9">Lee et al., 2014]</ref>. While most of the degradation occurred during the early mission, the modulated RSR should be consistently applied to both SD calibration and lunar calibration, as well as SDR production.For most VIIRS spectral bands, the impact of the modulation to the RSR shape is insignificant. The F factors calculated using the fixed prelaunch RSR and the modulated RSR differ by less than 0.1% in general. Band M1 has larger difference of 0.25%, which is primarily due to its relatively large out-of-band response. The calibration impact due to modulated RSR is, however, much larger for DNB, mostly because it has a broader bandwidth. Figure <ref type="figure" target="#fig_3">4a</ref> shows the RSR measured prelaunch and the modulated RSR at recent time. The on-orbit change of DNB RSR noticeably impacts the radiance received by DNB detector. The effects of the modulated RSR are not the same for the SD and lunar calibration due to differences in solar spectrum E SUN,λ and lunar spectrum E SUN,λ A λ , according to (2) and (3), respectively. Figure <ref type="figure" target="#fig_3">4b</ref> shows the normalized solar and lunar spectra at the VIS/NIR wavelength range. The DNB spectral radiance L is</p><formula xml:id="formula_3">L SD ∞ ∫ H λ ÁE SUN;λ ÁRSR λ Ádλ ∫RSR λ Ádλ (4)</formula><p>Journal of Geophysical Research: Atmospheres 10.1002/2016JD026372</p><p>for the SD view and</p><formula xml:id="formula_4">L Moon ∞ ∫ E Sun;λ ÁA λ ÁRSR λ Ádλ ∫ RSR λ Ádλ<label>(5)</label></formula><p>for the lunar view. The DNB integrated radiance I is then</p><formula xml:id="formula_5">I SUN ∞ ∫ H λ ÁE Sun;λ ÁRSR λ Ádλ (6)</formula><p>for the SD view and</p><formula xml:id="formula_6">I SUN=Moon ∞ ∫ E Sun;λ ÁA λ ÁRSR λ Ádλ (7)</formula><p>for the lunar view.</p><p>The difference between the spectral radiance L and integrated radiance I is the effective bandwidth of DNB changes over time, which peaks at about day 80 since launch and then gradually decreases from 330.5 nm to 325 nm, as is shown in Figure <ref type="figure" target="#fig_3">4c</ref>. The RTA degradation is maximal at around 1 μm and gradually decreases at shorter and longer wavelengths. Because of this, the DNB RSR peak gradually shifts to shorter wavelengths, as is shown in Figure <ref type="figure" target="#fig_3">4d</ref>. The center wavelength continuously drifts toward the shorter wavelength range from 707 nm to 687 nm.</p><p>The impact of the modulated RSR to DNB calibration is reflected from the on-orbit relative change of L and I results, which can be simulated with equations ( <ref type="formula">4</ref>)-( <ref type="formula">7</ref>). The results are plotted in Figures <ref type="figure" target="#fig_3">4e</ref> and<ref type="figure" target="#fig_3">4f</ref>, respectively. The difference between the two trends is the DNB bandwidth change. It explains why the L changes more abruptly than I in the first 80 days and then much less. The simulation demonstrates that the  <ref type="formula">4</ref>) and</p><p>(5) after being normalized to the first date; (f) the integrated radiance calculated from equations ( <ref type="formula">6</ref>) and ( <ref type="formula">7</ref>) after being normalized to the first date.</p><p>Journal of Geophysical Research: Atmospheres 10.1002/2016JD026372 detector gain coefficients F factor defined by radiance and spectral radiance will have different trend when the effective bandwidth changes due to RSR change. This effect is generally true for all bands but is more significant for VIIRS DNB due to its larger RSR change. The differences in Figures <ref type="figure" target="#fig_3">4e</ref> and<ref type="figure" target="#fig_3">4f</ref> are also the errors introduced into F factor calculation if the modulated RSR is not updated on orbit or the prelaunch RSR is continuously used.</p><p>The impact of the RSR change to the SD calibration is largely offset by the degradation of the SD (H factor). This is because the SD degradation is most significant at shorter wavelength range and shifts the peak of the SD reflected solar spectrum to the longer-wavelength range, opposite to the direction of RSR drift.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results and Discussion</head><p>Comparing to solar spectrum, the lunar spectrum has a less steep slope at 500-900 nm region where DNB acquires signal. Therefore, as the simulation results in Figures <ref type="figure" target="#fig_3">4e</ref> and<ref type="figure" target="#fig_3">4f</ref> demonstrate, the change of the modulated RSR induces less change to the spectral radiance or radiance from the lunar calibration than the solar calibration. Since launch till now, the deviation between the two trends has been about 1%.</p><p>Because the actual detector gain change impacts equations ( <ref type="formula">4</ref>) and ( <ref type="formula" target="#formula_4">5</ref>) the same way, the deviation in L simulated by ( <ref type="formula">4</ref>) and ( <ref type="formula" target="#formula_4">5</ref>) due to RSR change is also the expected deviation between measured SD F factor and lunar F factor due to RSR change calculated from equations ( <ref type="formula" target="#formula_1">2</ref>) and (3).</p><p>The RTA degradation was much faster in the mission beginning, and the degradation rate has been decreasing since launch. The majority of RTA mirror darkening and DNB RSR change had already occurred before 2 April 2012 lunar calibration since when the lunar DNB F factors are first calculated, 158 days since the launch of the S-NPP. The deviation between the two F factor trends since then is simulated to be about 0.3%, which is the deviation that can be actually observed.</p><p>Figure <ref type="figure" target="#fig_4">5a</ref> shows the measured DNB LGS SD and lunar F factors calculated with equation (3) using the prelaunch RSR and modulated RSR, respectively. As mentioned above, VIIRS views the Moon through its SV with the same AOI as the SD, so RVS SD and RVS SV are equal. Thus, the detector gain's change tracked with SD and the Moon should agree with each other. For both SD and lunar calibration, the F factors are calculated using both the prelaunch RSR throughout the mission and the time-dependent modulated RSR.</p><p>There is considerable offset of 10-15% between the absolute values of the SD and lunar trends. The offset is linked to the uncertainty of the ROLO model irradiance in absolute values. For direct comparison purpose, the SD F factors are normalized to the first on-orbit date, and the lunar F factors are normalized to the SD F factor on 2 April 2012, the first lunar data point in Figure <ref type="figure" target="#fig_4">5a</ref>, so that the SD F factor and the normalized lunar F factor are equal at the date. The results are shown in Figure <ref type="figure" target="#fig_4">5b</ref>. This normalization removes the error in the temporally invariant components of the absolute values of calibration references between the SD and lunar calibrations.</p><p>Figure <ref type="figure" target="#fig_4">5c</ref> shows the ratio of the SD F factors and the normalized lunar F factors. There is noticeable seasonal oscillation in the lunar F factor trending of ±0.5%. The same seasonal oscillation pattern has been observed for other RSBs as well <ref type="bibr" target="#b3">[Eplee et al., 2015;</ref><ref type="bibr" target="#b24">Xiong et al., 2015]</ref>. The level of seasonal oscillation ranges from 0.5% to 1%. This is likely caused by the uncertainty of ROLO lunar irradiance model, which is introduced into the lunar F factor through (3). The actual deviation between the two trends is determined to be 0.17% by least squares linear fitting, close to the above simulation of 0.3%. It should be noted that oscillation pattern does not repeat year after year, so we do not apply a semisinusoidal model to simulate the pattern to improve the fitting result. However, it is clear that the differences between the trends of the lunar F factor and SD F factor are extremely small. That is in line with the expectation that both approaches track the detector gain change at the same AOI.</p><p>Figure <ref type="figure" target="#fig_4">5d</ref> evaluates the impact of the modulated RSR to both the SD and lunar calibrations with the ratios of the F factor calculated with prelaunch RSR and modulated RSR. Most of the difference occurs during the early mission when the mirror throughput degradation is much faster and before the first 2 April 2012 lunar calibration used in the analysis. Overall, the use of modulated RSR increases the SD F factor by 2.7% and lunar F factor by 1.7% since mission beginning. This matches the simulation in Figure <ref type="figure" target="#fig_3">4f</ref>, which indicates 3% increase of SD F factor and 2% increase of lunar F factor. This increase will be carried into SD and lunar F factors as error if the modulated RSR is not taken into account or updated on orbit in the SD calibration and lunar calibration. Deviation of 1% between the SD and lunar F factor trending is going to be observed. If the F factor is defined using the spectral radiance instead of radiance, then the impact of the modulated RSR is simulated in Figure <ref type="figure" target="#fig_3">4e</ref>. Our analysis confirms that significant on-orbit change of the RSR may have noticeable impact to the calibration. The on-orbit RSR and source spectra should be taken into account together in the calibration. Similarly, the on-orbit RSR and scene spectra should be taken into account in SDR radiance retrieval as well.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>The methodology of the VIIRS DNB LGS lunar calibration is presented, and the results and analysis are provided. The change of the detector gain coefficient F factor can be tracked through lunar calibration, and the results are consistent with the SD calibration within ±0.5% for all calibration events since 2 April 2012 when the first lunar DNB F factor can be calculated. Unlike other narrow-band RSBs, the analysis shows that the change of the modulated RSR has much more significant impact to the calibration of the DNB. Also, the impact to the lunar calibration and solar calibration are different due to different source spectra. Taking into account this effect, the difference between the SD and lunar calibration is about 0.3% since 2 April 2012, in terms of the long-term deviation. The seasonal variation observed in lunar calibration result has been attributed to the ROLO lunar irradiance model instead of VIIRS measurement, as is demonstrated by the lunar calibration results of other RSBs as well.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure1. CCD and detector layout (DNB and VIS/NIR FPA)<ref type="bibr" target="#b14">[Mills, 2010]</ref>.</figDesc><graphic coords="2,189.47,90.71,369.30,214.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Schematic of scheduled VIIRS lunar observation through its SV port with satellite roll maneuver.</figDesc><graphic coords="4,173.54,90.71,239.95,130.39" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. VIIRS DNB data of pixels that contain the lunar image: (a) the gain stages (recorded as 2 for LGS, 1 for MGS); (b) DN of LGS pixels; (c) DN of MGS pixels; and (d) retrieved radiance.</figDesc><graphic coords="4,175.24,600.61,397.60,110.44" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. The impact of the modulated RSR to DNB calibration result: (a) DNB RSR change is more significant than other RSBs; (b) the solar spectra has a steeper slope than the solar spectra at 500-900 nm range; the effective DNB (c) wavelength and (d) bandwidth both change on orbit; (e) the spectral radiance calculated from equations (4) and (5) after being normalized to the first date; (f) the integrated radiance calculated from equations (6) and (7) after being normalized to the first date.</figDesc><graphic coords="6,175.24,90.71,397.60,297.81" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. The comparison of the DNB LGS SD and lunar calibration results: (a) the SD and lunar calibration F factors; (b) the normalized SD and lunar F factors and (c) their ratio; and (d) the ratios of the F factors calculated with prelaunch RSR and modulated RSR.</figDesc><graphic coords="7,189.47,90.71,369.30,288.45" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Key DNB Performance Requirements</figDesc><table><row><cell>Description</cell></row></table><note><p><p>À1</p>SNR at HGS L min and scan angle &lt;53°6 SNR at HGS L min and scan angle ≥53°5</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>21698996, 2017, 11, Downloaded from https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016JD026372, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>Authors would like to thank other members of the <rs type="institution">VIIRS Characterization Support Team (VCST)</rs> for their contributions to the work. All VIIRS raw data, RDR granules in particular, can be downloaded from <rs type="institution">NOAA</rs> CLASS <ref type="url" target="https://www.nsof.class.noaa.gov/saa/products/">https:// www.nsof.class.noaa.gov/saa/products/</ref> catSearch or NASA LAADS DAAC <ref type="url" target="https://ladsweb.nascom.nasa.gov/search/">https:// ladsweb.nascom.nasa.gov/search/</ref> index.html. The processed data can be provided by the authors upon request per government data distribution policy (zhipeng.wang@ssaihq.com).</p></div>
+			</div>
+			<div type="funding">
+<div><p>Comparing to its heritage instrument, the <rs type="institution" subtype="infrastructure">Operational Linescan System (OLS</rs></p></div>
+			</div>
+			<listOrg type="infrastructure">
+				<org type="infrastructure">					<orgName type="extracted">Operational Linescan System (OLS</orgName>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Development, characterization, and performance of the EOS MODIS sensors</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Guenther</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Salomonson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="volume">5151</biblScope>
+			<biblScope unit="page" from="337" to="345" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Root cause determination of on-orbit degradation of the VIIRS rotating telescope assembly</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Barrie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Fuqua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Meshishnek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ciofalo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chaney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Moision</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Graziani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">8510</biblScope>
+			<biblScope unit="page">851009</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">The Nightsat mission concept</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Elvidge</surname></persName>
+		</author>
+		<idno type="DOI">Atmospheres10.1002/2016JD026372</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Geophysical Research</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2645" to="2670" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note>Int. J. Remote Sens.</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">On-orbit calibration of the Suomi National Polar-Orbiting Partnership Visible Infrared Imaging Radiometer Suite for ocean color applications</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Eplee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Turpie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">F S</forename><surname>Patt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Franz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Bailey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Opt</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1984" to="2006" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Suomi-NPP VIIRS lunar radiometric calibration observations</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fulbright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2014">2014. 9218</date>
+			<biblScope unit="page">921804</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Characterization and performance of the Suomi-NPP VIIRS solar diffuser stability monitor</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fulbright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">8510</biblScope>
+			<biblScope unit="page">851015</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">VIIRS day-night band gain and offset determination and performance</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Geis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Florio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Moyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rausch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>De Luccia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">8510</biblScope>
+			<biblScope unit="page">851012</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">VIIRS on-orbit optical anomaly: Lessons learned</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Iona</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">8510</biblScope>
+			<biblScope unit="page">85101C</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">The spectral irradiance of the Moon</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Kieffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Stone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Astron. J</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page" from="2887" to="2901" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">The S-NPP VIIRS day-night band on-orbit calibration/characterization and current state of SDR products</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">446</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A new method for Suomi-NPP VIIRS on-orbit day night band radiometric calibration</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcintire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Oudrari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schwarting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="324" to="334" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">On-orbit radiometric calibration of Suomi NPP VIIRS reflective solar bands through observations of a sunlit solar diffuser panel</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="5983" to="5990" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Modeling the detector radiometric gains of the Suomi NPP VIIRS reflective solar bands</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Guenther</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="1565" to="1573" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Suomi NPP VIIRS day-night band on-orbit performance</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Weiss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Hauss</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/2013JD020475</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res. Atmos</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page">718</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">VIIRS radiometric calibration algorithm theoretical basis document ATBD</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mills</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Northrop Grumman, Doc. No.: D</title>
+		<imprint>
+			<biblScope unit="page">43777</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">VIIRS day/night band (DNB) stray light characterization and correction</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Weiss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Liang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">8866</biblScope>
+			<biblScope unit="page" from="88661P" to="88661" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Use of the Moon as a calibration reference for NPP VIIRS</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">S</forename><surname>Patt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Eplee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Meister</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Butler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="volume">5882</biblScope>
+			<biblScope unit="page">588215</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">NPOESS VIIRS sensor design overview</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Schueler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Clement</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ardanuy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Welsh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Deluccia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Swenson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="volume">4483</biblScope>
+			<biblScope unit="page" from="11" to="23" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Radiometric calibration stability and inter-calibration of solar-band instruments in orbit using the Moon</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Stone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="volume">7081</biblScope>
+			<biblScope unit="page">70810X</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Solar and lunar observation planning for Earth-observing sensor</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. SPIE</title>
+		<meeting>SPIE</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="volume">8176</biblScope>
+			<biblScope unit="page">817610</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">VIIRS on-orbit spatial characterization using the Moon</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci. Remote Sens. Lett</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="1116" to="1120" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Joint polar satellite system VIIRS geolocation algorithm theoretical basis document</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Weiss</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="474" to="00053" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">VIIRS on-orbit calibration methodology and performance</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/2013JD020423</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Geophys. Res. Atmos</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="5065" to="5078" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">MODIS on-orbit calibration and characterization</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Esposito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Guenther</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Barnes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Metrologia</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="89" to="92" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Lunar calibration and performance for S-NPP VIIRS reflective solar bands</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xiong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fulbright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Butler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Geosci. Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1052" to="1061" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

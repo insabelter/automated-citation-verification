@@ -1,0 +1,2483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Window into Electromechanical Behavior at the Nanoscale</title>
+				<funder>
+					<orgName type="full">division of Scientific User Facilities, DOE</orgName>
+				</funder>
+				<funder ref="#_DFHW6hW #_Rp3Whw5">
+					<orgName type="full">Fundação para a Ciência e a Technologia (Portugal)</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">BES</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+						</author>
+						<title level="a" type="main">A Window into Electromechanical Behavior at the Nanoscale</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5A240EB6823139CA78C7DA37D1B6224D</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:03+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Piezoresponse force microscopy (PFM) is a powerful method widely used for nanoscale studies of the electromechanical coupling effect in various materials systems. Here, we review recent progress in this field that demonstrates great potential of PFM for the investigation of static and dynamic properties of ferroelectric domains, nanofabrication and lithography, local functional control, and structural imaging in a variety of inorganic and organic materials, including piezoelectrics, semiconductors, polymers, biomolecules, and biological systems. Future pathways for PFM application in high-density data storage, nanofabrication, and spectroscopy are discussed.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>While the concept is straightforward, quantification of properties can be complicated due to the complex sample-probe signal transfer mechanism. Nevertheless, considerable progress has been made in developing protocols for quantitative materials characterization with PFM. <ref type="bibr" target="#b0">1</ref> It is now routine to map ferroelectric domains based on variations of the amplitude and phase of the piezoresponse to the ac bias applied to the tip.</p><p>PFM has been developed as an alternative to electron microscopy in the high-resolution imaging of ferroelectric domains in thin films, which in the case of PFM can be performed in a nondestructive manner. Further development of PFM has been stimulated by the need to understand the mechanism of the switching behavior in ferroelectric structures and devices. Progress in the fabrication of high-quality ferroelectric films resulted in a number of novel applications, including nonvolatile ferroelectric memories used in smart cards and commercial products such as Sony PlayStation, data storage devices, and field-effect transistors, all of which employ switchable polarization. PFM has become an indispensable tool for addressing the statics and dynamics of ferroelectric domains, which are highly relevant both to the fundamental physics of ferroelectrics and to the optimization of device performance. PFM studies of static and dynamic properties of ferroelectric domains are summarized in this article.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Over the last two decades, scanning probe microscopy has been instrumental in advancing our understanding of fundamental phenomena in many fields, including superconductivity, spin-resolved transport, charge density wave transitions, protein folding, chemical sensing, and catalysis. A particularly interesting case is piezoresponse force microscopy (PFM), which is unique in that it probes a tensorial property, the coupling between electric field and mechanical strain. While the first and most obvious application of this technique is to straightforwardly map domains in ferroelectric materials, PFM does much more both in terms of the information content and of applications. Coupling between electric fields and mechanical strain underpins a broader range of phenomena in ferroelectrics and other polar materials. This article highlights recent examples in which PFM directly probes electromechanical interactions in systems ranging from complex ferroelectric materials and piezoelectric compounds to biological tissues. These examples also illustrate that creative variants of PFM or a quantitative approach to data analysis contribute to a fundamental understanding of complex phenomena in solids.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Imaging of Ferroelectric Domains: Statics and Dynamics</head><p>PFM utilizes a basic experimental setup of atomic force microscopy in which a conducting tip at the end of a cantilever is brought in contact with a piezoelectric sample. When a voltage is applied to the tip, the resulting deformation of the sample is monitored through the mechanical displacement of the cantilever-piezoresponse. methods that require comprehensive fielddependent measurements to extract the wall dynamics unambiguously. The development of PFM has allowed the exploration of static and dynamic properties of the domain walls locally for length scales from ~10 nm to 100 μm, providing an overview of the geometric structure of the wall in the spatial range of four orders of magnitude.</p><p>Geometry of the PFM setup allows application of the switching voltage both through the conductive probing tip or electrodes deposited at the top of the specimen (Figure <ref type="figure">1</ref>), followed by the imaging of the resulting domain structure. In the case of a highly localized tipgenerated field (Figure <ref type="figure">1a</ref>), the polarization reversal occurs through growth of a single domain nucleated at the tipsurface contact. In epitaxial thin films and crystals, the domain size typically varies linearly with the applied voltage and logarithmically with time. <ref type="bibr" target="#b3">4</ref> Two main theoretical models have been proposed to explain the mechanism of lateral domain growth. The first one invokes a thermal activation type of wall motion with an exponential field (E) dependence of the wall velocity,</p><formula xml:id="formula_0">ν ∼ exp(-1/E).<label>(1)</label></formula><p>However, this model adequately describes the experimental results only for a limited range of domain dimensions (&lt;1 μm), while there is a strong deviation between theory and experiment for larger domains. A more general approach suggests that the wall motion is a creep process governed by the pinning potential. <ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b5">6</ref> The wall velocity exhibits field dependence in the form of</p><formula xml:id="formula_1">ν ∼ exp(-1/E) μ ,<label>(2)</label></formula><p>with the dynamical exponent μ reflecting both wall dimensionality and the nature of potential disorder. In a periodical potential, μ is close to unity, but it varies widely for random potential distribution. Note that due to the nonuniform field distribution, reliable measurements of the field-dependent wall dynamics in the tipinduced switching are extremely difficult, leading to continuing debates about the mechanism for domain growth. Paruch et al. <ref type="bibr" target="#b6">7</ref> introduced an analysis of domain wall roughness in relation to disorder type, and this was later extended to analyze the thermodynamics of the domain formation in ultrathin films. <ref type="bibr" target="#b7">8</ref> Tybell et al. <ref type="bibr" target="#b4">5</ref> and Pertsev et al. <ref type="bibr" target="#b5">6</ref> applied the same approach to study field-dependent domain wall kinetics. The studies by Likodimos et al. <ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b9">10</ref> and later by Shvartsman and Kholkin 11 in ferroelectric relaxors (see the following section) provided a basis for the statistical analysis of the domain morphology and size distributions necessary to quantify the effect of defect centers on domain evolution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Polarization Dynamics in Ferroelectric Thin Films and Capacitors</head><p>Local studies of wall motion complement the collective domain switching studies in a uniform field of ferroelectric capacitors using the global excitation approach (Figure <ref type="figure">1b</ref>). In this geometry, the probing tip is used to establish an electrical contact with the top electrode of a capacitor. A uniform electric field generated throughout the ferroelectric layer underneath the top electrode results in nucleation and growth of multiple domains. The electromechanical response is probed locally by scanning the electrode surface, thus providing spatially resolved information on the domain structure underneath the electrode. The global excitation geometry emulates the switching conditions in actual devices with integrated ferroelectric capacitors and allows quantitative studies of nucleation and domain wall dynamics highly relevant to the performance of these devices. Recent PFM studies revealed the inhomogeneous character of nucleation in real ferroelectrics: in a uniform field, domains nucleate in predetermined sites, likely corresponding to the local defects at the film-electrode interface <ref type="bibr" target="#b11">12</ref> (Figure <ref type="figure">2</ref>). Extension of the PFM technique to fast switching processes (in the 100-ns range) using the stroboscopic method <ref type="bibr" target="#b12">13</ref> allowed characterization of the effect of capacitor size on the rate-limiting mechanism. Specifically, a decrease in capacitor size results in a transition from nucleationlimited to wall speed-limited switching. Remarkably, due to the qualitatively different domain dynamics, capacitors of smaller dimensions (&lt;1 μm 2 ) switch faster than is predicted by the classical Kolmogorov-Avrami-Ishibashi (KAI) model in the high field range, but slower in the low fields (Figure <ref type="figure" target="#fig_2">3</ref>). <ref type="bibr" target="#b13">14</ref> Observation of domain kinetics revealed strong spatial variations of wall velocities and local nucleation times in capacitors comprised of polycrystalline ferroelectric films. As a result, their switching behavior exhibits a strong deviation from the KAI switching kinetics and can be better fitted by a nucleation-limited switching model with a Lorentzian distribution of characteristic switching times. <ref type="bibr" target="#b14">15</ref> In contrast, canonical KAI-type domain kinetics have been observed in epitaxial capacitors because of the reduced effect of microstructural imperfections. An increase in the applied field is accompanied by a transition from lamellar domains to isotropic growth of cylindrical domains, which in terms of the switching mechanism corresponds to a change of domain switching dimensionality from one-dimensional to twodimensional. The PFM approach reveals novel aspects of static and dynamic behavior of polarization in nanostructures with constrained geometry, such as the strong effect of electrode shape on switching kinetics (Figure <ref type="figure" target="#fig_1">4</ref>) <ref type="bibr" target="#b15">16</ref> and in-plane polarization in nominally (001) oriented lead zirconate titanate (PZT) capacitors indicative of quasi-toroidal domain structure. <ref type="bibr" target="#b16">17</ref> Also, inhomogeneous domain nucleation that is not bound to a defect structureskyrmion-type dynamics <ref type="bibr" target="#b17">18</ref> -de tected in several model systems (e.g., Pb 5 Ge 3 O 11 ) sheds new light on the problem of ultimate switching speed in ferroelectrics. <ref type="bibr" target="#b17">18</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statics and Dynamics of Domains in Ferroelectric Relaxors</head><p>Relaxors, first discovered by Smolenskii's group, <ref type="bibr" target="#b18">19</ref> are a special class of disordered ferroelectrics characterized by a frequencydependent dielectric peak, glass-like behavior at low temperatures and the absence of a macroscopic transition under zero field cooling. <ref type="bibr" target="#b19">20</ref> They possess a range of unique properties, such as a hysteresisfree electromechanical response, <ref type="bibr" target="#b20">21</ref> high dielectric constant, and outstanding electro-optic properties, <ref type="bibr" target="#b21">22</ref> useful for applications. In contrast to conventional fe rroelectrics, relaxors do not experience a distinct phase transition into a long-range polar state with macroscopic polarization. Instead, the polarization is correlated only on a local scale where polar nanoregions (PNRs) exist. Until recently, most of the information on the size, distribution, and dynamics of PNRs could be obtained only by indirect methods, such as x-ray and neutron scattering experiments. <ref type="bibr" target="#b22">23</ref> Direct observations of PNRs (e.g., by optical methods) could not succeed due to insufficient resolution.</p><p>Experiments on Ce-doped uniaxial relaxors Sr x Ba 1-x Nb 2 O 6 (SBN) demonstrated the PFM capability to resolve fine features that could not be observed with other methods. <ref type="bibr" target="#b23">24</ref> It was shown that random electric fields due to the presence of Ce 3+ in SBN result in the fractal-like nanodomains with a distribution described by a power law with an exponential cutoff consistent with the 2D random field Ising model (Figure <ref type="figure" target="#fig_3">5a</ref>). The PFM spatial resolution in the 3-5 nm range allowed delineation of the domain distribution and probing of the nanodomain dynamics at low temperatures where a nonexponential decay was observed. <ref type="bibr" target="#b24">25</ref> Significant coarsening of the nanodomain structure over time was found in the non-ergodic phase. <ref type="bibr" target="#b25">26</ref> The nanoscale behavior is much more complicated in the Pb-based "cubic" relaxors, which include PbMg  [111] directions of the cubic perovskite lattice, and interpretation of the piezoresponse images is not an easy task, taking into account possible surface phase transitions <ref type="bibr" target="#b26">27</ref> and the lack of a microscopic theory that could explain the hierarchical 2D random patterns observed by PFM. Piezoresponse images were obtained in (100)-oriented PMN-10wt%PT crystals, where the piezoresponse was analyzed by statistical (correlation) analysis of nano -patterns. <ref type="bibr" target="#b27">28</ref> Application of an autocorrelation function to random domain patterns allowed for the extraction of the key parameter of relaxors: the polarization correlation length (~80-90 nm at room temperature for PMN-10%PT). Both local and macroscopic symmetries could be followed from the PFM surface analysis reflecting the coexistence of different length scales in relaxors (Figure <ref type="figure" target="#fig_3">5b</ref> and<ref type="figure" target="#fig_3">5c</ref>). <ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30</ref> A typical example of the temperature dependence of correlation length and fractal dimension in PMN-PT is shown in Figure <ref type="figure" target="#fig_3">5d</ref>. <ref type="bibr" target="#b10">11</ref> Further experiments in a wide variety of relaxor systems <ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b35">[35]</ref> established PFM as a unique method that allows  access to many otherwise unreachable phenomena, including the grain size effect, <ref type="bibr" target="#b32">33,</ref><ref type="bibr" target="#b33">34</ref> local variability of the correlation length (Figure <ref type="figure" target="#fig_4">6</ref>), <ref type="bibr" target="#b32">33</ref> the role of nanodomains in the macroscopic piezoresponse, <ref type="bibr" target="#b30">31</ref> bias-induced phase transitions, <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b36">36</ref> and domain nucleation. 37</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PFM Imaging of Functional Materials</head><p>Coupling between electrical and mechanical phenomena is common in a wide range of inorganic and organic materials, including piezoelectrics, semiconductors, polymers, biomolecules, and biological systems. The ability of PFM to probe electromechanical coupling on the nanometer scale opens a new approach to the delineation of local structure and functionality of these materials. Recently, PFM has been extensively used to study domain structures in polar III-V nitrides and biopolymers, as summarized in the text that follows.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Imaging Local Property Variations in Piezoelectric Semiconductors</head><p>The piezoelectric character of III-V semiconductors yields a novel degree of freedom in designing devices for modern micro-and nanoelectronic applications. <ref type="bibr" target="#b38">38</ref> As such, measurement of the piezoelectric properties in these materials with high spatial resolution is of primary importance for the design and performance of GaN-based electronic and optoelectronic devices. Development of nitride-based devices necessitates understanding the effect of interfaces, dislocations, stacking faults, and inversion domain boundaries on electrical properties. Notably, the wurtzite phase of GaN and similar materials have a sufficiently high piezoelectric response (~3 pm/V), which varies depending on whether Ga or N terminates the surface and on the quality of the material. The local piezoelectric coefficients thus can be used as a figure of merit for local materials structure. An example of polarization imaging is shown in Figure <ref type="figure">7</ref> for a GaN thin film deposited either directly on a sapphire substrate (N face) or on an AlN nucleation layer (Ga face). <ref type="bibr" target="#b39">39</ref> By imaging GaN with PFM, it was possible to determine the quality of the interface by measuring piezoelectric coefficients, as influenced by the stress. No switching is expected in piezoelectric semiconductors since they are not ferroelectric.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electromechanics of Biological Systems</head><p>One of the most important manifestations of electromechanical behavior is piezoelectricity, which stems from the non-centrosymmetric crystal structure of most biopolymers, including proteins and polysaccharides. Piezoelectric behavior has been observed in a variety of biological systems, including calcified and connective tissues <ref type="bibr" target="#b40">40,</ref><ref type="bibr" target="#b41">41</ref> and plants. <ref type="bibr" target="#b42">42,</ref><ref type="bibr" target="#b43">43</ref> Understanding the relationship between physiologically generated electric fields and mechanical properties on the molecular, cellular, and tissue levels has become the main motivation of studying piezoelectricity in biological systems. However, the complex hierarchical structure of biological materials combined with the strong orientation dependence of the piezoelectric effect precluded quantitative studies.</p><p>Recently, a difference in piezoelectric activity between piezoelectric proteins and nonpiezoelectric hydroxyapatite was suggested as a functional basis for highresolution structural characterization of calcified tissues. <ref type="bibr" target="#b85">85</ref> Shown in Figure <ref type="figure">8</ref> is the mechanical (elasticity map) and electromechanical imaging in a human tooth. Neither topographic (Figure <ref type="figure">8b</ref>) nor elastic (Figure <ref type="figure">8c</ref>) images of an enamel surface show any significant contrast difference between the grains. In comparison, both vertical PFM (VPFM) and lateral PFM (LPFM) images show a very strong electromechanical response attributed to the presence of protein (presumably ameliogenin) fibrils embedded within a nonpiezoelectric hydroxyapatite matrix (Figure <ref type="figure">8d</ref> and<ref type="figure">8e</ref>). The spatial resolution of PFM, determined as a halfwidth of the boundary between different piezoelectric regions, is ~5 nm. Note that the resolution achieved is comparable to the best results to date achieved for thin films of ferroelectric perovskites. Comparison of the VPFM and LPFM images shows a different pattern of piezoelectric domains, suggesting a complicated structure of the fibrils, consisting of several protein molecules. The color encoded vector piezoresponse map (vector PFM), shown in Figure <ref type="figure">8f</ref>, clearly delineates the helical structure, visualizing the electromechanically active protein fibril conformation in real space.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PFM Manipulation and Lithography</head><p>Patterning ferroelectric domains to engineer devices is a relatively recent phenomenon. In the early 1990s, the literature on pattering nonlinear optical materials with a variety of macroscopic approaches evolved. The goal was to use periodic variations in the dielectric constant to realize quasi-phase matching for applications involving optical wave guiding, secondharmonic generation, and surface acoustic wave devices. For these applications, typical feature sizes are on the order of several micrometers. Simultaneously, advances in thin-film deposition techniques and the invention of PFM converged to suggest a potential for nanometer-sized domain manipulation with high spatial resolution. <ref type="bibr" target="#b44">44</ref> The two primary avenues that exploit PFM in the manipulation of ferroelectric polarization are nanostructure fabrication and highdensity information storage, as summarized in the following text.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>High-Density Data Storage</head><p>The PFM capability of effective control of ferroelectric domains stimulated efforts on the generation of domain structures for applications in high-density data storage and nanofabrication. Several groups reported generation of regular domain patterns with nanoscale periodicity in ferroelectric PZT thin films, LiTaO 3 , BaTiO 3 , and Sr 0.61 Ba 0.39 Nb 2 O 6 single crystals using PFM <ref type="bibr" target="#b45">[45]</ref><ref type="bibr" target="#b46">[46]</ref><ref type="bibr" target="#b47">[47]</ref><ref type="bibr" target="#b48">[48]</ref> (Figure <ref type="figure" target="#fig_6">9a</ref> and<ref type="figure" target="#fig_6">9b</ref>). Application of PFM for data storage is based on performing both "write" and "read" operations. The "write" operation is performed while contacting the sample surface with a biased tip and inducing local 180°polarization switching, orienting polarization downward or upward. The "read" step involves PFM phase detection of written domains. Alternatively, domains can be read-out using resistive probes <ref type="bibr" target="#b49">49,</ref><ref type="bibr" target="#b50">50</ref> or by monitoring the nonlinear dielectric response. In the case of resistive detection, the electrostatic field of the written domain depletes or accumulates the carrier inside the lowdoped region of the resistive probe. The written domains are detected as a change in the resistance between the two highly doped terminals formed on both sides of the tip. The scanning nonlinear dielectric microscopy approach employs a special resonator probe operating in the microwave frequency range. <ref type="bibr" target="#b51">51</ref> Point-topoint detection of the local voltageinduced change in the sample capacitance allows nanoscale domain imaging in a surface layer of about 10-nm thick. Given that the width of domain walls in ferro-electrics is typically very small (of the order of 1-3 unit cells), this ferroelectric recording potentially allows extremely high data storage densities, well above that of conventional magnetic recording. <ref type="bibr" target="#b52">52</ref> A ferroelectric bit size of 8 nm in diameter corresponding to 10 Tbit/inch 2 storage density was demonstrated in 40-nm thick single crystals of lithium tantalate (Figure <ref type="figure" target="#fig_6">9c</ref>). <ref type="bibr" target="#b53">53</ref> These developments generated significant interest from major corporations, such as IBM, Samsung, and Canon, toward SPM-based ferroelectric data storage. <ref type="bibr" target="#b50">50</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>PFM-Assisted Nanofabrication</head><p>Switching of ferroelectric polarization beneath the PFM tip is analogous to macroscopic poling with the advantages of localization to small areas under the tip and of the facile patterning capability inherent in SPM. Because features can be structured with nanometer dimensions, an obvious application of PFM-based domain patterning is as a template for fabricating nanoscale structures. <ref type="bibr" target="#b54">54</ref> The underlying mechanism for domain-specific reactivity follows from the fact that a fer- roelectric domain terminates at a surface with a charge. This charge influences the local electronic structure. In the vernacular of semiconductors, the valence bands and conduction bands bend up at a surface with a negative charge and down at a surface with a positive charge (for the case of intrinsic n-type carriers) (Figure <ref type="figure" target="#fig_7">10</ref>). The difference in the energy levels of these bands (or bonds) results in different physical and chemical reactivity. Many examples of the effects of domain orientation on molecular interactions have been documented. <ref type="bibr" target="#b55">[55]</ref><ref type="bibr" target="#b56">[56]</ref><ref type="bibr" target="#b57">[57]</ref> Most ferroelectric compounds are insulators or wide-gap semiconductors, and thus to engage any reactions involving electrons, carriers must be created. This is easily accomplished through the absorption of super bandgap UV light. Electrons and holes formed upon optical absorption will separate in the electric fields, with electrons moving to positive domains and holes to negative domains. <ref type="bibr" target="#b58">58</ref> These carriers are then localized and available for reactions at the surface. These factors are controlled in a process referred to as ferroelectric nanolithography, which achieves the fabrication of complex multicomponent assemblies. <ref type="bibr" target="#b61">61</ref> First, the polarization orientation is patterned on a surface. In order to achieve precise structures, a background is often poled in the orientation that will not react before the reaction pat-crystal and thin-film oxide substrates, thin-film ferroelectric polymer substrates, and involved reaction products from oxidation and reduction reactions. Nano structures have involved noble metals (Pt, Pd Au, Ag), Ni and Co oxides, magnetic nanoparticles, and porphyrin molecules. <ref type="bibr" target="#b60">[60]</ref><ref type="bibr" target="#b61">[61]</ref><ref type="bibr" target="#b62">[62]</ref> Figure <ref type="figure" target="#fig_8">11</ref> illustrates various aspects of ferroelectric nanolithography. Patterning on PZT and PVDF thin films are illustrated in Figure <ref type="figure" target="#fig_8">11a</ref> and 11b, respectively. Deposition due to the reduction of Ni (Figure <ref type="figure" target="#fig_8">11c</ref>) and oxidation of Co (Figure <ref type="figure" target="#fig_8">11d</ref>) tern is produced. After patterning, the substrate is placed into an aqueous metal salt solution and irradiated by super bandgap UV light. Photo reduction or oxidation occurs on the appropriate domains. By controlling the reaction conditions, it is possible to produce patterns with 3-10-nm particles in 1D arrays or build 3D structures with multiple layers of nanoparticles, to simultaneously and sequentially deposit different nanoparticles, and to produce organic/inorganic hybrid structures. The process is general in that it has been applied to single- are compared, and subsequent deposition of an oxidation product Co 2+ and reduction product Ag is demonstrated in Figure <ref type="figure" target="#fig_8">11d</ref>. Patterning of hybrid nanostructures with optoelectronic device properties is illustrated in Figure <ref type="figure" target="#fig_8">11e</ref> and 11f. In this case, an Au nanoparticle array is functionalized with a porphyrin complex to produce a wavelengthdependent current. The generality of this approach combined with the potential for high spatial resolution portends applications ranging from sensing to catalysis.</p><formula xml:id="formula_2">E C c + domain c -domain c + domain c -domain E F E F E V P P P P E V E C E F e -e - h + h + h + e - E V E C E F E V E C hv hv</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Future Pathways for PFM-Based Data Storage and Nanofabrication</head><p>For successful application of the domain-based approach to data storage and nanolithography, several key issues related to the scale of domain engineering should be addressed. First, reproducibility of high-resolution domain writing is necessary for fabrication of reliable, largescale ferroelectric templates. This re quire ment critically depends on the uniformity of the static and dynamic properties of the ferroelectrics at the nanoscale. <ref type="bibr" target="#b63">63</ref> Investigations of the statistical variations in domain sizes as a function of the sample microstructure, dielectric properties, and domain writing conditions are necessary to identify the optimum type of ferroelectric recording media. It has been shown that the bits in a 128 × 82 data set could be stored in a statistically reliable way, with a bit error rate of 1.8 × 10 -2 in single-crystalline lithium tantalate (Figure <ref type="figure" target="#fig_6">9c</ref>). <ref type="bibr" target="#b53">53</ref> In polycrystalline ferroelectric thin films, the effect of grain size and crystallographic orientation on spatial uniformity and reproducibility of the domain writing needs to be taken into account. Fabrication of high-quality ferroelectric nanomesas may be one of the possible solutions to this problem. <ref type="bibr" target="#b64">64,</ref><ref type="bibr" target="#b65">65</ref> Second, long-term stability of the written domain patterns is a key requirement necessary for data storage. This problem is closely related to the problem of thermodynamic stability of the ferroelectric phase at the nanoscale. One of the most important factors affecting domain stability is the screening of spontaneous polarization, which is a complex function of interface quality, electrode materials, microstructure, and ambient environment. It has been found recently, that ferroelectric films as thin as 1.6 nm (two unit cells) still exhibit ferroelectric behavior. <ref type="bibr" target="#b66">66</ref> PFM studies of domains in ultrathin films can contribute to better understanding of the size effects and stability issues in ferroelectrics.</p><p>Third, and probably the most serious problem for the use of PFM-based data storage is throughput, <ref type="bibr" target="#b67">67</ref> which is limited by the tip scanning rate. While the write speed in ferroelectrics can be in the nanosecond range, the typical scanning speed of most scanning probe microscopes is in the range of tens of microns per second. The likely solution of this problem lies in the use of massive parallelism, as has been recently demonstrated by the IBM Millipede concept. <ref type="bibr" target="#b68">68</ref> High data rates have been achieved through the use of large (32 × 32) 2D arrays of PFM probes, which operate simultaneously. Recently, a multiple-tip array has been used to generate a regular one-dimensional domain grating in 200-μm-thick RbTiOPO 4 ferroelectric crystals. <ref type="bibr" target="#b69">69</ref> Another speed-limiting factor is the response time of the probe, which measures the interaction force with the sample. Utilizing a special cantilever with a passive mechanical feedback loop operating in the MHz range and a microresonator as a scan stage allows a 1000-fold increase in pixel acquisition rate relative to a conventional AFM, <ref type="bibr" target="#b70">70</ref> which is an encouraging development for throughput improvement of the SPM-based fabrication methods.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Switching Spectroscopy by PFM</head><p>Along with the sequential polarization switching studies performed with a series of voltage pulses applied to the tip followed by domain imaging, PFM can be used in a spectroscopy mode when the switching measurements are done locally using a probing tip fixed at a certain location on a bare sample surface. This approach, called piezoresponse force spectroscopy (PFS), produces local electromechanical hysteresis loops related to the process of a single domain formation under the tip. Because of the extremely small size of the volume excited during PFS measurements (~10 3 -10 5 nm 3 ), PFS offers a unique possibility of studying the role of individual nano-and atomicscale defects in switching. As such, PFS hysteresis measurements convey information differently than those related to hysteresis loops that are measured in capacitor structures, which reflect a multitude of nucleation events occurring within an extended period of time. <ref type="bibr" target="#b71">71,</ref><ref type="bibr" target="#b72">72</ref> The PFS hysteresis loops often contain reproducible fine structure features (kinks) somewhat similar to structures in forcedistance curves in AFM. The studies by Alexe's group have associated the presence of the fine structure features with their proximity to a ferroelastic domain wall. <ref type="bibr" target="#b73">73,</ref><ref type="bibr" target="#b74">74</ref> Bdikin et al. <ref type="bibr" target="#b75">75</ref> have performed simultaneous imaging and spectroscopic studies and illustrated that the fine structure is associated with non-monotonic jumps in wall motion (i.e., individual pinning events).</p><p>A recent extension of PFS is switching spectroscopy PFM (SS-PFM), <ref type="bibr" target="#b76">76</ref> in which hysteresis curves are collected at each point in an image and stored in a 3D data array. Phenomenological parameters describing the switching process, such as positive and negative coercive bias, imprint voltage, and saturation response, can be extracted from the data sets and plotted as 2D maps of spatially resolved switching properties that can be correlated with PFM and surface topography. <ref type="bibr" target="#b77">77</ref> Recently, SS-PFM and PFS have been used to study intrinsic polarization switching on a defect-free surface, <ref type="bibr" target="#b78">78</ref> to reconstruct the frozen polarization layers in PZT nanoparticles, <ref type="bibr" target="#b79">79</ref> and to map disorder potential components in epitaxial ferroelectric thin films. <ref type="bibr" target="#b80">80</ref> Notably, in highquality epitaxial films, the spatial separation between extended defects such as dislocations can exceed 100 nm, <ref type="bibr" target="#b81">81</ref> as compared to the ~10-30-nm size of domains detectable by PFM. This comparison suggests that switching can potentially be studied on the level of a single defect. <ref type="bibr" target="#b82">82</ref> The combination of SS-PFM on artificially engineered defect structures in a bicrystal grain boundary with phase field modeling <ref type="bibr" target="#b83">83</ref> has provided the ability to decipher deterministic mesoscopic polarization switching in ferroelectrics (Figure <ref type="figure" target="#fig_0">12</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>General Outlook</head><p>While one's initial impression of electromechanical interactions may be that they are significant only in ferroelectric compounds, this is not true. Coupled electromechanical properties are inherent in hundreds of inorganic materials and similarly in biological materials. The evolution of piezoresponse force microscopy (PFM) provides a new window into the behavior of a wide range of materials.</p><p>Equally important, the developments in PFM are part of a larger trend toward extreme high-spatial resolution in the quantification of electromagnetic properties. <ref type="bibr" target="#b84">84</ref> Several classes of properties are now probed at subnanometer resolution. In most cases, the properties are represented by single scalar numbers, such as resistance, conductance, potential, and work function. PFM is unique in that it carries this strategy into the realm of complex tensor properties. We can expect significant advances both in the areas of materials and device characterization and in patterning and lithography. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .100%Figure 2 .</head><label>12</label><figDesc>Figure 1. Geometry of piezoresponse force microscopy studies of domain switching dynamics in (a) ferroelectric films and (b) capacitors.</figDesc><graphic coords="2,423.87,250.27,141.46,131.02" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Piezoresponse force microscopy images of instantaneous domain configurations developing in an epitaxial circular-shape capacitor at different stages of polarization reversal. The scanning area is 1.1 × 1.1 μm 2 . Reprinted with permission from Reference 16.</figDesc><graphic coords="3,230.73,278.29,324.61,221.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Piezoresponse force microscopy images of instantaneous domain configurations developing in (a) 1 × 1.5 μm 2 and (b) 5 × 5 μm 2 capacitors at different stages of the polarization reversal process for the same value of the applied field. The scanning area is 1.4 × 1.8 μm 2 in (a) and 5 × 5 μm 2 in (b). Reprinted with permission from Reference 14.</figDesc><graphic coords="3,237.81,76.33,324.19,125.98" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. (a) Nanodomain distribution in uniaxial relaxor SBN:Ce. 24 The inset demonstrates the complicated shape of the fractal domain. (b) Piezoresponse force microscopy image of nanodomains in PbMg 1/3 Nb 2/3 O 3 -10%(PbTiO 3 ) (PMN-10wt%PT) 11 along with (c) the autocorrelation image showing alignment of nanodomains along the [110] direction. (d) Representative temperature dependence of the correlation length and fractal dimension in PMN-10%PT [11]. Reprinted with permission from References 24 and 31.</figDesc><graphic coords="4,203.67,197.17,149.44,114.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. (a) Piezoresponse force microscopy image of nanodomains in polycrystalline (Pb 1-x La x )(Zr 1-y Ti y )O 3 illustrating the spatial distribution of the correlation length across the grain (b). Reprinted with permission from References 11 and 24.</figDesc><graphic coords="4,423.39,204.07,117.67,87.76" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 8 .Figure 7 .</head><label>87</label><figDesc>Figure 8. (a) Electromechanical response of the surface to the tip bias is a vector measure, components of which are related to the local orientation of protein molecules. In piezoresponse force microscopy, detection of vertical (VPFM) and lateral (LPFM) components of the cantilever response allows two vector components, in-plane and out-of-plane, to be simultaneously measured. (b) Surface topography (vertical scale 20 nm) and (c) an elasticity map of a 400 × 400 nm 2 region on an enamel surface of a human tooth. Vertical (d) and lateral (e) PFM images of the same region. The arrows indicate the orientation of (d) out-of-plane and (e) in-plane electromechanical response, respectively. (f) Vector PFM map of a local electromechanical response. Color indicates the orientation of the electromechanical response vector in a sample plane, while the intensity provides the magnitude (color wheel diagram). (g, h) Semiquantitative map of local molecular orientation. Reprinted with permission from Reference 85.</figDesc><graphic coords="5,104.55,511.15,398.59,131.26" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Piezoresponse force microscopy-imaged nanoscale domain patterns in single crystals of (a) BaTiO 3 , (b) Sr 0.61 Ba 0.39 Nb 2 O 6 (reprinted with permission from Reference 48), and (c) LiTaO 3 (reprinted with permission from Reference 53).</figDesc><graphic coords="6,228.75,223.09,224.65,148.84" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 10 .</head><label>10</label><figDesc>Figure 10. Schematic diagram of the energy bands during photodeposition of nanoparticles on ferroelectric substrates. E c , conduction band energy level; E v , valence band energy level; E F , Fermi energy level; h, Planck's constant; ν, frequency of incident beam.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 11 .</head><label>11</label><figDesc>Figure 11. Domain patterning on (a) oxide and (b) polymer ferroelectric surfaces; (c) deposited Ni nanoparticles and (d) oxidized Co and reduced Au on the same surface; (e) demonstration of opto-electronic properties of patterned Au on lead zirconate titanate with functional prophyrins; and (f) device configuration patterns.</figDesc><graphic coords="7,415.71,525.49,136.45,135.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 12 .</head><label>12</label><figDesc>Figure 12. (a) Surface topography and (b) switching spectroscopy-piezoresponse force microscopy nucleation bias map of a BiFeO 3 24°(100) bicrystal grain boundary (GB). Each point in (b) is a hysteresis loop. (c) Ferroelectric switching properties across the interface. (d) Phase field modeling of domain structure. (e) Polarization distributions induced by the tip at 4.5 V bias for locations in (d). (f) Spatial distribution of nucleation voltage across the GB. Rodriguez et al., Adv. Func. Mater. 1 19, 1 (2009).</figDesc><graphic coords="9,55.47,258.25,142.06,141.94" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="10,49.98,481.96,516.49,246.07" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>MRS BULLETIN • VOLUME 34 • SEPTEMBER 2009 • www.mrs.org/bulletin</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>MRS BULLETIN • VOLUME 34 • SEPTEMBER 2009 • www.mrs.org/bulletin</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>SVK acknowledges support from the <rs type="funder">division of Scientific User Facilities, DOE</rs>, <rs type="funder">BES</rs>. ALK is grateful to the <rs type="funder">Fundação para a Ciência e a Technologia (Portugal)</rs> for the financial support within national projects <rs type="grantNumber">PTDC/FIS/81442/2006</rs> and <rs type="grantNumber">PTDC/CTM 73030/2006</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_DFHW6hW">
+					<idno type="grant-number">PTDC/FIS/81442/2006</idno>
+				</org>
+				<org type="funding" xml:id="_Rp3Whw5">
+					<idno type="grant-number">PTDC/CTM 73030/2006</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<title level="m">Ferroelectrics at Nanoscale: Scanning Probe Microscopy Approach</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Grigoriev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Do</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">B</forename><surname>Eom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Dufresne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Evans</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page">187601</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nattermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shapir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vilfan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">8577</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Agronin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Molotskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Rosenwaks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rosenman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Kingon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">104102</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tybell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Paruch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Giamarchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-M</forename><surname>Triscone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">97601</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Pertsev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Petraru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kohlstedt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">K</forename><surname>Waser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bdikin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kiselev</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Kholkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanotechnology</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">375703</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Paruch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Giamarchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-M</forename><surname>Triscone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">197601</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Catalan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Béa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fusil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bibes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Paruch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Barthélémy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">27602</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><surname>Likodimos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Labardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">K</forename><surname>Orlik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Allegrini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Emonin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Marti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">64104</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><surname>Likodimos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Labardi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Allegrini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">24104</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page">64108</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Jo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Noh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">132903</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Dehoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Waldrep</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Kingon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Nemanich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Cross</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">82902</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">97601</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Y</forename><surname>Jo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-G</forename><surname>Yoon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Noh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">267602</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-J</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vrejoiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">342201</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">S</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">I</forename><surname>Naumov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Bratkovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">1127</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dawber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Physics: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">71</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Smolenskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">A</forename><surname>Isupov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Dokl. Akad. Nauk SSSR</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">653</biblScope>
+			<date type="published" when="1954">1954</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">E</forename><surname>Cross</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ferroelectrics</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">241</biblScope>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S.-E</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Shrout</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">1804</biblScope>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Haertling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ferroelectrics</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Vakhrushev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">E</forename><surname>Kvyatkovksy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Naberezhnov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Okuneva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Toperverg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ferroelectrics</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">173</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lehnen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kleemann</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Th</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Woike</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Pankrath</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">224109</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kleemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lukasiewicz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dec</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">54105</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Kleemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Kutnjak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Braun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page">65702</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Viehland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Gehring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Shirane</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page">212410</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Vakhrushev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Naberezhnov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dkhil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-M</forename><surname>Kiat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dorner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ivanov</surname></persName>
+		</author>
+		<title level="m">AIP Conf. Proc</title>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="volume">677</biblScope>
+			<biblScope unit="page">74</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page">14102</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Viehland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">2313</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">K</forename><surname>Bdikin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">4232</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Orlova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kiselev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Bogomolov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sternberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">202907</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Kiselev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">K</forename><surname>Bdikin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K</forename><surname>Selezneva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Bormanis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sternberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. D</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">7109</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Emelyanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Safari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">117</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tyunina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Levoska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">222907</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Salak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">V</forename><surname>Shvartsman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Seabra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">M</forename><surname>Ferreira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">2785</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Maksymovych</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Seal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Baddorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Proksch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Today</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">16</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Viehland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">4457</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><surname>Ambacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Majewski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Miskys</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Link</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Eickhoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stutzmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Bernardini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Fiorentini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Tilak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schaff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Eastman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">3399</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Kingon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Nemanich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">4166</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fukada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Yasuda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">1158</biblScope>
+			<date type="published" when="1957">1957</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Lang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">5063</biblScope>
+			<biblScope unit="page">704</biblScope>
+			<date type="published" when="1966">1966</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fukada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">149</biblScope>
+			<date type="published" when="1955">1955</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fukada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biorheology</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">593</biblScope>
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Mater. Res</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page">351</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hidaka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Maruyama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sakai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Saitoh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Wills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hiskes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Dicarolis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Amano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Integr. Ferroelectr</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">319</biblScope>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Fujimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hiranaga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wagatsuma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Onoe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Terabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kitamura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">4401</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Terabe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Takekawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nakamura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kitamura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Higuchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gotoh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">2044</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rosenman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Urenski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Agronin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Rosenwaks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Molotski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">103</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D.-K</forename><surname>Min</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">1734</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+		<title level="m">Scanning Probe Microscopy: Electrical and Electromechanical Phenomena at the Nanoscale</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ohara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">3842</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Hamman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Martin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Wickramasinghe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">810</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hashimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Odagawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tanaka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hiranaga</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanotechnology</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">137</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ceram. Int</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">157</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Garra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">473</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Vohs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Surf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">602</biblScope>
+			<biblScope unit="page">2849</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Altman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="page">15684</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Nikiforov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">112904</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Alvarez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Ferris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">589</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Strachan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Ferris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Res</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">935</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Alvarez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">H</forename><surname>Ferris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dunn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">589</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Rankin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Conklin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACS Nano</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">234</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">1452</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Harnagea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schilling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Wehrspohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Gösele</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page">1827</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Nysten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Jonas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">62</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Streiffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Eastman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Fong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Thompson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Munkholm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Ramana Murty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Auciello</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Stephenson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">67601</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Quate</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Surf. Sci</title>
+		<imprint>
+			<biblScope unit="volume">386</biblScope>
+			<biblScope unit="page">259</biblScope>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vettiger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brugger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Despont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Drechsler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Durig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Haberle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lutwyche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rothuizen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Stutz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Widmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Binnig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Microelectron. Eng</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">11</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Rosenwaks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Molotskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rosenman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">12909</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D L</forename><surname>Humphris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Miles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Hobbs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">34106</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Molotskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Winebrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">132103</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Morozovska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Eliseev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">192901</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Le Rhun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vrejoiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">12908</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Le Rhun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vrejoiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pintilie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Gösele</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nanotechnology</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page">3154</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">K</forename><surname>Bdikin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Kholkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Morozovska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Svechnikov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page">182909</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Baddorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">62908</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-N</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instrum</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">73702</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Choudhury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Eliseev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Morozovska</surname></persName>
+		</author>
+		<title level="m">Proc. Nat. Acad. Sci. U.S.A</title>
+		<meeting>Nat. Acad. Sci. U.S.A</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">20204</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">109</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Choudhury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Baddorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vrejoiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alexe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Eliseev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Morozovska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L.-Q</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Mater</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">209</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vrejoiu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Mag</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page">4477</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Eliseev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Morozovska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">155703</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Q</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page">34112</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Brukman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Bonnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Today</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page">36</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Kalinin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Grichko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Thundat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Baddorf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruverman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ultramicroscopy</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">334</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

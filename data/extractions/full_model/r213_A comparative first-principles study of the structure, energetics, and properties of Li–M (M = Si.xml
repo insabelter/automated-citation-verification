@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Comparative First-Principles Study of the Structure, Energetics, and Properties of LiÀM (M = Si, Ge, Sn) Alloys</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2011-09-01">September 01, 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Chia-Yun</forename><surname>Chou</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Materials Science and Engineering Program</orgName>
+								<orgName type="institution">University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712</postCode>
+									<settlement>Austin</settlement>
+									<region>Texas</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hyunwoo</forename><surname>Kim</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Chemical Engineering</orgName>
+								<orgName type="institution">University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712</postCode>
+									<settlement>Austin</settlement>
+									<region>Texas</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Gyeong</forename><forename type="middle">S</forename><surname>Hwang</surname></persName>
+							<email>gshwang@che.utexas.edu.</email>
+							<affiliation key="aff0">
+								<orgName type="department">Materials Science and Engineering Program</orgName>
+								<orgName type="institution">University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712</postCode>
+									<settlement>Austin</settlement>
+									<region>Texas</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Chemical Engineering</orgName>
+								<orgName type="institution">University of Texas at Austin</orgName>
+								<address>
+									<postCode>78712</postCode>
+									<settlement>Austin</settlement>
+									<region>Texas</region>
+									<country key="US">United States</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Comparative First-Principles Study of the Structure, Energetics, and Properties of LiÀM (M = Si, Ge, Sn) Alloys</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-09-01">September 01, 2011</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">800BECFC585B96B7EA77054F5EBAECDB</idno>
+					<idno type="DOI">10.1021/jp205484v</idno>
+					<note type="submission">Received: June 11, 2011</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>On the basis of density functional theory calculations, we first present a comparative study on the behavior of Li atoms in M (M = Si, Ge, and Sn) and evaluate how Li incorporation affects the electronic structure and bonding nature of the host lattices. We then discuss the energetics, structural evolution, and variations in electronic and mechanical properties of crystalline and amorphous LiÀM alloys. Our calculations show that Li insertion is the least favorable in Si and the most favorable in Sn owing to its large effective interstitial space and softer matrix. Upon Li incorporation, the bonding strength of the host network is weakened, attributed to the transferred charge from Li. Li interstitials can migrate easily in all three host materials with a moderate migration barrier in Si and small barriers in Ge and Sn. Because of the cation repulsive interaction, Li atoms tend to remain isolated and well dispersed in M; also induced by this cationic nature is the charge redistribution toward Li, leading to the strong screening/shielding effect in Si, in which the excess charges are highly localized, and a relatively weaker effect in Sn. According to our mixing enthalpy calculations, alloying between Li and M is energetically favorable with LiÀSn alloys being the most stable, followed by LiÀGe and LiÀSi alloys. On the basis of structural, electronic, and mechanical property analyses, we also demonstrate how the incorporation of Li atoms with increasing concentration leads to the disintegration of host networks and softening of the LiÀM alloys, and associated with the more flexible lattices, the volume expansion at fully lithiated states are 434 (399)% (Si), 382 (353)% (Ge), and 305 (259)% (Sn) for amorphous (crystalline) LiÀM alloys.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>The growing demands for safer lithium-ion batteries (LIBs) with higher capacity and longer durability have led to the search for nextgeneration electrode materials. Although the most widely used graphite anodes in LIBs have good cycling performance with a theoretical capacity of 372 mAh g À1 (LiC 6 ), other group IV semiconductors (Si, Ge, Sn) can offer significantly higher capacities: 4200 mAh g À1 for Li 4.4 Si, 1600 mAh g À1 for Li 4. 4 Ge, and 990 mAh g À1 for Li 4.4 Sn. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b1">2</ref> In addition to the large increase in energystorage capacity, lithiumÀgroup IV alloys (LiÀM, M = Si, Ge, Sn) also have a safe thermodynamic potential, making them attractive candidates for LIB anodes. However, the practical use of Si, Ge, or Sn as an anode material is hindered by its poor cycling ability. In particular, the large volume change during the lithiation/delithiation process (up to 400% for Si, 370% for Ge, and 300% for Sn) <ref type="bibr">3À5</ref> can cause cracking and pulverization of the electrodes. Considerable efforts have been made to overcome these problems through structural modifications <ref type="bibr">6À11</ref> and alloying with active/inactive elements. <ref type="bibr">12À16</ref> First-principles calculations have also been applied to investigate fundamental aspects of the lithiation behavior and structural evolution of the anode materials, yet many of which still remain unclear.</p><p>Despite the similarities shared among the group IV materials, Si has received the most attention because of its highest known capacity, whereas the analogous systems have not been studied as closely, and some of their merits as an anode material may have been overlooked in the past. For instance, the diffusivity of Li in Ge is about 400 times greater than that of Li in Si at room temperature, <ref type="bibr" target="#b17">17</ref> which may contribute to faster charge/discharge rates. Thus far, there has been no comprehensive comparison study on Si, Ge, and Sn as to the dynamic behavior of Li incorporation, the stability of the host lattices, and the properties of the alloys formed during lithiation. The Journal of Physical Chemistry C</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ARTICLE</head><p>In this paper, we first examine the structure, stability, Li diffusion, LiÀLi interaction, and how the host lattice M (M = Si, Ge, and Sn) is affected by Li insertion using density functional theory (DFT) calculations. The group IV elements are found to adopt the diamond crystalline structure, which allows a comparative study on the nature of Li in different host materials, but the same diamond structure. Although other allotropic structures are found for Ge and Sn (β-Ge and β-Sn 18 ), they do not serve a particular interest in this study. We then examine the structure, energetics, and mechanical and electronic properties of LiÀM alloys. The structural evolution in terms of Li content is analyzed for both crystalline and amorphous phases, and the relative stabilities of the alloys are evaluated based on their mixing enthalpies. As the structure undergoes considerable changes when alloyed with Li, variations in elastic constant and bulk modulus are also analyzed to assess the relationship between the structure and the mechanical properties.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">COMPUTATIONAL METHODS</head><p>The calculations reported herein were performed based on density functional theory (DFT) within the generalized gradient approximation (GGA-PW91) <ref type="bibr">19</ref> as implemented in the Vienna Abinitio Simulation Package (VASP). <ref type="bibr">20À22</ref> The local density approximation (LDA) was also used in lattice constant and bulk modulus calculations for comparison. Spin polarization was also examined, but appears to be unimportant. The projected augmented wave (PAW) method with a plane-wave basis set was employed to describe the interaction between ion cores and valence electrons. The PAW method is, in principle, an all-electron frozen-core approach that considers exact valence wave functions. Valence configurations employed are as follows: 1s 2 2s 1 for Li, 3s 2 3p 2 for Si, 4s 2 4p 2 (3d 10 ) for Ge, and 5s 2 5p 2 (4d 10 ) for Sn. An energy cutoff of 350 eV was applied for the plane-wave expansion of the electronic eigenfunctions, except for mechanical property calculations, which employed an increased cut-off energy of 500 eV. The Si (Ge and Sn) host was modeled using a 216-atom cubic supercell. The effect of volume relaxation was also checked upon incorporating the Li interstitial, and it turns out to be unimportant as the 216-atom supercell is large enough to accommodate one or two Li atoms with no significant volume change (less than 1%). For geometry optimization and energy calculations, all atoms were fully relaxed using the conjugate gradient method until residual forces on constituent atoms become smaller than 5 Â 10 À2 eV/Å, and the convergence criterion was tightened to 1 Â 10 À3 eV/Å for mechanical property calculations. The Brillouin zone sampling for 216-atom supercells was done via a (2 Â 2 Â 2) k-point mesh within the MonkhorstÀPack scheme, <ref type="bibr">23</ref> and the k-point meshes for crystalline alloys of various supercell sizes are specified in the text otherwise (Table <ref type="table" target="#tab_2">3</ref>). Diffusion pathways and barriers were determined using the climbing-image nudged elastic band method <ref type="bibr" target="#b25">24</ref> with nine intermediate images for each hopping step.</p><p>The model structures of amorphous LiÀM alloys (M = Si, Ge, Sn) were created using AIMD simulations based on the atomic configurations of AuÀSi alloys that were previously obtained using the combined modified embedded atom method (MEAM) and AIMD simulations (see ref 25 for detailed computational methods). According to the previous study, <ref type="bibr" target="#b26">25</ref> Au and Si atoms in the bulk AuÀSi amorphous alloy are overall well-mixed with no segregation. The AuÀSi interaction differs from the LiÀM interaction in nature, and thus the local atomic configurations (or shortrange order) of the alloys tend to be dissimilar. Nonetheless, the AuÀSi amorphous structure is likely a good starting configuration for the LiÀM amorphous structures (where Li and M atoms are also well-dispersed); moreover, the high mobilities of Li and M at high temperature (&gt;1000 K) allow facile local structure rearrangements to yield reliable LiÀM configurations within a moderate annealing time. The Au atoms (in AuÀSi alloys) were replaced by Li and M atoms accordingly to achieve desired composition ratios; the replacement sites were carefully chosen such that M and Li were well-dispersed. The model structures, each containing 64 Li and M atoms, were annealed at 1500 K for 2 ps with a time step of 1 fs and then rapidly quenched to 300 K at a rate of 0.6 K/fs, along with volume optimization. Here, the temperature was controlled via velocity rescaling. The annealing temperature was assured to be far above the alloy melting point (∼1000 K) to accelerate the melting process and to eliminate any memory effects from the initial configuration. This approach can provide reasonable LiÀM amorphous structures at a significantly reduced computational burden compared to starting with crystalline initial configurations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">RESULTS AND DISCUSSION</head><p>A. Single Li Atom in Crystalline Si, Ge, and Sn. 1. Structure and Formation Energy. First, we compared the lattice spacing and rigidity of the host materials (Si, Ge, Sn). Table <ref type="table" target="#tab_1">1</ref> summarizes calculated lattice constants (a) and bulk moduli (B) for diamondstructure Si, Ge, and Sn with reference values; a and B were obtained using 216-atom (2 Â 2 Â 2 k-points) and 8-atom (21 Â 21 Â 21 k-points) supercells, respectively. The bulk modulus was determined by fitting the Murnaghan equation of state <ref type="bibr" target="#b27">26</ref> to the corresponding energy versus volume curve</p><formula xml:id="formula_0">EðV Þ ¼ E 0 þ BV B 0 ðV 0 =V Þ B 0 ðB 0 À 1Þ þ 1 " # À V 0 B ðB 0 À 1Þ</formula><p>where E and E 0 refer to the total energies of the supercell at volumes V and V 0 (equilibrium), respectively, B is the bulk modulus, and B 0 is the pressure derivative of the bulk modulus.</p><p>In our calculations, uniform tensile and compressive stresses were imposed on the systems to achieve a 10% volume variation. Our predicated values are overall in good agreement with previous theoretical and experimental results. <ref type="bibr">27À29</ref> The GGA (LDA) tends to overestimate (underestimate) the bond lengths due to the wellknown under-binding (over-binding) problem; accordingly, the LDA values of B are consistently greater than the GGA values. For Ge and Sn, the respective 3d and 4d electrons were also included for valence electrons, but the d-electron contributions to the lattice spacing and rigidity turn out to be insignificant.</p><p>The insertion of Li at the tetrahedral interstitial site (T-site), which has been identified to be energetically the most favorable site for Li insertion, <ref type="bibr" target="#b31">30</ref> can impose a compressive strain on the surrounding host lattice and lead to a slight outward relaxation of the neighboring atoms. To evaluate the relative ease of Li insertion and corresponding hostÀlattice disturbances, we calculated the neighboring atom displacements (Δ) and formation energies (E f ) for single Li insertion in the host materials considered. For the 216-atom cubic supercell employed, the displacements of the first and second nearest neighbors (NNs) are presented in Table <ref type="table" target="#tab_0">2</ref>. The second NNs show significantly smaller displacements than the first NNs, indicating that the mechanical strain imposed by the Li insertion drops quickly beyond the four first NNs. Among Si, Ge, and Sn lattices, Ge has the largest and Sn the smallest atomic displacements. The Journal of Physical Chemistry C ARTICLE This result can be understood in terms of the effective interstitial space and stiffness of the host lattices. Because all three host lattices have the same crystal structure, the one with a bigger atomic size is expected to have a larger effective space to accommodate an Li interstitial, and thus the smaller displacements of the neighboring host atoms; note that the covalent radii of Sn, Ge, and Si are 1.40, 1.22, and 1.11 Å, respectively. The same effect is also anticipated from a host lattice with a higher bulk modulus as it indicates a stiffer matrix to withstand interstitial insertion; the calculated bulk moduli for Si, Ge, and Sn are 91, 57, and 37 GPa, respectively. Sn has a relatively spacious matrix and thus yields a minimum amount of lattice displacement. Between Si and Ge, although a similar lattice structure and hence effective interstitial space are shared, the latter has a softer matrix, which allows slightly larger outward relaxation. Considering the geometrical and mechanical properties of the host lattices, our prediction of Ge with the largest and Sn the smallest outward relaxation is rational.</p><p>Also listed in Table <ref type="table" target="#tab_0">2</ref> are the formation energies (E f ) of a Li interstitial in 216-atom c-M with respect to body-centered cubic Li (bcc-Li) and the crystalline host material (c-M, M = Si, Ge, Sn). E f is calculated by</p><formula xml:id="formula_1">E f ¼ E MþLi À E M À E Li</formula><p>where E M+Li is the total energy of one Li interstitial in 216-atom c-M, E M is the total energy of 216-atom c-M, and E Li is the energy of one bcc-Li atom.</p><p>Among the host lattices considered, the formation energy of interstitial Li is the lowest in Sn (À0.491 eV), higher in Ge (À0.274 eV), and is the highest in Si (0.403 eV); the more negative values indicate the relatively more favorable incorporation of Li. Energetically, the nature of Sn as a host material renders favorable Li incorporation since the associated lattice disturbance is minimal in Sn, but relatively larger in Ge and Si, as can been seen from the lattice displacement results. It is also worth mentioning that, although the effects of including d electrons and volume relaxation were considered, both turn out to be unimportant. The deviations in the formation energy due to the inclusion of d electrons are small enough to be negligible. The same can be said about the amount of lattice  The Journal of Physical Chemistry C ARTICLE displacements when considering the effect of cell volume relaxation; moreover, it has also been reported in the previous calculation <ref type="bibr" target="#b31">30</ref> that the volume expansion associated with one Li insertion in a 216-atom supercell is very minimal (less than 1%), indicating that the cell size is sufficiently large to exclude cell volume adjustment.</p><p>2. Electronic Structure and Charge Distribution. Figure <ref type="figure" target="#fig_4">1</ref> shows the electron density of states (DOS) of Si, Ge, and Sn before and after the insertion of a neutral Li atom at the T-site. Upon the Li incorporation, the Fermi level shifts above the conduction band minimum, indicating that the charge transferred from Li partially fills the conduction band of the host. A grid-based Bader charge analysis <ref type="bibr" target="#b32">31</ref> predicts the amounts of electron transfer from the inserted Li to the Si, Ge, and Sn lattices to be 0.83e, 0.85e, and 0.87e, respectively; in the calculations, special care was taken to ensure convergence with respect to the grid size.</p><p>To evaluate the charge redistribution induced by the Li incorporation in the host matrix, the charge gain of the atoms adjacent to Li was calculated. As shown in Figure <ref type="figure" target="#fig_2">2</ref>, the charge distributed to Si first NNs is the highest among the three host lattices, but with the increasing SiÀLi distance, this amount also decreases most rapidly; from 0.24e (1st NNs) to 0.1e (2nd NNs) to 0.01e (3rd NNs) while there is no noticeable indication of charge gain beyond the third NNs. Relative to Si, the charge gain in Ge drops less rapidly from 0.13e (1st NNs) to 0.06e (2nd NNs) to 0.05e (3rd NNs). In the case of Sn, the charge redistribution range is extended farther to even the fourth NNs, from 0.15e (1st NNs), 0.04e (2nd NNs), and 0.03e (3rd NNs) to 0.02e (4th NNs). Overall, the excess charges are contributed by Li charge donation as well as the host atoms, from which electrons are redistributed toward the Li cation because of the electrostatic attraction. Therefore, the net charge gain can amount to a greater sum than that donated by Li alone. From Figure <ref type="figure" target="#fig_2">2</ref>, we also see that the excess charges are more localized in Si and Ge, but farther spread in Sn. The largely localized charges within the first nearest neighbors are expected to effectively screen (or shield) the Li cation, and from our calculations, we anticipate this effect to be the most prominent in Si and least so in Sn.</p><p>3. LiÀLi Interaction and Diffusion. As more Li atoms are inserted to the host lattice, it becomes important to understand the interaction between Li interstitials. Figure <ref type="figure" target="#fig_3">3</ref> shows the variations in the relative total energy (ΔE t ) with respect to state (d), at which Li atoms are separated at a relatively large distance (approximately seventh neighbor distance); one Li was at a T-site and the other was placed at the first (a), second (b), or third (c) neighboring T-site. The relative energies for (a), (b), and (c) are 0.23 (0.18, 0.09), 0.08 (0.06, 0.03), and 0.06 (0.05, 0.02) eV higher compared with that for (d) in Si (Ge, Sn). The curve lines in Figure <ref type="figure" target="#fig_3">3</ref> represent the idealized Coulomb electrostatic interaction between two point charges, V C = (q 1 q 2 )/(4πεr), with respect to state (d); here, q is the Li cation charge (q = 0.83e, 0.85e, and 0.87e for Li in Si, Ge, and Sn, respectively, according to the Bader charge analysis), r is the distance between two Li cations, and ε is the dielectric constant of the host lattice (ε = 1.05, 1.42, and 2.12 Â 10 À10 F/m for Si, Ge, and Sn, respectively). <ref type="bibr">18,</ref><ref type="bibr" target="#b33">32</ref> Apparently, the energy increase with decreasing the LiÀLi distance (r) is largely caused by the repulsive Coulomb interaction   The Journal of Physical Chemistry C ARTICLE between Li cations. The calculated cation repulsion (ΔE t ) is the strongest in Si and weakest in Sn; such a trend is also consistent with the idealized V C prediction. Given that the repulsive potential is inversely proportional to the dielectric constant (ε) of the host lattice, Li cations are expected to repel each other most strongly in Si, which has the lowest dielectric constant among the three host materials. Additionally, we notice that the calculated ΔE t are noticeably smaller than the V C values. This is because the idealized Coulomb interaction assumes a perfect point charge and uniform charge distribution in the medium, and it does not address the charge redistribution and screening effects mentioned earlier. That is, the localized electrons surrounding Li may effectively shield the Li cations and lead to the reduction of the repulsive potential, as seen in our calculations.</p><p>Next, we evaluated the variations in the Li migration barrier as the host material changes. A Li interstitial may undergo migration by jumping between adjacent T-sites via a transition state (TS) hexagonal site (H-site), as shown in Figure <ref type="figure" target="#fig_6">4a</ref>. The migration barrier (E a ) is calculated to be the largest in Si (0.62 eV), second largest in Ge (0.44 eV), and the smallest in Sn (0.39 eV). Among the three host materials, Sn has a more flexible lattice, which can expand easily to allow Li interstitials passing through, and its relatively larger atomic size also renders a more effective diffusion channel with a lower barrier. In the presence of an adjacent Li atom (Figure <ref type="figure" target="#fig_6">4b</ref>), the diffusion barrier (E a 0 ) is reduced to 0.47 eV in Si, 0.35 eV in Ge, and 0.33 eV in Sn owing to the repulsive interaction. The barrier reduction (ΔE = E a À E a 0 ) is proportional to the strength of the LiÀLi electrostatic repulsion; that is, ΔE = 0.15 eV (Si), 0.09 eV (Ge), and 0.06 eV (Sn). These results suggest that the migration barrier depends not only on the host lattice stiffness but also on the electrostatic interaction between diffusing species. <ref type="bibr" target="#b34">33</ref> In addition, our study clearly demonstrates that Li interstitials favor to remain isolated and dispersed, rather than clustered, due to their cationic nature causing the repulsive interaction in the host materials.</p><p>B. Structure and Properties of LiÀSi (Ge, Sn) Alloys. 1. Structure and Stability of Crystalline and Amorphous Phases. In the previous section, we discussed the behavior and properties of single Li interstitials in crystalline Si, Ge, and Sn. Here, we will look at the structure, energetics, and properties of crystalline and amorphous LiÀM (M = Si, Ge, Sn) alloys as a function of Li content. Recent studies have provided evidence for the formation of various stable LiÀM crystalline phases during high-temperature lithiation; the crystallographic parameters for the experimentally determined LiÀM intermetallics are summarized in Table <ref type="table" target="#tab_2">3</ref>. However, room-temperature lithiation frequently leads to amorphous LiÀM phases 34À38 that may show different properties from their crystalline counterparts.</p><p>Figure <ref type="figure" target="#fig_5">5</ref> shows variations in the mixing enthalpy for amorphous and crystalline LiÀM alloys as a function of the Li content, with respect to c-M and bcc-Li; for each amorphous alloy, the reported average value was obtained based on five independent 64-atom samples. The mixing enthalpy per atom (ΔE mix ) is given by</p><formula xml:id="formula_2">ΔE mix ¼ E Li x M 1Àx À xE Li À ð1 À xÞE M</formula><p>where E Li x M 1Àx is the total energy per atom of the alloy examined, x is the atomic fraction of Li, and E M and E Li are the total energies per atom of c-M and bcc-Li, respectively.</p><p>The mixing enthalpy results help evaluate the relative stabilities of the LiÀM alloys. All three (LiÀSi, LiÀGe, and LiÀSn) alloys display a general trend that the mixing enthalpy decreases with increasing Li content and falls to a valley plateau between 60 and 80 at. % Li. Note that the mixing enthalpies for LiÀSi and LiÀGe alloys at low Li contents are positive in value with respect  According to the results, amorphous LiÀSn alloys with 60À80 at. % Li are the most favorable with an energy gain of ΔE mix = 0.30À0.33 eV/atom with respect to c-M and bcc-Li, followed by LiÀGe alloys with ΔE mix = 0.25À0.29 eV/atom, and LiÀSi alloys are the least favorable with ΔE mix = 0.16À0.18 eV/atom. For the crystalline phases, distinct mixing enthalpy minima are found at 70 at. % Li for LiÀSi and LiÀSn, whereas 80 at. % Li for LiÀGe alloys. On average, the amorphous phases are about 0.1 eV/atom less favorable than their crystalline counterparts, suggesting the possibility of recrystallization at elevated temperatures, as evidenced by earlier experiments. <ref type="bibr" target="#b47">46</ref> For each LiÀM alloy, three compositions were selected to analyze the structural variations as the Li content increases from y = 1 to 1.67 to 3.57. The amorphous structures are characterized using the pair distribution function (PDF, g(r)), which is defined as <ref type="bibr" target="#b48">47</ref> gðrÞ ¼</p><p>V N nðrÞ 4πr 2 Δr where n(r) represents particles in a shell within the region r ( Δr/2, Δr is the shell thickness, and N denotes the number of particles in the model volume V.</p><p>For the PDFs presented in Figure <ref type="figure" target="#fig_7">6</ref>, five independent 64-atom samples were used for each composition to obtain good statistics. In contrast to the typical sharp lines found in crystalline materials, the PDF peaks of Li y M alloys are smoother and more broadened while no long-range order can be identified, indicating an amorphous nature. Looking at the first peak intensities, we find that the LiÀM and LiÀLi peaks become stronger while the MÀM peaks dwindle as the Li content increases. We also notice that, with increasing Li content, the MÀM peak positions shift to larger pair distances, whereas the opposite trends are found for the LiÀLi peaks. The increased MÀM pair distance is indicative of the weakened MÀM interaction; note that transferred charge from Li fills up the antibonding states of the host elements and thereby weakens the MÀM bonds even at low Li contents, as discussed in ref 30. In Figure <ref type="figure" target="#fig_7">6</ref>, upper right-hand corner, the average coordination numbers (CNs) were calculated based on integration of the first peak of g(r) with the corresponding cut-off radius (first peak minimum) in parentheses. As the Li content (y) increases from 1 to 3.57, the CN MÀM decreases while the CN LiÀM and CN LiÀLi increase (CN SiÀSi , 3.1 to 0.5; CN GeÀGe , 3.0 to 0.8; CN SnÀSn , 3.1 to 0.5). The decrease in CN MÀM indicates that the host lattice gradually loses its connectivity, whereas the LiÀM alloys become more densely packed with the increasing Li content, as is evident by the increasing CN LiÀM and CN LiÀLi .</p><p>On the basis of the model structures, the variations in volume (V) as a function of Li content (y) were calculated (Figure <ref type="figure" target="#fig_9">7</ref>); the volume of each alloy is normalized with respect to that of the pure host matrix. For both amorphous and crystalline phases, V increases nearly linearly with y, and the crystalline phases are slightly denser than the amorphous counterparts as expected. At highly lithiated states, the predicted volume expansions for amorphous (crystalline) phases in the order from small to large is Li 4.33 Sn, 305 (259)%; Li 4.33 Ge, 382 (353)%; and Li 4.33 Si, 434 (399)%, which are in good agreement with the previous experimental measurements of Li 4.4 Sn, 260%; 5 Li 4.4 Ge, 370%; 4 and Li 4.4 Si, 400%. <ref type="bibr" target="#b2">3</ref> LiÀSn alloys have the lowest volume expansion because Sn can accommodate Li more easily due to its flexible matrix and larger interstitial space (recall the discussion in section 3.A.1).</p><p>2. Electronic and Mechanical Properties. We calculated the charge states of crystalline LiÀM alloys with selected Li contents using the Bader method <ref type="bibr" target="#b32">31</ref> (Table <ref type="table" target="#tab_4">4</ref>). These crystalline phases are generally understood to be Zintl-like phases <ref type="bibr" target="#b49">48</ref> with the consideration that only a partial charge is transferred from Li (Si, Ge, or Sn is not electronegative enough to completely strip off the outer Because of the variation in cluster configuration, the former has a À3.30 charge state (each Li donates 0.82e) and the latter has a À2.46 charge state (each Li donates 0.82e). We see that the Li charge state remains nearly unchanged (+0.82 ∼ +0.84), whereas the charge state of M varies with the local LiÀM and MÀM coordinations. With the increasing net charge transfer in the higher lithiated phases, the filling of the host element antibonding p states leads to significant sÀp splitting (ref 49), weakened MÀM bonds, and, consequently, the fragmentation/disintegration of the host lattice.</p><p>As the MÀM covalent bonds are replaced with more ionic LiÀM bonds in LiÀM alloys of higher Li contents, we expect to see a decrease in the modulus since LiÀM and LiÀLi bonds are weaker compared to MÀM covalent bonds. To evaluate the effect of Li content on the mechanical properties, we calculated the elastic constants of several crystalline phases of selected Li contents. Elastic constants, C ij , can be obtained by computing the energies of deformed unit cells; the deformation strain tensor, e, with six independent components is represented as Self-consistent relaxation is allowed in all strained unit cells, and the total energy change with respect to the strain tensor gives <ref type="bibr" target="#b51">50,</ref><ref type="bibr" target="#b52">51</ref> EðeÞ</p><formula xml:id="formula_3">¼ E 0 À PðV ÞΔV þ V 2 ∑ ij C ij e i e j þ O e 3 Â Ã</formula><p>where E 0 and E(e) are the internal energies of the initial and strained lattices, respectively; V is the volume of the unstrained lattice; P(V) is the pressure of the undistorted lattice at volume V; ΔV is the change in the volume of the lattice due to the strain; e is the strain tensor; and O[e 3 ] indicates the neglected terms in the polynomial expansion. Table <ref type="table" target="#tab_5">5</ref> summarizes the parametrizations <ref type="bibr" target="#b51">50,</ref><ref type="bibr" target="#b52">51</ref> of the strains applied with the strain value, γ ranging from À0.01 to 0.01 in 0.003 increments. The calculation of the elastic constant requires a high degree of precision because the energy variation involved is very small; hence, the geometry optimization was performed at a higher cut-off energy of 500 eV and a tighter force tolerance of 0.001 eV. Once C ij values are known, mechanical quantities, such as Poisson's ratio and Young's, bulk, and shear moduli, can be calculated. Here, we only report the bulk modulus B, of particular interest for the purpose of our study, that is given by B = 1/9(C 11 + C 22 + C 33 + 2C 12 + 2C 13 + 2C 23 ). The computed elastic constants and bulk moduli are summarized in Table <ref type="table" target="#tab_6">6</ref>. The calculated B(c-SiLi) = 64.78 GPa and B(c-Si 15 Li 4 ) = 32.36 GPa are in good agreement with the previously reported calculated    The Journal of Physical Chemistry C ARTICLE values of 53.0 and 30.0 GPa, respectively. <ref type="bibr" target="#b53">52</ref> For a given Li content, LiÀGe and LiÀSn alloys tend to be softer than the LiÀSi alloy.</p><p>Clearly, the bulk modulus decreases with increasing Li content, leading to significant elastic softening, which is consistent with our expectation from the analysis of the LiÀM bonding nature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">CONCLUSION</head><p>On the basis of DFT-GGA calculations (LDA was also used in some selected cases for comparison), comparative analyses were carried out to study the behavior and nature of Li incorporation in different host materials, M (M = Si, Ge, and Sn). Crystalline and amorphous LiÀM alloys were then examined in terms of their energetics, structural evolution, and electronic and mechanical properties. The lattice disturbance associated with Li insertion is significant in Si, but minimal in Sn, due to its relatively larger interstitial space and softer matrix, and thus Li incorporation is found to be the most (least) favorable in Sn (Si). The electronic structure analysis highlights the charge transfer from Li to M, and using the grid-based Bader analysis, the amounts of electron donation were estimated to be 0.83e (Si), 0.85e (Ge), and 0.87e (Sn). These transferred charges can fill the host element antibonding states, leading to the weakened MÀM bonds. Also associated with the cationic nature of Li, electrons in the host are redistributed toward Li; as the excess charges are more localized (farther spread) in Si (Sn), the charge screening/ shielding effect is the strongest (weakest) in Si (Sn). Li atoms inside the host materials can easily undergo migration by overcoming small-to-moderate barriers of 0.39 eV (Sn), 0.44 eV (Ge), and 0.62 eV (Si), and owing to the Li + ÀLi + repulsive interaction, which is the strongest in Si and the weakest in Sn, Li interstitials have a strong tendency to remain isolated and well dispersed in the hosts. According to our mixing enthalpy calculations, alloying between Li and M is energetically favorable with the most stable compositions occurring between 60 and 80 at. % Li. LiÀSn alloys are more stable than LiÀGe and LiÀSi alloys, and when fully lithiated, the volume expansion for the amorphous (crystalline) alloys are Si, 434%; Ge, 382%; and Sn, 305% (Si, 399%; Ge, 353%; and Sn, 259%), respectively. From the structure and grid-based Bader charge analyses, we see that the coordination and bonding of M atoms in crystalline LiÀM phases generally reflect what is to be expected by Zintl rules. Furthermore, with the increase in Li content, the host network disintegrates as the covalent MÀM bonds are replaced by the weaker ionic LiÀM and metallic LiÀLi bonds, leading to the softening of LiÀM alloys at highly lithiated states, as demonstrated by our mechanical property calculations. These fundamental findings add to the understanding of the nature of Li incorporation and alloying with Si, Ge, and Sn; moreover, the present work may provide a framework for the comparative study of various lithiated alloys. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>dx.doi.org/10.1021/jp205484v |J. Phys. Chem. C 2011, 115, 20018-20026</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>dx.doi.org/10.1021/jp205484v |J. Phys. Chem. C 2011, 115, 20018-20026</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Charge gain (per atom) for the first, second, third, and fourth nearest neighbors in Si, Ge, and Sn. The amount of charge gain is estimated using grid-based Bader charge analysis.</figDesc><graphic coords="4,77.56,363.01,189.52,117.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Variation in relative total energy (ΔE t ) as a function of LiÀLi distance with respect to Li interstitials at a relatively large separation distance (∼7th neighbor distance). The square, triangle, and circle markers represent calculated ΔE t values (Cal.) in Si, Ge, and Sn, respectively, while the curve lines represent the estimated ΔE t values using the Coulomb relation (V C ). Markers in red (blue and green) represent ΔE t induced by Li interstitials separated by the 1st (2nd and 3rd) nearest T-site distance, as shown in inset (a) ((b) and (c)), where Li and host atoms are represented by red and white balls, respectively.Figure 1. Electron density of states (DOS) for Si, Ge, and Sn without Li (left) and with Li (right). The vertical dotted line indicates the Fermi level (ε F ) position.</figDesc><graphic coords="4,53.86,67.64,236.98,231.08" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 1 .</head><label>1</label><figDesc>Figure 3. Variation in relative total energy (ΔE t ) as a function of LiÀLi distance with respect to Li interstitials at a relatively large separation distance (∼7th neighbor distance). The square, triangle, and circle markers represent calculated ΔE t values (Cal.) in Si, Ge, and Sn, respectively, while the curve lines represent the estimated ΔE t values using the Coulomb relation (V C ). Markers in red (blue and green) represent ΔE t induced by Li interstitials separated by the 1st (2nd and 3rd) nearest T-site distance, as shown in inset (a) ((b) and (c)), where Li and host atoms are represented by red and white balls, respectively.Figure 1. Electron density of states (DOS) for Si, Ge, and Sn without Li (left) and with Li (right). The vertical dotted line indicates the Fermi level (ε F ) position.</figDesc><graphic coords="4,337.49,67.41,195.65,144.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Variation in mixing enthalpy for amorphous and crystalline LiÀM alloys as a function of Li content (x) in Li x M 1Àx .</figDesc><graphic coords="5,341.12,67.64,188.45,315.61" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. (a) Li diffusion pathway in Si, Ge, or Sn with the barrier values shown in the inset. Li jumps between two adjacent local minima (T; T-site) via a transition state (TS; H-site). (b) Li diffusion pathway under the influence of an adjacent Li atom. The black (red) and gray (white) balls represent Li and the host atoms, respectively.</figDesc><graphic coords="5,107.66,67.64,129.37,235.73" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Pair distribution functions g(r) for Li y M alloys (M = Si, Ge, Sn; y = 1, 1.67, and 3.57). For each plot, the average coordination number with the corresponding cut-off radius in parentheses is shown in the upper right-hand corner.</figDesc><graphic coords="6,148.76,67.64,310.17,232.61" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>e 1 = 2 2 e 1 = 2 2 e 1 = e 2 = 2 3 e 1 =4 e 1 = γ 1 /2C 11 γ 2 5 e 3 = γ 1 /2C 33 γ 2 6</head><label>121212211212</label><figDesc>e 2 = γ, e 3 = (1 + γ) À2 À 1 3(C 11 À C 12 )γ e 2 = e 3 = γ 3/2(C 11 + 2C 12 )γ 2 3 e 6 = γ, e 3 = γ 2 (4 À γ 2 ) À1 1/2C 44 γ 2 tetragonal phase 1 e 1 = 2γ, e 2 = e 3 = Àγ 1/2(5C 11 À 4C 12 À 2C 13 + C 33 )γ Àγ, e 3 = 2γ (C 11 + C 12 À 4C 13 + 2C 33 )γ e 2 = γ, e 3 = À2γ, e 6 = 2γ (C 11 + C 12 À 4C 13 + 2C 33 + 2C 66 )γ2 e 4 = 2γ 2C 44 γ 2</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Variation in volume as a function of Li content (y). The volume of each alloy is normalized with respect to its pure phase. For amorphous phases, five independent 64-atom samples were used for each composition to obtain good statistics.</figDesc><graphic coords="7,67.01,67.64,210.67,161.63" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 2 .</head><label>2</label><figDesc>Formation Energies (E f ) of Interstitial Li at the Tetrahedral Site in Crystalline Si, Ge, and Sn Host Lattices (216-Atom Cubic Cells) with Respect to Body-Centered Cubic Li and the Crystalline Host, Together with First-and Second-Nearest-Neighbor (NN) Displacements (Δ) Calculated with (relax V.) and without (fix V.) Relaxing the Cell Volume a</figDesc><table><row><cell>Si</cell><cell>fix V.</cell><cell>0.403</cell><cell>0.086</cell><cell>0.022</cell></row><row><cell></cell><cell>relax V.</cell><cell>0.401</cell><cell>0.084</cell><cell>0.020</cell></row><row><cell>Ge</cell><cell>fix V.</cell><cell>À0.274 (À0.226)</cell><cell>0.088 (0.080)</cell><cell>0.024 (0.025)</cell></row><row><cell></cell><cell>relax V.</cell><cell>À0.285 (À0.221)</cell><cell>0.091 (0.079)</cell><cell>0.027 (0.024)</cell></row><row><cell>Sn</cell><cell>fix V.</cell><cell>À0.491(À0.544)</cell><cell>0.079 (0.078)</cell><cell>0.023 (0.019)</cell></row><row><cell></cell><cell>relax V.</cell><cell>À0.573 (À0.543)</cell><cell>0.085 (0.077)</cell><cell>0.025 (0.018)</cell></row></table><note><p><p>E f (eV) Δ, 1st NN (Å) Δ, 2nd NN (Å)</p>a Values calculated considering d electrons are in parentheses.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Calculated Lattice Constants (a) and Bulk Moduli (B) for Si, Ge, and Sn; Values Calculated Considering d Electrons Are in Parentheses</figDesc><table><row><cell></cell><cell>lattice constant,</cell><cell>bulk modulus, B</cell></row><row><cell></cell><cell>a (Å)</cell><cell>(GPa)</cell></row><row><cell></cell><cell>GGA 5.475, 5.465 27</cell><cell>91.3, 87.9 27</cell></row><row><cell>Si: 3s 2 3p 2</cell><cell>LDA 5.402, 5.398 27</cell><cell>95.8, 96.2 27</cell></row><row><cell></cell><cell>exptl 5.43 28</cell><cell>98.0 28</cell></row><row><cell></cell><cell cols="2">GGA 5.779 (5.758), 5.780 27 57.0 (60.4), 55.9 27</cell></row><row><cell>Ge: 4s 2 4p 2 (3d 10 4s 2 4p 2 )</cell><cell cols="2">LDA 5.650 (5.615), 5.531 27 69.5 (68.9), 73.3 27</cell></row><row><cell></cell><cell>exptl 5.66 28</cell><cell>75 28</cell></row><row><cell></cell><cell cols="2">GGA 6.645 (6.647), 6.738 29 36.6 (34.5), 30.8 29</cell></row><row><cell>Sn: 5s 2 5p 2 (4d 10 5s 2 5p 2 )</cell><cell cols="2">LDA 6.510 (6.429), 6.462 29 45.6 (37.4), 43.2 29</cell></row><row><cell></cell><cell>exptl 5.83 28</cell><cell>42.6 28</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Crystallographic Parameters for LiÀM (M = Si, Ge, Sn) Intermetallic Compounds (Reported in the Literature) with Experimental Values in Parentheses a</figDesc><table><row><cell></cell><cell>space group</cell><cell>lattice constants (Å)</cell><cell>#Li/#M</cell><cell>k-point mesh</cell></row><row><cell>Li</cell><cell>Im3m</cell><cell>3.438 (3.513) 28</cell><cell>16/0</cell><cell>α</cell></row><row><cell>LiSi</cell><cell>I4 1 /a</cell><cell>a = 9.353 (9.353), c = 5.753 (5.743) 39</cell><cell>8/8</cell><cell>β</cell></row><row><cell>Li 12 Si 7</cell><cell>Pnma</cell><cell>a = 8.546 (8.60), b = 19.665 (19.755), c = 14.327 (14.336) 40</cell><cell>96/56</cell><cell>γ</cell></row><row><cell>Li 7 Si 3</cell><cell>R3m</cell><cell>a = 4.3973 (4.435), c = 17.928 (18.134), γ = 120 (120) 41</cell><cell>40/16</cell><cell>β</cell></row><row><cell>Li 13 Si 4</cell><cell>Pbam</cell><cell>a = 7.920 (7.99), b = 15.106 (15.21), c = 4.442 (4.49) 41</cell><cell>26/8</cell><cell>β</cell></row><row><cell>Li 15 Si 4</cell><cell>I43d</cell><cell>10.623 (10.6857) 42</cell><cell>60/16</cell><cell>β</cell></row><row><cell>Li 22 Si 5</cell><cell>F23</cell><cell>18.651 (18.75) 41</cell><cell>88/20</cell><cell>γ</cell></row><row><cell>LiGe</cell><cell>I4 1 /a</cell><cell>a = 9.846 (9.75), c = 5.810 (5.78) 43</cell><cell>16/16</cell><cell>β</cell></row><row><cell>Li 7 Ge 2</cell><cell>Cmmm</cell><cell>a = 8.179 (9.24), b = 15.135 (13.21), c = 4.508 (4.63) 43</cell><cell>28/8</cell><cell>β</cell></row><row><cell>Li 15 Ge 4</cell><cell>I43d</cell><cell>10.698 (10.72) 43</cell><cell>60/16</cell><cell>β</cell></row><row><cell>Li 22 Ge 5</cell><cell>F23</cell><cell>18.859 (18.87) 43</cell><cell>88/20</cell><cell>β</cell></row><row><cell>Li 2 Sn 5</cell><cell>P4/mbm</cell><cell>a = 10.460 (10.274), c = 3.080 (3.125) 44</cell><cell>4/10</cell><cell>β</cell></row><row><cell>LiSn</cell><cell>P2/m</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>75) 45</cell><cell>28/8</cell><cell>β</cell></row><row><cell>Li 22 Sn 5</cell><cell>F23</cell><cell>19.660 (19.78) 45</cell><cell>88/20</cell><cell>α</cell></row></table><note><p>a = 5.197 (5.17), b = 7.856 (7.74), c = 3.121 (3.18), β = 104.5 (104.5) 45 3/3 β Li 7 Sn 3 P2 1 /m a = 9.44 (9.45), b = 8.53 (8.56), c = 4.71 (4.72), γ = 105.95 (105.95) 45 14/6 β Li 13 Sn 5 P3m1 a = 4.69 (4.74), c = 17.04 (17.12), γ = 120 (120) 45 13/5 β Li 7 Sn 2 Cmmm a = 8.578 (9.8), b = 15.996 (13.8), c = 4.714 (4.a Calculated reference values are taken from refs 40 and 42. α = 11 Â 11 Â 11, β = 5 Â 5 Â 5, and γ = 3 Â 3 Â 3. dx.doi.org/10.1021/jp205484v |J. Phys. Chem. C 2011, 115, 20018-20026</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head></head><label></label><figDesc>For cubic phases (LiGe, Li 15 Si 4 , and Li 15 Ge 4 ), orthorhombic, isotropic, and monoclinic distortions were applied to obtain three independent elastic constants, C 11 , C 12 , and C 44 (expressed using Voigt notations). For tetragonal phases (LiSi, Li 2 Sn 5 , and Li 7 Sn 2 ), six independent deformation modes were applied to calculate C 11 , C 12 , C 13 , C 33 , C 44 and C 66 .</figDesc><table><row><cell>e ¼</cell><cell>0 B B @</cell><cell>e 1 e 6 =2</cell><cell cols="2">e 6 =2 e 5 =2 e 2 e 4 =2</cell><cell>1 C C A</cell></row><row><cell></cell><cell></cell><cell cols="2">e 5 =2 e 4 =2</cell><cell>e 3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 4 .</head><label>4</label><figDesc>Calculated Charge States of Li and M in Crystalline LiÀM Alloys Using Grid-Based Bader Charge Analysis element/phase LiSi LiGe LiSn Li 15 Si 4 Li 15 Ge 4 Li 7 Sn 2 In Li 15 Si 4 and Li 15 Ge 4 , each atom (Si or Ge) has 12 Li neighbors. b In Li 7 Si 2 , two different clusters are present: Sn with 14 Li neighbors, and Sn with 12 Li plus 1 Sn neighbors.</figDesc><table><row><cell>Si, Ge, Sn</cell><cell>À0.84 À0.84 À0.85 À3.08 À3.08 a À3.30/À2.46 b</cell></row><row><cell>Li</cell><cell>+0.84 +0.84 +0.85 +0.82 +0.82 +0.82</cell></row></table><note><p>a</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 5 .</head><label>5</label><figDesc>Parameterizations of the Strains Applied to Calculate Elastic Constants of Cubic LiGe, Li 15 Si 4 , and Li 15 Ge 4 , and Tetragonal LiSi, Li 2 Sn 5 , and Li 7 Sn 2</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 6 .</head><label>6</label><figDesc>Calculated Elastic Constants and Bulk Moduli for Crystalline LiÀSi, LiÀGe, and LiÀSn Alloys; Values Calculated by Others Are in Parentheses 52</figDesc><table><row><cell>phases</cell><cell>C 11</cell><cell>C 33</cell><cell>C 12</cell><cell>C 13</cell><cell>C 44</cell><cell>C 66</cell><cell>B (GPa)</cell></row><row><cell>LiSi</cell><cell>109.0 (101.16)</cell><cell>71.7 (74.506)</cell><cell>24.9 (20.645)</cell><cell>39.0 (37.343)</cell><cell>54.6 (55.435)</cell><cell>37.9 (36.000)</cell><cell>55.1</cell></row><row><cell>LiGe</cell><cell>72.1</cell><cell>43.5</cell><cell>27.2</cell><cell>30.5</cell><cell>23.8</cell><cell>13.9</cell><cell>40.4</cell></row><row><cell>Li 2 Sn 5</cell><cell>96.4</cell><cell>136.4</cell><cell>111.9</cell><cell>28.8</cell><cell>112.8</cell><cell>9.3</cell><cell>74.2</cell></row><row><cell>Li 15 Si 4</cell><cell>55.9 (46.644)</cell><cell></cell><cell>20.6 (21.907)</cell><cell></cell><cell>33.9 (28.019)</cell><cell></cell><cell>32.4</cell></row><row><cell>Li 15 Ge 4</cell><cell>43.1</cell><cell></cell><cell>19.8</cell><cell></cell><cell>31.0</cell><cell></cell><cell>27.6</cell></row><row><cell>Li 7 Si 2</cell><cell>61.5</cell><cell>88.6</cell><cell>22.1</cell><cell>3.3</cell><cell>63.3</cell><cell>40.9</cell><cell>29.9</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>dx.doi.org/10.1021/jp205484v |J. Phys. Chem. C 2011, 115, 20018-20026</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sohn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Soc. Rev</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">3115</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Power Sources</title>
+		<imprint>
+			<biblScope unit="volume">196</biblScope>
+			<biblScope unit="page">13</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">U</forename><surname>Kasavajjula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J J</forename><surname>Appleby</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Power Sources</title>
+		<imprint>
+			<biblScope unit="page">1003</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nano Lett</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">307</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Winter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Besenhard</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Electrochim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">31</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Netz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Huggins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Weppner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Power Sources</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page">119</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bourderau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Brousse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M J</forename><surname>Schleich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Power Sources</title>
+		<imprint>
+			<biblScope unit="volume">233</biblScope>
+			<biblScope unit="page">81</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">D</forename><surname>Hatchard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page">838</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sinha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fleming</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Mater</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">816</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Graetz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Yazami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fultz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electrochem. Solid-State Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">A194</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mcilwrath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Huggins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Nanotechnol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">31</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Beaulieu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Hewitt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bonakdarpour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Abdo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Christensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Eberman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">150</biblScope>
+			<biblScope unit="page">149</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Turner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Courtney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Fredericksen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Buckett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Krause</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electrochem. Solid-State Lett</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">3</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Fleischauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Topple</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electrochem. Solid-State Lett</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">137</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Beaulieu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">D</forename><surname>Hatchard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bonakdarpour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Fleischauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Dahn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">150</biblScope>
+			<biblScope unit="page">1457</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Lithium Batteries Science and Technology</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Nazri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pistoia</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<publisher>Kluwer Academic Plenum</publisher>
+			<pubPlace>Boston</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Anani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Crouch-Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Huggins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page">3098</biblScope>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Graetz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Yazami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fultz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page">698</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Lide</surname></persName>
+		</author>
+		<title level="m">CRC Handbook of Chemistry and Physics</title>
+		<meeting><address><addrLine>Boca Raton, FL</addrLine></address></meeting>
+		<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">14</biblScope>
+		</imprint>
+	</monogr>
+	<note>th ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Blochl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">17953</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hafner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">558</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Furthmuller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Comput. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">15</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kresse</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Furthmuller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page">11169</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Monkhorst</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Pack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page">5188</biblScope>
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rahman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page">405</biblScope>
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Henkelman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">U</forename><surname>Blas</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hannes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="page">113</biblScope>
+			<date type="published" when="2000">2000. 9901</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S.-H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Hwang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page">224710</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">D</forename><surname>Murnaghan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. U.S.A</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">244</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Q</forename><surname>Ye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys.: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">L197</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">I</forename><surname>Gersten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">W</forename><surname>Smith</surname></persName>
+		</author>
+		<title level="m">The Physics and Chemistry of Materials</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley &amp; Sons, Inc</publisher>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page">23</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aguado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">212104</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Kweon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Ekertdt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S J</forename><surname>Hwang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. C</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">17942</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Henkelman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arnaldsson</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Onsson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">H. Comput. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">254</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Physics of Semiconductor Devices</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Sze</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1981">1981</date>
+			<publisher>John Wiley and Sons, Inc</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">A</forename><surname>Kasir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Soc. Jpn</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">1025</biblScope>
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Maranchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Hepp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">N</forename><surname>Kumta</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Electrochem</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Solid-State Lett</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">A198</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Limthongkul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-I</forename><surname>Jang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Dudney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Mater</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">1103</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Limthongkul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-I</forename><surname>Jang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Dudney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Power Sources</title>
+		<imprint>
+			<biblScope unit="volume">604</biblScope>
+			<biblScope unit="page">119</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Mo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Pei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Solid State Ionics</title>
+		<imprint>
+			<biblScope unit="volume">135</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Seo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">T</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Cho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Energy Environ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">425</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Stearns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gryko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Diefenbacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Ramachandran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">F J</forename><surname>Mcmillan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Solid State Chem</title>
+		<imprint>
+			<biblScope unit="volume">173</biblScope>
+			<biblScope unit="page">251</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>B€ Ohm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ramirez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nesper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">G</forename><surname>Schnering</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page">4870</biblScope>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Alloy Phase Diagrams</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Okamoto</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Bull</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1990">1990</date>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">306</biblScope>
+		</imprint>
+	</monogr>
+	<note>references cited therein</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kubota</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C S</forename><surname>Escao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Nakanishi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kasai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">53704</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sangster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D J</forename><surname>Pelton</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Phase</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Equilib</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">118</biblScope>
+		</imprint>
+	</monogr>
+	<note>and references cited therein</note>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Hansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Chang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Crystallogr., Sect. B</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">2392</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sangster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W J</forename><surname>Bale</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Phase</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Equilib</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="volume">19</biblScope>
+		</imprint>
+	</monogr>
+	<note>70 and references cited therein</note>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">N</forename><surname>Seefurth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Electrochem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="page">1763</biblScope>
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<title level="m" type="main">Computer Simulation of Liquids</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Tildesley</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987">1987</date>
+			<publisher>Oxford University Press</publisher>
+			<biblScope unit="page">54</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Kauzlarich</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Chemistry</surname></persName>
+		</author>
+		<title level="m">Structure, and Bonding of Zintl Phases and Ions</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley-VCH Publishers</publisher>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Ekerdt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Hwang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">2514</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title level="m" type="main">Intermetallic Compounds: Principles and Practice</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Mehl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Papaconstantopoulos</surname></persName>
+		</author>
+		<editor>Westbrook, J. H., Fleischer, R. L.</editor>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<publisher>John Wiley and Sons</publisher>
+			<biblScope unit="volume">I</biblScope>
+			<biblScope unit="page">195</biblScope>
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><surname>Beckstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Klepeis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L W</forename><surname>Hart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Pankratov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B: Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page">1341121</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">B</forename><surname>Shenoy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Johari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Qi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Power Sources</title>
+		<imprint>
+			<biblScope unit="volume">195</biblScope>
+			<biblScope unit="page">6825</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

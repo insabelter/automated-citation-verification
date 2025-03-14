@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+				<funder ref="#_Kg3zVjX #_NNbP59c #_TE6UjEd #_xvFbURu #_tsTAfXZ #_MZMBNUm">
+					<orgName type="full">Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Muhammad</forename><forename type="middle">Aamir</forename><surname>Ali</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Hüseyin</forename><surname>Budak</surname></persName>
+							<email>hsyn.budak@gmail.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Abdullah</forename><surname>Akkurt</surname></persName>
+							<email>abdullahmat@gmail.com</email>
+						</author>
+						<author>
+							<persName><forename type="first">Yu-Ming</forename><surname>Chu</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematical Sciences</orgName>
+								<orgName type="laboratory">Jiangsu Key Laboratory for NSLSCS</orgName>
+								<orgName type="institution">Nanjing Normal University</orgName>
+								<address>
+									<settlement>Nanjing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Mathematics</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Arts</orgName>
+								<orgName type="institution">Düzce University</orgName>
+								<address>
+									<settlement>Düzce</settlement>
+									<country key="TR">Turkey</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Mathematics</orgName>
+								<orgName type="department" key="dep2">Faculty of Science and Arts</orgName>
+								<orgName type="institution">Kahramanmaraş Sütçü İmam University</orgName>
+								<address>
+									<settlement>Kahramanmaraş</settlement>
+									<country key="TR">Turkey</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Mathematics</orgName>
+								<orgName type="institution">Huzhou University</orgName>
+								<address>
+									<postCode>313000</postCode>
+									<settlement>Huzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">4EB735053AD81A6AD0C255B7B2F34EED</idno>
+					<idno type="DOI">10.1515/math-2021-0020</idno>
+					<note type="submission">received December 27, 2020; accepted January 29, 2021</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:48+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Ostrowski inequality</term>
+					<term>q-integral</term>
+					<term>quantum calculus</term>
+					<term>convex function MSC</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this paper, we first prove an identity for twice quantum differentiable functions. Then, by</p><p>2 , we establish some quantum Ostrowski inequalities for twice quantum differentiable mappings involving q a and q b -quantum integrals. The results presented here are the generalization of already published ones.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>The study of various types of integral inequalities has been the focus of great attention for well over a century by a number of mathematicians, interested in both pure and applied mathematics. One of the many fundamental mathematical discoveries of Ostrowski <ref type="bibr" target="#b0">[1]</ref> is the following classical integral inequality associated with the differentiable mappings: is the best possible.</p><p>Ostrowski inequality has applications in quadrature, probability and optimization theory, stochastic, statistics, information, and integral operator theory. During the past few years, a number of scientists have focused on Ostrowski-type inequalities for function of bounded variation, see, for example, <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>, <ref type="bibr">[12, pp. 468-484]</ref>. Until now, a large number of research papers and books have been written on Ostrowski inequalities and their numerous applications.</p><p>On the other hand, many studies have recently been carried out in the field of q-analysis, starting with Euler due to a high demand for mathematics that models quantum computing q-calculus appeared as a connection between mathematics and physics. It has several applications in different mathematical areas such as number theory, combinatorics, orthogonal polynomials, basic hypergeometric functions, and other sciences, quantum theory, mechanics, and the theory of relativity <ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref>. Apparently, Euler was the founder of this branch of mathematics, by using the parameter q in Newton's work on infinite series. Later, Jackson was the first to develop q-calculus that knows without limit calculus in a systematic way <ref type="bibr" target="#b12">[13]</ref>.</p><p>In 1908-1909, Jackson defined the general q-integral and q-difference operator <ref type="bibr" target="#b14">[15]</ref>. In 1969, Agarwal described the q-fractional derivative for the first time [17]. In 1966-1967, Al-Salam introduced a q-analogue of the Riemann-Liouville fractional integral operator and the q-fractional integral operator [18]. In 2004, Rajkovic et al. <ref type="bibr" target="#b18">[19]</ref> gave a definition of the Riemann-type q-integral that generalized the Jackson q-integral. In 2013, Tariboon and Ntouyas introduced the D q a -difference operator <ref type="bibr" target="#b19">[20]</ref>. Recently, in 2020, <ref type="bibr">Bermudo et al.</ref> introduced the notion of D q b derivative and integral <ref type="bibr" target="#b20">[21]</ref>. Many well-known integral inequalities such as Hölder inequality, Hermite-Hadamard inequalities, Ostrowski inequality, Cauchy-Bunyakovsky-Schwarz inequality, Gruss inequality, Gruss-Cebyšev inequality, and other integral inequalities have been studied in the setup of q-calculus using the concept of classical convexity. For more results in this direction, the readers may refer to <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref><ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref><ref type="bibr" target="#b37">[38]</ref>.</p><p>2 Preliminaries of q-calculus and some inequalities</p><p>In this section, we first present some known definitions and related inequalities in q-calculus. Set the follow- ing notation (see <ref type="bibr" target="#b15">[16]</ref>):</p><formula xml:id="formula_0">[ ] = - - = + + +⋯+ ∈ ( ) - n q q q q q q 1 1 1 , 0 , 1 . q n n 2 1</formula><p>Jackson <ref type="bibr" target="#b14">[15]</ref> defined the q-Jackson integral of a given function f from 0 to b as follows:</p><formula xml:id="formula_1">∫ ∑ ( ) = ( -) ( ) &lt; &lt; = ∞ f x d x q b q f bq q 1</formula><p>, where 0</p><formula xml:id="formula_2">1 b q n n n 0 0 (2.1)</formula><p>provided that the sum converges absolutely.</p><p>Jackson <ref type="bibr" target="#b14">[15]</ref> defined the q-Jackson integral of a given function over the interval [ ] a b</p><p>, as follows:</p><formula xml:id="formula_3">∫ ∫ ∫ ( ) = ( ) - ( ) f x d x f x d x f x d x. a b q b q a q 0 0 Definition 2.1. [20] Let [ ] → f a b</formula><p>: , be a continuous function. The q a -derivative of f at ∈ [ ] x a b , is identified by the following expression:</p><formula xml:id="formula_4">( ) = ( ) -( + ( -) ) ( -)( -) ≠ D f x f x f qx q a q x a x a 1 1 , . q a (2.2) Since [ ] → f a b</formula><p>: , is a continuous function, we can define</p><formula xml:id="formula_5">( ) = ( ) → D f a D f x lim . q a</formula><p>x a q a</p><p>The function f is said to be q</p><formula xml:id="formula_6">a -differentiable on [ ] a b , if ( ) D f x q a exists for all ∈ [ ] x a b , . If we take = a 0 in (2.2), then we have ( ) = ( ) D f x D f x q q 0 , where ( ) D f x q is a known q-derivative of f at ∈ [ ] x</formula><p>a b , (see <ref type="bibr" target="#b15">[16]</ref>) given by</p><formula xml:id="formula_7">( ) = ( ) -( ) ( -) ≠ D f x f x f qx q x x 1 , 0. q Definition 2.2. [21] Let [ ] → f a b : , be a continuous function. The q b -derivative of f at ∈ [ ] x</formula><p>a b , is given by</p><formula xml:id="formula_8">( ) = ( + ( -) ) -( ) ( -)( -) ≠ D f x f qx q b f x q b x x b 1 1 , . q b Definition 2.3. Let [ ] → f a b : , be a continuous function. The second q b -derivative of f at ∈ [ ] x a b</formula><p>, is given by</p><formula xml:id="formula_9">( + ( -) ) = ( ( + ( -) )) = ( + ( - ) ) -( + ) ( + ( -) ) + ( + ( -) ) ( -) ( -) D f ta t b D D f ta t b f q ta tq b q f qta qt b qf ta t b q q b a t 1 1 1 1 1 1 1 . q b q b q b 2 2 2 2 22 Definition 2.4. [20] Let [ ] → f a b</formula><p>: , be a continuous function. Then, the q a -definite integral on [ ] a b</p><p>, is defined by</p><formula xml:id="formula_10">∫ ∫ ∑ ( ) = ( -)( -) ( + ( -) ) = ( -) (( -) + ) = ∞ f x d x q b a q f q b q a b a f t a tb d t 1 1 1 . a b q a n n n n q 0 0 1</formula><p>Alp et al. <ref type="bibr" target="#b25">[26]</ref> proved the following q a -Hermite-Hadamard inequalities for convex functions in the setting of quantum calculus:</p><formula xml:id="formula_11">Theorem 2.5. If [ ] → f a b : , is a convex differentiable function on [ ] a b</formula><p>, and &lt; &lt; q 0 1, then we have</p><formula xml:id="formula_12">      ∫ + [ ] ≤ - ( ) ≤ ( ) + ( ) [ ] f qa b b a f x d x qf a f b 2 1 2 . q a b q a q (2.3)</formula><p>In <ref type="bibr" target="#b25">[26]</ref> and <ref type="bibr" target="#b38">[39]</ref>, the authors established some bounds for the left-and right-hand sides of the inequality (2.3).</p><p>On the other hand, in <ref type="bibr" target="#b20">[21]</ref>, Bermudo et al. gave the following definition and obtained the related Hermite-Hadamard-type inequalities:</p><formula xml:id="formula_13">Definition 2.6. [21] Let [ ] → f a b : , be a continuous function. Then, the q b -definite integral on [ ] a b</formula><p>, is given by</p><formula xml:id="formula_14">∫ ∫ ∑ ( ) = ( -)( -) ( + ( -) ) = ( -) ( + ( -) ) = ∞ f x d x q b a q f q a q b b a f ta t b d t 1 1 1 . a b q b n n n n q 0 0 1 Theorem 2.7. [21] If [ ] → f a b : , is a convex differentiable function on[ ] a b</formula><p>, and &lt; &lt; q 0 1, then, q-Hermite-Hadamard inequalities are given as follows:</p><formula xml:id="formula_15">      ∫ + [ ] ≤ - ( ) ≤ ( ) + ( ) [ ] f a qb b a f x d x f a qf b 2 1 2 . q a b q b q (2.4)</formula><p>From Theorems 2.5 and 2.7, one can obtain the following inequalities: : , and &lt; &lt; q 0 1, we have</p><formula xml:id="formula_16">                      ∫ ∫ + [ ] + + [ ] ≤ - ( ) + ( ) ≤ ( ) + ( ) f qa b f a qb b a f x d x f x d x f a f b 2 2 1 q q a b q a a b q b (2.5) and                 ∫ ∫ + ≤ ( -) ( ) + ( ) ≤ ( ) + ( ) f a b b a f x d x f x d x f a f b 2 1 2 2 . a b q a a b q b (2.6) Theorem 2.9. (Hölder's inequality, [40, p. 604]) Suppose that &gt; x 0, &lt; &lt; q 0 1, &gt; p 1 1 . If + = 1 p r 1 1 1 1 , then                 ∫ ∫ ∫ | ( ) ( )| ≤ | ( )| | ( )| f x g x d x f x d x g x d x . x q x p q x r q 0 0 0 p r 1 1 1 1 1 1</formula><p>In <ref type="bibr" target="#b33">[34]</ref>, Noor et al. proved the following lemma and related quantum Ostrowski inequality.</p><p>Lemma 2.10.</p><formula xml:id="formula_17">If [ ] ⊂ → f a b : , is a q-differentiable function on ( ) a b , such that D f q a is continuous and integrable on [ ] a b</formula><p>, , then we have:</p><formula xml:id="formula_18">∫ ∫ ∫ ( ) - - ( ) = ( -) - ( + ( -) ) + ( -) - ( + ( -) ) f x b a f t d t q x a b a t D f tx t a d t q b x b a t D f tx t b d t 1 1 1 , a x q a q a q q a q 2 0 1 2 0 1 where &lt; &lt; q 0 1. Theorem 2.11. Let [ ] ⊂ → f a b : , be a q-differentiable function on ( ) a b , , such that D f q a is continuous and integrable on [ ] a b , . If | | D f q a is convex on [ ] a b , and | | ≤ D f M q a , then ∫ ( ) - - ( ) ≤ [( -) + ( -) ] ( -)( + ) f x b a f t d t qM x a b x b a q 1 1 , a x q a 2 2</formula><p>where &lt; &lt; q 0 1.</p><p>In this paper, we establish some quantum Ostrowski-type inequalities for twice q-differentiable functions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">New Ostrowski-type inequalities for quantum integrals</head><p>In this section, we prove Ostrowski-type inequalities for twice quantum differentiable functions involving the quantum integrals.</p><p>Let's start with the following useful lemma.</p><formula xml:id="formula_19">Lemma 3.1. If [ ] ⊂ → f a b : , is a twice q-differentiable function on ( ) a b , , such that D f q b 2 and D f q a 2 are continuous and integrable on [ ] a b</formula><p>, , then we have:</p><formula xml:id="formula_20">        ∫ ∫ ( -) ( -) ( -) ( + ( -) ) + ( -) ( + ( -) ) = ( ) x a b x a x t D f tx t a d t x b t D f tx t b d t L x 1 1 , q a q q b q q b a 2 2 0 1 2 2 0 1 2 2 (3.1)</formula><p>where</p><formula xml:id="formula_21">        ∫ ∫ ( ) = ( -)( -) ( -) [( -) ( + ( -) ) + ( -) ( + ( -) ) -( + -)( -) ( )] - [ ] ( -) ( ) + ( -) ( ) L x x a b x q q x a qf qx q b b x qf qx q a q q b a f x q x a f t d t b x f t d t 1 1 1 1 2 q b a q x b q b a x q a 3 2 3 2 2</formula><p>and &lt; &lt; q 0 1.</p><p>Proof. From Definition 2.2, we have</p><formula xml:id="formula_22">            ( + ( -) ) = ( ( ( + ( -) ))) = ( + ( -) ) -( + ( -) ) ( -)( -) = ( -)( -) ( + ( - ) ) -( + ( -) ) ( -) ( -) - ( + ( -) ) -( + ( -) ) ( -)( -) = ( + ( - ) ) -( + ( -) ) ( -) ( -) - ( + ( -) ) -( + ( -) ) ( -) ( -) = ( + ( - ) ) -( + ) ( + ( -) ) + ( + ( -) ) ( -) ( -) D f ta t b D D f ta t b D f qta qt b f ta t b q b a t q b a t f q ta tq b f qta qt b q q b a t f qta qt b f ta t b q b a t f q ta tq b f qta qt b q q b a t f qta qt b f ta t b q b a t f q ta tq b q f qta qt b qf ta t b q q b a t 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . q b q b q b q b 2 2 2 2 2 2 22 2 22 2 2 2 22 (3.2)</formula><p>Applying the notions of Definition 2.6, we obtain</p><formula xml:id="formula_23">                ∫ ∫ ∫ ∫ ∫ ∫ ∑ ∑ ∑ ( + ( -) ) = ( + ( - ) ) -( + ) ( + ( -) ) + ( + ( -) ) ( -) ( -) = ( -)( -) ( +( - ) ) ( -) ( -) -( -)( + )( -) ( +( - ) ) ( -) ( -) + ( -)( -) ( + ( -) ) ( -) ( -) = ( -) ( -) ( ) -( -)( -) ( ) -( -)( -) ( + ( -) ) - [ ] ( -) ( -) ( ) -( -)( + )( -) ( ) + ( -) ( -) ( ) = + ( -) ( ) + + - ( -) ( -) ( ) - ( + ( -) ) ( -) ( -) = ∞ + + + = ∞ + + + = ∞ t D f tx t b d t f q tx tq b q f qtx qt b qf tx t b q q b x d t</formula><p>q b x q f q x q b q q b x q q b x q f q x q b q q b x q q b x q f q x q b q q b x q q b x f t d t q b x f x q b x qf qx q b q q b x f t d t q q b x f x q b x f x d x q b x q f t d t q q q q b x f x f qx q b q q b x (3.3)</p><p>Similarly, from Definitions 2.1 and 2.4, we have</p><formula xml:id="formula_24">∫ ∫ ( + ( -) ) = [ ] ( -) ( ) + + - ( -) ( -) ( ) - ( + ( -) ) ( -) ( -) t D f tx t a d t</formula><p>x a q f t d t q q q q x a f x f qx q a q q x a 1 2 1 1 1 1 .</p><p>q a q q a x q a 0 1 </p><formula xml:id="formula_25">| | D f q b 2 and | | D f q a 2 are convex on [ ] a b ,                     | ( )| ≤ ( -) ( -) ( -) [ ] | ( ) |+ [ ] [ ] | ( )| + ( -) [ ] | ( )| + [ ] [ ] | ( )| L x x a b x x a D f x q D f a b x D f x q D f b 1 4 3 4 1 4 3 4 , q b a q q a q q q a q q b q q q b 2 2 2 3 2 2 3 2 (3.5)</formula><p>where &lt; &lt; q 0 1.</p><p>Proof. On taking the modulus in Lemma 3.1, applying the convexity of</p><formula xml:id="formula_26">| | D f q b 2 and | | D f q a 2 , we obtain that                                             ∫ ∫ ∫ ∫ | ( )| ≤ ( -) ( -) ( -) | ( + ( -) )| + ( -) | ( + ( -) )| ≤ ( -) ( -) ( -) ( | ( )| + ( -)| ( )|) + ( -) ( -) ( -) ( | ( )| + ( -)| ( )|) = ( -) ( -) ( -) [ ] | ( )| + [ ] [ ] | ( )| + ( -) [ ] | ( )| + [ ] [ ] | ( )| L x x a b x x a t D f tx t a d t b x t D f tx t b d t x a b x x a t t D f x t D f a d t x a b x b x t t D f x t D f b d t x a b x x a D f x q D f a b x D f x q D f b 1 1 1 1 1 4 3 4 1 4 3 4 , q b a q a q q b q q a q a q q b q b q q q a q q q a q q b q q q b 2 2 0 1 2 2 0 1 2 2 2 2 0 1 2 2 2 2 2 0 1 2 2 2 2 2 2 3 2 2 3 2</formula><p>which completes the proof.</p><formula xml:id="formula_27">□ Corollary 3.4. (Quantum Ostrowski inequality) In Theorem 3.3, if we set | | D f q b 2 , | | ≤ D f M q a 2</formula><p>, then we obtain the following quantum Ostrowski-type inequality for twice quantum differentiable functions:</p><formula xml:id="formula_28">| ( )| ≤ ( -) ( -) ( -) [ ] L x M x a b x b a 3 . q b a q 2 2<label>(3.6)</label></formula><p>Remark 3.5. In Corollary 3.4, if we take the limit → - q 1 , then we obtain [41, Theorem 2.1 for = α 1].</p><p>Remark 3.6. In Corollary 3.4, if we assume the limit → - q 1 and = + x a b</p><p>2 , then we obtain the following inequality: ) are convex, then, the following inequality holds:</p><formula xml:id="formula_29">      ∫ + - - ( ) ≤ ( -) f a b b a f t t M b a 2 1 d 24 ,</formula><formula xml:id="formula_30">                          | ( )| ≤ ( -) ( -) [ ] ( -) [ ] | ( )| + [ ] [ ] | ( )| + ( -) [ ] | ( )| + [ ] [ ] | ( )| - L x x a b x x a D f x q D f a b x D f x q D f b 1 3 1 4 3 4 1 4 3 4 , q b a q q q a p q q q a p q q b p q q q b p 2 2 1 2 3 2 2 3 2 p p p 1 1 1 1 1 1 1 1 1 1 (3.7)</formula><p>where &lt; &lt; q 0 1.</p><p>Proof. Taking the modulus in Lemma 3.1 and applying the well-known power mean inequality, we have</p><formula xml:id="formula_31">                                                            ∫ ∫ ∫ ∫ ∫ ∫ | ( )| ≤ ( -) ( -) ( -) | ( + ( -) )| + ( -) | ( + ( -) )| ≤ ( -) ( -) ( -) | ( + ( -) )| + ( -) ( -) ( -) | ( + ( -) )| - - L x x a b x x a t D f tx t a d t b x t D f tx t b d t x a b x x a t d t t D f tx t a d t x a b x b x t d t t D f tx t b d t 1 1 1 1 .</formula><p>q b a q a q q b q q q a p q q q b p q By the convexity of</p><formula xml:id="formula_32">| | D f q b p 2 1 and | | D q a p 2 1 , we have                                         | ( )| ≤ ( -) ( -) ( -) [ ] [ ] | ( )| + [ ] [ ] | ( )| + ( -) ( -) ( -) [ ] [ ] | ( )| + [ ] [ ] | ( )| - - L x x a b x x a D f x q D f a x a b x b x D f x q D f b 1 3 1 4 3 4 1 3 1 4 3 4 , q b a q q q a p q q q a p q q q b p q q q b p 2 2 1 2 3 2 2 2 1 2 3 2 p p p p 1 1 1 1 1 1 1 1 1 1 1 1</formula><p>which completes the proof. □ Theorem 3.8. We assume that the conditions of Lemma 3.</p><formula xml:id="formula_33">1 hold. If | | D f q b p 2 1 and | | D f q a p 2 1 are convex on [ ] a b , for some &gt; p 1 1 and + = 1 r p 1 1 1 1</formula><p>, then we have,</p><formula xml:id="formula_34">                                | ( )| ≤ ( -) ( -) [ + ] × ( -) | ( )| + | ( )| [ ] + ( -) | ( )| + | ( )| [ ] L x x a b x r x a D f x q D f a b x D f x q D f b 1 2 1 2 2 , q b a q q a p q a p q q b p q b p q 2 2 1 2 2 2 2 r p p 1 1 1 1 1 1 1 1 1 1 (3.8)</formula><p>where &lt; &lt; q 0 1.</p><p>Proof. Taking the modulus in Lemma 3.1 and applying well-known Hölder's inequality, we obtain</p><formula xml:id="formula_35">        ∫ ∫ | ( )| ≤ ( -) ( -) ( -) | ( + ( -) )| + ( -) | ( + ( -) )| L x x a b x x a t D f tx t a d t b x t D f tx t b d t 1 1 q b a q a q q b q 2 2 0 1 2 2 0 1 2 2                                           ∫ ∫ ∫ ∫ ≤ ( -) ( -) ( -) | ( + ( -) )| + ( -) | ( + ( -) )| x a b x x a t d t D f tx t a d t b x t d t D f tx t b d t 1 1 .</formula><p>r q q a p q r q q a p q Remark 3.10. In Corollary 3.9, if we take the limit → - q 1 , then we obtain [41, Corollary 2.3 for = α 1].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Conclusion</head><p>We conclude our work by mentioning that here, we proved some new quantum integral inequalities of Ostrowski-type for twice quantum differentiable functions by using the notions of quantum derivatives and quantum integrals. It is important to mention that our results transformed into some new and known results by considering the limit → - q 1 in our main results. We strongly believe that it is an interesting and new problem for the upcoming researchers who can obtain similar inequalities via quantum fractional calculus in their future work.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Corollary 2 . 8 . [ 21 ]</head><label>2821</label><figDesc>For any convex function [ ] → f a b</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>( 3 . 4 )x x a 3 2x x a 2 3Remark 3 . 2 .Theorem 3 . 3 .</head><label>34323233</label><figDesc>By multiplying the equalities (3.3) and (3.4) by ( -) ( -)b and ( -) ( -) b , respectively, and adding the resultant equalities we get the required identity (3.1). Thus, the proof is completed. □ If we take the limit → - q 1 in Lemma 3.1, then we obtain [41, Lemma 2.1 for = α 1]. If the assumptions of Lemma 3.1 hold, then we have the following inequality provided that</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>a b 2 2 . 3 . 7 .</head><label>2237</label><figDesc>which is offered by Meftah et al. in [41, Corollary 2.1] and it can be found in     = + x 42, Theorem 2.2 for a b Theorem We assume that the conditions of Lemma 3.1 hold. If the mappings |</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Corollary 3 . 9 . 2 ,</head><label>392</label><figDesc>In Theorem 3.8, if we set| ( then we obtain the following quantum Ostrowskitype inequality for twice quantum differentiable functions,</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgments: The authors would like to express their sincere thanks to the editor and the anonymous reviewers for their helpful comments and suggestions.</p><p>Funding information: This work was supported by the <rs type="funder">Natural Science Foundation of China</rs> (Grant Nos. <rs type="grantNumber">61673169</rs>, <rs type="grantNumber">11301127</rs>, <rs type="grantNumber">11701176</rs>, <rs type="grantNumber">11626101</rs>, <rs type="grantNumber">11601485</rs>, and <rs type="grantNumber">11971241</rs>).</p><p>Author contributions: All authors contributed equally to the writing of this paper. All authors read and approved the final manuscript.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_Kg3zVjX">
+					<idno type="grant-number">61673169</idno>
+				</org>
+				<org type="funding" xml:id="_NNbP59c">
+					<idno type="grant-number">11301127</idno>
+				</org>
+				<org type="funding" xml:id="_TE6UjEd">
+					<idno type="grant-number">11701176</idno>
+				</org>
+				<org type="funding" xml:id="_xvFbURu">
+					<idno type="grant-number">11626101</idno>
+				</org>
+				<org type="funding" xml:id="_tsTAfXZ">
+					<idno type="grant-number">11601485</idno>
+				</org>
+				<org type="funding" xml:id="_MZMBNUm">
+					<idno type="grant-number">11971241</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflict of interest:</head><p>The authors declare that they have no competing interests.</p><p>Quantum Ostrowski-type inequalities for twice  447</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Über die absolutabweichung einer differentiebaren funktion von ihrem integralmitelwert</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Ostrowski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comment. Math. Helv</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="226" to="227" />
+			<date type="published" when="1938">1938</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Some perturbed Ostrowski-type inequalities for twice differentiable functions</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Sarikaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dragomir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in Mathematical Inequalities and Applications</title>
+		<title level="s">Trends in Mathematics</title>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Agarwal</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Dragomir</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Jleli</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">B</forename><surname>Samet</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>Birkhäuser</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="279" to="294" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">New post quantum analogues of Ostrowski-type inequalities using new definitions of left-right (p,q)-derivatives and definite integrals</title>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Awan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Talib</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">I</forename><surname>Noor</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-020-03094-x</idno>
+		<ptr target="https://doi.org/10.1186/s13662-020-03094-x" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Difference Equ</title>
+		<imprint>
+			<biblScope unit="volume">2020</biblScope>
+			<biblScope unit="page">634</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">On the Ostrowski&apos;s integral inequality for mappings with bounded variation and applications</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dragomir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Ineq. Appl</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="59" to="66" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">The Ostrowski&apos;s integral inequality for Lipschitzian mappings and applications</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dragomir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Appl</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">11-12</biblScope>
+			<biblScope unit="page" from="33" to="37" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">An inequality of Ostrowski-type for mappings whose second derivatives are bounded and applications</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cerone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dragomir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Roumeliotis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">East Asian Math. J</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">New inequalities of Ostrowski type for co-ordinated convex functions via fractional integrals</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Latif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hussain</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Fractional Calc. Appl</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1" to="15" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Some quantum estimates of Hermite-Hadamard inequalities for convex functions</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhuang</surname></persName>
+		</author>
+		<idno type="DOI">10.11948/2017031</idno>
+		<ptr target="https://doi.org/10.11948/2017031" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Anal. Comput</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="501" to="522" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Generalized Ostrowski type inequalities for local fractional integrals</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Sarikaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<idno type="DOI">10.1090/proc/13488</idno>
+		<ptr target="https://doi.org/10.1090/proc/13488" />
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Amer. Math. Soc</title>
+		<imprint>
+			<biblScope unit="volume">145</biblScope>
+			<biblScope unit="page" from="1527" to="1538" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">On new inequalities via Riemann-Liouville fractional integration</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Sarikaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ogunmez</surname></persName>
+		</author>
+		<idno type="DOI">10.1155/2012/428983</idno>
+		<ptr target="https://doi.org/10.1155/2012/428983" />
+	</analytic>
+	<monogr>
+		<title level="j">Abstr. Appl. Anal</title>
+		<imprint>
+			<biblScope unit="volume">2012</biblScope>
+			<biblScope unit="page">428983</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">New inequalities of Ostrowski type for mappings whose derivatives are s-convex in the second sense via fractional integrals</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Set</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Appl</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1147" to="1154" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Mitrinovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Pecaric</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Fink</surname></persName>
+		</author>
+		<title level="m">Inequalities Involving Functions and Their Integrals and Derivatives</title>
+		<meeting><address><addrLine>Dordrecht</addrLine></address></meeting>
+		<imprint>
+			<publisher>Kluwer Academic Publishers</publisher>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">The History of q-Calculus and New Method</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ernst</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<pubPlace>Sweden</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Department of Mathematics, Uppsala University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Integral inequalities in q-calculus</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Gauchman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Math. Appl</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="281" to="300" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">On a q-definite integrals</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Jackson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Quarterly J. Pure Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="193" to="203" />
+			<date type="published" when="1910">1910</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">V</forename><surname>Kac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cheung</surname></persName>
+		</author>
+		<title level="m">Quantum Calculus</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A propos d&apos;une note de M. Pierre Humbert</title>
+		<author>
+			<persName><forename type="first">R</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comptes rendus de la Academie des Sciences</title>
+		<imprint>
+			<biblScope unit="volume">236</biblScope>
+			<biblScope unit="issue">21</biblScope>
+			<biblScope unit="page" from="203" to="2032" />
+			<date type="published" when="1953">1953</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Some fractional q-integrals and q-derivatives</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Al-Salam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Edinburgh Math. Soc</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="135" to="140" />
+			<date type="published" when="1966">1966/1967</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The zeros of polynomials orthogonal with respect to q-integral on several intervals in the complex plane</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Rajkovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Stankovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Marinkovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of The Fifth International Conference on Geometry, Integrability and Quantization</title>
+		<editor>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Mladenov</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Hirshfeld</surname></persName>
+		</editor>
+		<meeting>The Fifth International Conference on Geometry, Integrability and Quantization<address><addrLine>Varna, Bulgaria</addrLine></address></meeting>
+		<imprint>
+			<publisher>Bulgarian Academy of Sciences</publisher>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="178" to="188" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Quantum calculus on finite intervals and applications to impulsive difference equations</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tariboon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Ntouyas</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/1687-1847-2013-282</idno>
+		<ptr target="https://doi.org/10.1186/1687-1847-2013-282" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Difference Equ</title>
+		<imprint>
+			<biblScope unit="volume">2013</biblScope>
+			<biblScope unit="page">282</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">On q-Hermite-Hadamard inequalities for general convex functions</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bermudo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kórus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Valdés</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10474-020-01025-6</idno>
+		<ptr target="https://doi.org/10.1007/s10474-020-01025-6" />
+	</analytic>
+	<monogr>
+		<title level="j">Acta Math. Hungar</title>
+		<imprint>
+			<biblScope unit="volume">162</biblScope>
+			<biblScope unit="page" from="364" to="374" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Some new Simpson&apos;s type inequalities for co-ordinated convex functions in quantum calculus</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yıldırım</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mma.7048</idno>
+		<ptr target="https://doi.org/10.1002/mma.7048" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Methods Appl. Sci</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="4515" to="4540" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Quantum Hermite-Hadamard-type inequalities for functions with convex absolute values of second q b -derivatives</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abbas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-020-03163-1</idno>
+		<ptr target="https://doi.org/10.1186/s13662-020-03163-1" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Differ. Equ</title>
+		<imprint>
+			<biblScope unit="volume">2021</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">New quantum boundaries for quantum Simpson&apos;s and quantum Newton&apos;s type inequalities for preinvex functions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abbas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Agarwal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Murtaza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-021-03226-x</idno>
+		<ptr target="https://doi.org/10.1186/s13662-021-03226-x" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Differ. Equ</title>
+		<imprint>
+			<biblScope unit="volume">2021</biblScope>
+			<biblScope unit="page">64</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Quantum variant of Montgomery identity and Ostrowski-type inequalities for the mappings of two variables</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Akkurt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yıldırım</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Zahid</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-020-03195-7</idno>
+		<ptr target="https://doi.org/10.1186/s13662-020-03195-7" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Differ. Equ</title>
+		<imprint>
+			<biblScope unit="volume">2021</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">q-Hermite Hadamard inequalities and quantum estimates for midpoint type inequalities via convex and quasi-convex functions</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Alp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Sarıkaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kunt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Işcan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. King Saud Univ. Sci</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="193" to="203" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Quantum Hermite-Hadamard&apos;s type inequalities for co-ordinated convex functions</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Alp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">Z</forename><surname>Sarikaya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. E-Notes</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="341" to="356" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Some new quantum Hermite-Hadamard-like inequalities for coordinated convex functions</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tarhanaci</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10957-020-01726-6</idno>
+		<ptr target="https://doi.org/10.1007/s10957-020-01726-6" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Optim. Theory Appl</title>
+		<imprint>
+			<biblScope unit="volume">186</biblScope>
+			<biblScope unit="page" from="899" to="910" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Simpson and Newton type inequalities for convex functions via newly defined quantum integrals</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Budak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Erden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mma.6742</idno>
+		<ptr target="https://doi.org/10.1002/mma.6742" />
+	</analytic>
+	<monogr>
+		<title level="j">Math. Meth. Appl. Sci</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="378" to="390" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">A Comprehensive Treatment of q-Calculus</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ernst</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<publisher>Springer</publisher>
+			<pubPlace>Basel</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">On q-Hermite-Hadamard inequalities for differentiable convex functions</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jhanthanam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tariboon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Ntouyas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Nonlaopon</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/math7070632</idno>
+		<ptr target="https://doi.org/10.3390/math7070632" />
+	</analytic>
+	<monogr>
+		<title level="j">Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page">632</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Quantum Hermite-Hadamard inequality by means of a Green function</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Nwaeze</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-M</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-020-02559-3</idno>
+		<ptr target="https://doi.org/10.1186/s13662-020-02559-3" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Difference Equ</title>
+		<imprint>
+			<biblScope unit="volume">2020</biblScope>
+			<biblScope unit="page">99</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Some quantum integral inequalities via preinvex functions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">I</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Awan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">269</biblScope>
+			<biblScope unit="page" from="242" to="251" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Quantum Ostrowski inequalities for q-differentiable convex functions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Awan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">I</forename><surname>Noor</surname></persName>
+		</author>
+		<idno type="DOI">10.7153/jmi-10-81</idno>
+		<ptr target="http://doi.org/10.7153/jmi-10-81" />
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Inequal</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1013" to="1018" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">New parameterized quantum integral inequalities via η-quasiconvexity</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Nwaeze</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Tameru</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13662-019-2358-z</idno>
+		<ptr target="https://doi.org/10.1186/s13662-019-2358-z" />
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Difference Equ</title>
+		<imprint>
+			<biblScope unit="volume">2019</biblScope>
+			<biblScope unit="page">425</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Quantum integral inequalities for convex functions</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Sudsutad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Ntouyas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tariboon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Inequal</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="781" to="793" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Some new Newton&apos;s type integral inequalities for coordinated convex functions in quantum calculus</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vivas-Cortez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kashuri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">B</forename><surname>Sial</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/sym12091476</idno>
+		<ptr target="https://doi.org/10.3390/sym12091476" />
+	</analytic>
+	<monogr>
+		<title level="j">Symmetry</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page">1476</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Some quantum estimates of Hermite-Hadmard inequalities for quasi-convex functions</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhuang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Park</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/math7020152</idno>
+		<ptr target="http://doi.org/10.3390/math7020152" />
+	</analytic>
+	<monogr>
+		<title level="j">Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">152</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Some quantum estimates for Hermite-Hadamard inequalities</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">I</forename><surname>Noor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Awan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">251</biblScope>
+			<biblScope unit="page" from="675" to="679" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Anastassiou</surname></persName>
+		</author>
+		<title level="m">Intelligent Mathematics: Computational Analysis</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Some new Ostrowski-type inequalities for functions whose second derivative are h-convex via Riemann-Liouville fractional</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Meftah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Boukerrioua</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Malaya J. Matematik</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="445" to="459" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Some companions of an Ostrowski type inequality and applications</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Inequal. Pure Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">52</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

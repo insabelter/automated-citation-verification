@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">An IoT-Cloud Based Intelligent Computer-Aided Diagnosis of Diabetic Retinopathy Stage Classification Using Deep Learning Approach</title>
+				<funder ref="#_2bAthDY">
+					<orgName type="full">Policy (TNMulti-Gen), Dept. of Edn. Govt. of India</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">K</forename><surname>Shankar</surname></persName>
+							<email>drkshankar@ieee.org</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Applications</orgName>
+								<orgName type="institution">Alagappa University</orgName>
+								<address>
+									<postCode>630001</postCode>
+									<settlement>Karaikudi</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Eswaran</forename><surname>Perumal</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Computer Applications</orgName>
+								<orgName type="institution">Alagappa University</orgName>
+								<address>
+									<postCode>630001</postCode>
+									<settlement>Karaikudi</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mohamed</forename><surname>Elhoseny</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Faculty of Computers and Information</orgName>
+								<orgName type="institution">Mansoura University</orgName>
+								<address>
+									<postCode>35516</postCode>
+									<settlement>Mansoura</settlement>
+									<country key="EG">Egypt</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Phong</forename><forename type="middle">Thanh</forename><surname>Nguyen</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Project Management</orgName>
+								<orgName type="institution">Ho Chi Minh City Open University</orgName>
+								<address>
+									<addrLine>Ho Chi Minh</addrLine>
+									<postCode>7000000</postCode>
+									<settlement>City</settlement>
+									<country key="VN">Vietnam</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">An IoT-Cloud Based Intelligent Computer-Aided Diagnosis of Diabetic Retinopathy Stage Classification Using Deep Learning Approach</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">7B90018A98CE5004D4A09A4E3CF1B71B</idno>
+					<idno type="DOI">10.32604/cmc.2020.013251</idno>
+					<note type="submission">Received: 31 July 2020; Accepted: 11 September 2020</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:59+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Deep learning</term>
+					<term>classification</term>
+					<term>Gaussian Naive Bayes</term>
+					<term>feature extraction</term>
+					<term>diabetic retinopathy</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Diabetic retinopathy (DR) is a disease with an increasing prevalence and the major reason for blindness among working-age population. The possibility of severe vision loss can be extensively reduced by timely diagnosis and treatment. An automated screening for DR has been identified as an effective method for early DR detection, which can decrease the workload associated to manual grading as well as save diagnosis costs and time. Several studies have been carried out to develop automated detection and classification models for DR. This paper presents a new IoT and cloud-based deep learning for healthcare diagnosis of Diabetic Retinopathy (DR). The proposed model incorporates different processes namely data collection, preprocessing, segmentation, feature extraction and classification. At first, the IoT-based data collection process takes place where the patient wears a head mounted camera to capture the retinal fundus image and send to cloud server. Then, the contrast level of the input DR image gets increased in the preprocessing stage using Contrast Limited Adaptive Histogram Equalization (CLAHE) model. Next, the preprocessed image is segmented using Adaptive Spatial Kernel distance measure-based Fuzzy C-Means clustering (ASKFCM) model. Afterwards, deep Convolution Neural Network (CNN) based Inception v4 model is applied as a feature extractor and the resulting feature vectors undergo classification in line with the Gaussian Naive Bayes (GNB) model. The proposed model was tested using a benchmark DR MESSIDOR image dataset and the obtained results showcased superior performance of the proposed model over other such models compared in the study.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Internet of Things (IoT) refers to the practice of designing and molding Internet-connected Things through computer networks. The term 'IoT' signifies that instead of using smaller effective gadgets like laptop, tablet as well as smart phone, it is better to use a number of minimum efficient devices namely, wrist band, AC, umbrella, fridge and so forth. In this scenario, 'Ubiquitous computing' differs from IoT including a factor that IoT is established over a wider application of online connections. Further, the word 'Thing' refers to objects that exist in real-time applications and receive inputs from humans. It then converts the obtained data to Internet in order to perform data collection as well as computing tasks <ref type="bibr" target="#b0">[1]</ref>.</p><p>Here, IoT as well as Cloud Computing (CC) are given equal weightage while combining the above methodologies. The surveillance system has been designed by combining these two methods so as to monitor patients' details in an effective manner even from remote site which remains helpful for doctors.</p><p>IoT model often supports CC to improve the function with respect to higher resource application, memory, power as well as computational ability. Furthermore, CC gains benefit from IoT by increasing its scope to manage real-world applications and to offer multiple services in the form of dynamic as well as distributed manner. The IoT-based CC would be expanded for developing new facilities and applications in a modern platform.</p><p>Here, Diabetic Retinopathy (DR) is considered as the major reason for blindness even for people under the age group of 18-25 years <ref type="bibr" target="#b1">[2]</ref>. DR is one of the fatal complications that affect diabetic patients. Being a complicated disease, DR cannot be recovered at the initial stages whereas diagnosis at the primary stage is a mandatory one. But, it brings a notable complexity to the entire health care department in the form of less availability of expert physicians while it affects a lot of patients. Another crucial factor associated in the prediction of DR is Optic Disc (OD) that undergoes characterization under the application of increased contrast among circular-shaped areas <ref type="bibr" target="#b2">[3]</ref>. Here, OD is employed as a benchmark as well as a frame that is used to diagnose critical eye diseases like glaucoma, and to verify the emergence of neovascularization at OD. In addition, it has been applied to highlight the alternate structures like fovea. In normal retina, the edge of the OD is clear and well-defined. Thus, it tends to develop automatic diagnostic system that helps in the primary detection of DR.</p><p>Multiple techniques and hand-engineered features have been proposed to overcome the challenges involved in efficient analysis of DR area in retinal fundus images. The hand-engineered features are often applied along with conventional Machine Learning (ML) models and it remains helpful in the diagnosis of DR functions. Various surveys have resulted in the application of classical techniques <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref>. In the recent times, the presence of massive datasets as well as enormous computation are provided by the deployment of Graphics Processing Units (GPUs) which motivate on modeling the Deep Learning (DL) models. It displays a remarkable process in different computer vision operations as well as it also earned the desired success when compared with conventional hand-engineered-relied frameworks. Several DLbased techniques are designed to examine the retinal fundus images and to develop automated Computer-Aided Diagnosis (CAD) models for DR <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref><ref type="bibr" target="#b21">[22]</ref>.</p><p>A novel technology was designed in the literature <ref type="bibr" target="#b7">[8]</ref> to determine the disease intensity under cloud and IoT applications. This technique was applied to predict the seriousness of the illness. The above technology was deployed to take unique care of student's and children's health. In this study, a programmatic health information, termed as student data, was created with the help of reputed UCI Repository as well as sensors employed in medical domain. This was deployed also to forecast diverse ailments which have been influenced by student with severity. Followed by, several other classification models were applied to predict different types of diseases. The major application of this algorithm is the determination of prediction accuracy using few attributes like F-measure, specificity as well as sensitivity. Consequently, it is evident that the presented technique outperformed with respect to prediction accuracy when compared with previous methodologies.</p><p>A review on CC and IoT methods was performed in the literature <ref type="bibr" target="#b8">[9]</ref> along with a focus on security problems. Furthermore, a list was also developed for the involvement of cloud with IoT. At last, it inferred that the involvement of CC in processing IoT improvises the functions. A new multi-layer cloud method was modelled in the study <ref type="bibr" target="#b9">[10]</ref> to enable efficient and logical communications across the identical services offered by several vendors in modern home. As an inclusion, ontology was employed to solve the heterogeneity problem that is projected in a layered cloud environment. Further, it is also helpful in addressing the data representation, knowledge as well as heterogeneity, and labelled security model used in ontology to support security as well as privacy conservation while processing the interoperation.</p><p>A scalable and novel three tier structure was proposed in the study <ref type="bibr" target="#b10">[11]</ref> to record more amount of sensor information. Initially, Tier-1 takes care of the data collection while the Tier-2 focuses on storing the collected sensor data in CC. Finally, a new predictive method was deployed to detect the heart diseases. An effective intelligence method in car camera surveillance was presented in Chen et al. <ref type="bibr" target="#b11">[12]</ref> which leveraged mobile CC technique. It is able to predict the things present in videos at the time of driving and decides the selective portion of videos which has to be saved in cloud to record the local storage space of a system. This method consists of data gathering, recognition and training stages. Consequently, the above model achieved the best prediction performance.</p><p>A novel cloud-dependent parallel ML technique was proposed by the researchers <ref type="bibr" target="#b12">[13]</ref> for the purpose of machinery prognostics. Random Forest (RF) classifier method was used that is generally preferred in dry milling processes. Furthermore, a similar RF technique was deployed by applying MapReduce and was employed on Amazon Cloud. From the study results, it can be inferred that the RF classification model is capable of providing accurate predictive results. Ghulam Muhammad et al. <ref type="bibr" target="#b13">[14]</ref> conducted a study to observe the voice pathology of human beings under cloud and IoT applications. This paper revealed the possibility of presented voice pathology. Furthermore, a novel local binary pattern relied detection system was projected to forecast the voice pathology inside the observing technique. Hence, the predicting system attained the best classification accuracy when compared with previous alternate methods.</p><p>An internet-based observation method named 'Healthcare Industrial IoT' was proposed in the study <ref type="bibr" target="#b14">[15]</ref>, which is mainly applied to monitor the health. The proposed method had the potential of examining the patients' health details to avoid fatal incidents. Therefore, it gathered the essential details of the patients using sensors as well as medical facilities. But, the proposed method was integrated to eliminate clinical errors whereas different similarities were found by applying security rules like watermarking as well as signal improvements. A smart and collaborative security technique was proposed in Islam et al. <ref type="bibr" target="#b15">[16]</ref> to reduce the risk factors present in IoT-based healthcare platform. Additionally, the proposed technique was defined with advanced techniques in IoT healthcare. A specific investigation was conducted to provide an overview of state-of-the-art network environment, applications as well as commercial increments in IoT-relied healthcare solutions.</p><p>A modern clinical analysis system known to be neuro-fuzzy temporal data presentation method was presented in the previous study <ref type="bibr" target="#b16">[17]</ref> to detect and diagnose diverse types of deadly diseases. Kakria et al. <ref type="bibr" target="#b17">[18]</ref> employed a novel online health care observation technology to monitor the remote heart patients often using mobile phones and wearable sensors. Subsequently, Kim et al. <ref type="bibr" target="#b18">[19]</ref> established a technique to monitor the emergency scenario under the application of content of motion tracking disease patients. Some other models are also found in Jebaseeli et al. <ref type="bibr" target="#b19">[20]</ref>. Roychowdhury et al. <ref type="bibr" target="#b20">[21]</ref> developed a new DREAM: Diabetic Retinopathy Analysis Using Machine Learning model which investigates the fundus images with varying illumination and fields of view. The severity level of DR can be generated by the use of ML models such as Gaussian Mixture model (GMM), k-nearest neighbor (kNN), support vector machine (SVM), and AdaBoost. Among the classifiers, GMM and kNN are found to be effective while classifying bright and red lesions respectively. Adal et al. <ref type="bibr" target="#b21">[22]</ref> has developed a robust and flexible method to automatically detect the longitudinal retinal modifications because of small red lesions through the utilization of the normalized fundus images. It reduces the illumination differences and enhances the contrast level of small retinal features. DR related variations are then detected depending upon the diverse intensity and shape features using SVM model. The rest of the sections are arranged as follows. Section 2 details the proposed model in a clear way. Section 3 deals with the simulation analysis while the Section 4 draws the conclusion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">The Proposed Model</head><p>The overall process of the proposed work is shown in the Fig. <ref type="figure" target="#fig_1">1</ref>. The proposed work operates on mainly three layers such as data link, transport and application layer. The data collection process takes place at the transport layer.</p><p>At first, the patient utilizes the blood glucose sensor to measure the glucose level present in the blood. It is connected to a smart phone which easily classifies whether the patient suffers from Type I diabetes or Type II diabetes. When the patient has been diagnosed with Type I diabetes, the patient is then recommended to consult a doctor and undergo treatment. In other case, i.e., if the patient suffers from Type II diabetes, the diagnosis for DR is done. In the diagnosis process, the fundus image is captured using IoT enabled head mounted camera. It provides easier and fast access to DR remote screening and decrease the drawbacks of classical eye examination. At the same time, the proposed disease diagnosis model also gets executed in the cloud and the corresponding outcome, i.e., whether the patient suffers from DR or not, is provided to the user as output.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">IoT Architecture</head><p>The external as well as working processes of effective IoT network have three layers such as data link layer, network layer and application layer.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1) Data link layer</head><p>Initially, the data link layer is composed of fundus images dataset, which are derived from patient details. It is mainly used for analysis with the help of transport layer. In order to test this methodology, MESSIDOR DR Dataset is applied. It includes a set of approximately 1,200 color fundus images with annotations in Excel file.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2) Network/Transport/Communication layer</head><p>Here, a cloud Server network is presented to host the applications. This layer can be used to transmit the data among the tools as well as to reduce the delay time. Further, it also allows the user to monitor the patient's details which are recorded in databases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3) Application layer</head><p>This layer comprises a Graphical User Interface (GUI) including DR application that has been combined with Python Programming in order to determine the fundus images. The application layer enables the patients to upload fundus images for analysis <ref type="bibr" target="#b19">[20]</ref>. Hence, the GUI application consists of the actual disease diagnosis model which is explained in the following subsections. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">CLAHE-Based Pre-Processing</head><p>CLAHE model is highly efficient in biomedical image analysis and is primarily used to improve the contrast level of the image. This technique requires a set of two input variables namely, dimension of a sub window and clip limit. In this process, the CLAHE model identifies the grid size of a window and the grid values are also found from an uppermost left corner area of the image where the computation begins from initial index of a window. Then, the size of the region w 2 and clip limitsare calculated from a generalized value of the image. For all grid points, the histogram of region H I ½ around the images is determined. Later, the histogram which is present beyond the level of evaluated clip limits is clipped and the Cumulative Distributive Function (CDF) is estimated. The CDF is estimated for pixel along with the values derived from 0 to 255. Later, for every pixel, the four nearest neighboring grid points have to be found. By applying the intensity rate, i.e., the pixel index as well as the mapping functions of the four grid points, CDF measures are measured. Subsequently, the contextual pixel N and the newly created pixel are interpolated. The same process is followed by transmitting the window to image. Though the process is terminated, it still attains the final index of a window. CLAHE technique cannot save the histogram that outstrips the clip limit; however, it can reorganize in an equal manner for all the histogram bins. Therefore, the projected CLAHE model improves the segmentation outcome of the fundus image.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">ASKFCM-Based Segmentation</head><p>The developed ASKFCM framework employs kernel technology to manipulate a spatial neighborhood data. It constructs the patterns of feature space for a simple clustering as it amplifies the conversion of patterns to feature space. Thus, 'n' data point of an input image, including D dimension, is denoted in terms of p z ¼ p 1 ;::; p n f g; z ¼ 1; . . . n; p z &amp; R D . Moreover, the first batch of the cluster centres are presented with respect to w z 0 ¼ w 1 ;::; w n f g ; z 0 ¼ 1; . . . ; r; w z 0 &amp; R D : m is assumed to be the degree of fuzzy membership function of p z , d manages the size of clustering fuzziness as well as it weighs the exponential factor of fuzzy membership function, is considered to be a neighbourhood pixel data and p z implies the adjacent pixel mean which is derived from p z . It can be defined by</p><formula xml:id="formula_0">p z ¼ X n z¼1 p z<label>(1)</label></formula><p>The objective function of a Gaussian FCM (GFCM) can be represented as</p><formula xml:id="formula_1">F GFCM ¼ X n z¼1 X r z 0 ¼1 m d zz 0 p z Àq z 0 k k 2 þ X n z¼1 X r z 0 ¼1 m d zz 0 p z Àw z 0 k k 2<label>(2)</label></formula><formula xml:id="formula_2">w z 0 ¼ P r z 0 ¼1 m d zz 0 p z À p z k k 2 1 þ ð Þ P r z 0 ¼1 m d zz 0<label>(3)</label></formula><formula xml:id="formula_3">u zz 0 ¼ P n z¼1 P r z 0 ¼1 m d zz 0 p z Àw z 0 k k 2 þ p z Àw z 0 k k 2 À1 dÀ1 P r l¼1 p z Àw l k k 2 þ p z Àw l k k 2 À1 dÀ1 (<label>4</label></formula><formula xml:id="formula_4">)</formula><p>The Gaussian kernel distance can be elucidated by,</p><formula xml:id="formula_5">1 À k p z ; w z ð Þ¼1 À exp À P z Àw z 0 k k s 2</formula><p>(5) 1670 CMC, 2021, vol.66, no.2</p><p>s refers to the SD of the dispersing attribute.</p><formula xml:id="formula_6">s 2 ¼ p z À p z k k 2 (6)</formula><p>Substituting the Euclidean distance p z Àw z 0 in Eq. ( <ref type="formula" target="#formula_1">2</ref>) with the application of Gaussian kernel distance in Eq. ( <ref type="formula">5</ref>), it can be presented as</p><formula xml:id="formula_7">p z Àw z 0 ¼ 1 À k p z ;w z 0 ð Þ¼1 À exp À p z Àw z 0 k k s 2<label>(7)</label></formula><p>The objective function of Gaussian Kernel distance value based FCM (GKFCM) is,</p><formula xml:id="formula_8">F GKFCM ¼ X n z¼1 X r z 0 ¼1 m d zz 0 1 À k p z ;w z 0 ð Þ ð Þ þ X n z¼1 X r z 0 ¼1 m d zz 0 1 À k p z ;w z 0 ð Þ ð Þ<label>(8)</label></formula><formula xml:id="formula_9">W z 0 ¼ P r z 0 ¼1 m d zz 0 k p z ;w z 0 ð Þp z þk p z ;w z 0 ð Þ p z ð Þ P r z 0 ¼1 m d zz 0 k p z ;w z 0 ð Þp z þk p z ;w z 0 ð Þ ð Þ<label>(9)</label></formula><formula xml:id="formula_10">u zz 0 ¼ 1 À k p z ;w z 0 ð Þ ð Þ þ 1 À k p z ;w z 0 ð Þ ð Þ ð Þ À1 dÀ1 P r dÀ1 1 À k p z ;w l ð Þ ð Þ þ 1 À k p z ;w l ð Þ ð Þ ð Þ À1 dÀ1<label>(10)</label></formula><p>The divided retinal blood vessel image is presented in feature space. FCM helps to arrange and combine the relevant data points as clusters, which results in gradual minimization of cost function since it is based on the pixels' distance of cluster centres in feature space. In case of a non-linear map, f : p ! f p ð Þ 2 f signifies that the data points pointed in a feature dimension space are converted to greater dimensional feature space. A spatial function joins the spatial membership functions of an adjacent pixel. Therefore, it replaces the kernels of membership function presented in the Eqs. <ref type="bibr" target="#b10">(11)</ref> and <ref type="bibr" target="#b7">(8)</ref>.</p><formula xml:id="formula_11">f p z ð ÞÀf w z 0 ð Þ 2 ¼ k p z ;p z ð Þþk w z 0 ;w j 0 À Á À 2k p z ;w z 0 ð Þ<label>(11)</label></formula><p>In the Eq. ( <ref type="formula" target="#formula_11">11</ref>), f represents the non-linear type of mapping data to feature space that exist in kernel k, where k p; p ð Þ¼ 1: Then, the objective function of the reduced SGKFCM can be defined by</p><formula xml:id="formula_12">F SGKFCM ¼ 2 X n z¼1 X r z 0 ¼1 m d zz 0 1 À k p z ;w z 0 ð Þ ð Þ<label>(12)</label></formula><formula xml:id="formula_13">w z 0 ¼ P r z 0 ¼1 m d zz 0 k p z ; w z 0 ð Þp z P r z 0 ¼1 m d zz 0 k p z ; w z 0 ð Þ<label>(13)</label></formula><formula xml:id="formula_14">u zz 0 ¼ 1 À k p z ;w z 0 ð Þ ð Þ À1 dÀ1 P r l¼1 1 À k p z ;w z 0 ð Þ ð Þ À1 dÀ1<label>(14)</label></formula><p>Any pixel present in the nearby image consists of same feature data that has been connected with maximum possibility. Thus, the spatial correlation of nearby pixel is an imperative feature of dense application at the time of segmenting images. Also, the variable influences the clustering outcome. An alternate parameter b manages the adjacent pixels cluster as well as it eliminates the dissimilar effect when the segmentation is being carried out. When the dataset of a cluster is high, then the b value would be maximum. The robustness of cluster centre could be computed using min</p><formula xml:id="formula_15">1 À k w z 0 ;w z 0 ð Þ ð Þand max 1 À k w l ; p ð Þ ð</formula><p>Þ notations. Therefore, the objective function of bias has been modelled and reduced under the application of ASKFCM. Hence, the objective function can be expressed as,</p><formula xml:id="formula_16">F ASKFCM ¼ X n z¼1 X r z 0 ¼1 m d zz 0 1 À k p z ;w z 0 ð Þ ð Þ þ X n z¼1 X r z 0 ¼1 b z 0 m d zz 0 1 À k p z ;w z 0 ð Þ ð Þ (15) b z 0 z ¼ min z 0 6 ¼z 1 À k w z 0 ;w z 0 ð Þ ð Þ min l 1 À k w l ; p ð Þ ð Þ<label>(16)</label></formula><formula xml:id="formula_17">w z 0 ¼ P r z 0 ¼1 m d zz 0 k p z ;w z 0 ð Þw z 0 þb zz 0 k p z ;w z 0 ð Þ p z 0 À Á P r z 0 ¼1 m d zz 0 k p z ;w z 0 ð Þþb z 0 k p z ;w z 0 ð Þ<label>(17)</label></formula><formula xml:id="formula_18">u zz 0 ¼ 1 À k p z ;w z 0 ð Þ ð Þ þ b z 0 1 À k p z ;w z 0 ð Þ ð Þ ð Þ À1 dÀ1 P r l¼1 ð 1 À k p z ;w z 0 ð Þ ð Þ þ b z 0 1 À k p z ;w z 0 ð Þ ð Þ Þ À1 dÀ1<label>(18)</label></formula><p>The objective function given in the Eq. ( <ref type="formula">15</ref>) can be deployed to evaluate the quality of segmenting dataset keen of clusters. The processing of the proposed clustering technique generates an optimal portion with respect to reduction of weights present inside the cluster. Next to this, the spatial features improve the possibility of adjacent pixel along with relevant features at the time of clustering process. Hence, the experimented outcomes denote that a set of two parameters α and β are the most significant portions of clustering simulation outcome. Based on the practical results, it is evident that the newly projected ASKFCM along with spatial kernel data tend to enhance the computation when compared with alternate traditional FCM models in the absence of spatial data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">CNN-Based Feature Extraction</head><p>CNN differs right starting from convolutional process to the analysis of max pooling layers and the way of nets getting training. As shown in the Fig. <ref type="figure">2</ref>, the network is composed with five layers of weights such as input layer, conv layer C1, max pooling layer M2, full connection layer F3, as well as the output layer. Here, u denotes every trainable attribute (weight measures), u ¼ u l f g and l ¼ 1; 2; 3; 4; where u l implies the parameter set between I À 1 ð Þth as well as lth layer.</p><p>In DR, every DR pixel sample can be considered as a 2 -dimensional image which has an equal height of 1, since 1D audio inputs are applied in audio analysis. Hence, the size of an input layer for ðn 1 ; 1Þ, and n l signify the band count. The initial hidden conv layer C1 extracts n 1 Â 1 input data including 20 kernels of size k 1 Â 1. Followed by this, is the layer C1 which has 20 Â n 2 Â 1 nodes, while n</p><formula xml:id="formula_19">2 ¼ n 1 À k 1 þ 1. It is comprised of 20 Â k 1 þ 1 ð</formula><p>Þtraining parameters between the layer C1 and input layer. The max pooling layer M2 is assumed to be a second hidden layer, and the kernel size is k 2 ; 1 ð Þ. The layer M2 consists of shows the readable parameters from current layer to layer M2. Subsequently, the output layer is comprised of n 5 nodes, and n 4 þ 1 ð ÞÂn 5 trainable parameters from present layer and layer F3. Thus, the structure of the projected CNN classification contains a set of 20</p><formula xml:id="formula_20">Â k 1 þ 1 ð Þþð20 Â n 3 þ 1Þ Â n 4 þ n 4 þ 1 ð ÞÂn 5 trained parameters.</formula><p>The classification of a particular DR pixel needs a relevant CNN including an aforementioned parameter, where n l and n 5 denote a spectral channel size as well as the count of external classes of a dataset, correspondingly. Practically, k 1 might be ½n 1 =9, whereas n 2 ¼ n 1 À k 1 þ 1: In this; n 3 could be the values among 30 and 40 as well as k 2 ¼ ½n 2 =n 3 :n 4 remains fixed to 100. Hence, the options could be optimal and efficient for a common HIS information. From this structure, it is clearly pointed that the layers C1 and M2 can be observed as trainable feature extractors for input DR data, while layer F3 can be assumed as a trainable classification for feature extractor. In this work, the CNN based Inception v4 model is applied as the feature extractor <ref type="bibr" target="#b22">[23]</ref>. The final outcome of sub sampling is an original feature of actual information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">GNB Based Classification</head><p>Typically, it can be handled with frequent parameters from Naive Bayes (NB) classifier which tends to apply Gaussian distributions to present the likelihoods of features constrained on the classes. Therefore, every parameter is described using Gaussian PDF by,</p><formula xml:id="formula_21">X l $ N m; s 2 À Á<label>(19)</label></formula><p>The Gaussian PDF consists of a shape of every bell that can be expressed below.</p><formula xml:id="formula_22">N m; s 2 À Á x ð Þ ¼ 1 ffiffiffiffiffiffiffiffiffiffi ffi 2ps 2 p e À xÀm ð Þ 2 2s 2<label>(20)</label></formula><p>where m represents mean and s 2 implies variance. In NB, the required parameter should be in the order of n (k), where n denotes the attribute count whereas k implies a number of classes. Particularly, a normal distribution P XijC ð Þ $ N m; s 2 ð Þ for all continuous attributes must be defined. Hence, the variables associated with these normal distributions could be derived using,</p><formula xml:id="formula_23">m X l jC¼c ¼ 1 N c X N c l¼1 x l<label>(21)</label></formula><formula xml:id="formula_24">s 2 X l jC¼c ¼ 1 N c X N c l¼1 x l 2 Àm 2<label>(22)</label></formula><p>where N c denotes the count of instance where C ¼ c whereas N represents the number of overall examples applied in training. By estimating P C ¼ c ð Þ for every class, it becomes simple by applying relevant frequencies in the form of,</p><formula xml:id="formula_25">P C ¼ c ð Þ¼ N c N<label>(23)</label></formula><p>Finally, the classifier outcome by the proposed model is notified to the user using the cloud database server and smart phones.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Performance Validation</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">Dataset Description</head><p>For experimentation purposes, a benchmark MESSIDOR DR Dataset was used which had a total of 1,200 color fundus images with annotations in Excel file <ref type="bibr" target="#b23">[24]</ref>. The details related to the dataset is shown in the Tab. 1 and the images can be graded into different levels namely level 1, level 2 and level 3. Fig. <ref type="figure" target="#fig_3">3</ref> shows some of the sample test DR images. The parameters involved in the simulation process are learning rate: 0.0001, momentum: 0.9, batch size: 128 and epoch count: 140.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">Results Analysis</head><p>Fig. <ref type="figure">4</ref> shows the sample visualization results of the DR images attained under segmentation and classification processes <ref type="bibr" target="#b24">[25]</ref>. As shown in the table, it can be inferred that the input image shown in Fig. <ref type="figure">4a</ref> got properly segmented and classified into DR_Level 3 as depicted in the Figs. <ref type="figure">4b</ref> and<ref type="figure">4c respectively</ref>.  The results achieved by the projected model in classifying the DR images are listed in Tab. 2. The first column in the table denotes the DR level types namely, normal, level 1, level 2 and level 3. The second column shows the original image whereas the third and fourth columns represent the corresponding segmented and classified images. By looking into the table, it can be inferred that the normal input image present in the second row of the table is correctly classified as Normal. Similarly, the level 1 input image present in the third row of the table is correctly classified as level 1. Likewise, the level 2 input image present in the fourth row of the table is accurately classified as level 2. In the same way, the level 3 input image present in the fifth row of the table is perfectly classified as level 3. Tab. 5 and Fig. <ref type="figure" target="#fig_6">5</ref> provides a detailed performance of the proposed model on the applied dataset. The proposed model properly classifies the input DR images into Normal class with the maximum accuracy of 99.50%, sensitivity of 99.27% and specificity of 99.69%. At the same time, the input images are classified into level 1 images with the maximum accuracy of 99.16%, sensitivity of 97.38% and specificity of 99.42%. In the same way, the input images are classified into level 2 images with the maximum accuracy of 99.41%, sensitivity of 99.19% and specificity of 99.47%. Simultaneously, the input images are classified into level 3 images with the maximum accuracy of 99.41%, sensitivity of 98.03% and specificity of 99.78% respectively. These higher values indicated that the proposed model has effectively classified the applied DR images.    A detailed comparison of the results achieved by distinct DR classification models <ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref> conducted and shown in Tab. 6. Fig. <ref type="figure">6</ref> shows the accuracy analysis for the proposed and existing models on the applied DR images. From the results, it can be inferred that the AlexNet is the ineffective classifier model with the least accuracy value of 89.75%. Following this, the ResNet model also exhibited poor classifier outcome with a minimum accuracy of 90.4%. At the same time, the VggNet-16, VggNet-19 and GoogleNet models achieved moderate classifier outcome and closer accuracy values of 93.17%, 93.73% and 93.36% respectively. In line with this, the VggNet-s model tried to achieve manageable results and ended up with a moderate accuracy of 95.68%. Besides, the M-AlexNet model offered a near optimal classifier outcome with the accuracy value of 96%. At the same time, the synergic deep learning (SDL) and deep neural network with moth search optimization (DNN-MSO) algorithms have reached to a competitive near accuracy values of 99.28% and 99.12% respectively. However, the proposed model showed significantly better classification results over the compared methods by achieving a maximum accuracy of 99.37%. Figure <ref type="figure">6</ref>: Accuracy analysis of diverse models on DR images Fig. <ref type="figure" target="#fig_7">7</ref> illustrates the sensitivity analysis for the proposed and existing approaches on test DR input images. It can be inferred that the GoogleNet exhibited the least classification performance with a minimal sensitivity of 77.66%. The AlexNet model outperformed GoogleNet and offered slightly higher sensitivity of 81.27%. The ResNet model achieved a slightly higher sensitivity value of 88.78%. In line with this, both VggNet-19 and VggNet-16 models achieved moderate classifier outcome with closer sensitivity values of 89.31% and 90.78% respectively. Moreover, the M-AlexNet, SDL and DNN-MSO models offered a closer classifier outcome with the sensitivity value of 92.35%, 98.54% and 97.91% respective. The proposed model offered the extraordinary classifier results with a maximum sensitivity value of 98.47%. Fig. <ref type="figure" target="#fig_8">8</ref> illustrates the specificity analysis for the proposed and existing approaches on test DR input images. From the figure, the inference is as follows. GoogleNet exhibited the least classification performance with 93.45% minimal specificity value whereas the VggNet-16 model outperformed the GoogleNet by achieving a slightly higher specificity of 94.32%. Compared to the models above, a slightly higher specificity value of 94.07% was achieved by AlexNet model. In line with this, both ResNet and VggNet-19 models achieved moderate classifier outcome and closer specificity values of 95.56% and 96.49% respectively. Moreover, both M-AlexNet and VggNet-s models offered a near optimal classifier outcome with specificity values of 97.45% and 97.43% respectively. Though the SDL and DNN-MSO models have attained competitive results with the specificity of 99.38% and 99.47%, it failed to outperform the proposed method. However, the proposed model offered surprising classifier results with a maximum specificity value of 99.59%.</p><p>The above mentioned figures and tables inferred that the proposed model offered effective DR classification with the maximum sensitivity of 98.47%, specificity of 99.59% and accuracy of 99.37% respectively. Therefore, the proposed model can be applied in real time diagnosis for the classification of DR. The usage of CLAHE based preprocessing, ASKFCM based segmentation, CNN based feature extraction has formed the basis of improved classification results by GNB model.  </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>Though several works have been carried out to diagnose the disease remotely using IoT and cloud platform, there is still a need to develop effective models to diagnose DR. The contribution of the study is given here. This study introduces a new IoT and cloud-based DL model for healthcare diagnosis of DR. The proposed model incorporates different processes namely data collection, preprocessing, segmentation, feature extraction and classification. First, an IoT-based data collection process where an IoT head mounted camera (IoT headset) is used to capture the fundus image. In the preprocessing stage, the contrast level gets improved using the Contrast Limited Adaptive Histogram Equalization (CLAHE) model. Next, the preprocessed image is segmented using Adaptive Spatial Kernel distance measure based Fuzzy c-means clustering (ASKFCM) model. Afterwards, the deep Convolution Neural Network (CNN) based Inception v4 model is applied as a feature extractor and the resultant feature vectors undergo classification in line with the Gaussian Naïve Bayes (GNB) model. The proposed model was tested using a benchmark DR image dataset and the obtained results showcased the superior performance of the proposed model over other compared methods.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: The overall process of the proposed model</figDesc><graphic coords="5,96.83,187.94,418.45,504.62" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 :¼ n 2 k 2 :</head><label>22</label><figDesc>Figure 2: The architecture of CNN based feature extraction model</figDesc><graphic coords="8,73.30,474.52,465.51,130.56" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: The sample images of DR a) normal b) mild c) moderate d) severe d) proliferative</figDesc><graphic coords="10,72.79,376.16,466.47,89.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Tab. 3</head><label>3</label><figDesc>provides the confusion matrix generated by the proposed model on the applied DR images. The table values highlighted that the proposed model clearly classifies a set of 542 images as Normal, 149 images as Level 1, 245 images as Level 2, and 249 images as Level 3 respectively. Afterwards, the generated confusion matrix was manipulated and the values were examined interms of True Positive (TP), True Negative (TN), False Positive (FP) and False Negative (FN) as shown in the Tab. 4. These values are applied to determine the classification performance.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: Classifier results offered by proposed model on DR images</figDesc><graphic coords="12,186.52,523.28,239.13,179.32" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 7 :</head><label>7</label><figDesc>Figure 7: Sensitivity analysis of diverse models on DR images</figDesc><graphic coords="14,186.52,234.43,239.13,172.35" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 8 :</head><label>8</label><figDesc>Figure 8: Specificity analysis of diverse models on DR images</figDesc><graphic coords="15,186.52,103.64,239.13,172.35" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 :</head><label>1</label><figDesc>Dataset description</figDesc><table><row><cell>Levels of DR</cell><cell>Description</cell><cell>Corresponding labels</cell></row><row><cell>Normal</cell><cell>No abnormality</cell><cell>Healthy retina</cell></row><row><cell>Mild NPDR</cell><cell>Micro aneurysms exist</cell><cell>DR Level 1</cell></row><row><cell>Moderate NPDR</cell><cell>Few Micro aneurysms</cell><cell>DR Level 2</cell></row><row><cell>Severe NPDR</cell><cell>Venous Beading and intra retinal</cell><cell></cell></row><row><cell></cell><cell>Microvascular abnormality (IRMA)</cell><cell></cell></row><row><cell>PDR</cell><cell>Vitreous/Pre-retinal Hemorrhage</cell><cell>DR Level 3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc>Sample visualization resultsCMC, 2021, vol.66, no.2</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 :</head><label>3</label><figDesc>Confusion matrix</figDesc><table><row><cell>Input Label</cell><cell cols="3">Different levels of DR</cell><cell></cell><cell>Total No. of Images</cell></row><row><cell></cell><cell cols="4">Normal Level 1 Level 2 Level 3</cell><cell></cell></row><row><cell>Normal</cell><cell>542</cell><cell>2</cell><cell>2</cell><cell>0</cell><cell>546</cell></row><row><cell>Level 1</cell><cell>2</cell><cell>149</cell><cell>0</cell><cell>2</cell><cell>153</cell></row><row><cell>Level 2</cell><cell>0</cell><cell>2</cell><cell>245</cell><cell>0</cell><cell>247</cell></row><row><cell>Level 3</cell><cell>0</cell><cell>2</cell><cell>3</cell><cell>249</cell><cell>254</cell></row><row><cell cols="2">Total No. of Images 543</cell><cell>157</cell><cell>247</cell><cell>253</cell><cell>1200</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 :</head><label>4</label><figDesc>Manipulations from confusion matrix</figDesc><table><row><cell>DR Level</cell><cell>Normal</cell><cell>Level 1</cell><cell>Level 2</cell><cell>Level 3</cell></row><row><cell>TP</cell><cell>542</cell><cell>149</cell><cell>245</cell><cell>249</cell></row><row><cell>TN</cell><cell>643</cell><cell>1036</cell><cell>943</cell><cell>936</cell></row><row><cell>F P</cell><cell>2</cell><cell>6</cell><cell>5</cell><cell>2</cell></row><row><cell>F N</cell><cell>4</cell><cell>4</cell><cell>2</cell><cell>5</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5 :</head><label>5</label><figDesc>Performance measures of test images with different DR levels</figDesc><table><row><cell>Input Grades</cell><cell>Accuracy</cell><cell>Sensitivity</cell><cell>Specificity</cell></row><row><cell>Normal</cell><cell>99.50</cell><cell>99.27</cell><cell>99.69</cell></row><row><cell>Level 1</cell><cell>99.16</cell><cell>97.38</cell><cell>99.42</cell></row><row><cell>Level 2</cell><cell>99.41</cell><cell>99.19</cell><cell>99.47</cell></row><row><cell>Level 3</cell><cell>99.41</cell><cell>98.03</cell><cell>99.78</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6 :</head><label>6</label><figDesc>Performance measures of test images with various models</figDesc><table><row><cell>Methods</cell><cell>Accuracy</cell><cell>Sensitivity</cell><cell>Specificity</cell></row><row><cell>Proposed</cell><cell>99.37</cell><cell>98.47</cell><cell>99.59</cell></row><row><cell>SDL</cell><cell>99.28</cell><cell>98.54</cell><cell>99.38</cell></row><row><cell>DNN-MSO</cell><cell>99.12</cell><cell>97.91</cell><cell>99.47</cell></row><row><cell>M-AlexNet</cell><cell>96.00</cell><cell>92.35</cell><cell>97.45</cell></row><row><cell>AlexNet</cell><cell>89.75</cell><cell>81.27</cell><cell>94.07</cell></row><row><cell>VggNet-s</cell><cell>95.68</cell><cell>86.47</cell><cell>97.43</cell></row><row><cell>VggNet-16</cell><cell>93.17</cell><cell>90.78</cell><cell>94.32</cell></row><row><cell>VggNet-19</cell><cell>93.73</cell><cell>89.31</cell><cell>96.49</cell></row><row><cell>GoogleNet</cell><cell>93.36</cell><cell>77.66</cell><cell>93.45</cell></row><row><cell>ResNet</cell><cell>90.40</cell><cell>88.78</cell><cell>95.56</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>Funding Statement: This work is financially supported by <rs type="programName">RUSA-Phase 2</rs>.0 grant sanctioned vide Letter No. <rs type="grantNumber">F. 24-51/2014-U</rs>, <rs type="funder">Policy (TNMulti-Gen), Dept. of Edn. Govt. of India</rs>, Dt. 09.10.2018.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_2bAthDY">
+					<idno type="grant-number">F. 24-51/2014-U</idno>
+					<orgName type="program" subtype="full">RUSA-Phase 2</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest:</head><p>The authors declare that they have no conflicts of interest to report regarding the present study.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Cloud and IoT based disease prediction and diagnosis system for healthcare using Fuzzy neural classifier</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lokesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Varatharajan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">C</forename><surname>Babua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Parthasarathy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Generation Computer Systems</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="527" to="534" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Computer-aided diagnosis of diabetic retinopathy: A review</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R K</forename><surname>Mookiah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">R</forename><surname>Acharya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Chua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Lim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">Y K</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers in Biology and Medicine</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2136" to="2155" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Algorithms for the automated detection of diabetic retinopathy using digital fundus images: A review</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Faust</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">R</forename><surname>Acharya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">Y K</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Ng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Suri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Medical Systems</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="145" to="157" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Evolutionary computing enriched computer-aided diagnosis system for diabetic retinopathy: A survey</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Mansour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Reviews in Biomedical Engineering</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="334" to="349" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Retinal vessels segmentation techniques and algorithms: A survey</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Almotiri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Elleithy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Elleithy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Applied Sciences</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1" to="31" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Optic disc and optic cup segmentation methodologies for glaucoma image detection: A survey</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Almazroa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Burman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Raahemifar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Lakshminarayanan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Ophthalmology</title>
+		<imprint>
+			<biblScope unit="volume">2015</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1" to="28" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Survey on segmentation and classification approaches of optic cup and optic disc for diagnosis of glaucoma</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Thakur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Juneja</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomedical Signal Processing and Control</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="162" to="189" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Cloud-centric IoT based disease diagnosis healthcare framework</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Verma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Sood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Parallel and Distributed Computing</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page" from="27" to="38" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Secure integration of IoT and cloud computing</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Stergiou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Psannis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">G</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gupta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Generation Computer Systems</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="964" to="975" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Multi-layer cloud architectural model and ontology-based security service framework for IoT-based smart homes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Castiglione</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Palmieri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Generation Computer Systems</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1040" to="1051" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A novel three-tier internet of things architecture with machine learning algorithm for early detection of heart diseases</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">D</forename><surname>Gandhi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers &amp; Electrical Engineering</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="222" to="235" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Smart in-car camera system using mobile cloud computing framework for deep learning</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C H</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Vehicular Communications</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="84" to="90" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Cloud-based machine learning for predictive analytics: Tool wear prediction in milling</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jennings</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Terpenny</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kumara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2016 IEEE Int. Conf. on Big Data</title>
+		<meeting><address><addrLine>Washington, DC, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="2062" to="2069" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Smart health solution integrating IoT and cloud: A case study of voice pathology monitoring</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Muhammad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M M</forename><surname>Rahman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alelaiwi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alamri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Communications Magazine</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="69" to="73" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Cloud-assisted Industrial Internet of Things (IIoT)enabled framework for health monitoring</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Hossain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Muhammad</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Networks</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="192" to="202" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The internet of things for health care: A comprehensive survey</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M R</forename><surname>Islam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kwak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Kabir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hossain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Kwak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="678" to="708" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">An intelligent neuro fuzzy temporal knowledge representation model for mining temporal patterns</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sethukkarasi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ganapathy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Yogesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kannan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Intelligent &amp; Fuzzy Systems</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1167" to="1178" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A real-time health monitoring system for remote cardiac patients using smartphone and wearable sensors</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kakria</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">K</forename><surname>Tripathi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kitipawang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Telemedicine and Applications</title>
+		<imprint>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="1" to="15" />
+			<date type="published" when="2015">2015. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Emergency situation monitoring service using context motion tracking of chronic disease patients</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chung</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cluster Computing</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="747" to="759" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">IOT based sustainable diabetic retinopathy diagnosis system, sustainable Computing</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Jebaseeli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A D</forename><surname>Durai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Petera</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Informatics and Systems</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">DREAM: Diabetic retinopathy analysis using machine learning</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Roychowdhury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Koozekanani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">K</forename><surname>Parhi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Journal of Biomedical and Health Informatics</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1717" to="1728" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">An automated system for the detection and classification of retinal changes due to red lesions in longitudinal fundus images</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Adal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Van Etten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Martinez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Rouwen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Vermeer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Biomedical Engineering</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1382" to="1390" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Rethinking the inception architecture for computer vision</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Szegedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Vanhoucke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ioffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shlens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wojna</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2016 IEEE Conf. on Computer Vision and Pattern Recognition</title>
+		<meeting><address><addrLine>Las Vegas, NV, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="2818" to="2826" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Datset</surname></persName>
+		</author>
+		<ptr target="http://www.adcis.net/en/third-party/messidor/" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Modified Alexnet architecture for classification of diabetic retinopathy images</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Shanthi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Sabeenian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers &amp; Electrical Engineering</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="56" to="64" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Deep neural network with moth search optimization algorithm based detection and classification of diabetic retinopathy images</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shankar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Perumal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Vidhyavathi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">SN Applied Sciences</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Automated detection and classification of fundus diabetic retinopathy images using synergic deep learning model</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shankar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R W</forename><surname>Sait</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Lakshmanaprabu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Khanna</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recognition Letters</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="210" to="216" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

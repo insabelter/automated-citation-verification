@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Develop 24 dissimilar ANNs by suitable architectures &amp; training algorithms via sensitivity analysis to better statistical presentation: Measure MSEs between targets &amp; ANN for Fe-CuO/Eg-Water nanofluid</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2018-12-26">26 December 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Mehrdad</forename><surname>Bahrami</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution" key="instit1">Najafabad Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Najafabad</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mohammad</forename><surname>Akbari</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution" key="instit1">Najafabad Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Najafabad</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Seyed</forename><surname>Amin Bagherzadeh</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution" key="instit1">Najafabad Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Najafabad</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arash</forename><surname>Karimipour</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution" key="instit1">Najafabad Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Najafabad</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Masoud</forename><surname>Afrand</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Mechanical Engineering</orgName>
+								<orgName type="institution" key="instit1">Najafabad Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Najafabad</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Marjan</forename><surname>Goodarzi</surname></persName>
+							<email>marjan.goodarzi@tdtu.edu.vn</email>
+							<affiliation key="aff1">
+								<orgName type="department">Faculty of Environment and Labour Safety</orgName>
+								<orgName type="laboratory">Sustainable Management of Natural Resources and Environment Research Group</orgName>
+								<orgName type="institution">Ton Duc Thang University</orgName>
+								<address>
+									<addrLine>Ho Chi Minh</addrLine>
+									<settlement>City</settlement>
+									<country key="VN">Vietnam</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Develop 24 dissimilar ANNs by suitable architectures &amp; training algorithms via sensitivity analysis to better statistical presentation: Measure MSEs between targets &amp; ANN for Fe-CuO/Eg-Water nanofluid</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2018-12-26">26 December 2018</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">C4B3F159C59305F00DD59F9F177F8033</idno>
+					<idno type="DOI">10.1016/j.physa.2018.12.031</idno>
+					<note type="submission">Received 12 August 2018 Received in revised form 4 November 2018</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:46+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>ANN MSE Training algorithms Non-Newtonian nanofluid Sensitivity analysis</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Develop 24 dissimilar ANN methods together with sensitivity analysis.</p><p>• Introduce the suitable architectures and training algorithms.</p><p>• Measure MSEs between targets and ANN for Fe-CuO/Eg-Water.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>The mixture composed of nanoparticles dispersed through a base liquid, which is called nanofluid, plays a significant role in MEMS &amp; NEMS. It should be mentioned that the nanoparticles concentration have be small to avoid from undesired behaviors such as settlements. The Brownian motions of nanoparticles are able to increase the convection mechanism through the base fluid; however their main important effect would be improve the mixture effective thermal conductivity. That implies the better performance of nanoparticles with more thermal conductivity coefficient. This fact has been reported in many articles for various types of nanoparticles <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref>. Meanwhile, the amount of nanoparticles concentration has an important influence on the mixture thermal behavior especially at different values of working temperature. Other effective thermo-physical properties can be addressed as like the nanoparticles density, specific heat and their shapes and diameters. It is well known that in addition of nanofluid thermal conductivity, the mixture effective viscosity should be evaluated due to its performance in a flow pumping power; so that a large number of works can be referred concerned these aspects of nanofluid properties. The evaluations of nanofluid thermo-physical properties through various experimental studies, have been followed by the numerical works; which had tried to predict the properties by using the suitable correlations. These correlations outputs might show some detour versus experimental ones; however less costs of researchers encouraged researchers to follow that field to present more accurate correlations at various working conditions <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>.</p><p>The expensive steps of stabilize and dispersing the nanoparticles, are able to be ignored through the numerical works; moreover all the nanofluid behaviors can be predicted by a simple optimization approach according to the available empirical results. Among these optimization approaches, the artificial neural network (ANN) was used in many studies to predict the nanofluid properties especially for its thermal conductivity and viscosity. Moreover appropriate accuracy of this method encouraged researchers to develop more new models of ANN to have better consistency with the existence physical conditions of a nanofluid flow .</p><p>In the following, 24 dissimilar ANN methods are examined at present work by introducing the suitable architectures and training algorithms of these using approaches. To do this, the MSEs between the targets and the ANN outputs of the examined methods are evaluated while the results would be supported by the appropriate sensitivity analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Problem statement</head><p>The artificial neural network (ANN) optimization method is evaluated according to the experimental results of Bahrami et al. <ref type="bibr" target="#b9">[10]</ref> concerned the hybrid non-Newtonian nanofluid of iron (Fe) and copper oxide (CuO) in a binary mixture of water and ethylene glycol (see Fig. <ref type="figure" target="#fig_0">1</ref>). They reported the mixture dynamic viscosity, µ (mPa.s), versus shear rate, γ (1/s), at different amounts of nanoparticles volume fraction (φ = 0.25 to 1.5%) and temperate (T = 25 to 50 • C).</p><p>Present work novelty is demonstrated by providing 24 dissimilar ANN methods to introduce the suitable architectures and training algorithms for them . The mean squared errors (MSEs) between the targets and ANN outputs are evaluated to present the best optimization approach among them. Meanwhile the results would be supported by the appropriate sensitivity analysis to have better statistical visual presentation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Feed-forward multilayer ANN</head><p>Artificial Neural Networks (ANNs) are appropriate tools for the function approximation. Due to their approximation capabilities, the ANNs can be employed as universal function estimators. In other words, the ANNs can approximate a wide range of functions with any given precision <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b12">13]</ref>. In practice, usually feed-forward multilayer ANNs having sigmoid neurons in the hidden layer and linear neurons in the output layer are used for the curve fitting and interpolation. However, it is usually difficult to select the best architecture and training algorithm. This is due the fact that the best combination of the ANN architecture and the training algorithm depends on several factors such as the complexity of the desired functions, the size of the available input-output datasets and the expected accuracy and precision of the resultant models. In this section, a variety of the ANN is examined in order to determine which architecture and training algorithm is more suitable for estimating the nanofluid features.</p><p>In this paper, the required model has three attributes (i.e., the solid concentration, the temperature and the shear rate) as the inputs and one attribute (i.e., the nanofluid viscosity) as the target. A set of 204 input-output experimental data is available. It is desired to find the best combination of the ANN architecture and the training algorithm in order to minimize the Mean Squared Errors (MSEs) between the targets and the ANN outputs. To that end, a variety of feed-forward multilayer ANNs having dissimilar number of layers, number of hidden layer neurons and training algorithms are examined including:</p><p>• One hidden layer with 5, 10, 15 and 20 neurons • Two hidden layers with 5-5, 10-5, 5-10 and 10-10 neurons • The Levenberg-Marquardt (LM), Scaled Conjugate Gradient (SCG) and Bayesian Regulation (BR) backpropagation methods.</p><p>It should be noted that the selected backpropagation algorithms are the most effective methods for small-size datasets. Suppose that the unknown variables (weights and biases) of an ANN are denoted by the vector</p><formula xml:id="formula_0">x T = [ x 1 x 2 • • • x n ]</formula><p>. The learning rules for the aforementioned algorithms are as follows:</p><p>• For the LM algorithm:</p><formula xml:id="formula_1">x k+1 = x k -[J T k J k + µ k I ] -1 J T k e k (<label>1</label></formula><formula xml:id="formula_2">)</formula><p>where</p><formula xml:id="formula_3">J k = ⎡ ⎢ ⎢ ⎢ ⎢ ⎢ ⎢ ⎢ ⎢ ⎢ ⎣ ∂e 1 ∂x 1 ∂e 1 ∂x 2 • • • ∂e 1 ∂x n ∂e 2 ∂x 1 ∂e 2 ∂x 2 • • • ∂e 2 ∂x n . . . . . . . . . . . . ∂e N ∂x 1 ∂e N ∂x 2 . . . ∂e N ∂x n ⎤ ⎥ ⎥ ⎥ ⎥ ⎥ ⎥ ⎥ ⎥ ⎥ ⎦<label>(2)</label></formula><p>in which</p><formula xml:id="formula_4">e T = [ e 1 e 2 • • • e N ]</formula><p>where e is the error between any real output and its desired value. The parameter µ k controls the algorithm speed and convergence: when the errors are increased, the parameter µ k is magnified to accelerate the learning while when the errors are decreased, the parameter µ k is reduced to guarantee the convergence.</p><p>• For the SCG algorithm:</p><formula xml:id="formula_5">x k+1 = x k + α k p k (3)</formula><p>in which the α k is the learning rate and p k is the search direction. The search direction is updated as follows:</p><formula xml:id="formula_6">p k = -g k + β k p k-1<label>(4)</label></formula><p>with</p><formula xml:id="formula_7">β k = g T k g k g T k-1 g k-1 , β 0 = 0<label>(5)</label></formula><p>and</p><formula xml:id="formula_8">g k = ∇F (x)| x k .<label>(6)</label></formula><p>In every step, the learning rate α k should be selected so that Eq. ( <ref type="formula" target="#formula_6">4</ref>) is minimized along the search direction.</p><p>• For the BR algorithm, the LM algorithm is employed while the following cost function should be minimized:</p><formula xml:id="formula_9">F (x) = βe T e + α n ∑ i=1 x 2 i .<label>(7)</label></formula><p>In all cases, the ''tansig'' activation functions are used for the hidden layer(s) and the ''linear'' activation function is used for the output layer. The initial conditions of the weights and bias of the ANN are randomly selected. Therefore, every ANN is trained 20 times, and its average performance is reported. Also, data division is random. A preprocessing scheme is performed on the input and target data that map the data means to 0 and deviations to 1.</p><p>The LM, SCG and BR training algorithms are selected for this problem because they have the best performance for the function approximation. The training parameters of the LM, SCG and BR algorithms are reported in Table <ref type="table">1</ref>. For more information about these training algorithms, one can refer to Ref. <ref type="bibr" target="#b26">[27]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Results and discussions</head><p>In this paper, 24 dissimilar ANNs are examined. The architectures and training algorithms of these ANNs are listed in Table <ref type="table" target="#tab_0">2</ref>. Also, the MSEs between the targets and the ANN outputs of the examined ANN are reported in Table <ref type="table" target="#tab_0">2</ref>. It should be noted that the time required for the network training has not been taken into consideration because the size of the dataset is not so high that there are concerns about the computational time and cost.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1</head><p>The training parameters of the LM, SCG and BR algorithms. The results indicate that the LM and BR have better performance than the SCG in all of the investigated architectures. The performance of the LM and BR are comparable; however, the BR outperforms the LM in several cases. The simple architectures provide acceptable models. Three-layer ANNs do not necessarily have better performance than two-layer ANNs. Also, increasing the hidden neurons may slightly improve the ANN performance; nevertheless, it can cause over-fitting when the architecture is more complex. In the investigated problem, the combination of the two-layer ANN with 15 hidden neurons and the BR training algorithm provide the best results. The regression plot for the resultant model is illustrated in Fig. <ref type="figure" target="#fig_1">2</ref>. It indicates a perfect fit. Also, the convergence of the training and test processes are depicted in Fig. <ref type="figure" target="#fig_2">3</ref>. Hence, it can be concluded that a two-layer ANN with moderate hidden neuron number and the BR training algorithm is preferred for similar problems.</p><p>Once the desired model is obtained, it can be employed to interpolate throughout the trained envelope. For example, the results of the aforementioned ANN for the non-trained solid concentration of 0.25%, 0.5%, 0.75%, 1%, 1.25% and 1.5% are illustrated in Fig. <ref type="figure">4</ref>.</p><p>Moreover, the error percentages between the experimental data and numerical results of the ANN for some solid concentrations are presented in Table <ref type="table">3</ref>. The results indicate that the model can predict the nanofluid properties, properly.</p><p>Finally, the trained ANN can be employed for the sensitivity analysis. For example, the sensitivities of the output (i.e., viscosity) with respect to the inputs (i.e., solid fraction, temperature and shear rate) at φ = 0.5 (%) are illustrated in Fig. <ref type="figure" target="#fig_4">5</ref>.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 3</head><p>The error percentages between the experimental data and numerical results of the ANN for some solid concentrations. φ = 0.25 (%) </p><formula xml:id="formula_10">T ( • C) γ ( 1 s )<label>25</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>Artificial neural network optimization method was evaluated according to the experimental results concerned hybrid non-Newtonian nanofluid of Fe/CuO in a binary mixture of water/Eg. Present work novelty was demonstrated by providing 24 dissimilar ANN methods to introduce the suitable architectures and training algorithms for them. The mean squared  errors (MSEs) between the targets and ANN outputs were evaluated to present the best optimization approach among them. Meanwhile the results were supported by the appropriate sensitivity analysis to have better statistical visual presentation.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Nanofluid samples with a summary of its preparing process [10] [Reproduction with permission of Elsevier].</figDesc><graphic coords="2,123.62,55.59,300.04,149.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. The regression plot for the resultant model.</figDesc><graphic coords="4,123.62,137.51,300.04,318.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The convergence of the training and test processes.</figDesc><graphic coords="5,150.75,55.59,239.84,167.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .Fig. 4 .</head><label>44</label><figDesc>Fig. 4. The results of the ANN for the non-trained solid concentration as: (a) 0.25%, (b) 0.5%, (c) 0.75%, (d) 1%, (e) 1.25% and (f) 1.5%.</figDesc><graphic coords="6,161.56,65.66,224.19,584.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. The sensitivities (a) ∂µ ∂φ , (b) ∂µ ∂T , (c) ∂µ ∂ γ at φ = 0.5 (%).</figDesc><graphic coords="8,158.22,66.71,230.93,576.13" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,160.01,67.50,221.30,580.97" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 2</head><label>2</label><figDesc>The MSEs between the targets and the ANN outputs of the examined ANN.</figDesc><table><row><cell>Architecture</cell><cell>Training Algorithm</cell><cell>MSE</cell><cell>Architecture</cell><cell>Training Algorithm</cell><cell>MSE</cell></row><row><cell>5</cell><cell>LM</cell><cell>2.31</cell><cell>5-5</cell><cell>LM</cell><cell>2.03</cell></row><row><cell>5</cell><cell>SCG</cell><cell>8.69</cell><cell>5-5</cell><cell>SCG</cell><cell>7.59</cell></row><row><cell>5</cell><cell>BR</cell><cell>0.33</cell><cell>5-5</cell><cell>BR</cell><cell>0.38</cell></row><row><cell>10</cell><cell>LM</cell><cell>1.69</cell><cell>10-5</cell><cell>LM</cell><cell>0.55</cell></row><row><cell>10</cell><cell>SCG</cell><cell>8.22</cell><cell>10-5</cell><cell>SCG</cell><cell>14.23</cell></row><row><cell>10</cell><cell>BR</cell><cell>0.19</cell><cell>10-5</cell><cell>BR</cell><cell>0.18</cell></row><row><cell>15</cell><cell>LM</cell><cell>1.89</cell><cell>5-10</cell><cell>LM</cell><cell>1.63</cell></row><row><cell>15</cell><cell>SCG</cell><cell>12.84</cell><cell>5-10</cell><cell>SCG</cell><cell>11.43</cell></row><row><cell>15</cell><cell>BR</cell><cell>0.15</cell><cell>5-10</cell><cell>BR</cell><cell>0.34</cell></row><row><cell>20</cell><cell>LM</cell><cell>1.67</cell><cell>10-10</cell><cell>LM</cell><cell>6.69</cell></row><row><cell>20</cell><cell>SCG</cell><cell>5.40</cell><cell>10-10</cell><cell>SCG</cell><cell>12.14</cell></row><row><cell>20</cell><cell>BR</cell><cell>0.16</cell><cell>10-10</cell><cell>BR</cell><cell>0.20</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">The viscosity of concentrated suspensions and solutions</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Brinkman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="571" to="581" />
+			<date type="published" when="1952">1952</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Study of heat transfer due to laminar flow of copper-water nanofluid through two isothermally heated parallel plates</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Santra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Chakraborty</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Therm. Sci</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="391" to="400" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Effects of magnetic field on nanofluid forced convection in a partially heated microchannel</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Aminossadati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Raisi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ghasemi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Non-Linear Mech</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="1373" to="1382" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The investigation of thermal radiation and free convection heat transfer mechanisms of nanofluid inside a shallow cavity by lattice Boltzmann method</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Abdollahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">509</biblScope>
+			<biblScope unit="page" from="515" to="535" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Develop the lattice Boltzmann method to simulate the slip velocity and temperature domain of buoyancy forces of FMWCNT nano particles in water through a micro flow imposed to the specified heat flux</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">509</biblScope>
+			<biblScope unit="page" from="729" to="745" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">New correlation for Nusselt number of nanofluid with Ag/Al2O3/Cu nanoparticles in a microchannel considering slip velocity and temperature jump by using lattice Boltzmann method</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Therm. Sci</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="146" to="156" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Simulation of copper-water nanofluid in a microchannel in slip flow regime using the lattice Boltzmann method</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Nezhad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Shirani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Mech. B Fluids</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="89" to="99" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Effects of temperature and concentration on the viscosity of nanofluids made of single-wall carbon nanotubes in ethylene glycol</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Baratpour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="108" to="113" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Experimental study on thermal conductivity of DWCNT-ZnO/water-EG nanofluids</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hassani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="248" to="251" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">An experimental study on rheological behavior of hybrid nanofluids made of iron and copper oxide in a binary mixture of water and ethylene glycol: non-Newtonian behavior</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bahrami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Therm Fluid Sci</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="231" to="237" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Heat transfer improvement of water/single-wall carbon nanotubes (SWCNT) nanofluid in a novel design of a truncated double-layered microchannel heat sink</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A A</forename><surname>Arani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marzban</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Alrashed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="780" to="795" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Multilayer feedforward networks are universal approximators</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stinchcombe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>White</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="359" to="366" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Approximation capabilities of multilayer feedforward networks</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Netw</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="251" to="257" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Bayesian interpolation</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Mackay</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="415" to="447" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Empirical correlation finding the role of temperature and particle size for nanofluid (Al2O3) thermal conductivity enhancement</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>Kihm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">U S</forename><surname>Choi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Phys. Lett</title>
+		<imprint>
+			<biblScope unit="page" from="153107" to="153107" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Investigation on convective heat transfer and flow features of nanofluids</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ASME J. Heat Transfer</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="151" to="155" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Thermal conductivity of Cu/TiO2-water/EG hybrid nanofluid: Experimental data and modeling using artificial neural network and correlation</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Naderi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Asadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rostamian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="100" to="104" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Modeling of thermal conductivity of ZnO-EG using experimental data and ANN methods</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Saedodin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Naderi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alirezaie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Dahari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="35" to="40" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Developing a new correlation to estimate the thermal conductivity of MWCNT-CuO/water hybrid nanofluid via an experimental investigation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zadkhast</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="859" to="867" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">New temperature, interfacial shell dependent dimensionless model for thermal conductivity of nanofluids</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Masoud</forename><surname>Hosseini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mohammad</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Reza</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Marjan</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A A</forename><surname>Abdullah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Truong</forename><surname>Alrashed</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Khan Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="207" to="210" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Melting process in porous media around two hot cylinders: Numerical study using the lattice Boltzmann method</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jourabian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A R</forename><surname>Darzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Akbari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">509</biblScope>
+			<biblScope unit="page" from="316" to="335" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">An experimental study on thermal conductivity of F-MWCNTs-Fe3O4/EG hybrid nanofluid: effects of temperature and concentration</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Harandi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="171" to="177" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Rheological behavior characteristics of ZrO2-MWCNT/10w40 hybrid nano-lubricant affected by temperature, concentration, and shear rate: An experimental study and a neural network simulating</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rejvani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R S</forename><surname>Emami</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="160" to="170" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Prediction of rheological behavior of SiO 2-MWCNTs/10W40 hybrid nanolubricant by designing neural network</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Nadooshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="2741" to="2748" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Preparation, characterization, viscosity, and thermal conductivity of nitrogen-doped graphene aqueous nanofluids</title>
+		<author>
+			<persName><forename type="first">Mohammad</forename><surname>Mehrali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Emad</forename><surname>Sadeghinezhad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sara</forename><forename type="middle">Tahan</forename><surname>Latibari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mehdi</forename><surname>Mehrali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">N M</forename><surname>Hussein Togun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Zubir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hendrik</forename><surname>Kazi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cornelis</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Metselaar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mater. Sci</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">20</biblScope>
+			<biblScope unit="page" from="7156" to="7171" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Evaluation of thermal conductivity of COOH-functionalized MWCNTs/water via temperature and solid volume fraction by using experimental data and ANN methods</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Naderi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">121</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1273" to="1278" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">Neural Network Design</title>
+		<author>
+			<persName><forename type="first">Martin</forename><forename type="middle">T</forename><surname>Hagan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Howard</forename><forename type="middle">B</forename><surname>Demuth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Mark</forename><forename type="middle">H</forename><surname>Beale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Orlando</forename><forename type="middle">De</forename><surname>Jesús</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<publisher>Martin Hagan</publisher>
+		</imprint>
+	</monogr>
+	<note>second ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Electro-and thermophysical properties of water-based nanofluids containing copper ferrite nanoparticles coated with silica: Experimental data, modeling through enhanced ANN and curve fitting</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Alrashed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Bagherzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page" from="925" to="935" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Synthesized CuFe2O4/SiO2 nanocomposites added to water/EG: Evaluation of the thermophysical properties beside sensitivity analysis &amp; EANN</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Bagherzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Alnaqi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bahiraei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Shadloo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page" from="1169" to="1179" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Forced convective heat transfer of water/functionalized multi-walled carbon nanotube nanofluids in a microchannel with oscillating heat flux and slip boundary condition</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Nikkhah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Forghani-Tehrani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="69" to="77" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Mixed convection of copper-water nanofluid in a shallow inclined lid driven cavity using the lattice Boltzmann method</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Semiromi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jafari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Kazi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">402</biblScope>
+			<biblScope unit="page" from="150" to="168" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Comparison of the finite volume and lattice Boltzmann methods for solving natural convection heat transfer problems inside cavities and enclosures</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hooman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Kazi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Sadeghinezhad</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Abstract and Applied Analysis</title>
+		<imprint>
+			<biblScope unit="volume">2014</biblScope>
+			<biblScope unit="page">762184</biblScope>
+			<date type="published" when="2014">2014</date>
+			<publisher>Hindawi</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Investigation of micro-and nanosized particle erosion in a 90 pipe bend using a two-phase discrete phase model</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Mahian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Garoosi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hooman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Kazi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gharehkhani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. World J</title>
+		<imprint>
+			<biblScope unit="page">740578</biblScope>
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Numerical study of entropy generation due to coupled laminar and turbulent mixed convection and thermal radiation in an enclosure filled with a semitransparent medium</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Oztop</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Sadeghinezhad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Kazi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Jomhari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci. World J</title>
+		<imprint>
+			<biblScope unit="page">761745</biblScope>
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Application of nanofluid to improve the thermal performance of horizontal spiral coil utilized in solar ponds: geometric study</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Khodabandeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Alrashed</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Renew. Energy</title>
+		<imprint>
+			<biblScope unit="volume">122</biblScope>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">The effect of attack angle of triangular ribs on heat transfer of nanofluids in a microchannel</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Heydari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Derakhshani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Alrashed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mashayekhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A S</forename><surname>Shabani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zarringhalam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="2893" to="2912" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Analysis of heat transfer and nanofluid fluid flow in microchannels with trapezoidal, rectangular and triangular shaped ribs</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Behnampour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ghavami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marzban</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A S</forename><surname>Shabani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mashayekhi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="15" to="31" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A modified two-phase mixture model of nanofluid flow and heat transfer in a 3-D curved microtube</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Akbar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zarringhalam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A S</forename><surname>Shabani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Powder Technol</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2175" to="2185" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Numerical investigation of flow and heat transfer characteristics in smooth, sinusoidal and zigzag-shaped microchannel with and without nanofluid</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M D</forename><surname>Abdollah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Pourfattah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ruhani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1757" to="1766" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Efficiency improvement of a steam power plant through solar repowering</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Exergy</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="158" to="182" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Application of a novel conical strip insert to improve the efficacy of water-Ag nanofluid for utilization in thermal systems: a two-phase simulation</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mashayekhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Khodabandeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bahiraei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bahrami</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Convers. Manage</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page" from="573" to="586" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Solar parallel feed water heating repowering of a steam power plant: a case study in Iran</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ahmadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Renew. Sustain. Energy Rev</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="474" to="485" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Experimental and numerical investigations on heat transfer of a watercooled lance for blowing oxidizing gas in an electrical arc furnace</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Khodabandeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rahbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Rosen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">N</forename><surname>Ashrafi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Anvari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Energy Convers. Manage</title>
+		<imprint>
+			<biblScope unit="volume">148</biblScope>
+			<biblScope unit="page" from="43" to="56" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Experimental determination of viscosity of water based magnetite nanofluid for application in heating and cooling systems</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Alempour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Magn. Magn. Mater</title>
+		<imprint>
+			<biblScope unit="volume">417</biblScope>
+			<biblScope unit="page" from="243" to="248" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Designing an artificial neural network to predict dynamic viscosity of aqueous nanofluid of TiO2 using experimental data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R H</forename><surname>Ahangar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rejvani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Hajmohammad</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="192" to="196" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">An experimental study on viscosity of alumina-engine oil: effects of temperature and nanoparticles concentration</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gharehkhani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="202" to="208" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Designing artificial neural network on thermal conductivity of Al2O3-water-EG (60%-40%) nanofluid using experimental data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R H</forename><surname>Ahangar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Hajmohammad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tourang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="837" to="843" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Longitudinal vibration and instabilities of carbon nanotubes conveying fluid considering size effects of nanoflow and nanostructure</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Oveissi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Eftekhari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="164" to="173" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Numerical simulation of laminar forced convection of water-CuO nanofluid inside a triangular duct</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aghanajafi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mehmandoust</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page" from="103" to="108" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Examination of rheological behavior of MWCNTs/ZnO-SAE40 hybrid nano-lubricants under various temperatures and solid volume fractions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Therm Fluid Sci</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page" from="384" to="390" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Using artificial neural network to predict thermal conductivity of ethylene glycol with alumina nanoparticle</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Yan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="643" to="648" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Numerical simulation of heat transfer and fluid flow of water-CuO nanofluid in a sinusoidal channel with a porous medium</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nazari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="134" to="140" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Fluid flow and heat transfer of non-Newtonian nanofluid in a microtube considering slip velocity and temperature jump boundary conditions</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Sajadifar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Mech. B Fluids</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="25" to="32" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Optimization, modeling and accurate prediction of thermal conductivity and dynamic viscosity of stabilized ethylene glycol and water mixture Al2O3 nanofluids by NSGA-II using ANN</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Razi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Hajmohammad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Rostamian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Sarsam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A A</forename><surname>Arani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dahari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. Commun. Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="154" to="160" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Longitudinal vibration and stability analysis of carbon nanotubes conveying viscous fluid</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Oveissi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Eftekhari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="275" to="283" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Experimental investigation for developing a new model for the thermal conductivity of silica/water-ethylene glycol (40%-60%) nanofluid at different temperatures and solid volume fractions</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Esfahani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Molecular Liquids</title>
+		<imprint>
+			<biblScope unit="volume">232</biblScope>
+			<biblScope unit="page" from="105" to="112" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Investigation of volume fraction of nanoparticles effect and aspect ratio of the twisted tape in the tube</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">A</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">H</forename><surname>Afrouzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marzban</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Malekzade</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arabpour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">129</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1911" to="1922" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Measurement of thermal conductivity of ZnO-TiO2/EG hybrid nanofluid</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">A</forename><surname>Chaharsoghi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="527" to="535" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">An experimental study on the effect of diameter on thermal conductivity and dynamic viscosity of Fe/water nanofluids</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Saedodin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1817" to="1824" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Thermal conductivity modeling of MgO/EG nanofluids using experimental data and artificial neural network</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Saedodin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bahiraei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Mahian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wongwises</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Therm. Anal. Calorim</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="287" to="294" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Molecular dynamics simulation of Poiseuille flow in a rough nano channel with checker surface roughnesses geometry</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Noorian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Toghraie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Azimian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Heat Mass Transfer</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="105" to="113" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Develop the nano scale method of lattice Boltzmann to predict the fluid flow and heat transfer of air in the inclined lid driven cavity with a large heat source inside, Two case studies: Pure natural convection &amp; mixed convection</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goodarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Keshavarzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mousavi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">509</biblScope>
+			<biblScope unit="page" from="210" to="233" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Magneto-natural convection in square cavities with a source-sink pair on different walls</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mahmoodi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Akbari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Afrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Appl. Electromagn. Mech</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="21" to="32" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Numerical simulation of natural convection around an obstacle placed in an enclosure filled with different types of nanofluids</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Esfe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A A</forename><surname>Arani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimiopour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S M</forename><surname>Esforjani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Heat Transfer Res</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="279" to="292" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Natural convection of Al2O3-water nanofluid in an inclined enclosure with the effects of slip velocity mechanisms: Brownian motion and thermophoresis phenomenon</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Esfandiary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mehmandoust</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">A</forename><surname>Pakravan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Therm. Sci</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="137" to="158" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">The effects of different nano particles of Al2O3 and Ag on the MHD nano fluid flow and heat transfer in a microchannel including slip velocity and temperature jump</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Karimipour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>D'orazio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Shadloo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica E</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="146" to="153" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

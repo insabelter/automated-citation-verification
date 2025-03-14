@@ -1,0 +1,3081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Special Focus on High-Resolution Radar Advanced technology of high-resolution radar: target detection, tracking, imaging, and recognition</title>
+				<funder ref="#_XXjvnFv">
+					<orgName type="full">111 Project of the China Ministry of Education (MOE)</orgName>
+				</funder>
+				<funder ref="#_uXPTYbY">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2019-03-11">11 March 2019</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Teng</forename><surname>Long</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information and Electronics</orgName>
+								<orgName type="laboratory">Radar Research Laboratory</orgName>
+								<orgName type="institution">Beijing Institute of Technology</orgName>
+								<address>
+									<postCode>100081</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhennan</forename><surname>Liang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information and Electronics</orgName>
+								<orgName type="laboratory">Radar Research Laboratory</orgName>
+								<orgName type="institution">Beijing Institute of Technology</orgName>
+								<address>
+									<postCode>100081</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Quanhua</forename><surname>Liu</surname></persName>
+							<email>liuquanhua@bit.edu.cn</email>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information and Electronics</orgName>
+								<orgName type="laboratory">Radar Research Laboratory</orgName>
+								<orgName type="institution">Beijing Institute of Technology</orgName>
+								<address>
+									<postCode>100081</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Special Focus on High-Resolution Radar Advanced technology of high-resolution radar: target detection, tracking, imaging, and recognition</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2019-03-11">11 March 2019</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">660D766BA2CBC29DA8A62DF47F12FD18</idno>
+					<idno type="DOI">10.1007/s11432-018-9811-0</idno>
+					<note type="submission">Received 12 January 2019/Revised 19 February 2019/Accepted 4 March 2019/</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:02+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>high-resolution radar</term>
+					<term>integrated detection and tracking</term>
+					<term>multiple target tracking</term>
+					<term>phase-derived velocity</term>
+					<term>inverse synthetic aperture radar(ISAR)</term>
+					<term>hierarchical classification</term>
+					<term>convolution neural network</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In recent years, the performances of radar resolution, coverage, and detection accuracy have been significantly improved through the use of ultra-wideband, synthetic aperture and digital signal processing technologies. High-resolution radars (HRRs) utilize wideband signals and synthetic apertures to enhance the range and angular resolutions of tracking, respectively. They also generate one-, two-, and even threedimensional high-resolution images containing the feature information of targets, from which the targets can be precisely classified and identified. Advanced signal processing algorithms in HRRs obtain important information such as range-Doppler imaging, phase-derived ranging, and micro-motion features. However, the advantages and applications of HRRs are restricted by factors such as the reduced signal-to-noise ratio (SNR) of multi-scatter point targets, decreased tracking accuracy of multi-scatter point targets, high demands of motion compensation, and low sensitivity of the target attitude. Focusing on these problems, this paper systematically introduces the novel technologies of HRRs and discusses the issues and solutions relevant to detection, tracking, imaging, and recognition. Finally, it reviews the latest progress and representative results of HRR-based research, and suggests the future development of HRRs.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>During World War II, radar was invented as a remote sensor with all-weather, all-time capability. Over the past 80 years or thereabouts, radar has provided humans with clairvoyance and clairaudience and has been widely applied in both national defense and civilian activities <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref>. The examples include surveillance, reconnaissance, navigation, fire control, and traffic control.</p><p>The first practical radar system, developed by Britain in the 1930s, detected targets using a single pulse. At the end of World War II, the moving target indication radar was invented, which could distinguish moving targets from clutter by the phase changes of the echoes in adjacent transmitter-receiver periods. In the 1950s, the United States developed the pulse-Doppler (PD) radar, which obtained the Doppler frequency from the phase changes of the target echoes in multiple successive pulse cycles. Therefore, the PD radar could suppress clutter more effectively and measure the target velocity with higher accuracy than the previous radars. In the mid-1950s, the United States also developed the phased-array radar, in which a beam of radio waves generated by a computer-controlled array of antennas could be electronically steered in different directions. Unlike the mechanical scanning radar, the phased-array radar searches, detects, and tracks multiple batches of targets in different directions simultaneously, with quick switching of the beam direction. Its benefits include multi-functionality, agility, change celerity, high data rate, strong anti-interference ability, and high reliability <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>.</p><p>Radar waveforms have always played an important role in radar development <ref type="bibr" target="#b5">[6]</ref>. In 1943, North <ref type="bibr" target="#b6">[7]</ref> pointed out the importance of a matched filter (the basis of radar signal processing) in detecting the targets among echo signals with known transmitted waveforms. In 1953, Woodward <ref type="bibr" target="#b7">[8]</ref> evaluated the range and Doppler resolution of transmitting waveforms by using an ambiguity function, laying the foundation of radar waveform design. Dicke <ref type="bibr" target="#b8">[9]</ref> proposed the use of linear frequency modulation signals in matched filtering, where a signal with a time-bandwidth product larger than one effectively solved the contradiction between the range resolution and signal energy. Linear frequency modulation has replaced the early unmodulated rectangular waveform as the most commonly utilized type of radar signal.</p><p>Narrowband signals are widely used in low-resolution radars (LRRs) because they can be easily generated and processed. Accordingly, the echo data are relatively low-volume, and can be easily realized in engineering activities. In general, LRRs work well for simple tasks such as detection and ranging. However, the development of electronic devices has increased the demand for advanced functions such as imaging and target recognition. Owing to their low-range resolution, LRRs obscure the fine structural information of complex targets, and can only approximately estimate the motion parameters. They also have weak anti-interference and anti-clutter ability <ref type="bibr" target="#b9">[10]</ref>. Moreover, a target with multiple scattering centers causes an angular glint under narrowband conditions <ref type="bibr" target="#b13">[14]</ref>, and multipath echoes and the direct wave distance cannot be resolved at small elevation angles <ref type="bibr" target="#b14">[15]</ref>. These limitations significantly reduce the tracking performance of LRRs. In addition, narrowband signals contain limited target-feature information, reducing the effectiveness of classifying and identifying the targets <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. Therefore, LRRs cannot meet the requirements of target recognition.</p><p>Meanwhile, radar targets and the detection environment have become increasingly challenging <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>. Space surveillance is challenged by the proliferation of fast, highly mobile, dense, and weakly detectable targets (spacecraft and space debris, warheads, and decoys from ballistic missile defense systems and dense unmanned aerial vehicle colonies), which inhabit space, the atmosphere, and the ground. In addition, the rapid development of electronic countermeasures <ref type="bibr" target="#b18">[19,</ref><ref type="bibr" target="#b19">20]</ref> causes strong active jamming, which may impact effective target detection. Effectively distinguishing the target among the jammed signals has become the core of improving radar performance.</p><p>To meet the increasingly complex requirements of target recognition, modern research has focused on high-resolution radars (HRRs) with high range resolution and high angle resolution <ref type="bibr">[11-14, 21, 22]</ref>. The unique advantages of HRRs in detection, tracking, imaging, and parameter measurement have improved the performance of target recognition. First, the increased radar-signal bandwidth of an HRR reduces the range resolution to below the target size. The target is distributed among multiple range-resolution units, thereby suppressing its radar cross-section (RCS) fluctuations and improving the detection performance. The superior detection and tracking performances of HRRs are especially evident under clutter and jamming conditions. Second, the synthetic aperture radar (SAR) and inverse synthetic aperture radar (ISAR) can effectively compensate the platform or uncoordinated movements of the target during the tracking period, obtaining two-dimensional high-resolution images <ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b26">[26]</ref><ref type="bibr" target="#b27">[27]</ref><ref type="bibr" target="#b28">[28]</ref><ref type="bibr" target="#b29">[29]</ref>. Third, the measurement accuracy of HRRs can be improved by advanced signal processing algorithms, enabling high-precision phase-derived velocity measurement (PDVM) <ref type="bibr" target="#b30">[30,</ref><ref type="bibr" target="#b31">31]</ref> and micro-motion feature extraction <ref type="bibr" target="#b32">[32]</ref><ref type="bibr" target="#b33">[33]</ref><ref type="bibr" target="#b34">[34]</ref><ref type="bibr" target="#b35">[35]</ref>.</p><p>In general, accurate target recognition is benefitted by abundant target information (such as the microcharacteristics of the target and echo amplitudes of the scattering points), high measurement accuracy, and a high tracking-data rate. However, the advantages and applicability of HRRs are restricted by factors such as low signal-to-noise ratio (SNR), several false alarms (which decreases the tracking accuracy of multi-scatter point targets), high demands of motion compensation, and sensitivity of the target attitude <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>. These limitations cause problems in detection, tracking, imaging, and recognition by HRRs, as outlined below:</p><p>(1) In HRR detection, the echo energy of the target is dispersed into multiple range units, which decreases the SNR. In addition, the range resolution unit of HRRs is very small. Therefore, as the target moves between adjacent pulses, the target-echo envelope often moves across the range unit, affecting the long-term integration of the target echo. Both problems reduce the target detection performance and shorten the operating range of the HRR.</p><p>(2) In HRR tracking, the enlarged signal bandwidth decreases the size of the radar range resolution unit, increasing the false-alarm density. Together with the decreased SNR of detection, the increased false-alarm density raises the performance demands on the data association module and track filter module.</p><p>(3) In HRR imaging, the enlarged imaging range reduces the SNR. To correct this problem, radar imaging research has focused on the motion compensation technique and imaging methods that cope with low SNR data. ISAR motion compensation and imaging algorithms are required under discontinuous or sparse conditions. Multi-target ISAR imaging technique is gaining relevance in today's increasingly complex imaging environments.</p><p>(4) Finally, the fairness of the data in classifying and recognizing targets in one-dimensional highresolution images is influenced by three factors, namely target-aspect sensitivity, translation sensitivity, and amplitude sensitivity. The training samples are usually ideal data obtained with a sufficiently high SNR, whereas the test data are collected in variable environments with differing SNRs. When the signal energy is low, the one-dimensional image is affected by environmental noise, clutter, and other interferences, which seriously reduce the recognition performance of the HRR.</p><p>Focusing on these problems, this paper systematically introduces the novel technologies of an HRR and discusses the relevant issues and solutions in detection, tracking, imaging, and recognition by the HRR. Finally, it presents the latest progress and representative results of HRR-based research, and the prospective development of HRRs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Development of HRR</head><p>The development of HRR originated from the demands of space-target observations <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b20">21]</ref>. Space targets include man-made satellites (such as space stations and spacecraft), space debris, ballistic missiles, and other objects launched into the atmosphere. As the space target is far away, the detection range of ground-based instruments must be as long as possible, perhaps up to 5000 km. The required detection range of space-target radar generally ranges from 1000 to 5000 km. Meanwhile, to image satellites and space debris and to distinguish multiple targets, the space-target radar requires a high range resolution, which is usually achieved by enlarging the signal bandwidth. Finally, the space-target radar should achieve rapid beam scanning and beam forming, as well as multi-target detection and tracking.</p><p>Obviously, space-target detection would improve the implementations of national air defense, antimissile actions, strategic early warnings, and command automation of sovereign countries. For this purpose, it is necessary to innovate the radar system, signal waveform, and signal processing. These innovations have largely promoted the development of HRRs. How to improve radar detection, parameter estimation, continuous estimation, imaging identification, and recognition comprise the technical challenges of "integration of HHRs detection and tracking".</p><p>HRRs are mainly applied in the military field. To effectively resolve and identify the warheads and decoys in ballistic missile defense systems, the Lincoln Laboratory of the United States began researching wideband radars in the 1960s. This study culminated in the world's first wideband radar ALCOR <ref type="bibr" target="#b36">[36]</ref> in 1970, which utilized waveforms with a bandwidth of 512 MHz in reentry tracking. In the 1990s, the wideband phased-array ground-based radar (GBR) working in the X-band was an important component of national missile defense and the U.S. terminal high altitude area defense (THAAD) system. GBR performs a series of tasks such as target detection, tracking, and threat classification. Antimissile tests using GBR-P, a GBR prototype developed by Raytheon Company (headquartered in Waltham, Massachusetts, USA), were successfully carried out in September 2000 1)2) . The sea-based X-band radar operates over a bandwidth of 1 GHz <ref type="bibr" target="#b37">[37]</ref>. To improve the operational capability of the ballistic missile defense system in detecting outer space movements, the United States developed transportable FBX-T radar, which enlarges the signal bandwidth of THAAD-GBR from 500 MHz to 1 GHz. The tracking and imaging radar (TIRA) system developed in Germany works in both the L-and Ku-bands. The Ku-band is used for wideband imaging with an initial bandwidth of 800 MHz. After continuous upgrading, the Ku bandwidth of TIRA has reached 2.1 GHz <ref type="bibr" target="#b38">[38]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Range-spread target detection technology</head><p>When the range resolution is lower than the target size, the original ideal point target is spatially resolved into several scattering cells, thereby becoming a range-spread target. The resulting spatial-scattering density provides abundant information on the target (such as its length, structure, and attitude), and decreases the fluctuations in the received signals. These advantages improve the detection performance of the radar, especially in cluttered environments <ref type="bibr" target="#b39">[39]</ref>.</p><p>However, spatially distributed target detection is disadvantaged by low SNR. High-range resolution disperses the echo power into multiple range cells, but in a certain noise-temperature situation, high-range resolution means a larger signal bandwidth, and consequently, a larger noise power at the receiver. Both factors decrease the detection performance and reduce the operating range of HRRs. As the traditional matched filter cannot completely integrate the echo energy, the typical detection method is no longer applicable, and must be replaced by algorithms that detect range-spread targets.</p><p>Over the past few decades, many studies have integrated the energies of the scattering cells and extracted the characteristics of the target signature <ref type="bibr" target="#b39">[39]</ref><ref type="bibr" target="#b40">[40]</ref><ref type="bibr" target="#b41">[41]</ref><ref type="bibr" target="#b42">[42]</ref><ref type="bibr" target="#b43">[43]</ref><ref type="bibr" target="#b44">[44]</ref><ref type="bibr" target="#b45">[45]</ref><ref type="bibr" target="#b46">[46]</ref><ref type="bibr" target="#b47">[47]</ref><ref type="bibr" target="#b48">[48]</ref><ref type="bibr" target="#b49">[49]</ref><ref type="bibr" target="#b50">[50]</ref><ref type="bibr" target="#b51">[51]</ref><ref type="bibr" target="#b52">[52]</ref><ref type="bibr" target="#b53">[53]</ref><ref type="bibr" target="#b54">[54]</ref><ref type="bibr" target="#b55">[55]</ref>. Some outcomes of these studies are elaborated below.</p><p>First, the classical point-target detector was modified for range-spread targets by the energy integration detector and the M out of N (M/N ) detector. The typical scattering density dependent generalized likelihood ratio test (SDD-GLRT) detector <ref type="bibr" target="#b39">[39]</ref>, which consists of a nonlinear map followed by an integrator along the range cells, detects a range-spread target among white Gaussian noise. If the scattering density parameter is known, the performance of SDD-GLRT improves. However, the efficiency of SDD-GLRT solutions is decreased by the exponential and logarithmic operations. The M/N detector is a typical double-threshold detector of spatially distributed targets. Owing to its efficient structure, this detector can be easily realized in engineering and has been widely applied. Therefore, it has attracted much interest and has been often modified to improve its robustness and efficiency <ref type="bibr" target="#b40">[40,</ref><ref type="bibr" target="#b41">41,</ref><ref type="bibr" target="#b55">55]</ref>.</p><p>Second is the adaptive detector, which utilizes multiple high-resolution range profiles (HRRPs) collected from consecutive pulses or antenna subarrays to cope with cluttered backgrounds <ref type="bibr" target="#b42">[42]</ref><ref type="bibr" target="#b43">[43]</ref><ref type="bibr" target="#b44">[44]</ref><ref type="bibr" target="#b45">[45]</ref><ref type="bibr" target="#b46">[46]</ref><ref type="bibr" target="#b47">[47]</ref><ref type="bibr" target="#b48">[48]</ref><ref type="bibr" target="#b49">[49]</ref>. The authors of <ref type="bibr" target="#b42">[42]</ref> introduced a GLRT-based adaptive detector of range-spread targets in a partially uniform cluttered environment. The authors of <ref type="bibr" target="#b45">[45]</ref> considered range-spread target detection in spherically invariant random-vector clutter, and developed different detectors with a constant false alarm rate by exploiting the order-statistics theory. In <ref type="bibr" target="#b46">[46]</ref>, a generalized matched subspace detector and a general adaptive subspace detector in the frequency domain were developed for range-spread targets with rangewalking in a partially homogeneous clutter. The authors of <ref type="bibr" target="#b49">[49]</ref> developed adaptive decision schemes that reveal extended targets along with structured unwanted components in random interference (clutter and thermal noise).</p><p>Third, to cope with the abundant information of the target signature, researchers have proposed range-spread target detectors using multiple HRRPs in various environments. These systems detect range-spread aircraft with maneuvering flights <ref type="bibr" target="#b50">[50]</ref><ref type="bibr" target="#b51">[51]</ref><ref type="bibr" target="#b52">[52]</ref><ref type="bibr" target="#b53">[53]</ref><ref type="bibr" target="#b54">[54]</ref>. The detector proposed in <ref type="bibr" target="#b50">[50]</ref> is based on the cross time-frequency distribution features of two adjacently received signals, whereas that in <ref type="bibr" target="#b51">[51]</ref> exploits the waveform entropy of the arithmetic average of multiple successive HRRPs. The detector in <ref type="bibr" target="#b52">[52]</ref> uses a two-dimensional nonlinear shrinkage map related to the local statistics of a range-pulse image. The authors of <ref type="bibr" target="#b53">[53]</ref> proposed a heuristic detector that exploits the characteristics of target HRRPs extracted from real target radar data. A range-spread target detector based on the time-frequency decomposition The number of points over Th1  of two adjacent mixer outputs using the cross S-method was devised in <ref type="bibr" target="#b54">[54]</ref>.</p><p>Although some detectors of range-spread targets perform well, they are very time consuming and cannot be easily realized in engineering practice. We have extended the M/N detector to form the generalized likelihood ratio test double threshold (GLRT-DT) <ref type="bibr" target="#b55">[55]</ref>. To improve the robustness of the detector and avoid energy loss, we added a non-quantified accumulator to the M/N detector and adjusted the detection procedure accordingly. GLRT-DT performs well even when the number of scatterers and the target location are missing. The detector is robust and delivers high detection performance. The proposed detector is schematized in Figure <ref type="figure" target="#fig_1">1</ref>.</p><p>The detection performances of GLRT-DT have been compared with those of the integrator detector, SDD-GLRT detector, and M/N detector in Monte Carlo simulations. The scattering center of the target can encounter four situations, as shown in Table <ref type="table" target="#tab_0">1</ref>.</p><p>Figure <ref type="figure" target="#fig_2">2</ref> shows the detection performances of the integral detector, M/N detector, SDD-GLRT detector, and GLRT-DT detector under the above parameters. As shown in the figure, the proposed detector significantly outperformed the integrator detector and M/N detector. Its performance even surpassed that of the SDD-GLRT detector in a sparse scattering environment, and approached that of the SDD-GLRT detector in a dense scattering environment. Therefore, the proposed detector robustly operates in both sparse and dense scattering environments.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">High precision phase-derived velocity measurement technology</head><p>With the rapid development of radar technology, the application demands of high-precision ranging and target velocity measurements have increased in various fields. For example, micro-motion measurements <ref type="bibr" target="#b33">[33,</ref><ref type="bibr" target="#b34">34,</ref><ref type="bibr" target="#b56">56]</ref> have always been active topics in target detection and recognition. However, owing to their small amplitudes and imprecise motion compensation, micro-motions are difficult to characterize. This bottleneck is most effectively broken through by improving the accuracy of the range and velocity measurements <ref type="bibr" target="#b34">[34,</ref><ref type="bibr" target="#b57">57]</ref>.</p><p>Theoretically, the precisions of the radar range and velocity measurements in conventional radar systems can be improved by increasing the signal bandwidth and integration time, respectively. However, increasing the signal bandwidth reduces the range resolution of the cells, whereas increasing the integration time increases the range migration. Therefore, the range migration of a high-sped target within the integration time exceeds the range resolution of the cell. Balancing large-signal bandwidths and long-time integration is usually a difficult task. Range and velocity measurement methods utilizing phase information have been developed since the 1970s. In the 2000s, Raytheon Company patented two methods of phase-derived range measurement (PDRM) <ref type="bibr" target="#b30">[30,</ref><ref type="bibr" target="#b31">31]</ref>. The PDRM technique extends the measurement of the target motion from macro to micro, providing more effective characteristic reference information for target recognition.</p><p>Inspired by the PDRM concept, we proposed PDVM, which measures the target velocity from the range rate of the target echoes between two adjacent frames <ref type="bibr" target="#b58">[58]</ref>. Figure <ref type="figure" target="#fig_3">3</ref> shows the implementation of the high-precision phase-derived range and velocity measurements. Because the range measurement represents the range increment between two adjacent frames, the velocity of the target can be measured at high precision by dividing the range increment by the time interval between the adjacent frames. Meanwhile, the high-precision PDRM of the target can be derived by summing the range increments of two adjacent frames. The range-increment measurements can be filtered after solving the ambiguity, further improving the accuracy of the range and velocity measurements.</p><p>The measurement accuracy of the range increment between adjacent frames was simulated under different SNR conditions. The simulated envelope ranging measurement (EVM) and accuracies of the PDRM are shown in Figures <ref type="figure" target="#fig_4">4</ref> and<ref type="figure" target="#fig_5">5</ref>, respectively. In the SNR range 16-35 dB, the root mean squared  error (RMSE) reached the order of centimeters or millimeters in EVM and the order of millimeters or sub-millimeters in PDRM. The detection probability of the target decreased at SNRs below 16 dB. If the detection fails, the EVM and PDRM cannot be analyzed. In practice, when the joint target track information is obtained, PDR can be applied in lower-SNR environments. Subsequently, the PDVM technique has been applied to ISAR images <ref type="bibr" target="#b59">[59]</ref> and micro-motion measurements <ref type="bibr" target="#b35">[35,</ref><ref type="bibr" target="#b60">60]</ref>. We proposed a high-quality method that obtains ISAR images by compensating the target motion using accurate velocity information. The novel ISAR motion compensation approach has been conjugated with the PDVM technique to extract the micro-motion features of the target <ref type="bibr" target="#b35">[35]</ref>. The phase error induced by the discrete Fourier transform (DFT) was analyzed in <ref type="bibr" target="#b61">[61]</ref>, and a novel correction method for the phase unwrapping error under low-SNR conditions was developed in <ref type="bibr" target="#b59">[59]</ref>.</p><p>5 Range-spread target tracking technology HRR improves the accuracy, amount of target information, and performance of target-tracking in cluttered environments. In addition, tracking with a wideband waveform replaces the narrowband waveform of conventional tracking radars and reduces the waste of radar energy, which is important in radar system design. However, high-range resolution also reduces the SNR and introduces false alarms, placing greater performance demands on the data association module and tracking filtering module during tracking.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Wideband waveform</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>High range resolution</head><p>A number of scatterers</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Serious range migration</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>More range cells</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>More accuracy measurement</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Target feature information</head><p>Low SNR Figure <ref type="figure" target="#fig_6">6</ref> shows the interrelationships among HRR characteristics. Uncertainties in measurement origins are often reduced by data association algorithms. The typical narrowband tracking theory and its algorithms are based on the point target model. The input observations are used for determining the existing tracks and for initiating a new track <ref type="bibr" target="#b62">[62]</ref>. However, HRRs resolve the target into many scattering cells, invalidating the typical narrowband tracking algorithm. The challenge in multiple range-spread target tracking is associating the observations, targets, and tracks. Multiple targets and scattering cells also cause a multiplication of observations, significantly increasing the computation complexity of data association (Figure <ref type="figure" target="#fig_7">7</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>More false alarms and missed detections</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Abundant target information</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Decrease tracking performance</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Integrated detection and tracking algorithm</head><p>A traditional radar system is split into two independent subsystems-target detection and target tracking <ref type="bibr" target="#b63">[63]</ref> -which are implemented in series. In detection, the Neyman-Pearson (NP) criterion is widely used to minimize the false alarm rate and maximize the detection probability. In tracking, the uncertainty in the measurement origin is reduced by data association algorithms such as the probabilistic data association filter (PDAF) <ref type="bibr" target="#b64">[64]</ref> and the multiple hypothesis tracker <ref type="bibr" target="#b62">[62]</ref>. The traditional detection and tracking algorithm is illustrated in Figure <ref type="figure" target="#fig_8">8</ref>.</p><p>However, optimizing the subsystems does not necessarily optimize the general system. This topic has attracted the attention of experts globally. To connect the detection and tracking subsystems, some researchers have proposed non-simulation performance prediction (NSPP) methods <ref type="bibr" target="#b65">[65]</ref><ref type="bibr" target="#b66">[66]</ref><ref type="bibr" target="#b67">[67]</ref>. The performance of the PDAF algorithm has been analyzed by methods based on the modified Riccati equation <ref type="bibr" target="#b65">[65,</ref><ref type="bibr" target="#b66">66]</ref> and the hybrid conditional average (HYCA) <ref type="bibr" target="#b67">[67]</ref>. Both methods characterize the impact of false alarms and missed detections during tracking by using the information reduction factor (IRF) <ref type="bibr" target="#b68">[68,</ref><ref type="bibr" target="#b69">69]</ref>.  In recent efforts, the tracking algorithm based on NP detection has been improved and the joint optimization of detection and tracking has been considered <ref type="bibr" target="#b70">[70]</ref>. The optimization parameters in joint optimization are the detection probability and false alarm probability. The filtering performance (filtering covariance) is predicted and the detection parameters are optimized based on the NSPP result.</p><p>Besides optimizing the detection threshold, some scholars have also analyzed the influence of radar waveform parameters on the tracking performance, and have proposed several optimization methods for these parameters <ref type="bibr" target="#b71">[71]</ref><ref type="bibr" target="#b72">[72]</ref><ref type="bibr" target="#b73">[73]</ref><ref type="bibr" target="#b74">[74]</ref><ref type="bibr" target="#b75">[75]</ref>. The authors of <ref type="bibr" target="#b71">[71]</ref> proposed a dynamic waveform selection algorithm to strive for tracking error minimisation for manoeuvering target tracking in clutter. The proposed dynamic waveform selection algorithm can improve tracking performance considerably, especially in terms of track loss probability. The authors of <ref type="bibr" target="#b72">[72]</ref> combined an autoregressive (AR) model into the Kalman filter for target tracking, and optimized the waveform by minimizing the Cramer-Rao lower bound for estimating the target range. After more in-depth research on this topic, the relevant theoretical results were summarized into a theoretical system of cognitive radar.</p><p>Although the above method improves the tracking performance, some major problems must be resolved before the method is feasible in practice. First, IRF cannot be analytically expressed in terms of NP detection. Performance prediction requires a numerical calculation method, which is difficult to adapt to the high requirements of radar data processing in real time. Second, the target-feature information provided by the tracking module is not used in the detection process, meaning that the information flow remains unidirectional.</p><p>Quite different to NP detection is Bayesian detection <ref type="bibr" target="#b76">[76]</ref><ref type="bibr" target="#b77">[77]</ref><ref type="bibr" target="#b78">[78]</ref>. The PDAF algorithm with Bayesian detection (PDAF-BD) <ref type="bibr" target="#b76">[76]</ref> feeds back the filtered target-position information to the detection module and introduces a spatial variation threshold, reducing the false alarm rate and improving the detection and tracking performances. The Bayesian detector increases the information interaction between the tracking system modules, which suppresses the number of false alarms and is theoretically suitable for wideband radar. However, the cost of Bayesian detection and the pre-determined threshold of the detector are difficult to estimate. If the detector parameters are not properly selected, the tracking performance will be degraded. This problem largely limits the application of Bayesian detection.</p><p>To mitigate these problems, we proposed an HYCA method for the PDAF-BD algorithm <ref type="bibr" target="#b79">[79]</ref>. For a  given scene and algorithm parameters, the HYCA method predicts the track loss probability and errors in the tracking algorithms at different times by observing the number of probability distributions and iterating the computation of the filtering covariance matrix. We also proposed an integrated detection and tracking algorithm based on Bayesian detection, which applies the performance prediction method <ref type="bibr" target="#b80">[80]</ref> of the above PDAF-BD algorithm as a sub-module of the tracking algorithm. During the tracking process, the tracking performance under varying detection parameters is predicted from the tracking status of the current frame. The detection parameters are dynamically optimized to maximize the tracking performance. The integrated detection and tracking algorithm based on Bayesian detection is illustrated in Figure <ref type="figure" target="#fig_9">9</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Multiple target tracking with switching of attribute states</head><p>Multi-target tracking (MTT) attempts to relate the tracking to an observation. For this purpose, all possible associated events must be exhaustively considered by a "hard-association" class algorithm. This subsection presents two alternatives to exhaustive searching: indirect data-association and direct dataassociation. Figure <ref type="figure" target="#fig_10">10</ref> shows the differences between the two methods.</p><p>(1) Indirect data-association method. The indirect data-association method reprocesses the rangespread target observations to obtain the center of the multiple scattering cells as the target observation. This method, which constitutes a type of "clustering" processing, is followed by target observation and track association.</p><p>Koch <ref type="bibr" target="#b81">[81]</ref> proposed a method that associates an observation with a target when the multiple rangespread targets are sparsely distributed. The observation-target association is completed by applying the nearest-neighbor method within an ellipse. Salmond <ref type="bibr" target="#b82">[82]</ref> established the object-target affiliation by applying the Bayesian association method on the combined observations.</p><p>The range-spread target association method is clear and reduces the computational complexity. Al-  though the classical multi-target association method directly processes the associated data, it does not form a closed-loop structure; rather, the information flows in the observation-target and target-track associations are unidirectional, meaning that the former cannot obtain the a priori information fed back by the latter. When the numbers of false alarms and missed detections are significant, the observationtarget association will largely deviate, decreasing the accuracy of the target-parameter estimation. These errors will accumulate over time and the target-track correlation process will eventually fail. The inability to improve the estimation using the time information, and to ensure the performance of the scattering point-target correlation, are the bottlenecks of the entire association process, restricting the performances of data-association methods to some extent.</p><p>(2) Direct data-association method. The direct data-association method assigns multiple observations to a certain track at the same time. The assignment is based on the characteristics of the association between the range-spread target observation and the track <ref type="bibr" target="#b83">[83]</ref>. Therefore, such a method is directly extendible to the target-tracking problem of HRRs. The most representative method is the probabilistic multi-hypothesis tracker (PMHT) method based on the expectation maximization (EM) algorithm <ref type="bibr" target="#b84">[84]</ref>.</p><p>Owing to its flexibility and scalability, PMHT has attracted the attention of scholars around the world and PMHT improvements have been actively sought in MTT theory. The accurate measurements and abundant target information of PMHT reduce the number of missed associations and improve the tracking performance. How to assist the association by exploiting the target-feature information is essential for improving the target tracking performance <ref type="bibr" target="#b85">[85,</ref><ref type="bibr" target="#b86">86]</ref>. Previous studies have incorporated the feature information into PMHT <ref type="bibr" target="#b87">[87]</ref><ref type="bibr" target="#b88">[88]</ref><ref type="bibr" target="#b89">[89]</ref><ref type="bibr" target="#b90">[90]</ref><ref type="bibr" target="#b91">[91]</ref><ref type="bibr" target="#b92">[92]</ref><ref type="bibr" target="#b93">[93]</ref><ref type="bibr" target="#b94">[94]</ref><ref type="bibr" target="#b95">[95]</ref><ref type="bibr" target="#b96">[96]</ref><ref type="bibr" target="#b97">[97]</ref>. In some of these studies <ref type="bibr" target="#b92">[92]</ref><ref type="bibr" target="#b93">[93]</ref><ref type="bibr" target="#b94">[94]</ref>, the target is spatially expanded by the ellipsoid model and the tracking is assisted by the structural information of the target. The PMHT with classification measurements (PMHT-C) method assists the association using the target classification features within the PMHT framework <ref type="bibr" target="#b95">[95,</ref><ref type="bibr" target="#b96">96]</ref>. The attribute measurements and targets are related through a matrix that is independent of time and observations. The method improves the correlation performance when the motion states are blurred.</p><p>However, the matrix correlating the measured attributes and target features may change in practice. For example, the observed number of scattering points is not only affected by false alarm detections and fluctuations but also depends on the target attitude. The PMHT-C algorithm cannot cope with switching of the target-feature states, and its performance degrades in this circumstance.</p><p>To resolve these problems, an EM-based attribute-aided tracking algorithm has been developed <ref type="bibr" target="#b97">[97]</ref>. Figure <ref type="figure" target="#fig_11">11</ref> is a flowchart of this attribute-aided tracking method. The attribute characteristics are de-scribed by a hidden Markov model and a joint probabilistic model of the kinematic and attribute properties is derived. Based on these derivations, an EM-based iterative algorithm is developed. The kinematic and attribute information in multiple frames is used for association and filtering. The performance of this algorithm improves when the target attributes are available.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">ISAR imaging technology</head><p>The ISAR obtains range-Doppler images of non-cooperative moving targets. For this reason, it has become an attractive option in recent years. Using the relative rotational and translational motions between a target and the radar's line of sight, ISAR reconstructs a two-dimensional high-resolution image of the target. The desired relative motion is uniform rotational motion without translational motion. The undesired translational component causes range migration and phase modulation, both of which degrade the quality of the ISAR image <ref type="bibr" target="#b98">[98,</ref><ref type="bibr" target="#b99">99]</ref>. Accordingly, this component is removed by a motion compensation technique.</p><p>Complicated movements of a target involve nonuniform rotational motions. Therefore, well-focused ISAR images usually require rotational motion compensation (RMC) [106] proposed a new ISAR RMC method that formulates the polynomial phase signal of the dominant scatterer using the polynomial-phase transform. <ref type="bibr">Liu et al. [108]</ref> proposed a novel estimation and compensation method that removes the nonuniform rotational motions of maneuvering targets, thereby compensating the nonlinear migration through the range cells and the high-order terms in the range-cell echoes. They constructed a rotational motion model with constant angular acceleration, and analyzed its influence on the image quality. The rotational motion parameters were estimated by particle swarm optimization.</p><p>In addition, the unwanted translational motion of the target must be removed by reliable translational motion compensation (TMC) <ref type="bibr">[109]</ref><ref type="bibr">[110]</ref><ref type="bibr">[111]</ref><ref type="bibr">[112]</ref><ref type="bibr">[113]</ref><ref type="bibr">[114]</ref><ref type="bibr">[115]</ref><ref type="bibr">[116]</ref>. TMC methods, which include Doppler centroid tracking (DCT) [109], phase gradient autofocus (PGA) <ref type="bibr">[110,</ref><ref type="bibr">111]</ref>, minimum entropy phase autofocus <ref type="bibr">[112]</ref>, and maximum contrast phase autofocus [112], estimate and compensate the phase error caused by translational motion. If the target's rotational motion can be ignored and no prominent point exists, the phase error estimation obtained by DCT becomes a maximum likelihood estimation <ref type="bibr">[109]</ref>. As the target's rotational motion cannot be ignored and prominent points may exist, the assumptions of DCT may be invalid in real applications. Instead, PGA integrates the information of several prominent scatterers to more precisely estimate the phase error in the translational motion <ref type="bibr">[110]</ref>. However, selecting the prominent scatterers is a difficult task. Recently, subspace algorithms based on eigenvalue decomposition (EVD) have been proposed <ref type="bibr">[113]</ref><ref type="bibr">[114]</ref><ref type="bibr">[115]</ref><ref type="bibr">[116]</ref>, which are robust and more effective for ISAR phase autofocus than PGA. More specifically, <ref type="bibr">Cao et al. [113]</ref> proposed a minimum-entropy ISAR autofocus algorithm (MESA), which optimizes the weights of the principle eigenvectors by an iterative optimization method, and then estimates the phase error in the translational motion. Suppose that a relatively strong scatterer exists on the target. After constructing the EVD of the covariance matrix from the complex range-aligned echoes, the translational motion phase error can be estimated as the single eigenvector corresponding to the largest eigenvalue. This method is called single eigenvalue autofocus (SEA) <ref type="bibr">[114]</ref>. Recently, the efficiency of TMC has been improved by a new concept called eigenimage, which defines the fast Fourier transform output of the principal eigenvectors <ref type="bibr">[115]</ref>. However, the methods in <ref type="bibr">[113,</ref><ref type="bibr">115]</ref> require complicated iteration and optimization procedures. In addition, the computational complexity of EVD is of the order of O(M 3 ), where M is the dimension of the covariance matrix with respect to the number of pulse samples <ref type="bibr">[113]</ref><ref type="bibr">[114]</ref><ref type="bibr">[115]</ref>. To enhance the cross-range resolution of the given pulse repetition frequency, a larger observation pulse number is usually requested. Consequently, all of the above EVD-based autofocus methods are disadvantaged by the high computational complexity of processing the high-dimensional covariance matrix.</p><p>To avoid the high computational complexity of EVD-based autofocus methods, the authors of <ref type="bibr">[116]</ref> proposed an alternative approach that generates the covariance matrix more efficiently. First, HRRPs are obtained by compressing the original range. The data are then range-aligned and inserted into a matrix. Subsequently, the numbers of range bins are compared with those of pulse samples. If there are more range bins than pulse samples, the covariance matrix can be constructed by a conventional EVD-based method. Otherwise, the dimension of the covariance matrix can be reduced by transposing the range-aligned data matrix and performing successive phase autofocuses. This approach significantly reduces the computational complexity of EVD. Figure <ref type="figure" target="#fig_13">12</ref> is a flowchart of this alternative method.</p><p>Airplane echo data have been recorded by an S-band experimental ISAR system. Using a stepped frequency signal with a synthetic bandwidth of 320 MHz, this experiment collected 256 pulses with an average pulse SNR of 16 dB in the range-aligned data. Figure <ref type="figure" target="#fig_14">13</ref> shows the results of DCT, PGA, and the modified SEA and MESA algorithms (M-SEA and M-MESA, respectively) on these real aircraft data.</p><p>The targets in the ISAR images obtained by DCT and PGA (panels (c) and (d) of Figure <ref type="figure" target="#fig_14">13</ref>, respectively) are almost merged by noise. The focus qualities of the images obtained by M-MESA and M-SEA (panels (e) and (f) in Figure <ref type="figure" target="#fig_14">13</ref>, respectively) are vastly improved. The contrasts of ISAR images obtained by the four methods are compared in Table <ref type="table" target="#tab_3">2</ref>. The higher the contrast, the better is the focus quality. In Table <ref type="table" target="#tab_3">2</ref>, the contrast values of DCT and PGA were lower than those of M-MESA and M-SEA, consistent with the above discussion. Furthermore, M-MESA yielded a better result than M-SEA because M-MESA uses more eigenvectors that contribute to the signal subspace.   radar, and identifies the target using the a priori target information <ref type="bibr">[117]</ref><ref type="bibr">[118]</ref><ref type="bibr">[119]</ref><ref type="bibr">[120]</ref><ref type="bibr">[121]</ref>. A typical RATR system is divided into four modules: data acquisition, preprocessing, feature extraction, and selection (also known as classifier training or decision-making). The data used for identification are divided into training data and real data. The framework of RATR implementation is shown in Figure <ref type="figure" target="#fig_15">14</ref>.</p><p>The RATR tasks can be classified into the following three levels:</p><p>(1) Discrimination of target attributes such as the warheads, number of aircraft in the formation, satellites, and space debris [122].</p><p>(2) Determination of the targets, which may be helicopters, propellers, jets, wheeled and tracked vehicles, or other objects.</p><p>(3) Determination of the target model, for example, jet aircraft Su-35 and F-22 and ground track vehicles T-90 and M1A2.</p><p>RATR is gradually developed from low-level discrimination to high-level classification and identification. In general, the target becomes more difficult to identify as the level increments, requiring more target information and finer images.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7.1">HRRP attitude sensitivity problem</head><p>The HRRP of the target is the projection of the target scattering center in the direction of sight. HRRP, which reflects the geometric and structural features of the target, is among the main methods of wideband radar target recognition <ref type="bibr">[117,</ref><ref type="bibr">[123]</ref><ref type="bibr">[124]</ref><ref type="bibr">[125]</ref><ref type="bibr">[126]</ref>. The echo of each resolution cell of the target's HRRP is formed by superposing the echoes of multiple scattering centers in the resolution cell. When the target position changes relative to the radar's line of sight, the radial range of the scattering center also changes, causing a phase change of the echo. In turn, the phase change alters the vector superposition result and the shape of the HRRP appears to undulate. The sensitivity of HRRP to attitude variations increases with increasing (decreasing) carrying frequency (wavelength) of the wideband radar. When the angle of view varies significantly, the distribution of the scattering center in the sight direction may be significantly changed by the shielding effect, which may distinctly alter the HRRP.</p><p>HRRP target recognition must resolve three main problems: orientation sensitivity, translation sensitivity, and amplitude sensitivity. Researchers worldwide have conducted in-depth research on these issues and proposed various solutions.</p><p>Orientation sensitivity refers to the notable shape changes in HRRP for small changes in the orientation angle when there is relative rotation between the radar and the target. It is sourced from the relative change in the radial distance of each scattering point on the target, and is the most difficult and critical issue. At present, the main solution is to divide the HRRP sequence into several subsets, each covering a small range of orientation angles. A training template is then constructed for each subset, which can be considered as orientation-insensitive. Orientation sensitivity is usually relaxed by equally spacing the entire azimuthal domain; each angular domain is then analyzed by an analytical mathematical model <ref type="bibr">[127]</ref>. The authors of <ref type="bibr">[128]</ref> adaptively divided the azimuthal domain using the factor analysis model and the Riemann manifold bending rate model, and calculated the average range profile to achieve target recognition.  The translation sensitivity problem is caused by the relative motion of the target and the radar, meaning that the relative position of the target range migrates within the length of the wave-gate window. Translation sensitivity is usually handled by one of the two methods: (1) alignment method, which mainly involves correlation alignment and absolute alignment, and (2) HRRP translation-invariant features. The commonly used features include the Fourier transform spectrum amplitude, bispectrum features, highorder spectral features [129], and central moment features <ref type="bibr">[130]</ref>.</p><p>The amplitude sensitivity problem refers to the unfairness of the data in the subsequent classification and recognition. This problem is caused by the inconsistency in the magnitude-scale standards of the range image (due to differences between the radar and the target range, transmission power, antenna gain, and other uncontrollable phenomena). It is commonly solved by normalizing the amplitude based on measured criteria or by searching for the optimal amplitude-matching factor. Feature extraction must identify the information reflecting the essential attributes of the target, which form the basis of the classification. Table <ref type="table" target="#tab_5">3</ref> shows the commonly employed features in HRRP recognition. The waveform features directly reflect the shape of HRRP. Typical waveform features include the scale, statistical, and structural features. The scale features reflect the radial length, number of scattering centers, and other scale properties of the target. The statistical features reflect the amplitude change information, and the structural features reflect the spatial distribution information of the scattering center. The transformation features are extracted by a specific transform of HRRP. The spectral and multi-scale features are obtained by a transform function (such as a Fourier or bispectrum transform) and a wavelet transform, respectively, and the subspace characteristics are formed by dimensionality reduction methods such as principal component analysis (PCA) and local linear embedding.</p><p>However, the traditional HRRP feature-extraction method requires advanced human experience, and a universal set of features is difficult to form. In specific applications, feature extraction and selection often consume much manpower and time, largely restricting the application of HRRP recognition.</p><p>In multi-feature recognition, we need to select the appropriate feature subset and construct the corresponding classifier that recognizes different targets in different environments. If all features are fused blindly, the dimension of the feature vector will be greatly increased, which not only increases the computation effort and storage but may also reduce the recognition performance. Moreover, features differ in their physical meanings and usages.</p><p>A hierarchical recognition method handles different features by different classifiers. When designing classifiers at different levels, the classifier must be optimized by considering the physical meanings and statistical distributions of the features. For example, features such as target size and scattering center can be classified by a simple threshold discriminant classifier or a decision tree classifier, whereas the structural and statistical features of the scattering centers can be discriminated by a support vector machine classifier. Before making the final decision, the results of different classifiers can be combined by an ensemble classification method.  For adaptive feature extraction, we can exploit the end-to-end capability of deep neural networks. Deep learning avoids the high dependence of the traditional machine learning algorithm on human experience <ref type="bibr">[118]</ref><ref type="bibr">[119]</ref><ref type="bibr">[120]</ref><ref type="bibr">[121]</ref>. Deep neural networks include deep autoencoders, deep convolution neural networks, and deep recurrent neural networks. Among these, the deep convolution neural network is most commonly used. Figure <ref type="figure" target="#fig_17">15</ref> is a block diagram of HRRP recognition using a deep convolution neural network. The network includes a convolution layer, a pooling layer, and a fully connected layer. The stacked convolution layer and pooling layer map the original data directly to the high-level abstract features, which are then mapped to the target through the fully connected layer. The entire process requires no human intervention.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">Applications of HRR</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.1">High-resolution monopulse precision-tracking test radar</head><p>Based on theoretical research of HRR algorithms, the Beijing Institute of Technology has developed an X-band high-resolution monopulse precision-tracking test radar. The main parameters of the system are shown in Table <ref type="table" target="#tab_6">4</ref>. In January 2016, the wideband test radar successfully realized full-bandwidth closed-loop tracking of civil aircraft in real time, and verified the key technologies of signal processing and data processing in wideband detection, tracking, high-precision measurement, imaging, and other procedures. As an important test platform, the wideband radar provides continuously measured data support for subsequent wideband detection and tracking research. Figure <ref type="figure" target="#fig_6">16</ref> is a photograph of the X-band wideband test radar.</p><p>The X-band wideband radar records the echo data of an Airbus A320 airplane. The bandwidth of the wideband signal is 500 MHz. Initially, the radar system is led to the target by optical or ADS-B guidance. Once the radar system has captured the target, it switches to monopulse automatic tracking.  The adjustment amount required for envelope alignment was computed from the PDVM results of frames 513-768 in the ISAR echo data. The ISAR imaging results of the civil aircraft were obtained after TMC and are plotted in Figure <ref type="figure" target="#fig_16">20</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.2">Foreign object debris high-resolution radar</head><p>Wideband radar target-recognition technology can detect foreign object debris (FOD) on airport runways. FOD defines any foreign material, debris, or object that may damage the aircraft in the operational airport area. If not removed, FOD can damage the aircraft at the most critical stage of the flight (taxiing and takeoff), resulting in catastrophic losses.</p><p>Traditional FOD detection relies on human vision, which is poor-quality and inefficient. The flight capacity can be improved by installing photoelectric equipment, but such automated photo-detection is degraded by bad weather conditions (such as rain, fog, and haze). In recent years, the millimeter wave (MMW) radar has shown promising performance in FOD detection. MMW radar operates under both daytime and nighttime conditions, is highly to small foreign objects, has high positioning   accuracy for both distance and angle, and is strongly adaptable to bad-weather conditions. Moreover, when combined with photoelectric equipment and Beidou positioning equipment, the MMW radar can position and report FOD with high accuracy and high speed, greatly improving the quality and efficiency of detection, and hence, the safety and navigation ability of the airport operation.</p><p>The FOD detection radar developed by the Beijing Institute of Technology is a high-resolution W-band radar using a linear frequency-modulated continuous wave, as shown in Figure <ref type="figure" target="#fig_16">21</ref>.</p><p>Panels (a), (b), and (c) of Figure <ref type="figure" target="#fig_22">22</ref> show the measured HRRPs of the aircraft, ground vehicles, and foreign objects, respectively. These objects can be distinguished by their scale-structure characteristics, realizing automatic target recognition.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8.3">Dual polarization high-resolution radar</head><p>Combined with polarization measurements, high-resolution imaging technology can capture the distribution of the "spatial-polarimetric" scattering characteristics of a target. From this information, one can extract the spatial structure of the target and the characteristics of polarization scattering, and form the shape features of the target structure. This dual technology holds great potential in radar target recognition <ref type="bibr">[131]</ref><ref type="bibr">[132]</ref><ref type="bibr">[133]</ref>.</p><p>Polarization measurement methods are divided into full polarization and dual polarization modes. Full polarization obtains the whole polarimetric scattering matrix, but requires complex hardware, waveform design, and signal processing. At present, full polarization has been applied in spaceborne SAR, shipborne radars, and GBRs.</p><p>The dual polarization mode measures a single column of the target polarization scattering matrix. Although dual polarization provides less information than the full polarization radar, it provides more target information than traditional single-polarization radar while reducing the hardware complexity of the system. The dual polarized high-resolution radar developed by the Beijing Institute of Technology uses a stepped frequency chirp signal in the W-band <ref type="bibr">[134]</ref>. The maximum synthetic bandwidth is 1.2 GHz. Figure <ref type="figure" target="#fig_23">23</ref> shows the dual polarized HRRPs and polarization characteristics of houses and vehicles collected by this radar. The HRRPs of both targets have certain similarities and are difficult to distinguish with reliability. However, their extracted polarization features are well separated, meaning that both targets are reliably identified in the dual polarization mode. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="9">Summary and prospects</head><p>HRRs can potentially improve the detection ability of space targets in complicated environments. They improve the accuracy of target detection, obtain more feature information of the target, and are more aware of the environment than traditional radars, highlighting the feasibility of diverse and intelligent signal processing algorithms in radar applications. However, to satisfy diverse military and civilian needs, HRR performance must be further improved.</p><p>This paper reviewed the latest research on HRRs, including target detection, tracking, imaging, and recognition by HRRs. It also discussed the relevant issues and solutions and analyzed the representative HRR systems, exemplifying them by experimental results. An HRR efficiently suppresses the target RCS fluctuations, angular glint, clutter, and other interferences, and is regarded as the direction of radar research and development. However, its resolution remains insufficient for general applications and the bandwidth should suit the scattering characteristics of the specific target. Resolving these problems will be the focus of future research.</p><p>Judging from the existing methods of high-resolution signal processing, we anticipate that more attractive and effective methods will be proposed in the future, enabling the HRR tracking of complex targets in complex environments. Innovations in this field will boost the development and applicability of HRRs.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 (</head><label>1</label><figDesc>Figure 1 (Color online) Flowchart of GLRT-DT detector.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 2 (</head><label>2</label><figDesc>Figure 2 (Color online) Performance comparison of four detectors (integral, M/N , SDD-GLRT, and GLRT-DT). (a) Model 1: sparse uniform distribution; (b) model 2: sparse nonuniform distribution; (c) model 3: dense uniform distribution; (d) model 4: dense nonuniform distribution.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 (</head><label>3</label><figDesc>Figure 3 (Color online) Implementation of high-precision phase-derived range and velocity measurements.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 (</head><label>4</label><figDesc>Figure 4 (Color online) Simulated accuracies of EVMs in different SNR environments. (a) SNR range: 13-35 dB; (b) SNR range: 16-35 dB.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 (</head><label>5</label><figDesc>Figure 5 (Color online) Accuracy of PDRMs. (a) SNR range: 13-35 dB; (b) SNR range: 16-35 dB.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 6 (</head><label>6</label><figDesc>Figure 6 (Color online) Interrelationships among HRR characteristics.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 7 (</head><label>7</label><figDesc>Figure 7 (Color online) Data associations in LRRs and HRRs.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 8 (</head><label>8</label><figDesc>Figure 8 (Color online) Traditional detection and tracking.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 9 (</head><label>9</label><figDesc>Figure 9 (Color online) Integrated detection and tracking algorithm based on Bayesian detection.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 10 (</head><label>10</label><figDesc>Figure 10 (Color online) Schematic of the range-spread target-data association method.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 11 (</head><label>11</label><figDesc>Figure 11 (Color online) Flowchart of the attribute-aided tracking method based on EM.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head></head><label></label><figDesc>[100-108]. Over the past few years, extensive RMC methods have been proposed. ISAR imaging of maneuvering targets is handled by different time-frequency analysis methods [100-103], such as adaptive Doppler spectrum extraction [100], fractional Fourier transform [101], and modified Wigner-Ville transform [102]. In RMC, images can be focused without constructing a parametric rotational motion model and estimating its parameters. Another method is based on the adaptive joint time frequency (AJTF) algorithm [104]. The authors of [104] optimized a cost function using the AJTF algorithm, and then estimated the polynomial phase signal of the dominant scatterer used to remove the target's nonuniform rotational motion. Recently, Kang et al.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 12 (</head><label>12</label><figDesc>Figure 12 (Color online) Flowchart of the proposed method.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 13 (</head><label>13</label><figDesc>Figure 13 (Color online) Results of measured airplane data. (a) Envelope alignment by ACM; (b) first 80 eigenvalues of the covariance matrix; (c) DCT; (d) PGA; (e) M-SEA; (f) M-MESA.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 14 (</head><label>14</label><figDesc>Figure 14 (Color online) Implementation process of radar automatic target recognition.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>7. 2</head><label>2</label><figDesc>Hierarchical target recognition algorithm In general, radar target recognition consists of two steps: feature extraction and classification. Feature extraction isolates a set of features representing the essential attributes of the target from HRRP. Feature classification maps the feature set to the corresponding class of the target by machine learning [117-130].</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Figure 15 (</head><label>15</label><figDesc>Figure 15 (Color online) HRRP recognition using a convolution neural network.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>18 Figure 16 (Figure 17 (</head><label>181617</label><figDesc>Figure 16 (Color online) Photograph of the X-band high-resolution monopulse precision-tracking test radar.</figDesc><graphic coords="18,199.31,121.15,198.50,148.94" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_19"><head>Figure 17</head><label>17</label><figDesc>Figure 17 demonstrates the real-time closed-loop tracking of the civil aircraft. The maximum detection range of the target exceeded 90 km, implying that the aircraft was successfully tracked. This result justifies the use of signal-processing technology in wideband detection and tracking. The envelope velocities and phase-derived velocities measured over 12 s, obtained from 2048 frames of airplane echo data, are plotted in panel (a) of Figures 18 and 19, respectively. Panel (b) of each figure plots the velocity fluctuation error, defined as the difference between the measured data (blue plot) and the least-squares fitting result (red line). The RMSEs of the EVM and PDVM are 2.3 and 0.055 m/s, respectively.The adjustment amount required for envelope alignment was computed from the PDVM results of frames 513-768 in the ISAR echo data. The ISAR imaging results of the civil aircraft were obtained after TMC and are plotted in Figure20.</figDesc><graphic coords="18,142.55,399.91,173.66,65.78" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_20"><head>Figure 18 (Figure 19 (Figure 20 (</head><label>181920</label><figDesc>Figure 18 (Color online) Analysis of the measured civil aircraft envelope velocities. (a) Velocity measurements; (b) velocity fluctuation errors.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_21"><head>Long T, 20 Figure 21 (</head><label>2021</label><figDesc>Figure 21 (Color online) FOD radar.</figDesc><graphic coords="20,234.71,121.39,127.58,156.74" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_22"><head>Figure 22 (</head><label>22</label><figDesc>Figure 22 (Color online) One-dimensional images captured by FOD radar on an airfield. (a) Aircraft; (b) vehicles; (c) foreign objects.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_23"><head>Figure 23 (</head><label>23</label><figDesc>Figure 23 (Color online) Measured dual-polarized one-dimensional images of houses (a) and vehicles (b), and their polarization features (c).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_24"><head></head><label></label><figDesc>Long T, et al. Sci China Inf Sci April 2019 Vol. 62 040301:22</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Scattering center of target</figDesc><table><row><cell>Model number</cell><cell>Name</cell><cell>Scattering energy distribution</cell></row><row><cell>Model 1</cell><cell>Sparse uniform distribution</cell><cell>The target is composed of 5 scatterers, each containing 20%</cell></row><row><cell></cell><cell></cell><cell>of the target energy.</cell></row><row><cell>Model 2</cell><cell>Sparse nonuniform distribution</cell><cell>The target is composed of 1 strong scatterer, 1 weak scat-</cell></row><row><cell></cell><cell></cell><cell>terer, and 3 weaker scatterers containing 70%, 20%, and 3.33%</cell></row><row><cell></cell><cell></cell><cell>(each) of the target energy, respectively.</cell></row><row><cell>Model 3</cell><cell>Dense uniform distribution</cell><cell>The target is composed of 128 weak scatterers, each containing</cell></row><row><cell></cell><cell></cell><cell>0.78% of the target energy.</cell></row><row><cell>Model 4</cell><cell>Dense nonuniform distribution</cell><cell>The target is composed of 2 strong scatterers and 126 weak</cell></row><row><cell></cell><cell></cell><cell>scatterers, each containing 20% and 0.48% of the target en-</cell></row><row><cell></cell><cell></cell><cell>ergy, respectively.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>Long T, et al. Sci China Inf Sci</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>April 2019 Vol. 62 040301:8</cell></row><row><cell></cell><cell>10 3</cell><cell></cell><cell></cell><cell cols="2">Theoretical RMSE Measured RMSE</cell><cell>1.4 1.2</cell><cell>Theoretical RMSE Measured RMSE</cell></row><row><cell></cell><cell>10 2</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>1.0</cell></row><row><cell>RMSE (mm)</cell><cell>10 0 10 1</cell><cell></cell><cell></cell><cell></cell><cell>RMSE (mm)</cell><cell>0.4 0.6 0.8</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0.2</cell></row><row><cell></cell><cell>10 -1</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>0</cell></row><row><cell></cell><cell>15</cell><cell>20</cell><cell>25</cell><cell>30</cell><cell>35</cell><cell>16 18 20 22 24 26 28 30 32 34</cell></row><row><cell></cell><cell></cell><cell cols="2">SNR (dB)</cell><cell></cell><cell></cell><cell>SNR (dB)</cell></row><row><cell></cell><cell></cell><cell>(a)</cell><cell></cell><cell></cell><cell></cell><cell>(b)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 2</head><label>2</label><figDesc>Contrast comparison of different autofocus methods</figDesc><table><row><cell>Method</cell><cell>DCT</cell><cell>PGA</cell><cell>M-SEA</cell><cell>M-MESA</cell></row><row><cell>Contrast</cell><cell>10.5218</cell><cell>14.0038</cell><cell>23.9199</cell><cell>24.3422</cell></row><row><cell cols="3">7 Automatic target recognition technology</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head></head><label></label><figDesc>Long T, et al. Sci China Inf Sci April 2019 Vol. 62 040301:16</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 3</head><label>3</label><figDesc>Typical HRRP features</figDesc><table><row><cell cols="2">Feature category</cell><cell>Example</cell></row><row><cell></cell><cell>Scale characteristics</cell><cell>Length, number of scattering points</cell></row><row><cell>Waveform characteristics</cell><cell>Fluctuation characteristics</cell><cell>Mean, variance</cell></row><row><cell></cell><cell>Structure characteristics</cell><cell>Symmetry, wave, entropy descaling</cell></row><row><cell></cell><cell>Spectral characteristics</cell><cell>Spectrum, bispectrum, high order spectrum</cell></row><row><cell>Transformation characteristics</cell><cell>Multiscale feature</cell><cell>Wavelet transform</cell></row><row><cell></cell><cell>Subspace characteristics</cell><cell>PCA, LLE</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 4</head><label>4</label><figDesc>Parameters of the X-band high-resolution monopulse precision-tracking test radar</figDesc><table><row><cell>Parameter</cell><cell>Value</cell></row><row><cell>Frequency band</cell><cell>X</cell></row><row><cell>Signal bandwidth</cell><cell>1 GHz</cell></row><row><cell>Peak power</cell><cell>4 kW</cell></row><row><cell>Antenna aperture</cell><cell>2.5 m</cell></row><row><cell>Azimuth</cell><cell>0 • -360 •</cell></row><row><cell>Elevation</cell><cell>-3 • -180 •</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgements This work was supported by <rs type="funder">National Natural Science Foundation of China</rs> (Grant No. <rs type="grantNumber">61771050</rs>) and <rs type="funder">111 Project of the China Ministry of Education (MOE)</rs> (Grant No. <rs type="grantNumber">B14010</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_uXPTYbY">
+					<idno type="grant-number">61771050</idno>
+				</org>
+				<org type="funding" xml:id="_XXjvnFv">
+					<idno type="grant-number">B14010</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">High Frequency Over-the-Horizon Radar: Fundamental Principles, Signal Processing, and Practical Applications</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Fabrizio</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>McGraw-Hill</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Detection, Estimation, and Modulation Theory, Part IV: Optimum Array Processing</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">L</forename><surname>Van Trees</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<publisher>Wiley &amp; Sons</publisher>
+			<pubPlace>Hoboken</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Antenna-Based Signal Processing Techniques for Radar Systems</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Farina</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992">1992</date>
+			<publisher>Artech House</publisher>
+			<pubPlace>Norwood</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The development of phased-array radar technology</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fenn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Temme</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W P</forename><surname>Delaney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lincoln Lab J</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="321" to="340" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Phased arrays around the world-progress and future trends</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Brookner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE International Symposium on Phased Array Systems and Technology</title>
+		<meeting>IEEE International Symposium on Phased Array Systems and Technology</meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Discussion on the theoretical foundation of development and innovation for radar technical system</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Modern Radar</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="142" to="148" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">An analysis of the factors which determine signal/noise discrimination in pulsed-carrier systems</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">O</forename><surname>North</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc IEEE</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="1016" to="1027" />
+			<date type="published" when="1963">1963</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Probability and Information Theory with Application to Radar</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Woodward</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1953">1953</date>
+			<publisher>Pergamon Press</publisher>
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Object detection system</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Dicke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">US Patent</title>
+		<imprint>
+			<biblScope unit="page">2624876</biblScope>
+			<date type="published" when="1953">1953</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Advantages and problems of wideband radar</title>
+		<author>
+			<persName><forename type="first">Y D</forename><surname>Shirman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S P</forename><surname>Leshchenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Orlenko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE International Radar Conference</title>
+		<meeting>IEEE International Radar Conference<address><addrLine>Portland</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="15" to="21" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">High Resolution Radar</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Wehner</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<publisher>Artech House</publisher>
+			<pubPlace>Norwood</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Principles of Modern Radar</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Eaves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Reedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<publisher>Van Nostrand Reinhold</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Principles of Radar and Sonar Signal Processing</title>
+		<author>
+			<persName><forename type="first">Le</forename><surname>Chevalier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<publisher>Artech House</publisher>
+			<pubPlace>Norwood</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Wideband Radar</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><forename type="middle">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<publisher>National Defense Industry Press</publisher>
+			<pubPlace>Beijing</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Angular glint and the moving, rotating, complex radar target</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Lindsay</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAES.1968.5408954</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="164" to="173" />
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Radar system analysis and modeling</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Barton</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MAES.2005.1423386</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Aerosp Electron Syst Mag</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="23" to="25" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Skolnik</surname></persName>
+		</author>
+		<title level="m">Radar Handbook</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+	<note>3rd ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Aspects of Modern Radar</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Brookner</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1988">1988</date>
+			<publisher>Artech House</publisher>
+			<pubPlace>Norwood</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">A survey of radar ECM and ECCM</title>
+		<author>
+			<persName><forename type="first">N J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/7.395232</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="1110" to="1120" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Radar detection and classification of jamming signals belonging to a cone class</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Greco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Gini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Farina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="1984" to="1993" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">High range-resolution monopulse tracking radar</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Howard</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAES.1975.307984</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="749" to="755" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Book review: understanding synthetic aperture radar images</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Rycroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S1364-6826(98)00102-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Atmos Sol-Terr Phys</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page">424</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A novel DEM reconstruction strategy based on multi-frequency InSAR in highly sloped terrain</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T D</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z G</forename><surname>Ding</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-0085-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">88301</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Target decomposition and recognition from wide-angle SAR imaging based on a Gaussian amplitudephase model</title>
+		<author>
+			<persName><forename type="first">Y C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jin</forename><forename type="middle">Y</forename></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-0572-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">62305</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Optimal 3D deformation measuring in inclined geosynchronous orbit SAR differential interferometry</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X C</forename><surname>Dong</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-9083-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">60303</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">23</biblScope>
+			<date type="published" when="2019-04">April 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Interferometric orbit determination for geostationary satellites</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Fuster R M, Usón</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ibars</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-9052-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">60302</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Potential of geosynchronous SAR interferometric measurements in estimating three-dimensional surface displacements</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-9079-8</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">60304</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Beam scan mode analysis and design for geosynchronous SAR</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X J</forename><surname>Lu</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-9082-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="page">60306</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">A modified fixed-point chirp scaling algorithm based on updating phase factors regionally for spaceborne SAR real-time imaging</title>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">G</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Xiao</forename><forename type="middle">F</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y Z</forename></persName>
+		</author>
+		<idno type="DOI">10.1109/TGRS.2018.2852062</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="7436" to="7451" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">An improved process for phase-derived-range measurements</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Steudel</surname></persName>
+		</author>
+		<idno>WO 2005/017553 A1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">World Intellectual Property Organization</title>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Process for phase-derived range measurements</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Steudel</surname></persName>
+		</author>
+		<idno>WO 2005/030222 A1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">US Patent</title>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A multicomponent micro-Doppler signal decomposition and parameter estimation method for target recognition</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wu Y R</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L J</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-018-9491-y</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">29304</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Micro-Doppler signature extraction and ISAR imaging for target with micromotion dynamics</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">J</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LGRS.2010.2081660</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="411" to="415" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Micromotion characteristic acquisition based on wideband radar phase</title>
+		<author>
+			<persName><forename type="first">Y X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="3650" to="3657" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Analysis of micro-motion feature in ISAR imaging via phase-derived velocity measurement technique</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H Y</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q H</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Radar Conference</title>
+		<meeting>IEEE Radar Conference<address><addrLine>Seattle</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="783" to="0787" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">The Kiernan reentry measurements system on Kwajalein Atoll</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Roth K R, Austin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Frediani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lincoln Lab J</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="247" to="276" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Assessment on GMD&apos;s deployment status and operational capability</title>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">W</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">X</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod Defence Technol</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="11" to="18" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Development and prospect of ISAR imaging system and imaging technique</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mod Radar</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1" to="7" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Spatially distributed target detection in non-Gaussian clutter</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gerlach</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/7.784062</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="926" to="934" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A M out of N detector based on scattering density</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X F</forename><surname>Gu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Jian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IET International Radar Conference</title>
+		<meeting>IET International Radar Conference<address><addrLine>Guilin</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Research on extended target detection for high resolution radar (in Chinese)</title>
+		<author>
+			<persName><forename type="first">X L</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Sin Inform</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="1007" to="1018" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">GLRT-based adaptive detection algorithms for range-spread targets</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Conte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>De Maio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ricci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="1336" to="1348" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Distributed target detection in compound-Gaussian noise with Rao and Wald tests</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Conte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>De Maio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="568" to="582" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Adaptive radar detection of distributed targets in homogeneous and partially homogeneous noise plus subspace interference</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Bandiera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>De Maio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A S</forename><surname>Greco</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2006.888065</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="1223" to="1237" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Novel range-spread target detectors in non-Gaussian clutter</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Jian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F G</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="1312" to="1328" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Adaptive detection of wideband radar range spread targets with range walking in clutter</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Shui</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAES.2012.6237578</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="2052" to="2064" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Cascaded detector for range-spread target in non-Gaussian clutter</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Jian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="1713" to="1725" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Radar detection of distributed targets in homogeneous interference whose inverse covariance structure is defined via unitary invariant functions</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aubry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>De Maio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pallotta</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2013.2273444</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="4949" to="4961" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">A unifying framework for adaptive radar detection in homogeneous plus structured interference -part II: detectors design</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ciuonzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>De Maio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Orlando</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2016.2519005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page" from="2907" to="2919" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Range-spread target detection based on cross time-frequency distribution features of two adjacent received signals</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Shui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bao</forename><forename type="middle">Z</forename></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2009.2029715</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="3733" to="3745" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">CFAR detection of range-spread target in white Gaussian noise using waveform entropy</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Shui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/el.2010.3329</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Electron Lett</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="647" to="649" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Range-spread target detection in white Gaussian noise via two-dimensional non-linear shrinkage map and geometric average integration</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Shui</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/iet-rsn.2010.0324</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IET Radar Sonar Navig</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="90" to="98" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Range-spread target detection using consecutive HRRPs</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Shui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="647" to="665" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">CFAR detection of range-spread targets based on the time-frequency decomposition feature of two adjacent returned signals</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2013.2282274</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="6307" to="6319" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Improved double threshold detector for spatially distributed target</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEICE Trans Commun</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page" from="1475" to="1478" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Micro-Doppler effect analysis and feature extraction in ISAR imaging with stepped-frequency chirp signals</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Qiu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TGRS.2009.2034367</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="page" from="2087" to="2098" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">A novel high-precision phase-derived-range method for direct sampling LFM radar</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Huo</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TGRS.2015.2474144</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1131" to="1141" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A high-precision phase-derived range and velocity measurement method based on Long T, et al</title>
+		<author>
+			<persName><forename type="first">H Y</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">X</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11432-016-0097-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">radar. Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page">82301</biblScope>
+			<date type="published" when="2017">April 2019. 2017</date>
+		</imprint>
+	</monogr>
+	<note>Sci China Inf Sci</note>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">A high-precision method of phase-derived velocity measurement and its application in motion compensation of ISAR imaging</title>
+		<author>
+			<persName><forename type="first">H Y</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">X</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E K</forename><surname>Mao</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TGRS.2017.2733579</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Geosci Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="60" to="77" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">A micro-motion measurement method based on wideband radar phase derived ranging</title>
+		<author>
+			<persName><forename type="first">H Y</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">X</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IET International Radar Conference, Xi&apos;an</title>
+		<meeting>IET International Radar Conference, Xi&apos;an</meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">A novel high-accuracy phase-derived velocity measurement method for wideband LFM radar</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H Y</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q H</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LGRS.2018.2879491</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Multiple hypothesis tracking for multiple target tracking</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Blackman</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MAES.2004.1263228</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Aerosp Electron Syst Mag</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="5" to="18" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">A tracker-aware detector threshold optimization formulation for tracking maneuvering targets in clutter</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Aslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Saranlı</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.sigpro.2011.04.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="2213" to="2221" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">The probabilistic data association filter</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Barshalom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Daum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MCS.2009.934469</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Control Syst</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="82" to="100" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Results on the modified Riccati equation: target tracking applications</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Boers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Driessen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="379" to="384" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">The modified Riccati equation for amplitude-aided target tracking in heavytailed clutter</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Brekke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Hallingstad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Glattetre</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAES.2011.6034670</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="2874" to="2886" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Stability evaluation and track life of the PDAF for tracking in clutter</title>
+		<author>
+			<persName><forename type="first">X R</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bar-Shalom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Autom Control</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="588" to="602" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Dynamic cramer-rao bound for target tracking in clutter</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bar-Shalom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="1154" to="1167" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Simplification of the dynamic Cramér-Rao bound for target tracking in clutter</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bar-Shalom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TAES.2011.5751272</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="1481" to="1482" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Tracker-aware adaptive detection: an efficient closed-form solution for the Neyman-Pearson case</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Aslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Saranlı</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Baykal</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.dsp.2010.01.008</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Digit Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="1468" to="1481" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Dynamic waveform selection for manoeuvering target tracking in clutter</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H Q</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J T</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Radar Sonar Nav</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="815" to="825" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Joint optimization of predictive model and transmitted waveform for extended target tracking</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Signal Processing</title>
+		<meeting>International Conference on Signal Processing<address><addrLine>Hangzhou</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="1914" to="1918" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Tracker-based adaptive schemes for optimal waveform selection</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Cabrera</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Radar Conference</title>
+		<meeting>IEEE Radar Conference<address><addrLine>Cincinnati</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="298" to="0302" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Adaptive highly localized waveform design for multiple target tracking</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kyriakides</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Morrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Papandreou-Suppappola</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/1687-6180-2012-180</idno>
+	</analytic>
+	<monogr>
+		<title level="j">EURASIP J Adv Signal Process</title>
+		<imprint>
+			<biblScope unit="page">180</biblScope>
+			<date type="published" when="2012">2012. 2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Joint transmitter waveform and receiver path optimization for target tracking by multistatic radar system</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Dogancay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L M</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Signal Processing Workshop on Statistical Signal Processing</title>
+		<meeting>IEEE Signal Processing Workshop on Statistical Signal Processing<address><addrLine>Gold Coast</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="444" to="447" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">A modified PDAF based on a Bayesian detector</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Niu R X</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Barshalom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of American Control Conference</title>
+		<meeting>American Control Conference<address><addrLine>Chicago</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<biblScope unit="page" from="2230" to="2234" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Integration of Bayes detection with target tracking</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bar-Shalom</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/78.890334</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="17" to="29" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Threshold optimization for tracking a nonmaneuvering target</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Aslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Saranli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="2844" to="2859" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">Offline performance prediction of PDAF with Bayesian detection for tracking in clutter</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2012.2230168</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="770" to="781" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Optimization and analysis of PDAF with Bayesian detection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q H</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="1986" to="1995" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Bayesian approach to extended object and cluster tracking using random matrices</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Koch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="1042" to="1059" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Mixture reduction algorithms for point and extended object tracking in clutter</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Salmond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="667" to="686" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Performance of PMHT based algorithms for underwater target tracking</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ceylan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Efe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Signal Processing and Communications Applications Conference</title>
+		<meeting>Signal Processing and Communications Applications Conference<address><addrLine>Antalya</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="89" to="92" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">A probabilistic multi-hypothesis tracking algorithm without enumeration and pruning</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Streit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Luginbuhl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 6th Joint Service Data Fusion Symposium</title>
+		<meeting>the 6th Joint Service Data Fusion Symposium</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="page" from="1015" to="1024" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Integration of features and attributes into target tracking</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">E</forename><surname>Drummond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Society for Optical Engineering</title>
+		<meeting>International Society for Optical Engineering</meeting>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<biblScope unit="page" from="610" to="622" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">On categorical feature-aided target tracking</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">E</forename><surname>Drummond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Society for Optical Engineering</title>
+		<meeting>International Society for Optical Engineering</meeting>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="544" to="558" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Probabilistic tracking of multiple extended targets using random matrices</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wieneke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Koch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Society for Optical Engineering</title>
+		<meeting>International Society for Optical Engineering</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">MLPDA and MLPMHT applied to some MSTWG data</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Coraluppi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Information Fusion</title>
+		<meeting>International Conference on Information Fusion</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">Predetection fusion with Doppler measurements and amplitude information</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Georgescu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J Ocean Eng</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="56" to="65" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Joint target tracking and classification using radar and ESM sensors</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Challa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Pulford</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Long T, et al. Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="1039" to="1055" />
+			<date type="published" when="2001">April 2019. 2001</date>
+		</imprint>
+	</monogr>
+	<note>Electron Syst</note>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">A bootstrapped PMHT with feature measurements</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Domrese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Willett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="2559" to="2571" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">Tracking of extended objects and group targets using random matrices: a new approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Feldmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Franken</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Information Fusion</title>
+		<meeting>International Conference on Information Fusion</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Tracking of extended objects and group targets using random matrices</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Feldmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Franken</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Koch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="1409" to="1420" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">Tracking of extended object or target group using random matrix -part II: irregular object</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Information Fusion</title>
+		<meeting>International Conference on Information Fusion</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="2185" to="2192" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">Tracking, association, and classification: a combined PMHT approach</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Davey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Streit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Digit Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="372" to="382" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">Integrated track maintenance for the PMHT via the hysteresis model</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Davey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gray</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="93" to="111" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title level="a" type="main">Improved probabilistic multi-hypothesis tracker for multiple target tracking with switching attribute states</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X L</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2011.2167616</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="5721" to="5733" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">Compensation of scatterer migration through resolution cell in inverse synthetic aperture radar imaging</title>
+		<author>
+			<persName><forename type="first">G Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bao</forename><forename type="middle">Z</forename></persName>
+		</author>
+		<idno type="DOI">10.1049/ip-rsn:20000253</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEE Proc Radar Sonar Navig</title>
+		<imprint>
+			<biblScope unit="volume">147</biblScope>
+			<biblScope unit="page" from="80" to="85" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<monogr>
+		<title level="m" type="main">Inverse Synthetic Aperture Radar Imaging: Principles, Algorithms and Applications</title>
+		<author>
+			<persName><forename type="first">V C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Martorella</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<publisher>SciTech Publishing</publisher>
+			<biblScope unit="page">100</biblScope>
+			<pubPlace>Edison</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">A novel range-instantaneous-Doppler isar imaging algorithm for maneuvering targets via adaptive Doppler spectrum extraction</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.2528/PIERC14122501</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Prog Electrom Res C</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="109" to="118" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title level="a" type="main">Adaptive inverse synthetic aperture radar imaging for nonuniformly moving targets</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="247" to="249" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title level="a" type="main">New ISAR imaging algorithm based on modified Wigner-Ville distribution</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Radar Sonar Navig</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="70" to="80" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title level="a" type="main">Analysing and compensating the effects of range and Doppler frequency migrations in linear frequency modulation pulse compression radar</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/iet-rsn.2009.0265</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IET Radar Sonar Navig</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="12" to="22" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<analytic>
+		<title level="a" type="main">Inverse synthetic aperture radar image focusing using fast adaptive joint time-frequency and three-dimensional motion detection on experimental radar data</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Thayaparan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Brinkman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lampropoulos</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/iet-spr.2009.0102</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IET Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="382" to="105" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title level="a" type="main">Focusing inverse synthetic aperture radar images with higher-order motion error using the adaptive joint-time-frequency algorithm optimised with the genetic algorithm and the particle swarm optimisation algorithm -comparison and results</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Brinkman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Thayaparan</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/iet-spr.2009.0082</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IET Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="329" to="342" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title level="a" type="main">ISAR rotational motion compensation algorithm using polynomial phase transform</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Bae</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S J</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mop.29849</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Microw Opt Technol Lett</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="1551" to="1557" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title level="a" type="main">Efficient autofocus chain for ISAR imaging of non-uniformly rotating target</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M S</forename><surname>Kang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I O</forename><surname>Choi</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/JSEN.2017.2727507</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Senss J</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="5466" to="5478" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title level="a" type="main">A novel non-uniform rotational motion estimation and compensation method for maneuvering targets ISAR imaging utilizing particle swarm optimization</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/JSEN.2017.2766670</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Senss J</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="299" to="309" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title level="a" type="main">Improved Doppler centroid tracking for ISAR based on target extraction</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y N</forename><surname>Peng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Radar Conference</title>
+		<meeting>IEEE Radar Conference</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">110</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title level="a" type="main">Performance characterization of phase gradient autofocus for inverse synthetic aperture LADAR</title>
+		<author>
+			<persName><forename type="first">C J</forename><surname>Pellizzari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M F</forename><surname>Spencer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Aerospace Conference</title>
+		<meeting>IEEE Aerospace Conference<address><addrLine>Place</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page">111</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title level="a" type="main">An azimuth-dependent phase gradient autofocus (APGA) algorithm for airborne/stationary BiSAR imagery</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X G</forename><surname>Xia</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LGRS.2013.2237749</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1290" to="1294" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title level="a" type="main">ISAR minimum-entropy phase adjustment</title>
+		<author>
+			<persName><forename type="first">J F</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kasilingam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X Z</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE Radar Conference</title>
+		<meeting>IEEE Radar Conference</meeting>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="197" to="200" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<analytic>
+		<title level="a" type="main">Minimum entropy via subspace for ISAR autofocus</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G C</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="205" to="209" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title level="a" type="main">An effective ISAR autofocus algorithm based on single eigenvector</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE International Radar Conference</title>
+		<meeting>IEEE International Radar Conference<address><addrLine>Guangzhou</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page">115</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title level="a" type="main">Efficient ISAR autofocus technique using eigenimages</title>
+		<author>
+			<persName><forename type="first">S H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J H</forename><surname>Bae</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M S</forename><surname>Kang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J Sel Top Appl Earth Observations Remote Sens</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="605" to="616" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title level="a" type="main">Efficient ISAR phase autofocus based on eigenvalue decomposition</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Cai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y H</forename><surname>Sun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2195" to="2199" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title level="a" type="main">Robust radar automatic target recognition algorithm based on HRRP signature</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Du</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front Electr Electron Eng China</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="49" to="55" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b118">
+	<analytic>
+		<title level="a" type="main">Radar HRRP recognition based on discriminant deep autoencoders with small training data size</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mian</surname></persName>
+		</author>
+		<idno type="DOI">10.1049/el.2016.3060</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Electron Lett</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="1725" to="1727" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b119">
+	<analytic>
+		<title level="a" type="main">Radar HRRP target recognition with deep networks</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.patcog.2016.08.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recogn</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="379" to="393" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b120">
+	<analytic>
+		<title level="a" type="main">The radar target recognition research based on improved neural network algorithm</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Intelligent Systems Design and Engineering Applications (ISDEA)</title>
+		<meeting>International Conference on Intelligent Systems Design and Engineering Applications (ISDEA)</meeting>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="1074" to="1077" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b121">
+	<monogr>
+		<title level="m" type="main">Automatic target recognition of aircraft using inverse synthetic aperture radar</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Penacaballero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Cantu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<idno>ArXiv:1711.04901</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b122">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci China Inf Sci</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="26" to="122" />
+			<date type="published" when="2019-04">April 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b123">
+	<analytic>
+		<title level="a" type="main">Identification-while-scanning of a multi-aircraft formation based on sparse recovery for narrowband radar</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S B</forename><surname>Peng</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/s16111972</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1972" to="1123" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b124">
+	<analytic>
+		<title level="a" type="main">Radar HRRP target recognition based on t-SNE segmentation and discriminant deep belief network</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q P</forename><surname>Kong</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LGRS.2017.2726098</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Geosci Remote Sens Lett</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1609" to="1613" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b125">
+	<analytic>
+		<title level="a" type="main">HRRP classification based on multi-scale fusion sparsity preserving projections</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electron Lett</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="748" to="750" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b126">
+	<analytic>
+		<title level="a" type="main">Bayesian spatiotemporal multitask learning for radar HRRP target recognition</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TSP.2011.2141664</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="3182" to="3196" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b127">
+	<analytic>
+		<title level="a" type="main">Radar target recognition based on fuzzy optimal transformation using high-resolution range profile</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">F</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.patrec.2012.10.010</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Pattern Recogn Lett</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="256" to="264" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b128">
+	<analytic>
+		<title level="a" type="main">Radar automatic target recognition using complex high-resolution range profiles</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Bao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Radar Sonar Navig</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="18" to="26" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b129">
+	<analytic>
+		<title level="a" type="main">Radar HRRP statistical recognition: parametric model and model selection</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Du</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">W</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Bao</forename><forename type="middle">Z</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Signal Process</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page" from="1931" to="1944" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b130">
+	<analytic>
+		<title level="a" type="main">Nonlinear component analysis as a kernel eigenvalue problem</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Schölkopf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Smola</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Müller</surname></persName>
+		</author>
+		<idno type="DOI">10.1162/089976698300017467</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neural Comput</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1299" to="1319" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b131">
+	<analytic>
+		<title level="a" type="main">Efficient radar target recognition using the MUSIC algorithm and invariant features</title>
+		<author>
+			<persName><forename type="first">K T</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Seo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/8.999623</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Antennas Propagat</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="325" to="337" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b132">
+	<analytic>
+		<title level="a" type="main">Radar target recognition based on modified characteristic polarization states</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Aldhubaib</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Shuley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Aerosp Electron Syst</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="1921" to="1933" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b133">
+	<analytic>
+		<title level="a" type="main">Radar target recognition based on some invariant properties of the polarization scattering matrix</title>
+		<author>
+			<persName><forename type="first">F Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of IEEE International Radar Conference</title>
+		<meeting>IEEE International Radar Conference<address><addrLine>Place</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="626" to="629" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b134">
+	<analytic>
+		<title level="a" type="main">A target polarization recognition method for radar echoes</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L S</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X H</forename><surname>Shao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Microwave and Millimeter Wave Technology</title>
+		<meeting>International Conference on Microwave and Millimeter Wave Technology<address><addrLine>Place</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="1644" to="1647" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b135">
+	<analytic>
+		<title level="a" type="main">Analysis and processing of modulated frequency stepped radar signal</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E K</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>He</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Electron Sin</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="84" to="88" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

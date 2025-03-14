@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Alternatives to Eigenstate Thermalization</title>
+				<funder ref="#_z9VWmJu">
+					<orgName type="full">National Science Foundation</orgName>
+					<orgName type="abbreviated">NSF</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Office of Naval Research</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Marcos</forename><surname>Rigol</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">Georgetown University</orgName>
+								<address>
+									<postCode>20057</postCode>
+									<settlement>Washington</settlement>
+									<region>DC</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mark</forename><surname>Srednicki</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<postCode>93106</postCode>
+									<settlement>Santa Barbara</settlement>
+									<region>CA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Alternatives to Eigenstate Thermalization</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BFE1E9A886487A47995050D15B287479</idno>
+					<idno type="DOI">10.1103/PhysRevLett.108.110601</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:49+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>numbers: 05.70.Ln</term>
+					<term>05.30.-d</term>
+					<term>02.30.Ik</term>
+					<term>03.75.-b</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>An isolated quantum many-body system in an initial pure state will come to thermal equilibrium if it satisfies the eigenstate thermalization hypothesis (ETH). We consider alternatives to ETH that have been proposed. We first show that von Neumann's quantum ergodic theorem (QET) relies on an assumption that is essentially equivalent to ETH. We also investigate whether initial states produced by a quench can lead to thermal behavior in systems that do not obey ETH after the quench, namely, integrable systems. We find examples of this, but only for initial states that obeyed ETH before the quench.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Introduction and Summary of ETH: Consider an isolated quantum N -body system with hamiltonian Ĥ. Let |α denote an eigenstate of Ĥ with eigenvalue E α , and let Â denote a few-body observable. The eigenstate thermalization hypothesis (ETH) states that (1) the diagonal matrix elements A αα = α| Â|α change slowly with the state, with the difference between neighboring values A α+1,α+1 -A αα exponentially small in N , and (2) that the off-diagonal matrix elements A αβ = α| Â|β , α = β, are themselves exponentially small in N <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. ETH is suggested by various results in quantum chaos theory (in particular, Shnirelman's theorem <ref type="bibr" target="#b4">[3]</ref> and Berry's random-wave conjecture <ref type="bibr" target="#b5">[4]</ref>) for systems that have a chaotic classical limit. ETH has been verified numerically in a wide variety of quantum many-body systems that are sufficiently far (in parameter space) from points of integrability <ref type="bibr" target="#b6">[5]</ref><ref type="bibr" target="#b7">[6]</ref><ref type="bibr" target="#b9">[7]</ref><ref type="bibr" target="#b11">[8]</ref>, but it certainly does not hold in systems that are integrable or near integrable <ref type="bibr" target="#b6">[5]</ref><ref type="bibr" target="#b7">[6]</ref><ref type="bibr" target="#b9">[7]</ref><ref type="bibr" target="#b11">[8]</ref><ref type="bibr" target="#b12">[9]</ref>.</p><p>Let |ψ(τ ) be the quantum state of the system at time τ , given by the evolution of some initial state |ψ I = α C α |α ,</p><formula xml:id="formula_0">|ψ(τ ) = e -i Ĥτ / |ψ I = α C α e -iEατ / |α ,<label>(1)</label></formula><p>with α |C α | 2 = 1. The energy of the system is Ē = α |C α | 2 E α , and the quantum energy uncertainty is ∆E, where (∆E) 2 = α |C α | 2 (E α -Ē) 2 . We assume that ∆E is algebraically small in N , (e.g., ∆E ∼ N -1/2 Ē), as is the case for any state of a macroscopic system that could be realistically prepared in a laboratory. (This is also true for theoretical models in which the initial state is provided by a sudden quench in Hamiltonians with short-range interactions <ref type="bibr" target="#b6">[5]</ref>.) The time-dependent expectation value of Â is</p><formula xml:id="formula_1">Â(τ ) = ψ(τ )| Â|ψ(τ ) (2) = α |C α | 2 A αα + α =β C * α C β e i(Eα-E β )τ / A αβ ,</formula><p>and the long-time average of Â(τ ) is</p><formula xml:id="formula_2">A = lim τ →∞ 1 τ τ 0 dt Â(τ ) = α |C α | 2 A αα ,<label>(3)</label></formula><p>in the absence of degeneracies (which are not expected to occur in chaotic systems without extra symmetries <ref type="bibr" target="#b13">[10]</ref>). The right-hand side of Eq. ( <ref type="formula" target="#formula_2">3</ref>) effectively sums |C α | 2 A αα over an energy window of width ∆E that is centered on Ē. According to ETH, A αα is approximately constant over this window. Thus, up to algebraically small corrections, the right-hand side of Eq. ( <ref type="formula" target="#formula_2">3</ref>) has the same value as the microcanonical average of Â over the same window, and is independent of the detailed pattern of values taken by the |C α | 2 coefficients. Thus ETH results in the equality of time averages and thermal averages for a very broad class of initial states.</p><p>From ETH, each term in the second sum in Eq. ( <ref type="formula">2</ref>) is exponentially small in N . However, the number of terms in this sum is exponentially large, and so, if the phases line up coherently, the second sum can rival the first. If this happens at one particular time (say, τ = 0), it will fail at sufficiently large later times, as the time-dependent phases go out of alignment. This dephasing mechanism accounts for the approach to thermal equilibrium for an initially out-of-equilibrium state <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b6">5]</ref>.</p><p>The Quantum Ergodic Theorem: In 1929, von Neumann proved a mathematical result which has been dubbed the quantum ergodic theorem (QET) <ref type="bibr" target="#b14">[11]</ref>. An exegesis of it has been given by Goldstein et al. (hereafter GLTZ) <ref type="bibr" target="#b15">[12]</ref>. GLTZ summarize QET, or "normal typicallity" as it has been more recently known, as follows: "for a typical finite family of commuting macroscopic observables, every initial wave function from a micro-canonical energy shell so evolves that for most times τ in the long run, the joint probability distribution of these observables obtained from |ψ(τ ) is close to their microcanonical distribution" <ref type="bibr" target="#b15">[12]</ref>. More specifically, QET states that Â(τ ) will be close to the microcanonical average of Â in the following sense: | Â(τ ) -Â mc | 2 &lt; ǫ 2 Â2 mc for all but a fraction δ of times t, where the subscript mc denotes the microcanonical average over the energy window of all states with nonzero C α , and ǫ and δ are small numbers. The proof of the theorem requires that all energy eigenvalue differences E α -E β be nondegenerate, and an additional condition that is deemed "technical" by GLTZ, their Eq. ( <ref type="formula">17</ref>). Here we point out that this condition is equivalent to ETH. Hence, von Neumann's proof of QET relies on ETH <ref type="bibr" target="#b16">[13]</ref>.</p><p>We follow the exposition of GLTZ, and consider the system to have a Hilbert space H with an exponentially large but finite dimension D. We focus on a single observable Â. GLTZ partition the Hilbert space into "macro-spaces" H ν , with dimension d ν . Each H ν is spanned by the eigenstates of Â with eigenvalue a in a particular range centered on a value a ν . Let Pν be the projection operator onto H ν , and consider its energy-basis matrix elements α| Pν |β . The condition that must be assumed to prove QET is that, for each ν, the offdiagonal elements (α = β) must be exponentially small, and the diagonal elements α| Pν |α must be exponentially close to f ν = d ν /D, the fraction of states in H ν <ref type="bibr" target="#b14">[11,</ref><ref type="bibr" target="#b15">12]</ref>. We now argue that this condition is effectively equivalent to ETH. Consider the operator Âcg ≡ ν a ν Pν . This is a coarse-grained version of Â itself, which can be written as Â = a a|a a|; Âcg is the same, but with the individual values of a replaced by their average values in each macrospace. The intention of von Neumann and GLTZ is that Âcg should be indistinguishable from Â in practical experiments. Next, consider the energy-basis expectation value α| Âcg |α . Since α| Pν |α is (by the GLTZ technical condition) exponentially close to f ν , then from the definition of Âcg we get α| Âcg |α = ν a ν f ν , up to exponentially small corrections. Up to the additional small errors introduced by the coarse graining (which are assumed to be negligible), this last expression is equal to the trace of Â, which in this simplified model is to be identified with the microcanonical average of Â. This is equivalent to the ETH statement that an energybasis expectation value is equivalent to a microcanonical average. Similarly, if α| Pν |β is exponentially small for α = β, so is α| Â|β , which is the other key part of ETH <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b6">5]</ref>.</p><p>Another way to phrase the equivalence is to note that both the GLTZ technical condition and ETH rely on exponential smallness of the overlap between an energy eigenstate and an eigenstate of an observable Â that exhibits thermal behavior. As already noted, ETH can be justified by various results from quantum chaos theory. Thus, ETH provides a physical basis for the technical condition needed by QET. This results in a unification of two formerly disparate schools of thought on the foundations of statistical mechanics.</p><p>Quantum Quenches: As mentioned in the introduction, ETH has been shown to be satisfied in a variety of nonintegrable quantum systems. It has been found to breakdown only as one approaches integrable points <ref type="bibr" target="#b7">[6]</ref><ref type="bibr" target="#b9">[7]</ref><ref type="bibr" target="#b11">[8]</ref>, or in special regimes that are dominated by finite size effects, e.g., close to the atomic limit <ref type="bibr" target="#b17">[14,</ref><ref type="bibr" target="#b18">15]</ref>. Thermalization itself has been shown to be robust in nonintegrable systems after a (sudden) quench, once again, failing to occur close to integrable points <ref type="bibr" target="#b7">[6,</ref><ref type="bibr" target="#b19">16,</ref><ref type="bibr" target="#b20">17]</ref> or the atomic limit <ref type="bibr" target="#b18">[15,</ref><ref type="bibr" target="#b21">18]</ref>, and in localized disordered systems <ref type="bibr" target="#b23">[19]</ref>. Here, by (sudden) quench, we mean that the system is prepared in an eigenstate of some initial Hamiltonian (not necessarily the ground state) and then at τ = 0 the Hamiltonian is changed.</p><p>We now consider systems that do not satisfy ETH; in particular, we consider systems for which A αα varies significantly [that is, by an amount that is O(N 0 )] with α. It is easy to construct such systems; for example, any set of noninteracting degrees of freedom, with Â corresponding to any one-or few-body observable, is in this class. Interacting systems that are integrable (with as many conserved charges as degrees of freedom) are in this class <ref type="bibr" target="#b24">[20]</ref>. Equation (3) still applies to such systems; but now whether or not A is close to the thermal average of Â depends strongly on the initial state, which is specified by the C α coefficients. If the values of the coefficients |C α | 2 in Eq. ( <ref type="formula" target="#formula_2">3</ref>) provide an unbiased sampling of the matrix elements A αα , then we can expect A to be algebraically close to the microcanonical average of Â over the energy window specified by the ∆E of the initial state.</p><p>The above scenario, however, does not occur in quenches between integrable systems, i.e., when the initial state is an eigenstate of an integrable system, and the time evolution is studied after changing some parameters in the Hamiltonian while keeping the system integrable. Studies of several models have shown that A remains different from the thermal expectation as one approaches the thermodynamic limit <ref type="bibr" target="#b12">[9,</ref><ref type="bibr" target="#b25">[21]</ref><ref type="bibr" target="#b27">[22]</ref><ref type="bibr" target="#b28">[23]</ref><ref type="bibr" target="#b29">[24]</ref><ref type="bibr" target="#b30">[25]</ref><ref type="bibr" target="#b31">[26]</ref><ref type="bibr" target="#b32">[27]</ref><ref type="bibr" target="#b33">[28]</ref><ref type="bibr" target="#b35">[29]</ref><ref type="bibr" target="#b37">[30]</ref><ref type="bibr" target="#b38">[31]</ref><ref type="bibr" target="#b39">[32]</ref><ref type="bibr" target="#b40">[33]</ref><ref type="bibr" target="#b41">[34]</ref>. Even some special initial states that were seen to lead to A similar to the ones predicted in thermal equilibrium <ref type="bibr" target="#b12">[9,</ref><ref type="bibr" target="#b25">21,</ref><ref type="bibr" target="#b33">28]</ref>, have been recently shown not to result in the thermalization Â in the thermodynamic limit <ref type="bibr" target="#b39">[32,</ref><ref type="bibr" target="#b41">34]</ref>.</p><p>Here we identify a class of initial states that leads to thermal behavior after a quench to an integrable point. The initial states we consider are eigenstates of an initial Hamiltonian ĤI that is nonintegrable. This Hamiltonian is constructed by breaking the integrability of the final Hamiltonian ĤF ; i.e., we set ĤI = ĤF + "integrability breaking terms". The idea here is that the integrability breaking terms in the initial Hamiltonian generate eigenstates that are unbiased combinations of eigenstates of the integrable (final) Hamiltonian. This is what leads to chaotic behavior as one departs from an integrable point <ref type="bibr" target="#b9">[7]</ref>, and ultimately allows ETH to be valid in nonintegrable systems. Hence, such initial states enable the desired unbiased sampling that is not provided by eigenstates of integrable systems.</p><p>In order to show that this is indeed the case, we have studied one-dimensional lattice systems of hard-core bosons and spinless fermions with the Hamiltonian</p><formula xml:id="formula_3">H = L j=1 -t ĉ † j ĉj+1 + H.c. -t ′ ĉ † j ĉj+2 + H.c. + V nj -1 2 nj+1 -1 2 + V ′ nj -1 2 nj+2 -1 2 ,<label>(4)</label></formula><p>where ĉ † j (ĉ j ) stands for the creation (annihilation) operator for hard-core bosons and fermions, nj = ĉ † j ĉj is the site occupation operator, L is the number of lattice sites, and t (t ′ ) and V (V ′ ) are the nearest (next-nearest) neighbor hopping and interaction, respectively. The t ′ , V ′ terms are the ones that make this Hamiltonian nonintegrable. We consider periodic boundary conditions, and the full diagonalization of the Hamiltonian is done using its translational symmetry. The filling is always taken to be N = L/3.</p><p>Our quench protocol is then as follows, we generate an initial state |ψ I that is an eigenstate of Eq. ( <ref type="formula" target="#formula_3">4</ref>) with t = V = 1 (this sets our energy scale), t ′ = V ′ = 0, and which lies within the sector of zero total momentum. The final Hamiltonian, after the quench, still has t = V = 1, but we set t ′ = V ′ = 0. This Hamiltonian is integrable. We then study the relaxation dynamics of various observables, as well as their description after relaxation, for many different initial states. These initial states are eigenstates of Hamiltonians with different values of t ′ , V ′ , and are selected so that the system can have different final effective temperatures. The effective temperature T is calculated using the standard procedure for the canonical ensemble, i.e., such that We have studied four observables, the kinetic energy K, the interaction energy Û , the momentum distribution function nk (which is the Fourier transform of the one-particle correlations ρij = ĉ † i ĉj ), and the structure factor Nk (which the Fourier transform of the density-density correlations Nij = ni nj ). K and Û are local observables while nk and Nk are nonlocal, and K and nk are single-body observables while Û and Nk are two-body observables. In all cases studied, we found a similar qualitative behavior in those four quantities. Hence, we will only report results for nk , which is the one with the closest connection to ultracold gases experiments <ref type="bibr" target="#b42">[35]</ref><ref type="bibr" target="#b43">[36]</ref><ref type="bibr" target="#b44">[37]</ref><ref type="bibr" target="#b45">[38]</ref>.</p><formula xml:id="formula_4">E = Z -</formula><p>We are first interested in understanding how is it that, given our quench protocol, observables relax (if they do) to the longtime average in Eq. <ref type="bibr" target="#b4">(3)</ref>. For nk , this can be conveniently quantified by calculating the normalized integrated difference</p><formula xml:id="formula_5">δn k (τ ) = k | nk (τ ) -n k | k n k . (<label>5</label></formula><formula xml:id="formula_6">)</formula><p>Results for δn k (τ ) are shown in Fig. <ref type="figure" target="#fig_0">1</ref> for bosons (left column) and fermions (right column) and for two different system sizes. For very small quenches [Fig. <ref type="figure" target="#fig_0">1</ref> Relative difference between n k as predicted by the microcanonical ensemble and the long-time average, as a function of t ′ , V ′ in the initial Hamiltonian. Results are reported for hard-core bosons (a) and spinless fermions (b), for lattices with 24 sites (main panels) and 21 sites (insets). In all systems, we considered five different initial states that resulted in five effective temperatures after the quench (T = 2, 3, 5, 7, and 10 in the plots).</p><p>n k is close to the long-time average, and large oscillations (relative to the time average) can be seen for both bosons and fermions. By increasing the amplitude of the quench, the initial momentum distribution becomes increasingly different from the long-time average, and the time fluctuations decrease. This is because more eigenstates of the final Hamiltonian are involved in the dynamics and dephasing becomes more efficient. It is interesting to note the strikingly large finite size effects seen for the spinless fermions [Fig. <ref type="figure" target="#fig_0">1</ref>(e)-(g)], where the dynamics changes (improves) dramatically by increasing the system size from L = 21 to L = 24 <ref type="bibr" target="#b7">[6,</ref><ref type="bibr" target="#b9">7]</ref>. Overall, one can conclude from those results that, as the system size increases, n k relaxes to the long-time average rather quickly (τ ∼ /t), and the time fluctuations around that average become very small. Similar results were found for other observables and effective temperatures.</p><p>We then are left to check how accurate statistical ensembles are when predicting n k . For our small finite systems, we use the microcanonical ensemble, and calculate the following normalized integrated difference to quantify its accuracy</p><formula xml:id="formula_7">∆n k = k | nk mc -n k | k n k . (<label>6</label></formula><formula xml:id="formula_8">)</formula><p>The width ∆E of the energy window in the microcanonical ensemble is taken such that the results are robust to small changes of ∆E (in our systems ∆E ∼0.1-0.3). L = 21 (insets). In that figure, it is apparent that ∆n k is nonzero, and large, even in the absence of a quench (when t ′ = V ′ = 0 in the initial and final Hamiltonian). This reflects the failure of ETH due to integrability. However, as the value of t ′ , V ′ is increased, ∆n k is seen to decrease in all cases. This can be seen for bosons and fermions at all effective temperatures and in all system sizes. For all observables and effective temperatures that we have studied, we have found that ∆n k decreases with increasing system size. This, together with the understanding of the role of the integrability breaking terms in the initial Hamiltonian, supports our expectation that initial states that satisfy ETH (eigenstates of a nonintegrable Hamiltonian) will lead to thermalization in integrable systems, despite the fact that the latter do not satisfy ETH. In Fig. <ref type="figure">2</ref>, one can also see that, in many instances, ∆n k for a fixed system size reaches a minimum value and then increases as t ′ and V ′ are increased. This occur because, for large values of t ′ , V ′ , the initial state starts having large overlaps with eigenstates outside the microcanonical energy window. Hence, even though the initial state is sampling more eigenstates of the final Hamiltonian, the energy density becomes broad and the microcanonical ensemble once again becomes a bad approximation for the long-time average. The fact that more eigenstates of the final Hamiltonian are part of the initial state can be quantified by means of the inverse participation ratio (IPR) IPR = 1/ α |C α | 4 . This quantity has been shown to increase in eigenstates of nonintegrable manybody Hamiltonians as one departs from an integrable point <ref type="bibr" target="#b9">[7]</ref>. On the other hand, the fact that the weight of the initial state within the microcanonical window decreases if the value of t ′ , V ′ becomes too large can be quantified calculat-</p><formula xml:id="formula_9">ing W = α ′ |C α ′ | 2</formula><p>, where only eigenstates α ′ inside the microcanonical window are added.</p><p>Then, one can compute a "normalized IPR", which is the product of the IPR and W . For finite systems, this quantity can tell us how effective t ′ , V ′ are in sampling states within the microcanonical window. Results for this quantity are depicted in Fig. <ref type="figure">3</ref>, for the same quenches depicted in Fig. <ref type="figure">2</ref>.</p><p>Figure <ref type="figure">3</ref> shows that, in the region where ∆n k exhibits a sharp decrease in Fig. <ref type="figure">2</ref>, the normalized IPR increases. In addition, where ∆n k saturates or increases in Fig. <ref type="figure">2</ref>, the normalized IPR saturates or decreases in Fig. <ref type="figure">3</ref>. This allows one to understand the overall behavior of ∆n k in Fig. <ref type="figure">2</ref>. However, we should stress that the fact that t ′ , V ′ (or whatever other term is used to break integrability) cannot be made too large is only a concern for finite systems. As long as these terms are kept O(N 0 ) and the interactions have finite range, the energy width of any initial state after the quench will vanish in the thermodynamic limit <ref type="bibr" target="#b6">[5]</ref>, and the initial state will only sample states within the microcanonical window.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions:</head><p>In this paper we have further probed the role of the eigenstate thermalization hypothesis (ETH) as the key dynamical feature of systems that come to thermal equilibrium. We have shown that von Neumann's quantum ergodic theorem (QET) relies on a technical assumption that is in fact essentially equivalent to ETH. We have also examined whether thermal behavior can emerge in systems that do not obey ETH when the initial state is produced by a quench. We have found that this is possible, but only for a class of eigenstates that obeyed ETH before the quench. These results further support the fundamental role of ETH in thermal behavior of quantum many-body systems.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG.1. Time evolution of δn k , after a sudden quench, for hard-core bosons (left panels) and spinless fermions (right panels) in lattices with L = 21 and L = 24 (N = L/3), and T = 3. Results are presented for quenches from t ′ = V ′ = 0.04 (a),(e), t ′ = V ′ = 0.16 (b),(f), t ′ = V ′ = 0.32 (c),(g), and t ′ = V ′ = 0.64 (d),(h), to t ′ = V ′ = 0. In all cases t = V = 1 before and after the quench.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>1</head><label>1</label><figDesc>Tr( ĤF e -ĤF /kB T ), where E = ψ I | ĤF |ψ I is the energy of the time evolving state, Z = Tr(e -ĤF /kB T ) is the partition function, and k B (set to one in what follows) is the Boltzman constant.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>FIG. 2.Relative difference between n k as predicted by the microcanonical ensemble and the long-time average, as a function of t ′ , V ′ in the initial Hamiltonian. Results are reported for hard-core bosons (a) and spinless fermions (b), for lattices with 24 sites (main panels) and 21 sites (insets). In all systems, we considered five different initial states that resulted in five effective temperatures after the quench (T = 2, 3, 5, 7, and 10 in the plots).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 2 FIG. 3 . 2 .</head><label>232</label><figDesc>FIG. 3. Normalized IPR (see text) for the same quenches depicted in Fig. 2. Results for hard-core bosons (fermions) are shown in the left (right) panels, and for L = 21 (L = 24) in the top (bottom) panels.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>MR acknowledges support from the <rs type="funder">Office of Naval Research</rs>. MS acknowledges support from <rs type="funder">NSF</rs> Grant <rs type="grantNumber">PHY07-57035</rs>. We thank <rs type="person">M. Kastner</rs> for an interesting discussion on QET and Ref. <ref type="bibr" target="#b16">[13]</ref>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_z9VWmJu">
+					<idno type="grant-number">PHY07-57035</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Deutsch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">2046</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Srednicki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">888</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">75</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page">1163</biblScope>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Shnirelman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Usp. Mat. Nauk</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">V</forename><surname>Berry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. A</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">2083</biblScope>
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Dunjko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Olshanii</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">452</biblScope>
+			<biblScope unit="page">854</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page">100403</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">53607</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">36206</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">31130</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Neuenhahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Marquardt</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1007.5306</idno>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Cassidy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">140405</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">O</forename><surname>Bohigas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-J</forename><surname>Giannoni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Schmit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Neumann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zeitschrift für Physik</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">201</biblScope>
+			<date type="published" when="1929">1929. 2010</date>
+		</imprint>
+	</monogr>
+	<note>translated to English in European Phys. J. H</note>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">European</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Goldstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Lebowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tumulka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zangh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. J. H</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page">173</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><surname>Von Neumann</surname></persName>
+		</author>
+		<title level="m">actually proved that this &quot;technical&quot; condition holds for &quot;most&quot; macroscopic observables</title>
+		<imprint/>
+	</monogr>
+	<note>However, &quot;most&quot; was defined by a probability distribution that treats each observable as a random matrix in the energy basis. For real world observables, which are physically motivated and not explicitly built as random matrices, that condition has not been proved.</note>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Roux</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">53604</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Santos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">11604</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Manmana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wessel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Noack</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Muramatsu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">210405</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Bañuls</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">I</forename><surname>Cirac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Hastings</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">50405</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kollath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Läuchli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Altman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">180601</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><surname>Biroli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kollath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Läuchli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">250401</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gogolin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Müller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Eisert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">40401</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sutherland</surname></persName>
+		</author>
+		<title level="m">Beautiful Models</title>
+		<meeting><address><addrLine>Singapore</addrLine></address></meeting>
+		<imprint>
+			<publisher>World Scientific</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Dunjko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Yurovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Olshanii</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">50405</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Muramatsu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Olshanii</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">53616</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Cazalilla</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page">156403</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Calabrese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cardy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Stat. Mech. p. P</title>
+		<imprint>
+			<biblScope unit="page">6008</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Dawson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Eisert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Osborne</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">30602</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Barthel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Schollwöck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">100601</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Eckstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kollar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">120404</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kollar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Eckstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">13626</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Rossini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mussardo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Santoro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">127204</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Rossini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Suzuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mussardo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Santoro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Silva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">144302</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Iucci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Cazalilla</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">63619</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">New J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">55019</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Fioretto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mussardo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">New J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">55015</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mossel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-S</forename><surname>Caux</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">New J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">55028</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Calabrese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H L</forename><surname>Essler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fagotti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">227203</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Cazalilla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Iucci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-C</forename><surname>Chung</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1106.5206</idno>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rigol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fitzpatrick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">33640</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kinoshita</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Wenger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Weiss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">440</biblScope>
+			<biblScope unit="page">900</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hofferberth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Lesanovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fischer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Schumm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schmiedmayer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">449</biblScope>
+			<biblScope unit="page">324</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C.-L</forename><surname>Hung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gemelke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">160403</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Trotzky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-A</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Flesch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">P</forename><surname>Mcculloch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Schollwöck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Eisert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Bloch</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1101.2659</idno>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

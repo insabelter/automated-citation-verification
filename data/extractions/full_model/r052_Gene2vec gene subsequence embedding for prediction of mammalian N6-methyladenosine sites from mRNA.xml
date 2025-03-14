@@ -1,0 +1,2470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Gene2vec: gene subsequence embedding for prediction of mammalian N 6 -methyladenosine sites from mRNA</title>
+				<funder ref="#_scJ8xYJ #_FjbwemD #_a6cfQ9Y">
+					<orgName type="full">Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_AMerdK7">
+					<orgName type="full">National Key R&amp;D Program of China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Quan</forename><surname>Zou</surname></persName>
+							<email>zouquan@nclab.net</email>
+							<affiliation key="aff0">
+								<orgName type="department">Institute of Fundamental and Frontier Sciences</orgName>
+								<orgName type="institution">University of Electronic Science and Technology of China</orgName>
+								<address>
+									<postCode>610051</postCode>
+									<settlement>Chengdu</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">School of Computer Science and Technology</orgName>
+								<orgName type="institution">Tianjin University</orgName>
+								<address>
+									<postCode>300350</postCode>
+									<settlement>Tianjin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Pengwei</forename><surname>Xing</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">School of Computer Science and Technology</orgName>
+								<orgName type="institution">Tianjin University</orgName>
+								<address>
+									<postCode>300350</postCode>
+									<settlement>Tianjin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Leyi</forename><surname>Wei</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Bin</forename><surname>Liu</surname></persName>
+							<email>bliu@hit.edu.cn</email>
+							<affiliation key="aff1">
+								<orgName type="department">School of Computer Science and Technology</orgName>
+								<orgName type="institution">Tianjin University</orgName>
+								<address>
+									<postCode>300350</postCode>
+									<settlement>Tianjin</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">School of Computer Science and Technology</orgName>
+								<orgName type="institution">Harbin Institute of Technology</orgName>
+								<address>
+									<postCode>150001</postCode>
+									<settlement>Shenzhen</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Gene2vec: gene subsequence embedding for prediction of mammalian N 6 -methyladenosine sites from mRNA</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2CA3D207E107B5384642373980B968F6</idno>
+					<idno type="DOI">10.1261/rna</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>N 6 -methyladenosine</term>
+					<term>machine learning</term>
+					<term>deep learning</term>
+					<term>RNA word embedding</term>
+					<term>mRNA</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>N 6 -Methyladenosine (m 6 A) refers to methylation modification of the adenosine nucleotide acid at the nitrogen-6 position. Many conventional computational methods for identifying N 6 -methyladenosine sites are limited by the small amount of data available. Taking advantage of the thousands of m 6 A sites detected by high-throughput sequencing, it is now possible to discover the characteristics of m 6 A sequences using deep learning techniques. To the best of our knowledge, our work is the first attempt to use word embedding and deep neural networks for m 6 A prediction from mRNA sequences. Using four deep neural networks, we developed a model inferred from a larger sequence shifting window that can predict m 6 A accurately and robustly. Four prediction schemes were built with various RNA sequence representations and optimized convolutional neural networks. The soft voting results from the four deep networks were shown to outperform all of the stateof-the-art methods. We evaluated these predictors mentioned above on a rigorous independent test data set and proved that our proposed method outperforms the state-of-the-art predictors. The training, independent, and cross-species testing data sets are much larger than in previous studies, which could help to avoid the problem of overfitting. Furthermore, an online prediction web server implementing the four proposed predictors has been built and is available at <ref type="url" target="http://server.malab.cn/Gene2vec/">http://server. malab.cn/Gene2vec/</ref>.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>N 6 -Methyladenosine (m 6 A) is an RNA methylation modification at the nitrogen-6 position of the adenosine base. It has been identified as the most commonly modified base in the messenger RNA of most eukaryotes. Research has shown that m 6 A modification is involved in numerous biological activities, including the differentiation and reprogramming of stem cells <ref type="bibr" target="#b64">(Yue et al. 2015)</ref>, translation and alternative splicing <ref type="bibr" target="#b19">(Geula et al. 2015;</ref><ref type="bibr">Xu et al. 2018)</ref>, circadian clock <ref type="bibr" target="#b18">(Fustin et al. 2013)</ref>, and cerebellar development <ref type="bibr">(Wang et al. 2018)</ref>. Research in cancer biology has also shown that m 6 A mRNA modification plays a critical role in glioblastoma stem cell self-renewal and tumorigenesis <ref type="bibr" target="#b15">(Cui et al. 2017;</ref><ref type="bibr" target="#b67">Zhang et al. 2017)</ref>, and m 6 A modification was also shown to exert anti-leukemic activity in recent studies <ref type="bibr">(Li et al. 2017b;</ref><ref type="bibr" target="#b49">Su et al. 2018)</ref>. Moreover, <ref type="bibr">Lichinchi et al.</ref> showed that viral infection triggers a massive increase in m 6 A in both host and viral mRNAs <ref type="bibr">(Lichinchi et al. 2016a)</ref>, and similar regulatory mechanisms of several other viruses have also been confirmed <ref type="bibr" target="#b20">(Gokhale et al. 2016;</ref><ref type="bibr">Lichinchi et al. 2016b;</ref><ref type="bibr" target="#b24">Hesser et al. 2018</ref>). Furthermore, high-throughput analysis of m 6 A, for instance, using the RNA immunoprecipitation biotechnologies MeRIP-seq and m6A-seq <ref type="bibr" target="#b17">(Dominissini et al. 2012;</ref><ref type="bibr" target="#b42">Meyer et al. 2012)</ref>, has provided insights into the functions and topological patterns of m 6 A mRNA modification. Based on information from MeRIP-seq experiments, comprehensive databases of m 6 A modification have been built to help researchers determine the locations and effects of these modifications <ref type="bibr">(Liu et al. 2017a;</ref><ref type="bibr" target="#b63">Xuan et al. 2017</ref>). The work of <ref type="bibr" target="#b50">Wan et al. (2015)</ref> showed that m 6 A patterns are similar between plants and mammals, with both being abundant near stop codons and 3 ′ untranslated regions (UTRs) and having similar consensus m 6 A methylation motifs and similar frequencies of m 6 A sites per transcript in the transcriptome. Following the profiling of m 6 A distributions in mammalian transcriptomes <ref type="bibr" target="#b17">(Dominissini et al. 2012;</ref><ref type="bibr" target="#b42">Meyer et al. 2012</ref>) and the mapping of the yeast m 6 A methylome <ref type="bibr" target="#b46">(Schwartz et al. 2013)</ref>, transcriptome-wide profiling of m 6 A in two accessions of Arabidopsis thaliana <ref type="bibr" target="#b40">(Luo et al. 2014</ref>) was performed, which indicated that m 6 A is a highly conserved mRNA modification in plants and that there is a positive correlation between m 6 A deposition and mRNA abundance. In a recent study, it was also shown that m 6 A is regulated by microRNA via complementary sequence motifs <ref type="bibr">(Chen et al. 2015a)</ref>, which suggested that sequence signaling is very important for m 6 A sites. Recently, a novel, singlebase-resolution technique, miCLIP-seq <ref type="bibr" target="#b27">(Ke et al. 2015;</ref><ref type="bibr" target="#b33">Linder et al. 2015)</ref>, was also established, which prompted a new wave of research on computational methods of m 6 A identification <ref type="bibr" target="#b58">(Xiang et al. 2016;</ref><ref type="bibr" target="#b69">Zhou et al. 2016)</ref>.</p><p>Notably, m 6 A sites have methylation-specific surroundings, with the topology of a DRACH (where D = A, G, or U; R = A or G; and H = A, C, or U) consensus motif and a GAC consensus motif localized near stop codons, in 3 ′ -UTRs, within long internal exons, and at 5 ′ -UTRs <ref type="bibr" target="#b42">(Meyer et al. 2012;</ref><ref type="bibr" target="#b46">Schwartz et al. 2013;</ref><ref type="bibr" target="#b28">Li et al. 2014;</ref><ref type="bibr" target="#b40">Luo et al. 2014;</ref><ref type="bibr" target="#b69">Zhou et al. 2016)</ref>. Furthermore, the conserved Pu [G &gt; A]m 6 AC[A/C/U] consensus motif dominates mammalian m 6 A sites <ref type="bibr" target="#b17">(Dominissini et al. 2012)</ref>. However, only ∼15% of all methylation Pu[G &gt; A] m 6 AC[A/C/U] consensus motifs are m 6 A sites <ref type="bibr" target="#b64">(Yue et al. 2015)</ref>. Identification of the actual methylated m 6 A sites among these consensus motifs remains a problem. High-throughput sequencing and wet experiments could not solve this problem due to the cost and time-consuming nature of the research, as well as inaccuracy regarding the identified sites. Therefore, computational tools were required to guide the accurate prediction of modification sites and to help reduce the costs associated with high-throughput sequencing.</p><p>In the above context, computational tools were developed for detecting different modification sites, including protein methylation <ref type="bibr">(Wei et al. 2018d)</ref>, protein phosphorylation <ref type="bibr" target="#b53">(Wei et al. 2017</ref>) and dephosphorylation <ref type="bibr" target="#b25">(Jia et al. 2017)</ref>, protein O-GlcNAcylation <ref type="bibr" target="#b26">(Jia et al. 2018)</ref>, histone crotonylation <ref type="bibr" target="#b44">(Qiu et al. 2017)</ref>, DNA N 4 -methylcytosine <ref type="bibr">(Chen et al. 2017c;</ref><ref type="bibr" target="#b55">Wei et al. 2018b</ref>), RNA pseudouridine <ref type="bibr">(Chen et al. 2016b)</ref>, and various RNA adenosine modifications <ref type="bibr" target="#b13">(Chen et al. 2018</ref>). However, it has been proven that sequence alignment (e.g., PSI-BLAST) cannot accurately identify the modification sites. Instead, machine learning techniques are used in approaches that are currently popular. For these, a sliding window is selected around the candidate modification sites. Then, sequences in the sliding window are collected for standard machine learning training and testing processes. Related features are then proposed for representing the sliding window sequences with equal length <ref type="bibr" target="#b35">(Liu et al. 2015</ref><ref type="bibr">(Liu et al. , 2018;;</ref><ref type="bibr" target="#b23">He et al. 2018)</ref>. However, in this context, there is a major problem regarding construction of the training data set. Specifically, low-quality negative samples cause low generalizability of the model, resulting in poor performance when applied to novel data. In addition, the compatibility of prediction methods in different species also remains a problem, so researchers cannot currently be certain that cross-species predictions are accurate.</p><p>The yeast data set <ref type="bibr" target="#b46">(Schwartz et al. 2013)</ref> and Arabidopsis data set <ref type="bibr" target="#b40">(Luo et al. 2014)</ref> are two benchmark data sets for the computational prediction of m 6 A. Focusing on the Arabidopsis data set, Chen and coworkers first proposed a support vector machine-based method to identify m 6 A sites. Soon afterwards, they proposed a predictor called "iRNA-Methyl" <ref type="bibr">(Chen et al. 2015b</ref>) on a near singlenucleotide resolution yeast data set. Chen and coworkers represented RNA sequences using "pseudo-dinucleotide composition," which focuses on the physiochemical properties of RNA. Other improved works in terms of prediction accuracy on the two data sets were also presented <ref type="bibr">(Chen et al. 2017b;</ref><ref type="bibr" target="#b59">Xing et al. 2017)</ref>. Recently, Zhou et al. established an m 6 A data set from published single-nucleotideresolution maps of human and mouse m 6 A sites <ref type="bibr" target="#b27">(Ke et al. 2015;</ref><ref type="bibr" target="#b33">Linder et al. 2015)</ref>. They then developed an m 6 A predictor named SRAMP <ref type="bibr" target="#b69">(Zhou et al. 2016)</ref>, which simply uses three sequence-derived features with Random Forest classifiers. Following this work, <ref type="bibr" target="#b58">Xiang et al. (2016)</ref> improved the predictive performance by integrating multiple sequence features, including positional binary nucleotide sequence encoding, nucleotide pair spectrum encoding, positionspecific encoding, and k-mer nucleotide frequency encoding. These methods were used with conventional features in position and frequency statistics, with the sliding window being limited to a narrow region and focusing on only a single species. Additionally, there was a lack of independent testing, which resulted in overfitting.</p><p>To solve the above problems, we used convolutional neural network (CNN) for m 6 A prediction. CNNs have been applied in various fields of bioinformatics <ref type="bibr" target="#b68">(Zhang et al. 2018)</ref>, including regulatory genomics <ref type="bibr" target="#b2">(Angermueller et al. 2016;</ref><ref type="bibr" target="#b61">Xu et al. 2017)</ref>, drug discovery <ref type="bibr" target="#b48">(Stephenson et al. 2018</ref><ref type="bibr">), protein subcellular localization (Almagro Armenteros et al. 2017;</ref><ref type="bibr">Wei et al. 2018a)</ref>, protein function prediction <ref type="bibr" target="#b4">(Cao et al. 2017)</ref>, and single-cell DNA methylation states <ref type="bibr" target="#b3">(Angermueller et al. 2017;</ref><ref type="bibr">Xu and Zhou 2018)</ref>. These networks directly trained predictor models without predefined features and outperformed conventional predictors with larger sequence sliding windows. The combination of big data and larger sliding windows together with deep learning techniques appeared to solve the m 6 A overfitting problem. It has also become common to represent sequences with word embedding algorithms, instead of the sparse one-hot encoding <ref type="bibr" target="#b16">(Dai et al. 2017;</ref><ref type="bibr" target="#b43">Min et al. 2017;</ref><ref type="bibr" target="#b56">Wei et al. 2018c)</ref>.</p><p>In this paper, we report a neural embedding predictor named Gene2vec (gene subsequence to embedding vector). We extended the sliding window length to the thousand level, used word embedding to represent mRNA subsequences, which were parts of long sliding window sequences, and performed classification with CNNs. We progressively experienced various gene sequence representation schemes with their most effective CNN structures with library Keras (<ref type="url" target="https://keras.io/">https://keras.io/</ref>) and proved that the gene-subsequence-based neural embedding method is the best option for various large-scale sequence data. It appeared that CNN together with Gene2vec can address the problem of overfitting in m 6 A prediction. To our knowledge, this is the first time to test ∼1000 nt length sliding frame, and we used much more training and testing sequences than before, which could help to avoid overfitting of deep learning techniques.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS AND DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Optimization of parameters</head><p>Large sequence windows confer more contextual sequence information and greater GAC/AAC site coverage. It is an important ingredient of the contributions to effective performance. We evaluated the effect of different sequence windows on the prediction results with simple one-hot encoding using the two convolutional cell structures mentioned above (Fig. <ref type="figure" target="#fig_0">1</ref>). The results in Figure <ref type="figure" target="#fig_0">1</ref> demonstrated that the AUROC and MCC have growth trend integrally with the increase of the sequence window length and no longer change drastically when it is up to 1001 nt.</p><p>The selection of RNA word split length is very important for embedding and Gene2vec prediction mode. Too short a length will lead to a small number of nucleotide letter combinations, which in extreme conditions will degenerate into one-hot encoding with assigning four types of a unique integral index to each individual nucleotide, while an excessive length will result in too many combinations, leading to complex vector representation and high computing costs. To determine the optimal RNA word split length, we compared the performance on a validated set with different slice lengths of RNA word from two to five nucleotides (Fig. <ref type="figure" target="#fig_1">2</ref>). As shown in Figure <ref type="figure" target="#fig_1">2</ref>, three nucleotides is an appropriate length in this range with metrics of both AUROC and MCC. We also compared the results of different embedding output dimensions of word embedding methods with two convolutional cell structures on a validation set (Fig. <ref type="figure" target="#fig_2">3</ref>). We used AUROC and MCC metrics to compare performances of different embedding output dimensions of word embedding. As shown in Figure <ref type="figure" target="#fig_2">3</ref>, the performances of 128 output dimensions reach a peak with both AUROC and MCC metrics in an appropriate range of <ref type="bibr">[64,</ref><ref type="bibr">256]</ref>, though the performance of 256 output dimensions with MCC metrics is slightly higher than the 128 output dimensions. As a result, we chose 128 as an appropriate word embedding output dimension parameter.</p><p>The main network hyperparameters of the four prediction modes are the convolution number of filters and size of the convolution kernel. For the convolution number of filters, we first empirically set this as decreasing power Gene2vec: prediction of m 6 A sites  values of 2, and for the size of the convolution kernel, we set it as some decreasing odd values. The convolution network structures of all four prediction schemes are similarly constituted in terms of cell structures, the detailed hyperparameters of which are supplied in the Supplemental Material.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Learned and analyzed motifs from CNN kernel</head><p>Deep learning is to a certain extent a black box with the difficulty in tracing a prediction back to which features are important. And it is very meaningful to explain biological meaning in the process of training of CNN with visualization. Recently, many studies on biological computing prediction classifications <ref type="bibr" target="#b34">(Liu and Li 2018;</ref><ref type="bibr">Li et al. 2017a;</ref><ref type="bibr">Liu et al. 2017c;</ref><ref type="bibr" target="#b65">Zeng et al. 2018)</ref> involving CNNs have used convolution kernels of the first layer to extract informative motifs from massive sequence data sets. These followed on from the heuristic work from Deepbind <ref type="bibr" target="#b0">(Alipanahi et al. 2015</ref>) that generated a position weight matrix (PWM) by aligning all matched sequence segments and calculating the frequency for each kernel. We here apply this new method to achieve conversion from convolution kernels to PWMs on single training sets from humans and mice. For compatibility regarding representation of the four nucleotides in PWMs, we retrained a CNN model with 4-nt binary representation by randomly transforming the padding character into one of the four nucleotides.</p><p>We used 64 convolution kernels with a length of 11 binary representations for each kernel on the first CNN layer and generated 64 motifs after transforming kernels to PWMs. For further analysis of these motifs, we used the TOMTOM <ref type="bibr" target="#b21">(Gupta et al. 2007</ref>) motif comparison tool to compare one or more motifs against a database of known RNA motifs. We picked out several representative examples of similar known motifs found in previous research <ref type="bibr" target="#b45">(Ray et al. 2013)</ref>  with convolution kernels help researchers to study the relationship between them in biological experiments. On the other hand, the unmatched kernels may help to uncover new motifs. All 64 motifs of PWM logos and a detailed motif comparison report can be accessed in the Supplemental Material or on our web server.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Performance of the predictors</head><p>We compared four prediction modes with four different data preprocessing and encoding schemes on 1001-nt sequence data extracted from the unbalanced independent test set transcript ID of <ref type="bibr" target="#b69">Zhou et al. (2016)</ref> (Fig. <ref type="figure" target="#fig_4">5</ref>). For building a prediction model with an unbalanced training set with a positive-to-negative ratio of 1:10, the same numbers of negative samples and positive samples were randomly selected as training data sets. We used 80% of the training set for building a model and used the other 20% of the training set to verify the model and optimize the neural network parameters, so we evaluated the performance of our predictor on an unbalanced independent test set. With the same unbalanced independent test set, neural networks based on all four predictors achieved better prediction than SRAMP, with the Gene2vec method achieving the best results (Table <ref type="table" target="#tab_0">1</ref>).</p><p>To use these four learning algorithms to obtain better predictive performance, we also established a soft vote with average predicted probabilities. We compared the ensemble result using the metrics of accuracy (Acc), Sn, Sp, and MCC in the unbalanced independent test set. As shown in Figure <ref type="figure">6</ref>, all four metrics of the soft vote showed better results than for any of the single prediction methods. Note that AUROC and AUPR metrics were not considered here due to their step-wise character.</p><p>Cross-validation (10-fold) was performed with mature mRNA data from two different species and the corresponding trained Gene2vec model. The different predictive AUROC values are shown in Figure <ref type="figure" target="#fig_6">7</ref>. We also added a mixed model built using the above-mentioned human and mouse data to predict independent species test data. As the figure shows, the model built using mouse data was less effective at prediction than the model built using human data due to the smaller amount of mouse training data available. We also found in the cross-species validation that the prediction results were poorer than when using the species-consistent data and model, which indicates the specificity of our method for a particular species. Furthermore, we obtained almost the same AUROC values of 0.8415 and 0.8414 for human and mouse data predicted using the mixed model, which are consistent with the mixed test data prediction result obtained with Gene2vec as shown in Table <ref type="table" target="#tab_0">1</ref>.</p><p>Further assessment of robustness of prediction model was performed in the YTHDF binding site data set. YTHDF proteins are m 6 A readers. The above predictor could not only identify N 6 -methyladenosine sites, but should also predict YTHDF protein binding sites that recognize m 6 A-modified mRNAs by selection. Our method performed better with AUROC = 0.737 and AUPRC = 0.963 (Fig. <ref type="figure" target="#fig_5">8</ref>) than SRAMP with AUROC = 0.720 and AUPRC = 0.251 as reported previously for the YTHDF binding site data set. We also compared our method with the newest predictor of mammalian N 6 -methyladenosine sites of which we are aware, RNAMethPre, for a remapped unbalanced independent test set. We used the balanced training set from RNAMethPre with Gene2vec encoding and the same CNN structure to build a prediction model for the purpose of establishing consistent comparison conditions. As Table <ref type="table" target="#tab_2">2</ref> shows, RNAMethPre was better than SRAMP in terms of predictive performance with three stringency thresholds corresponding to 90%, 85%, and 80% specificity in the independent data set tests. Our method achieved more effective prediction than the RNAMethPre predictor with these four thresholds.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>In this study, we built four prediction modes for predicting mammalian N 6 -methyladenosine sites with various RNA sequence representations and optimized CNN structure. We achieved more effective prediction than in conventional methods with information on the context regarding flanking sequences for 1000 nucleotides. Specifically, we combined deep learning and word embedding technology to present an RNA N 6 -adenosine methylation predictor based on gene-subsequence-based neural embedding algorithms by splitting the sequence into pseudo-RNA words. We also used these pseudo-RNA words to train a corpus model. Using this model, we analyzed and explained semantic equivalence and semantic symmetry phenomena of RNA sequences with vector space presentation. We also trained an embedding model and a network model, and optimized encoding parameters and network parameters on a validation set. We evaluated our method on a rigorous unbalanced independent mammalian m 6 A site test set and YTHDF binding site test set and achieved better results than with the conventional method. We also established a user-friendly web server at <ref type="url" target="http://server.malab.cn/Gene2vec/">http://server.malab.cn/Gene2vec/</ref>, where users can submit uncharacterized mRNA sequences for the prediction of potential m 6 A sites. In the future, we will pay more attention to the genomics data (e.g., tRNA, rRNA) besides mRNA sequences if related training dates are released. Supplemental Material can be accessed on our web server.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data sets</head><p>Data sets were retrieved from Homo sapiens and Mus musculus complementary DNA (cDNA) FASTA data in Ensembl <ref type="bibr" target="#b66">(Zerbino et al. 2017</ref>). The mature mRNA transcript IDs were derived from the work of <ref type="bibr" target="#b69">Zhou et al. (2016)</ref>, which involved annotation of the mammalian m 6 A sites. In our work, RNA sequences were derived from and were equal to cDNA. Besides the data sets of Zhou and FIGURE 6. Comparisons of soft vote and single methods on an unbalanced independent test set.   coworkers, we built other data sets in accordance with the work of <ref type="bibr" target="#b58">Xiang et al. (2016)</ref> for comparative experiments. For further confirming the validity of the prediction model, Zhou and coworkers also used YT521-B homology domain family (YTHDF) proteins which are m 6 A readers. RNA sequences with m 6 A sites would be bound by YTHDF. Therefore, YTHDF-binding RNAs could be selected as those with m 6 A sites. For all RNA nucleotide sequence data, we cut out a 1001-nt local sequence window centered at an m 6 A/non-m 6 A site, removing the sequences whose centers were not GAC or AAC consensus motifs, and filled in the rest with the character "X" when the sequence was shorter than 1001 nt. Finally, we obtained 495,572 sequences in the training set and 128,561 in the testing set. For both of these, the positive-to-negative ratio was approximately 1:10.</p><p>The YTHDF-binding data set contained 57,516 testing sequences. There were 88,579 training sequences (positive-tonegative ratio of 1:1) and 88,227 testing sequences (positive-tonegative ratio 1:10) in the work of <ref type="bibr" target="#b58">Xiang et al. (2016)</ref>. The sizes of the different data sets are shown in Table <ref type="table" target="#tab_1">3</ref>. All of these sequences can be accessed in the Supplemental Material.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data preprocessing and encoding</head><p>In this section, we introduce four sequence-encoding schemes, namely, one-hot encoding, neighboring methylation state encod-ing, RNA word embedding, and Gene2vec. The DNA sequences were represented by the four encoding schemes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>One-hot encoding</head><p>In one-hot encoding, there are five characters, standing for the four types of nucleotide along with the padding character "X." One-hot encoding uses five-dimensional binary vectors, where A = [1, 0, 0, 0, 0], T = [0, 1, 0, 0, 0], G = [0, 0, 1, 0, 0], C = [0, 0, 0, 1, 0], and X = [0, 0, 0, 0, 1] and transforms the 1001 nt windows sequences centered at the prediction site into 5005-binary-long vector.</p><p>Neighboring methylation state encoding m 6 A sites appear to cluster in the chromosomes. Therefore, the positive sites may be close to other positive sites, instead of negative ones. For neighboring methylation state encoding, we counted the neighboring positive/negative site numbers as a kind of feature. We scanned GAC and AAC sites throughout the entire transcript sequences, and gave a label of 1 to known methylation (m 6 A) sites and 0 to unknown GAC/AAC sites. For every positive (label 1) or negative (label 0) site, we listed the 250 upstream GAC/AAC sites and 250 downstream GAC/AAC sites. Therefore, we extracted 501 0/1 codes for every site. If the end </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RNA word embedding</head><p>For RNA word embedding, heuristically, we shifted a 3-nt-long window along 1001-nt sample sequences to generate RNA subsequences that can be analogized into gene words. Embedding encoding identified possible 3-nt combinations (105 different combinations in our training data) with a unique integral index, and transformed sample sequences into integral sequences with the corresponding integral index. Then, we input them into the Keras embedding layer to transform each integral sequence into a data table S ∈ R n×e , where n is the length of the integral sequence and e is the dimension of the dense embedding.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene2vec</head><p>Word2vec <ref type="bibr" target="#b14">(Church 2017</ref>) is a statistical method for learning word embedding from a text corpus with neural-network-based training via Skip-gram and continuous bag-of-words (CBOW) models. The Skip-gram model predicts the surrounding words from the current word, while the CBOW model predicts the current word from its surroundings. Both models are focused on learning about words given their local usage context, where the context is defined by a window of neighboring words.</p><p>For Gene2vec, similar to the processing of embedding encoding, we regarded lengths of three RNA nucleotides as an RNA word, in an overlapping manner, analyzed them for sequence content as the RNA corpus, and used Word2vec in the Gensim tool package (<ref type="url" target="https://radimrehurek.com/gensim/models/word2vec.html">https://radimrehurek.com/gensim/models/word2vec. html</ref>) with a five-word-long window of neighboring words to learn the vector relationship of those RNA words and generate a 100-dimensional feature vector.</p><p>An RNA word co-occurrence network was built, as shown in Figure <ref type="figure" target="#fig_7">9A</ref>, to find similarities between word pairs and the word patterns of latent structures and representations. This network was built using a square symmetric matrix, which was the result of multiplying a rectangular matrix by its transpose. Each row vector of this rectangular matrix represents a different RNA context unit (S 1 , S 2 , S 3 …S n ) corresponding to a sentence or paragraph, and each column-vector represents a different word (W 1 , W 2 , W 3 …W n ). Therefore, in the RNA word co-occurrence matrix, each row or column stands for an RNA word. Each cell stands for a context unit size, which is the number of RNA words W i co-occurring with the RNA word W j . Correlation function was computed to find the correlations, and then a t-test was used on the individual correlations using the following formulas in the Psych package (<ref type="url" target="https://cran.r-project.org/web/packages/psych/">https://cran.r-project.org/web/packages/psych/</ref>):</p><formula xml:id="formula_0">t = r * (n -2) √ (1 -r 2 ) , se = (1 -r 2 ) (n -2) √ ,</formula><p>where r is the matrix of correlations and n is the number of cases per correlation. We built the co-occurrence network by setting a correlation threshold of 0.7 and linked two points together with an edge when their correlation exceeded this threshold.</p><p>For instance, the group [AGA, GAA, AAG] (green group in Fig. <ref type="figure" target="#fig_7">9A</ref>) can be selected among 4 3 types of 3-nt-long RNA sequence permutations as an independent group, due to their strong correlation. We also removed RNA words containing the character "X" and transformed this 100-dimensional vector (Gene2vec output) of 4 3 types of RNA words to two components utilizing principal component analysis (PCA) to reveal the two-dimensional spatial correlation of those RNA words (Fig. <ref type="figure" target="#fig_7">9B</ref>). Spatial distance is representative of word similarity. All 2D and 3D graphs with detailed annotations can be obtained on our web server. As can be seen in Figure <ref type="figure" target="#fig_7">9B</ref>, 64 RNA words cluster into eight groups with axial symmetry. For instance, Group 1 [CCG, GCG] and Group 3 [CGG, CGC] are symmetrical about the vertical, which first indicates that CCG has a similar "meaning" for sequence composition to GCG due to their cluster in vector space, and second reveals that CCG is to CGG as GCG is to CGC (Fig. <ref type="figure" target="#fig_7">9B</ref>). This is just like "king" is to "queen" and "man" is to "woman" in natural language. We call the two phenomena gene semantic equivalence and gene semantic symmetry (Fig. <ref type="figure" target="#fig_7">9C</ref>). Two RNA words are said to have semantic equivalence when they exist among different sequences that have almost the same gene context, while two RNA words are said to have semantic symmetry when they exist within one sequence that has a unique biochemical property of not only positional symmetry, but also nucleotide-order symmetry, just like a pair of hands where each finger represents a nucleotide letter.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Network structure</head><p>We used CNNs with multiple cell structures that have two one-dimensional convolution layers, one pooling layer and one dropout layer. Convolution layers are designed to extract features with high-dimensional abstract representation. The pooling layer limits the number of model parameters tractable by pooling operations. The dropout layer prevents overfitting of the model by randomly setting some of the input units to a value of 0. Four prediction methods had been established based on four different network structures composed by the cell structures mentioned above. One-hot encoding data were fed into the network with four cell structures and fully connected layers as input, while neighboring methylation state encoding data, RNA word embed-ding data, and Gene2vec processing data were fed into networks with two cell structures (Fig. <ref type="figure" target="#fig_8">10</ref>). The final result was obtained by a voting strategy from the four prediction probabilities.</p><p>Taking an example of the one-hot coding sequence, the input data matrix X n was first fed into a 1D-convolutional layer, which used a convolutional filter W f ∈ R H , where H is the length of the filter vector. The output feature A i at the ith position was computed by</p><formula xml:id="formula_1">A i = ReLU H h=1 W f X n,i+h + b f ,</formula><p>where ReLU(x) = max(0, x) is the rectified linear unit function and b f ∈ R is a bias <ref type="bibr" target="#b41">(Mairal et al. 2014</ref>). These convolutional operations are similar to data block of H length in sequence filtered by a sliding filter window at each ith position.</p><p>Next, a max. pooling layer was used for reduction of the dimensions of output data generated by the multiple convolutional filter operations. A max. pooling layer is a form of nonlinear downsampling achieved by outputting the maximum of each subregion.</p><p>To reduce overfitting, we added a dropout layer in which individual nodes were either "dropped out" from the network with probability 1 -P or kept with probability P at each training stage. This not only prevented overfitting, but also led to integration of various deformed network structures to generate more robust features that are more generalizable to new data.</p><p>Finally, a flattening layer that "flattened" the input data was used, which transformed multidimensional data into a single dimension. Fully connected layers with an ReLU activation function and output layer predict the binary classification probability with activation function as follows <ref type="bibr" target="#b22">(Han and Moraga 1995)</ref>:</p><formula xml:id="formula_2">ŷ(x) = sigmoid(x) = 1 1 + e -x .</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation metrics</head><p>To assess the performance of our prediction model on an unbalanced independent test set, we used the following metrics (Liu  The area under the ROC curve (AUROC) and the area under the precision-recall curve (AUPR) were calculated to evaluate the performance of the predictors. Receiver operating characteristic (ROC) curves can be plotted as sensitivity against 1specificity and precision-recall curves as precision (the proportion of true positives among all predicted positives) against recall (the proportion of relevant instances that have been retrieved among the total number of relevant instances). A precision-recall plot is more informative than an ROC plot when applied to unbalanced data sets <ref type="bibr" target="#b47">(Song et al. 2014)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPLEMENTAL MATERIAL</head><p>Supplemental material is available for this article.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1 .</head><label>1</label><figDesc>FIGURE 1. Performance of different length windows with one-hot encoding on the validation set.</figDesc><graphic coords="3,115.99,425.88,383.98,285.34" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 2 .</head><label>2</label><figDesc>FIGURE 2. Performance of different lengths of RNA words with word embedding on the validation set.</figDesc><graphic coords="4,112.03,75.01,383.98,324.45" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 3 .</head><label>3</label><figDesc>FIGURE 3. Performance of different embedding dimensions with word embedding on the validation set.</figDesc><graphic coords="4,112.03,462.16,383.98,249.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>FIGURE 4. Comparison of motifs from CNN kernel and known motifs for (A) humans and (B) mice.</figDesc><graphic coords="5,117.18,396.13,384.04,315.49" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIGURE 5 .</head><label>5</label><figDesc>FIGURE 5. Performance of our four different predictors on an unbalanced independent test set.</figDesc><graphic coords="6,100.01,464.49,407.96,246.56" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>FIGURE 8 .</head><label>8</label><figDesc>FIGURE 8. Performance of our method on an unbalanced independent test set and YTHDF binding site test set. (A) ROC curve illustrating the performance of the Gene2vec predictor on the independent test data set. (B) Precision-recall curve illustrating the performance of the Gene2vec predictor on the independent test data set. (C) ROC curve illustrating the performance of the Gene2vec predictor on the YTHDF binding site test set. (D) Precision-recall curve illustrating the performance of the Gene2vec predictor on the YTHDF binding site test set.</figDesc><graphic coords="8,113.61,382.78,384.04,298.81" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>FIGURE 7 .</head><label>7</label><figDesc>FIGURE 7. Heat map of different AUROC values in cross-species validation.</figDesc><graphic coords="8,123.99,75.01,360.00,216.34" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>FIGURE 9 .</head><label>9</label><figDesc>FIGURE 9. RNA word correlation analysis. (A) RNA words co-occurrence network. If there is an edge in the network, it means that the two RNA words would co-appear in the m 6 A sentences. (B) RNA words were transformed into vector space. From this figure, we can conclude that GCG/ CCG always appears as a pair-word. It is also the same as CGC/CGG. (C) The figure shows examples of semantic equivalence and semantic symmetry.</figDesc><graphic coords="10,119.73,439.15,368.68,242.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>FIGURE 10 .</head><label>10</label><figDesc>FIGURE 10. Workflow of multiple predictors. The figures showed the workflow of our method. The mRNA sequences were predicted by four different deep learning classifiers. Then they vote for the final results.</figDesc><graphic coords="11,69.62,513.24,476.73,187.99" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head></head><label></label><figDesc>Gene2vec: prediction of m 6 A sites www.rnajournal.org 215 Cold Spring Harbor Laboratory Press on March 4, 2025 -Published by rnajournal.cshlp.org Downloaded from et al. 2017b): sensitivity (Sn), specificity (Sp), and Matthew's correlation coefficient (MCC), which are formulated as follows: × TN -FP × FN (TP + FN) + (TN + FP) + (TP + FP) + (TN + FN) √ , where TP, TN, FP, and FN are the numbers of true positives, true negatives, false positives, and false negatives, respectively.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,103.98,490.68,407.96,220.42" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 .</head><label>1</label><figDesc>Comparison of different methods on an unbalanced independent test set</figDesc><table><row><cell>Downloaded from</cell><cell>rnajournal.cshlp.org</cell><cell>on March 4, 2025 -Published by</cell><cell>Cold Spring Harbor Laboratory Press</cell></row><row><cell></cell><cell></cell><cell></cell><cell>Gene2vec: prediction of m 6 A sites</cell></row><row><cell>Predictors</cell><cell>AUROC</cell><cell>AUPR</cell><cell></cell></row><row><cell>OneHot</cell><cell>0.816</cell><cell>0.976</cell><cell></cell></row><row><cell>NeighboringSite</cell><cell>0.819</cell><cell>0.975</cell><cell></cell></row><row><cell>Embedding</cell><cell>0.834</cell><cell>0.979</cell><cell></cell></row><row><cell>Gene2vec</cell><cell>0.841</cell><cell>0.980</cell><cell></cell></row><row><cell>SRAMP</cell><cell>0.794</cell><cell>0.321</cell><cell></cell></row></table><note><p>www.rnajournal.org 211</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>TABLE 3 .</head><label>3</label><figDesc>The sizes of different data sets used in our work (positive:negative)</figDesc><table><row><cell>Training set</cell><cell>Windows</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>TABLE 2 .</head><label>2</label><figDesc>Performance of various stringency thresholds with RNAMethPre and SRAMP of the transcript was reached, we filled the vacancy with values of 0 in both sides to the 501-code-longvector.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">Gene2vec: prediction of m 6 A sites</cell></row><row><cell></cell><cell></cell><cell></cell><cell>Sensitivity</cell><cell></cell><cell></cell><cell>MCC</cell><cell></cell></row><row><cell>Confidence</cell><cell>Specificity</cell><cell>SRAMP</cell><cell>RNAMethPre</cell><cell>Gene2vec</cell><cell>SRAMP</cell><cell>RNAMethPre</cell><cell>Gene2vec</cell></row><row><cell>High</cell><cell>0.90</cell><cell>0.44</cell><cell>0.47</cell><cell>0.63</cell><cell>0.29</cell><cell>0.31</cell><cell>0.50</cell></row><row><cell>Moderate</cell><cell>0.85</cell><cell>0.54</cell><cell>0.56</cell><cell>0.71</cell><cell>0.29</cell><cell>0.31</cell><cell>0.48</cell></row><row><cell>Low</cell><cell>0.80</cell><cell>-</cell><cell>0.64</cell><cell>0.77</cell><cell>-</cell><cell>0.30</cell><cell>0.45</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>RNA 25:205-218; Published by Cold Spring Harbor Laboratory Press for the RNA Society</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>Cold Spring Harbor Laboratory Press on March 4, 2025 -Published by rnajournal.cshlp.org Downloaded from</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>RNA, Vol. 25, No. 2 Cold Spring Harbor Laboratory Press on March 4, 2025 -Published by rnajournal.cshlp.org Downloaded from</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="208" xml:id="foot_3"><p>RNA, Vol. 25, No. 2 Cold Spring Harbor Laboratory Press on March 4, 2025 -Published by rnajournal.cshlp.org Downloaded from</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>This work was supported by the <rs type="funder">National Key R&amp;D Program of China</rs> (<rs type="grantNumber">SQ2018YFC090002</rs>) and the <rs type="funder">Natural Science Foundation of China</rs> (nos. <rs type="grantNumber">61771331</rs>, <rs type="grantNumber">61822306</rs>, <rs type="grantNumber">61672184</rs>). The authors thank <rs type="person">Liwen Bianji</rs>, <rs type="institution">Edanz Group China</rs> (www.liwenbianji.cn/ac), for editing the English text of a draft of this manuscript.</p><p>Received October 3, 2018; accepted November 1, 2018.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_AMerdK7">
+					<idno type="grant-number">SQ2018YFC090002</idno>
+				</org>
+				<org type="funding" xml:id="_scJ8xYJ">
+					<idno type="grant-number">61771331</idno>
+				</org>
+				<org type="funding" xml:id="_FjbwemD">
+					<idno type="grant-number">61822306</idno>
+				</org>
+				<org type="funding" xml:id="_a6cfQ9Y">
+					<idno type="grant-number">61672184</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Predicting the sequence specificities of DNA-and RNA-binding proteins by deep learning</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Alipanahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Delong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Weirauch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Frey</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nbt.3300</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="831" to="838" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">DeepLoc: prediction of protein subcellular localization using deep learning</title>
+		<author>
+			<persName><forename type="first">Almagro</forename><surname>Armenteros</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Sønderby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Sønderby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Winther</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btx431</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="3387" to="3395" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Deep learning for computational biology</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Angermueller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pärnamaa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Parts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Stegle</surname></persName>
+		</author>
+		<idno type="DOI">10.15252/msb.20156651</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Syst Biol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">878</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">DeepCpG: accurate prediction of single-cell DNA methylation states using deep learning</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Angermueller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Reik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Stegle</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13059-017-1189-z</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">67</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">ProLanGO: protein function prediction using neural machine translation based on a recurrent neural network</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Freitas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/molecules22101732</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Molecules</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">1732</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">a. m 6 A RNA methylation is regulated by microRNAs and promotes reprogramming to pluripotency</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.stem.2015.01.016</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Stem Cell</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="289" to="301" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">iRNA-methyl: identifying N 6 -methyladenosine sites using pseudo nucleotide composition</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Chou</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ab.2015.08.021</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Anal Biochem</title>
+		<imprint>
+			<biblScope unit="volume">490</biblScope>
+			<biblScope unit="page" from="26" to="33" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Identification and analysis of the N 6 -methyladenosine in the Saccharomyces cerevisiae transcriptome</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><surname>; C</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/srep13859</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Rep</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">13859</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Identifying N 6 -methyladenosine sites in the Arabidopsis thaliana transcriptome</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00438-016-1243-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Genet Genomics</title>
+		<imprint>
+			<biblScope unit="volume">291</biblScope>
+			<biblScope unit="page" from="2225" to="2229" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">iRNA-PseU: identifying RNA pseudouridine sites</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Chou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Ther Nucleic Acids</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">e332</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">MethyRNA: a web server for identification of N 6 -methyladenosine sites</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/07391102.2016.1157761</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Biomol Struct Dyn</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="683" to="687" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Detecting N 6 -methyladenosine sites from RNA transcriptomes using ensemble Support Vector Machines</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/srep40242</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Rep</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">40242</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">iDNA4mC: identifying DNA N 4 -methylcytosine sites based on nucleotide chemical properties</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btx479</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="3518" to="3523" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">iRNA-3typeA: identifying three types of modification at RNA&apos;s adenosine sites</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Chou</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.omtn.2018.03.012</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Ther Nucleic Acids</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="468" to="474" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Emerging trends: Word2Vec</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Church</surname></persName>
+		</author>
+		<idno type="DOI">10.1017/S1351324916000334</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Lang Eng</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="155" to="162" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">m 6 A RNA methylation regulates the self-renewal and tumorigenesis of glioblastoma stem cells</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Qu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.celrep.2017.02.059</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Rep</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="2622" to="2634" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Sequence2Vec: a novel embedding approach for modeling transcription factor binding affinity landscape</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Umarov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kuwahara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btx480</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="3575" to="3583" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Topology of the human and mouse m 6 A RNA methylomes revealed by m 6 A-seq</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dominissini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moshitch-Moshkovitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Salmon-Divon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ungar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Osenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cesarkas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jacob-Hirsch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Amariglio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kupiec</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature11112</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">485</biblScope>
+			<biblScope unit="page" from="201" to="206" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">RNAmethylation-dependent RNA processing controls the speed of the circadian clock</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Fustin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Doi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yamaguchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nishimura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yoshida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Isagawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Morioka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kakeya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Manabe</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2013.10.026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">155</biblScope>
+			<biblScope unit="page" from="793" to="806" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Stem cells. m 6 A mRNA methylation facilitates resolution of naïve pluripotency toward differentiation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Geula</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moshitch-Moshkovitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dominissini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Mansour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Salmon-Divon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Hershkovitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Peer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Manor</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.1261417</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">347</biblScope>
+			<biblScope unit="page" from="1002" to="1006" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">N 6 -methyladenosine in flaviviridae viral RNA genomes regulates infection</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Gokhale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Abr</forename><surname>Mcintyre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Mcfadden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Roder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Gandara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Hopcraft</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Quicke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Vazquez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Willer</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.chom.2016.09.015</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Host Microbe</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="654" to="665" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Quantifying similarity between motifs</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Stamatoyannopoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Noble</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/gb-2007-8-2-r24</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">24</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">The influence of the sigmoid function parameters on the speed of backpropagation learning</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Moraga</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Workshop on Artificial Neural Networks</title>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Mira</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin, Germany</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page" from="195" to="201" />
+		</imprint>
+	</monogr>
+	<note>From natural to artificial neural computation</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">70ProPred: a predictor for discovering sigma70 promoters based on combining multiple features</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12918-018-0570-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Syst Biol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">44</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">N 6methyladenosine modification and the YTHDF2 reader protein play cell type specific roles in lytic viral gene expression during Kaposi&apos;s sarcoma-associated herpesvirus infection</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hesser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Karijolich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dominissini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Glaunsinger</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.ppat.1006995</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Pathog</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">1006995</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">DephosSitePred: a high accuracy predictor for protein dephosphorylation sites</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comb Chem High Throughput Screen</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="153" to="157" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">O-GlcNAcPRED-II: an integrated classification algorithm for identifying O-GlcNAcylation sites based on fuzzy undersampling and a K-means PCA oversampling technique</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/bty039</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="2029" to="2036" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A majority of m 6 A residues are in the last exons, allowing the potential for 3 ′ UTR regulation</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Alemu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mertens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Gantman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Fak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mele</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Haripal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Zucker-Scharff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Park</surname></persName>
+		</author>
+		<idno type="DOI">10.1101/gad.269415.115</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="2037" to="2053" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Transcriptome-wide N 6methyladenosine profiling of rice callus and leaf reveals the presence of tissue-specific competitors involved in selective mRNA modification</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Song</surname></persName>
+		</author>
+		<idno type="DOI">10.4161/rna.36281</idno>
+	</analytic>
+	<monogr>
+		<title level="j">RNA Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="1180" to="1188" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Protein remote homology detection based on bidirectional long short-term memory</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12859-017-1842-2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">443</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">FTO plays an oncogenic role in acute myeloid leukemia as a N 6 -methyladenosine RNA demethylase</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Weng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Weng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nachtergaele</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ccell.2016.11.017</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Cell</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="127" to="141" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Dynamics of the human and viral m 6 A RNA methylomes during HIV-1 infection of T cells</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lichinchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Saletore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Gonzalez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bansal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Mason</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rana</forename><surname>Tm ; A</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nmicrobiol.2016</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Microbiol</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">16011</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Dynamics of human and viral RNA methylation during Zika virus infection</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lichinchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Qin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Rana</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.chom.2016.10.002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Host Microbe</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="666" to="673" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Single-nucleotide-resolution mapping of m 6 A and m 6 Am throughout the transcriptome</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Linder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Grozhik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Olarerin-George</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Meydan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Mason</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Jaffrey</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nmeth.3453</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="767" to="772" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">ProtDet-CCH: protein remote homology detection by combining long short-term memory and ranking methods</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TCBB.2018.2789880</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE/ACM Trans Comput Biol Bioinform</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Pse-in-One: a web server for generating various modes of pseudo components of DNA, RNA, and protein sequences</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Chou</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/gkv458</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="65" to="W71" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">iRSpot-EL: identify recombination spots with an ensemble learning approach</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Long</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Chou</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btw539</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="35" to="41" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">MeT-DB V2. 0: elucidating contextspecific functions of N 6 -methyl-adenosine methyltranscriptome</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Hua</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/gkx1080</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="281" to="D287" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Chromatin accessibility prediction via a hybrid deep convolutional neural network</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Xia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jiang R ; C</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btx679</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="732" to="738" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">IDP-CRF: intrinsically disordered protein/ region identification based on conditional random fields</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/ijms19092483</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Mol Sci</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">2483</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Unique features of the m 6 A meth-ylome in Arabidopsis thaliana</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Z</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Macqueen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Dore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bergelson</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ncomms6630</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Commun</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">5630</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Advances in Neural Information Processing Systems</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mairal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Koniusz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Harchaoui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Schmid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">NIPS &apos;14. Proceedings of the 27th International Conference on Neural Information Processing Systems</title>
+		<meeting><address><addrLine>Montreal, Canada; Cambridge, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>MIT Press</publisher>
+			<date type="published" when="2014-12-08">2014. December 8-13, 2014</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="2627" to="2635" />
+		</imprint>
+	</monogr>
+	<note>Convolutional kernel networks</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Comprehensive analysis of mRNA methylation reveals enrichment in 3 ′ UTRs and near stop codons</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">D</forename><surname>Meyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Saletore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zumbo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Elemento</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Mason</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Jaffrey</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2012.05.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">149</biblScope>
+			<biblScope unit="page" from="1635" to="1646" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Chromatin accessibility prediction via convolutional long short-term memory networks with k-mer embedding</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Min</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioinformatics/btx234</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="92" to="101" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Identify and analysis crotonylation sites in histone by using support vector machines</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">Q</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.artmed.2017.02.007</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Artif Intell Med</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="75" to="81" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A compendium of RNA-binding motifs for decoding gene regulation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kazan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Weirauch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Najafabadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gueroussov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Albu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature12311</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">499</biblScope>
+			<biblScope unit="page" from="172" to="177" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">High-resolution mapping reveals a conserved, widespread, dynamic mRNA methylation program in yeast meiosis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Agarwala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Mumbach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jovanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mertins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shishkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tabach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">S</forename><surname>Mikkelsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Satija</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ruvkun</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2013.10.047</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">155</biblScope>
+			<biblScope unit="page" from="1409" to="1421" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">nDNA-prot: identification of DNA-binding proteins based on unbalanced classification</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/1471-2105-15-298</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">298</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Survey of machine learning techniques in drug discovery</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Stephenson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Shane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chase</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rowland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ries</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Justice</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Cao</surname></persName>
+		</author>
+		<idno type="DOI">10.2174/1389200219666180820112457</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Drug Metab</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">R-2HG exhibits anti-tumor activity by targeting FTO/m 6 A/MYC/CEBPA signaling</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Dong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nachtergaele</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wunderlich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Qing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Weng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2017.11.031</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">172</biblScope>
+			<biblScope unit="page">23</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Transcriptome-wide high-throughput deep m 6 A-seq reveals unique differential m 6 A methylation patterns between three organs in Arabidopsis thaliana</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lang</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13059-015-0839-2</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">272</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">RFAthM6A: a new tool for predicting m 6 A sites in Arabidopsis thaliana</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11103-018-0698-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Plant Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page" from="327" to="337" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">METTL3-mediated m 6 A modification is required for cerebellar development</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">Y</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Li</forename><forename type="middle">A</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Y</forename></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pbio.2004880</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">2004880</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">PhosPred-RF: a novel sequencebased predictor for phosphorylation sites using sequential information only</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNB.2017.2661756</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Nanobiosci</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="240" to="247" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Prediction of human protein subcellular localization using deep learning</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jpdc.2017.08.009</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Paral Distrib Comput</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="212" to="217" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Exploring sequencebased features for the improved prediction of DNA N 4 -methylcytosine sites in multiple species</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Luan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Lae</forename><surname>Nagai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bioin-formatics/bty824</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<date type="published" when="2018">2018b</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Integration of deep feature representations and handcrafted features to improve the Gene2vec: prediction of m 6 A sites www</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.neucom.2018.04.082</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">324</biblScope>
+			<biblScope unit="page" from="3" to="9" />
+			<date type="published" when="2018-03-04">2018c. March 4, 2025</date>
+			<publisher>Harbor Laboratory Press</publisher>
+		</imprint>
+	</monogr>
+	<note>rnajournal</note>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Fast prediction of protein methylation sites using a sequence-based feature selection technique</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">L</forename><surname>Ji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TCBB.2017.2670558</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE/ACM Trans Comput Biol Bioinform</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">RNAMethPre: a web server for the prediction and query of mRNA m 6 A sites</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Sun</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0162707</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">162707</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Identifying N 6 -methyladenosine sites using multi-interval nucleotide pair position specificity and support vector machine</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wei</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/srep46757</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Rep</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">46757</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Applications of single-cell sequencing for multiomics</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/978-1-4939-7717-8_19</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Methods Mol Biol</title>
+		<imprint>
+			<biblScope unit="volume">1754</biblScope>
+			<biblScope unit="page" from="327" to="374" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Deep learning of the splicing (epi)genetic code reveals a novel candidate mechanism linking histone modifications to ESC fate decision</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/gkx870</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="12100" to="12112" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Alternative splicing links histone modifications to stem cell fate decision</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Olson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Prabhakara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s13059-018-1512-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">133</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">RMBase v2. 0: deciphering the map of RNA modifications from epitranscriptome sequencing data</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Xuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Qu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/gkx934</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="327" to="D334" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">RNA N 6 -methyladenosine methylation in post-transcriptional gene expression regulation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>He</surname></persName>
+		</author>
+		<idno type="DOI">10.1101/gad.262766.115</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1343" to="1355" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Prediction of enhancer-promoter interactions via natural language processing</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jiang</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s12864-018-4459-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">84</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Ensembl 2018</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Zerbino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Achuthan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Akanni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Amode</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Barrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bhai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Billis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cummins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Girón</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/gkx1098</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="754" to="D761" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">m 6 A demethylase ALKBH5 maintains tumorigenicity of glioblastoma stem-like cells by sustaining FOXM1 expression and cell proliferation program</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">P</forename><surname>Sulman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Bögler</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ccell.2017.02.013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Cell</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page">596</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Deep learning in omics: a survey and guideline</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Peng</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/bfgp/ely030</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Brief Funct Genomics</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">SRAMP: prediction of mammalian N 6 -methyladenosine (m 6 A) sites based on sequencederived features</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Cui</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/nar/</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">e91</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

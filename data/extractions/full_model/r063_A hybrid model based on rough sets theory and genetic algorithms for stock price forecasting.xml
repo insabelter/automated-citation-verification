@@ -1,0 +1,1193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A hybrid model based on rough sets theory and genetic algorithms for stock price forecasting</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ching-Hsue</forename><surname>Cheng</surname></persName>
+							<email>chcheng@yuntech.edu.tw</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Information Management</orgName>
+								<orgName type="institution">National Yunlin University of Science and Technology</orgName>
+								<address>
+									<addrLine>123 Section 3</addrLine>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Tai-Liang</forename><surname>Chen</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Information Management and Communication</orgName>
+								<orgName type="institution">Wenzao Ursuline College of Languages</orgName>
+								<address>
+									<addrLine>900 Mintsu 1st Road</addrLine>
+									<postCode>807</postCode>
+									<settlement>Kaohsiung</settlement>
+									<country key="TW">Taiwan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Liang-Ying</forename><surname>Wei</surname></persName>
+							<email>lywei@mail.ypu.edu.tw</email>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Information Management</orgName>
+								<orgName type="institution">Yuanpei University</orgName>
+								<address>
+									<addrLine>306 Yuanpei Street</addrLine>
+									<postCode>30015</postCode>
+									<settlement>Hsin Chu</settlement>
+									<country key="TW">Taiwan</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">University</orgName>
+								<address>
+									<addrLine>Road</addrLine>
+									<postCode>640</postCode>
+									<settlement>Touliu</settlement>
+									<region>Yunlin</region>
+									<country key="TW">Taiwan</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A hybrid model based on rough sets theory and genetic algorithms for stock price forecasting</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">E4639E57464CC159B2C3A6AD13C62F87</idno>
+					<idno type="DOI">10.1016/j.ins.2010.01.014</idno>
+					<note type="submission">Received 26 November 2008 Received in revised form 21 December 2009 Accepted 8 January 2010</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:05+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Rough set theory Genetic algorithms Cumulative probability distribution approach Minimize entropy principle approach Technical indicators</keywords>
+			</textClass>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>a b s t r a c t</head><p>In the stock market, technical analysis is a useful method for predicting stock prices. Although, professional stock analysts and fund managers usually make subjective judgments, based on objective technical indicators, it is difficult for non-professionals to apply this forecasting technique because there are too many complex technical indicators to be considered. Moreover, two drawbacks have been found in many of the past forecasting models: (1) statistical assumptions about variables are required for time series models, such as the autoregressive moving average model (ARMA) and the autoregressive conditional heteroscedasticity (ARCH), to produce forecasting models of mathematical equations, and these are not easily understood by stock investors; and (2) the rules mined from some artificial intelligence (AI) algorithms, such as neural networks (NN), are not easily realized.</p><p>In order to overcome these drawbacks, this paper proposes a hybrid forecasting model, using multi-technical indicators to predict stock price trends. Further, it includes four proposed procedures in the hybrid model to provide efficient rules for forecasting, which are evolved from the extracted rules with high support value, by using the toolset based on rough sets theory (RST): (1) select the essential technical indicators, which are highly related to the future stock price, from the popular indicators based on a correlation matrix; (2) use the cumulative probability distribution approach (CDPA) and minimize the entropy principle approach (MEPA) to partition technical indicator value and daily price fluctuation into linguistic values, based on the characteristics of the data distribution; (3) employ a RST algorithm to extract linguistic rules from the linguistic technical indicator dataset; and (4) utilize genetic algorithms (GAs) to refine the extracted rules to get better forecasting accuracy and stock return. The effectiveness of the proposed model is verified with two types of performance evaluations, accuracy and stock return, and by using a six-year period of the TAIEX (Taiwan Stock Exchange Capitalization Weighted Stock Index) as the experiment dataset. The experimental results show that the proposed model is superior to the two listed forecasting models (RST and GAs) in terms of accuracy, and the stock return evaluations have revealed that the profits produced by the proposed model are higher than the three listed models (Buy-and-Hold, RST and GAs).</p><p>Ó 2010 Elsevier Inc. All rights reserved. 0020-0255/$ -see front matter Ó 2010 Elsevier Inc. All rights reserved. doi:10.1016/j.ins.2010.01.014</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>In the stock market, it is very difficult to forecast stock trends because of complex factors influencing stock markets and nonlinear relationships, which are contained among different periods of stock prices. Although only a few investors profit from the stock market, millions of them still have not given up trying to make money from the market. Therefore, since the first stock market opened, numerous forecasting methods have been employed in an attempt to predict stock prices.</p><p>In the area of stock market forecasting, the technical analysis method is one of the primary analytic approaches used by investors to make investment decisions, and many researchers have been focusing on technical analysis to increase their investment returns <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b14">15]</ref>. Furthermore, the technical analysis method has the ability to forecast the future price direction by studying past market data, primarily stock price and volume. The technical analysis method assumes that stock price and volume are the two most relevant factors in determining the future direction and behavior of a particular stock or market, and that the technical indicators, coming from a mathematical formula, based on stock price and volume, can be applied to predict price fluctuations and also provide data for investors, enabling them to determine the timing for the buying or selling of stock <ref type="bibr" target="#b12">[13]</ref>.</p><p>Besides the technical analysis methods, many conventional numeric forecasting models have been proposed by financial researchers, such as Engle's <ref type="bibr" target="#b16">[17]</ref> autoregressive conditional heteroscedasticity (ARCH) model, Bollerslev's <ref type="bibr" target="#b5">[6]</ref> generalized ARCH (GARCH) model, Box and Jenkins' <ref type="bibr" target="#b6">[7]</ref> autoregressive moving average (ARMA) model, and the autoregressive integrated moving average model (ARIMA).</p><p>In recent decades, many researchers have employed another approach to financial forecasting: artificial intelligence algorithms In 1990, Kinoto et al. <ref type="bibr" target="#b28">[29]</ref> developed a prediction system for the stock market by using a neural network. Nikolopoulos and Fellrath <ref type="bibr" target="#b31">[32]</ref> combined genetic algorithms (GAs) and a neural network to develop a hybrid expert system for investment decisions. Kim and Han <ref type="bibr" target="#b26">[27]</ref> proposed a genetic algorithms approach in order to feature discretization and the determination of connection weights for artificial neural networks (ANNs) to predict the stock price index. Huarng and Yu <ref type="bibr" target="#b24">[25]</ref> applied a backpropagation neural network to establish fuzzy relationships in fuzzy time series for forecasting stock prices. Roh <ref type="bibr" target="#b41">[42]</ref> integrated a neural network and time series model for forecasting the volatility of the stock price index.</p><p>From the literature noted above, however, three major drawbacks can be found in their forecasting methods and models: (1) stock market analysts and fund managers apply various technical indicators to forecast stock market trends, based on their personal experience, which could result in erroneous judgments of market signals; <ref type="bibr" target="#b1">(2)</ref> for most statistical methods, there are some assumptions about the variables used in the analysis, which can not be applied to those datasets that do not follow the statistical distributions; and (3) the artificial neural network (ANN) is a black-box method, and the rules mined from it are not easily understandable.</p><p>To improve upon past forecasting models, a revised model should be able to overcome the drawbacks contained in previous models and should offer a good methodology which could be used more easily by investors. Therefore, this paper proposes a hybrid forecasting model to refine past models in stock price forecasting, and provides four novel methods in the forecasting processes: (1) select essential technical indicators by using a correlation matrix; (2) use CPDA (cumulative probability distribution approach) and MEPA (minimize entropy principle approach) to discretize condition features (technical indicators) and decision features (daily price fluctuation); (3) apply the rough set theory (RST) to produce rules from the linguistic values of technical indicators; and (4) employ genetic algorithms (GAs) to refine the extracted rules to improve forecasting accuracy and stock return.</p><p>Empirically, this paper employs two types of stock databases (stock index and individual stock price) as experimental datasets. From the model verification, it is shown that the refined processes are effective in improving forecasting accuracy, and, based on the evidence, a stock analyst or investor can employ the refined processes proposed in this paper to improve their forecasting tools or models.</p><p>The rest of this paper is organized, as follows: Section 2 introduces the related works; Section 3 demonstrates the proposed model and algorithm; Section 4 evaluates the performance of the proposed model and describes the findings; and Section 5 draws conclusions and proposes recommendations for future research.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related works</head><p>This section reviews related works of technical analysis, cumulative probability distribution approach, minimize entropy principle approach, rough set theory, and genetic algorithms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Technical analysis</head><p>Technical analysis is an attempt to predict future stock price movements by analyzing a past sequence of stock prices <ref type="bibr" target="#b38">[39]</ref>. It relies on charts and looks for particular configurations that are supposed to have predictive value. Analysts focus on investor psychology, which represents common investors' responses to certain price formations and price movements, to analyze the fluctuations of stock market. The price at which investors are willing to buy or sell depends on personal expectation. If investors expect the security price to rise, they will buy it; if investors expect the security price to fall, they will sell it. These simple statements are the cause for a major challenge in setting security prices, because they refer to human expec-tations and attitudes <ref type="bibr" target="#b38">[39]</ref>. It is said that, securities never sell for what they are worth, but for what people think they are worth. It is very important to understand that market participants anticipate future development and take timely action, which compels the price movement. Since stock market processes are highly nonlinear, many researchers have been focusing on technical analysis to improve investment returns <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b3">4,</ref><ref type="bibr" target="#b48">49]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Cumulative probability distribution approach (CDPA)</head><p>Probability refers to the study of randomness and uncertainty. In any situation, one of a number of possible outcomes may occur. The theory of probability provides methods for quantifying the chances, or likelihoods, associated with the various outcomes. Because a probability distribution on the real line is determined by the probability of being in a half-open interval p(a, b], therefore, F(b) À F(a) if a &lt; b. The probability distribution of a real-valued random variable X is completely characterized by its cumulative distribution function (CDF) <ref type="bibr" target="#b0">[1]</ref>. For every real number x, the CDF of X is given by</p><formula xml:id="formula_0">x ! F X ðxÞ ¼ PðX 6 xÞ 8x 2 R<label>ð1Þ</label></formula><p>where the right-hand side represents the probability (p) that the random variable X takes on a value less than, or equal to, x. Capital F is used to represent the cumulative distribution function, in contrast to the lower-case f , used to represent probability density functions and probability mass functions. The CDF of X can be defined in terms of the probability density function f , as follows:</p><formula xml:id="formula_1">FðxÞ ¼ P½X 6 x ¼ Z x 1 f ðtÞdt<label>ð2Þ</label></formula><p>The inverse of the normal CDF is computed with parameters l and r at the corresponding probabilities in P, where l denotes the mean and r denotes the standard deviation of the data <ref type="bibr" target="#b0">[1]</ref>. The normal inverse function in terms of the normal CDF is defined as</p><formula xml:id="formula_2">x ¼ F À1 ðpjl; rÞ ¼ fx : Fðxjl; rÞ ¼ pg;<label>ð3Þ</label></formula><formula xml:id="formula_3">where p ¼ Fðxjl; rÞ ¼ 1 r ffiffiffiffiffiffi ffi 2p p Z x À1 e Àðt À lÞ 2 2r 2 dt<label>ð4Þ</label></formula><p>The cumulative probability of normal distribution is used to determine the intervals. The steps of the cumulative probability distribution approach are as follows <ref type="bibr" target="#b13">[14]</ref>:</p><p>Step 1: Test normal distribution.</p><p>In this approach, the data must be of normal distribution. This study utilizes CPDA because stock market fluctuations and returns tend to be of normal distribution <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b46">47]</ref>.</p><p>Step 2: Define the universe of discourse U. Let U ¼ ½D Àr min ; D þr max , where D min and D max denote the minimum and maximum values in historical data, and r denotes the standard deviation of the yearly data.</p><p>Step 3: Determine the length of intervals and build a membership function. P LB , as the lower boundary of cumulative probability, and P UB , as the upper boundary of cumulative probability of each linguistic value, are computed by</p><formula xml:id="formula_4">P LB ¼ ð2i À 3Þ=2n ð25i5nÞ<label>ð5Þ</label></formula><formula xml:id="formula_5">P UB ¼ i=n ð15i5nÞ<label>ð6Þ</label></formula><p>where i denotes the order of the linguistic values, and n denotes the number of linguistic values. The lower boundary of the first linguistic value and the upper boundary of the last linguistic value correspond to the lower and upper boundary, respectively. This step computes the inverse of the normal CDF by Eqs. ( <ref type="formula" target="#formula_2">3</ref>) and (4).</p><p>Step 4: Fuzzify the historical data.</p><p>According to the inverse of normal CDF, the lower boundary, midpoint and upper boundary as the triangular fuzzy number of each linguistic value, can be computed. The triangular fuzzy number is applied to build a membership function. The membership degree of each instance is calculated to determine its linguistic value.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Minimize entropy principle approach (MEPA)</head><p>The purpose of entropy minimization analysis is to determine the information content in a given dataset. The entropy of a probability distribution is a measure of the uncertainty of the distribution [51]. To divide the data into membership functions, establishing the point of segmentation between classes of data is needed. A point of segmentation can be determined with an entropy minimization screening method; then, start the segmentation process by first dividing it into two classes. Thereupon, a repeated partitioning with the value of segment point calculations will allow us to partition the dataset into a number of fuzzy sets <ref type="bibr" target="#b42">[43]</ref>. In recent years, MEPA has been used in forecasting problems <ref type="bibr" target="#b9">[10]</ref>.</p><p>Assume that the value of the segment point is being sought for a sample in the range between x 1 and x 2 . An entropy equation is written for the regions ½x 1 ; x and ½x; x 2 , and denotes the first region p and the second region q. Entropy with each value of x is expressed as: <ref type="bibr" target="#b13">[14]</ref> SðxÞ ¼ pðxÞS p ðxÞ þ qðxÞS q ðxÞ ð7Þ where S p ðxÞ ¼ À½p 1 ðxÞ ln p 1 ðxÞ þ p 2 ðxÞ ln p 2 ðxÞ S q ðxÞ ¼ À½q 1 ðxÞ ln q 1 ðxÞ þ q 2 ðxÞ ln q 2 ðxÞ ð8Þ</p><p>and where p k ðxÞ and q k ðxÞ are the conditional probabilities that the class k sample is in region ½x 1 ; x 1 þ x and ½x 1 þ x; x 2 , respectively, and pðxÞ and q(x) are the probabilities that all samples are in region ½x 1 ;</p><formula xml:id="formula_6">x 1 þ x and ½x 1 þ x; x 2 , respectively. pðxÞ þ qðxÞ ¼ 1<label>ð9Þ</label></formula><p>The value of x that gives the minimum entropy is the optimum value of the segment point. The entropy estimates of pk(x) and qk(x), and p(x) and q(x) are calculated, as follows: <ref type="bibr" target="#b13">[14]</ref> pkðxÞ</p><formula xml:id="formula_7">¼ n k ðxÞ þ 1 nðxÞ þ 1<label>ð10Þ</label></formula><formula xml:id="formula_8">qkðxÞ ¼ N k ðxÞ þ 1 NðxÞ þ 1<label>ð11Þ</label></formula><formula xml:id="formula_9">pðxÞ ¼ nðxÞ n<label>ð12Þ</label></formula><formula xml:id="formula_10">qðxÞ ¼ 1 À pðxÞ<label>ð13Þ</label></formula><p>where nk(x) is the number of class k samples located in ½x1; x1 þ x, n(x) is the total number of samples located in ½x1; x1 þ x, Nk(x) is the number of class k samples located in ½x1 þ x; x2, N(x) is the total number of samples located in ½x1 þ x; x2, and n is the total number of samples in [x1, x2].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Rough set theory</head><p>Rough sets theory (RST) was proposed by Pawlak <ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref> in 1982. In recent years, RST has been used in economic and financial prediction. Many researchers have applied RST to discover trading rules <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b47">48]</ref>. The concept of RST is founded on the assumption that with every associated object of the universe of discourse, some information objects characterized by the same information are indiscernible in the view of the available information about them. Any set of all indiscernible objects is called an elementary set and forms a basic granule of knowledge about the universe. Any union of elementary sets is referred to as a precise set; otherwise the set is rough.</p><p>With any rough sets, a pair of precise sets, called the lower and upper approximation, BX ¼ fxj½x B # Xg and BX ¼ fxj½x B \ X -;g of the rough sets, is associated <ref type="bibr" target="#b32">[33]</ref>. The lower approximation consists of all objects that definitely belong to the set, and the upper approximation contains all objects that possibly belong to the set. The difference between the upper and the lower approximation constitutes the boundary region, BN B ðxÞ ¼ BX À BX, of the rough sets. The set X is called ''rough" (or ''roughly definable") with respect to the knowledge in B, if the boundary region is non-empty. The basic notions in rough sets are shown in Fig. <ref type="figure" target="#fig_0">1</ref>.</p><p>The RST is a series of logical reasoning procedures used for analyzing an information system. An information system can be seen as a decision table, denoted by S ¼ ðU; A; C; DÞ, where U is the universe of discourse, A is a set of primitive features, and C; D &amp; A are two subsets of features, assuming that A ¼ C [ D and C \ D ¼ ;, where C is called the condition attribute and D is the decision attribute. The measure to describe the inexactness of approximation classifications is called the quality of approximation of X by B. It expresses the percentage of objects that can be correctly classified into class X,employing the attribute B <ref type="bibr" target="#b32">[33]</ref>:</p><formula xml:id="formula_11">c B ðAÞ ¼ P cardðBX i Þ cardðUÞ<label>ð14Þ</label></formula><p>If c B ðAÞ ¼ 1 , then the decision table is consistent; otherwise, it is inconsistent.</p><p>An important issue in RST is attribute reduction in which the reduced set of attributes provides the same quality of approximation as the original set. There are two fundamental concepts in connection with this attribute reduction. The Breduct of A, denoted by RED(B), is the minimal subset of A, which provides the same quality of approximation of objects into elementary classes of B as the whole attributes of A. The B-core of A, CORE(B), is the essential part of A, which cannot be eliminated without disturbing the ability to classify objects into the elementary classes of B <ref type="bibr" target="#b32">[33]</ref>. It is the intersection of all reducts.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>COREðBÞ</head><formula xml:id="formula_12">¼ \ R i 2REDðBÞ ; i ¼ 1; 2; . . .<label>ð15Þ</label></formula><p>Using a reduced algorithm, the rules can be found through determining the decision attributes value, based on the condition attributes values. Therefore, the rules are presented in an ''IF condition(s) THEN decision(s)" format. The concept of the decision table is employed in this study to establish rules from fuzzy relationships, which generate rules for better forecasting results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Genetic algorithms</head><p>Genetic algorithms (GAs) were advanced by Holland <ref type="bibr" target="#b23">[24]</ref> in 1975, and expanded by Goldberg <ref type="bibr" target="#b20">[21]</ref> in 1989. GAs are search algorithms, inspired by evolution and applied in searching for the global optimum for many applications. Furthermore, GAs have been successfully applied in economic and financial prediction <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b27">28]</ref>. These algorithms encode a potential solution for a specific problem into a simple chromosome-like data structure and apply recombination operators to these structures to preserve critical information. The steps of GAs in the proposed model, based on Goldberg <ref type="bibr" target="#b20">[21]</ref>, are reorganized for this study, as follows:</p><p>Step 1: Initialization. This step generates the initial population containing N P chromosomes, which are used to find global optimum initial seeds, where N P is the number of individuals in each generation. Simultaneously, the probability of crossover P C , probability of mutation P M , and the maximum numbers of generations NG are also initialized.</p><p>Step 2: Evaluation. After the initialization step, each chromosome is evaluated using a user-defined fitness function. The fitness value of each string is an index of the problem's design improvement suitability and the probability of survival of reproduction in genetic algorithms.</p><p>Step 3: Check termination criteria. After the previous steps, the processes, from step 2 to 7, are repeated until the termination criteria are satisfied. The proposed algorithm is terminated if either one of the following conditions is satisfied:</p><p>1. The maximum number of generations is achieved, or 2. The same solution has not been changed for the present generation.</p><p>Step 4: Elitism mechanism. In order to ensure the propagation of the elite chromosome, GAs use the Elitism mechanism <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b49">50]</ref>. This mechanism selects P% individuals, which have the best fitness values, to be the offspring of the next generation, while the remaining individuals execute the genetic operations (i.e., selection, crossover and mutation).</p><p>Step 5: Selection. Selection is a process in which suitable chromosomes from the parents' populations for the next generation are chosen. In this step, the selection of this model is tournament selection <ref type="bibr" target="#b4">[5,</ref><ref type="bibr" target="#b21">22]</ref>. It is both effective and computationally efficient. Pairs of chromosomes are selected at random to produce their own fitness values. The chromosomes with the best fitness values will be chosen. This step is repeated until the number of chromosomes selected is equal to the number of the population.</p><p>Step 6: Crossover. The crossover operates by swapping corresponding segments of a string representation of the parents and extends the search for a new solution. Such positional bias <ref type="bibr" target="#b17">[18]</ref> implies that the schemas with long-defining lengths suffer biased disruption. In order to reduce positional bias, this model uses uniform crossover <ref type="bibr" target="#b44">[45]</ref>, which can be disruptive especially to the early generations. Uniform crossover operates as shown in Fig. <ref type="figure">2</ref>.</p><p>Step 7: Mutation. The mutation is a GA mechanism. It randomly chooses a member of the population and changes one randomly chosen bit in its bit string representation. The mutation operation is shown in Fig. <ref type="figure">3</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Proposed concepts and model</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Proposed concepts</head><p>As stated in the previous section, past forecasting models exhibited three major drawbacks when used to predict stock market activity: (1) utility technical indicators used to forecast stock prices represent a subjective approach because investors attempt to make knowledgeable judgments about future price trends, based on the values of the technical indicators; (2) some prerequisites, such as statistical probability distribution <ref type="bibr" target="#b8">[9]</ref>, form the theoretical basis for constructing conventional forecasting models, but usually stock data do not follow a specific data distribution; and (3) rule presentations of stock data, produced from some data-mining algorithms, are difficult for non-professional investors to interpret <ref type="bibr" target="#b45">[46]</ref> (i.e., the rules mined from ANN are not easily understandable). We argue that these drawbacks reduce the efficiency and applicability of the forecasting model, and to overcome these drawbacks, four novel methods are proposed in the processes of data-mining for stock price forecasting.</p><p>In the preprocess of data-mining, two objective approaches, CPDA (cumulative probability distribution approach) and MEPA (minimize entropy principle approach), are suggested to discretize each technical indicator (condition features) and daily price fluctuation (decision features) into linguistic values. There are advantages in using data discretization methods in preprocessing raw data. For example, the data dimension of a database can be reduced and simplified, and use of discrete features is usually more compact and shorter than the use of continuous ones <ref type="bibr" target="#b30">[31]</ref>. Additionally, to reduce the amount of stock data and find the effective indicators related to the future stock price, a ''correlation matrix" can be used to select, objectively, essential technical indicators from popular indicators, used in the stock market in the preprocess.</p><p>In the model-building process, a rough set (RS) algorithm is one proper data-mining algorithm suggested to extract forecasting rules from complex stock data. In recent data-mining techniques, RS methods have provided a basis for a predictive data-mining tool that is especially helpful in dealing with vague, incomplete and uncertain data used for decision-making. Three advantages can be discovered when applying RS methods: (1) RS theory can deal with the original datasets without any additional information or statistical assumptions, unlike the probability of statistics; (2) RS theory can discover important facts hidden in datasets and express them with decision rules of natural language; and (3) the results (rules) from a RS model are easily understood <ref type="bibr" target="#b15">[16,</ref><ref type="bibr" target="#b22">23]</ref>. Because of these advantages, RS theory has become an important theory in the fields of artificial intelligence (AI), knowledge discovery in database (KDD), and data-mining (DM). Accordingly, a forecasting model using a RS algorithm to produce rules can overcome the limitations 1 of statistical methods for stock price forecasting, and the produced ''if-then" rules can model the qualitative aspects of human knowledge applicable for investors.</p><p>Moreover, genetic algorithms (GAs) <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b27">28]</ref> are an effective and robust method for searching for proper solutions to the problems of very large spaces or dimensions in a variety of applications, and are particularly applicable in solving multiparameter optimization problems. In the stock market, ''unexpected events," which will turbulently influence stock price, will sometimes occur. Although RS methods can extract rules effectively from past stock data, the rules to express the ''unexpected events" have very low support value, and they are usually ignored when forecasting the future. Also, the ''unexpected events" in the future may not be similar to those of the past. Therefore, to meet the ''unexpected events," we use GAs to produce ''mutation rules," which are evolved from rules extracted from RS methods, to improve classification accuracy and forecasting profit. Consequently, to deal with the unpredictable variations contained in stock markets, GAs are suggested to refine the extracted rules to enhance forecasting performance. The program of the proposed model can be downloaded on the web page <ref type="bibr">[52]</ref>. 1 Some statistical distributions are presumed as a basis to construct mathematical models, but usually stock data do not follow a specific data distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Proposed model</head><p>Based on the proposed concepts above, this paper suggests a hybrid model (the overall framework of which is shown as Fig. <ref type="figure">4</ref>), which incorporates four novel data-mining methods (including CPDA, MEPA, RST and GAs) in the forecasting processes, and provides three major phases (including six processes), as noted below.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.1.">Preprocess</head><p>There are two works contained in this phase, as follows:</p><p>3.2.1.1. Data transformation and selection of essential technical indicators. In the data transformation procedure, one period of stock data is selected as an experimental stock dataset. This dataset contains five daily fundamental stock quantities (maximum price, minimum price, opening price, closing price, and stock trading volume) and the daily price fluctuation, which express the stock price change between any given day and the previous day (daily price fluctuation (t) = stock price (t) À stock price (t À 1)). The data of the five daily fundamental stock quantities is converted into the data of several popular technical analysis indicators <ref type="bibr" target="#b25">[26]</ref>: moving average (MA), momentum (MTM), stochastic %K (%K), stochastic %D (%D), relative strength index (RSI), psychology line (PSY), Williams' percent range (%R), volume ratio (VR), volume (Volume), and accumulative ratio (AR) <ref type="bibr" target="#b40">[41]</ref>.</p><p>In the procedure of selecting essential technical indicators, the popular indicators are analyzed by a ''correlation matrix" to examine their relationship degree to daily price fluctuations, and to select from the popular technical analysis indicators those essential indicators which are highly related to daily price fluctuations. The selection approach employs a statistical method, Pearson correlation with two-tailed tests, to select the essential technical analysis indicators. Pearson's Correlation Coefficient is usually signified by c. The statistical significance of r is tested using a t-test. The hypothesis for this test is: H 0 : c ¼ 0. A low p-value for this test (less than 0.05, for example) means that there is sufficient evidence to reject the null hypothesis in favor of the alternative hypothesis. For example, price fluctuation is related significantly with MA-5, MTM-5, %K-5, %D-5, RSI-5, PSY-5, %R-5, VR-5, volume, and AR-5 (the marker ''**" in the last column in Table <ref type="table" target="#tab_11">19</ref>). essential technical indicators, the other consisting of daily price fluctuations) are fuzzified into linguistic stock datasets (the converted processes of daily price fluctuations, from numeric stock datasets to linguistic stock datasets, are demonstrated in Table <ref type="table" target="#tab_4">8</ref>; the converted processes of a technical indicator, MA-5, from numeric stock datasets to linguistic stock datasets are demonstrated in Table <ref type="table">10</ref>). The dataset of essential technical indicators is discretizated by MEPA and used as a conditional attribute. The dataset of the daily price fluctuation is discretizated by CDPA and employed as a decision attribute.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.2.">Rule generation and rule refining</head><p>There are two operations contained in this phase, as follows:</p><p>3.2.2.1. Rule generation by RST. This procedure applies a toolset, based on RST (LEM2) <ref type="bibr" target="#b37">[38,</ref><ref type="bibr">53]</ref>, to extract preprocess phase rules from the linguistic stock datasets, and to select the extracted rules with high support value as the initial population for GA operations. To detail this procedure clearly, the computation steps are introduced in Fig. <ref type="figure" target="#fig_3">5</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.2.2.2.</head><p>Accuracy and stock return improvement by GA. This procedure employs GA to refine the extracted rules, thus, improving classification accuracy and stock return. To detail this procedure clearly, the computation steps are introduced in Fig. <ref type="figure">6</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.3.">Return calculation and performance evaluation</head><p>There are two processes contained in this phase, as follows:</p><p>3.2.3.1. Return calculation. Each selected experimental dataset is split into two subdatasets: training and testing datasets.</p><p>The refined rules, extracted by the proposed model from the training dataset, are used for forecasting the testing dataset and calculating stock return, based on the trading strategies, as follows: (i) ''buy on open and sell on close," when the selected rule indicates that the forecasted price fluctuation of the next day is ''going up;" (ii) ''sell on open and buy on close," when the selected rule indicates that forecasted price fluctuation of the next day is ''going down;" and (iii) ''no transaction," when the selected rule indicates that the forecasted price fluctuation of the next day is ''staying flat." Based on the refined rules and the strategies, the returns for the proposed model can be calculated and summarized.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.3.2.">Evaluation and comparison.</head><p>In this procedure, two types of performance evaluations, forecasting accuracy and stock return, are employed. In forecasting accuracy evaluation, RST and GA models, using the same preprocess conditions as with the proposed model, are employed as comparison models. In forecasting accuracy evaluation, the Buy-and-Hold method (defined in Eq. ( <ref type="formula">21</ref>)), RST and GA models are employed as comparison models.</p><p>To detail the proposed model, each step of the proposed model is described, as follows:</p><p>Step 1: Data transformation and selection of essential technical indicators. In this step, technical indicators are used as condition features, and the next-day price fluctuation ðDPF next day Þ, defined in Eq. ( <ref type="formula">16</ref>), is used as a decision feature. The technical indicators are generated from five fundamental quantities (opening price, highest price, lowest price, closing price and trading volume) <ref type="bibr" target="#b27">[28,</ref><ref type="bibr" target="#b40">41]</ref>. In order to choose those essential technical indicators High support value?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data input</head><p>In put linguistic stock data with selected conditional attributes and decision attribute.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data mining</head><p>Extract rules from linguistic stock dataset by the algorithms of RST.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Selection</head><p>Examine and choose the extracted rules with high support value as the rules of initial population.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Coding rules into chromosome</head><p>Code the rules of initial population into chromosome data for GA.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Yes</head><p>No Remove the rules with low support value. as condition features that are highly related to the next-day price fluctuation, a correlation matrix is employed to select the essential indicators from several popular indicators (see Table <ref type="table" target="#tab_11">19</ref>).</p><p>Daily price fluctuation ðt þ 1Þ ¼ closing price ðt þ 1Þ À opening price ðt þ 1Þ ð 16Þ</p><p>Step 2: Data discretization by CPDA and MEPA In this step, CPDA is applied to discretize the next-day price fluctuation (decision attribute), and MEPA is used to discretize essential indicators (condition technical attributes). Because price fluctuations in the stock market and stock returns follow normal distribution closely <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b46">47]</ref>, CPDA is an appropriate method to discretize stock price data. In this model, the next-day price fluctuation (decision attribute) is defined by three linguistic values: Up, Fair and Down. Additionally, to partition the universe of discourse of each essential technical indicator based on its data characteristic, this step employs MEPA to discretize condition features <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b11">12]</ref>. Granulating features is one important step for data-mining processes, especially for RST, and by this step, the data dimensions of a database can be reduced and simplified.</p><p>In this paper, we discretize each condition attribute with 15 linguistic terms, because by using the TSMC as experimental datasets, the accuracy of the proposed model performs best with 15 linguistic terms (see Tables <ref type="table">1</ref> and<ref type="table">2</ref>), compared with 2, 3 and 7 linguistic terms.</p><p>Step 3: Rule generation by RST. This step utilizes the algorithms of RST to mine rules from a training stock dataset. The extracted rules are in the form of ''if-then" with specific condition attribute values and a decision attribute value, as follows:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Termination criteria satisfied</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Initialization</head><p>Generate an initial population with randomly generated chromosome.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evaluation</head><p>Calculate the fitness values of all chromosomes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Selection</head><p>Choose certain pairs of parents for producing offspring according to the selection method.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Crossover</head><p>Selected parents swap genes according to randomly generated crossover points.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mutation</head><p>Selected parents randomly change one or more genes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>No</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stop</head><p>The current chromosomes are the optimal solutions. YES Fig. <ref type="figure">6</ref>. Accuracy and stock return improvement by GA operations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1</head><p>The accuracy of proposed model with different linguistic terms of condition feature for TSMC dataset (1999).</p><p>Linguistic terms of decision feature Linguistic terms of condition feature This rule states that if the linguistic value of RSI is L8 (medium), and the linguistic value of the Volume is L9 (more or less high), then the next day price fluctuation is Up.</p><p>Step 4: Accuracy and stock return improvement by GA. This step uses GAs to refine the extracted rules produced by RST from step 3 to improve forecasting accuracy and stock return. The substeps of performance improvement are described below.</p><p>Step 4.1: Generate initial chromosomes. The rules produced by RST are coded into chromosomes as an initial population, as in Table <ref type="table">3</ref>. Each condition feature is coded with a value from ''0" to ''15," where ''0" signifies that the condition feature is not contained in the extracted rule, and the coded values, from ''1" to ''15," represent the linguistic value of this condition attribute, from L1 to L15, respectively. Additionally, the decision feature is encoded from ''1" to ''3," where ''1" denotes that the daily price fluctuation of the next day is Down, ''2" Flat, and ''3" Up.</p><p>The proposed model evaluates each chromosome by a user-defined fitness function, as shown in Eq. ( <ref type="formula">17</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fitness function ¼ The number of observations classified correctly by the chromosome All of observations in the training data ð17Þ</head><p>Step 4.2: Perform genetic operations. In this step, genetic operations (selection, crossover and mutation) are employed to refine the rules produced by RST from step 3. In order to ensure the propagation of the elite chromosome, this step implements the genetic operations with the Elitism mechanism <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b49">50]</ref>. This mechanism selects 0.2% of the individuals with the best fitness values to be the offspring of the next generation, while the remaining individuals execute the genetic operations. Besides this, to enhance genetic operations in this substep, the rules with lower rule support value (rule support = 1) are removed. Table <ref type="table" target="#tab_0">4</ref> demonstrates the parameter settings of GA in this substep.</p><p>Step 5: Return calculation. This step calculates stock return by using the refined rules from step 4 in forecasting the stock price. The inference method based on the refined rule base is described in the following algorithm: Based on the inference method and trading strategies above, stock return is calculated by Eq. ( <ref type="formula" target="#formula_13">18</ref>), when the forecasted price fluctuation (t + 1) is Up, or by Eq. ( <ref type="formula" target="#formula_14">19</ref>), when the forecasted price fluctuation (t + 1) is Down. In Eqs. ( <ref type="formula" target="#formula_13">18</ref>) and <ref type="bibr" target="#b18">(19)</ref>, Unit means the quantity of shares.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 2</head><p>The accuracy of proposed model with different linguistic terms of condition feature for TAIEX dataset <ref type="bibr">(2000)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Linguistic terms of decision feature</head><p>Linguistic terms of condition attribute </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 3</head><p>The structure of the chromosomes for the proposed model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Feature name</head><formula xml:id="formula_13">Feature_1 Feature_2 Á Á Á Feature_n À 1 Feature_n DPFnext d ay Coded value 0-15 0-15 Á Á Á 0-15 0-15 1-3 Return Up ðt þ 1Þ ¼ ðclosing priceðt þ 1Þ À opening priceðt þ 1ÞÞ Â unit<label>ð18Þ</label></formula><formula xml:id="formula_14">Return Down ðt þ 1Þ ¼ ðopening priceðt þ 1Þ À closing priceðt þ 1ÞÞ Â unit<label>ð19Þ</label></formula><p>Step 6: Evaluation and comparison. In this step, to evaluate forecasting performance carefully, accuracy and stock return are employed as performance indicators. This step calculates the stock return based on the three trading strategies above and sums up the stock return of all transactions. The data-mining model's accuracy is defined in Eq. <ref type="bibr" target="#b19">(20)</ref>.</p><p>Accuracy ðTÞ ¼</p><formula xml:id="formula_15">P jTj i¼1 correct classificationðt i Þ jTj ; t i 2 T Correct classificationðt i Þ ¼ 1; if classify ðt i Þ ¼ actual price fluctuation ðt i Þ 0; otherwise<label>ð20Þ</label></formula><p>where T is the set of data instances that are classified by the proposed model, t i 2 T; actual price fluctuation ðt i Þ is the classification for each data instance of actual price fluctuation labeled as one of three linguistic values, UpðL 3 Þ; FairðL 2 Þ, and Down ðL 1 Þ; and classify ðt i Þ returns the classification of data instance t i by the proposed model. In a performance comparison, RST, GAs and the ''Buy-and-Hold" approach are used as comparison methods to evaluate the proposed model. To examine the performance difference between the proposed hybrid model and the data-mining models using a single method, RST <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b47">48]</ref> and GAs <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b27">28]</ref> are used as comparison models. Moreover, the ''Buy-and-Hold" approach <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b39">40]</ref> is a common strategy for investors in the stock market, and therefore, this approach is used as another comparison model. The stock return of the ''Buy-and-Hold" approach is defined in Eq. ( <ref type="formula">21</ref>), where Unit means the quantity of shares.</p><p>Return Buy-and-hold ¼ ðclosing price The last day of investing period À opening price The first day of investing period Þ Â unit ð21Þ</p><p>To detail the proposed model, an empirical case study is introduced in the following section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Empirical case study</head><p>To demonstrate the proposed model clearly, in this section, a one-year period of Taiwan Semiconductor Manufacturing Company (TSMC) stock data, from 1999/06/23 to 2000/05/11 (see Fig. <ref type="figure" target="#fig_7">7</ref>, retrieved from Taiwan Stock Exchange Corporation [54]), is employed as an experimental dataset to introduce the proposed algorithm step by step. Because the stock price on the ''ex-dividend day" fluctuates violently <ref type="bibr" target="#b18">[19]</ref>, this study removes the stock data of the ex-dividend day from the dataset (the dataset selection is from 1999/06/23, the day after the ex-dividend day, to 2000/05/11, the day before the ex-dividend day). The previous 10 months of stock data, from 1999/06 to 2000/03, is used for training, and the rest, from 2000/03 to 2000/05, is used for testing.  By using the experimental stock dataset above, each step contained in the three forecasting phases of the proposed model ((I) Preprocess; (II) Rule generation and rule refining; and (III) Return calculation and performance evaluation) is introduced and demonstrated, as follows:</p><p>Step 1: Data transformation and selection of essential technical indicators. In this step, the five fundamental quantities of TSMC stock data (opening price, highest price, lowest price, closing price and trading volume) are demonstrated as Table <ref type="table" target="#tab_1">5</ref>, and are transferred into popular technical indicators by their corresponding equations <ref type="bibr" target="#b27">[28,</ref><ref type="bibr" target="#b40">41]</ref>. The eight essential technical indicators (condition features), selected by a correlation matrix for TMSC, are described, as follows: accumulative ratio (AR), moving average (MA), psychology line (PSY), relative strength index (RSI), stochastic %D (%D), stochastic %K (%K), volume, and Williams' percent range (%R) (see Table <ref type="table" target="#tab_2">6</ref>). The daily price fluctuation of the next day (decision features) is produced by Eq. ( <ref type="formula">16</ref>) (shown in the last column of Table <ref type="table" target="#tab_2">6</ref>).</p><p>Step 2: Data discretization by CPDA and MEPA. This step utilizes CPDA to discretize decision features and uses MEPA to discretize condition features. There are two substeps, as follows:</p><p>Use CPDA to discretize decision features This substep uses CPDA to define the numeric intervals for three linguistic values, Down ðL 1 Þ, Flat ðL 2 Þ, and Up ðL 3 Þ, used for decision features (daily price fluctuation). Table <ref type="table" target="#tab_3">7</ref> lists the numeric intervals for the linguistic values. Based on these intervals, the membership function for the three linguistic values is established and shown in Fig. <ref type="figure" target="#fig_8">8</ref>. According to the membership functions shown in Fig. <ref type="figure" target="#fig_8">8</ref>, three membership functions and three membership degrees are produced for each datum (daily price fluctuation on the next day). In the fuzzification procedure, each datum is labeled as a linguistic value among three linguistic values, based on the maximum membership degree. Table <ref type="table" target="#tab_4">8</ref> demonstrates the daily price fluctuation, the corresponding membership degrees for the three membership functions (l Down ; l Flat and l Up Þ, and the labeled linguistic values for the partial TSMC stock data.</p><p>Use MEPA to discretize condition features In this substep, the interval length of the 15 linguistic values for each condition feature is defined by MEPA (see Table <ref type="table" target="#tab_5">9</ref>), and thus, establishing the membership function of MEPA (see Fig. <ref type="figure" target="#fig_9">9</ref>). In Table <ref type="table">10</ref>, the degree of membership for each datum is calculated by the membership function of MEPA, and the last column is the linguistic value of the datum, which is fuzzified, based on the maximum membership of the datum.</p><p>From the results of two data discretization methods, CPDA and MEPA, the linguistic condition features and the decision feature are demonstrated in Table <ref type="table" target="#tab_6">11</ref>.</p><p>Step 3: Rule generation by RST. This step utilizes RST to construct decision rules from linguistic values in the above step (see Table <ref type="table" target="#tab_6">11</ref>). Table <ref type="table" target="#tab_7">12</ref> shows the partial rules and the rule support value. ''Support" refers to how many records meet the generated decision rules in the stock dataset. For example, ''Rule 1: If AR-5 = L6 and PSY-5 = L9 and RSI-5 = L2 and Volume = L3 and K-5 = L7, then DPF next day = Up (support = 3)" indicates that there are three training records that meet the criteria of ''Rule 1."  Step 4: Accuracy and stock return improvement by GAs. This step uses genetic algorithms (GAs) to improve the accuracy and stock return of rules that are produced by RST. There are two substeps in this step, as follows:</p><p>Step 4.1: Generate initial chromosomes. This substep encodes each rule that is produced by RST in Step 3 as a chromosome in an initial population and evaluates each chromosome in each population using Eq. <ref type="bibr" target="#b16">(17)</ref>. For example, this substep encodes Rule 1 in Table <ref type="table" target="#tab_7">12</ref> into a chromosome, as shown in Table <ref type="table">13</ref>.</p><p>In Table <ref type="table">13</ref>, the coded value of RSI-5 is ''2," which represents that the linguistic value of RSI-5 is L2. In the same way, the coded values of K-5, PSY-5, AR-5 and Volume are 7, 9, 6 and 3, which show that the linguistic values are L7, L9, L6 and L3, respectively. The coded values for MA-5, D-5 and R-5 are ''0," which denote that the rule does not contain the three condition features. Further, the forecasting stock price, DPF next d ay , means ''Up" because the coded value is ''3" (1 for Down, 2 for Fair, 3 for Up). In addition, the proposed model calculates a fitness value to evaluate each chromosome by Eq. <ref type="bibr" target="#b16">(17)</ref>.</p><p>Step 4.2: Perform genetic operations. This substep refines the initial rules produced by using genetic operators, such as selection, crossover and mutation. Table <ref type="table" target="#tab_0">14</ref> shows the partial rules refined by GAs and the rule support.</p><p>In this paper, the proposed model employs a rule-filter, which selects useful rules for which rule support is greater than 1, and which deletes rules with low rule support (rule support = 1). Moreover, genetic algorithms and the proposed model utilize the same rule-filter condition (i.e., rule support is more than 1), the parameter settings of which are shown in Table <ref type="table" target="#tab_0">4</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 10</head><p>The partial MEPA membership degrees of MA-5 feature for TSMC.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Date</head><p>Technical indicator value (MA-5)</p><p>Membership degree for linguistic value Labeled linguistic value Step 5: Return calculation. This step calculates the stock return by using the rules produced from step 4 in forecasting stock prices. The stock return is compared with the listed model in the next step.</p><formula xml:id="formula_16">l L1 l L2 l L3 l L4 l L5 l L6 l L7 l L8 l L9 l L10 l L11 l L12 l L13 l L14 l L15</formula><p>Step 6: Evaluation and comparison.</p><p>To evaluate the proposed model, the accuracy and stock return of the proposed model are compared with those of the three listed methods: RST, GAs and the ''Buy-and-Hold" approach (see Table <ref type="table" target="#tab_8">15</ref>). The accuracy and stock return for the comparison models and the proposed model are listed in <ref type="bibr">Table 16</ref>, from which we can see that the proposed model outperforms the listed models. The partial rules generated by rough set theory.</p><p>No. Table <ref type="table">13</ref> The structure of the chromosomes. Note: The values of each condition features: 1 represent that the linguistic value is L1, and so on. The values of DPF next day : 1 is Down, 2 isFlat, 3 is Up.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Rules</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 14</head><p>The partial rules refined by genetic algorithms.</p><p>No. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Rules</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Model verification</head><p>To verify the proposed model, this section provides two types of performance evaluations: (I) Forecasting accuracy evaluation: produce the accuracy of the proposed model based on Eq. ( <ref type="formula" target="#formula_15">20</ref>) and provide two other comparison models, which use only one data-mining method, RST or GA, to produce forecasts under the same preprocess conditions as those of the proposed model; and (II) Stock return evaluation: produce the stock return based on Eqs. ( <ref type="formula" target="#formula_13">18</ref>) and ( <ref type="formula" target="#formula_14">19</ref>), and provide three other comparison models: Buy-and-Hold (defined in Eq. ( <ref type="formula">21</ref>), RST and GAs.</p><p>In this experiment, a six-year period of the TAIEX (Taiwan Stock Exchange Capitalization Weighted Stock Index) stock index, from 2000/01/04 to 2005/12/30, was selected as an experimental database, and was divided into 6 datasets by year. The previous 10-month period of the stock index, from January to October, was used for training, and the rest, from November to December, was used for testing.</p><p>The accuracy for the three models (RST, GAs and the proposed model) is listed as Table <ref type="table" target="#tab_3">17</ref>, and the comparisons show that the proposed model outperforms the other two listed models. Further, from the stock return comparisons shown in Table <ref type="table" target="#tab_10">18</ref>, Note: Some literatures accept the accuracy rate which less than or close to 0.5 in forecasting price fluctuation of stocks <ref type="bibr" target="#b7">[8,</ref><ref type="bibr" target="#b29">30]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 17</head><p>The accuracy comparisons for three models (TAIEX).   Notes: MA-5 denotes that the value of the indicator is calculated using five periods of fundamental stock quantities (maximum price, minimum price, opening price, closing price, and stock trading volume) from present day to previous 4 day; and the values of other indicators (MTM-5, %K-5, %D-5, RSI-5, PSY-5, %R-5, VR-5 and AR-5) are produced in the same way. ** Denotes that correlation is significant at the 0.05 level using 2-tailed test. *** Denotes that correlation is significant at the 0.01 level.</p><p>it is clear that the proposed model surpasses the other three models (Buy-and-Hold, RST and GAs) in each testing period, except 2005. These stock return evaluations demonstrate the outstanding performance of the proposed model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Findings and conclusions</head><p>This paper has proposed a new hybrid model, based on four novel methods (CDPA, MEPA, RST and GA), to promote stock market forecasting performance. From the performance evaluation data in the above section, we can conclude that the main objective of this paper has been reached. Furthermore, by examining the performance data carefully, we also ascertain that four important findings for the proposed model emerge, as follows:</p><p>(1) The proposed model produces a positive stock return, whether the market is bullish or bearish.</p><p>Based on the stock return for the Buy-and-Hold approach (see Table <ref type="table" target="#tab_10">18</ref>), it has been shown that, from 2000 to 2005, there were three bear markets <ref type="bibr">(2000, 2002, and 2003)</ref> and three bull markets <ref type="bibr">(2001, 2004, and 2005)</ref>. From the stock return evaluations shown in Table <ref type="table" target="#tab_10">18</ref>, it is clear that the proposed model produces a positive stock return for each dataset. This evidence points to the exceptional ability of the proposed model to mine correct price patterns in the stock market.</p><p>(2) The proposed model performs outstandingly when the stock market is in a nearly complete bull market (upside trend)</p><p>or bear market (downside trend). Figs. <ref type="bibr" target="#b9">10</ref>  making a good stock return when the stock market was in a pure upward trend in 2001, the proposed model still surpasses this approach. These performance evaluations prove that the proposed model can extract tinier fluctuations in the stock price than the other three models when the stock market is in an almost pure bull market or bear market. (3) The three listed data-mining models (RST, GAs and the proposed model) perform their worst when there are many violent fluctuations occurring in the stock market. Fig. <ref type="figure" target="#fig_5">12</ref> shows that the TAIEX fluctuated violently in 2005. The performance evaluations (see Tables <ref type="table" target="#tab_3">17</ref> and<ref type="table" target="#tab_10">18</ref>) show that the worst case of the proposed model occurred for 2005. This can be explained by the fact that there were many conflicting rules extracted from the unstable market, which contained many violent fluctuations, and therefore, the performance value of the proposed model was dramatically reduced. Additionally, this phenomenon also occurred in RST and GA. (4) Integrating RST and GA together in forecasting processes can produce a positive effect, enhancing model performance.</p><p>In the overall performance evaluation of accuracy (see Table <ref type="table" target="#tab_3">17</ref>), RST (0.553) proves marginally better than GAs (0.547), which means that RST can produce more effective rules than GAs. However, in the overall performance evaluation of stock return (see Table <ref type="table" target="#tab_10">18</ref>), GAs (722.56) are much better than RST (531.93), which tells that GAs can deal with the price variations in the stock market better than RST. From Tables <ref type="table" target="#tab_3">17</ref> and<ref type="table" target="#tab_10">18</ref>, we can see that the proposed hybrid model (0.601, 950.62) performs much better than RST (0.553, 531.93) and GA (0.547, 722.56) in accuracy and stock return. The evidence demonstrates that the proposed hybrid model can acquire the advantages from the two data-mining methods (RST and GA) and therefore, produce superlative results in forecasting the stock market. Besides these findings, by implementing this experiment, two advantages were discovered for the proposed model: (1) the proposed model can produce more reasonable and understandable rules, because the ''if-then" rules produced by RST can model the qualitative aspects of human knowledge; and (2) the proposed model can provide stock investors with objective suggestions (forecasts) to make investment decisions in the stock market, because the proposed model produces forecasting rules based on objective stock data rather than subjective human judgments.</p><p>For future research, two approaches to refine the proposed model, in order to improve forecasting performance, are suggested: (1) employ other data discretization methods in the preprocessing phase; and (2) use other artificial intelligence algorithms in the forecasting process.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Basic notions of rough sets.</figDesc><graphic coords="4,167.24,554.29,202.77,118.83" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .Fig. 3 .</head><label>23</label><figDesc>Fig. 2. The crossover operation for the proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>3. 2 . 1 . 2 .Fig. 4 .</head><label>2124</label><figDesc>Fig.4. The framework of proposed model.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Rule generation by RST.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>If</head><label></label><figDesc>RSI ¼ L8 and Volume; then DPF next day ¼ Up</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Algorithm 1 .</head><label>1</label><figDesc>Return calculationThe initial forecasting price fluctuation (t+1) is set as ''Flat" Do search each rule contained in the refined rule base If the linguistic values oftheactual essential technical indicators in the testing dataset at time t are equal to the conditional parts of the rule, then the linguistic value of the forecasting price fluctuation (t+1) is equal tothe decision part of the rule While not end of the refined rule base There are three trading strategies provided in this step.(1) ''Buy on open and sell on close," when the selected rule tells that the forecasting price fluctuation (t + 1) is Up; (2) ''sell on open and buy on close," when the forecasting price is Down; and (3) ''no transaction," when the forecasting price fluctuation is Flat.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. The stock price of TSMC from 1999/06/23 to 2000/05/11.</figDesc><graphic coords="11,168.72,578.21,210.57,94.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. Membership function of decision feature.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Fig. 9 .</head><label>9</label><figDesc>Fig. 9. Membership functions for 15 linguistic values using the attribute of MA-5.</figDesc><graphic coords="14,76.54,54.71,383.94,229.78" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head></head><label></label><figDesc>LV donates linguistic value.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Rule support 1 I f AR- 5 = 5 =</head><label>155</label><figDesc>L6 and PSY-5 = L9 and RSI-5 = L2 and Volume = L3 and K-5 = L7 then DPFnext d ay ¼ Up 3 2 I f R-5 = L1 and AR-5 = L7 and RSI-5 = L13 and K-5 = L13 then DPFnext d ay ¼ Up 3 3 I f AR-5 = L6 and PSY-5 = L11 and MA-5 = L2 then DPFnext d ay ¼ Up 3 4 I f R-5 = L15 and RSI-5 = L1 and K-5 = L2 and MA-5 = L11 then DPFnext d ay ¼ Up 3 L9 and AR-5 = L6 and Volume = L2 and MA-5 = L5 and RSI-5 = L8 then DPF next day ¼ Down 1 61 If AR-5 = L7 and PSY-5 = L11 and MA-5 = L4 and RSI-5 = L10 then DPF next day ¼ Down 1 62 If MA-5 = L12 and Volume = L1 and RSI-5 = L11 then DPF next day ¼ Down 1 63 If RSI-5 = L1 and D-5 = L5 and MA-5 = L12 and K-5 = L6 then DPF next day ¼ Down 1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Rule Support 1 I f MA- 5 = 3 I f K- 5 = 4 I f D- 5 = 5 =</head><label>1535455</label><figDesc>L8 and K-5 = L1 and R-5 = L15 then DPF next day ¼ Down 26 2 I f MA-5 = L8 and K-5 = L1 and D-5 = L7 then DPF next day ¼ Down 22 L1 and PSY-5 = L9 and AR-5 = L15 then DPF next day ¼ Up 20 L9 and R-5 = L1 and Volume = L2 then DPFnext d ay ¼ Up 19 L15 and D-5 = L15 and AR-5 = L15 then DPF next day ¼ Flat 1 282 If D-5 = L8 and R-5 = L1 and PSY-5 = L8 then DPF next day ¼ Down 1 283 If D-5 = L4 and R-5 = L15 and Volume = L2 then DPF next day ¼ Down 1 284 If RSI-5 = L8 and R-5 = L1 and PSY-5 = L9 and Volume = L2 then DPF next day ¼ Up 1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 4</head><label>4</label><figDesc>Parameter settings of GA.</figDesc><table><row><cell>Population size</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 5</head><label>5</label><figDesc>The partial five fundamental quantities of TSMC.</figDesc><table><row><cell>Date</cell><cell>Opening price</cell><cell>Highest price</cell><cell>Lowest price</cell><cell>Closing price</cell><cell>Volume</cell></row><row><cell>1999/06/23</cell><cell>126.5</cell><cell>127</cell><cell>124</cell><cell>125</cell><cell>44,713</cell></row><row><cell>1999/06/24</cell><cell>124</cell><cell>130</cell><cell>123</cell><cell>129</cell><cell>69,778</cell></row><row><cell>1999/06/25</cell><cell>121</cell><cell>127.5</cell><cell>121</cell><cell>122.5</cell><cell>57,865</cell></row><row><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell></row><row><cell>2000/05/10</cell><cell>194</cell><cell>194</cell><cell>188</cell><cell>188</cell><cell>16,876</cell></row><row><cell>2000/05/11</cell><cell>182</cell><cell>184</cell><cell>177</cell><cell>179</cell><cell>29,310</cell></row><row><cell>2000/05/12</cell><cell>182</cell><cell>185</cell><cell>179</cell><cell>185</cell><cell>38,309</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 6</head><label>6</label><figDesc>The partial instances of forecasting technical indicators data.</figDesc><table><row><cell>Date</cell><cell>MA-5</cell><cell>RSI-5</cell><cell>K-5</cell><cell>D-5</cell><cell>R-5</cell><cell>PSY-5</cell><cell>AR-5</cell><cell>Volume</cell><cell>DPFnext day</cell></row><row><cell>1999/06/23</cell><cell>126</cell><cell>72.22</cell><cell>16.67</cell><cell>5.56</cell><cell>50.00</cell><cell>60</cell><cell>0.89</cell><cell>44,713</cell><cell>5</cell></row><row><cell>1999/06/24</cell><cell>127.6</cell><cell>72.22</cell><cell>44.44</cell><cell>18.52</cell><cell>0.00</cell><cell>60</cell><cell>1.13</cell><cell>69,778</cell><cell>1.5</cell></row><row><cell>1999/06/25</cell><cell>126.3</cell><cell>30.30</cell><cell>29.63</cell><cell>22.22</cell><cell>100.00</cell><cell>40</cell><cell>1.45</cell><cell>57,865</cell><cell>0</cell></row><row><cell>1999/06/28</cell><cell>125.4</cell><cell>34.48</cell><cell>19.75</cell><cell>21.40</cell><cell>100.00</cell><cell>40</cell><cell>2.69</cell><cell>29,340</cell><cell>1</cell></row><row><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell></row><row><cell>2000/05/08</cell><cell>190</cell><cell>50.00</cell><cell>63.97</cell><cell>54.75</cell><cell>0.00</cell><cell>40</cell><cell>2.22</cell><cell>14,605</cell><cell>0</cell></row><row><cell>2000/05/09</cell><cell>191</cell><cell>72.73</cell><cell>75.98</cell><cell>61.83</cell><cell>0.00</cell><cell>40</cell><cell>2.11</cell><cell>13,523</cell><cell>À6</cell></row><row><cell>2000/05/10</cell><cell>191.2</cell><cell>53.33</cell><cell>50.65</cell><cell>58.10</cell><cell>100.00</cell><cell>40</cell><cell>1.25</cell><cell>16,876</cell><cell>À3</cell></row><row><cell>2000/05/11</cell><cell>188.6</cell><cell>15.79</cell><cell>33.77</cell><cell>49.99</cell><cell>100.00</cell><cell>20</cell><cell>0.50</cell><cell>29,310</cell><cell>3</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 7</head><label>7</label><figDesc>The lower/upper boundary cumulative probability and linguistic intervals.</figDesc><table><row><cell>Linguistic value</cell><cell cols="2">Cumulative probability</cell><cell>Universe of discourse U</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>P LB</cell><cell>P UB</cell><cell>Lower boundary</cell><cell>Midpoint</cell><cell>Upper boundary</cell><cell>Length of interval</cell></row><row><cell>Down (L1)</cell><cell>0</cell><cell>0.333</cell><cell>À14.46</cell><cell>À7.9</cell><cell>À1.35</cell><cell>13.11</cell></row><row><cell>Flat (L2)</cell><cell>0.167</cell><cell>0.667</cell><cell>À3.2</cell><cell>À0.79</cell><cell>1.63</cell><cell>4.83</cell></row><row><cell>Up (L3)</cell><cell>0.5</cell><cell>1</cell><cell>0.14</cell><cell>10.3</cell><cell>20.46</cell><cell>20.32</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 8</head><label>8</label><figDesc>The membership degree of decision feature based on CPDA.</figDesc><table><row><cell>Date</cell><cell>Daily price fluctuation</cell><cell cols="2">Membership degree for linguistic value</cell><cell></cell><cell>Labeled linguistic value</cell></row><row><cell></cell><cell>ðDPF next day Þ</cell><cell>l Down</cell><cell>l Flat</cell><cell>l Up</cell><cell></cell></row><row><cell>1999/06/23</cell><cell>5</cell><cell>0</cell><cell>0</cell><cell>0.48</cell><cell>Up</cell></row><row><cell>1999/06/24</cell><cell>1.5</cell><cell>0</cell><cell>0.05</cell><cell>0.13</cell><cell>Up</cell></row><row><cell>1999/06/25</cell><cell>0</cell><cell>0</cell><cell>0.67</cell><cell>0</cell><cell>Flat</cell></row><row><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell></row><row><cell>2000/05/08</cell><cell>0</cell><cell>0</cell><cell>0.67</cell><cell>0</cell><cell>Flat</cell></row><row><cell>2000/05/09</cell><cell>À6</cell><cell>0.71</cell><cell>0</cell><cell>0</cell><cell>Down</cell></row><row><cell>2000/05/10</cell><cell>À3</cell><cell>0.25</cell><cell>0.08</cell><cell>0</cell><cell>Down</cell></row><row><cell>2000/05/11</cell><cell>3</cell><cell>0</cell><cell>0</cell><cell>0.28</cell><cell>Up</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 9</head><label>9</label><figDesc>Linguistic intervals for 15 linguistic values produced by MEPA (MA-5).Notes: L1 is very very very very very low, L2 is very very very very low, L3 is very very very low, L4 is very very low, L5 is very low, L6 is low, L7 is more or less low, L8 is medium, L9 is more or less high, L10 is high, L11 is very high, L12 is very very high, L13 is very very very high, L14 is very very very very high, L15 is very very very very very high.</figDesc><table><row><cell>Linguistic value</cell><cell>Universe of discourse</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Lower boundary</cell><cell>Midpoint</cell><cell>Upper boundary</cell><cell>Length of interval</cell></row><row><cell>L1</cell><cell>104</cell><cell>123.1</cell><cell>125.7</cell><cell>21.7</cell></row><row><cell>L2</cell><cell>123.1</cell><cell>125.7</cell><cell>130.4</cell><cell>7.3</cell></row><row><cell>L3</cell><cell>125.7</cell><cell>130.4</cell><cell>136.05</cell><cell>10.35</cell></row><row><cell>L4</cell><cell>130.4</cell><cell>136.05</cell><cell>141.85</cell><cell>11.45</cell></row><row><cell>L5</cell><cell>136.05</cell><cell>141.85</cell><cell>155.3</cell><cell>19.25</cell></row><row><cell>L6</cell><cell>141.85</cell><cell>155.3</cell><cell>155.9</cell><cell>14.05</cell></row><row><cell>L7</cell><cell>155.3</cell><cell>155.9</cell><cell>157.4</cell><cell>2.1</cell></row><row><cell>L8</cell><cell>155.9</cell><cell>157.4</cell><cell>177.8</cell><cell>21.9</cell></row><row><cell>L9</cell><cell>157.4</cell><cell>177.8</cell><cell>184.7</cell><cell>27.3</cell></row><row><cell>L10</cell><cell>177.8</cell><cell>184.7</cell><cell>190.2</cell><cell>12.4</cell></row><row><cell>L11</cell><cell>184.7</cell><cell>190.2</cell><cell>208.6</cell><cell>23.9</cell></row><row><cell>L12</cell><cell>190.2</cell><cell>208.6</cell><cell>210.1</cell><cell>19.9</cell></row><row><cell>L13</cell><cell>208.6</cell><cell>210.1</cell><cell>211.2</cell><cell>2.6</cell></row><row><cell>L14</cell><cell>210.1</cell><cell>211.2</cell><cell>213.3</cell><cell>3.2</cell></row><row><cell>L15</cell><cell>211.2</cell><cell>213.3</cell><cell>215</cell><cell>3.8</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 11</head><label>11</label><figDesc>The partial linguistic value of TSMC.</figDesc><table><row><cell>Date</cell><cell>MA-5</cell><cell>RSI-5</cell><cell>K-5</cell><cell>D-5</cell><cell>R-5</cell><cell>PSY-5</cell><cell>AR-5</cell><cell>Volume</cell><cell>DPFnext d ay</cell></row><row><cell>1999/06/23</cell><cell>L2</cell><cell>L10</cell><cell>L3</cell><cell>L1</cell><cell>L9</cell><cell>L11</cell><cell>L6</cell><cell>L14</cell><cell>Up</cell></row><row><cell>1999/06/24</cell><cell>L2</cell><cell>L10</cell><cell>L7</cell><cell>L4</cell><cell>L1</cell><cell>L11</cell><cell>L6</cell><cell>L15</cell><cell>Up</cell></row><row><cell>1999/06/25</cell><cell>L2</cell><cell>L1</cell><cell>L7</cell><cell>L4</cell><cell>L15</cell><cell>L9</cell><cell>L7</cell><cell>L15</cell><cell>Flat</cell></row><row><cell>1999/06/28</cell><cell>L2</cell><cell>L2</cell><cell>L3</cell><cell>L4</cell><cell>L15</cell><cell>L9</cell><cell>L8</cell><cell>L6</cell><cell>Flat</cell></row><row><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell><cell>. . .</cell></row><row><cell>2000/05/08</cell><cell>L11</cell><cell>L2</cell><cell>L8</cell><cell>L6</cell><cell>L1</cell><cell>L9</cell><cell>L7</cell><cell>L2</cell><cell>Flat</cell></row><row><cell>2000/05/09</cell><cell>L11</cell><cell>L11</cell><cell>L12</cell><cell>L6</cell><cell>L1</cell><cell>L9</cell><cell>L7</cell><cell>L2</cell><cell>Down</cell></row><row><cell>2000/05/10</cell><cell>L11</cell><cell>L2</cell><cell>L8</cell><cell>L6</cell><cell>L15</cell><cell>L9</cell><cell>L7</cell><cell>L2</cell><cell>Down</cell></row><row><cell>2000/05/11</cell><cell>L11</cell><cell>L1</cell><cell>L7</cell><cell>L6</cell><cell>L15</cell><cell>L8</cell><cell>L4</cell><cell>L6</cell><cell>Up</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Table 12</head><label>12</label><figDesc></figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 15</head><label>15</label><figDesc>The stock returns of ''Buy-and-Hold" in testing period. Unit means the quantity of share.</figDesc><table><row><cell>Data period</cell><cell></cell><cell>Opening price</cell><cell></cell><cell cols="2">Closing price</cell><cell cols="2">Buy-and-Hold return (unit)</cell></row><row><cell>2000/03/22-2000/05/11</cell><cell></cell><cell>194</cell><cell></cell><cell>179</cell><cell></cell><cell>À15</cell><cell></cell></row><row><cell>Note: Table 16</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="3">The forecasting performance comparison for TSMC.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Data period</cell><cell>Accuracy</cell><cell></cell><cell></cell><cell cols="2">Stock return (unit)</cell><cell></cell><cell></cell></row><row><cell></cell><cell cols="4">Rough set Genetic algorithms Proposed model Buy-and-</cell><cell cols="3">Rough set Genetic algorithms Proposed model</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Hold</cell><cell></cell><cell></cell><cell></cell></row><row><cell>2000/03/22-2000/05/</cell><cell>0.545</cell><cell>0.42</cell><cell>0.55</cell><cell>À15</cell><cell>15</cell><cell>10</cell><cell>16</cell></row><row><cell>11</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_10"><head>Table 18</head><label>18</label><figDesc>The stock returns comparisons for four models (TAIEX, unit).</figDesc><table><row><cell>Year</cell><cell>Model</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>Buy-and-Hold</cell><cell>Rough set theory</cell><cell>Genetic algorithms</cell><cell>Proposed model</cell><cell>Profit order</cell></row><row><cell>2000</cell><cell>À813.21</cell><cell>1590.68</cell><cell>1817.29</cell><cell>a 2271.03</cell><cell>1</cell></row><row><cell>2001</cell><cell>1612.16</cell><cell>923.9</cell><cell>1272.05</cell><cell>1683.51 a</cell><cell>2</cell></row><row><cell>2002</cell><cell>À144.24</cell><cell>304.28</cell><cell>353.56</cell><cell>421.82 a</cell><cell>4</cell></row><row><cell>2003</cell><cell>À163.62</cell><cell>70.78</cell><cell>247</cell><cell>336.25 a</cell><cell>5</cell></row><row><cell>2004</cell><cell>414.04</cell><cell>196.06</cell><cell>481.65</cell><cell>780.26 a</cell><cell>3</cell></row><row><cell>2005</cell><cell>745.09 a</cell><cell>105.85</cell><cell>163.8</cell><cell>210.83</cell><cell>6</cell></row><row><cell>Average</cell><cell>275.04</cell><cell>531.93</cell><cell>722.56</cell><cell>950.62 a</cell><cell></cell></row></table><note><p><p>Note: Unit means the quantity of one share.</p>a Maximum return among four models.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_11"><head>Table 19</head><label>19</label><figDesc>Correlations of technical indicators for TAIEX.</figDesc><table><row><cell></cell><cell></cell><cell>MA-5</cell><cell>MTM-5</cell><cell>%K-5</cell><cell>%D-5</cell><cell>RSI-5</cell><cell>PSY-5</cell><cell>%R-5</cell><cell>VR-5</cell><cell>Volume</cell><cell>AR-5</cell><cell>Price fluctuation</cell></row><row><cell>MA-5</cell><cell>Pearson correlation</cell><cell>1</cell><cell>.741 ***</cell><cell>.753 ***</cell><cell>.472 ***</cell><cell>.797 ***</cell><cell>.818 ***</cell><cell>À.835 ***</cell><cell>.676 ***</cell><cell>1.000 ***</cell><cell>.251 ***</cell><cell>.169( *** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.009</cell></row><row><cell>MTM-5</cell><cell>Pearson correlation</cell><cell>.741 ***</cell><cell>1</cell><cell>.903 ***</cell><cell>.714 ***</cell><cell>.880 ***</cell><cell>.889 ***</cell><cell>À.713 ***</cell><cell>.861 ***</cell><cell>.741 ***</cell><cell>.299 ***</cell><cell>.112</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.088</cell></row><row><cell>%K-5</cell><cell>Pearson correlation</cell><cell>.753 ***</cell><cell>.903 ***</cell><cell>1</cell><cell>.860 ***</cell><cell>.835 ***</cell><cell>.836 ***</cell><cell>À.781 ***</cell><cell>.768 ***</cell><cell>.753 ***</cell><cell>.223 ***</cell><cell>.133( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.001</cell><cell>.042</cell></row><row><cell>%D-5</cell><cell>Pearson correlation</cell><cell>.472 ***</cell><cell>.714 ***</cell><cell>.860 ***</cell><cell>1</cell><cell>.713 ***</cell><cell>.705 ***</cell><cell>À.424 ***</cell><cell>.585 ***</cell><cell>.472 ***</cell><cell>.074</cell><cell>.134( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.260</cell><cell>.041</cell></row><row><cell>RSI-5</cell><cell>Pearson correlation</cell><cell>.797 ***</cell><cell>.880 ***</cell><cell>.835 ***</cell><cell>.713 ***</cell><cell>1</cell><cell>.973 ***</cell><cell>À.619 ***</cell><cell>.791 ***</cell><cell>.797 ***</cell><cell>.232 ***</cell><cell>.152( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.020</cell></row><row><cell>PSY-5</cell><cell>Pearson correlation</cell><cell>.818 ***</cell><cell>.889 ***</cell><cell>.836 ***</cell><cell>.705 ***</cell><cell>.973 ***</cell><cell>1</cell><cell>À.627 ***</cell><cell>.796 ***</cell><cell>.818 ***</cell><cell>.269 ***</cell><cell>.128( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.047</cell></row><row><cell>%R-5</cell><cell>Pearson correlation</cell><cell>À.835 ***</cell><cell>À.713 ***</cell><cell>À.781 ***</cell><cell>À.424 ***</cell><cell>À.619 ***</cell><cell>À.627 ***</cell><cell>1</cell><cell>À.594 ***</cell><cell>À.835 ***</cell><cell>À.232 ***</cell><cell>À.126( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.049</cell></row><row><cell>VR-5</cell><cell>Pearson correlation</cell><cell>.676 ***</cell><cell>.861 ***</cell><cell>.768 ***</cell><cell>.585 ***</cell><cell>.791 ***</cell><cell>.796 ***</cell><cell>À.594 ***</cell><cell>1</cell><cell>.676 ***</cell><cell>.367 ***</cell><cell>.109</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.000</cell><cell>.097</cell></row><row><cell>Volume</cell><cell>Pearson correlation</cell><cell>1.000 ***</cell><cell>.741 ***</cell><cell>.753 ***</cell><cell>.472 ***</cell><cell>.797 ***</cell><cell>.818 ***</cell><cell>À.835 ***</cell><cell>.676 ***</cell><cell>1</cell><cell>.251 ***</cell><cell>.169 ***</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.000</cell><cell>.009</cell></row><row><cell>AR-5</cell><cell>Pearson correlation</cell><cell>.251 ***</cell><cell>.299 ***</cell><cell>.223 ***</cell><cell>.074</cell><cell>.232 ***</cell><cell>.269 ***</cell><cell>À.232 ***</cell><cell>.367 ***</cell><cell>.251 ***</cell><cell>1</cell><cell>.137( ** )</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.000</cell><cell>.000</cell><cell>.001</cell><cell>.260</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell>.000</cell><cell></cell><cell>.035</cell></row><row><cell>Price fluctuation</cell><cell>Pearson correlation</cell><cell>.169 ***</cell><cell>.112</cell><cell>.133( ** )</cell><cell>.134( ** )</cell><cell>.152( ** )</cell><cell>.128( ** )</cell><cell>À.126( ** )</cell><cell>.109</cell><cell>.169 ***</cell><cell>.137( ** )</cell><cell>1</cell></row><row><cell></cell><cell>Sig. (2-tailed)</cell><cell>.009</cell><cell>.088</cell><cell>.042</cell><cell>.041</cell><cell>.020</cell><cell>.047</cell><cell>.049</cell><cell>.097</cell><cell>.009</cell><cell>.035</cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_12"><head></head><label></label><figDesc>and 11  show that the price trends of the TAIEX were mostly downward in 2000 and upward in 2001. From Table18, it can be observed that the stock return of the proposed model in 2000 is the best (2271.03) among the six datasets and much better than the other three models (À813.21 for Buy-and-Hold, 1590.68 for RST, and 1817.29 for GA). In 2001, the stock return of the proposed model is in second place (1683.51), better than the other three models (1612.16 for Buy-and-Hold, 923.9 for RST, and 1272.05 for GA). Despite the ''Buy-and-Hold" approach The actual stock index for the TAIEX in 2000.</figDesc><table><row><cell>12.000 Stock index</cell><cell cols="2">TAIEX_2000</cell><cell></cell><cell></cell></row><row><cell>10.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>8.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>6.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>4.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>2.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>2000/01/04</cell><cell>2000/04/13</cell><cell>2000/07/14</cell><cell>2000/10/13</cell><cell>Date</cell></row><row><cell cols="3">8.000 Stock index Fig. 10. TAIEX_2001</cell><cell></cell><cell></cell></row><row><cell>6.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>4.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>2.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>0</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>2001/01/02</cell><cell>2001/04/20</cell><cell>2001/08/01</cell><cell cols="2">2001/11/14 Date</cell></row><row><cell cols="4">Fig. 11. The actual stock index for the TAIEX in 2001.</cell><cell></cell></row><row><cell>7.000 Stock index</cell><cell cols="2">TAIEX_2005</cell><cell></cell><cell></cell></row><row><cell>6.500</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>6.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>5.500</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>5.000</cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>2005/01/03</cell><cell>2005/04/21</cell><cell>2005/08/01</cell><cell cols="2">2005/11/10 Date</cell></row></table><note><p>Fig. 12. The actual stock index for the TAIEX in 2005.</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>C.-H. Cheng et al. / Information Sciences 180 (2010) 1610-1629</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">An algorithm for computing the inverse normal cumulative distribution function</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Acklam</surname></persName>
+		</author>
+		<ptr target="http://home.online.no/~pjacklam/notes/invnorm/" />
+		<imprint>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Using genetic algorithms to find technical trading rules</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Karalainen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Financial Economics</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="245" to="271" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Should normal distribution be normal? The Student&apos;s T alternative</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Anna</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer Information Systems and Industrial Management Applications</title>
+		<imprint>
+			<biblScope unit="page" from="3" to="8" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Azo</surname></persName>
+		</author>
+		<title level="m">Neural Network Time Series Forecasting of Financial Markets</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A mathematical analysis of tournament selection</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Blickle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Thiele</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 6th International Conference on Genetic Algorithms</title>
+		<editor>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Eshelman</surname></persName>
+		</editor>
+		<meeting>the 6th International Conference on Genetic Algorithms</meeting>
+		<imprint>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page" from="506" to="511" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Generalized autoregressive conditional heteroscedasticity</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bollerslev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Econometrics</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="307" to="327" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><surname>Box</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jenkins</surname></persName>
+		</author>
+		<title level="m">Time Series Analysis: Forecasting and Control</title>
+		<meeting><address><addrLine>San Francisco</addrLine></address></meeting>
+		<imprint>
+			<publisher>Holden-Day</publisher>
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Using extended classifier system to forecast S&amp;P futures based on contrary sentiment indicators</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">H</forename><surname>Chang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Evolutionary Computation</title>
+		<imprint>
+			<biblScope unit="page" from="2084" to="2090" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Applying extending classifier system to develop an option-operation suggestion model of intraday trading -An example of Taiwan index option</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Tseng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Lecture Notes in AI</title>
+		<imprint>
+			<biblScope unit="page" from="27" to="33" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Extracting classification rule of software diagnosis using modified MEPA</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="411" to="418" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Entropy-based and trapezoid fuzzification-based fuzzy time series approaches for forecasting IT project cost</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Yeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Technological Forecasting &amp; Social Change</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="524" to="542" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Extracting classification rule of software diagnosis using modified MEPA</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="411" to="418" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The study on the relationship among technical indicators and the development of stock index prediction system</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">T</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fuzzy Information Processing Society</title>
+		<imprint>
+			<biblScope unit="page" from="291" to="296" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Entropy minimax sourcebook</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Christensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fundamentals of Inductive Reasoning</title>
+		<meeting><address><addrLine>Lincoln, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Entropy Ltd</publisher>
+			<date type="published" when="1980">1980</date>
+			<biblScope unit="volume">1</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">A hybrid financial trading system incorporating chaos theory, statistical and artificial intelligence/soft computing methods</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Clarence</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Tan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Queensland Finance Conference</title>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+		<respStmt>
+			<orgName>School of Information Technology, Bond University</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Business failure prediction using rough sets</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Dimitras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Slowinski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Susmaga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zopounidis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="263" to="280" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Autoregressive conditional heteroscedasticity with estimator of the variance of United Kingdom inflation</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Engle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Econometrica</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="987" to="1008" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Biases in the crossover landscape</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Eshelman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Caruana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Schaffer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 11th International Joint Conference on Artificial Intelligence</title>
+		<meeting>the 11th International Joint Conference on Artificial Intelligence<address><addrLine>San Mateo</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1989">1989</date>
+			<biblScope unit="page" from="10" to="19" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><surname>Faerber</surname></persName>
+		</author>
+		<title level="m">All About Stocks: From the Inside Out</title>
+		<meeting><address><addrLine>Chicago</addrLine></address></meeting>
+		<imprint>
+			<publisher>Probus</publisher>
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Economic and financial prediction using rough sets model</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">H</forename><surname>Tay* Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lixiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="641" to="659" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title level="m" type="main">Genetic Algorithms in Search, Optimization and Machine Learning</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Goldberg</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+			<publisher>Addison Wesley</publisher>
+			<pubPlace>Reading, MA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A comparative analysis of selection schemes used in genetic algorithm</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Goldberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Deb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Foundation of Genetic algorithms</title>
+		<editor>
+			<persName><forename type="first">G</forename><surname>Rawlins</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1991">1991</date>
+			<biblScope unit="page" from="69" to="93" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">A new rough set approach to evaluation of bankruptcy risk</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Greco</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Matarazzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Slowinski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Operational Tools in the Management of Financial Risks</title>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Zopounidis</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Dordrecht</addrLine></address></meeting>
+		<imprint>
+			<publisher>Kluwer Academic Publishers</publisher>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="page" from="121" to="136" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Holland</surname></persName>
+		</author>
+		<title level="m">Adaptation in Nature and Artificial Systems</title>
+		<imprint>
+			<publisher>University of Michigan Press</publisher>
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">The application of neural networks to forecast fuzzy time series</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Huarng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">363</biblScope>
+			<biblScope unit="page" from="481" to="491" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">What do we know about the profitability of technical analysis?</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Irwin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Economic Surveys</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="786" to="826" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Genetic algorithms approach to feature discretization in artificial neural networks for prediction of stock index</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert System with Application</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="125" to="132" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">An evolutionary approach to the combination of multiple classifiers to predict a stock price index</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Min</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Han</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="241" to="247" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Stock market prediction system with modular neural network</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Asakawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yoda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Takeoka</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the International Joint Conference on Neural Networks</title>
+		<meeting>the International Joint Conference on Neural Networks<address><addrLine>San Diego, California</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1990">1990</date>
+			<biblScope unit="page" from="1" to="6" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Integration of group decisions and XCS in Intelligent financial decision support system -An example of Taiwan index</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">T</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Evolutionary Computation</title>
+		<imprint>
+			<biblScope unit="page" from="2389" to="2396" />
+			<date type="published" when="2006">2006</date>
+			<publisher>IEEE Congress</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Discretization: An enabling technique</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Hussain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dash</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Data Mining and Knowledge Discovery</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="393" to="423" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">A hybrid expert system for investment advising</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Nikolopoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fellrath</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="245" to="250" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Rough sets</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pawlak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computational Information Science</title>
+		<imprint>
+			<biblScope unit="page" from="341" to="356" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Rough sets and intelligent data analysis</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pawlak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">147</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Rudiments of rough sets</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pawlak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Skowron</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<biblScope unit="page" from="3" to="27" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Rough sets: Some extensions</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pawlak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Skowron</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<biblScope unit="page" from="28" to="40" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Rough sets and Boolean reasoning</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Pawlak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Skowron</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">177</biblScope>
+			<biblScope unit="page" from="41" to="73" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">ROSE -Software implementation of the rough set theory</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Predki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Slowinski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Stefanowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Susmaga</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Sz</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wilk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Rough sets and current trends in computing</title>
+		<title level="s">Lecture Notes in Artificial Intelligence</title>
+		<editor>
+			<persName><forename type="first">L</forename><surname>Polkowski</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Skowron</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Berlin</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer-Verlag</publisher>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="volume">1424</biblScope>
+			<biblScope unit="page" from="605" to="608" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Pring</surname></persName>
+		</author>
+		<title level="m">Technical Analysis</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">K</forename><surname>Reilly</surname></persName>
+		</author>
+		<title level="m">Investment Analysis and Porfolio Management</title>
+		<meeting><address><addrLine>Chicago</addrLine></address></meeting>
+		<imprint>
+			<publisher>Dryden Press</publisher>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Richard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Julie</surname></persName>
+		</author>
+		<title level="m">Technical Market Indicators: Analysis &amp; Performance</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley</publisher>
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Forecasting the volatility of stock price index</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">H</forename><surname>Roh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="916" to="922" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Fuzzy Logic with Engineering Applications</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Ross</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<publisher>McGraw-Hill</publisher>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A new genetic algorithm using large mutation rates and population-elitist selection (GALME)</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shimodaira</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 8th IEEE Conference on Tools with Artificial Intelligence</title>
+		<meeting>8th IEEE Conference on Tools with Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="1996">1996</date>
+			<biblScope unit="page" from="25" to="32" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Uniform crossover in genetic algorithms</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Syswerda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceeding of the 3rd International Conference on Genetic Algorithms</title>
+		<meeting>eeding of the 3rd International Conference on Genetic Algorithms</meeting>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+			<biblScope unit="page" from="2" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Trading equity index futures with a neural network</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Trippi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Sieno</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Portfolio Management</title>
+		<imprint>
+			<biblScope unit="page" from="27" to="33" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Power laws and Gaussians for stock market fluctuations</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tuncay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Stauffer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="page" from="325" to="330" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Mining stock price using fuzzy rough set system</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">F</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="13" to="23" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Forecasting the NYSE composite index with technical analysis, pattern recognizer, neural network, and genetic algorithm: a case study in romantic decision support</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>William</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Russell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>James</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Decision Support Systems</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="361" to="377" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Application of elitist preserved genetic algorithms on fuzzy controller</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Xipin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Min</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Bin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3th World Congress on Intelligent Control and Automation</title>
+		<meeting>the 3th World Congress on Intelligent Control and Automation<address><addrLine>Hefei, PR China</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Template-based fuzzy system modeling</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Yager</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Filev</surname></persName>
+		</author>
+		<ptr target="://140.125.83.36/fuzzy/ga/" />
+	</analytic>
+	<monogr>
+		<title level="j">Intelligent and Fuzzy System</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="39" to="54" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

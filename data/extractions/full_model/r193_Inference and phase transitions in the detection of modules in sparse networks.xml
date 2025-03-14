@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Phase transition in the detection of modules in sparse networks</title>
+				<funder>
+					<orgName type="full">McDonnell Foundation</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2011-02-06">6 Feb 2011</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Aurelien</forename><surname>Decelle</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution" key="instit1">Université Paris-Sud &amp; CNRS</orgName>
+								<orgName type="institution" key="instit2">LPTMS</orgName>
+								<address>
+									<addrLine>UMR8626 Bât. 100</addrLine>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Florent</forename><surname>Krzakala</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Université Paris-Sud</orgName>
+								<address>
+									<postCode>91405</postCode>
+									<settlement>Orsay</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Cristopher</forename><surname>Moore</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Computer Science Department</orgName>
+								<orgName type="laboratory">UMR</orgName>
+								<orgName type="institution">CNRS and ESPCI ParisTech</orgName>
+								<address>
+									<addrLine>10 rue Vauquelin 7083 Gulliver</addrLine>
+									<postCode>75000</postCode>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Lenka</forename><surname>Zdeborová</surname></persName>
+							<email>lenka.zdeborova@cea.fr</email>
+							<affiliation key="aff3">
+								<orgName type="department">Institut de Physique Théorique</orgName>
+								<orgName type="laboratory">URA 2306</orgName>
+								<orgName type="institution" key="instit1">University of New Mexico</orgName>
+								<orgName type="institution" key="instit2">Santa Fe Institute</orgName>
+								<orgName type="institution" key="instit3">IPhT</orgName>
+								<orgName type="institution" key="instit4">CEA Saclay</orgName>
+								<orgName type="institution" key="instit5">CNRS</orgName>
+								<address>
+									<postCode>91191</postCode>
+									<settlement>Gif-sur-Yvette</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Phase transition in the detection of modules in sparse networks</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2011-02-06">6 Feb 2011</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">560854D31061DDC93533D3B681CA107A</idno>
+					<idno type="arXiv">arXiv:1102.1182v1[cond-mat.stat-mech]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:47+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>numbers: 64.60.aq</term>
+					<term>89.75.Hc</term>
+					<term>75.10.Hk</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We present an asymptotically exact analysis of the problem of detecting communities in sparse random networks. Our results are also applicable to detection of functional modules, partitions, and colorings in noisy planted models. Using a cavity method analysis, we unveil a phase transition from a region where the original group assignment is undetectable to one where detection is possible. In some cases, the detectable region splits into an algorithmically hard region and an easy one. Our approach naturally translates into a practical algorithm for detecting modules in sparse networks, and learning the parameters of the underlying model.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In many networks, ranging from online communities to food webs, metabolic networks, and genetic regulatory networks, there are communities or modules that play distinct functional roles. A fundamental problem is to detect these communities and understand what role they play in the network's structure and dynamics. In social networks, these communities are often assortative, meaning that there is a higher density of connections within communities than between them, and many approaches to detecting these communities have been proposed (see e.g. <ref type="bibr" target="#b0">[1]</ref>). In other networks, however, these modules may consist of nodes with few connections to each other, but which connect to the rest of the network in similar ways.</p><p>In this Letter we analyze a random generative model for sparse modular networks, known as the stochastic block model. It provides a useful playground for theoretical ideas and the analysis of algorithms, and is a popular model for functional modules in real networks. Using the cavity method developed in the physics of disordered systems <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b2">3]</ref> we exactly analyze the detectability of these modules in the limit of large sparse networks. As a function of the parameters, we compute the phase diagram and locate the associated phase transitions.</p><p>We distinguish between a detectable phase where it is possible to learn the model's parameters and the group assignments of the nodes, and a non-intuitive undetectable phase where learning is impossible because the network's topology does not retain enough information about the original group memberships. The existence of a phase where a certain class of algorithms is unable to detect communities was previously predicted <ref type="bibr" target="#b3">[4]</ref>, but its location was only found approximately (and its size overestimated). In addition, unlike previous works based on finding a ground state, i.e., minimizing a cost function associated with a group assignment <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5]</ref>, our analysis is more general as it relies on the properties of the entire Boltzmann distribution of group assignments.</p><p>We also unveil a transition from an algorithmically "hard" phase, where, we believe, no polynomial algorithm for learning the groups and parameters exists, to an "easy" phase where polynomial algorithms do exist. In the latter phase, we show that Belief Propagation (BP) <ref type="bibr" target="#b5">[6]</ref> works on large networks in essentially linear time as a function of their size. BP was previously proposed for community detection <ref type="bibr" target="#b6">[7]</ref> without, however, the ability to learn the parameters of the underlying model.</p><p>Our approach also provides a natural measure of the significance of the modules in the network, since it computes the marginal probability that a given node belongs to a given group. If the network does not contain any modules, our method correctly infers this fact by making these marginals uniform. This is an aspect missing in the vast majority of the present approaches to community detection. Our theoretical understanding and algorithm are also applicable to real world networks, as we discuss briefly at the end of this paper (and in detail elsewhere). Moreover our approach is not restricted by the details of the generative model, and is easily generalized to more elaborate models (e.g., those of <ref type="bibr" target="#b7">[8]</ref>).</p><p>Stochastic block models. We consider networks of N nodes. Each node i has a hidden label t i ∈ {1, . . . , q}, specifying which of q groups it is a member of. These labels are chosen independently, where n a is the probability that a given node has label a ∈ {1, . . . , q} (normalized so that q a=1 n a = 1). If N a is the number of nodes in each group, we have n a = lim N →∞ N a /N .</p><p>Once the group assignment is chosen, the model generates a graph G as follows. For each pair of nodes i, j with i &lt; j, we put an edge between i and j independently with probability p ti,tj , leaving them unconnected with probability 1 -p ti,tj . We call p ab the affinity matrix. Since we are interested in the sparse case where p ab = O(1/N ), we will use the rescaled affinity matrix c ab = N p ab and assume that c ab = O(1) in the limit N → ∞.</p><p>In our setting, the adjacency matrix A ij of the graph is the only information available to us. Our goal is to learn the parameters q, {n a }, {p ab } of the block model, as well as the true group assignments {t i }. Special cases of this model have often been considered in the literature. Planted partitioning, when n a = 1/q, c ab = c out for a = b and c aa = c in with c in &gt; c out , is a classical problem in computer science and has been used as a benchmark for community detection <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b3">4,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b9">10]</ref>. Planted coloring, where n a = 1/q, c aa = 0, and c ab = cq/(q -1), is a fundamental problem in constraint optimization <ref type="bibr" target="#b2">[3]</ref>, and was studied using the cavity method in <ref type="bibr" target="#b10">[11]</ref>.</p><p>Bayesian inference for block models. Bayesian inference has been applied to community detection before. However, except for some very specific generative models <ref type="bibr" target="#b11">[12]</ref>, the likelihood function must be computed approximately, either through Monte Carlo sampling (e.g. <ref type="bibr" target="#b12">[13]</ref>) or variational methods <ref type="bibr" target="#b9">[10]</ref>. The crucial contribution of our work is that the quantities that follow from Bayesian inference can be computed exactly in the thermodynamic limit using the cavity method, or on real finite networks using the BP algorithm in time roughly linear in the size of the network. The probability that the model parameters take a given set of values {θ} = (q, {n a }, {c ab }), conditioned on the topology of the network G, is</p><formula xml:id="formula_0">P ({θ} | G) = P ({θ}) P (G) {ti} P (G, {t i } | {θ}) .<label>(1)</label></formula><p>The sum is over all possible group assignments {t i }, where t i ∈ {1, . . . , q} for each node i. The prior P ({θ}) includes all graph-independent information about the values of the parameters. We will assume there is no such information available and hence this prior is uniform. In that case, maximizing P ({θ} | G) over {θ} is equivalent to maximizing the sum {ti} P (G, {t i } | {θ}).</p><p>The function P (G, {t i } | {θ}) is called the likelihood. It is the probability that the model would produce the group assignment {t i } and the network G, assuming that its parameters are {θ}. We can write the likelihood exactly for many different generative models; for the stochastic block model defined above, it is</p><formula xml:id="formula_1">P (G, {t i } | {θ}) = i n ti i&lt;j p Aij ti,tj (1 -p ti,tj ) 1-Aij . Thus P ({θ} | G) is proportional to the partition sum Z({θ}) of a generalized Potts model, with Hamiltonian H({t i } | {θ}) = - i log n ti - i&lt;j A ij log c ti,tj + (1 -A ij ) log 1 - c ti,tj N .<label>(2)</label></formula><p>There is a strong O(1) interaction between connected nodes, and a weak O(1/N ) one between unconnected nodes. The log n ti play the role of local fields, enforcing the prior distribution {n a } on group assignments.</p><p>Inferring the parameters {θ} is equivalent to minimizing the free energy f ({θ}) = -log Z({θ})/N associated with <ref type="bibr" target="#b1">(2)</ref>. If f ({θ}) has a non-degenerate minimum, then, from the saddle point method, {θ} is with high probability exactly the set of parameters used in the generation of the network. In that case, inferring the parameters of the underlying model is possible.</p><p>Assuming that we know, or have learned, the correct parameters {θ}, how should we determine the group assignment of the nodes? The most likely assignment {t i } is the ground state of the Hamiltonian (2). However, if we want to find an assignment {t i } that maximizes the number of correctly labeled nodes, we need to follow a different strategy. Namely, we should compute the marginal distribution ν i (t i ) = {tj } j =i µ({t j } j =i , t i ) of the label of each node i, where µ is the Boltzmann distribution of (2). The most probable group assignment for node i is then t * i = argmax ti ν i (t i ). It can be proven in general <ref type="bibr" target="#b13">[14]</ref> that this marginalization maximizes the number of correctly labeled nodes in the thermodynamic limit, and that it is a better choice than using the ground state of (2). Furthermore, a configuration chosen according to the Boltzmann distribution has, asymptotically, the correct group sizes and the correct number of edges between each pair of groups, while for the ground state this is not true; finding the minimum bisection, for instance, creates the illusion of two groups even in a completely random graph <ref type="bibr" target="#b14">[15]</ref>. Moreover marginalization is algorithmically easier than searching for the ground state. The expected number of correctly labeled nodes can be estimated as i ν i (t * i ), even without knowing the original assignment.</p><p>Belief Propagation. We could estimate the free energy using Monte Carlo (MC) sampling, and we do this for comparison. But a faster algorithm is Belief Propagation (BP), known in physics as the cavity method <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b2">3]</ref>. It is exact in the thermodynamic limit as long as the network is locally treelike, and as long as connected correlations decay rapidly as a function of topological distance.</p><p>To derive the BP equations <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b5">6]</ref>, one introduces "messages" ψ i→j ti and ψ j→i tj for each pair of nodes (i, j). These are conditional marginals in the cavity method. For instance, ψ i→j ti is the probability that i would be in group t i if j were removed from the network. Assuming conditional independence between the neighbors of each node and neglecting lower order terms, the messages must be a fixed point of a consistency equation,</p><formula xml:id="formula_2">ψ i→j ti = 1 Z i→j n ti e -ht i k∈∂i\j t k c t k ti ψ k→i t k<label>(3)</label></formula><p>for each edge (i, j). Here ∂i is the set of i's neighbors, the field h ti = 1 N k t k c t k ti ψ k t k summarizes the influence of the non-edges, and Z i→j is a normalizing factor. FIG. <ref type="figure">1</ref>: Learning for q = 2 groups with na = 1/2, average degree c = 3, and ǫ = cout/cin = 0.15. If we initialize it in the ordered region, i.e., with ǫ0 &lt; 0.37, our algorithm infers the correct value of ǫ. Inset: the free energy as a function of ǫ. Note the minimum at ǫ = 0.15, and the paramagnetic region for ǫ &gt; 0.37.</p><p>We start with random messages, and iterate (3) until we reach a fixed point. This typically takes just a few iterations, and each step takes linear, O(N ), time.</p><p>The marginals corresponding to the BP fixed point are</p><formula xml:id="formula_3">ν i (t i ) = (1/Z i ) n ti e -ht i j∈∂i tj c tj ti ψ j→i tj</formula><p>, and the free energy is . For more details, see <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b5">6]</ref>. Requiring that f BP ({θ}) is stationary we update the parameters to their most-likely values given the fixed point</p><formula xml:id="formula_4">f BP ({θ}) = - 1 N i log Z i + 1 N (i,j)∈E log Z ij - c<label>2</label></formula><formula xml:id="formula_5">c ′ ab = (i,j)∈E c ab (ψ i→j a ψ j→i b + ψ i→j b ψ j→i a )/(Z ij n a n b N ) ,</formula><p>and n ′ a = i ν i (a)/N . Starting with a suitable initial value {θ 0 }, we compute {θ ′ } and iterate until convergence (see Fig. <ref type="figure">1</ref>), as in the expectation-maximization algorithm <ref type="bibr" target="#b15">[16]</ref>. To learn the number of groups q, we run the algorithm with several values of q ′ . The free energy f BP decreases with q and then stays constant for q ′ ≥ q.</p><p>Phase diagrams. For illustration we use the case of planted partitions and colorings, n a = 1/q, c ab = c out for a = b, and c aa = c in . We observe three different cases governing the free energy landscape f BP {θ}. In the "paramagnetic" phase, the free energy is constant in the vicinity of the true value of {θ}. Learning is impossible, and the marginals are ν i (t i ) = 1/q for all nodes. In this case the overlap between the original assignment and the one resulting from BP marginalization, defined as</p><formula xml:id="formula_6">Q({t i }, {q i }) = max π∈Sq (1/N ) i δ ti,π(qi) -max a n a 1 -max a n a ,<label>(4)</label></formula><p>(where S q is the permutation group) is zero, and the original assignment is undetectable. Generalizing <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b16">17]</ref>, one can show there is essentially no difference between a graph produced by the block model and a completely random graph of the same average degree; the free energy of the two ensembles is asymptotically identical.</p><p>In the ordered phase, f BP has an attractive global minimum at the true value of {θ}, and BP rapidly infers the correct parameters. This is illustrated in Fig. <ref type="figure" target="#fig_2">2</ref>. As ǫ = c out /c in varies from 0 (q completely separated groups) to 1 (a pure random graph), we observe a continuous phase transition from an ordered phase with positive overlap to a paramagnetic phase with zero overlap. Thus there is a second-order transition from a detectable to an undetectable phase.</p><p>A third situation arises if f BP {θ} has both a paramagnetic fixed point and the ordered fixed point at the true {θ}. In this case, the two phases co-exist and the detectability transition is first-order; see Fig. <ref type="figure" target="#fig_2">2</ref> on the right. The phase transition is located by comparing the free energies of the two phases. However, even if the ordered fixed point has a lower free energy, it is not easy to find it unless the initial messages are close to the true group assignment. All but an exponentially small set of initial messages will lead to the paramagnetic fixed point. This situation is typical of mean-field first-order phase transitions. In fact, recent results about random optimization problems show that finding the lower-free-energy phase in this case is an extremely hard problem <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b17">18]</ref>.</p><p>Only when the paramagnetic phase is no longer locally stable does inference become easy. We can compute the location of the transition to this easily-detectable phase analytically by analyzing how a small random perturbation to the paramagnetic fixed point propagates as the BP equations are iterated <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b18">19]</ref>. It follows that for</p><formula xml:id="formula_7">|c in -c out | &gt; q √ c ,<label>(5)</label></formula><p>the original group assignment is dynamically attractive and hence many algorithms, e.g. MC or BP, will converge to it. Note that it is typically still hard to compute the ground state of ( <ref type="formula" target="#formula_1">2</ref>), even though we can compute the marginals, and therefore the optimal estimate of the group assignment, asymptotically exactly. On the other hand, if <ref type="bibr" target="#b4">(5)</ref> is not satisfied then community detection is either impossible, or at best as hard as solving the hardest known optimization problems. When c out &lt; c in the phase transition is of first-order for q &gt; 4, as can be retrieved from data presented in <ref type="bibr" target="#b18">[19]</ref>. However, the detectable but hard region is so narrow that is is quite unlikely to appear in realistic situations.</p><p>Real-world networks. Our algorithm is not restricted to large random networks; it is applicable to real networks as well. We tested it on the "Karate Club" network <ref type="bibr" target="#b19">[20]</ref>, a common benchmark for community detection. For q = 2, BP leads to two different fixed points. One corresponds to the actual known division into two A continuous phase transition between a detectable and a non-detectable phase arises at the critical point given by <ref type="bibr" target="#b4">(5)</ref>. Middle: The 4-group community detection benchmark of <ref type="bibr" target="#b8">[9]</ref> with c = 16, with the same phenomenology. The results agree well with MC simulations, except very close to the critical point where finite-size effects are stronger. Right: A planted coloring problem with q = 5 and cin = 0, c = cout(1 -1/q). Both the ordered fixed point (green +s, obtained by initializing in the actual group assignment) and the paramagnetic one (blue ×s, obtained by initializing the algorithm in a random configuration) exist between c d and cs. The difference ∆f (red) between the paramagnetic and ordered free energies shows that modules are in principle detectable as soon as c &gt; cc when ∆f &gt; 0. It is in practice impossible to find the corresponding fixed point, and detection become feasible only after the spinodal point cs given by ( <ref type="formula" target="#formula_7">5</ref>).</p><p>groups. The other has a smaller free energy and thus a larger likelihood, and splits the network into high-degree nodes and low-degree nodes as found in <ref type="bibr" target="#b7">[8]</ref>. These two fixed points correspond to two local minima of f BP for q = 2, and depending on the initial value {θ 0 } BP converges to one or the other. For q &gt; 2, our algorithm converges to fixed points with yet lower values of f BP . For q = 4 the best fixed point corresponds to a splitting of the two actual groups into high-degree and low-degree subgroups.</p><p>The results obtained with MC, which can be easily equilibrated for such a small network, are almost identical to those of BP in terms of the parameters and marginals, and identical in terms of the estimated group assignments. This demonstrates that BP is a useful approach even on real, finite networks that are far from trees.</p><p>Conclusion. We have presented a principled and asymptotically exact analysis of the detection of communities in networks generated by the stochastic block model. There is a strict limit on detectability due to a transition from a phase where the free energy landscape lets us infer the model's parameters, to a phase where it does not. In some cases the communities are detectable, but the problem is hard because the attractive region around the correct fixed point is exponentially small. Our analysis comes with an associated learning algorithm, which for large sparse networks generated from the model is able to learn the number of groups, their exact sizes, and the affinity matrix p ab . Our approach and our algorithm are easily generalized to other local generative models, and we will investigate its performance on a variety of real-world networks in the future.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIG. 2 :</head><label>2</label><figDesc>FIG.2:(color online) The best possible overlap between the inferred and original group assignment. Left: community detection with q = 2, c = 3 and different values of ǫ = cout/cin. A continuous phase transition between a detectable and a non-detectable phase arises at the critical point given by<ref type="bibr" target="#b4">(5)</ref>. Middle: The 4-group community detection benchmark of<ref type="bibr" target="#b8">[9]</ref> with c = 16, with the same phenomenology. The results agree well with MC simulations, except very close to the critical point where finite-size effects are stronger. Right: A planted coloring problem with q = 5 and cin = 0, c = cout(1 -1/q). Both the ordered fixed point (green +s, obtained by initializing in the actual group assignment) and the paramagnetic one (blue ×s, obtained by initializing the algorithm in a random configuration) exist between c d and cs. The difference ∆f (red) between the paramagnetic and ordered free energies shows that modules are in principle detectable as soon as c &gt; cc when ∆f &gt; 0. It is in practice impossible to find the corresponding fixed point, and detection become feasible only after the spinodal point cs given by (5).</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgments. We are grateful to <rs type="person">Mark Newman</rs> for helpful discussions. C.M. is funded by the <rs type="funder">McDonnell Foundation</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fortunato</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Reports</title>
+		<imprint>
+			<biblScope unit="volume">486</biblScope>
+			<biblScope unit="page">75</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mézard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Parisi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. B</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">217</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mézard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Montanari</surname></persName>
+		</author>
+		<title level="m">Physics, Information, Computation</title>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford Press</publisher>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Reichardt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Leone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page">78701</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">H</forename><surname>Good</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-A</forename><surname>De Montjoye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Clauset</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">46106</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yedidia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Freeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Weiss</surname></persName>
+		</author>
+		<title level="m">Exploring Artificial Intelligence in the New Millennium</title>
+		<meeting><address><addrLine>San Francisco, CA, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="239" to="236" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Hastings</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">35102</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Karrer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E J</forename><surname>Newman</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1008.3926</idno>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E J</forename><surname>Newman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Girvan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. E</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page">26113</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Hofman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Wiggins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">258701</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Krzakala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zdeborová</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page">238701</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E J</forename><surname>Newman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Leicht</surname></persName>
+		</author>
+		<title level="m">Proc. Natl. Acad. Sci</title>
+		<meeting>Natl. Acad. Sci<address><addrLine>USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page">9564</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Clauset</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Newman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">453</biblScope>
+			<biblScope unit="page">98</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<author>
+			<persName><forename type="first">H</forename><surname>Nishimori</surname></persName>
+		</author>
+		<title level="m">Statistical Physics of Spin Glasses and Information Processing: An Introduction</title>
+		<meeting><address><addrLine>Oxford, UK</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">D</forename><surname>Coppersmith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gamarnik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Hajiaghayi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Sorkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Random Struct. Algorithms</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page">502</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dempster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Laird</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Rubin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Royal Statistical Society</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">138</biblScope>
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><surname>Achlioptas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Coja-Oghlan</surname></persName>
+		</author>
+		<title level="m">Proc. FOCS</title>
+		<meeting>FOCS</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Franz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Europhys. Lett</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">465</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mézard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Montanari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Stat. Phys</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="page">1317</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Zachary</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Anthropological Res</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page">452</biblScope>
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

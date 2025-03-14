@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Cell Movement Is Guided by the Rigidity of the Substrate</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Chun-Min</forename><surname>Lo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physiology</orgName>
+								<orgName type="institution">University of Massachusetts Medical School</orgName>
+								<address>
+									<postCode>01605</postCode>
+									<settlement>Worcester</settlement>
+									<region>Massachusetts</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Hong-Bei</forename><surname>Wang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physiology</orgName>
+								<orgName type="institution">University of Massachusetts Medical School</orgName>
+								<address>
+									<postCode>01605</postCode>
+									<settlement>Worcester</settlement>
+									<region>Massachusetts</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Micah</forename><surname>Dembo</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Biomedical Engineering</orgName>
+								<orgName type="institution">Boston University</orgName>
+								<address>
+									<postCode>02215</postCode>
+									<settlement>Boston</settlement>
+									<region>Massachusetts</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><roleName>Dr</roleName><forename type="first">Yu-Li</forename><surname>Wang</surname></persName>
+							<email>yuli.wang@umassmed.edu.</email>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physiology</orgName>
+								<orgName type="institution">University of Massachusetts Medical School</orgName>
+								<address>
+									<postCode>01605</postCode>
+									<settlement>Worcester</settlement>
+									<region>Massachusetts</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">University of Massachusetts Medical School</orgName>
+								<address>
+									<addrLine>377 Plantation Street Room 327</addrLine>
+									<postCode>01605.</postCode>
+									<settlement>Worcester</settlement>
+									<region>MA</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Cell Movement Is Guided by the Rigidity of the Substrate</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">C1448D119B96B7CD7933B6FC3F7C2D9B</idno>
+					<note type="submission">Received for publication 6 October 1999 and in final form 31 March 2000.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:47+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Directional cell locomotion is critical in many physiological processes, including morphogenesis, the immune response, and wound healing. It is well known that in these processes cell movements can be guided by gradients of various chemical signals. In this study, we demonstrate that cell movement can also be guided by purely physical interactions at the cell-substrate interface. We cultured National Institutes of Health 3T3 fibroblasts on flexible polyacrylamide sheets coated with type I collagen. A transition in rigidity was introduced in the central region of the sheet by a discontinuity in the concentration of the bis-acrylamide cross-linker. Cells approaching the transition region from the soft side could easily migrate across the boundary, with a concurrent increase in spreading area and traction forces. In contrast, cells migrating from the stiff side turned around or retracted as they reached the boundary. We call this apparent preference for a stiff substrate "durotaxis." In addition to substrate rigidity, we discovered that cell movement could also be guided by manipulating the flexible substrate to produce mechanical strains in the front or rear of a polarized cell. We conclude that changes in tissue rigidity and strain could play an important controlling role in a number of normal and pathological processes involving cell locomotion.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>Cell migration plays an important role in numerous physiological and pathological processes, such as morphogenesis <ref type="bibr" target="#b19">(Juliano and Haskill, 1993)</ref>, wound healing <ref type="bibr" target="#b28">(Martin, 1997)</ref>, and tumor metastasis <ref type="bibr" target="#b0">(Bernstein and Liotta, 1994)</ref>. Migration, in turn, involves a number of coordinated events, including the protrusion of pseudopodia, the formation of new adhesions, the development of traction, and the release of old adhesions <ref type="bibr" target="#b23">(Lauffenburger and Horwitz, 1996)</ref>.</p><p>To achieve appropriate physiological outcomes, cell movement must maintain a defined direction and speed in response to environment stimuli. Migration control by gradients of dissolved or surface-attached chemicals (chemotaxis and haptotaxis, respectively) has been investigated for many years <ref type="bibr" target="#b3">(Carter, 1965</ref><ref type="bibr" target="#b4">(Carter, , 1967;;</ref><ref type="bibr" target="#b16">Harris, 1973;</ref><ref type="bibr" target="#b32">Pettit and Fay, 1998)</ref>. In addition, cells are known to orient and migrate in response to gradients of light intensity (phototaxis; <ref type="bibr" target="#b34">Saranak and Foster, 1997)</ref>, electrostatic potential (galvanotaxis; <ref type="bibr" target="#b14">Erickson and Nuccitelli, 1984;</ref><ref type="bibr" target="#b2">Brown and Loew, 1994)</ref>, and gravitational potential (geotaxis; <ref type="bibr" target="#b26">Lowe, 1997)</ref>. While these various forms of control imply the existence of unique sensing mechanisms, at the cellular level all of them can be achieved with passive feed-forward sensing mechanisms. In contrast, metazoan organisms also possess the capacity for so-called active sensing of the environment, such as the sonar facility of bats and whales, in which active perturbations are applied to the environment as part of the sensing mechanism. Another example is tactile sensation, in which the organism initiates the sensory transaction by using its mechanical abilities to reach out and actively explore the environment. The results are then interpreted and used to control behavior.</p><p>Tactile sensation in metazoans is a complex sensory loop requiring communication and cooperation of many different cell types. Remarkable as it may seem, there are indications that something similar can also occur with single cells. For example, transient mechanical stimuli can induce motility of stationary fish epidermal keratocytes <ref type="bibr" target="#b39">(Verkhovsky et al., 1999)</ref>. Furthermore, axons of both chick sensory and brain neurons can be initiated and elongated by applying mechanical tension <ref type="bibr" target="#b1">(Bray, 1984;</ref><ref type="bibr" target="#b22">Lamoureux et al., 1989;</ref><ref type="bibr" target="#b5">Chada et al., 1997)</ref>. Mechanical properties of the extracellular matrix (ECM) have also been reported to influence fibronectin fibril assembly <ref type="bibr" target="#b15">(Halliday and Tomasek 1995;</ref><ref type="bibr" target="#b35">Schwarzbauer and Sechler, 1999)</ref>, cytoskeletal stiffness <ref type="bibr" target="#b40">(Wang et al., 1993)</ref>, and the strength of integrin-cytoskeleton linkages <ref type="bibr" target="#b6">(Choquet et al., 1997)</ref>, factors known to affect cell locomotion. In our previous study, we found that cells showed different morphologies and motility rates when cultured on substrates of identical chemical properties but different rigidities <ref type="bibr" target="#b30">(Pelham and Wang, 1997)</ref>. From these observations, one may predict that cells are capable of responding to substrate rigidity through a true active tactile exploration process, by exerting contractile forces and then interpreting the substrate deformation to determine a preferred direction or destination of their movements <ref type="bibr" target="#b30">(Pelham and Wang, 1997;</ref><ref type="bibr" target="#b36">Sheetz et al., 1998)</ref>.</p><p>Our approach to testing this hypothesis consists of putting motile National Institutes of Health 3T3 cells on collagencoated polyacrylamide substrates with a rigidity gradient, under conditions such that the only way the cells can detect this stiffness gradient is by a process of active tactile exploration. Our results indicate that 3T3 fibroblasts can in-deed detect and respond to substrate stiffness. Furthermore, the cell consistently migrates in the direction of increasing stiffness. To confirm the involvement of a force-sensing mechanism, we have also shown that the direction of cell movement can be guided by manipulating mechanical strain within the flexible substrate. The observed coupling between strain and movement is exactly as required to produce a preference for hard materials. Parallel measurements indicate that cells generate stronger traction forces and spread to a larger size on stiff substrates than on soft substrates. This suggests that 3T3 cells adaptively regulate their contractility in accord with the prevailing conditions of substrate stiffness.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIALS AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preparation and characterization of polyacrylamide substrates</head><p>The general method for preparing collagen-coated polyacrylamide substrate has been described previously <ref type="bibr" target="#b41">(Wang and Pelham, 1998)</ref>. The flexibility of the substrate was manipulated by maintaining the total acrylamide concentration at 8% while varying the bis-acrylamide components between 0.06% and 0.03%. To create a gradient of rigidity, two droplets, each containing 10 l of the soft or stiff acrylamide/bis-acrylamide mixture, were placed adjacent to each other on a large coverglass (no. 1, 45 mm ϫ 50 mm; Fisher Scientific). A small circular coverglass (no. 1, 22-mm diameter; Fisher Scientific) was then placed carefully over the droplets while mixing was minimized. Regions of different rigidities were distinguished by embedding fluorescent beads (0.2-m FluoSpheres, carboxylate-modified; Molecular Probes, Eugene, OR) in either a soft or a stiff part of the substrate.</p><p>The flexibility of polyacrylamide sheets was determined with an improved method based on the Hertz theory, similar to that used in atomic force microscopy <ref type="bibr" target="#b33">(Radmacher et al., 1992)</ref>. Briefly, a steel ball (0.64-mm diameter, 7.2 g/cm 3 ; Microball Company, Peterborough, NH) was placed on a stiff or a soft polyacrylamide sheet embedded with fluorescent beads. The indentation caused by the steel ball was measured by following with the microscope focusing mechanism the vertical position of the fluorescent beads under the center of the ball. Young's modulus was calculated as Y ϭ 3(1 Ϫ 2 ) f/4d 3/2 r 1/2 , where f is the force exerted on the sheet, d is the indentation, r is the radius of the steel ball, and is the Poisson ratio (assumed to be 0.3 in our calculation; <ref type="bibr" target="#b25">Li et al., 1993)</ref>.</p><p>The uniformity of collagen coating on the substrate surface was examined by immunofluorescence microscopy. The substrate was first incubated for 1 h with monoclonal anti-collagen I IgG (clone COL-1; Sigma, St. Louis, MO; 1:600 dilution in phosphate-buffered saline (PBS) with 1% bovine serum albumin (BSA)). After the substrate was washed extensively with PBS with 1% BSA (PBS/BSA), it was incubated with Fluoresbrite carboxylate beads coated with antibodies against mouse IgG (1-m diameter; Polysciences, Warrington, PA; 1:8 dilution in PBS/BSA) or with tetramethylrhodamine isothiocyanate (TRITC)-labeled goat anti-mouse IgG (Sigma, St. Louis, MO; 1:10 on PBS/BSA) for 45 min. The substrate was washed again in PBS/BSA for 30 min before observation. Control experiments were performed by leaving out the primary antibody.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cell culture and microscopy</head><p>National Institutes of Health 3T3 cells (ATCC, Rockville, MD) were maintained at 37°C and 5% CO 2 in Dulbecco's modified Eagle's medium (Sigma) supplemented with 10% donor calf serum (JRH Biosciences, Lenexa, KS), 2 mM L-glutamine, 50 g/ml streptomycin, 50 U/ml peni-cillin, and 250 ng/ml amphotericin B (GibcoBRL, Gaithersburg, MD). Experiments were performed 15 h after the cells were plated on the polyacrylamide substrate at a low density. Paired phase-contrast and fluorescence images were recorded every 5 min for up to 10 h with a cooled CCD camera (TE/CCD-576EM; Princeton Instruments, Trenton, NJ) attached to a Zeiss IM-35 microscope equipped with a 40ϫ, NA 0.65 Achromat phase objective lens and a stage incubator <ref type="bibr" target="#b31">(Pelham and Wang, 1999)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Calculation of traction forces</head><p>Traction forces generated by the cell were determined essentially as described previously <ref type="bibr" target="#b9">(Dembo and Wang, 1999)</ref>. Briefly, deformation of the substrate due to cell-generated stresses was detected based on the displacement of embedded fluorescent beads near the substrate surface. Images of beads before and after cell detachment by treatment with 0.05% trypsin were recorded, registered, and converted into a map of displacement vectors with custom-written software. Calculation of traction stress was carried out on a supercomputer, using the displacement vectors, the cell boundary, the Young's modulus, and the Poisson ratio as the input.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Determination of cell motility and projected area</head><p>The migration speeds of individual cells were determined with time-lapse phase images recorded over a period of 60 min. The position of the center of the nucleus was measured at 15-min intervals with custom software. The cell projected area was measured using National Institutes of Health Image ported to the Windows platform by Scion Corporation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Micromanipulation of the substrate</head><p>Substrate was deformed by pushing or pulling gels of 5% acrylamide/0.1% bis-acrylamide with the tip of a blunted microneedle. Glass capillary tubing with an outer diameter of 1.2 mm and an inner diameter of 0.9 mm was pulled into needles with a vertical micropipette puller (David Kopf Instruments, Tujunga, CA). The tips were then melted and shaped using a microforge (Narishige, East Meadow, NY). With a micromanipulator (Leitz, Germany), the blunted needle tip was gently dropped into the substrate near the cell and moved toward or away from the cell to alter the tension of the substrate. The position of the needle and, thus, substrate deformation were maintained for the duration of the experiment. The manipulation caused a ϳ10% overall change in cell length, which was prominent at the end of the cell proximal to the needle but became undetectable at the opposite end.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3T3 cells migrate preferentially toward stiff substrate</head><p>To explore whether cell movement can be guided by substrate rigidity, we cultured National Institutes of Health 3T3 cells on collagen-coated polyacrylamide sheets that contained a gradient of rigidity, with a Young's modulus varying between 140 and 300 kdyn/cm 2 . Regions of high and low rigidity were created by manipulating the bis-acrylamide concentration while maintaining a constant concentration of total acrylamide concentration and were identified by including fluorescent beads in one side of the substrate. The same results were obtained by placing fluorescent beads in either the stiff or the soft side. The surface in the transition region stayed on the same plane of focus, indicating that there was no sharp change in substrate height. Based on the distribution of beads, we estimated the transition area between high and low rigidity to be 50 -100 m in width.</p><p>After seeding for ϳ15 h, the migration of cells was recorded by time-lapse phase microscopy over a period of 10 h. To minimize the effects of intercellular mechanical interactions through the elastic substrate, we used a low cell density and focused only on individual cells without neighbors in the observation field. Observations were successfully made with eight cells approaching the boundary from the stiff side, and 10 cells approaching the boundary from the soft side. The results reported below were consistently obtained among each set of cells. It is important to note that directional movement was observed only at a very low cell density. Cell behavior became complex and variable when there were other cells in the vicinity, most likely because of direct contact and/or to mechanical forces transmitted through the flexible substrate.</p><p>One typical example is shown in Fig. <ref type="figure" target="#fig_0">1</ref> a, in which a cell approached the boundary from the soft side. When part of the leading edge encountered the substrate with higher rigidity, the protrusion accelerated and the region expanded until the cell passed through the boundary. As a result, the region first crossing the boundary became the dominant front end, and other regions, including part of the original leading edge that crossed the boundary at a latter time, became the trailing end. The overall rate of migration increased transiently as the cell crossed the rigidity boundary from the soft to the stiff side (from 0.44 to 0.54 m/min; Table <ref type="table" target="#tab_0">1</ref>). The accelerated protrusion and expansion of the leading edge also caused a 25% increase in the overall spreading area of the cell (Table <ref type="table" target="#tab_0">1</ref>). These observations clearly indicate that cells move in favor of rigid substrates. In contrast, when cells approached the boundary from the stiff side, protrusion stopped at the leading edge, even though the trailing end continued with the retraction. In the example shown in Fig. <ref type="figure" target="#fig_0">1</ref> b, protrusion continued laterally along the boundary of rigidity, causing the cell to change shape and orientation. As a result, these cells reoriented themselves to move parallel to or away from the boundary. Eventually all cells turned back toward the stiff side.</p><p>We examined the possibility that the guidance was caused by variations in collagen coating rather than substrate rigidity. Surface concentration of collagen was measured by incubating the substrate with monoclonal antibodies against collagen, then with fluorescent beads coated with anti-mouse antibodies. No difference was detected in bead density across the rigidity gradient (Fig. <ref type="figure" target="#fig_1">2</ref>). Staining with TRITC goat anti-mouse secondary antibodies showed a 40% higher intensity on the soft side than on the stiff side, most likely reflecting deeper penetration of collagen and antibodies into the soft substrate. However, even if the cell can detect a difference in collagen concentration, the gra-dient by itself should cause cells to migrate toward the soft side <ref type="bibr" target="#b20">(Keely et al., 1995;</ref><ref type="bibr" target="#b18">Huttenlocher et al., 1996)</ref>, contrary to our observations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3T3 cells generate stronger traction forces on stiff substrate than on soft substrate</head><p>To investigate the underlying mechanism of this rigidityguided cell movement, which we termed "durotaxis" (Latin durus, hard), we measured tractions applied by National Institutes of Health 3T3 cells cultured on substrates of different rigidities. The method is based on Boussinesq analysis of the deformation of the polyacrylamide substrate, as detected by the movement of embedded fluorescent beads <ref type="bibr" target="#b9">(Dembo and Wang, 1999)</ref>. The analysis yields a map of traction stresses at a resolution of 2-5 m. Fig. <ref type="figure" target="#fig_2">3</ref> shows typical calculated traction maps of 3T3 cells grown on soft and hard polyacrylamide substrates. The overall pattern of traction was similar for cells on soft and hard substrates, with strong, centripetal forces present near the lamellipodia and occasionally at the trailing end <ref type="bibr" target="#b9">(Dembo and Wang, 1999)</ref>. However, cells on stiff substrates generated significantly stronger traction than those on soft substrates (average magnitude of traction 10.9 and 6.2 kdyn/cm 2 , respectively; Table <ref type="table" target="#tab_0">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Movement of 3T3 cells can be guided by stretching the substrate</head><p>One plausible mechanism by which 3T3 cells might detect substrate rigidity is to respond to displacement and/or tension at adhesion sites. To test this possibility, the polyacrylamide substrate was deformed locally near one end of the cell with a blunted microneedle. The deformation was maintained throughout the period of observation.</p><p>Observations were made of six cells manipulated with pulling forces and eight cells manipulated with pushing forces. Fig. <ref type="figure" target="#fig_3">4</ref> a shows the typical response of 3T3 cells to pulling at the trailing end. The cell stopped its movement away from the needle within 30 min of the manipulation. Lamellipodia developed at existing processes that were oriented toward the pulling needle, causing the cell to reverse its direction of movement. The opposite manipulation is shown in Fig. <ref type="figure" target="#fig_3">4</ref> b, where the substrate was pushed toward the leading edge to decrease the mechanical input. The leading edge retracted within 10 min, while new lamellipodia developed near the trailing end. As a result, the cell reversed its direction of movement and migrated away from the needle. These results indicate that the direction of cell motion can be manipulated by changing the mechanical input of the substrate. As one might expect, pushing the substrate toward the cell at the trailing edge or pulling at the leading edge did not change the direction of migration.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The phenomenon</head><p>The most significant finding in this study is that cultured cells can guide their movement by probing the substrate rigidity. As the leading edge crosses onto rigid substrates, lamellipodia and lamella expand, leading to directed migration onto the rigid substrate. Conversely, as the leading edge approaches the soft side, local retractions take place, causing the cell to change direction.</p><p>In addition to substrate rigidity, we have demonstrated that mechanical input generated by substrate deformation also regulates the formation and retraction of lamellipodia. This is to be expected in an active sensing system, because the force/deformation caused by the external manipulation will be superimposed on the effects of the cellular probing forces. In all cases cells responded with the formation/ expansion of lamellipodia when the substratum was locally pulled outward from the center, and with retraction when the substratum was pushed inward. Because fibroblasts ex- ert centripetal forces on the substrate <ref type="bibr" target="#b9">(Dembo and Wang 1999)</ref>, pulling the flexible substrate away from the cell center means that cell-generated forces produce less substrate motion, which may then be interpreted by the cell as being equivalent to a stiffer substrate. Conversely, pushing the substrate toward the cell center should increase the effective substrate motion, which is thereby interpreted by the cell as softening of the substrate. Thus these results confirm and extend our conclusion based on the gradient of stiffness.</p><p>It is worth noting that rigidity-guided movement (durotaxis) takes place only when there are no other cells in the vicinity. At high densities, cells from the soft or the stiff side can move freely across the rigidity gradient, most likely as a result of pulling or pushing forces from neighbor cells transmitted via direct contact or through the elastic substrate. These forces are analogous to our external manipulations in that they send additional mechanical signals into the recipient cell, confusing its substrate probing process. This explains why, unlike the phenomena of haptotaxis <ref type="bibr" target="#b3">(Carter, 1965</ref><ref type="bibr" target="#b4">(Carter, , 1967;;</ref><ref type="bibr" target="#b16">Harris, 1973)</ref>, there was no clear accumulation of cells on the stiff side over a prolonged period of time. On the other hand, the ability of cells to interact mechanically across long distances of flexible substrates may represent an effective means of communication in vivo and may explain the striking merging movement when two The values in this table are mean Ϯ standard deviation. The differences in traction forces, cell speed, and spreading area were statistically significant (p ϭ 0.02, 0.0001, and 0.0003, respectively).  pieces of tissue explants are plated millimeters apart on collagen gels <ref type="bibr" target="#b17">(Harris et al., 1981)</ref>. In reality, the movement of cells within a complex organism or embryo is probably guided by a complex interplay among chemical and physical signals, which may include substrate rigidity as well as forces generated by fluid shear and cell-cell interactions.</p><p>While the current observations provide direct evidence for the guidance of cell migration by substrate rigidity and mechanical forces, related phenomena have been reported in recent decades. For example, Kolega observed that stretching with a microneedle causes an epithelial cell to withdraw its lateral protrusion while maintaining its dimension along the direction of tension <ref type="bibr" target="#b21">(Kolega, 1986)</ref>. With neurons, similar manipulations were found to stimulate the elongation of neurite, a phenomenon referred to as "towed growth" <ref type="bibr" target="#b1">(Bray, 1984;</ref><ref type="bibr" target="#b22">Lamoureux et al., 1989;</ref><ref type="bibr" target="#b5">Chada et al., 1997)</ref>. In addition, when pulling forces are applied to phagocytosed paramagnetic particles in chick gastrula mesodermal cells, the cells tend to move away from the force <ref type="bibr" target="#b37">(Toyoizumi and Takeuchi, 1995)</ref>, i.e., in a direction that increases the tension between the cell and the substrate. Previous study has also demonstrated that neutrophils can probe the tension in a three-dimensional ECM and move along the most rigid fibrils <ref type="bibr" target="#b27">(Mandeville et al., 1997)</ref>.</p><p>Cellular shape, orientation, and migration can also be guided by the topography of the substrate or environment. This process, referred to as "contact guidance" or "topographic guidance" <ref type="bibr" target="#b11">(Dunn, 1982;</ref><ref type="bibr" target="#b7">Curtis and Wilkinson, 1997;</ref><ref type="bibr" target="#b38">Tranquillo, 1999)</ref>, is clearly demonstrated by the alignment of cells with micromachined grooves in the substrate <ref type="bibr" target="#b13">(Dunn and Brown, 1986;</ref><ref type="bibr" target="#b29">Oakley et al., 1997)</ref>. At the molecular level, the response to substrate topography may involve a mechanism similar to that for mechanical sensing, for example, changing the intensity of mechanical input as a result of surface deformation to accommodate the substratum topography <ref type="bibr" target="#b8">(Curtis and Wilkinson, 1999)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The mechanism</head><p>As an elastic band is stretched across a gradient of rigidity, its mass distribution should be skewed toward the stiff side. One may argue that this simple mechanism is sufficient to explain durotaxis. However, the displacements associated with substratum elasticity are at most a few microns and alone cannot explain the magnitude and persistence of the coordinated processes involved in durotaxis. It is also very difficult to see how this mechanism could explain the effects of substrate manipulation or the turning behavior as the cell migrates from stiff substrates toward soft substrates. Therefore, the small shifts in stress and strain when cells encounter a gradient of substrate stiffness are best understood as part of an input signal, which must be detected, amplified, and transduced into intracellular responses capable of influencing the sustained cell behavior.</p><p>How does mechanical input stimulate protrusive activities? As shown in Fig. <ref type="figure" target="#fig_2">3</ref> and Table <ref type="table" target="#tab_0">1</ref>, increases in substrate rigidity can cause an increase in traction forces, which would then pull the region forward and trigger a bias in movement direction and an increase in spreading. Such force-induced cytoskeletal contractility has also been suggested in studies that used twisting magnetic forces or dragging forces of an optical trap to apply forces to integrinbound beads. The cells responded by increasing the resistive forces and/or reinforcing the integrin-cytoskeleton linkages <ref type="bibr" target="#b40">(Wang et al., 1993;</ref><ref type="bibr" target="#b6">Choquet et al., 1997)</ref>. Based on these observations, <ref type="bibr" target="#b36">Sheetz et al. (1998)</ref> speculated that stiffness of the ECM might function as an environmental cue to orient the direction of cell movement. Our observation that 3T3 cells are able to probe the rigidity of the substrates and regulate their traction forces and movement represents a direct demonstration of this guidance mechanism in action.</p><p>It is unclear how cells actually translate substrate rigidity into downstream responses. One possibility is that cells can directly sense the distance of receptor movement as a result of exerted probing forces. Alternatively, the rigidity of the substrate could be determined by monitoring the magnitude of counterforces upon the consumption of a given amount of FIGURE 5 Model for the detection of substrate rigidity. We assume that initial probing forces are generated by actin-myosin interactions associated with cell-substrate adhesion sites. (a) On soft substrates, the receptorligand complex is mobile and the tension at the anchorage site is weak. With a given energy input (black area under the force-displacement graph), the complex can move over a long distance (x axis). (b) On stiff substrates, equivalent energy consumption (shown as an equivalent black area under the force-displacement graph) causes a higher tension (y axis) and lower displacement of the receptor-ligand complex (x axis). The increase in tension may induce an influx of extracellular calcium through the stressactivated channels. (c) The increase in calcium then causes the phosphorylation of myosin, which leads to an increased energy consumption (gray areas under the force-displacement graph) and a further increase in tension. Previous experiments indicated that there is also an increase in tyrosine phosphorylation at the contact site, which may lead to additional forcemodulated responses such as cell growth and gene expression.</p><p>energy. This mechanism is illustrated in Fig. <ref type="figure">5</ref>. On stiff substrates, strong mechanical feedback from the substrate occurs after a small receptor displacement. Because elastic energy is the integration of forces along the distance, with the same amount of energy consumption soft substrates can generate only a weaker mechanical feedback but a longer displacement. The stronger mechanical feedback on stiff substrates may then lead to the activation of stress-sensitive ion channels <ref type="bibr" target="#b24">(Lee et al., 1999)</ref> or conformational changes of other tension-sensitive proteins. These responses in turn may regulate the extent of protein tyrosine phosphorylation <ref type="bibr" target="#b30">(Pelham and Wang, 1997)</ref>, the stability of focal adhesions, and the strength of contractile forces.</p><p>Because tractions are concentrated in the lamellipodia <ref type="bibr" target="#b9">(Dembo and Wang, 1999;</ref><ref type="bibr" target="#b31">Pelham and Wang, 1999;</ref><ref type="bibr">Fig. 2)</ref>, where new substrate contacts form continuously <ref type="bibr" target="#b10">(DePasquale and Izzard, 1987)</ref>, it is reasonable to assume that these structures are a crucial part of a putative sensing system for the guidance of cellular locomotion. Our results further indicate that lamellipodia and substrate contact sites are stimulated and sustained when they encounter strong mechanical input from the substrate. Therefore, an effective guidance system emerges, in which cells send out local protrusions to probe the mechanical properties of the environment. Those receiving strong feedback from the substrate are amplified and become the predominant leading edge; those receiving weak feedback become unstable and may be further weakened by negative signals sent from competing regions of active protrusion. These coordinated responses would then serve as a powerful means of guiding cell movements in response to changes in mechanical input, as during embryonic development and wound healing. Conversely, defects in mechanical signals, in the sensing mechanism, or in intracellular coordination can easily lead to serious pathological conditions such as metastasis.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIGURE 1</head><label>1</label><figDesc>FIGURE 1 Movements of National Institutes of Health 3T3 cells on substrates with a rigidity gradient. Images were recorded with simultaneous phase and fluorescence illumination. Changes in substrate rigidity can be visualized as changes in the density of embedded fluorescent beads. (a) A cell moved from the soft side of the substrate toward the gradient. The cell turned by ϳ90°and moved into the stiff side of the substrate. Note the increase in spreading area as the cell passed the boundary. (b) A cell moved from the stiff side of the substrate toward the gradient. The cell changed its direction as it entered the gradient and moved along the boundary. Bar, 40 m.</figDesc><graphic coords="4,56.57,56.96,490.21,462.07" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIGURE 2</head><label>2</label><figDesc>FIGURE 2 Relative surface density of collagen across the rigidity gradient of a polyacrylamide sheet. (a) Image of red fluorescent beads embedded on the stiff side of the substrate, identifying the region where rigidity varies between 300 and 140 kdyn/cm 2 . (b) Corresponding image of green fluorescent beads coated with anti-mouse IgG and bound to primary anti-collagen antibodies on the surface of the substrate. No binding was observed upon the omission of the primary antibody. Bar, 100 m.</figDesc><graphic coords="5,53.87,345.32,238.15,289.09" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIGURE 3</head><label>3</label><figDesc>FIGURE 3 Calculated traction forces of 3T3 cells plated on stiff (a) or soft (b) polyacrylamide substrates. Statistically significant traction forces within the cell boundary are shown as vectors.(a) Young's modulus, 300 kdyn/cm 2 ; cell area, 1005 m 2 ; RMS traction stress, 8.7 kdyn/cm 2 . (b) Young's modulus, 140 kdyn/cm 2 , cell area, 833 m 2 ; RMS traction stress, 5.6 kdyn/cm 2 .</figDesc><graphic coords="5,311.16,341.51,242.25,302.82" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIGURE 4</head><label>4</label><figDesc>FIGURE 4 Directional movements of National Institutes of Health 3T3 cell after local manipulations of the substrate tension. (a) A blunted microneedle was carefully inserted into the polyacrylamide substrate near the rear part of a cell that was migrating away from the needle. The needle was then moved away from the cell to stretch the substrate. The local change in substrate tension caused the cell to change its anterior-posterior polarization, and it moved toward the needle. (b) A blunted microneedle was carefully inserted into the polyacrylamide substrate near the front end of a cell that was migrating toward the needle. The needle was then moved toward the cell to compress the substrate. The local change in substrate tension caused the cell to change its anterior-posterior polarization, and it moved away from the needle. The direction of movement of the microneedle is indicated by an arrow, and regions of lamellipodia development are indicated by arrowheads. The time immediately after needle manipulation is designated as time 0. Bar, 40 m.</figDesc><graphic coords="6,56.57,56.96,490.45,459.07" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="7,311.09,56.96,240.59,392.11" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>TABLE 1 Properties of NIH 3T3 cells cultured on substrates of different rigidities</head><label>1</label><figDesc></figDesc><table><row><cell>Young's modulus</cell><cell>Traction forces</cell><cell>Cell speed</cell><cell>Projected area</cell></row><row><cell>(kdyn/cm 2 )</cell><cell>(kdyn/cm 2 )</cell><cell>(m/min)</cell><cell>(10 3 m 2 )</cell></row><row><cell>140</cell><cell>6.2 Ϯ 1.3 (n ϭ 6)</cell><cell>0.44 Ϯ 0.23 (n ϭ 33)</cell><cell>1.74 Ϯ 0.14 (n ϭ 5)</cell></row><row><cell>300</cell><cell>10.9 Ϯ 3.4 (n ϭ 6)</cell><cell>0.26 Ϯ 0.13 (n ϭ 24)</cell><cell>2.18 Ϯ 0.17 (n ϭ 5)</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Biophysical Journal Volume 79 July 2000 144 -152</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>BiophysicalJournal 79(1) 144 -152</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>This project was supported by grant NAG2-1197 from NASA to Y-lW.</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Molecular mediators of interactions with extracellular matrix components in metastasis and angiogenesis</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Bernstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Liotta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Oncol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="106" to="113" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Axonal growth in response to experimentally applied tension</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bray</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Dev. Biol</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="379" to="389" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Electric field-directed fibroblast locomotion involves cell surface molecular reorganization and is calcium independent</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Loew</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">127</biblScope>
+			<biblScope unit="page" from="117" to="128" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Principles of cell motility: the direction of cell movement and cancer invasion</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Carter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="page" from="1183" to="1187" />
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Haptotaxis and the mechanism of cell motility</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Carter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">213</biblScope>
+			<biblScope unit="page" from="256" to="260" />
+			<date type="published" when="1967">1967</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Cytomechanics of neurite outgrowth from chick brain neurons</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lamoureux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Buxbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Heidemann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Sci</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page" from="1179" to="1186" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Extracellular matrix rigidity causes strengthening of integrin-cytoskeleton linkages</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Choquet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Felsenfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Sheetz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page" from="39" to="48" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Topographical control of cells</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S G</forename><surname>Curtis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wilkinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomaterials</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="1573" to="1583" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">New depths in cell behavior: reactions of cells to nanotopography</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S G</forename><surname>Curtis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wilkinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biochem. Soc. Symp</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="15" to="26" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Stresses at the cell-to-substrate interface during locomotion of fibroblasts</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dembo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-L</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biophys. J</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="2307" to="2316" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Evidence for an actin-containing precursor of the focal contact and the timing of incorporation of vinculin at the focal contact</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Depasquale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Izzard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page" from="2803" to="2809" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Contact guidance of cultured tissue cells: a survey of potentially relevant properties of the substratum</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dunn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Behavior</title>
+		<editor>
+			<persName><forename type="first">R</forename></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S G</forename><surname>Bellairs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Curtis</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Dunn</surname></persName>
+		</author>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<biblScope unit="page" from="247" to="280" />
+			<pubPlace>Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Alignment of fibroblasts on grooved surfaces described by a simple geometric transformation</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Dunn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Brown</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Sci</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="page" from="313" to="340" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Embryonic fibroblast motility and orientation can be influenced by physiological electric fields</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Erickson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nuccitelli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page" from="296" to="307" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Mechanical properties of the extracellular matrix influence fibronectin fibril assembly in vitro</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">L</forename><surname>Halliday</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Tomasek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">217</biblScope>
+			<biblScope unit="page" from="109" to="117" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Behavior of cultured cells on substrata of variable adhesiveness</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Harris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="285" to="297" />
+			<date type="published" when="1973">1973</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Fibroblast traction as a mechanism for collagen morphogenesis</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Harris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Stopak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Wild</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="249" to="251" />
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Modulation of cell migration by integrin-mediated cytoskeletal linkages and ligandbinding affinity</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Huttenlocher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Ginsberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Horwitz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">134</biblScope>
+			<biblScope unit="page" from="1551" to="1562" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Signal transduction from the extracellular matrix</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Juliano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Haskill</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">120</biblScope>
+			<biblScope unit="page" from="577" to="585" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Alteration of collagen-dependent adhesion, motility, and morphogenesis by the expression of antisense ␣ 2 integrin mRNA in mammary cells</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Keely</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Fong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Zutter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Santoro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Sci</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="595" to="607" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Effects of mechanical tension on protrusive activity and microfilament and intermediate filament organization in an epidermal epithelium moving in culture</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kolega</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="1400" to="1411" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Direct evidence that growth cones pull</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lamoureux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Buxbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Heidemann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">340</biblScope>
+			<biblScope unit="page" from="159" to="162" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Cell migration: a physically integrated molecular process</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Lauffenburger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Horwitz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="359" to="369" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Regulation of cell movement is mediated by stretch-activated calcium channels</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ishihara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Oxford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Jacobson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">400</biblScope>
+			<biblScope unit="page" from="382" to="386" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">New method for measuring Poisson&apos;s ratio in polymer gels</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Polym. Sci</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="1107" to="1111" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">The role of Ca 2ϩ in deflection-induced excitation of motile, mechanoresponsive balancer cilia in the ctenophore statocyst</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lowe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Exp. Biol</title>
+		<imprint>
+			<biblScope unit="volume">200</biblScope>
+			<biblScope unit="page" from="1593" to="1606" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Dynamic imaging of neutrophil migration in three dimensions: mechanical interactions between cells and matrix</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T H</forename><surname>Mandeville</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Lawson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">R</forename><surname>Maxfield</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Leukoc. Biol</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="188" to="200" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Wound healing: aiming for perfect skin regeneration</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Martin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">276</biblScope>
+			<biblScope unit="page" from="75" to="81" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Sensitivity of fibroblasts and their cytoskeletons to substratum topographies: topographic guidance and topographic compensation by micromachined grooves of different dimensions</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Oakley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A F</forename><surname>Jaeger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Brunette</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">234</biblScope>
+			<biblScope unit="page" from="413" to="424" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Cell locomotion and focal adhesions are regulated by substrate flexibility</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Pelham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-L</forename><surname>Jr</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page" from="13661" to="13665" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">High resolution detection of mechanical forces exerted by locomoting fibroblasts on the substrate</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Pelham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-L</forename><surname>Jr</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Biol. Cell</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="935" to="945" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Cytosolic free calcium and the cytoskeleton in the control of leukocyte chemotaxis</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Pettit</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">S</forename><surname>Fay</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physiol. Rev</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="949" to="967" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">From molecules to cells: imaging soft samples with the atomic force microscope</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Radmacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Tillmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fritz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Gaub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">257</biblScope>
+			<biblScope unit="page" from="1900" to="1905" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Rhodopsin guides fungal phototaxis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Saranak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Foster</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">387</biblScope>
+			<biblScope unit="page" from="465" to="466" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Fibronectin fibrillogenesis: a paradigm for extracellular matrix assembly</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Schwarzbauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Sechler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="622" to="627" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Cell migration: regulation of force on extracellular matrix-integrin complexes</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Sheetz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Felsenfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">G</forename><surname>Galbraith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="51" to="54" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">The behavior of chick gastrula mesodermal cells under the unidirectional tractive force parallel to the substrata</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Toyoizumi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Takeuchi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Cell Sci</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="557" to="567" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Self-organization of tissue-equivalents: the nature and role of contact guidance</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Tranquillo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biochem. Soc. Symp</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="27" to="42" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Selfpolarization and directional motility of cytoplasm</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Verkhovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Svitkina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Borisy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="11" to="20" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Mechanotransduction across the cell surface and through the cytoskeleton</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Butler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Ingber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">260</biblScope>
+			<biblScope unit="page" from="1124" to="1127" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Preparation of a flexible porous polyacrylamide substrate for mechanical studies of cultured cells</title>
+		<author>
+			<persName><forename type="first">Y.-L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Pelham</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Methods Enzymol</title>
+		<imprint>
+			<biblScope unit="volume">298</biblScope>
+			<biblScope unit="page" from="489" to="496" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

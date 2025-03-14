@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Testing and Modeling Dependencies Between a Network and Nodal Attributes</title>
+				<funder ref="#_nva7HDH">
+					<orgName type="full">NICHD</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-11-07">2016 November 07.</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Bailey</forename><forename type="middle">K</forename><surname>Fosdick</surname></persName>
+							<email>bailey@stat.colostate.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Statistics</orgName>
+								<orgName type="department" key="dep2">Department of Statistics and Biostatistics</orgName>
+								<orgName type="department" key="dep3">Department of Statistics</orgName>
+								<orgName type="institution" key="instit1">Colorado State University</orgName>
+								<orgName type="institution" key="instit2">University of Washington</orgName>
+								<orgName type="institution" key="instit3">Colorado State University</orgName>
+								<address>
+									<addrLine>102 Statistics Building</addrLine>
+									<postCode>80523-1877.</postCode>
+									<settlement>Fort Collins</settlement>
+									<region>CO</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Peter</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Statistics</orgName>
+								<orgName type="department" key="dep2">Department of Statistics and Biostatistics</orgName>
+								<orgName type="department" key="dep3">Department of Statistics</orgName>
+								<orgName type="institution" key="instit1">Colorado State University</orgName>
+								<orgName type="institution" key="instit2">University of Washington</orgName>
+								<orgName type="institution" key="instit3">Colorado State University</orgName>
+								<address>
+									<addrLine>102 Statistics Building</addrLine>
+									<postCode>80523-1877.</postCode>
+									<settlement>Fort Collins</settlement>
+									<region>CO</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Testing and Modeling Dependencies Between a Network and Nodal Attributes</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016-11-07">2016 November 07.</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">530BD5EE3D1708229F6AC07560B63CB4</idno>
+					<idno type="DOI">10.1080/01621459.2015.1008697</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:55+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>hypothesis test</term>
+					<term>joint model</term>
+					<term>latent variable model</term>
+					<term>prediction</term>
+					<term>relational data</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Network analysis is often focused on characterizing the dependencies between network relations and node-level attributes. Potential relationships are typically explored by modeling the network as a function of the nodal attributes or by modeling the attributes as a function of the network. These methods require specification of the exact nature of the association between the network and attributes, reduce the network data to a small number of summary statistics, and are unable provide predictions simultaneously for missing attribute and network information. Existing methods that model the attributes and network jointly also assume the data are fully observed. In this article we introduce a unified approach to analysis that addresses these shortcomings. We use a previously developed latent variable model to obtain a low dimensional representation of the network in terms of node-specific network factors. We introduce a novel testing procedure to determine if dependencies exist between the network factors and attributes as a surrogate for a test of dependence between the network and attributes. We also present a joint model for the network relations and attributes, for use if the hypothesis of independence is rejected, that can capture a variety of dependence patterns and be used to make inference and predictions for missing observations.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>A common goal in the analysis of network data is to characterize the dependence between network relations and a set of node-specific attributes. For example in recent years many studies in the social sciences have examined the relationship between individuals' friendship networks and their health measures, such as happiness, smoking and drinking behavior, and obesity (e.g. <ref type="bibr" target="#b33">Veenstra et al. (2013)</ref> and references therein). Similarly in the biological sciences, scientists are interested in the relationship between how proteins interact and their biological importance (see <ref type="bibr" target="#b5">Butland et al. (2005)</ref> for example). In each of these applications, parameter vector. The covariate vector x i,j typically includes terms for each attribute of the sender node i and receiver node j, as well as interaction terms measuring the similarity between the sender and receiver attributes. These interaction terms are frequently specified as the absolute difference between the attributes, an indicator of whether an attribute is the same for both the sender and receiver node (in the case of discrete attributes), or the product of the nodes' attributes. Examples of network models that can accommodate such a regression term are exponentially parameterized random graph models (ERGM) <ref type="bibr" target="#b11">(Frank and Strauss (1986)</ref>, <ref type="bibr" target="#b35">Wasserman and Pattison (1996)</ref>, <ref type="bibr" target="#b31">Snijders et al. (2006)</ref>, <ref type="bibr" target="#b19">Hunter and Handcock (2006)</ref>) and latent variable models <ref type="bibr" target="#b18">(Hoff et al. (2002)</ref>, <ref type="bibr" target="#b14">Hoff (2005)</ref>). This latter class of models regresses a function of the network on both attribute terms and node-specific latent variables; <ref type="bibr" target="#b2">Austin et al. (2013)</ref> proposed a slight modification to this model class where the network is expressed as a function of nodal latent variables and the latent variables themselves are regressed on the attributes.</p><p>Methods for assessing the impact of the network on nodal attributes, {X|Y}, often regress each node's attributes on the attributes of other nodes in the network according to the network relations. For example, <ref type="bibr" target="#b6">Christakis and Fowler (2007)</ref> use a logistic regression model to estimate the degree to which an individual's obesity status can be explained by the obesity status of individuals in their social network (children, neighbors, spouse, etc.) (see <ref type="bibr" target="#b7">Cohen-Cole and Fletcher (2008)</ref> and <ref type="bibr" target="#b22">Lyons (2011)</ref> for additional discussion of these methods). Other similar models include the auto-regressive network effects models of <ref type="bibr" target="#b8">Erbring and Young (1979)</ref> and <ref type="bibr" target="#b23">Marsden and Friedkin (1993)</ref> and the p * social influence models of <ref type="bibr" target="#b28">Robins et al. (2001)</ref>. All of these models are univariate, focusing a single attribute of interest that is possibly subject to social influence.</p><p>While modeling the network and attributes as functions of one another is able to provide some insight into their dependence structure, there are two primary drawbacks to utilizing these methods for analysis. First, neither modeling framework allows for simultaneous inference about the dependencies between and among the network relations and attributes. For example, when analyzing data on an adolescent friendship network and individuals' health behaviors there may be interest in whether smoking habits and obesity status are conditionally independent given the network. Addressing this question of dependence between attributes conditional on the network is impossible using either of the conditional modeling frameworks. A second limitation of these methods is that they are unable to accommodate, and provide predictions for, datasets that have both missing network and attribute information. In the conditional modeling frameworks either the network or attributes are assumed to be fully observed. <ref type="bibr">Fellows and Handcock (2012)</ref> proposed a new class of models for jointly modeling a network and attributes called exponential-family random network models which is a combination of an ERGM and a Gibbs random field. This joint model addresses the first limitation of the conditional models and could potentially (with modification) address the second limitation of imputing missing data. However these models, like ERGMs, require careful specification to avoid model degeneracy issues <ref type="bibr" target="#b12">(Handcock (2003)</ref>, <ref type="bibr" target="#b29">Schweinberger (2011)</ref>) and require explicit elicitation of the possible relationships between the network and attributes. <ref type="bibr">Kim and Leskovec (2011)</ref> and <ref type="bibr" target="#b21">Kim and Leskovec (2012)</ref> proposed a simple joint attribute and network model for which mathematical analysis on network connectivity and degree distributions is tractable. A limitation of this model class is that it only accommodates categorical attributes and assumes no missing attribute or network information. Both of these existing joint modeling frameworks lack traditional procedures for testing whether the joint model is appropriate, i.e., if dependencies even exist between the network and attributes.</p><p>In this article, we propose a unified approach to the analysis of network and attribute data. Our approach builds off existing network models and inference procedures and makes two key contributions to statistical network methodology. The first contribution is a testing strategy for determining whether dependencies exist between the network and attributes. The second contribution, for use when the test rejects independence, is a joint modeling framework for the network and attributes that allow for predictions for missing information and inference on the dependencies between and within the network and attributes. Neither of these objectives can be addressed with existing network analysis methods. Our proposed methodology can be summarized as follows. Investigating the dependence between network data Y and attribute data X is difficult since network data are often high dimensional, containing relational information on each pair of nodes. For this reason, in Section 2 we propose using a previously developed network model to represent the (n × n) matrix of network relations Y with a low-dimensional structure defined by an (n × r) matrix N of nodespecific network factors (r ≪ n). These network factors N are not observed directly and hence are estimated from the observed network Y using a network model.</p><p>In Section 3 we introduce a novel testing strategy for evaluating whether dependencies exist between the network Y and attributes X by formally testing for correlation between the estimated network factors N and the attributes X. A conceptual representation of this testing framework is shown in Figure <ref type="figure" target="#fig_0">1</ref>. If the network is independent of the attributes, then any functions of the network, specifically the network factors, are also independent of the attributes. A primary advantage of this approach is that the overall relationship between the network and an arbitrary number of attributes can be assessed without needing to construct a complex regression model of the network relations on the attributes or perform variable selection. In Section 4 we show via simulation that there is little loss in power for the test due to not observing the network factors directly.</p><p>In Section 5, we propose a novel joint model for the network and attributes, for use when the hypothesis of independence between the network factors and attributes is rejected, that is able to capture dependence such as that detected by the test. This joint model allows for simultaneous estimation and inference on the dependence between and within the network and attributes, as well as provides methodology for handling and predicting missing network and attribute data. We show that the joint model conditional on the attributes can be viewed as a reduced rank regression of the network relations on attribute interactions. This further motivates the joint model as a mechanism for parsimoniously characterizing attribute and network dependence. In Section 6 our proposed methodology in used to analyze data from the National Longitudinal Study of Adolescent Health. In a cross validation experiment, we demonstrate that predictions of missing attribute data can be improved by basing imputations on both observed network and attribute information rather than attribute data alone. We conclude with a discussion in Section 7.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Calculation of node-specific network factors</head><p>The latent space network models in <ref type="bibr" target="#b18">Hoff et al. (2002)</ref> and latent variable models in <ref type="bibr" target="#b14">Hoff (2005)</ref> and <ref type="bibr" target="#b16">Hoff (2009)</ref> provide parsimonious representations of the patterns in a network using node-specific latent factors. These models have been shown to capture a variety of network dependence patterns such as homophily, transitivity, reciprocity, and heterogeneity in node sociability and popularity. We consider an extension of the model presented in <ref type="bibr" target="#b16">Hoff (2009)</ref> that contains additive and multiplicative latent effects, as well as structure for within dyad correlation. This model is a mosaic composed of common network effects well established in the literature. Ultimately, we use this model to obtain a low-dimensional representation of the network in terms of interpretable node-specific factors. We describe the model for continuous network data, and at the end of this section we briefly discuss how these methods can be extended to model ordinal or binary relations.</p><p>Let y i,j represent a continuous measure of the directed relation from node i to node j. For example, in an adolescent friendship network, relation y i,j may represent the aggregate call time of phone calls initiated by person i to person j in the last month. We consider the following model: <ref type="bibr" target="#b23">(1)</ref> The overall mean relation is represented by μ and the random error by e i,j . The additive sender effect a i and receiver effect b j are often interpreted as a measure of node i's sociability (i.e. outgoingness) and node j's popularity respectively. The multiplicative interaction effect can capture higher order dependence, such as network transitivity, balance, and clustering <ref type="bibr" target="#b14">(Hoff (2005)</ref>). One interpretation of the these effects stems from the concept of an underlying social space <ref type="bibr" target="#b24">(McFarland and Brown (1973)</ref>, <ref type="bibr" target="#b9">Faust (1988)</ref>), whereby nodes that are close to one another in the underlying space exhibit similar network patterns. In this context, the node-specific sender factors u i and receiver factors υ i can be interpreted as k-dimensional representations of the underlying outgoing (sending) and incoming (receiving) behaviors of node i. A similar interpretation was used to motivate the latent position models in <ref type="bibr" target="#b18">Hoff et al. (2002)</ref>.</p><p>The random errors are modeled as Gaussian, independent across dyads, and correlated within a dyad:</p><p>(2)</p><p>The additive and multiplicative node-specific factors are also modeled as Gaussian and independent across nodes:</p><p>(3)</p><p>The within dyad correlation ρ is interpreted as a measure of network relation reciprocity and together with the additive effects a i and b j induces the covariance structure from the social relations model <ref type="bibr" target="#b34">(Warner et al. (1979)</ref>, <ref type="bibr" target="#b36">Wong (1982)</ref>).</p><p>A Bayesian estimation procedure for this network model has been implemented in the 'amen' package in the open source computing software program R; however the implementation restricts Σ ab,uυ = 0. Under this restriction the model can capture third-order dependence patterns between relation "cycles", such as {y i,j , y j,k , y k,i } or {y i,j , y j,k , y i,k } where the edges create a closed loop (ignoring direction), but not between noncyclic relation triples such as {y i,j , y j,i , y k,i }. By allowing the additive and multiplicative effects to be dependent (i.e. Σ ab,uυ ≠ 0) as in (3), the model is able to capture a larger class of dependencies. Specifically, it can capture correlation among sets of relation triples where each relation in the set shares at least one node with another relation in the set (i.e. dependence between {y i,j , y j,k , y k,l }, but not between {y i,j , y j,k , y m,l }). One justification for allowing such dependence is that latent factors that act additively, affecting node popularity and sociability, plausibly also impact the network in a multiplicative manner. A modified version of the 'amen' R package that supports Bayesian parameter estimation for the network model presented here is available at the corresponding author's website.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Motivation via the singular value decomposition</head><p>A key strength of the network model in ( <ref type="formula">1</ref>) is its ability to capture a variety of common network phenomena, however an alternative motivation for the model stems from its relationship to the singular value decomposition (SVD) (see <ref type="bibr" target="#b16">Hoff (2009)</ref> and <ref type="bibr" target="#b3">Azari and Airoldi (2012)</ref> for discussion of similar motivations for related models). The singular value decomposition is a matrix factorization that is commonly used to obtain an approximation of a matrix M by another matrix M ̂ which is of reduced rank and contains the main patterns of the original matrix M. The SVD-based approximation M ̂ is the optimal matrix approximation of its rank with respect to squared error loss. Here we show that the model in ( <ref type="formula">1</ref>) is similar to an SVD-based approximation of the network Y, and hence can be viewed as a low dimensional representation of the network that captures the dominant patterns in the relations.</p><p>The network model in ( <ref type="formula">1</ref>) can be written in matrix form as Y = M + E, where Observe that the representation in (5) resembles that in (4) for the network model. This illustrates the additive and multiplicative effects structure in the network model is similar to a rank-k matrix approximation of the network. Note that in the decomposition in (5), there is functional dependence between the overall mean, additive, and multiplicative effects. Since there are no such restrictions in the network model, the latent network effects represent a slightly larger class of approximations than that given by the set of matrices with rank-k.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Non-identifiability of multiplicative factors</head><p>From the representation in (4), it is evident that the multiplicative network effects (U, V) individually are non-identifiable: the probability model for Y in ( <ref type="formula">1</ref>) is the same with multiplicative latent factors (U, V) as it is with factors (UA T , VA -1 ) for any nonsingular (k × k) matrix A. In other words, all multiplicative factors which satisfy {(UA T , VA -1 ) : A (k × k) nonsingular} are equivalent with respect to the probability model for Y. In the absence of prior information which prefers one parameter over another within the same equivalence class, inference for the relative likeliness of parameter values should be conducted over the equivalence classes. Performing inference over the equivalence classes of (U, V) is equivalent to performing inference on the posterior distribution of UV T . This issue is discussed further in Sections 3 and 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Non-continuous network measures</head><p>Observed network information is often not continuous. For example it is common for network data to be binary where y i,j is an indicator of whether the relation between nodes i and j exceeds some threshold, or ordinal where y i,j represents, for instance, the relative rank of node j from the perspective of node i. To model non-continuous relations, the network model in ( <ref type="formula">1</ref>) can be generalized by modeling y i,j = ℓ(z i,j ) where z i,j is a continuous measure of the pairwise relation and ℓ is a function defining the relationship between z i,j and y i,j . The latent continuous network measure z i,j is then modeled using the network model in <ref type="bibr" target="#b23">(1)</ref> in place of y i,j . In the case of binary data, a thresholding function may be appropriate (corresponding to the probit model), and in the ordinal case the ordered probit can be considered. <ref type="bibr" target="#b17">Hoff et al. (2013)</ref> discusses additional ℓ functions which account for censoring of binary and ordinal relations when nodes are restricted on the number of relations they can send (i.e. the number of non-zero relations in a row of Y). We employ one of these link functions in Section 6 to analyze fixed rank nomination data from the National Longitudinal Study of Adolescent Health using the proposed testing and joint modeling methodology introduced here.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Testing for dependencies</head><p>The goals in an analysis of network and attribute data are often threefold: 1) to determine whether dependencies exist between the network and attributes, 2) to model and estimate these dependencies, and finally 3) to make inference and possibly make predictions for missing data. The first step in any such analysis is to formally test for dependencies between the network and attributes. In this section, we describe a novel, simple approach to performing such a test.</p><p>A classical approach to determining whether there is an association between the nodal attributes X n×p and network relations Y n×n would be to test whether dependencies exist between X and the rows of Y or between X and the columns of Y. This would involve hypothesizing that each attribute is uncorrelated with each node's outgoing relations (H 0 : Cov(X[, i], Y [j,]) = 0 for all i,j) or incoming relations (H 0 : Cov(X[, i], Y [,j]) = 0 for all i,j) and investigating the evidence against these claims. However, conventional multivariate analysis tests are not applicable to these problems since these tests address relationships between p + n variables based on n observations. We propose an alternative testing approach using the the estimated latent network factors N n×(2k+2) = [a, b, U, V] from the network model in <ref type="bibr" target="#b23">(1)</ref>. The nodal attributes X = [x 1 , …, x n ] T are independent of the network Y if and only if the attributes are independent of any function of the network. As described in Section 2, the network factors N provide a simplified representation of the network. Thus, we propose testing for dependence between the latent network factors N and attributes X on the basis that rejecting such a test would imply dependence between the network Y and attributes X (see Figure <ref type="figure" target="#fig_0">1</ref>). However, the latent network factors N are not observed so in practice they must be estimated from the observed network Y. In this section we present a test for dependence between the estimated network factors and attributes that borrows from classic multivariate testing theory, discuss invariances in the test, and describe an exact likelihood ratio testing procedure. We also discuss alternative interpretations of the test that do not involve distributional assumptions on both the latent factors and attributes. Suppose the nodal attributes {x i : i ∈ {1, …, n}} are continuous and mean-zero, and let denote the (estimated) latent network factors for node i. We propose testing for linear dependence between the network factors and attributes using a classical multivariate test based on the assumption that the network factors and attributes are samples from a multivariate normal distribution:</p><p>(6)</p><p>The null and alternative hypotheses for this test are (7)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Network model and test invariances</head><p>As mentioned in Section 2, the network model in ( <ref type="formula">1</ref>) is invariant under transformations of the multiplicative latent factors. Formally, this non-identifiability can be expressed as an invariance of the probability model under transformations of network factors {n i : i ∈ {1, …, n}} by elements of group which act via multiplication on the left:</p><p>. It would be undesirable for the test in (7) to depend on which latent factor estimates in the set <ref type="bibr">(8)</ref> are selected to represent the network. As discussed in Section 2, the probability of the network Y is the same for all latent factor estimates in this set, and hence all elements within a set are equivalent based on the likelihood. Define to be the extension of group N to transformations of :</p><p>which acts via left multiplication and leaves x i unchanged. We define in order to relate the invariance in the network model parameterization to the test in (7).</p><p>The testing problem in ( <ref type="formula">7</ref>) is itself invariant under left multiplication of by elements in the group ℱ, where ℱ is defined An ℱ-invariant test is a test for (7) that produces the same results for all attributes and network factors that are equivalent under group ℱ. Observe that is a subgroup of ℱ. This implies that an ℱ-invariant test will also respect the -invariances in the network relations probability model. In other words, all latent network factor estimates in the same equivalence set given by (8) will generate the same test results for ( <ref type="formula">7</ref>) under an ℱ-invariant test.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Likelihood ratio test</head><p>There is no uniformly most powerful invariant test for (7), however the likelihood ratio test is ℱ-invariant, unbiased <ref type="bibr" target="#b26">(Perlman and Olkin (1980)</ref>), and generally performs well. Let N = [a, b, U, V] be the (n × (2k + 2)) matrix of network factors. The likelihood ratio test statistic can be written <ref type="bibr">(9)</ref> where L 0 and L refer to the likelihood corresponding to the multivariate normal model in ( <ref type="formula">6</ref>) with and without restricting Σ N,X = 0. The term is the ith eigenvalue of and its positive square root is commonly referred to as the ith canonical correlation between N and X. This correlation represents the largest correlation obtainable between a linear combination of attributes and a linear combination of the network factors such that the linear combinations are uncorrelated with the respective combinations used to obtain the first i -1 correlations. The test based on (9) rejects the null hypothesis for large values of Λ and was shown to have monotonically increasing power as a function of each population canonical correlation <ref type="bibr" target="#b1">(Anderson and Gupta (1964)</ref>).</p><p>Under the null hypothesis, W = Λ -2/n has a Wilks' Lambda U(p, 2k + 2, n -(2k + 2)) distribution, which is equivalent to the product of independent, Beta distributed random variables <ref type="bibr" target="#b25">(Muirhead (1982)</ref>):</p><p>The α-quantiles for this distribution can be obtained via Monte Carlo estimation and used to perform exact level-α tests for (7).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Alternative interpretation of the test</head><p>The test in (7) was derived as the likelihood ratio test for a model where both the network factors and attributes are samples from a normal distribution. However in some cases these assumptions may not be appropriate. Fortunately, alternative interpretations of the test exist that do not rely on such assumptions. The likelihood ratio test in (9) for the test in ( <ref type="formula">7</ref>) is the same as the likelihood ratio test to determine whether the coefficients in a linear regression are nonzero, where either the network factors are regressed on the attributes or the attributes are regressed on the network factors. These conditional tests can be expressed <ref type="bibr">(10) (11)</ref> where β X|N and β N|X are (p × (2 + 2k)) and ((2 + 2k) × p) matrices, respectively. If the nodal attributes were specified as part of the study design or are binary or ordinal, it may be inappropriate to model them as Gaussian as is done in (6). Instead it may be preferable to test for dependence between the attributes and network factors via the conditional formulation in ( <ref type="formula">11</ref>), where no distributional assumptions are placed on X. The likelihood ratio test for the tests in ( <ref type="formula">7</ref>), ( <ref type="formula">10</ref>) and ( <ref type="formula">11</ref>) are identical, so the testing framework presented is appropriate if the assumption of normality is reasonable for one or both of the network factors and attributes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Simulation study</head><p>To analyze data with the test outlined in Section 3, the network latent factors N must be estimated from the observed network Y. We expect this to result in a decrease in the power of the test in (7) compared to if the network factors were able to be observed directly. Furthermore, we expect a greater decrease in power when the observed network relations are less informative (i.e. binary rather than continuous). In this section we present a simulation study that quantifies the degree to which power is lost when the network factors are not observed and must be estimated from observed network relations.</p><p>Consider the network model in ( <ref type="formula">1</ref>) with one multiplicative effect (k = 1), zero mean (μ = 0), and independent standard normal errors (ρ = 0, ):</p><p>(12)</p><p>We consider the case where one nodal attribute is of interest (p = 1) and the attribute and latent network factors have one of the following covariance structures:</p><formula xml:id="formula_0">A. Cov[(x i , a i , b i , u i , υ i )] = Σ XN = I + γE x,a , B. Cov[(x i , a i , b i , u i , υ i )] = Σ XN = I + γE x,u .</formula><p>E x,a is the (5 × 5) matrix of zeros with a one in the entires corresponding to Cov[x, a] and Cov <ref type="bibr">[a, x]</ref>, and E x,u is defined analogously. In scenario A the attribute and each network factor are uncorrelated, except the additive sender factor a i and the attribute x i which have correlation γ. Similarly, in scenario B correlation γ exists between the sender multiplicative factor u i and the attribute x i .</p><p>Monte Carlo estimates of the power based on the level-0.05 likelihood ratio test in ( <ref type="formula">9</ref>) for the test in (7) were computed for squared correlation values γ 2 ∈ {-0.05, 0, 0.05, 0.1, 0.15, 0.2}, network sizes n ∈ {25, 50, 100} and three decreasingly informative observations of the network: Notice that the binary network B d is a deterministic function of the continuous network Y.</p><formula xml:id="formula_1">1. N = [a, b, U, V] is observed; 2. N</formula><p>We consider the binary networks with density 0.5 and 0.15. The former case represents a relatively dense binary network with many observed relations, whereas the latter case reflects more common network seen in survey data where information about only a small number of nodes' relations are available. For the continuous network Y and binary networks B d , the Bayesian estimation procedure was used to obtain estimates of the latent network factors. A probit function was specified for the binary networks. The additive factors a and b were estimated by their posterior means, and the multiplicative factors U and V were estimated by the first left and right singular vector of the posterior mean of the multiplicative effect UV T in (4).</p><p>Figure <ref type="figure" target="#fig_3">2</ref> shows the power estimates for the two covariance structures A and B and the four network observations (N, Y, B 0.5 , B 0.15 ) based on 2,000 simulations. A single power curve is shown for the latent network factors N since the correlation structures A and B are equivalent with respect to the invariances of the test in (7). Most notably, Figure <ref type="figure" target="#fig_3">2</ref> illustrates there is relatively little power lost when the network factors are estimated from an observed continuous or binary network, even when the network size is small. The power of the test is slightly larger when dependence exists between the attribute and an additive factor compared to when it exists between the attribute and a multiplicative factor for continuous and binary network observations. This is likely a consequence of the relative ease with which additive effects are estimated compared to interaction effects. As expected, the power of the test decreases as the observed network information becomes less informative (N → Y → B 0.5 → B 0.15 ), although for even moderate network sizes the power loss is negligible.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Joint model for the network and nodal attributes</head><p>If the test in Section 3 rejects the null hypothesis of independence between the attributes and network factors, there is often interest in estimating and making inference on the dependencies, as well as predicting missing network and attribute information. Addressing such inference objectives requires joint modeling of the network Y and attributes X. We propose jointly modeling the network Y and attributes X via a model composed of the network relations model in ( <ref type="formula">1</ref>) and ( <ref type="formula">2</ref>), and the latent factor and attribute model in ( <ref type="formula">6</ref>). For completeness, we include all components of the joint model below.</p><p>(</p><formula xml:id="formula_2">) (14) (15)<label>13</label></formula><p>Inference for the dependence and conditional dependencies between the attributes and network is based on the covariance matrix Σ XN .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Simplified parameterization</head><p>The non-identifiability of the latent factors discussed in Sections 2 and 3 translates to nonidentifiability of portions of the covariance matrix Σ XN . However, by restricting the covariance matrix to have specific structure, the -invariance of the network model due to the multiplicative latent factors can be removed.</p><p>We propose reparameterizing the model for the latent factors and attributes in ( <ref type="formula">15</ref>) by ( <ref type="formula">16</ref>)</p><p>where D is a diagonal matrix with decreasing elements along the diagonal. The joint model defined by ( <ref type="formula" target="#formula_2">13</ref>), ( <ref type="formula">14</ref>), and ( <ref type="formula">16</ref>) is not invariant to transformations of the network factors and attributes by elements in the group , however it continues to possess non-identifiability with respect to signs of the entries in U and V. Specifically, the probability of the observed network Y and attributes X is the same with parameters {U, V, Σ XN } as it is with parameters</p><formula xml:id="formula_3">(17)</formula><p>where S k×k is any diagonal matrix with ±1's along the diagonal. Similar to the multiplicative network factors estimation in Section 2, inference for the parameters' relative likeliness in this model should be over equivalence classes defined by the relations in (17).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Relation to reduced rank regression</head><p>The expectation of the network relations conditional on the attributes based on (13) resembles that of a reduced rank regression on (multiplicative) attribute interaction effects. This is noteworthy as the motivations underlying reduced rank regression parallel many of the motivations for this network modeling framework.</p><p>The expectation of the network factors conditional on the attributes can be written where β a|X , β b|X are (p × 1) vectors and β U|X and β V|X are ((2 + 2k) × p) matrices of coefficients based on Σ XN . Since the latent factors for different nodes are modeled as independent, the expectation of the network relations in (13) conditional on the attributes is</p><p>The interaction term represents a linear combination of all possible pairwise products between the p sender and p receiver attributes, resulting in p 2 linear effects. The coefficients on these linear effects are given by the (k × k) matrix , whose rank is at most equal to the minimum of p and k. Therefore, if the number of attributes is greater than the number of multiplicative network factors (p &gt; k), linear constraints will exist among the p 2 effect coefficients. In reduced rank regression the coefficient matrix corresponding to the regression of a multivariate outcome on a multivariate predictor is restricted to be reduced rank <ref type="bibr" target="#b0">(Anderson (1951)</ref>, see <ref type="bibr" target="#b27">Reinsel and Velu (1998)</ref> for a comprehensive review). This approach to parameter dimension reduction is motivated by improvement in parameter estimation and interpretation. A similar goal exists in network modeling and is achieved here using the latent network factors. Modeling dependencies between the latent network factors N and attributes X instead of between the network relations Y and attributes X directly allows us to parsimoniously estimate and characterize complex (multiplicative) dependencies without defining a complicated regression model for the network relations. This approach is especially advantageous when the number of attributes is large and/or it is likely at most a small number of attribute pairs are related to the network.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Estimation</head><p>Estimation of the parameters in the joint network and attribute model is straightforward in a Bayesian context, where inference is based on the joint posterior distribution of the network factors {a, b, U, V} and parameters { , ρ, Σ XN } given the data {X, Y}. Since an analytic expression of the posterior distribution is not available, it is approximated by samples generated from a Markov chain Monte Carlo (MCMC) algorithm. The MCMC procedure implemented in the R package 'amen' for the model described in Section 2, where the additive and multiplicative factors are uncorrelated, was adapted for the joint model presented here. Details regarding the families of prior distributions considered and the corresponding MCMC algorithm are included in the appendix. Code is provided at the corresponding author's website.</p><p>We consider data from a survey of 389 high-school students from the National Longitudinal Study of Adolescent Health (AddHealth) <ref type="bibr" target="#b13">(Harris et al. (2009)</ref>) and investigate whether evidence exists that student friendships are related to student health behaviors and grade point average (GPA). The data we use includes same-sex friendship nomination data, whereby students identified the top five friends of their sex, in addition to demographic and behavioral information. The data considered here can be described as follows:</p><p>• network information -R = {r i,j }: r i,j is the rank of student j in student i's listing of friends (5 = highest, 1 = lowest) or 0 if student i did not student j;</p><p>• nodal attributes -X = [x exercise , x drink , x gpa ]: standardized measures of exercise frequency, drinking frequency, and grade point average;</p><p>• nodal covariate -W = [w grade ]: student grade level <ref type="bibr">(9, 10, 11, or 12)</ref>.</p><p>Students in the same grade and adjacent grades are more likely to be friends than students many grades apart. For this reason, we refine our question of interest to be whether students' attributes (exercise, drinking, and GPA) are associated with their network relations' while controlling for their grade.</p><p>We use the fixed rank nomination likelihood introduced in Hoff et al. ( <ref type="formula">2013</ref>) to model the observed network ranks and restriction that at most five friends could be listed on the survey. This likelihood assumes each observed network relation r i,j is the function of an underlying (latent) continuous measure z i,j such that the following relation consistencies are satisfied:</p><p>(18)</p><p>The first association is the function used in probit regression which assumes that if a friendship is reported, the latent friendship value must exceed a given threshold (in this case 0). The second relation assures consistency of the ranks with the latent friendship measures. Finally, the last association posits that friendships between a given student and all students he/she did not list as a friend must be below the friendship threshold if the nominating student listed fewer than five friends.</p><p>The network model for the latent relations z i,j is that given in ( <ref type="formula">1</ref>) with additional regression terms for whether students are in the same grade and whether they are in adjacent grades </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Selection of factor dimension k</head><p>The multiplicative factor dimensions k for the male and female networks were determined using a method analogous to the scree plot method which is commonly used in factor analysis and principal components analysis. The network model in ( <ref type="formula">18</ref>) and ( <ref type="formula">19</ref>) was fit to each gender network with k = 8. Let M denote the posterior mean estimate of the multiplicative network effect UV T , and M ̂ represent the rank eight matrix approximation of M based on the singular value decomposition. The total variation in M ̂ is equal to the sum of the squared singular values:</p><p>, where ‖•‖ F denotes the Frobenius norm and λ i is the ith singular value. Figure <ref type="figure" target="#fig_4">3</ref> shows the proportion of the total variation in M ̂ attributed to each multiplicative effect (i.e.</p><p>). For both the male and female network the large majority of the variation in the network relations explained by the eight multiplicative effects is associated with the first three effects. Thus, the multiplicative effect dimension was selected to be three for both networks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Testing for dependence</head><p>As discussed in the Introduction, a traditional approach to modeling dependence between the network relations and nodal attributes would be to include regression terms in the form of sender, receiver, and interaction effects for the three attributes. Including all such effects using this approach would require 15 regression terms. However, by performing the test of independence proposed in Section 3 based on the latent network factors, we are able to assess the evidence for any relationship between the attributes and network without creating a potentially unnecessarily complex network model or performing any model selection.</p><p>The latent network factors for the model in ( <ref type="formula">18</ref>) and ( <ref type="formula">19</ref>) with k = 3 were estimated for the male and female networks. The additive factors a and b were estimated by their posterior means, and the multiplicative factors U and V were estimated by the first three left and right singular vectors of the posterior mean of the multiplicative effect UV T . The test of independence between the network factors and the three nodal attributes for the female and male network resulted in p-values &lt; 0.001. Therefore, based on a 0.05 level test, we reject the null hypothesis of independence between the student attributes and their network relations after accounting for grade structure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Jointly modeling the network and attributes</head><p>The rejections of the tests of independence between the attributes and network suggests the network factors are informative for nodal attribute data. To investigate this claim we performed a 20-fold cross validation on each sex dataset in which 5% of data for each attribute was treated as missing in each experiment. We compared predictions for the missing attributes based on the observed attributes alone to predictions based on both the network and observed attributes. The predictions based solely on the attributes were the fitted values from a regression of each attribute on all other attributes. The predictions based on the network and attributes were the posterior mean estimates from the Bayesian estimation procedure for the joint network and attribute model introduced in Section 5. For each sex dataset, a Markov chain was run for 500 iterations of burn-in followed by an additional 500,000 iterations and samples were thinned to every 25th iteration, resulting in 20,000 simulated values for each missing element. The average effective sample size was 2,607 for the male network and 734 for the female network.</p><p>Table <ref type="table" target="#tab_1">1</ref> shows the mean squared error over the 20 cross validations for each attribute and each sex dataset. The predictions based on the network and attributes improved upon the predictions based on the attributes alone for both sexes and all attributes. The improvement was greatest for male drinking frequency and female GPA where prediction mean squared error was reduced by about 15%. This illustrates that when dependence exists between the network and attributes, improvements in the predictions of missing values can be obtained by using both the network and attribute information.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Discussion</head><p>In this article we introduced an original approach to testing whether dependencies exist between a network and attribute data, and a joint modeling framework for the network and attributes, which relies on a simplified representation of the network in terms of latent nodespecific factors. As discussed in the Introduction, many others have proposed methodology for investigating the relationship between network and attribute data. The most common methods involve regressing either the network on functions of the nodal attributes or each node's attributes on functions of the attributes of the node's neighbors in the network. Frequently final models are settled upon after some, often undocumented, model selection procedure which not only alters the interpretation of the results, but also adds an additional element of subjectively to the analysis. The key distinction between the previous methods and those presented here is that our method does not involve any model selection procedures and simultaneously tests and estimates first and second order dependencies between the network and attributes.</p><p>Although the methods presented here are able to address questions about association between attributes and network relations based on a single cross-sectional dataset, the ultimate goal of much research in the social and biological sciences is to determine causal relationships using temporal network and attribute data. For example, sociologists are interested in determining whether students' friendships impact their health behaviors or whether health behaviors cause changes in their friendship networks <ref type="bibr" target="#b4">(Bauman and Ennett (1996)</ref>). <ref type="bibr" target="#b30">Snijders et al. (2007)</ref> and <ref type="bibr" target="#b32">Steglich et al. (2010)</ref> propose methods for modeling the co-evolution of networks and behaviors using actor-oriented processes whereby actors dictate changes in their behaviors and outgoing ties. These methods focus on binary data, rely on method of moments estimation procedures, and are not applicable to cross-section datasets since they model network and attribute changes conditional on the first observation.</p><p>A key advantage of the latent variable model approach here is that it warrants a formal testing procedure void of any model selection procedures. Extending these methods to allow for testing of causal relationships between a network and attributes is a future research area of the authors.</p><p>A historically difficult problem not addressed here is how to select the number of multiplicative factors in the network model. In Section 6 we illustrated a procedure similar to the scree plot method used frequently to choose the number of factors in factor analysis and the number of eigenvectors in principal component analysis. An alternative approach would be to incorporate the dimension selection into the model by placing a prior on the number of factors, similar to that proposed in <ref type="bibr" target="#b15">Hoff (2007)</ref> for the singular value decomposition, and simultaneously estimate the multiplicative latent factor dimension along with the other parameters. However this would greatly increase the complexity of the model and computation time of estimation.    </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>1 n</head><label>1</label><figDesc>is an (n × 1) vector whose elements all equal one, a and b are (n × 1) vectors of the additive sender and receiver factors, U and V are (n × k) matrices of multiplicative factors, and E is an (n × n) matrix of errors. The singular value decomposition of an arbitrary (n × n) matrix Y is written Y = ACB T , where A and B are orthogonal (n × n) matrices and C is an (n × n) diagonal matrix with nonnegative decreasing diagonal elements. The rank-k matrix that best approximates Y based on squared-error loss is given by M ̂ = ÂĈB T where Â = A[, 1: k], Ĉ = C[1 : k, 1: k] and B ̂ = B[, 1: k]. Absorbing Ĉ into Â and/or B ̂, the best rank-k approximation is written M ̂ = ĂB T. Letting μ A , μ B ∈ ℝ k contain the columns means of Ă and B ̆ respectively, M ̂ can be expressed: (5) where Ã and B ̃ represent multiplicative factors with mean-zero columns, ã and b ̃ represent mean-zero row and column factors, and μ AB is an overall mean.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1.The primary patterns in the network Y are represented by r node-specific factors N. To determine if dependencies exist between the network Y and the p nodal attributes X, we propose a testing for a relationship between the network factors N and attributes X.</figDesc><graphic coords="20,84.00,62.00,504.00,144.72" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Power when testing for independence between a single attribute x i and network factors {a i , b i , u i , ρ i } based on four types of network observations (latent network factors N, continuous network Y, binary network B 0.50 , binary network B 0.15 ).</figDesc><graphic coords="21,84.00,62.00,504.00,182.52" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Proportion of variation in the posterior mean eight factor multiplicative effect M ̂ that is explained by each multiplicative effect.</figDesc><graphic coords="22,84.14,62.00,503.72,426.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>is estimated from a continuous network Y according to<ref type="bibr" target="#b23">(1)</ref>;3. N is estimated from a binary network B d , where B d is defined as B d = {b i,j : b i,j = 1if y i,j &gt; y d , 0 otherwise} and y d is chosen such that the proportion of network relations greater than y d (i.e. the network density) is d.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1</head><label>1</label><figDesc>Mean squared error for predictions from 20-fold cross validation.</figDesc><table><row><cell>Males Females</cell><cell>Exercise Drinking GPA Exercise Drinking GPA</cell><cell>1.89 3.24 2.38 1.67 2.38 2.29</cell><cell>1.75 2.69 2.18 1.61 2.17 1.93</cell><cell>7.4 17.0 8.4 3.6 8.8 15.7</cell></row><row><cell></cell><cell>Method</cell><cell>Regression (attributes only)</cell><cell>Joint model (attributes &amp; network)</cell><cell>% improvement</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>J Am Stat Assoc. Author manuscript; available in PMC 2016 November 07.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>This work was partially supported by <rs type="funder">NICHD</rs> grant <rs type="grantNumber">R01 HD-067509</rs>. The authors thank <rs type="person">Alex Volfovsky</rs> for his helpful comments and discussion.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_nva7HDH">
+					<idno type="grant-number">R01 HD-067509</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A Bayesian estimation procedure</head><p>In this section we outline the Bayesian estimation procedure used to obtain parameter estimates for the joint attribute and network model in (15). This procedure is extremely similar to that implemented in the 'amen' package in the statistical computing program R. We present the simple case here where the observed network Y is continuous, there are no regression terms in the network model, and there is no missing data. For details on accommodating non-continuous network data see <ref type="bibr" target="#b17">Hoff et al. (2013)</ref> and for including regression terms see <ref type="bibr" target="#b14">Hoff (2005)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model -Prior distributions -Markov chain Monte Carlo algorithm -</head><p>Given initial values of all latent variables {a, b, U, V} and parameters {Σ XN , ρ, }, the algorithm proceeds as follows:</p><p>1. Sample a, b|Y, X, U, V, Σ XN , ρ, (normal).  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Sample Σ</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>5.</head><p>For each latent factor i:</p><p>Although the estimation algorithm is not constructed based on the unique parameterization of the model, each sample of network factors from the posterior distribution can be transformed using the covariance matrix Σ XN sample to represent a sample from ( <ref type="formula">16</ref>).</p><p>Inference for the relative likeliness of parameter values is based on the posterior distribution over the parameter equivalence classes associated with representations congruent with (17).</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Estimating linear restrictions on regression coefficients for multivariate normal distributions</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Annals of Mathematical Statistics</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="327" to="351" />
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A monotonicity property of the power functions of some tests of the equality of two covariance matrices</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">W</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Gupta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Mathematical Statistics</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1059" to="1063" />
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Covariate-defined latent space random effects model</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Austin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Linkletter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Social Networks</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="338" to="346" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Graphlets decomposition of a weighted network</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Azari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Airoldi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Artificial Intelligence and Statistics AISTATS</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="54" to="63" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">On the importance of peer influence for adolescent drug use: commonly neglected considerations</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Bauman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">T</forename><surname>Ennett</surname></persName>
+		</author>
+		<idno type="PMID">8835276</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Addiction</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="185" to="198" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Interaction network containing conserved and essential protein complexes in Escherichia coli</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Butland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Peregrín-Alvarez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Canadien</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Starostine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Richards</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Beattie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Krogan</surname></persName>
+		</author>
+		<idno type="PMID">15690043</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">433</biblScope>
+			<biblScope unit="issue">7025</biblScope>
+			<biblScope unit="page" from="531" to="537" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">The spread of obesity in a large social network over 32 years</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Christakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Fowler</surname></persName>
+		</author>
+		<idno type="PMID">17652652</idno>
+	</analytic>
+	<monogr>
+		<title level="j">New England Journal of Medicine</title>
+		<imprint>
+			<biblScope unit="volume">357</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="370" to="379" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Is obesity contagious? social networks vs. environmental factors in the obesity epidemic</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Cohen-Cole</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Fletcher</surname></persName>
+		</author>
+		<idno type="PMID">18571258</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Health Economics</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1382" to="1387" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Individuals and social structure: Contextual effects as endogenous feedback</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Erbring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Young</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sociological Methods &amp; Research</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="396" to="430" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Comparison of methods for positional analysis: Structural and general equivalence</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Faust</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Social Networks</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="313" to="341" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Exponential-family Random Network Models</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Fellows</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Handcock</surname></persName>
+		</author>
+		<idno>arXiv preprint:1208.0121. 2012</idno>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Markov graphs</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Strauss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="issue">395</biblScope>
+			<biblScope unit="page" from="832" to="842" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Dynamic Social Network Modeling and Analysis: Workshop Summary and Papers</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Handcock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Statistical models for social networks: Inference and degeneracy</title>
+		<imprint>
+			<publisher>National Academies Press</publisher>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page">229</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">The national longitudinal study of adolescent health: Research design</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Harris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Halpern</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Whitsel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hussey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tabor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Entzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Udry</surname></persName>
+		</author>
+		<ptr target="http://www.cpc.unc.edu/projects/addhealth/design" />
+		<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Bilinear mixed-effects models for dyadic data</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">469</biblScope>
+			<biblScope unit="page" from="286" to="295" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Model averaging and dimension selection for the singular value decomposition</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="issue">478</biblScope>
+			<biblScope unit="page" from="674" to="685" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Multiplicative latent factor models for description and prediction of social networks</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computational &amp; Mathematical Organization Theory</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="261" to="272" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Likelihoods for fixed rank nomination networks</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Fosdick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Volfovsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Stovel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Network Science</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+	<note>To appear in</note>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Latent space approaches to social network analysis</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Hoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Raftery</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Handcock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="issue">460</biblScope>
+			<biblScope unit="page" from="1090" to="1098" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Inference in curved exponential family models for networks</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Hunter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Handcock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computational and Graphical Statistics</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="565" to="583" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leskovec</surname></persName>
+		</author>
+		<idno>arXiv preprint:1106.5053. 2011</idno>
+		<title level="m">Modeling social networks with node attributes using the multiplicative attribute graph model</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Multiplicative attribute graph model of real-world networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leskovec</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Internet Mathematics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="113" to="160" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">The spread of evidence-poor medicine via flawed social-network analysis</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Lyons</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Statistics, Politics, and Policy</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Network studies of social influence</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">V</forename><surname>Marsden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Friedkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sociological Methods &amp; Research</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="127" to="151" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Bonds of Pluralism: The Form and Substance of Urban Social Networks</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Mcfarland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Eo Laumann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Social distance as metric: A systematic introduction to smallest space analysis</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>John Wiley</publisher>
+			<date type="published" when="1973">1973</date>
+			<biblScope unit="page" from="213" to="252" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Aspects of multivariate statistical theory</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Muirhead</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1982">1982</date>
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Unbiasedness of invariant tests for manova and other multivariate problems</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Perlman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Olkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Statistics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1326" to="1341" />
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><surname>Reinsel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Velu</surname></persName>
+		</author>
+		<title level="m">Multivariate Reduced-Rank Regression: Theory and Applications</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+	<note>Lecture Notes in Statistics</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Network models for social influence processes</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Robins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pattison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Elliott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Psychometrika</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="161" to="189" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Instability, sensitivity, and degeneracy of discrete exponential families</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schweinberger</surname></persName>
+		</author>
+		<idno type="PMID">22844170</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">496</biblScope>
+			<biblScope unit="page" from="1361" to="1370" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Modeling the co-evolution of networks and behavior</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Snijders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Steglich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schweinberger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Longitudinal models in the behavioral and related sciences</title>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Van Montfort</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">H</forename><surname>Oud</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Satorra</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Mahwah, NJ</addrLine></address></meeting>
+		<imprint>
+			<publisher>Lawrence Erlbaum</publisher>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="41" to="71" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">New specifications for exponential random graph models</title>
+		<author>
+			<persName><forename type="first">Tab</forename><surname>Snijders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Pattison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Robins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Handcock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sociological Methodology</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="99" to="153" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Dynamic networks and behavior: Separating selection from influence</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Steglich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">A</forename><surname>Snijders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pearson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sociological Methodology</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="329" to="393" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Network-behavior dynamics</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Veenstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Dijkstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Steglich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Van</forename><surname>Zalk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Research on Adolescence</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="399" to="412" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">A new round-robin analysis of variance for social interaction data</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Warner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kenny</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stoto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Personality and Social Psychology</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1742" to="1757" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Logit models and logistic regressions for social networks: I. An introduction to markov graphs and p*</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wasserman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pattison</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Psychometrika</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="401" to="425" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Round-robin analysis of variance via maximum likelihood</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">Y</forename><surname>Wong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the American Statistical Association</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">380</biblScope>
+			<biblScope unit="page" from="714" to="724" />
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

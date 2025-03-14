@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Numerical simulation of Composition B high explosive charge desensitization in gap test assembly after loading by precursor wave</title>
+				<funder ref="#_vxNjZg3">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_6P7s2YY">
+					<orgName type="full">Russian Foundation for Basic Research</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2015-07-18">18 July 2015</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Stepanov</surname></persName>
+						</author>
+						<title level="a" type="main">Numerical simulation of Composition B high explosive charge desensitization in gap test assembly after loading by precursor wave</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2015-07-18">18 July 2015</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">870F7566BE3985039D9EBF818A1F773E</idno>
+					<idno type="DOI">10.1007/s00193-015-0584-1</idno>
+					<note type="submission">Received: 15 October 2013 / Revised: 11 June 2015 / Accepted: 6 July 2015 /</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:03+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Water gap test</term>
+					<term>Numerical modeling</term>
+					<term>Desensitization</term>
+					<term>Composition B</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Results of numerical research into the desensitization of high explosive charges in water gap test-based experimental assemblies are presented. The experimental data are discussed, and the analysis using ANSYS AUTO-DYN 14.5 is provided. The desensitization phenomenon is well reproduced in numerical simulation using the JWL EOS and the Lee-Tarver kinetic equation for modeling of the initiation of heterogeneous high explosives with as well as without shock front waves. The analysis of the wave processes occurring during the initiation of the acceptor HE charge has been carried out. Peculiarities of the wave processes in the water gap test assemblies, which can influence the results of sensitivity measurement, have been studied. In particular, it has been established that precursor waves in the walls of the gap test assemblies can influence the detonation transmission distance.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Every industrial or storage facility where high explosive materials are handled requires special measures for preventing sympathetic detonation in case of an explosion to reduce damage due to a chain reaction. This is why understanding the sympathetic detonation phenomenon is extremely important for safety engineering. The gap test is one of the easiest and widely used methods for measuring shock sensitivity of high explosives. The results of impact sensitivity tests are often not reproducible, because factors in the explosion experiment that might affect the formation and growth of hot spots could strongly influence the measurements <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref>. In particular, we have observed the phenomenon of desensitization of acceptor high explosive charges in gap test-based experimental assemblies that include water gaps and solid inert elements.</p><p>Papers <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref> present the results of those experimental studies of the influence that inert inserts of different materials have on the detonation transmission and detonation failure distance in water. Donor and acceptor HE charges were made of cast Composition B (having density of 1.65 g/cm 3 ) and shaped as cylindrical cartridges with diameter and height of 40 mm. On the rear end of the acceptor HE charge an identification steel specimen was mounted to detect the presence or absence of detonation. Inert inserts made of polytetrafluoroethylene (PTFE), copper, and silicon carbide shaped as 20 mm × 20 mm square prisms of varying heights were placed between donor and acceptor charges without any clearance in the way of the initiating shock wave and with partial overlap of HE cross sections. The experimental assembly is shown in Fig. <ref type="figure">1</ref>.</p><p>Distances for reliable detonation transmission, as well as failure distances for acceptor HE charge initiation through water have been measured without any inert insert and for inserts made of PTFE, copper, and silicon carbide of varying heights. In total, the authors have conducted 27 experiments. Experimental detonation transmission and detonation failure distances are presented in Table <ref type="table" target="#tab_0">1</ref>.</p><p>Thus, it has been demonstrated that explosive loading of an acceptor HE charge by a precursor wave through a copper or ceramic insert leads to its significant desensitization. With all other conditions being equal, the distance for copper has 123 been found to be 75 % and for silicon carbide only 60 % of the value for a PTFE insert.</p><p>It should be noted that for a silicon carbide insert the precursor wave is, in fact, a compression wave without a shock front, because it has been propagating in an elastic material <ref type="bibr" target="#b6">[7]</ref>. The value of the Hugoniot elastic limit for silicon carbide is approximately 10 GPa.</p><p>The desensitization phenomena of heterogeneous high explosives under loading with a shock wave having a precursor of smaller amplitude are well-known <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. The term "shock desensitization" is linked to a variety of phenomena in high explosives such as dead pressing, detonation extinction and the reduced response of explosives to multiple shocks. Thereby behavior of a high explosive as an inert substance can be achieved under considerably high pressures in the main shock wave. If the initial impulse has a precursor with amplitude insufficient for detonation initiation, pores in het- Fig. <ref type="figure">1</ref> Experimental assembly scheme: 1-electric detonator; 2donor HE charge; 3-inert insert (shaped as a 20 × 20 mm square prism); 4-degassed water; 5-acceptor HE charge; 6-identification steel specimen erogeneous HE collapse, and charges do not detonate even if the pressure in the main shock wave considerably exceeds the level of reliable initiation.</p><p>Most researchers believe the desensitizing is the result of deactivating hot spots <ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref>. There are various theories as to the exact nature and role of hot spots in the initiation of high explosives. Perhaps there is general agreement that hot spots form from regions of low density that go to temperature much greater than average for the bulk material when shocked because, when they are compressed, more work is done locally than in the bulk full-density explosive <ref type="bibr" target="#b10">[11]</ref>. They react to release energy and detonation products. A puzzling feature is that the hot spots, ignited by a relatively weak shock, do not continue to react and expand into the rest of the explosive. Explosive behind the thin layer is dead and does not react. A strong second shock sent behind the first into the dead explosive propagates as an inert shock. Not until the second shock overtakes the first shock and is moving into unshocked explosive does the initiation process start.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Numerical modeling</head><p>The goal of our work has been to study the wave processes in the water gap test-based experimental assemblies that lead to desensitization of acceptor Composition B charges after loading by a precursor wave passing through an inert element placed on the symmetry axis of the assembly. For this purpose, numerical simulation of the detonation transfer from donor to acceptor HE charges has been performed in the configuration most closely corresponding to the experimental conditions. Simulations were carried out using ANSYS AUTODYN 14.5 <ref type="bibr" target="#b11">[12]</ref>.</p><p>Simulation area configurations reproduced the experimental assemblies with one exception: instead of square 20 × 20 mm prisms used in the experiments, the simulated assembly included round rods with the diameter of 22 mm. Thus, we were able to use a 2D axisymmetric setup instead of 3D. Because of the axial symmetry, only half of the experimental assembly cross section has been modeled.</p><p>Numerical integration of the continuum mechanics equations together with defining parameters for materials and corresponding initial and boundary conditions has been per- formed on a regular Eulerian mesh with a spatial resolution of 10 cells per mm. The detonation wave was initiated as a plane wave and propagated from the left to the right boundary of the Eulerian mesh. Boundary conditions on the left, right, and upper boundaries were defined in terms of AUTODYN as "Flow out." The lower boundary was the symmetry axis.</p><p>The most difficult problem in numerical modeling is selecting the most appropriate model and the equation of state parameters for materials used in the simulation. EOS parameters for inert materials were selected from the standard library with the exception of silicon carbide, for which we have selected a model most closely corresponding to the experimental results of paper <ref type="bibr" target="#b6">[7]</ref>.</p><p>The Lee-Tarver ignition and growth model has been used to describe the behavior of the Composition B acceptor HE charge <ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref>, etc. The model uses two Jones-Wilkins-Lee (JWL) equations of state, one for the unreacted explosive and another one for its reaction products, in the temperaturedepended form</p><formula xml:id="formula_0">p = Ae -R 1 V + Be -R 2 V + ωC V T /V</formula><p>where p is pressure, V is the relative volume, T is temperature, ω is the Grüneisen parameter, C V is the average heat capacity, and A, B, R 1 , and R 2 are constants.</p><p>The chemical reaction rate low was first described in paper <ref type="bibr" target="#b12">[13]</ref>. It was modified in paper <ref type="bibr" target="#b13">[14]</ref>. The reaction rate law contains three terms to model the ignition of hot spots by shock compression, the slow growth of reaction from these isolated hot spots, and the rapid completion of reaction as the hot spots coalesce.</p><formula xml:id="formula_1">dα/dt = I (1 -α) b (ρ/ρ 0 -1 -a) x + G 1 (1 -α) c α d p y + G 2 (1 -α) e α g p z</formula><p>where α is the fraction reacted (degree of HE decomposition), t is time, ρ is the current density, ρ 0 is the initial density, p is pressure, and I, G 1 , G 2 , a, b, c, d, e, g, x, y, and z are constants. The parameter a is the critical compression that is used to prohibit ignition until a certain degree of compression (or a certain input pressure) has been reached. This parameter provides the ability to calculate HE desensitization after precursor wave loading. The best results <ref type="bibr" target="#b16">[17]</ref> have been obtained using JWL EOS parameters for unreacted HE and detonation products for Composition B from the paper <ref type="bibr" target="#b17">[18]</ref>. Values of kinetic constants corresponded to Composition B from the paper <ref type="bibr" target="#b18">[19]</ref>.</p><p>Table <ref type="table" target="#tab_1">2</ref> shows equation of state parameters for silicon carbide, Table <ref type="table">3</ref>-for cast Composition B according to the terminology used in AUTODYN.</p><p>Table <ref type="table" target="#tab_0">1</ref> shows the simulation versus experimental results for different materials (we have used PMMA instead of PTFE in the simulation).  Maximum relative volume in tension = 1.1</p><formula xml:id="formula_2">R 1u = 12 R 1 = 4.5 R 2u = 12 R 2 = 1.2 ω u = 0.912 ω = 0.34 C V = 2.487 × 10 -5 Mbar/K C V = 1.0 × 10 -5 Mbar/K T o = 298 K C-J</formula><formula xml:id="formula_3">G 2 = 1000 Mbar -3 µs -1</formula><p>Numerical modeling results demonstrate that the desensitization process in cast Composition B is reliably reproduced in simulation of precursor wave loading with or without a shock front using the chosen Lee-Tarver kinetic constants.</p><p>Initial configuration of the simulation area and detailed simulation results for a silicon carbide insert with = 35 mm are shown in Fig. <ref type="figure">2</ref> as material flow fields with pressure and degree of decomposition contours at different times. Color bars for the contour levels are given in Fig. <ref type="figure">2</ref> too. Initial configuration is shown in Fig. <ref type="figure">2a</ref>.</p><p>Figure <ref type="figure">2b</ref> shows the pressure contours and material flow fields at t = 5.25 µs, when the detonation front reaches the end of the donor HE charge. Pressure on the detonation wave front in the donor charge is 22.1 GPa. Material flow fields and decomposition contours at t = 5.25 µs are shown in Fig. <ref type="figure">2c</ref>. When this wave enters the silicon carbide rod, it produces a wave with front pressure of 28.1 GPa. At the same time, the initial pressure of the shock wave front in water is only 19.1 GPa. These two waves continue to propagate towards the acceptor HE charge, with the wave in the rod moving ahead of the wave in water.</p><p>At t = 8.50 µs the wave in the rod reaches the acceptor HE charge with an amplitude of 3.6 GPa and initiates a compression wave without a shock front in it with an amplitude of 2 GPa. The degree of decomposition of the acceptor charge equals zero (see Fig. <ref type="figure">2d,</ref><ref type="figure">e</ref>).</p><p>Figure <ref type="figure">2f</ref> shows the material flow fields and pressure contours at t = 14.25 µs, when the initiating shock wave in water reaches the acceptor HE charge and creates a wave in the peripheral area of the charge with an amplitude of 2 GPa. At the same time, the maximum pressure on the symmetry axis of the HE charge equals 4.6 GPa and the maximum degree of decomposition reaches 0.2 in the area near the end of the ceramic rod (see Fig. <ref type="figure">2g</ref>).</p><p>Later the process continues to develop in a similar way. HE charge initiation on the symmetry axis does not develop. Initiation by the wave through water is not observed as well, because the wave propagates through the charge that has already been compressed by the precursor wave.</p><p>Figure <ref type="figure">2h</ref>, i show the material flow fields and HE pressure and decomposition contours on the late stage of the process at t = 30 µs.</p><p>Figure <ref type="figure" target="#fig_4">3</ref> shows pressure and degree of decomposition profiles on the symmetry axis of acceptor HE charge at times of 14.25 and 30 µs.</p><p>The maximum pressure in the acceptor HE charge at t = 30 µs equals 0.8 GPa. The maximum degree of decomposition is observed near the end of the ceramic rod and it has practically not changed since the moment t = 14.25 µs. Because of the reflection from the identification specimen, the process of initiation by the reflected wave is observed for some time and at t = 30 µs the degree of decomposition reaches approximately 0.15.</p><p>Thus, it is shown that precursor waves in gap test assemblies can influence the detonation transmission distance due to desensitization of the acceptor HE charge. It is also shown that the presence of the identification steel specimen can lead to erroneous results when using the gap test due to possible initiation of acceptor HE charge by the wave reflected from the specimen.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Conclusions</head><p>The results of numerical modeling of the desensitization of high explosive charges in water gap test-based experimental assemblies are presented. The desensitization phenomenon is well reproduced in numerical simulation using the Lee-Tarver kinetic equation for modeling of the initiation of heterogeneous high explosives with as well as without shock front waves.</p><p>Analysis of the wave processes occurring during the initiation of the acceptor HE charge has been performed. Peculiarities of the wave processes in the gap test assemblies that can influence the results of sensitivity measurements have been studied. In particular, it has been established that precursor waves in gap test assemblies can influence the detonation transmission distance. It is also shown that the presence of the identification steel specimen can lead to erroneous results when using the gap test due to possible initiation of acceptor HE charge by the wave reflected from the specimen.</p><p>Summarizing the foregoing, we would like to recommend when analyzing the gap test results to take into account the </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>Communicated by C. Needham and A. Higgins. B I. A. Balagansky balagansky@craft.nstu.ru 1 Novosibirsk State Technical University, Novosibirsk 630073, Russia</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>5 Von</head><label>5</label><figDesc>energy/unit volume E og = 0.081 Mbar Shear modulus = 0.035 Mbar C-J detonation velocity U D = 7.576 mm/µs Yield strength = 0.002 Mbar C-J pressure P C J = 0.265 Mbar ρ 0 = 1.63 g/cm 3 Reaction zone width W reac = 2.Neumann spike rel vol. c 0 = 0.7 Max change in reaction ratio α max = 0.1 C-J energy/unit volume E 0,u = -0.00504 Mbar Reaction rates a = 0.0367 x = 7.0 b = 0.667 y = 2.0 c = 0.667 z = 3.0 d = 0.333 F igmax = 0.022 e = 0.222 F G1max = 0.7 g = 1.0 F G2min = 0.0 I = 4.0 × 10 6 µs -1 G 1 = 140 Mbar -2 µs -1</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 2 Fig. 2</head><label>22</label><figDesc>Fig. 2 Simulation of detonation transmission in a water gap test with a silicon carbide insert with height = 35 mm. a Initial configuration; b, d, f, h material flow fields and pressure contours; c, e, g, i material flow fields and decomposition contours</figDesc><graphic coords="4,184.24,186.26,360.04,526.60" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Pressure (a, c) and of decomposition (b, d) profiles on the symmetry axis of acceptor HE charge from x 1 = 8.5 cm to x 2 = 12.5 cm at different times</figDesc><graphic coords="6,184.24,56.42,360.04,370.72" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="5,184.24,56.84,360.04,276.28" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc></figDesc><table><row><cell>Detonation (experimental and calculated) transmission distances</cell><cell>Inert insert material</cell><cell cols="2">transmission distance (mm) Reliable detonation</cell><cell>Failure distance (mm)</cell></row><row><cell></cell><cell></cell><cell>Experimental</cell><cell>Calculated</cell><cell>Experimental</cell><cell>Calculated</cell></row><row><cell></cell><cell>No inert insert</cell><cell>50</cell><cell>45</cell><cell>55</cell><cell>50</cell></row><row><cell></cell><cell>PTFE/PMMA</cell><cell>45</cell><cell>45</cell><cell>50</cell><cell>50</cell></row><row><cell></cell><cell>Copper</cell><cell>30</cell><cell>37</cell><cell>37</cell><cell>40</cell></row><row><cell></cell><cell>Silicon carbide</cell><cell>26</cell><cell>30</cell><cell>30</cell><cell>35</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>EOS parameters for silicon carbide</figDesc><table><row><cell>Reference density</cell><cell>3.10 g/cm 3</cell></row><row><cell>Grüneisen parameter</cell><cell>1.25</cell></row><row><cell>Parameter C 1</cell><cell>8.00 mm/µs</cell></row><row><cell>Parameter S 1</cell><cell>0.95</cell></row><row><cell>Strength</cell><cell>von Mises</cell></row><row><cell>Shear modulus</cell><cell>1.70 Mbar</cell></row><row><cell>Yield stress</cell><cell>0.065 Mbar</cell></row><row><cell>Failure</cell><cell>None</cell></row><row><cell cols="2">Table 3 EOS parameters for cast Composition B [18,19]</cell></row><row><cell>Unreacted JWL</cell><cell>Product JWL</cell></row><row><cell>A = 1479 Mbar</cell><cell>A = 5.308 Mbar</cell></row><row><cell>B = -0.05261 Mbar</cell><cell>B = 0.0783 Mbar</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>Acknowledgments This work was partially supported by the <rs type="funder">Russian Foundation for Basic Research</rs> (Projects Nos. <rs type="grantNumber">06-08-0138</rs> and <rs type="grantNumber">14-08-00068</rs>).</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_6P7s2YY">
+					<idno type="grant-number">06-08-0138</idno>
+				</org>
+				<org type="funding" xml:id="_vxNjZg3">
+					<idno type="grant-number">14-08-00068</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Prediction of shock sensitivity of explosives based on small-scale gap test</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Keshavarz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Motamedoshariati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">R</forename><surname>Pouretedal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Tehrani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Semnani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Hazard. Mater</title>
+		<imprint>
+			<biblScope unit="volume">145</biblScope>
+			<biblScope unit="page" from="109" to="112" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Shock desensitization effect in the confined explosive component water gap test defined by the NATO standardization agreement (STANAG) 4363. Propellants Explos</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Lefrancois</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Tarver</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Pyrotech</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="244" to="250" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">A numerical study of sympathetic detonation in gap test</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kubota</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Otsuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Nakayama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yu</forename><surname>Ogata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yoshida</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Sci. Forum</title>
+		<imprint>
+			<biblScope unit="volume">465</biblScope>
+			<biblScope unit="issue">466</biblScope>
+			<biblScope unit="page" from="163" to="168" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Behavior of condensed heterogeneous high explosive under shock wave loading through water after preloading with advanced wave</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Matrosov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Stadnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Samsonov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Glumov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rep. Russ. Higher Educ. Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="76" to="83" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Influence of inert copper and silicon carbide inserts on process of detonation transmission through water</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Matrosov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Stadnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Glumov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Samsonov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mater. Sci. Forum</title>
+		<imprint>
+			<biblScope unit="volume">566</biblScope>
+			<biblScope unit="page" from="207" to="212" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Desensitization of heterogeneous high explosives under initiation through high modulus elastic elements</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Matrosov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Stadnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Glumov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Samsonov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. B</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1305" to="1310" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Evolution of shock waves in silicon carbide rods</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">V</forename><surname>Razorenov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Utkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 14th APS Topical Conference on Shock Compression of Condensed Matter</title>
+		<title level="s">AIP Conference Proceedings</title>
+		<editor>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Furnish</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Elert</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">T</forename><forename type="middle">P</forename><surname>Russell</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>White</surname></persName>
+		</editor>
+		<meeting>the 14th APS Topical Conference on Shock Compression of Condensed Matter</meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="volume">845</biblScope>
+			<biblScope unit="page" from="835" to="838" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Non-steady detonation</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Jacobs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 3rd Symposium on Detonation</title>
+		<meeting>3rd Symposium on Detonation</meeting>
+		<imprint>
+			<date type="published" when="1960">1960</date>
+			<biblScope unit="page" from="784" to="812" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Shock initiation of solid explosives</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">W</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Ramsay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Travis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Fluids</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="511" to="521" />
+			<date type="published" when="1961">1961</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">The shock desensitization of PBX-9404 and Composition B-3</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">W</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Travis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 8th Symposium (International) on Detonation</title>
+		<meeting>8th Symposium (International) on Detonation</meeting>
+		<imprint>
+			<date type="published" when="1985">1985</date>
+			<biblScope unit="page" from="1057" to="1068" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Shock desensitizing of solid explosive</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 14th International Detonation Symposium</title>
+		<meeting>14th International Detonation Symposium</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="1058" to="1064" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Explicit Software for Nonlinear Dynamics, Theory Manual</title>
+		<author>
+			<persName><surname>Autodyn</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<publisher>Century Dynamics</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Phenomenological model of shock initiation in heterogeneous explosives</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Tarver</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Fluids</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2362" to="2372" />
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Modeling short pulse duration shock initiation of solid explosives</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Tarver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">O</forename><surname>Hallquist</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Erickson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 8 th Symposium (International) on Detonation</title>
+		<meeting>8 th Symposium (International) on Detonation</meeting>
+		<imprint>
+			<date type="published" when="1985">1985</date>
+			<biblScope unit="page" from="951" to="961" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Multiple shock initiation of LX-17</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Tarver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Urtiew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Tao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 10th International Detonation Symposium</title>
+		<meeting>10th International Detonation Symposium</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="page" from="696" to="703" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Detonation waves in trinitrotoluene</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Kury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Don</forename><surname>Breithaupt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tarver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Shock Waves</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="227" to="237" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Mach stem formation in explosion systems, which include high modulus elastic elements</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Balagansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hokamoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Manikandan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Matrosov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Stadnichenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Miyoshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Bataev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Bataev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">123516</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Modeling shock initiation in Composition B</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Murphy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Weston</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Williams</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 10th International Detonation Symposium</title>
+		<meeting>10th International Detonation Symposium</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="page" from="963" to="970" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Shock initiation experiments and modeling of Composition B and C-4</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Urtiew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Vandersall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Tarver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Garcia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Forbes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of 13th International Detonation Symposium</title>
+		<meeting>13th International Detonation Symposium</meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="929" to="939" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

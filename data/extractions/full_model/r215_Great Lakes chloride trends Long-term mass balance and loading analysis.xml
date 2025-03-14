@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Great Lakes chloride trends: Long-term mass balance and loading analysis</title>
+				<funder>
+					<orgName type="full">New Zealand&apos;s National Institute of Water and Atmospheric Research (Visiting Scientist Award)</orgName>
+				</funder>
+				<funder ref="#_aP3Wtsn">
+					<orgName type="full">University of Washington (</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Steven</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+							<email>steven.chapra@tufts.edu</email>
+							<affiliation key="aff0">
+								<orgName type="department">Civil and Environmental Engineering Department</orgName>
+								<orgName type="institution">Tufts University</orgName>
+								<address>
+									<postCode>02155</postCode>
+									<settlement>Medford</settlement>
+									<region>MA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alice</forename><surname>Dove</surname></persName>
+							<email>alice.dove@ec.gc.ca</email>
+							<affiliation key="aff1">
+								<orgName type="department">Water Quality Monitoring and Surveillance Ontario</orgName>
+								<orgName type="institution">Environment Canada</orgName>
+								<address>
+									<postCode>L7R 4A6</postCode>
+									<settlement>Burlington</settlement>
+									<region>Ontario</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">David</forename><forename type="middle">C</forename><surname>Rockwell</surname></persName>
+							<email>dcrockwe@umich.edu</email>
+							<affiliation key="aff2">
+								<orgName type="department">NOAA Center of Excellence for Great</orgName>
+								<orgName type="institution">Lakes and Human Health</orgName>
+								<address>
+									<addrLine>4840 South State Road</addrLine>
+									<postCode>48108</postCode>
+									<settlement>Ann Arbor</settlement>
+									<region>MI</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Joseph</forename><surname>Depinto</surname></persName>
+						</author>
+						<title level="a" type="main">Great Lakes chloride trends: Long-term mass balance and loading analysis</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">22C6E9F9A9A8BFA9A308DEE51B46F1D4</idno>
+					<idno type="DOI">10.1016/j.jglr.2008.11.013</idno>
+					<note type="submission">Received 25 August 2008 Accepted 28 November 2008</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:02+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Chloride Lakes Water quality Model Loadings Salt</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Surveillance data collected over the past 150 years are compiled and analyzed to identify chloride trends in the Laurentian Great Lakes. These data indicate that chloride levels started rising in the mid-19th century and began accelerating in the early twentieth century. Lake Superior's and Lake Michigan's concentrations have continued to increase steadily and currently stand at their maximum recorded levels. In contrast, lakes Huron, Erie and Ontario reached peak levels between 1965 and 1975, but then began to decline. However, recent data indicate that the chloride concentrations in these lakes are now increasing again. Because loading data are not readily available, a mass-balance model is employed to estimate the chloride inputs required to account for the concentration trends. This inverse analysis yields computed load reductions that are consistent with reported industrial load reductions during the last three decades of the 20th century. Hence, it appears that the improvements were for the most part attributable to industrial controls. The model is also used to predict that if loads are held fixed at 2006 levels, concentrations in all lakes will continue to increase with the most dramatic rise occurring in Lake Michigan which will ultimately approach the level of Lake Erie.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Because it is conservative, has low natural background levels, and is readily measured with adequate precision, chloride has long served as a general indicator of anthropogenic impacts on Great Lakes water quality. Beyond its utility as an indicator, chloride can also have direct adverse impacts on lakes and other freshwater ecosystems. The Canadian federal government has recommended that road salt be added to the List of Toxic Substances under the Canadian Environmental Protection Act because of tangible threats of serious or irreversible environmental damage <ref type="bibr">(Environment Canada and Health Canada, 2001)</ref>. It has also been suggested that increases of chloride and other ions could be directly harmful to the Great Lakes ecosystem by fostering the spread of less-desirable halophilic organisms <ref type="bibr" target="#b60">(Stoermer, 1978)</ref>. More generally, trends of all major anions and cations are relevant as they contribute to aspects of lake chemistry such as ionic strength, pH and acid neutralizing capacity. Finally, at sufficiently high concentrations, chloride can influence density stratification as well as degrade the taste of drinking water.</p><p>Two classic papers first established that Great Lakes chloride levels had increased significantly over the past century. In a perceptive and timely data analysis, <ref type="bibr" target="#b2">Beeton (1965)</ref> documented substantial increases, starting as early as the late 19th century, in all the lakes with the exception of Lake Superior. In another seminal contribution, O' <ref type="bibr">Connor and Mueller (1970)</ref> developed a mathematical model that successfully simulated Beeton's observations and provided insight into their underlying causes. In particular, they suggested that the increases were primarily induced by industrial discharges and runoff of road salt.</p><p>Subsequent analyses followed the trends through the 1970s and 1980s. For example, <ref type="bibr" target="#b59">Sonzogni et al. (1983)</ref> concluded that as of the early 1980s, chloride loadings had stabilized but, if the loadings were not reduced, chloride concentrations would continue to increase significantly into the future. In particular, because of their long hydraulic residence times, they used a mass-balance model to predict that lakes Superior, Michigan and Huron would continue increasing for several centuries to levels well beyond their mid-1970 concentrations.</p><p>In fact, rather than stabilizing, chloride loadings had actually been significantly reduced beginning in the late 1960s due primarily to reductions of industrial discharges (Fig. <ref type="figure">1</ref>). For example, the USEPA (1972) documented major reductions in chloride inputs to Lake Michigan in the early 1970s primarily from salt and chemical industries in the Manistee-Ludington area of Michigan. <ref type="bibr" target="#b16">Dolan and Bierman (1978)</ref> indicated that the substantial chloride load to Lake Huron from Saginaw River industrial sources decreased about 600 kilotonnes per annum (kta) between 1965 and 1976. <ref type="bibr" target="#b12">Crucil et al. (1991)</ref> reported that Lake Erie's chloride loading dropped approximately 1700 kta between 1965 and 1986 due to the closing of several industrial facilities on the Detroit River. Finally, Effler and colleagues have rigorously documented that Lake Ontario's chloride load decreased approximately 700 kta following the closure of a major chlor-alkali plant in 1986 that had discharged into Onondaga Lake <ref type="bibr" target="#b15">(Doerr et al., 1994;</ref><ref type="bibr" target="#b17">Effler and Driscoll, 1986;</ref><ref type="bibr" target="#b18">Effler et al., 1985</ref><ref type="bibr">, 1990</ref><ref type="bibr" target="#b43">, and Matthews and Effler, 2003)</ref>.</p><p>Because of its short residence time and high industrial salt discharges, Lake Erie was the first part of the system to respond to these load reductions. <ref type="bibr" target="#b52">Rathke and McCrae (1989)</ref> reported a downward trend in the central basin of 0.55 mg/L per year between 1966 and 1986. <ref type="bibr" target="#b70">Whyte et al. (1990)</ref> showed similar downward trends in data collected at municipal water intakes in all three basins of Lake Erie for the same period.</p><p>The current study employs more recent observations to extend the trend analysis to the present. In addition, an inverse analysis is used to estimate time series of chloride loadings from pre-settlement (early 1800s) through 2006. An inverse analysis employs a mass-balance model to back-calculate the loadings necessary to generate the observed chloride concentration trends. Revised predictions are also made to assess the ultimate steady-state concentrations that will be approached if present loading levels are maintained.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mass-balance framework</head><p>The Great Lakes are treated as a system of interconnected, completely-mixed systems (Fig. <ref type="figure">2</ref>). This spatial characterization is consistent with a long-term time scale that is designed to resolve interannual variability by employing annual averages for all model variables and parameters. Hence, higher-frequency intraannual variations, such as seasonal and diel cycles, are ignored. This basic approach has been successfully applied to the Great Lakes in previous studies to simulate long-term trends of chloride <ref type="bibr" target="#b47">(O'Connor and Mueller, 1970;</ref><ref type="bibr" target="#b59">Sonzogni et al., 1983)</ref>, total phosphorus <ref type="bibr" target="#b3">(Chapra, 1977;</ref><ref type="bibr" target="#b7">Chapra and Robertson, 1977;</ref><ref type="bibr" target="#b40">Lesht et al., 1991)</ref>, and persistent toxicants <ref type="bibr" target="#b62">(Thomann and Di Toro, 1983)</ref>.</p><p>A direct load is delivered to each lake consisting of the total input from tributary runoff, direct point loadings, atmospheric sources and diversion inflows. Each lake has a net advective outflow that transports chloride to a downstream lake. Lake Michigan also has a diversion outflow to the Chicago River that transfers chloride directly out of the basin. In addition, diffusive mixing occurs between lakes Michigan and Huron due to two-way flows across the open boundary of the Straits of Mackinac.</p><p>A mass-balance model that accounts for these mass transfers can be written generally as</p><formula xml:id="formula_0">V dc dt = W t ð Þ + Q u t ð Þc u -Q o t ð Þc -Q d t ð Þc + E V c b -c ð Þ<label>ð1Þ</label></formula><p>where V = lake volume (km 3 ), c = chloride concentration (mg/L), W = direct loading rate (kta), Q u = inflow rate from an upstream lake (km 3 /year), c u = chloride concentration of upstream lake (mg/L), Q o = outflow rate that carries chloride to a downstream lake (km 3 /year), Q d = diversion outflow (km 3 /year), E′ = bulk eddy diffusion coefficient across an open interface (km 3 /year), c b = the chloride concentration in the adjacent lake across the open interface (mg/L), and the notation (t) indicates that the parameter varies as a function of time. Note that a mg/L is equivalent to a kilotonne (kt) per cubic kilometer (km 3 ). The bulk diffusion coefficient, E′, is a phenomenological parameter that quantifies mass transfer due to two-way flows across open boundaries <ref type="bibr" target="#b4">(Chapra, 1979)</ref>. Previous long-term models have used constant parameters to characterize the Great Lakes' hydrology and morphology. This implies that year-to-year flow variations and level changes would have minimal impact on long-term concentration trends. In essence, the approaches assume that because of their long residence times, the Great Lakes act as low-pass filters that significantly dampen the highfrequency variability of conservative and slowly-reacting substances (see Appendix 1 for details).</p><p>Consistent with these approaches, we treat lake volumes as constant under the assumption that year-to-year volume changes due to lake-level variations are small relative to total lake volume. In addition, the bulk diffusion across the Straits is also assumed to be constant. Although this is certainly not true, the impact of these complex flows on mass transport have yet to be adequately characterized <ref type="bibr" target="#b57">(Schwab et al., 2005)</ref>. As described below, the magnitude of the transfer is small relative to the volumes of both lakes Michigan and Huron and any impacts on chloride concentration due to year-to-year variations should be negligible.</p><p>However, in contrast to previous models, we allow flows (Q) to vary on a year-to-year basis. Although this is probably unimportant for most of the system, the relatively short residence time of Lake Erie makes it sensitive to the decadal cycles that mark periods of high and low flows. For this reason, as described next, we have chosen to employ measured annual flows where available.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Hydrology</head><p>The flows employed in our analysis are based on estimates compiled by NOAA's Great Lakes Environmental Research Laboratory <ref type="bibr" target="#b11">(Croley and Hunter, 1994;</ref><ref type="bibr" target="#b22">GLERL, 2008)</ref>. Interconnecting channel flows were first measured in 1860. Up until 1899, aside from minor flow from Erie into Ontario through the Welland Canal, the system's hydrology was not seriously affected by human manipulation. In 1900, the Chicago Diversion began withdrawing a significant volume of water out of Lake Michigan and, at about the same time, the Welland Canal was expanded. In 1939, the Long Lake/Ogoki Diversions began to bring additional water into Lake Superior while concurrently the Chicago Diversion was reduced. Finally, in the mid-1940s, the Welland Canal was again expanded.</p><p>Average flows for these periods are summarized in Table <ref type="table" target="#tab_0">1</ref> along with several recent periods. This was done to illustrate that the period when chloride loads were reduced <ref type="bibr">(1966)</ref><ref type="bibr">(1967)</ref><ref type="bibr">(1968)</ref><ref type="bibr">(1969)</ref><ref type="bibr">(1970)</ref><ref type="bibr">(1971)</ref><ref type="bibr">(1972)</ref><ref type="bibr">(1973)</ref><ref type="bibr">(1974)</ref><ref type="bibr">(1975)</ref><ref type="bibr">(1976)</ref><ref type="bibr">(1977)</ref><ref type="bibr">(1978)</ref><ref type="bibr">(1979)</ref><ref type="bibr">(1980)</ref><ref type="bibr">(1981)</ref><ref type="bibr">(1982)</ref><ref type="bibr">(1983)</ref><ref type="bibr">(1984)</ref><ref type="bibr">(1985)</ref> was marked by atypically high flows and that recent flows are relatively low. In addition, we include averages from the post-1948 period as being representative of the recent hydrology.</p><p>Physical parameters for the system are summarized in Table <ref type="table" target="#tab_1">2</ref>. As recommended by <ref type="bibr" target="#b50">Quinn (1992)</ref>, the lake volumes correspond to average rather than base surface elevations. Although mean values for outflow are included in the table, the NOAA annual flows are employed wherever possible in the following analyses. These were filtered with 5-year, centered moving averages to remove higherfrequency variations while maintaining the high and low-flow decadal cycles. In addition, average flows for the 1860-1899 period (Table <ref type="table" target="#tab_0">1</ref>) are assumed to apply for the pre-1860 period.</p><p>The exchange of water between lakes Michigan and Huron through the Straits of Mackinac is quite complex <ref type="bibr">(ULRG, 1977a)</ref>. Although water usually flows from Michigan to Huron, <ref type="bibr" target="#b56">Saylor and Sloss (1976)</ref> measured a persistent westerly flow of deeper waters during the summer stratified period. <ref type="bibr" target="#b49">Quinn (1977)</ref> used these observations to estimate that this counter flow effectively reduces Lake Michigan's mean water residence time from over a century to 69 years. This corresponds to a bulk diffusion coefficient of approximately 36 km 3 /year. Both Quinn's estimate and our use of a bulk diffusion coefficient are based on the assumption that the counterflow is not a short-term reversal, but effectively mixes with Lake Michigan water prior to outflow. As noted by <ref type="bibr" target="#b57">Schwab et al. (2005)</ref> it is unclear whether full mixing actually occurs. Hence, although we will use the mechanism in our subsequent predictions, we will assess its impact on our results via a sensitivity analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model solutions</head><p>By writing Eq. (1) for each of the Great Lakes, the resulting system of differential equations provides a quantitative framework to analyze trends of chloride, as well as other conservative substances, in the Great Lakes. Given parameters and loading time series, the equations can be integrated to obtain chloride concentrations as a function of time (see Appendix 1 for details). In addition, as we will illustrate subsequently, it can also be solved inversely to back-calculate the loadings necessary to generate the observed concentration trends.  The residence times are calculated as the ratio of volume to outflow. a Includes the outflow via both Straits of Mackinac and Chicago Diversion.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data</head><p>Early measurements, termed "historical" data, are drawn from a number of papers and reports. These include data from graphs published originally by <ref type="bibr" target="#b2">Beeton (1965) and</ref><ref type="bibr" target="#b47">O'Connor and</ref><ref type="bibr" target="#b47">Mueller (1970)</ref>. In addition, data from 1962 through the mid-1980s are extracted from reports published by the International Joint Commission <ref type="bibr">(Great Lakes Water Quality Board, 1974</ref><ref type="bibr" target="#b24">, 1975</ref><ref type="bibr" target="#b56">, 1976</ref><ref type="bibr">, 1977a</ref><ref type="bibr">,b, 1978a</ref><ref type="bibr">,b, 1979;</ref><ref type="bibr">ULRG, 1977a,b)</ref> and the U.S. Environmental Protection Agency <ref type="bibr">(Lesht and</ref><ref type="bibr">Rockwell, 1985, 1987;</ref><ref type="bibr" target="#b51">Rathke, 1984</ref><ref type="bibr" target="#b53">, Rockwell et al., 1980</ref><ref type="bibr">, 1989)</ref>.</p><p>Beginning in the early 1970s, much more systematic data collection efforts were instituted under the auspices of the U.S. Environmental Protection Agency (USEPA) and Environment Canada (EC). Because they involved much higher quality control these "modern" data sets exhibit considerably less uncertainty than the historical data. Hence, they provide a better basis for separating longterm, emerging trends from interannual natural variability.</p><p>The USEPA's Great Lakes National Program Office (GLNPO) program has sampled chloride in each of the lakes over the period from 1983 through 2006. The annual monitoring of the Great Lakes began in 1983 for lakes Michigan, Huron, and Erie, in 1986 in Lake Ontario, and in 1992 for Lake Superior. The sampling strategy is to collect samples at specific water depths from 73 locations with depths greater than 30 m, or further than 5 km from shore.</p><p>Data used here are station average values from samples collected at various depths including surface, mid-depth, and 10 m above the bottom. Samples were collected using a Rosette sampler during the spring after ice out conditions (usually in April) and once during the summer stratified period (usually in August). GLNPO's standard operating procedure for chloride in lake water is the Lachat Method (LG205) <ref type="bibr">(Lachat Intruments, 1994)</ref>. The approximate working range for chloride is 0.03 to 30.0 mg/L with a method detection limit of 0.03 mg/L. Detailed descriptions of sampling and analytical procedures for GLNPO's open-lake water-quality survey of the Great Lakes are documented in USEPA <ref type="bibr">(2007)</ref>.</p><p>Environment Canada's Great Lakes Surveillance Program conducts water-quality monitoring in each of the Great Lakes upon which Canada borders. The program started in the late 1960s; data since 1971 and until 2006 are provided here. Data used here are averages from surface (1 m) waters for open-lake stations from the spring cruises, when the lakes are isothermal and therefore relatively well mixed. Samples are taken using a Rosette or Van Dorn sampler and the samples are filtered using a cellulose-acetate filter on board the ship. Analysis is conducted by EC's National Laboratory for Environmental Testing. Before 2003 the analysis was by atomic absorption which is comparable to the Lachat Method used by the USEPA. Since then, the analysis is by ion chromatography using a conductivity detector. The chromatography detection limit is 0.01 mg/L, with a range up to 45 mg/L.</p><p>The analysis of the recent EC data for lakes Superior, Huron and Ontario is limited to open-lake stations. These waters best indicate long-term trends because, in contrast to shallower, near-shore waters, they are less influenced by local pollutant discharges. In Lake Superior, open-lake stations comprise those with depths of at least 150 m; in Lake Huron and Lake Ontario, the cutoff depths are 50 m and 100 m, respectively. Beyond omitting near-shore zones, the depth criterion also excludes major embayments such as Green Bay and Saginaw Bay. North Channel data were also excluded from the Lake Huron data set as the waters there reflect mainly a Lake Superior signature.</p><p>Because its waters exhibit a persistent west-to-east gradient, a somewhat different approach was adopted for Lake Erie. As chloride is conservative, the eastern basin concentration represents the best indicator of the integrated effect of all the lake's loadings. Consequently, the analysis is limited, in both the US and EC data sets, to stations in the lake's eastern basin.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data trends</head><p>Mean values for each year are determined separately based on the EC and GLNPO measurements. The results are plotted in Fig. <ref type="figure" target="#fig_1">3</ref>. As was done by <ref type="bibr" target="#b2">Beeton (1965)</ref>, each data time series is accompanied by a smoothed line to aid visualization of the underlying trends. Because of their high uncertainty, the fits of the historical data relied heavily on <ref type="bibr" target="#b2">Beeton's (1965)</ref> and O'Connor and Mueller's (1970) original trend lines. In contrast, the more recent EC and GLNPO data were fit with smoothing splines as described later in the section on inverse loading analysis.</p><p>As previously concluded by both <ref type="bibr" target="#b2">Beeton (1965)</ref> and O'Connor and Mueller (1970), Lake Superior does not visually exhibit an obvious trend because of the variability of the historical data. Interestingly, the recent data presented here suggest that their earlier estimates of 2 mg/L may have been too high. In fact, the average of all data since 1983 is about 1.3 mg/L. In addition, as shown subsequently, because of its long response time, the apparent lack of a trend should not be construed as evidence that Lake Superior's chloride loading has not been elevated due to human activities.</p><p>In contrast to Lake Superior, the trend in Lake Michigan is much less ambiguous with increases persisting through 2006 when the concentration reached approximately 11.7 mg/L. For the modern data, the concentration is increasing at an exponential rate of about 1.44% per year. Note that although it is somewhat difficult to perceive, close inspection of the modern data suggests that the rate decelerated somewhat during the 1970s.</p><p>Prior to the 1960s, Lake Huron exhibited an increasing exponential trend that was similar to Lake Michigan. However, after rising above 6 mg/L in the 1960s, concentrations declined to approximately 5.4 mg/L in about 1985. Thereafter, levels began increasing again at an exponential rate of approximately 1% per year. By 2006, the concentration had climbed back to about 6.6 mg/L. Thus, recent levels are approaching the peak values of the late 1960s.</p><p>Similar, but more dramatic, trends have occurred in lakes Erie and Ontario. Lake Erie reached maximum levels of approximately 26 mg/L in the late 1960s. Concentrations then decreased steadily to about 14.5 mg/L in about 1988. Since then, levels are rising again at a rate of about 1.1% per year with present-day values above 18 mg/L. Lake Ontario has also shown a pattern of exponential increase, substantial decline, and recent rebound. However, both the peak and the trough were higher and occurred later than for Lake Erie. After increasing to a peak of about 29 mg/L in 1974, levels dropped to about 21 mg/L in 1999. Concentrations then began to increase again, climbing to 22.3 mg/L in 2006. The 6 to 10 year lag in Lake Ontario's response relative to Lake Erie is consistent with Lake Ontario's 7.5 year residence time and suggests that a significant component of the Lake Ontario trend is induced by the Lake Erie signal.</p><p>To summarize, aside from Lake Superior, Great Lakes chloride concentrations increased exponentially over the first six decades of the 20th century. Recent data indicate that these trends have persisted in Lake Michigan. In contrast, lakes Huron, Erie and Ontario exhibited declines beginning in the period from 1965 to 1975, followed by increases in recent years.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>The goal of the present section is to estimate the long-term trends in chloride loadings for each of the Great Lakes. Because of differences between historic and modern data quantity and quality, the trend analysis is divided into several parts. First, in order to provide perspective to the modern trends, an attempt is made to estimate the system's pre-settlement chloride loads. Then, because of its long response time and apparent lack of a trend, a separate analysis is performed for Lake Superior. Finally, a formal loading trend analysis is developed for the remaining four lakes. This consists of an inverse analysis that uses the mass-balance model to back-calculate the loadings necessary to generate the observed concentration trends.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pre-settlement loads</head><p>Previous analysis of U.S. and Canadian census data <ref type="bibr" target="#b3">(Chapra, 1977)</ref> indicated that significant settlement of the lake Erie and Ontario basins had occurred prior to 1850. Much of the remainder of the system was cultivated or logged in the decades following the U.S. Civil War. In addition, following construction of the Erie Canal in the early 19th century, large-scale salt production began in and around Syracuse, N.Y. <ref type="bibr" target="#b35">(Kurlansky, 2002)</ref>. Hence, even the earliest recorded values compiled by <ref type="bibr" target="#b2">Beeton (1965)</ref> had probably already risen above the base levels that existed prior to large-scale settlement.</p><p>Based on <ref type="bibr" target="#b2">Beeton's (1965)</ref> early data, O'Connor and Mueller (1970) estimated that pre-settlement chloride concentrations were approximately 2 mg/L for Lake Superior and 3 mg/L for all other lakes. They then employed a steady-state model similar to Eq. ( <ref type="formula" target="#formula_0">1</ref>) to compute the chloride loadings needed to account for these levels. We have recomputed their estimates employing the average outflow from 1860 to 1899 (Table <ref type="table" target="#tab_0">1</ref>) and tabulated the results in Table <ref type="table" target="#tab_2">3</ref>.</p><p>We have updated these estimates using a somewhat different approach. Based on data collected from relatively undisturbed watersheds in the mid-1970s <ref type="bibr" target="#b58">(Sonzogni et al., 1978)</ref>, pre-settlement tributary concentrations were set at 1.25 mg/L for Lake Superior and 2.5 mg/L for the other lakes. As suggested by O' <ref type="bibr">Connor and Mueller (1970)</ref>, precipitation concentrations were assumed to be 0.15 mg/L. This value is consistent with recent wet deposition data collected at 23 locations around the Great Lakes as part of the National Atmospheric Deposition Program/National Trends Network <ref type="bibr">(USGS, 2008)</ref>. Annual averages for these stations for the period 1988 and 2006 had a median value of 0.079 mg/L with an interquartile range from 0.059 to 0.107 mg/L. Because wet deposition is roughly comparable to dry deposition <ref type="bibr" target="#b0">(Akkoyunlu and Tayanc, 2003;</ref><ref type="bibr" target="#b1">Balestrini et al., 2000;</ref><ref type="bibr" target="#b41">Li, 1992;</ref><ref type="bibr" target="#b48">Puxbaum and Gregori, 1998;</ref><ref type="bibr" target="#b61">Takahashi et al., 2003)</ref> an appropriate value for the precipitation concentration would range from 0.1 to 0.2 mg/L.</p><p>We then computed direct chloride loadings for each lake by multiplying these concentrations by the runoff and precipitation flows estimated by NOAA <ref type="bibr" target="#b11">(Croley and Hunter, 1994;</ref><ref type="bibr" target="#b22">GLERL, 2008)</ref>. These values were then input to the steady-state chloride model (Appendix 1) to compute the corresponding in-lake concentrations.</p><p>As shown in Table <ref type="table" target="#tab_2">3</ref>, the resulting concentrations and loadings are both lower than those determined with the O'Connor-Mueller model. Although such estimates are obviously highly uncertain, the fact that Lake Superior's modern chloride concentration ) is approximately 1.3 mg/L lends credence to our lower levels. Thus, even if no increases had occurred, a 1.3 mg/L concentration for Lake Superior translates to a loading of 88.4 kta that is closer to our estimate of 63 kta than the 136 kta originally determined by O' <ref type="bibr">Connor and Mueller (1970)</ref>.</p><p>The situation in the other lakes is more uncertain due to the possible impact of natural salt seeps and springs that could have elevated chloride concentrations prior to settlement. It is well known that significant salt deposits underlie a band stretching from central New York to the lower peninsula of Michigan <ref type="bibr" target="#b35">(Kurlansky, 2002)</ref>. In Ontario, salt is found along the shores of lakes Huron and Erie. Although most of these deposits are well below the surface and only accessible via mining, the historical record of numerous salt springs in the region indicates that some saline groundwater naturally entered the lakes. Because such springs do not typically generate significant flow (relative to runoff), the total generated loading is probably not significant. Nevertheless, it suggests that pre-settlement levels in lakes Michigan, Huron, Erie and Ontario may have been somewhat higher than our computed values. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lake Superior loading trend</head><p>As summarized in Table <ref type="table" target="#tab_3">4</ref>, a number of studies have attempted to estimate Lake Superior's modern chloride loading. We have also included O' <ref type="bibr">Connor and Mueller's (1970)</ref> model estimate of the lake's 1960 loading for comparative purposes. Note that accumulation is computed with the steady-state version of Eq. ( <ref type="formula" target="#formula_0">1</ref>) as the difference between the loading and outflow.</p><p>Although the estimates in Table <ref type="table" target="#tab_3">4</ref> are quite variable, they do suggest that human development has significantly increased Lake Superior's chloride loading. The average of the five estimates (248 kta) is 185 kta higher than our pre-settlement loading estimate. Further, based on measured outflows and concentrations, the outflow of chloride for the 1971-1983 period was approximately 89 kta. This implies that chloride was accumulating in the lake at a rate of 159 kta. Dividing this value by the lake's volume translates into an annual growth rate of 0.013 mg/L per year. Hence, despite the large relative increase in loading, the lake's long residence time suggests that it would take at least a decade or more for loading changes to induce detectable concentration changes.</p><p>A somewhat different result is obtained if one analyzes the actual concentration measurements made since 1971. As shown in Fig. <ref type="figure">4</ref>, a linear regression yields</p><formula xml:id="formula_1">c = 1:182 + 0:0050 t -1970 ð Þ ð<label>2Þ</label></formula><p>with an adjusted r 2 = 0.278, s y/x = 0.078 mg/L, and a p-value of 0.00575. Thus, the rate of increase (0.0050 mg/L per year) is less than half the 0.013 mg/L per year determined from the outflow estimates.</p><p>In fact, the outflow-derived rate exceeds the 95% confidence interval of the data-derived rate (0.00163 to 0.00845 mg/L per year).</p><p>A numerical calculation provides a third means to estimate the loading trend. As was done by O' <ref type="bibr">Connor and Mueller (1970)</ref>, the chloride loading is divided into four major components: presettlement, human waste, road salt and industrial sources. The presettlement loading, which includes both background runoff and atmospheric inputs, is set at 63 kta (Table <ref type="table" target="#tab_2">3</ref>). The human wastewater contribution is calculated as the product of population and a per capita human generation rate of 18 kg/capita/year. In a fashion similar to O' <ref type="bibr">Connor and Mueller (1970)</ref>, we assume that road salt applications started in 1930 and subsequently increased linearly to a level of 75 kta in 1975 and stayed at this level thereafter. Both the human per capita rate and the present road salt rate are intermediate between the values previously used to estimate these sources by O' <ref type="bibr">Connor and Mueller (1970)</ref>, and <ref type="bibr" target="#b59">Sonzogni et al. (1983)</ref>. The industrial contribution is attributed to a single source on the Mineral River in Michigan. This unique discharge was generated by the dewatering process at the White Pine Copper Company Mine <ref type="bibr" target="#b32">(Hartig, 1980)</ref>. <ref type="bibr" target="#b37">Lang (1983)</ref> documented an average load for the river of 29 kta from 1974 to 1980. For the present analysis, we assume that the source maintained this constant level over the period during which the mine operated from 1965 to 1995. The resulting loading trend is displayed in Fig. <ref type="figure" target="#fig_2">5a</ref>. Notice that the peak level of 180 kta is significantly lower than the average total loading estimates compiled in Table <ref type="table" target="#tab_3">4</ref>.</p><p>The loads are then used in conjunction with the chloride budget model (Eq. ( <ref type="formula" target="#formula_0">1</ref>)) to compute concentration trends (Fig. <ref type="figure" target="#fig_2">5b</ref>). Despite the fact that our load estimates are about 30% lower than the average total loading estimates in Table <ref type="table" target="#tab_3">4</ref>, the resulting simulation is quite close to the observed data trend with a present-day rate of increase of 0.006 mg/L per year.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Inverse loading analysis</head><p>Most lake water-quality models are implemented in a forward mode. That is, given a loading time series, the model is integrated to generate a concentration time series. The purpose of the present section is to implement the model in what is termed an inverse mode. That is, the mass balance is used to back-calculate the loading trend necessary to generate the concentration data by simply solving Eq. ( <ref type="formula" target="#formula_0">1</ref>) for the loading,</p><formula xml:id="formula_2">W t ð Þ = V dc dt -Q u t ð Þc u + Q o t ð Þ + Q d t ð Þ ð Þ c -E V c b -c ð Þ :<label>ð3Þ</label></formula><p>The efficacy of Eq. ( <ref type="formula" target="#formula_2">3</ref>) depends on obtaining accurate numerical estimates of the derivative. Because numerical differentiation is highly a Based on flows from <ref type="bibr" target="#b11">Croley and Hunter (1994)</ref> and Eq. ( <ref type="formula" target="#formula_1">2</ref>).</p><p>b Direct point loading assumed to be same as ULRG (1977a).</p><p>Fig. <ref type="figure">4</ref>. Average annual chloride concentrations for Lake Superior versus year along with a best-fit line determined by linear regression. sensitive to data noise <ref type="bibr" target="#b6">(Chapra, 2007)</ref> it necessary to first filter out higher-frequency variability by fitting the data with smoothed trend lines.</p><p>As mentioned earlier, the fits of the historical (i.e., pre-1970) data relied heavily on <ref type="bibr" target="#b2">Beeton's (1965) and</ref><ref type="bibr" target="#b47">O'Connor and</ref><ref type="bibr" target="#b47">Mueller's (1970)</ref> original trend lines. In contrast, the more recent EC and GLNPO data were fit with smoothing splines <ref type="bibr" target="#b13">(de Boor, 2001</ref><ref type="bibr" target="#b14">(de Boor, , 2008))</ref>. This is a nonparametric curve fitting technique that balances the benefits of cubic splines and polynomial regression by minimizing the following objective function</p><formula xml:id="formula_3">p X n i = 1 w i y i -s t i ð Þ ð Þ 2 + 1 -p ð Þ Z d 2 s dt 2 ! 2 dt<label>ð4Þ</label></formula><p>where p = a smoothing parameter that ranges from 0 to 1, n = the number of data points, w i = the weight assigned to the i th data point, y i = the value of the i th data point corresponding to time t i , and s(t i ) = the value of the smoothing spline evaluated at time t i . For the present analysis, as there was no basis for favoring any of the modern data, all points were given equal weights of 1. As p changes from 0 to 1, the smoothing strategy moves from a linear least-squares fit (which is the ideal of smoothness, but does not necessarily intersect any point exactly) to cubic spline interpolation (which passes through every point, but for noisy data wobbles in the intervals between points). Because of its powerful numerical, graphical and statistical features, the smoothing splines were generated with the MATLAB Curve Fitting Toolbox <ref type="bibr">(Mathworks, 2008)</ref>. The software allows this to be done while simultaneously displaying time-series plots of the fit, the derivative, and the residuals, along with several fit statistics (e.g., r 2 , standard error). In this way, the smoothing parameter can be adjusted until the fit balances smoothness (important for the derivative estimates), and statistical robustness (including sound statistics, and uniform distribution of residuals). The resulting trend lines then provide smooth derivatives that can be used in conjunction with Eq. (3) to estimate loadings.</p><p>An example of the resulting fit for Lake Ontario is depicted in Fig. <ref type="figure" target="#fig_3">6a</ref>. The smoothing parameter for this fit was very close to 1 (p = 0.99957) connoting a nearly perfect cubic spline. This result is due in large part to the relatively low scatter in the data, which is also indicated by the fit statistics (r 2 = 0.995, RMSE = 0.439 mg/L). A plot of the standardized residuals (Fig. <ref type="figure" target="#fig_3">6b</ref>) also indicates a uniform distribution of the data around the fit. As shown in Fig. <ref type="figure" target="#fig_3">6c</ref>, the resulting derivative estimates are relatively smooth, which is critical for determining the lake's loading with Eq. ( <ref type="formula" target="#formula_2">3</ref>).</p><p>The smoothing spline fits for lakes Michigan, Huron and Erie are comparable to the one obtained for Lake Ontario. The resulting derivatives are used in conjunction with Eq. (3) to estimate chloride loading time series for each lake. The results are displayed in Fig. <ref type="figure" target="#fig_5">7</ref> along with the constructed load trend for Lake Superior (recall Fig. <ref type="figure" target="#fig_2">5a</ref>). Independently-derived loading estimates are also included for comparison. Because they are based on different combinations of direct measurements and calculations, these independently-derived loading estimates undoubtedly manifest significant uncertainty in their own right. Nevertheless, they provide a basis for evaluating our results.</p><p>As was the case for Lake Superior, our loadings for lakes Michigan and Huron are lower than previous estimates. However, the results are in closer agreement with the modern concentration data, with average differences of approximately 8% for Lake Michigan and 20% for Lake Huron, in contrast to 30% for Lake Superior. In addition, both the previous studies and our estimates seem to suggest that comparable load decreases occurred in both lakes Michigan and Huron during the 1970s.</p><p>The higher loading estimates for the upper lakes (i.e., Superior, Michigan and Huron) reported in previous studies may in part be attributable to overestimation of atmospheric chloride inputs. Because of their large surface areas, the upper lakes would be particularly sensitive to such elevated atmospheric loadings. For example, if the <ref type="bibr" target="#b59">Sonzogni et al. (1983)</ref> atmospheric loading estimates (in kta) for the upper lakes are divided by their precipitation inflows (in km 3 /year), the resulting values (0.4 to 0.9 mg/L) are about four times higher than the USGS (2008) direct measurements of precipitation concentration for the basin (0.1 to 0.2 mg/L).</p><p>In contrast to the upper lakes, our estimates for lakes Erie and Ontario are of comparable magnitude to previous studies. The average percent errors are on the order of 12% for Lake Erie and 8% for Lake Ontario.</p><p>The model can be used to assess the sensitivity of the results to diffusive mixing across the Straits of Mackinac. As in Fig. <ref type="figure" target="#fig_5">7b</ref> and<ref type="figure">c</ref>, direct load estimates for lakes Michigan and Huron were computed both with and without mixing. The percent difference between the recent direct loading estimates with mixing relative to those without mixing represents about a 12% increase for Lake Michigan and a 25% decrease for Lake Huron. Because Lake Michigan had historically higher concentrations, mixing enhances chloride transfer from Michigan to Huron. As is evident from Eq. ( <ref type="formula" target="#formula_2">3</ref>), the direct load estimate for Lake Michigan increases to compensate for the extra chloride moved to Lake Huron by mixing. Note that Lake Huron's total loading is unaffected by mixing because the summation of direct loadings and upstream lake loadings must equal the total loading. Consequently, the inclusion of mixing increases the Lake Michigan loading estimate, while decreasing the Lake Huron direct loading estimate by the same amount. These results indicate the significance of diffusive mixing across the Straits of Mackinac and reinforce previous recommendations (e.g., <ref type="bibr" target="#b56">Saylor and</ref><ref type="bibr">Sloss, 1976, Schwab et al., 2005)</ref> that the mechanism deserves further study.</p><p>The model also allows us to separate each lake's direct loading from inputs due to upstream lakes. As shown in Fig. <ref type="figure" target="#fig_4">8a</ref>, approximately 35% of the present-day chloride concentration in Lake Huron is attributable to inputs to Lake Michigan. In addition, Lake Huron's rate of increase is also heavily influenced by Lake Michigan. If the Lake Michigan load is not included, Lake Huron's chloride concentration would currently be increasing at a rate of about 0.034 mg/L per year due to its own loading and the input from Lake Superior. Including the Lake Michigan contribution more than doubles the rate of increase to 0.078 mg/L per year. Lake Erie's chloride concentration is dominated by its own direct load (Fig. <ref type="figure" target="#fig_4">8b</ref>). In contrast, Fig. <ref type="figure" target="#fig_4">8c</ref> clearly illustrates the great influence of the upstream lakes on Lake Ontario, with about 45% of Lake Ontario's recent concentration attributable to Lake Erie.  Beyond estimating the loadings, the mass-balance model be used to elucidate why the chloride concentration decreased after the late 1960s. In order to gain insight into these reductions, the magnitudes and times of the loading peaks and troughs from Fig. <ref type="figure" target="#fig_5">7</ref> are summarized in Table <ref type="table" target="#tab_4">5</ref>. The load reduction for each lake is then computed as the difference between the peak and trough. In addition, a second estimate (in parentheses) accounts for the background growth of other sources (e.g., road salt and municipal discharges) that would have occurred during the reduction period. Although the results are certainly approximate, the comparisons for lakes Michigan, Huron, Erie and Ontario suggest that the load decreases for those lakes are consistent with the aggressive reduction in industrial chloride loads instituted from 1965 through the late 1980s.</p><p>In summary, the results indicate that, with the exception of Lake Superior, after increasing over the prior 100 years, chloride loadings peaked in the decade from 1965 to 1975. They then dropped precipitously, due primarily to industrial load reductions, with minima reached during the 1980s. The recent trends suggest that loadings are again rising.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Steady-state analysis and projections</head><p>Aside from time-variable solutions, a steady-state analysis can be employed to provide insight into Great Lakes chloride budgets. As described in Appendix 1, a system response matrix for chloride can be computed (Fig. <ref type="figure">9</ref>) based on the average flows for the post-1948 period (Table <ref type="table" target="#tab_0">1</ref>). These flows were chosen as being representative of recent conditions during which man-made influences on the system hydrology (e.g., diversions) have been relatively stable. It should be recognized that along with chloride, this matrix can be used to analyze any other conservative constituent such as sodium, potassium and other ions.</p><p>The individual elements of the matrix represent the steady-state concentration response in each lake due to a unit direct loading to any other lake <ref type="bibr" target="#b63">(Thomann and Mueller, 1987;</ref><ref type="bibr" target="#b5">Chapra, 1997)</ref>. Such matrices have been employed to analyze other Great Lakes water-quality problems including total phosphorus <ref type="bibr" target="#b8">(Chapra and Sonzogni, 1979;</ref><ref type="bibr" target="#b9">Chapra et al., 1983)</ref> and persistent toxicants <ref type="bibr" target="#b63">(Thomann and Mueller, 1987)</ref>.</p><p>Several features of the response matrix bear mention. First, the highlighted diagonal elements, which quantify each lake's response to its own direct load, indicate that lakes Michigan and Superior are much more sensitive to chloride inputs than the other lakes. For example, 100 kta discharged to Lake Michigan results in a 1.494 mg/L increase in chloride concentration whereas the same loading induces a 0.453 mg/L increase for Lake Ontario. This result is primarily related to the relatively small outflows leaving these lakes.</p><p>The second feature is that a load to lakes Superior or Huron has an identical measurable impact on Lake Michigan. For example, 100 kta discharged to either lake results in a 0.264 mg/L increase to Lake Michigan. This effect is due to diffusive back mixing of Lake Huron water into Lake Michigan across the Straits of Mackinac.</p><p>Finally, notice that for lakes Huron, Erie and Ontario, the values across the rows are quite similar in magnitude. This means that regardless of whether chloride loadings originate directly from their own watersheds or as inputs to an upstream lake, the impact on these lakes will be similar. Thus, 100 kta discharged to any of the upstream lakes would result in an increase of about 0.45 mg/L in Lake Ontario. In fact, the only reason there is any difference at all is attributable to the Chicago Diversion. If no outgoing diversions existed, identical values would occur across the rows with values of 0.00591, 0.00532, and 0.00453 mg/L/(kta) for lakes Huron, Erie and Ontario, respectively.</p><p>Beyond these general insights, the matrix can also be used to compute the steady-state concentrations that would eventually occur if loadings are held at constant levels. This was done for four scenarios corresponding to loadings set at (a) pre-reduction maximums, (b) post-reduction minimums, (c) the estimated 2006 loads, and (d) a "no-action" scenario with the 2006 loads supplemented with the documented industrial loading reductions from Table <ref type="table" target="#tab_4">5</ref>. The steadystate concentrations corresponding to these scenarios are listed in Table <ref type="table" target="#tab_5">6</ref>. In addition, the highest recorded modern concentrations (e) and the most recent recorded ( <ref type="formula">2006</ref>) concentrations (f) are included to provide perspective.</p><p>A number of conclusions can be drawn from the results. First, the industrial load reductions were quite significant, particularly when viewed from the long-term, steady-state perspective. If loads had merely been frozen at the pre-reduction maxima, all the lakes would eventually have reached considerably higher chloride concentrations (column a) than their worst recorded levels (column e). Further, for the no-action scenario, column (d) indicates even higher levels with concentrations in Lake Ontario approaching 50 mg/L.</p><p>Second, notice that despite the substantial industrial load reductions, the upper lakes are currently at or approaching their highest recorded levels. Thus, any improvements that had been gained have subsequently been lost. Further, if loads are held fixed Model estimates of the load reductions are included along with documented industrial load reductions. The lake Michigan and Huron values are for the diffusive mixing case. a The first number equals the peak minus the trough. The number in parentheses accounts for background trends of non-industrial chloride sources such as road salts that were not reduced.</p><p>Fig. <ref type="figure">9</ref>. Steady-state system response matrix for conservative substances in the Great Lakes based on average post-1948 hydrology. The elements represent the concentration response in mg/L of each lake (row) to a unit load in kta to any other lake (column). The highlighted diagonal quantifies each lake's response to its own direct load. at 2006 levels, column (c) indicates that all the lakes will eventually or surpass their previous highs concentrations. The most dramatic change would occur in Lake Michigan where concentrations would eventually approach the level of Lake Erie. This conclusion should be tempered by the fact that rather than leveling off at 2006 levels, Fig. <ref type="figure" target="#fig_5">7</ref> suggests that the direct loads are actually still increasing. Hence, the ultimate values could actually exceed the estimates in column (c).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>The foregoing analysis illustrates that industrial controls beginning in the 1960s reversed or slowed down the century-long build-up of Great Lakes chlorides. This leaves the question: Why do concentrations now appear to be increasing?</p><p>Two potential causes could contribute to these increases. First, despite the significant industrial load reductions, the system might still not be at a steady state. In particular, because of their long residence times, lakes Superior, Michigan and Huron could still be adjusting to their loads.</p><p>This hypothesis can be elucidated by returning to Table <ref type="table" target="#tab_5">6</ref> and comparing the steady-state chloride concentrations that would have resulted if the loadings had been held constant at their lowest level following the industrial controls (column b) with the latest 2006 measured concentrations (column f). As might be expected, the concentrations in the long residence-time upper lakes are currently above the constant minimum load scenario values. This strongly suggests that their concentrations would still be rising even if the loadings had remained at the low levels. Although this does not necessarily rule out additional load increases, it does indicate that part of their recent rise is attributable to their slow adjustment to past increases.</p><p>In contrast, the steady-state concentrations for lakes Erie and Ontario under the constant minimum load scenario are below the 2006 measurements. Considering their relatively short residence times, this strongly suggests that their loadings have increased above their post-reduction minima.</p><p>The second hypothesis is that following the drops, as suggested by Fig. <ref type="figure" target="#fig_5">7</ref>, the loads are now increasing again. These increases could originate in two ways: (a) continued increase of non-industrial sources, and (b) the introduction of new sources including new industrial inputs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Non-industrial sources</head><p>In the first case, it is assumed that increases of the major nonindustrial sources (in particular, road salt and municipal discharges) have continued to the present. Thus, after adjusting to the removal of the industrial sources, chloride concentrations would eventually begin to rise again (albeit at a lower rate) due to increases of the other sources. This, in fact, was anticipated by O' <ref type="bibr">Connor and Mueller (1970)</ref> who used their model to predict how the lakes would respond if all industrial sources had been abruptly curtailed in 1970 while maintaining the historical growth rates of road salt and municipal sources. Their results agree qualitatively with the trends exhibited in Fig. <ref type="figure" target="#fig_1">3</ref>. That is, they predicted (a) a deceleration of the Michigan trend and (b) abrupt drops followed by rebounds for lakes Erie and Ontario. Note that they made no predictions for lakes Superior or Huron.</p><p>The most likely non-industrial source is road salt. Salt usage for highway deicing in the U.S. has been increased at a rate of about 2-3% per year since the late 1970s <ref type="bibr" target="#b34">(Kostick, 1993;</ref><ref type="bibr">Salt Institute, 2008)</ref>. In the Province of Ontario, road salt usage is increasing at a similar or higher rate since the 1960s <ref type="bibr" target="#b45">(Morin and Perchanok, 2003)</ref>. The highest loadings of road salt per unit area in Canada are observed in the more densely populated regions of southern Ontario and Quebec. Because almost all of the Ontario usage is in Great Lakes watersheds, and a significant fraction of the U.S. use occurs in Great Lakes states <ref type="bibr">(NRC, 1991)</ref>, it is reasonable to assume that road salt loadings generated in the basin are growing at a similar pace. It should also be noted that private salt use on parking lots may have resulted in even higher total usage in the basin. For example, parking lots in the City of Madison, Wisconsin are estimated to have as much salt applied to them as the public streets (City of <ref type="bibr">Madison, 2006)</ref>.</p><p>Other possible non-industrial chloride sources include (a) potassium chloride (KCl) use in agricultural fertilizers and (b) ferric chloride use for phosphorus removal from municipal wastewater. Modern chemical potash fertilizers usually contain potassium chloride, which is 47.5% by weight chloride. Consumption of potash as an agricultural fertilizer increased rapidly in the United States during the 1960s and 1970s and may have been a factor in the increases in chloride concentrations during this time period. However, U.S. agricultural potash fertilizer use peaked in 1981 and stabilized during the 1980s and 1990s <ref type="bibr">(USDA, 2008)</ref>. Although local increases may have occurred in the Great Lakes basin over this period, there is currently no direct evidence to confirm this hypothesis.</p><p>The chloride concentration of untreated municipal wastewater ranges from about 20 to 160 mg/L (O' <ref type="bibr">Connor and Mueller, 1970;</ref><ref type="bibr" target="#b59">Sonzogni et al., 1983;</ref><ref type="bibr" target="#b44">Metcalf and Eddy, 2003)</ref>. In the 1970s, many wastewater treatment plants in the Great Lakes basin added ferric chloride to enhance phosphorus removal. As reported by <ref type="bibr" target="#b59">Sonzogni et al. (1983)</ref>, increases in chloride effluent concentration from these additions are on the order of 10 mg/L. Hence, the addition would not significantly increase normal effluent concentrations. Because sewage effluent is a relatively small component of the total chloride load, it is doubtful that the additional ferric chloride inputs could account for the recent increases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>New industrial sources</head><p>The second way in which loading might still be increasing would be if new industrial chloride discharges had begun entering the system since 1980. Because chloride loading is currently not being monitored, there is no available evidence pointing to significant new dischargers. The U.S. NPDES (National Pollutant Discharge Elimination System) permit program regulates pollutants in point-source discharges as needed to act in accordance with the technology-based, and water-quality-based requirements of the Clean Water Act. Where appropriate, NPDES permits may include limits and monitoring requirements to comply with the requirements of Effluent Guidelines, Water Quality Standards, or Total Maximum Daily Loads (TMDLs). Information regarding permit requirements is tracked using the ICIS/ PCS (Integrated Compliance Information System/Permit Compliance System) databases. While information in these systems may be used to estimate chloride loadings to the Great Lakes, this information is limited.</p><p>New sources could in fact be contributing to the observed increases and not be tracked by the various permit compliance databases. First, permits only regulate chlorides as needed to comply with the U.S. Clean Water Act. Where discharges of chloride are at low levels, these discharges may not be regulated for chloride, and therefore chloride data will not be tracked in ICIS/PCS. In some cases, rather than end-ofpipe effluent limits, storm water discharge permits may regulate discharges through "best management practices" in which case monitoring may not be required or tracked. In addition, due to resource constraints, States are not obligated to track monitoring data for minor facilities. Finally, NPDES permits are only required for pointsource discharges, and do not track non-point-source discharges of chlorides such as agricultural use of potassium chloride.</p><p>In Canada, a similar situation occurs. Chloride is not currently tracked in the National Pollutant Release Database. For a small number of inorganic chemical plants, the Province of Ontario requires chloride discharges to be monitored, but these likely constitute only a small portion of the total chloride releases.</p><p>The fact that it is difficult to definitively understand why levels are currently increasing reinforces the need for both continued and expanded monitoring and modeling of the Laurentian Great Lakes. The USEPA and EC monitoring programs have provided an excellent database for detecting long-term trends of whole-lake concentrations. Comparison of the variability of the historical and modern data in Fig. <ref type="figure" target="#fig_1">3</ref> clearly demonstrates the value of having long-term, systematic data collection efforts with high quality control. Whereas the early data were certainly valuable in raising concerns, as demonstrated in the present study, a meaningful trend analysis is predicated on more precise measurements of the quality collected by EPA and EC.</p><p>Unfortunately, the same cannot be said regarding direct loading measurements. Whereas major efforts were expended estimating loadings in the 1970s (notably those conducted under the auspices of the International Joint Commission), these programs have been effectively decommissioned. Hence, one must resort to the types of inverse computations described in this paper. Although we believe that our results are useful, it is important to stress that such analyses are only feasible for pollutants that are conservative (such as chloride or other conservative salts) or have very simple reaction kinetics (i.e., radionuclides). For other pollutants, such as nutrients and toxic substances, accurate loading information is absolutely essential in order to systematically parse the cause-effect relationships that dictate water-quality changes.</p><p>We, therefore, urge that routine load monitoring be instituted for the Great Lakes for all important contaminants and indicators. This effort could be implemented in a cost-effective manner via international and inter-agency cooperation and coordination as well as by adopting efficient sampling strategies. We also suggest that both concentration and loading measurements be archived in a central database that is accessible to all stakeholders involved in Great Lakes water-quality management.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>In the present era of global environmental change, it is often forgotten that the Great Lakes were among the first natural systems where major, long-term environmental threats were taken seriously, studied systematically, and ultimately rectified. In particular, the successful reversal of cultural eutrophication through phosphorus control represents a sterling example of how political resolve backed up by sound science and data can essentially save a large, globallysignificant environmental resource.</p><p>However, as we hope this paper also illustrates, sound environmental management is not a one-time event but rather an ongoing process that requires long-term, fully-integrated data collection and modeling. This message is the ultimate legacy of <ref type="bibr" target="#b2">Beeton's (1965) and</ref><ref type="bibr" target="#b47">O'Connor and</ref><ref type="bibr" target="#b47">Mueller's (1970)</ref> original contributions.</p><p>This paper serves to illustrate how, in the absence of loading measurements, unknowns remain in trying to track underlying causes of ecosystem change, even for a conservative element such as chloride. Chloride itself is not directly toxic, at least not at concentrations currently observed in the offshore regions of the Great Lakes. Other, indirect effects of chloride, such as changing the lake's chemical suitability for aquatic species, or impacting the mixing ability of the water column, may be influencing Great Lakes water quality.</p><p>The modeling work presented here is significant in demonstrating the backdrop against which other, non-conservative substances, may be changing in the lakes. For example, the recent chloride increases in the upper lakes that are shown here are at least partially attributable to increased loadings that occurred in the past. The recent increases in the lower lakes are shown to be in part attributable to increased road salt usage in the watersheds and possibly also new or resuming industrial inputs.</p><p>Beyond their water-quality implications, the chloride trends serve as "canaries in the coal mine" and show that, despite many improve-ments in Great Lakes water quality, human influences continue to impact offshore water quality. Furthermore, recent impacts may be as serious as past influences, and the sources may now be more diffuse and difficult to control. Consequently, vigilant stewardship based on continuous monitoring and scientific study must be vigorously supported in order to adequately protect this treasured system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Time-variable solutions</head><p>Given initial conditions for concentration, Eqs. ( <ref type="formula">5</ref>) through (9) can integrated numerically to obtain solutions. To do this, we use Heun's 2nd-order Runge-Kutta method <ref type="bibr" target="#b6">(Chapra, 2007)</ref> with a step size of 1 year. This approach is ideally suited for our annual time frame as it requires no interpolation of parameters or loads because all values used for integration are centered at mid-year. Due to the long residence times of the Great Lakes, the scheme yields results that are graphically indistinguishable (i.e., 3 to 4 digits of precision) from approaches using higher-order integration schemes or finer time steps. This is supported by the systems frequency response characteristics described next.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Frequency response</head><p>The frequency response of a dynamic system refers to the way in which it responds to periodic inputs. As such, it provides a means to assess the meaningful time scales that can be resolved on the basis of response measurements. For chlorides in the Great Lakes, it can be determined for the idealized case where all parameters are constant, inflow equals outflow, and the periodic component of the inflow concentration is sinusoidal. Under these assumptions, the periodic response of concentration can be computed as <ref type="bibr" target="#b5">(Chapra, 1997)</ref>,</p><formula xml:id="formula_4">c = c a;in A ω sin ωt -/ ω ½ ð<label>13Þ</label></formula><p>where c a,in = the amplitude of the periodic component of the inflow concentration (mg/L), ω = the angular frequency of the inflow concentration (radians/year), A ω = the amplitude attenuation function (dimensionless), and ϕ ω = the phase shift (radians). The angular frequency is related to the period of the inflow concentration, T p (year), by</p><formula xml:id="formula_5">ω = 2π T p :<label>ð14Þ</label></formula><p>The amplitude attenuation function can be computed as</p><formula xml:id="formula_6">A ω = λ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi λ 2 + ω 2 p<label>ð15Þ</label></formula><p>and the phase shift as</p><formula xml:id="formula_7">/ ω = tan -1 ω λ<label>ð16Þ</label></formula><p>where</p><formula xml:id="formula_8">λ = 1 τ w<label>ð17Þ</label></formula><p>where τ w = the lake's residence time (year) = V / Q.</p><p>The key to understanding how a lake responds to periodic inputs is expressed by A ω . This function, which varies from 0 to 1, quantifies how the lake's response to a periodic input is attenuated as a function of its residence time and the frequency of the input signal. Substituting Eqs. ( <ref type="formula" target="#formula_5">14</ref>) and ( <ref type="formula" target="#formula_8">17</ref>) into (15) gives</p><formula xml:id="formula_9">A ω = 1 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi 1 + ψ 2 q<label>ð18Þ</label></formula><p>where ψ = a dimensionless number that parameterizes how the lake's residence time and the period of the input signal influence the response,</p><formula xml:id="formula_10">ψ = 2πτ w T p :<label>ð19Þ</label></formula><p>If the lake has a short residence time or the input signal has a long period (i.e., low frequency), ψ will be small and A ω approaches unity. Conversely, if the lake has a long residence time or the input signal has a small period (i.e., a high frequency), ψ grows and A ω approaches zero.</p><p>It is this latter case that is of importance here as such lakes tend to dampen out or filter the high-frequency components of the input. Such systems are commonly called "low-pass filters" because they remove the higher-frequency parts and "pass" the lower-frequency parts of an input signal. From a physical perspective, such behavior can be understood as follows. If the lake has a long residence time, it will respond on that time scale to changes in inputs. Consequently, if the input signal moves between minima and maxima more quickly than the residence time, the lake has insufficient time to respond to each up and down. At the extreme, many cycles of the input can occur in the time it would take the lake to measurably respond to a single perturbation. In such cases, the net result is that, in terms of the lake's concentration response, the loading variation never happened.</p><p>These observations can be generalized further by combining Eqs. ( <ref type="formula" target="#formula_9">18</ref>) and ( <ref type="formula" target="#formula_10">19</ref>) and solving for</p><formula xml:id="formula_11">τ w = T p 2π ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi 1 A 2 ω -1 s :<label>ð20Þ</label></formula><p>By specifying an appropriate level of attenuation, A ω , we can determine the residence time at which a lake acts as a low-pass filter for a particular period loading. For the present context, the two periods of interest are T p = 1 and 2 years. The former represents loads that vary seasonally whereas the latter represents the case where loads vary from one year to the next. If the A ω breakpoint is set at 10%, the corresponding residence times can be calculated from Eq. ( <ref type="formula" target="#formula_11">20</ref>) as 1.58 and 3.17 years. Because all the Great Lakes have residence times greater than 1.58 years (Table <ref type="table" target="#tab_1">2</ref>), this implies that they all filter seasonal load cycles. This result supports our adoption of an annual average time scale. Because the residence times for all the lakes but Erie are greater than 3.17 years, they also filter year-to-year load variations. And even Lake Erie's 2.7-year residence time is close enough that it significantly dampens such variations. This can be determined by substituting τ w = 2.7 years and T p = 2 years into Eq. ( <ref type="formula" target="#formula_9">18</ref>) to compute a value of A ω = 11.9% that is not much more than the 10% criterion.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .Fig. 2 .</head><label>12</label><figDesc>Fig. 1. Areas with major industrial chloride discharges circa 1960. Significant reductions of these sources have occurred over the ensuing 35 years.</figDesc><graphic coords="2,145.81,53.18,312.44,248.83" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 3 .</head><label>3</label><figDesc>Fig.3. Great Lakes chloride concentration data (mg/L) along with trend lines.</figDesc><graphic coords="4,123.70,552.59,356.73,175.35" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Chloride trends for Lake Superior. (a) Hypothesized chloride loading trend, and (b) resulting simulated concentrations along with measurements.</figDesc><graphic coords="6,314.25,538.58,244.06,178.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 6 .</head><label>6</label><figDesc>Fig. 6. (a) Application of a smoothing spline to the modern chloride concentration data for Lake Ontario. The other plots show (b) the normalized residuals (dimensionless), and (c) the first derivative.</figDesc><graphic coords="7,35.66,495.27,247.64,215.55" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 8 .</head><label>8</label><figDesc>Fig. 8. The impact of upstream lakes on the chloride concentration in mg/L for lakes (a) Huron, (b) Erie and (c) Ontario.</figDesc><graphic coords="8,68.43,498.33,467.26,229.66" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig. 7 .</head><label>7</label><figDesc>Fig. 7. Calculated chloride loading trends in kta to the Great Lakes (lines). For lakes Michigan and Huron, direct load estimates are shown both with and without diffusive mixing across the Straits of Mackinac. For the downstream lakes, both direct and total loads are displayed. Note the differing scales for the ordinates. The points represent estimates made by other studies: (O'Connor and Mueller, 1970: open triangle; Sonzogni et al., 1983: open square; Thompson, 1978: open diamond; ULRG, 1977a: filled diamond; GLWQB, 1987: filled square; USEPA, 1972: filled triangle; Yaksich et al., 1982: filled circle; Fraser, 1981: open circle).</figDesc><graphic coords="8,49.10,53.18,506.16,347.30" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Flows for connecting channels and major diversions in km 3 /year for major periods since measurements were begun in 1860.</figDesc><table><row><cell>Period</cell><cell>St. Marys</cell><cell>Chicago</cell><cell>Straits of</cell><cell>St. Clair</cell><cell>Niagara</cell><cell>St. Lawrence</cell></row><row><cell></cell><cell>River</cell><cell>Diversion</cell><cell>Mackinac</cell><cell>River</cell><cell>River</cell><cell>River</cell></row><row><cell>1860-1899</cell><cell>67.99</cell><cell>0.00</cell><cell>45.08</cell><cell>178.15</cell><cell>192.05</cell><cell>223.69</cell></row><row><cell>1900-1938</cell><cell>62.50</cell><cell>6.45</cell><cell>38.63</cell><cell>156.63</cell><cell>173.98</cell><cell>204.82</cell></row><row><cell>1939-1947</cell><cell>70.82</cell><cell>2.79</cell><cell>42.29</cell><cell>160.18</cell><cell>178.87</cell><cell>210.11</cell></row><row><cell>1948-1965</cell><cell>69.55</cell><cell>2.93</cell><cell>35.90</cell><cell>160.80</cell><cell>182.76</cell><cell>211.87</cell></row><row><cell>1966-1985</cell><cell>74.12</cell><cell>2.90</cell><cell>45.91</cell><cell>177.43</cell><cell>205.60</cell><cell>242.58</cell></row><row><cell>1986-1995</cell><cell>66.05</cell><cell>3.26</cell><cell>44.66</cell><cell>172.62</cell><cell>202.73</cell><cell>240.35</cell></row><row><cell>1996-2005</cell><cell>65.02</cell><cell>2.98</cell><cell>40.47</cell><cell>156.10</cell><cell>189.85</cell><cell>226.50</cell></row><row><cell>1948-2005</cell><cell>69.74</cell><cell>2.99</cell><cell>41.65</cell><cell>168.00</cell><cell>188.03</cell><cell>220.54</cell></row><row><cell cols="2">Total record 67.39</cell><cell></cell><cell>44.91 a</cell><cell>167.17</cell><cell>187.70</cell><cell>220.28</cell></row><row><cell cols="7">Connecting channel flows in bold indicate the high-flow period from 1966 to 1985 and</cell></row><row><cell cols="4">the recent low-flow period (1996-2005).</cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="7">a Includes the outflow via both Straits of Mackinac and Chicago Diversion.</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2</head><label>2</label><figDesc>Physical characteristics of the Great Lakes.</figDesc><table><row><cell>Basin</cell><cell>Elevation</cell><cell>Drainage area</cell><cell>Surface area</cell><cell>Volume</cell><cell>Mean depth</cell><cell>Maximum depth</cell><cell>Outflow</cell><cell>Residence time</cell></row><row><cell></cell><cell>(m)</cell><cell>(km 2 )</cell><cell>(km 2 )</cell><cell>(km 3 )</cell><cell>(m)</cell><cell>(m)</cell><cell>(km 3 /year)</cell><cell>(year)</cell></row><row><cell>Superior</cell><cell>183</cell><cell>127,687</cell><cell>82,103</cell><cell>12,115</cell><cell>147.6</cell><cell>406</cell><cell>67.4</cell><cell>179.8</cell></row><row><cell>Michigan</cell><cell>176</cell><cell>115,804</cell><cell>59,600</cell><cell>4947</cell><cell>83.0</cell><cell>282</cell><cell>44.9 a</cell><cell>110.2</cell></row><row><cell>Huron</cell><cell>176</cell><cell>131,313</cell><cell>59,750</cell><cell>3567</cell><cell>59.7</cell><cell>229</cell><cell>167.2</cell><cell>21.3</cell></row><row><cell>Erie</cell><cell>173</cell><cell>62,263</cell><cell>25,220</cell><cell>499</cell><cell>19.8</cell><cell>64</cell><cell>187.7</cell><cell>2.7</cell></row><row><cell>Ontario</cell><cell>74</cell><cell>64,030</cell><cell>18,960</cell><cell>1651</cell><cell>87.1</cell><cell>244</cell><cell>220.3</cell><cell>7.5</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3</head><label>3</label><figDesc>Estimates of pre-settlement chloride loadings to the Great Lakes.</figDesc><table><row><cell>Lake</cell><cell cols="2">O'Connor and Mueller (1970)</cell><cell></cell><cell></cell><cell cols="2">Updated estimates</cell><cell></cell><cell></cell></row><row><cell></cell><cell>Direct</cell><cell>Upstream</cell><cell>Total</cell><cell>Concentration</cell><cell>Direct</cell><cell>Upstream</cell><cell>Total</cell><cell>Concentration</cell></row><row><cell></cell><cell>(kta)</cell><cell>(kta)</cell><cell>(kta)</cell><cell>(mg/L)</cell><cell>(kta)</cell><cell>(kta)</cell><cell>(kta)</cell><cell>(mg/L)</cell></row><row><cell>Superior</cell><cell>136</cell><cell>0</cell><cell>136</cell><cell>2</cell><cell>63</cell><cell>0.0</cell><cell>63</cell><cell>0.93</cell></row><row><cell>Michigan</cell><cell>126</cell><cell>0</cell><cell>126</cell><cell>3</cell><cell>94</cell><cell>0.0</cell><cell>94</cell><cell>1.86</cell></row><row><cell>Huron</cell><cell>273</cell><cell>262</cell><cell>534</cell><cell>3</cell><cell>123</cell><cell>157</cell><cell>281</cell><cell>1.58</cell></row><row><cell>Erie</cell><cell>42</cell><cell>535</cell><cell>576</cell><cell>3</cell><cell>56</cell><cell>281</cell><cell>337</cell><cell>1.75</cell></row><row><cell>Ontario</cell><cell>95</cell><cell>576</cell><cell>671</cell><cell>3</cell><cell>82</cell><cell>337</cell><cell>419</cell><cell>1.87</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Estimates of modern chloride loadings, outflow mass transport, and accumulation for Lake Superior in kta.</figDesc><table><row><cell>Source</cell><cell>Year</cell><cell>Atmospheric</cell><cell>Tributary</cell><cell>Direct point</cell><cell>Total load</cell><cell>Outflow a</cell><cell>Accumulation</cell></row><row><cell>O'Connor and Mueller (1970)</cell><cell>1960</cell><cell>9</cell><cell></cell><cell></cell><cell>230</cell><cell>86</cell><cell>144</cell></row><row><cell>Thompson (1978)</cell><cell>1970-1975</cell><cell>54</cell><cell>83</cell><cell>33 b</cell><cell>169</cell><cell>91</cell><cell>78</cell></row><row><cell>ULRG (1977a)</cell><cell>1974-1976</cell><cell>55</cell><cell>212</cell><cell>33</cell><cell>300</cell><cell>83</cell><cell>217</cell></row><row><cell>Sonzogni et al. (1983)</cell><cell>1975-1979</cell><cell>55</cell><cell>196</cell><cell>33</cell><cell>284</cell><cell>86</cell><cell>197</cell></row><row><cell>GLWQB (1987)</cell><cell>1983</cell><cell>14</cell><cell>212</cell><cell>33</cell><cell>259</cell><cell>99</cell><cell>160</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 5</head><label>5</label><figDesc>Summary of peaks and troughs of Great Lakes direct chloride loadings that occurred in the latter part of the 20th century.</figDesc><table><row><cell>Lake</cell><cell>Peak</cell><cell>Trough</cell><cell>Model estimated</cell><cell>Documented industrial</cell></row><row><cell></cell><cell></cell><cell></cell><cell>reduction a</cell><cell>load reduction</cell></row><row><cell></cell><cell>Year</cell><cell>(kta) Year</cell><cell>(kta) (kta)</cell><cell>(kta)</cell></row><row><cell>Superior</cell><cell>1990</cell><cell>177 2002</cell><cell>148 29</cell><cell>29</cell></row><row><cell cols="3">Michigan 1969 1010 1980</cell><cell>810 200 (300)</cell><cell>400</cell></row><row><cell>Huron</cell><cell>1965</cell><cell>840 1978</cell><cell>300 540 (660)</cell><cell>600</cell></row><row><cell>Erie</cell><cell cols="3">1970 3700 1988 1950 1750 (2100)</cell><cell>2000</cell></row><row><cell>Ontario</cell><cell cols="3">1975 2500 1992 1670 830 (1000)</cell><cell>700</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 6</head><label>6</label><figDesc>Calculated steady-state chloride concentrations (mg/L) for the Great Lakes corresponding to (a) pre-reduction maximum loads, (b) post-reduction minimum loads, (c) fixed 2006 loadings, and (d) fixed 2006 loadings plus documented industrial load reductions from Table 5. The last two columns include (e) the highest measured concentrations and (f) the measured 2006 concentration.</figDesc><table><row><cell>Lake</cell><cell>(a)</cell><cell>(b)</cell><cell>(c)</cell><cell>(d)</cell><cell>(e)</cell><cell>(f)</cell></row><row><cell></cell><cell>Pre-reduction</cell><cell>Post-reduction</cell><cell>2006</cell><cell>2006</cell><cell>Highest</cell><cell>2006</cell></row><row><cell></cell><cell>maximum</cell><cell>minimum load</cell><cell>load</cell><cell>load</cell><cell>measured</cell><cell>measured</cell></row><row><cell></cell><cell>load</cell><cell></cell><cell></cell><cell>plus</cell><cell>concentration</cell><cell>concentration</cell></row><row><cell>Superior</cell><cell>2.5</cell><cell>2.1</cell><cell>2.1</cell><cell>2.5</cell><cell>1.4</cell><cell>1.4</cell></row><row><cell cols="2">Michigan 18.6</cell><cell>13.9</cell><cell cols="3">24.0 32.0 11.7</cell><cell>11.7</cell></row><row><cell>Huron</cell><cell>12.1</cell><cell>7.5</cell><cell cols="2">12.6 18.7</cell><cell>7.0</cell><cell>6.6</cell></row><row><cell>Erie</cell><cell>30.5</cell><cell>17.1</cell><cell cols="3">24.6 40.6 26.0</cell><cell>18.4</cell></row><row><cell>Ontario</cell><cell>37.3</cell><cell>22.1</cell><cell cols="3">30.9 47.8 28.8</cell><cell>22.3</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>S.C.Chapra et al. / Journal of Great Lakes Research 35 (2009) 272-284   </p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>Thanks to <rs type="person">Tom Croley</rs> and <rs type="person">Tim Hunter</rs> of <rs type="affiliation">GLERL/NOAA</rs> for assistance related to Great Lakes hydrology. The paper benefited from suggestions made by anonymous reviewers. Part of this work was supported by the <rs type="funder">University of Washington (</rs><rs type="grantName">Visiting Endowed Professorship</rs>) and <rs type="funder">New Zealand's National Institute of Water and Atmospheric Research (Visiting Scientist Award)</rs> for SCC.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_aP3Wtsn">
+					<orgName type="grant-name">Visiting Endowed Professorship</orgName>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Appendix 1. Modeling details</head><p>Eq. ( <ref type="formula">1</ref>) can be written for each of the Great Lakes, Superior (s):</p><p>Michigan (m):</p><p>Huron (h):</p><p>Erie (e):</p><p>Ontario (o):</p><p>Steady-state solutions</p><p>If the derivatives are set to zero, the resulting system of simultaneous linear equations can be expressed in matrix form as,</p><p>where [A] = the matrix of coefficients (km 3 /year), {c} = the vector of steady-state concentrations (mg/L), and {W} = the vector of direct loadings (kta). Note that for conservative substances like chloride, the elements of [A] consist of the transport parameters (flows and bulk diffusion) that move chloride between the lakes,</p><p>The steady-state solution can then be obtained as</p><p>where [A] -1 = the matrix inverse [(mg/L) / (kta)].</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Analyses of wet and bulk deposition in four different regions of Istanbul, Turkey</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">O</forename><surname>Akkoyunlu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tayanc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Atmos. Environ</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="3571" to="3579" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Wet and dry atmospheric deposition at prealpine and alpine sites in northern Italy</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Balestrini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Galli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tartari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Atmos. Environ</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="1455" to="1470" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Eutrophication of the St. Lawrence Great Lakes</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Beeton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Limnol. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="240" to="254" />
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Total phosphorus model for the Great Lakes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Environ. Eng. Div</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="147" to="161" />
+			<date type="published" when="1977">1977</date>
+			<publisher>ASCE</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Applying phosphorus loading models to embayments</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Limnol. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="163" to="168" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+		<title level="m">Surface water-quality modeling</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">Applied numerical methods with MATLAB for engineering and science</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>WCB/McGraw-Hill</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd Ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Great Lakes eutrophication: the effect of point source control of total phosphorus</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Robertson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">196</biblScope>
+			<biblScope unit="page" from="1448" to="1450" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Great Lakes total phosphorus budget for the mid-1970&apos;s</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Sonzogni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Water Poll. Control Fed</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="2524" to="2533" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Cost effectiveness of treatment to meet phosphorus objectives in the Great Lakes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Chapra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">D</forename><surname>Wicke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Heidtke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Water Poll. Control Fed</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="83" to="91" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<ptr target="http://www.cityofmadison.com/engineering/stormwater/documents/SaltUseReduction.pdf" />
+		<title level="m">Report of the Salt Use Subcommittee to the Commission on the Environment on Road Salt Use and Recommendations, Salt Use Subcommittee to the Commission on the Environment, City of Madison</title>
+		<meeting><address><addrLine>Madison, Wisconsin</addrLine></address></meeting>
+		<imprint>
+			<publisher>City of Madison</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Great Lakes monthly hydrologic data</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">I</forename><surname>Croley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Hunter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">S</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<pubPlace>Ann Arbor, MI</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Great Lakes Environmental Research Laboratory, NOAA</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">GLERL Technical Memorandum 83</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Why Lake Erie Chloride concentrations decreased? Can</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Crucil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mcgee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Hartig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Resour. J</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="97" to="102" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><surname>De Boor</surname></persName>
+		</author>
+		<title level="m">A practical guide to splines</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><surname>De Boor</surname></persName>
+		</author>
+		<title level="m">Spline Toobox 3, User&apos;s guide</title>
+		<meeting><address><addrLine>Natick, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Mathworks, Inc</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Chloride model for polluted Onondaga Lake</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Doerr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Effler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Whitehead</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Auer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Perkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Heidtke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Res</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="849" to="861" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Comment on &quot;A model for total phosphorus in Saginaw Bay</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Dolan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">J</forename><surname>Bierman</surname><genName>Jr</genName></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="110" to="113" />
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A chloride budget for Onondaga Lake, New York</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Effler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Driscoll</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">U.S.A. Water Air Soil Pollut</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="29" to="44" />
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Chloride loading to Lake Ontario from Onondaga Lake, New York</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Effler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Devan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Rodgers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="53" to="58" />
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Chloride in the pore water and water column of Onondaga Lake, N.Y</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Effler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Doerr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Brooks</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">U.S.A. Water Air Soil Pollut</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="315" to="325" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<ptr target="http://www.ec.gc.ca/substances/ese/eng/psap/final/roadsalts.cfm" />
+		<title level="m">Priority substances list assessment report: road salts. Prepared under the Canadian Environmental Protection Act</title>
+		<meeting><address><addrLine>Hull, Quebec</addrLine></address></meeting>
+		<imprint>
+			<publisher>Environment Canada</publisher>
+			<date type="published" when="1999">2001. 1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Fraser</surname></persName>
+		</author>
+		<title level="m">Salt in the Great Lakes</title>
+		<meeting><address><addrLine>Burlington, Ontario, Canada</addrLine></address></meeting>
+		<imprint>
+			<publisher>Environment Canada</publisher>
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">Great Lakes monthly hydrologic data</title>
+		<author>
+			<persName><surname>Glerl</surname></persName>
+		</author>
+		<ptr target="ftp://ftp.glerl.noaa.gov/publications/tech_reports/glerl-083/UpdatedFiles/" />
+		<imprint>
+			<date type="published" when="2008-11-08">2008. November 8, 2008</date>
+			<publisher>NOAA</publisher>
+			<pubPlace>Ann Arbor, MI</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Great Lakes Environmental Research Laboratory</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m">Great Lakes Water Quality: 1973 Annual Report to the International Joint Commission</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Third Annual Report to the International Joint Commission</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Fourth Annual Report, Appendix B, Annual Report of the Surveillance Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Fifth Annual Report, Appendix B, Annual Report of the Surveillance Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Fifth Annual Report, Appendix C, Annual Report of the Remedial Programs Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Sixth Annual Report, Appendix B, Annual Report of the Surveillance Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m">Great Lakes Water Quality 1976, Sixth Annual Report, Appendix C, Remedial Programs Subcommittee Report</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Seventh Annual Report, Appendix B, Annual Report of the Surveillance Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m">Great Lakes Water Quality, Annual Report of the Surveillance Subcommittee</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission, Great Lakes Regional Office</publisher>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">A water quality assessment of the Mineral River -Lake Superior area (Ontonagon County)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Hartig</surname></persName>
+		</author>
+		<idno>4833-9734</idno>
+		<imprint>
+			<date type="published" when="1980">1980</date>
+			<publisher>Environmental Services Division, Michigan Department of Natural Resources</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Michigan</forename><surname>Lansing</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">The material flow of salt</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Kostick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Bureau of Mines Information Circular IC 9343</title>
+		<meeting><address><addrLine>Reston, VA</addrLine></address></meeting>
+		<imprint>
+			<publisher>USGS</publisher>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title level="m" type="main">Salt: a world history</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kurlansky</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<publisher>Penguin</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">B)</title>
+		<author>
+			<persName><forename type="first">Lachat</forename><surname>Instruments</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Method for chloride</title>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<biblScope unit="page" from="10" to="117" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">The Mineral River: a unique tributary chloride load to Lake Superior</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Lang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="584" to="587" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title level="m" type="main">The state of the Middle Great Lakes: results of the 1983 water quality survey of Lakes Erie</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Lesht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Rockwell</surname></persName>
+		</author>
+		<idno>ANL/ER-85-2</idno>
+		<imprint>
+			<date type="published" when="1985">1985</date>
+			<pubPlace>Huron, and Michigan</pubPlace>
+		</imprint>
+	</monogr>
+	<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Lesht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Rockwell</surname></persName>
+		</author>
+		<title level="m">The state of the Middle Great Lakes: results of the 1984 water quality survey of Lakes Erie</title>
+		<meeting><address><addrLine>Huron, and Michigan</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+		<respStmt>
+			<orgName>U.S. Environmental Protection Agency, Great Lakes National Program Office</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Great Lakes total phosphorus model: post audit and regionalized sensitivity analysis</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Lesht</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Iii</forename><surname>Fontaine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">D</forename><surname>Dolan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="17" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Seasalt and pollution inputs over the continental United States</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water, Air and Soil Pollution</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="561" to="573" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m">Curve fitting Toolbox</title>
+		<meeting><address><addrLine>Natick, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Mathworks, Inc</publisher>
+		</imprint>
+	</monogr>
+	<note>Users Guide</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Decreases in pollutant loading from residual soda ash production waste</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Matthews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">W</forename><surname>Effler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Air Soil Pollut</title>
+		<imprint>
+			<biblScope unit="volume">146</biblScope>
+			<biblScope unit="page" from="55" to="73" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<author>
+			<persName><forename type="first">Eddy</forename><surname>Metcalf</surname></persName>
+		</author>
+		<title level="m">Wastewater engineering: treatment and reuse, 4th Ed</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Road salt use in Canada</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Morin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Perchanok</surname></persName>
+		</author>
+		<ptr target="www.fes.uwaterloo.ca/Research/GeogPubs/pdf/transportation_andrey01.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Chapter 6 in Weather and Transportation in Canada</title>
+		<editor>
+			<persName><forename type="first">J</forename><surname>Andrey</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">C</forename><surname>Knapper</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>University of Waterloo</publisher>
+			<date type="published" when="2003-11-08">2003. November 8, 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<monogr>
+		<title level="m">Road salt use in the United States</title>
+		<meeting><address><addrLine>Washington, D.C., USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>National Research Council. Transportation Research Board</publisher>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+		<respStmt>
+			<orgName>National Research Council</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Water quality model of chlorides in Great Lakes</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>O'connor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Mueller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Sanit. Eng. Div</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="955" to="975" />
+			<date type="published" when="1970">1970</date>
+			<publisher>ASCE</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Seasonal and annual deposition rates of sulphur, nitrogen and chloride species to an oak forest in north-eastern Austria (Wolkersdorf, 240 m A.S.L.)</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Puxbaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gregori</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Atmos. Environ</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="3557" to="3568" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Annual and seasonal flow variations through the Straits of Mackinac</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Quinn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Resour. Res</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="137" to="144" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Hydraulic residence times for the Laurentian Great Lakes</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">H</forename><surname>Quinn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="22" to="28" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Rathke</surname></persName>
+		</author>
+		<idno>EPA- 905/4-84-001</idno>
+		<title level="m">Lake Erie Intensive Study 1978-1979</title>
+		<meeting><address><addrLine>Chicago, IL</addrLine></address></meeting>
+		<imprint>
+			<publisher>Great Lakes National Program Office</publisher>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Final Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Rathke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mccrae</surname></persName>
+		</author>
+		<title level="m">Appendix B, Volume III, Report of the Great Lakes Water Quality Board</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>International Joint Commission</publisher>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Rockwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Iii</forename><surname>Devault</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Palmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Marion</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">V</forename><surname>Bowden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename></persName>
+		</author>
+		<title level="m">Lake Michigan Intensive Survey 1976-1977</title>
+		<meeting><address><addrLine>Chicago, IL</addrLine></address></meeting>
+		<imprint>
+			<publisher>United States Environmental Protection Agency</publisher>
+			<date type="published" when="1980">1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<monogr>
+		<title level="m" type="main">Water quality in the Middle Great Lakes: results of the 1985 water quality survey of Lakes Erie</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Rockwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Salisbury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Lesht</surname></persName>
+		</author>
+		<idno>EPA-905/6/89-001</idno>
+		<imprint>
+			<date type="published" when="1989">1989</date>
+			<publisher>Great Lakes National Program Office. United States Environmental Protection Agency</publisher>
+			<pubPlace>Huron, and Michigan; Chicago, IL</pubPlace>
+		</imprint>
+	</monogr>
+	<note type="report_type">Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">S</forename><surname>Salt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Sales</surname></persName>
+		</author>
+		<ptr target="http://www.saltinstitute.org/33.html" />
+		<imprint>
+			<date type="published" when="2008-11-01">November 1, 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Water volume transport and oscillatory current flow through the Straits of Mackinac</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Saylor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Sloss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Oceanogr</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="229" to="237" />
+			<date type="published" when="1976">1976</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Physical limnological and hydrological characteristics of Lake Michigan</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Schwab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">I</forename><surname>Croley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Schertzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">State of Lake Michigan: ecology, health, and management</title>
+		<title level="s">Ecovision World Monograph Series</title>
+		<editor>
+			<persName><forename type="first">T</forename><surname>Edsall</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Munawar</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New Delhi, India</addrLine></address></meeting>
+		<imprint>
+			<publisher>Goodword Books</publisher>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Sonzogni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Monteith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">N</forename><surname>Bach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">G</forename><surname>Hughes</surname></persName>
+		</author>
+		<title level="m">United States Great Lakes tributary loadings. Great Lakes Pollution from Land Use Activities Reference Group, International Joint Commission</title>
+		<meeting><address><addrLine>Windsor, Ontario, Canada</addrLine></address></meeting>
+		<imprint>
+			<publisher>Great Lakes Regional Office</publisher>
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Technical Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Chloride pollution of the Great Lakes</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Sonzogni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Richardson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Monteith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Water Poll. Control Fed</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="513" to="521" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Phytoplankton assemblages as indicators of water quality in the Laurentian Great Lakes</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Stoermer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Am. Microsc. Soc</title>
+		<imprint>
+			<biblScope unit="volume">97</biblScope>
+			<biblScope unit="page" from="2" to="26" />
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Atmospheric budget of nonseasalt chlorine in the Kanto District, Japan</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Takahashi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Fukuda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tsuji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yoshikawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water Air Soil Pollut.: Focus</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="77" to="86" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Physico-chemical model of toxic substances in the Great Lakes</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">V</forename><surname>Thomann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Di Toro</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="474" to="496" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">V</forename><surname>Thomann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Mueller</surname></persName>
+		</author>
+		<title level="m">Principles of surface water quality modeling and control</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>HarperCollins</publisher>
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Major ion loadings to Lake Superior</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Thompson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">3-4</biblScope>
+			<biblScope unit="page" from="361" to="369" />
+			<date type="published" when="1978">1978</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">The waters of Lake Huron and Lake Superior: report to the International Joint Commission</title>
+		<author>
+			<persName><surname>Ulrg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">and the North Channel</title>
+		<meeting><address><addrLine>Lake Huron, Georgian Bay; Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>Upper Lakes Reference Group, International Joint Commission</publisher>
+			<date type="published" when="1977">1977</date>
+			<biblScope unit="volume">II</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">The waters of Lake Huron and Lake Superior: report to the International Joint Commission</title>
+		<author>
+			<persName><surname>Ulrg</surname></persName>
+		</author>
+		<ptr target="http://www.ers.usda.gov/Data/fertilizeruse/" />
+	</analytic>
+	<monogr>
+		<title level="m">Use and Price: consumption of selected phosphate and potash fertilizers for 1960-2006</title>
+		<meeting><address><addrLine>Windsor, Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>Economic Research Service, U.S. Department of Agriculture</publisher>
+			<date type="published" when="1977">1977b. 2008. November 3, 2008</date>
+			<biblScope unit="volume">III</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<monogr>
+		<title level="m">Report of the Environmental Protection Agency to the Lake Michigan Enforcement Conference on Chloride</title>
+		<meeting><address><addrLine>Region V. Chicago, IL</addrLine></address></meeting>
+		<imprint>
+			<publisher>U.S. Environmental Protection Agency</publisher>
+			<date type="published" when="1972">1972</date>
+		</imprint>
+		<respStmt>
+			<orgName>USEPA</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<monogr>
+		<title level="m" type="main">Sampling and analytical procedures for GLNPO&apos;s open lake water quality survey of the Great Lakes</title>
+		<author>
+			<persName><surname>Usepa</surname></persName>
+		</author>
+		<idno>EPA 905-R-05-001</idno>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>Great Lakes National Program Office</publisher>
+			<pubPlace>Chicago, IL</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<monogr>
+		<title level="m" type="main">NADP/NTN: National Atmospheric Deposition Program/National Trend Network</title>
+		<ptr target="http://nadp.sws.uiuc.edu/" />
+		<imprint>
+			<date type="published" when="2008-07-14">2008. July 14, 2008</date>
+			<publisher>USGS</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Decreasing chloride trends observed at Lake Erie municipal water intakes</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Whyte</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Hartig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Hopkins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Great Lakes Res</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="233" to="240" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<monogr>
+		<title level="m" type="main">Lake Erie nutrient loads</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Yaksich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Melfi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Kramer</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1970">1982. 1970-1980</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">U</forename><forename type="middle">S</forename></persName>
+		</author>
+		<idno>Publ. 14207</idno>
+		<imprint>
+			<publisher>Army Corps of Engineers</publisher>
+			<pubPlace>Buffalo, NY</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

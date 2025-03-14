@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Anharmonic effects in atomic hydrogen: superconductivity and lattice dynamical stability</title>
+				<funder ref="#_cGhqZqT">
+					<orgName type="full">Agence Nationale de la Recherche</orgName>
+					<orgName type="abbreviated">ANR</orgName>
+				</funder>
+				<funder ref="#_99xX4pu">
+					<orgName type="full">Spanish Ministry of Economy and Competitiveness</orgName>
+				</funder>
+				<funder ref="#_SDKaH8G">
+					<orgName type="full">University of the Basque Country</orgName>
+				</funder>
+				<funder ref="#_hZJ6SWv">
+					<orgName type="full">Department of Education, Language Policy and Culture of the Basque Government</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Department of Education, Universities and Research of the Basque Government</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-04-19">April 19, 2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Miguel</forename><surname>Borinaga</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Física de Materiales CFM</orgName>
+								<orgName type="institution">CSIC-UPV/EHU</orgName>
+								<address>
+									<addrLine>Paseo Manuel de Lardizabal 5</addrLine>
+									<postCode>20018</postCode>
+									<settlement>Donostia San Sebastián Basque Country</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Donostia International Physics Center (DIPC)</orgName>
+								<address>
+									<addrLine>Manuel Lardizabal pasealekua 4</addrLine>
+									<postCode>20018</postCode>
+									<settlement>Donostia San Sebastián Basque Country</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ion</forename><surname>Errea</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Donostia International Physics Center (DIPC)</orgName>
+								<address>
+									<addrLine>Manuel Lardizabal pasealekua 4</addrLine>
+									<postCode>20018</postCode>
+									<settlement>Donostia San Sebastián Basque Country</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department">Fisika Aplikatua 1 Saila</orgName>
+								<orgName type="institution" key="instit1">EUITI Bilbao</orgName>
+								<orgName type="institution" key="instit2">University of the Basque Country (UPV/EHU)</orgName>
+								<address>
+									<addrLine>Rafael Moreno &quot;Pitxitxi&quot; Pasealekua 3</addrLine>
+									<postCode>48013</postCode>
+									<settlement>Bilbao</settlement>
+									<region>Basque Country</region>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Matteo</forename><surname>Calandra</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="laboratory" key="lab1">IMPMC</orgName>
+								<orgName type="laboratory" key="lab2">UMR CNRS 7590</orgName>
+								<orgName type="institution" key="instit1">Sorbonne Universités -UPMC Univ. Paris 06</orgName>
+								<orgName type="institution" key="instit2">MNHN</orgName>
+								<orgName type="institution" key="instit3">IRD</orgName>
+								<address>
+									<addrLine>4 Place Jussieu</addrLine>
+									<postCode>F-75005</postCode>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Francesco</forename><surname>Mauri</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="laboratory" key="lab1">IMPMC</orgName>
+								<orgName type="laboratory" key="lab2">UMR CNRS 7590</orgName>
+								<orgName type="institution" key="instit1">Sorbonne Universités -UPMC Univ. Paris 06</orgName>
+								<orgName type="institution" key="instit2">MNHN</orgName>
+								<orgName type="institution" key="instit3">IRD</orgName>
+								<address>
+									<addrLine>4 Place Jussieu</addrLine>
+									<postCode>F-75005</postCode>
+									<settlement>Paris</settlement>
+									<country key="FR">France</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff4">
+								<orgName type="department">Dipartimento di Fisica</orgName>
+								<orgName type="institution">Università di Roma La Sapienza</orgName>
+								<address>
+									<addrLine>Piazzale Aldo Moro 5</addrLine>
+									<postCode>I-00185</postCode>
+									<settlement>Roma</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Aitor</forename><surname>Bergara</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Centro de Física de Materiales CFM</orgName>
+								<orgName type="institution">CSIC-UPV/EHU</orgName>
+								<address>
+									<addrLine>Paseo Manuel de Lardizabal 5</addrLine>
+									<postCode>20018</postCode>
+									<settlement>Donostia San Sebastián Basque Country</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Donostia International Physics Center (DIPC)</orgName>
+								<address>
+									<addrLine>Manuel Lardizabal pasealekua 4</addrLine>
+									<postCode>20018</postCode>
+									<settlement>Donostia San Sebastián Basque Country</settlement>
+									<country key="ES">Spain</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff5">
+								<orgName type="department">Departamento de Física de la Materia Condensada</orgName>
+								<orgName type="institution">University of the Basque Country (UPV/EHU)</orgName>
+								<address>
+									<postCode>48080</postCode>
+									<settlement>Bilbao</settlement>
+									<country>Basque Country Spain</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Anharmonic effects in atomic hydrogen: superconductivity and lattice dynamical stability</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016-04-19">April 19, 2016</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8D70E64DD4409E2A053769FC5C8DDE9F</idno>
+					<idno type="DOI">10.1103/PhysRevB.93.174308</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:02+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>We present first-principles calculations of metallic atomic hydrogen in the 400-600 GPa pressure range in a tetragonal structure with space group I41/amd, which is predicted to be its first atomic phase. Our calculations show a band structure close to the free-electron-like limit due to the high electronic kinetic energy induced by pressure. Bands are properly described even in the independent electron approximation fully neglecting the electron-electron interaction. Linear-response harmonic calculations show a dynamically stable phonon spectrum with marked Kohn anomalies. Even if the electron-electron interaction has a minor role in the electronic bands, the inclusion of electronic exchange and correlation in the density response is essential to obtain a dynamically stable structure. Anharmonic effects, which are calculated within the stochastic self-consistent harmonic approximation, harden high-energy optical modes and soften transverse acoustic modes up to a 20% in energy. Despite a large impact of anharmonicity has been predicted in several high-pressure hydrides, here the superconducting critical temperature is barely affected by anharmonicity, as it is lowered from its harmonic 318 K value only to 300 K at 500 GPa. We attribute the small impact of anharmonicity on superconductivity to the absence of softened optical modes and the fairly uniform distribution of the electron-phonon coupling among the vibrational modes.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>The recent measurement of a superconducting critical temperature (T c ) of 203 K in the sulfur hydrogen system 1 , a temperature reachable on Earth's surface, is a major breakthrough in the field of superconductivity. It ultimately validates Ashcroft's idea that hydrogen and hydrogen-dominant metallic compounds can be high-temperature superconductors <ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b2">3</ref> . This measurement offers new hopes to find sooner than later roomtemperature superconductivity in other hydrogen-rich compounds or hydrogen itself. Indeed, since the advent of modern ab initio calculations for the electronphonon interaction, many theoretical calculations have predicted astonishingly high T c values for hydrogen at megabar pressures, both in molecular and atomic phases, the largest T c values predicted for any compound up to date <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref> .</p><p>Thus far, five solid phases of hydrogen have been determined, all of them molecular and insulating. However, a sixth metallic one has been recently claimed to be found <ref type="bibr" target="#b10">11</ref> . Phase I is thought to be a molecular solid of quantum rotors on a hexagonal close packed lattice <ref type="bibr" target="#b11">12</ref> . It is found in a wide pressure and temperature range up to the melting curve, which has a maximum of ∼1000 K around 65 GPa <ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b13">14</ref> . Phase II appears between ap-proximately 50-150 GPa and only below 150 K, temperature at which it transforms back to phase I <ref type="bibr" target="#b14">15</ref> . Hydrogen adopts phase III above 150 GPa up to at least 360 GPa <ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b16">17</ref> . Recent experiments have determined that this phase transforms to phase IV at around 200 K in the 240-325 GPa pressure range <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref> , which might melt close to room temperature <ref type="bibr" target="#b20">21</ref> . Transition from phase IV to V occurs at 325 GPa, the last one existing probably up to the dissociation pressure <ref type="bibr" target="#b21">22</ref> . Finally, a new work claims to have found phase VI by cooling down phase V below 200-220 K. This new phase could be metallic, but further work is expected to confirm this result <ref type="bibr" target="#b10">11</ref> . In any case, and even though the goal seems closer than ever, the quest for metallic hydrogen continues. Extrapolation of optical experiments <ref type="bibr" target="#b22">23</ref> predicted a metalization pressure of around 450 GPa, which was expected to occur due to the overlap between the valence and conduction bands in the molecular state before molecular dissociation <ref type="bibr" target="#b23">24,</ref><ref type="bibr" target="#b24">25</ref> . However, works in Ref. 22 and 11 suggest metalization might occur together with molecular dissociation. In any case, state-of-the-art static diamond anvil cell techniques <ref type="bibr" target="#b25">26</ref> will allow promising future experiments that are expected to shine light on this long standing quest.</p><p>Even though it has not been experimentally confirmed yet, recent quantum Monte Carlo calculations including anharmonicity for the zero-point energy <ref type="bibr" target="#b26">27</ref> predict hydro- gen should undergo a transition to a metallic and atomic tetragonal I4 1 /amd phase (shown in Fig. <ref type="figure" target="#fig_0">1</ref>) around 374 GPa, which had been predicted before <ref type="bibr" target="#b27">28</ref> . It seems the inclusion of anharmonicity is important to describe the boundaries of phases I, II, III, and IV 29 , as well as to estimate the vibron energies in phases III and IV <ref type="bibr" target="#b29">30,</ref><ref type="bibr" target="#b30">31</ref> . Nevertheless, even if anharmonicity has a huge impact on the superconducting properties of many hydrides <ref type="bibr" target="#b31">[32]</ref><ref type="bibr" target="#b32">[33]</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref> , the potential impact of anharmonicity in the large T c values predicted for hydrogen 4-10 remains unexplored. Considering that in aluminum <ref type="bibr" target="#b35">36,</ref><ref type="bibr" target="#b36">37</ref> , palladium <ref type="bibr" target="#b33">34</ref> , and platinum hydrides <ref type="bibr" target="#b34">35</ref> , as well as in the record superconductor H 3 S 32 anharmonicity suppresses the electron-phonon couping as it tends to harden optical H-character phonon modes, one might expect that anharmonicity might strongly impact superconductivity in hydrogen too.</p><p>In this work we present an ab initio analysis based on density-functional theory (DFT) of electronic and vibrational properties of I4 1 /amd hydrogen in the 400-600 GPa pressure range. While in Ref. 8 vibrational and superconducting properties of this possible first structure of atomic hydrogen phase are analyzed holding to the harmonic approach, our goal is to elucidate the impact of anharmonicity in those properties plus its implications in lattice stability. Our results show a close to free-electron-like behavior, as the DFT band structure is perfectly described even if electron-electron interaction is fully neglected. The harmonic phonons calculated within linear-response density-functional perturbation theory (DFPT) <ref type="bibr" target="#b37">38</ref> show the system is dynamically stable even if marked Kohn anomalies are present. Despite the minor role of electron-electron interaction in the electronic states, electronic exchange becomes of vital importance to ensure the dynamical stability of the system. We have included anharmonic effects using the stochastic self-consistent harmonic approximation (SSCHA) <ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b34">35</ref> and observed the phonon spectrum is significantly modified. However, in contrast to many superconducting hydrides <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref> , the superconducting T c obtained within the harmonic approximation is barely modified by anharmonicity, as it is only suppressed by a 6%.</p><p>The paper is organized as follows. In Sec. II we overview the computational details and methods used throughout. In Sec. III we present and analyze the obtained results. Finally, we present a summary of our conclusions in Sec. IV.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. COMPUTATIONAL DETAILS</head><p>We performed our DFT calculations within the Perdew-Burke-Ernzerhof parametrization of the generalized-gradient approximation <ref type="bibr" target="#b38">39</ref> .</p><p>The electronproton interaction was considered making use of an ultrasoft pseudopotential as implemented in Quantum ESPRESSO <ref type="bibr" target="#b39">40</ref> . Due to the large kinetic energy of the electrons, a proper convergence of the electronic properties and phonon frequencies required a dense 80 × 80 × 80 k-mesh and 0.05 Ry Hermite-Gaussian electronic smearing for the electronic integrations in the first Brillouin zone (BZ). An energy cutoff of 100 Ry was necessary for expanding the wave-functions in the plane-wave basis.</p><p>Phonon frequencies were calculated within DFPT as implemented in Quantum ESPRESSO 40 in a 6 × 6 × 6 q-point grid in the BZ. Fourier interpolation was used to obtain the phonon spectra along high-symmetry lines. We find convenient to split the calculated dynamical matrices at a given wave-vector as D(q) = D p (q) + D e (q). D p represents the contribution of the proton-proton Coulomb interaction to the dynamical matrix, which can be estimated analytically with an Ewald summation. D e contains the effect of the electronic response to the proton motion in the dynamical matrix. Besides DFPT, we have also estimated D e making use of the free-electron Lindhard response function within the Random Phase Approximation (RPA) as in Ref. 41. In the latter approach the dynamical matrix is analytical at any q so that we have not restricted the calculations to the 6 × 6 × 6 grid.</p><p>Electron-phonon matrix elements were also calculated within DFPT in a 6 × 6 × 6 q-point grid. Converging the double Dirac delta in the equation for the phonon linewidth required a 100 × 100 × 100 denser k-point mesh. The superconducting T c was calculated solving isotropic Migdal-Eliashberg equations <ref type="bibr" target="#b41">42,</ref><ref type="bibr" target="#b42">43</ref> , considering that for large electron-phonon coupling constants McMillan's equation underestimates T c 44 . We use the SSCHA <ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b34">35</ref> to calculate the anharmonic renormalization of the phonon spectrum. The SSCHA is a variational method in which the vibrational free energy is minimized with respect to a trial harmonic density matrix. This minimization process requires the calculation of forces acting on atoms in supercells for different configurations created with the trial density matrix. These forces were calculated in a 3 × 3 × 3 supercell making use of DFT with the same parameters as the DFPT phonon calculations. This yielded phonon frequencies in a commensurate 3 × 3 × 3 q-point grid. The difference between the harmonic and anharmonic dynamical matrices was interpolated to the finer 6 × 6 × 6 grid. The anharmonic correction to the superconducting T c was calculated combining the SSCHA dynamical matrices with the calculated electron-phonon deformation potential within DFPT as explained in Ref. 34.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULTS AND DISCUSSION</head><p>A. Electronic structure Hydrogen, containing a single proton and an electron, is supposed to leave its common molecular nature under a sufficient high pressure to form a metal similar to the alkalies. In the high pressure limit the dominant electronic kinetic energy would be responsible for ending up with a free-electron-like metal. However, in the analyzed pressure range we are still close to the dissociation/metalization pressure <ref type="bibr" target="#b22">23</ref> and the problem is not as simple as one could imagine a priori.</p><p>Fig. <ref type="figure">2a</ref> shows the electronic band structure of I4 1 /amd hydrogen at 500 GPa. The bands present a huge dispersion, associated to the dominating kinetic term in the energies of the electronic states. The calculated band structure is not far from the free-electron approximation, the main difference being the band gaps opened at the border of the BZ and whenever band crossing occurs due to the interaction of the electrons with the proton lattice. It is interesting to point out that if we consider the independent electron approximation, just keeping the V e,p term that gives the electron-proton interaction in the V scf selfconsistent potential and neglecting the V H Hartree and V xc electron-electron interactions (see Appendix for details), the resulting bands match almost perfectly with the DFT ones. Therefore, we can conclude that main differences with the free-electron approximation are due to the large proton-electron interaction, and that the interaction between the electrons is not giving any significant contribution to the band structure. Fig. <ref type="figure">2b</ref> shows the Fermi surface, which is quite spherical. However, the sphere shows some open areas around the high symmetry point N, where it touches the BZ boundary and a band gap is opened.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Vibrational properties</head><p>In Fig. <ref type="figure">3</ref> we show the calculated phonon dispersion in tetragonal I4 1 /amd hydrogen at 500 GPa within DFPT. We also show the phonons at 400 and 600 GPa, but due to the minor qualitative changes we will focus just in the 500 GPa spectrum, as the analysis should be valid for all the pressure range. The system clearly is dynamically stable, but there are some branches with strong Kohn anomalies <ref type="bibr" target="#b44">45</ref> , specially the low energy transverse acoustic branch. Indeed, as shown in Fig. <ref type="figure">3</ref>, q-points at which the anomalies appear coincide with |q + G| = 2k f , where k f is the Fermi wave-vector and G the reciprocal lattice vector that brings q back into the BZ. Considering the validity of the free-electron-like approximation to describe the electronic band structure, we have calculated the phonon dispersion within this approximation, assuming that the D e contribution to the dynamical matrix can be calculated with the Lindhard response function at the RPA level as in Ref. 41, therefore, neglecting correlation and exchange in the electronic response. In this free-electron limit we can obtain the spectra along high-symmetry lines without any Fourier interpolation, evidencing the presence of the Kohn anomalies at the |q + G| = 2k f points, and confirming that the kinks present in the DFPT result are Kohn anomalies.</p><p>Nevertheless, the Lindhard RPA spectrum completely differs from the ab initio calculations. The intensity of the Kohn anomalies is much stronger and the transverse acoustic modes become unstable with imaginary frequencies. Therefore, even though the electronic band structure could be understood within the free-electron-like approximation, phonons seem to be far from this picture, contrary to the case of sodium <ref type="bibr" target="#b40">41,</ref><ref type="bibr" target="#b45">46</ref> . This fact also questions the stability of the I4 1 /amd tetragonal phase in the ultimate high-pressure limit where the electrons are expected to be free. If we split the dynamical matrix in the D p and D e terms, we note that each of them scales differently with the average inter-electronic distance parameter r s : D p always scales as r -3 s , while, in the Lindhard RPA, D e scales as r -2 s (r s + C), where C is always positive and of the order of unity. Therefore, in the very large pressure limit with small r s , the D p contribution is expected to dominate over the electronic contribution. In Fig. <ref type="figure" target="#fig_2">4</ref> we present the dispersion of the root of the eigenvalues of each contribution separately. This represents the phonon spectra that would be obtained from each contribution independently. In our case, phonons associated to D p are already unstable and the contribution from D e is not enough to stabilize them. This is the reason why the Lindhard RPA phonons have imaginary frequencies. As in the high-pressure limit D p will dominate over D e , the tetragonal I4 1 /amd will not become stable at very large pressure, but more symmetric and compact structures with positive eigenvalues of D p (as fcc or bcc) will be favored.</p><p>In order to better understand the discrepancy between the ab initio DFPT and the Lindhard RPA spectra, we have made several calculations based on linear-response theory trying to disentangle the different contributions to the final phonon spectra. The calculation of D e requires not only the knowledge of the electronic density n but also its linear change δn with respect to ionic displacements <ref type="bibr" target="#b37">38</ref> . This last term can be calculated from the interacting electronic density-response function χ, which requires first the knowledge of the non-interacting response χ 0 , and second to solve an integral Dyson-like equation where the linear change of the self-consistent potential δV scf takes part (see Appendix). Although it requires a cumbersome sum over excited state, χ 0 can be calculated directly from the eigenvalues and eigenstates obtained with the unperturbed V scf self-consistent potential. Combining different approximations in V scf to calculate χ 0 and δV scf to calculate χ, the relevant contributions to the dynamical matrices can be unveiled. For instance, in the Lindhard RPA limit χ 0 is built from free-electron bands (V scf = 0) and exchange-correlation is neglected to build χ (δV scf = δV e,p + δV H ), limit in which D e is reduced to a simple analytical expression <ref type="bibr" target="#b40">41</ref> .</p><p>Here, we avoid the explicit calculation of χ 0 and χ by calculating δn making use of DFPT. In this case, the Sternheimer equation is solved self-consistently neglect- ing different terms in V scf and δV scf , which is equivalent to making different approaches to χ 0 and χ respectively.</p><p>In those cases when a different scheme is adopted for V scf and δV scf translational invariance is not satisfied anymore. We overcome this difficulty imposing the acoustic sum rule (ASR) a posteriori (see Appendix for technical details).</p><p>In Fig. <ref type="figure">5</ref> we show four phonon spectra with different combination of neglected terms in V scf and δV scf . First, we show the spectrum obtained by neglecting any electron-electron interaction in the unperturbed Hamiltonian (V scf = V e,p ), but keeping all the terms in its linear perturbation δV scf = δV e,p + δV H + δV xc . We obtain exactly the same result as in the previously calculated full DFPT phonons (see Fig. <ref type="figure" target="#fig_6">9</ref> in Appendix for a comparison), remarking the insignificant role of electronelectron interaction in the electronic bands and, consequently, in χ 0 . Second, we show the phonons calculated neglecting electron-electron interaction in V scf again, but this time neglecting the exchange and correlation term in δV scf . This is equivalent to calculating χ 0 as in the previous case, but calculating χ within the RPA. Third, we show a consistent Hartree-level calculation where, copared to the previous one, we obtain a quantitatively different but qualitatively identical spectrum in which instabilities remain. Finally, we show the dispersion obtained with free electrons (V scf = 0) but using the full linear perturbation going beyond the RPA. Comparing the free-electron RPA calculation in Fig. <ref type="figure">3</ref> with the one including exchange-correlation effects for the response in Fig. <ref type="figure">5</ref>, it can be confirmed that including exchange and correlation in δV scf (and therefore in χ) is determinant for obtaining dynamically stable phonons. However, due to the strong electron-proton interaction, including V e,p in the self-consistent potential is necessary to obtain good quantitative results.</p><p>Analyzing these different calculations, we conclude that, despite the electronic kinetic energy dominates and the electron-electron interaction plays a negligible role in the band structure, going beyond the RPA including exchange-correlation effects in the calculation of the electronic response is crucial. Indeed, exchange-correlation effects in the response to the proton motion make tetragonal I4 1 /amd atomic hydrogen dynamically stable. This calamitous failure of the RPA is related to the selfinteraction error associated to the Hartree potential, which underestimates the high electronic density around the protons up to a 9% at 500 GPa. We have checked that similar phonons are obtained for different approximations of the exchange-correlation potential <ref type="bibr" target="#b46">47,</ref><ref type="bibr" target="#b47">48</ref> . This is not the case in the molecular case at lower pressures, where correlation clearly has an effect in the energies of molecular vibrons <ref type="bibr" target="#b48">49</ref> .</p><p>Even if exchange-correlation effects guarantee the stability of the tetragonal I4 1 /amd atomic structure of hydrogen, this conclusion is drawn exclusively at the harmonic level. In Fig. <ref type="figure" target="#fig_3">6</ref> we compare the harmonic DFPT phonon spectra with the anharmonic spectra obtained within the SSCHA. Anharmonicity is quite strong, as phonon frequencies are affected up to a 20% in the transverse acoustic branch in the Γ-N path. Transverse acoustic branches are in general specially vulnerable as their energies are considerably lowered. Consequently, one could expect anharmonic effects to increase the zeropoint displacement of the atoms, bringing atomic hydrogen closer to quantum melting. According to our calculations, however, I4 1 /amd hydrogen is not melted if we hold to the quantum limit of the Lindemman criterion, which states quantum melting occurs when the Root Mean Square (RMS) displacements of atoms are around 27 -30% of the interatomic distances <ref type="bibr" target="#b49">50</ref> . While in the harmonic approach we obtain RMS displacements of a 20.3% and a 16.4% relative to the two different inter- atomic distances d 1 and d 2 of the crystal, these values are only slightly raised by anharmonicity to a 20.7% and a 16.6%, respectively. The reason of this rather small change is a big part of the high energy modes are enhanced by anharmonicity, compensating the softening of the transverse acoustic branches. As most of the phases have been found and characterized by Raman and infrared spectroscopy experiments, we show the impact of anharmonicity in the optical modes at the Γ point in Table <ref type="table" target="#tab_0">I</ref>. The structure has two Raman active modes that are barely affected by anharmonicity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>C. Superconductivity</head><p>In order to analyze how anharmonicity affects superconductivity, we have calculated Eliashberg's function α 2 F (ω) at 500 GPa both in the harmonic and anharmonic cases as described in Sec. II. The α 2 F (ω) shows a large peak at high energy due to the large electronphonon linewidth of high-energy optical modes (see Fig. <ref type="figure" target="#fig_3">6</ref>). The practically linear and homogeneous increase of the integrated electron-phonon coupling constant λ(ω) = 2 ω 0 dω ′ α 2 F (ω ′ )/ω ′ indicates that the contribution to the electron-phonon coupling constant is quite homogeneous over all the modes in the BZ. This is true both in the harmonic and in the anharmonic case. Even if anharmonic effects have a significant impact on the phonon spectra, the electron-phonon coupling constant λ = λ(∞), which scales with the phonon frequencies as ∝ ω -2 , is practically unaltered by anharmonicity, as we obtain λ = 1.68 and λ = 1.63 in the harmonic and anharmonic cases, respectively. The contribution of the low-energy transverse acoustic modes to the electronphonon coupling constant is slightly enhanced due to the anharmonic suppression of their frequencies. This is compensated by the hardening of the high-energy optical modes that suppresses λ. The result is that anharmonicity slightly affects the electron-phonon coupling constant.</p><p>We estimate the superconducting critical temperature by solving isotropic Migdal-Eliashberg equations in order to overcome the underestimation of T c given by McMillan's equation in the strongly interacting limit <ref type="bibr" target="#b43">44</ref> . With a Coulomb pseudopotential of µ * = 0.1 we obtain a superconducting energy gap (first Matsubara frequency) of ∆ ≈ 62 meV and ∆ ≈ 58 meV, respectively, in the harmonic and anharmonic cases at 0 K (see Fig. <ref type="figure" target="#fig_4">7</ref>). T c , defined as the temperature at which the gap vanishes, is 318 K and 300 K respectively in the harmonic and anharmonic approaches. The harmonic result is in reasonable agreement with previous results 8 . The effect of the Coulomb pseudopotential in T c is weak as it happens in strongly interacting electron-phonon superconductors. Therefore, anharmonicity slightly lowers the superconducting critical temperature in tetragonal I4 1 /amd hydrogen due to the small reduction of λ. In Fig. <ref type="figure" target="#fig_4">7</ref> we also show the first Matsubara frequencies of the energy gap at 400 GPa and 600 GPa in the harmonic approach. As wee can see, T c is very weakly affected by pressure in the 400-600 GPa pressure range. Due to the flatness of T c and the smooth change of the phonons with pressure (Fig. <ref type="figure">3</ref>) anharmonic effects are expected to have a similar impact at the 400 and 600 GPa.</p><p>Considering that in all superconducting hydrides where strong anharmonic effects in superconductivity have been reported there are strongly softened optical modes in the harmonic approximation <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref> , even imaginary sometimes, it seems the impact of anharmonicity on T c is largely determined by the presence of such soft hydrogen-character optical modes. Due to the fairly uniform distribution of the electron-phonon coupling in the BZ here, there are no particular optical modes that soften, making anharmonic effects on T c weaker.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>IV. CONCLUSIONS</head><p>In this work we have presented an exhaustive analysis of the electronic and vibrational properties of I4 1 /amd hydrogen within the 400-600 GPa pressure range. Atomic metallic hydrogen in this phase shows a nearly freeelectron-like electronic band structure, where the opened band gaps can be explained even without the need of electron-electron interaction. The huge kinetic energy of the electrons due to the extremely high pressure plus their strong interaction with the bare nuclei makes the electron-electron interaction be irrelevant for the electronic structure. Nevertheless, the strong electronproton interaction creates a big electronic localization near the atomic nuclei. Consequently, the RPA dramatically fails when calculating the phonons of atomic hydrogen. In fact, the inclusion of exchange-correlation effects in the calculation of the electronic response to proton motion guarantees the dynamical stability of the structure.</p><p>Despite anharmonicity modifies phonon frequencies up to approximately a 20%, for instance, lowering the energies of the transverse acoustic modes and hardening high-energy optical modes, it has a minor effect on superconductivity, only suppressing T c by a 6%. This is in stark contrast to other hydrides where anharmonicity has a huge impact on the superconducting properties <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b33">[34]</ref><ref type="bibr" target="#b34">[35]</ref><ref type="bibr" target="#b35">[36]</ref><ref type="bibr" target="#b36">[37]</ref> , even inducing an inverse isotope effect in palladium hydrides <ref type="bibr" target="#b33">34</ref> . This raises the interesting question whether anharmonicity impacts superconductivity in hydrides simply because hydrogen is light and vibrates far from equilibrium or for another particular reason. Our results suggest that determining whether anharmonicity has a strong impact on T c cannot be related exclusively to the lightness of the ions present in the system, but to the presence of softened optical modes. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>APPENDIX</head><p>Within DFT the electronic wave-functions |ψ i are calculated diagonalizing the</p><formula xml:id="formula_0">H = T e + V scf<label>(1)</label></formula><p>Hamiltonian as H |ψ i = ε i |ψ i , where ε i is the electronic eigenvalue, T e is the electronic kinetic energy, and the self-consistent potential is</p><formula xml:id="formula_1">V scf = V e,p + V H + V xc .<label>(2)</label></formula><p>V e,p , V H , and V xc are, respectively, the electron-proton, Hartree, and exchange-correlation potentials. The different band structures shown in Fig. <ref type="figure">2a</ref> are obtained neglecting different terms in Eq. ( <ref type="formula" target="#formula_0">1</ref>). The DFT result, of course, retains all the terms in V scf ; in the free-electron approximation V scf = 0; and in the independent electron approximation V scf = V e,p . We call the latter approach independent electron because in this case electrons do not interact with each other via the V H and V xc potentials, which depend on the electronic density n.</p><p>The electronic part of the dynamical matrix D e is obtained Fourier transforming the electronic contribution to the force constant matrix, which is given in terms of the electronic density and its derivatives by</p><formula xml:id="formula_2">φ α,β i,j (R) = dr ∂n(r) ∂u α i,R 0 ∂V e,p (r) ∂u β j,0 0 + dr n(r) ∂ 2 V e,p<label>(r)</label></formula><formula xml:id="formula_3">∂u α i,R ∂u β j,0 0 .<label>(3)</label></formula><p>Here, R is a lattice vector and u α i,R is the displacement in the Cartesian direction α of atom i in the unit cell belonging to the cell defined by R. The calculation of D e requires thus the knowledge of the δn the linear change of the electronic density with respect to to the ionic displacements. Making use of the electronic densityresponse function χ(r, r ′ ) the linear change of the density can be calculated as δn(r) = dr ′ χ(r, r ′ )δV e,p (r ′ ),</p><p>where δV e,p (r) represents the linear change of the electron-proton potential. The density response function is usually calculated by first estimating the noninteracting response function χ 0 (r, r ′ ), which can be directly calculated from the eigenvalues and eigenfunctions of the Hamiltonian in Eq. ( <ref type="formula" target="#formula_0">1</ref>) as</p><formula xml:id="formula_5">χ 0 (r, r ′ ) = i,j f i -f j ε i -ε j ψ * i (r)ψ j (r)ψ * j (r ′ )ψ i (r ′ ),<label>(5)</label></formula><p>where f i represents the Fermi-Dirac occupation of the ith state. The reason for it is that the linear change of density can be given as</p><formula xml:id="formula_6">δn(r) = dr ′ χ 0 (r, r ′ )δV scf (r ′ ). (<label>6</label></formula><formula xml:id="formula_7">)</formula><p>in terms of the noninteracting response function and the linear change of the self-consistent potential. Combining Eqs. ( <ref type="formula" target="#formula_4">4</ref>) and ( <ref type="formula" target="#formula_6">6</ref>), with the linear change of the potential the following self-consistent Dyson-like equation can be obtained for the response function:</p><formula xml:id="formula_8">χ(r, r ′ ) = χ 0 (r, r ′ )</formula><p>+ dr 1 dr 2 χ 0 (r, r 1 )K(r 1 , r 2 )χ(r 2 , r ′ ), (7)   with</p><formula xml:id="formula_9">K(r, r ′ ) = 1 |r -r ′ | + ∂ 2 E xc ∂n(r)∂n(r ′ )<label>(8)</label></formula><p>and E xc the exchange-correlation energy. If δV xc (r) is neglected in Eq. ( <ref type="formula" target="#formula_6">6</ref>), K(r, r ′ ) = 1 |r-r ′ | . This is the RPA approximation. Neglecting different contributions for V scf in Eq. ( <ref type="formula" target="#formula_1">2</ref>) one can understand which are the important contributions to the non-interacting χ 0 (r, r ′ ). Similarly, neglecting different terms in δV scf in Eq. ( <ref type="formula" target="#formula_6">6</ref>) the important contributions to χ(r, r ′ ) can be determined.</p><p>DFPT <ref type="bibr" target="#b37">38</ref> offers a much more efficient method to calculate δn avoiding the cumbersome calculation of the response function, which requires a slowly converging sum over excited states as shown in Eq. (5). Within DFPT the Sternheimer equation</p><formula xml:id="formula_10">(T e + V scf -ε i ) |δψ i = -(δV scf -δε i ) |ψ i ,<label>(9)</label></formula><p>is solved self-consistently. Here, δε i and |δψ i are, respectively, the linear change of the electronic eigenvalues and eigenfunctions. Once the Sternheimer equation is solved and the |δψ i states are known, δn can be calculated and, consequently, D e 38 . By neglecting in Eq. ( <ref type="formula" target="#formula_10">9</ref>) different terms in V scf and δV scf we are able to make different implicit approaches to χ 0 and χ, respectively, as described in the previous paragraph.</p><p>It is important to note that every time the approaches for V scf and δV scf are different (i.e. the neglected terms are not the same) translational invariance is broken down. The reason is that the ground state densities given by the different approximations differ. In those cases, we impose the ASR a posteriori by correcting the force-constants matrix in Eq. (3) as φα,β i,i (0) = φ α,β i,i (0) -R,j φ α,β i,j (R) (10)   for every possible i, α and β. The new φ yield dynamical matrices that satisfy the ASR. This way of imposing the ASR is equivalent to correcting the second addend in Eq.</p><p>(3) a posteriori, which gives a non-dispersive term to the dynamical matrix as the correction in Eq. (10). As an example, in Fig. <ref type="figure" target="#fig_5">8</ref> we show how imposing of the ASR works in the case V scf = 0, δV scf = δV e,p + δV H , which is equivalent to the analytic Lindhard RPA approximation. We see how after imposing the ASR the spectrum coincides with the analytic one. The small differences between the analytic spectrum and the one obtained with the DFPT procedure are because the latter is obtained from a Fourier interpolation from a 6 × 6 × 6 q-grid, while the former is calculated point by point. The phonon-spectra presented in Fig. <ref type="figure">5</ref> are calculated solving Eq. ( <ref type="formula" target="#formula_10">9</ref>) in three different ways: i) taking  it (δV scf = δV e,p + δV H + δV xc ). In Fig. <ref type="figure" target="#fig_6">9</ref> we show how the inclusion of the electron-electron interaction in V scf is irrelevant, as one obtains the same spectra as including it (after imposing ASR in the first case).</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. (a) Conventional unit cell of I41/amd hydrogen. (b) a = b and c lattice parameters as well as the two different interatomic distances d1 and d2 of I41/amd hydrogen at 500 GPa.</figDesc><graphic coords="3,71.65,52.12,122.48,148.15" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .Figure 3 .</head><label>23</label><figDesc>Figure 2. (a) Electronic band structure of I41/amd hydrogen at 500 GPa calculated within DFT, where the self-consistent potential is V scf = Ve,p + VH + Vxc. Bands obtained within the free-electron approach (V scf = 0) and the independent-electron approach (V scf = Ve,p) are also shown. The origin of energy (black dotted line) corresponds to the Fermi level. (b) Fermi surface of I41/amd hydrogen at 500 GPa within DFT. The BZ and its high-symmetry points are shown.</figDesc><graphic coords="5,341.08,91.48,177.70,123.40" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Lindhard RPA phonons of I41/amd hydrogen at 500 GPa, decomposed into the contributions coming from the Dp and De terms. Dotted vertical lines indicate q-points satisfying |q + G| = 2k f , where Kohn anomalies appear.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Left: harmonic and anharmonic phonon spectra of I41/amd hydrogen at 500 GPa. Right: harmonic and anharmonic phonon density Of states (PDOS), electronphonon Eliashberg's function α 2 F (ω) and frequency dependent electron-phonon coupling constant λ(ω).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 7 .</head><label>7</label><figDesc>Figure 7. Calculated first Matsubara frequency of the superconducting energy gap of I41/amd hydrogen at different pressures and temperatures using a Coulomb pseudopotential µ * = 0.10. Inset: Tc vs pressure in the harmonic and anharmonic cases. Solid and dashed curves correspond to the values estimated in Ref. 8, with µ * = 0.089.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 8 .</head><label>8</label><figDesc>Figure 8. Phonon spectra of I41/amd hydrogen at 500 GPa calculated within DFPT using V scf = 0 and δV scf = δVe,p + δVH with and without imposing the ASR. The results are compared to the Lindhard RPA spectrum calculated analytically, which is an equivalent calculation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Phonon spectra of I41/amd hydrogen at 500 GPa calculated within DFPT using two different approaches for V scf . In the V scf = Ve,p and δV scf = δVe,p + δVH + δVxc calculation the ASR is imposed a posteriori.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table I .</head><label>I</label><figDesc>δV scf =δV e,p +δV H +δV xc V scf =V e,p , δV scf =δV e,p +δV H V scf =V e,p +V H , δV scf =δV e,p +δV H V scf =0, δV scf =δV e,p +δV H +δV xc Figure 5. Phonon spectra of I41/amd hydrogen at 500 GPa within different approximations for the unperturbed selfconsistent potential V scf and its linear perturbation δV scf .Calculations are performed within the DFPT formalism. The ASR has been imposed a posteriori in every case expect in the pure Hartree case (V scf = Ve,p + VH , δV scf = δVe,p + δVH ). Raman active modes of I41/amd hydrogen in the 400-600 GPa pressure range. Harmonic and anharmonic frequencies are represented as ω h and ω anh respectively.</figDesc><table><row><cell></cell><cell>5000</cell><cell></cell><cell></cell><cell>V scf =V e,p ,</cell></row><row><cell></cell><cell>4000</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Phonon freq. (cm -1 )</cell><cell>2000 3000</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>1000</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>0</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>M</cell><cell>Γ</cell><cell></cell><cell>X P</cell><cell>N</cell><cell>Γ</cell></row><row><cell></cell><cell></cell><cell>400</cell><cell>Eg</cell><cell>1161.8</cell><cell>-</cell></row><row><cell></cell><cell></cell><cell></cell><cell>B1g</cell><cell>2472.2</cell><cell>-</cell></row><row><cell></cell><cell></cell><cell>500</cell><cell>Eg</cell><cell>1214.6</cell><cell>1187.9</cell></row><row><cell></cell><cell></cell><cell></cell><cell>B1g</cell><cell>2745.4</cell><cell>2769.8</cell></row><row><cell></cell><cell></cell><cell>600</cell><cell>Eg</cell><cell>1212.4</cell><cell>-</cell></row><row><cell></cell><cell></cell><cell></cell><cell>B1g</cell><cell>2988.4</cell><cell>-</cell></row></table><note><p>P (GPa) Mode ω h (cm -1 ) ω anh (cm -1 )</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>scf =V e,p +V H +V xc , δV scf =δV e,p +δV H +δV xc V scf =V e,p , δV scf =δV e,p +δV H +δV xc</figDesc><table><row><cell></cell><cell>3500</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>3000</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Phonon freq. (cm -1 )</cell><cell>1000 1500 2000 2500</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>500</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell>M 0</cell><cell>Γ</cell><cell>X P</cell><cell>N</cell><cell>Γ</cell></row></table><note><p>V</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>V scf = V e,p and δV scf = δV e,p + δV H + δV xc ; ii) taking V scf = V e,p but neglecting the linear change of the exchange correlation so that δV scf = δV e,p + δV H ; iii) neglecting any interaction of electrons in the self-consistent potential (V scf = 0) but taking the full linear change of</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGEMENTS</head><p>The authors acknowledge financial support from the <rs type="funder">Spanish Ministry of Economy and Competitiveness</rs> (<rs type="grantNumber">FIS2013-48286-C2-2-P</rs>), the <rs type="funder">Department of Education, Universities and Research of the Basque Government</rs> and the <rs type="funder">University of the Basque Country</rs> (<rs type="grantNumber">IT756-13</rs>), and <rs type="funder">French Agence Nationale de la Recherche</rs> (Grant No. <rs type="grantNumber">ANR-13-IS10-0003-01</rs>). M.B. is also thankful to the <rs type="funder">Department of Education, Language Policy and Culture of the Basque Government</rs> for a predoctoral fellowship (Grant No. <rs type="grantNumber">PRE-2014-1-477</rs>). Computer facilities were provided by the <rs type="institution">Donostia Internatinal Physics Center (DIPC)</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_99xX4pu">
+					<idno type="grant-number">FIS2013-48286-C2-2-P</idno>
+				</org>
+				<org type="funding" xml:id="_SDKaH8G">
+					<idno type="grant-number">IT756-13</idno>
+				</org>
+				<org type="funding" xml:id="_cGhqZqT">
+					<idno type="grant-number">ANR-13-IS10-0003-01</idno>
+				</org>
+				<org type="funding" xml:id="_hZJ6SWv">
+					<idno type="grant-number">PRE-2014-1-477</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Drozdov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Eremets</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Troyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ksenofontov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">I</forename><surname>Shylin</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature14964</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">525</biblScope>
+			<biblScope unit="page">73</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Ashcroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.21.1748</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">1748</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Ashcroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.92.187002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page">187002</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cudazzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Profeta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sanna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Floris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Continenza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Massidda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K U</forename><surname>Gross</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.100.257001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">257001</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zou</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ssc.2006.12.029</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Solid State Communications</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page">610</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cudazzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Profeta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sanna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Floris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Continenza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Massidda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K U</forename><surname>Gross</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.81.134505</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">134505</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cudazzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Profeta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sanna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Floris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Continenza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Massidda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K U</forename><surname>Gross</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.81.134506</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">134506</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mcmahon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Ceperley</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.84.144515</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page">144515</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.physleta.2011.01.045</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Letters A</title>
+		<imprint>
+			<biblScope unit="volume">375</biblScope>
+			<biblScope unit="page">1264</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><surname>Maksimov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Savrasov</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S0038-1098(01)00301-5</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Solid State Communications</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page">569</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Eremets</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Troyan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Drozdov</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1601.04479</idno>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Loubeyre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Letoullec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hausermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hanfland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hemley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">W</forename><surname>Finger</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/383702a0</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">383</biblScope>
+			<biblScope unit="page">702</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Deemyad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">F</forename><surname>Silvera</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.100.155701</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page">155701</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Stanimir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schwegler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ogitsu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Galli</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature02968</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">431</biblScope>
+			<biblScope unit="page">669</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H.-K</forename><surname>Mao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hemley</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/RevModPhys.66.671</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page">671</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C.-S</forename><surname>Zha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hemley</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.108.146402</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">146402</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Goncharov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gregoryanz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hemley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-K</forename><surname>Mao</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.201528198</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">98</biblScope>
+			<biblScope unit="page">14234</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Eremets</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Troyan</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nmat3175</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Mater</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">927</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Howie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Guillaume</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Scheler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">F</forename><surname>Goncharov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gregoryanz</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.108.125501</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">125501</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C.-S</forename><surname>Zha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ahart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Boehler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hemley</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.110.217402</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">217402</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Howie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dalladay-Simpson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gregoryanz</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nmat4213</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Mater</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">495</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dalladay-Simpson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Howie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gregoryanz</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature16164</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">529</biblScope>
+			<biblScope unit="page">63</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Loubeyre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Occelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Letoullec</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/416613a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">416</biblScope>
+			<biblScope unit="page">613</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nphys625</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Phys</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">473</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Martinez-Canales</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.85.214114</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">85</biblScope>
+			<biblScope unit="page">214114</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Dubrovinsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Dubrovinskaia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bykova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bykov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Prakapenka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Prescher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Glazyrin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-P</forename><surname>Liermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hanfland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ekholm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">V</forename><surname>Pourovskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Katsnelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Wills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Abrikosov</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature14681</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">525</biblScope>
+			<biblScope unit="page">226</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Azadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Monserrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M C</forename><surname>Foulkes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.112.165501</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">165501</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mcmahon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Ceperley</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.106.165302</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page">165302</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Drummond</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Monserrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Lloyd-Williams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Rios</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/ncomms8794</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Commun</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note>article</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">B</forename><surname>Magdau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Ackland</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.87.174110</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page">174110</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.110.025903</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">25903</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Errea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Calandra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mauri</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.114.157004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">157004</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Errea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Calandra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Pickard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Needs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mauri</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature17175</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">532</biblScope>
+			<biblScope unit="page">81</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Errea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Calandra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mauri</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.111.177002</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page">177002</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">I</forename><surname>Errea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Calandra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mauri</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.89.064302</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page">64302</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rousseau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bergara</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/08957959.2010.520209</idno>
+	</analytic>
+	<monogr>
+		<title level="j">High Pressure Research</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page">30</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rousseau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bergara</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.82.104504</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">104504</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Baroni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>De Gironcoli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Corso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Giannozzi</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/RevModPhys.73.515</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page">515</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Perdew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Burke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ernzerhof</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.77.3865</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">3865</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Giannozzi</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.201528198</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Condens. Matter</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">395502</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rousseau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Errea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bergara</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jpcs.2010.03.026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Physics and Chemistry of Solids</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page">1159</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">996</biblScope>
+			<date type="published" when="1958">1958</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">M</forename><surname>Eliashberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">696</biblScope>
+			<date type="published" when="1960">1960</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">B</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Dynes</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.12.905</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">905</biblScope>
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Nagao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Bonev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bergara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Ashcroft</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.90.035501</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page">35501</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rousseau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bergara</surname></persName>
+		</author>
+		<idno type="DOI">10.1140/epjb/e2011-10972-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. Phys. J. B</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Parr</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.37.785</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page">785</biblScope>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bowen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sugiyama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Alder</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.50.14838</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">14838</biblScope>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><surname>Azadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M C</forename><surname>Foulkes</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.88.014115</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">14115</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Burns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Isaacs</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.55.5767</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">5767</biblScope>
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

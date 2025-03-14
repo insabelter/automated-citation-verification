@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A T-cell response to a liver-stage Plasmodium antigen is not boosted by repeated sporozoite immunizations</title>
+				<funder ref="#_pbQx7b7">
+					<orgName type="full">National Institute of Allergy and Infectious Diseases</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Howard Hughes Medical Institute</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Bill and Melinda Gates Foundation</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Sean</forename><forename type="middle">C</forename><surname>Murphy</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Laboratory Medicine</orgName>
+								<orgName type="institution">University of Washington Medical Center</orgName>
+								<address>
+									<postCode>98195</postCode>
+									<settlement>Seattle</settlement>
+									<region>WA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Arnold</forename><surname>Kas</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Benaroya Research Institute</orgName>
+								<address>
+									<postCode>98101</postCode>
+									<settlement>Seattle</settlement>
+									<region>WA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Brad</forename><forename type="middle">C</forename><surname>Stone</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Benaroya Research Institute</orgName>
+								<address>
+									<postCode>98101</postCode>
+									<settlement>Seattle</settlement>
+									<region>WA</region>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Michael</forename><forename type="middle">J</forename><surname>Bevan</surname></persName>
+							<email>mbevan@u.washington.edu</email>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Immunology</orgName>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="institution" key="instit1">The Howard Hughes Medical Institute</orgName>
+								<orgName type="institution" key="instit2">University of Washington</orgName>
+								<address>
+									<postCode>98195</postCode>
+									<settlement>Seattle</settlement>
+									<region>WA</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A T-cell response to a liver-stage Plasmodium antigen is not boosted by repeated sporozoite immunizations</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">2900219D443E3426955787E2E622FCA9</idno>
+					<idno type="DOI">10.1073/pnas.1303834110</idno>
+					<note type="submission">Contributed by sent for review February 2, 2013</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:52+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Development of an antimalarial subunit vaccine inducing protective cytotoxic T lymphocyte (CTL)-mediated immunity could pave the way for malaria eradication. Experimental immunization with sporozoites induces this type of protective response, but the extremely large number of proteins expressed by Plasmodium parasites has so far prohibited the identification of sufficient discrete T-cell antigens to develop subunit vaccines that produce sterile immunity. Here, using mice singly immunized with Plasmodium yoelii sporozoites and highthroughput screening, we identified a unique CTL response against the parasite ribosomal L3 protein. Unlike CTL responses to the circumsporozoite protein (CSP), the population of L3-specific CTLs was not expanded by multiple sporozoite immunizations. CSP is abundant in the sporozoite itself, whereas L3 expression does not increase until the liver stage. The response induced by a single immunization with sporozoites reduces the parasite load in the liver so greatly during subsequent immunizations that L3-specific responses are only generated during the primary exposure. Functional L3-specific CTLs can, however, be expanded by heterologous prime-boost regimens. Thus, although repeat sporozoite immunization expands responses to preformed antigens like CSP that are present in the sporozoite itself, this immunization strategy may not expand CTLs targeting parasite proteins that are synthesized later. Heterologous strategies may be needed to increase CTL responses across the entire spectrum of Plasmodium liver-stage proteins.</p><p>vaccination | epitope M alaria parasites cause tremendous morbidity and mortality worldwide. The only vaccine approach known to induce sterile protection against challenge relies on whole organism sporozoite-stage parasites. This vaccination is experimentally achieved in mice and humans by using radiation-attenuated sporozoites (RAS) <ref type="bibr" target="#b0">(1,</ref><ref type="bibr" target="#b1">2)</ref>, genetically attenuated parasites (GAPs) <ref type="bibr" target="#b2">(3)</ref>, or wildtype (WT) sporozoites with chloroquine prophylaxis (CPS) <ref type="bibr" target="#b3">(4,</ref><ref type="bibr" target="#b4">5)</ref>. These approaches induce protective antibodies and T cells, with cytotoxic T lymphocytes (CTLs) particularly important for protection against experimental sporozoite challenge <ref type="bibr" target="#b5">(6)</ref>.</p><p>Because sporozoites are difficult to manufacture, a multicomponent subunit vaccine that induces protective CTLs is desirable; however, protective antigens must be identified first. Because Plasmodia have &gt;5,000 genes, there are many candidates yet few bona fide antigens have been described since the identification of the circumsporozoite protein (CSP) as a critical target more than 24 y ago <ref type="bibr" target="#b6">(7,</ref><ref type="bibr" target="#b7">8)</ref>. CSP coats the sporozoite surface, is shed from the motile sporozoite <ref type="bibr" target="#b8">(9)</ref>, and is transported to the hepatocyte cytoplasm <ref type="bibr" target="#b9">(10)</ref>. CSP is a target of protective class I-dependent CTL responses <ref type="bibr" target="#b9">(10)</ref><ref type="bibr" target="#b10">(11)</ref><ref type="bibr" target="#b11">(12)</ref>. Depending on the mouse model, CSP can also elicit important CD4 + T-cell responses <ref type="bibr" target="#b12">(13,</ref><ref type="bibr" target="#b13">14)</ref> and MHC class IIdependent IgG responses <ref type="bibr" target="#b14">(15)</ref>. In some systems, large numbers of adoptively transferred CSP-specific T-cell clones or endogenously generated CTLs can protect mice against sporozoite challenge <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b13">14,</ref><ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b16">17)</ref>. However, it remains unclear whether CSP-specific CTLs in naïve subjects can be primed to achieve protection with existing vaccination approaches. In addition, the CSP-based RTS, S vaccine in phase 3 human trials does not trigger strong CTL responses <ref type="bibr" target="#b17">(18,</ref><ref type="bibr" target="#b18">19)</ref>. The partial protection <ref type="bibr" target="#b19">(20)</ref> from RTS,S is instead associated with antibodies and CD4 + T-cell responses <ref type="bibr" target="#b20">(21)</ref>. Thus, CSP is an important but currently insufficient target for use as a single-antigen vaccine. Because responses to non-CSP antigens can protect in the absence of CSP-specific immunity in mice <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b21">(22)</ref><ref type="bibr" target="#b22">(23)</ref><ref type="bibr" target="#b23">(24)</ref><ref type="bibr" target="#b24">(25)</ref>, we and others are working to discover novel protective antigens to broaden the immune repertoire.</p><p>Single immunization using CPS or late-arresting GAP approaches usually provides greater protection than an equivalent number of RAS parasites <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b25">26)</ref>. RAS parasites arrest shortly after hepatocyte infection, whereas GAPs progress further depending on the specific genetic lesion. CPS completes liver-stage development and progresses to a brief RBC infection halted by drug treatment. GAP and CPS approaches express a wider array of proteins than RAS. Accordingly, late-arresting GAPs were shown to induce more diverse CTL responses than RAS vaccination in mice <ref type="bibr" target="#b26">(27)</ref>. Thus, proteins expressed de novo in the liver [e.g., by CPS and some GAPs like 3-oxoacyl-ACP synthase I/II; PY04452 (FabB/F)-deficient parasites] and in the red blood cell (RBC) stages (e.g., by CPS) have received attention as candidate antigens. However, despite efforts by several groups, few non-CSP antigens remain confirmed as CTL targets and none are reported to be individually protective <ref type="bibr" target="#b27">(28)</ref>.</p><p>It remains unclear why there is a paucity of protective antigens after sporozoite immunization. The lack of targets may reflect technical limitations in antigen discovery, antigenic bias due to homologous sporozoite vaccination, lack of late-stage antigen expression, and/or CSP immunodominance. Traditionally, pooled synthetic peptides are used in IFN-γ (IFNγ) enzyme-linked immunosorbent spot (ELISPOT) assays to identify T-cell targets (29), but even with pooling strategies <ref type="bibr" target="#b29">(30)</ref>, these approaches require complex, expensive peptide libraries. In lieu of peptides, plasmidencoded parasite genes can be transfected into antigen-presenting cells (APCs) <ref type="bibr" target="#b30">(31)</ref>, but this approach is low throughput and difficult because of the A/T-richness of Plasmodial genes. Instead here, we used a minigene-based high-throughput screen (HTS) for CTLs <ref type="bibr" target="#b31">(32)</ref> to study a library of Plasmodium yoelii-derived antigens in sporozoite-vaccinated mice. Our approach identified a unique CTL target antigen that provided surprising insights about CTL responses in multiply-immunized mice.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>HTS Reveals Greater CTL Diversity Following Different Sporozoite</head><p>Immunizations. To identify novel malaria vaccine candidates, we developed a HTS approach based on massively parallel synthesis of thousands of oligonucleotides that encode candidate peptides (32) (Fig. <ref type="figure" target="#fig_0">S1</ref>). Liver-stage expressed genes <ref type="bibr" target="#b32">(33)</ref> were subjected to H2 d class I MHC prediction to produce a sequence library (Dataset S1) encoding 1,988 distinct 17-aa peptides (centered on a predicted 9-mer peptide) in 199 pools of 10 minigenes each.</p><p>Pools were transfected into H2 d P815 cells and used for ELISPOT assays of mouse splenocytes 6 d after immunization.</p><p>In general, low frequency T-cell responses were observed for all primary immunization regimens. The background in CPS-immunized mice was significantly higher [22.9 ± 20.2 to 25.5 spot-forming units (SFUs), 95% confidence interval (CI)] than for GAP-(4.7 ± 4.7 to 9.6 SFU, 95% CI) or RAS-immunized mice (5.6 ± 4.5 to 6.7 SFU, 95% CI) (P &lt; 0.0001, unpaired Student's t test, 16 wells for CPS and RAS, 15 wells for GAP), possibly due to natural killer cell activation by infected RBCs (iRBCs) <ref type="bibr" target="#b33">(34)</ref>. CPS spleens were larger and contained more pigment than normal-appearing spleens of GAP-and RAS-immunized mice, likely due to uptake of drugkilled iRBCs. After normalization, CPS and GAP triggered the most positive results (each with 27 incompletely overlapping pools) followed by RAS immunization (17 pools) at P &lt; 0.05 (Fig. <ref type="figure" target="#fig_0">1A</ref> and Fig. <ref type="figure" target="#fig_1">S2</ref>). Most positive responses produced fewer IFNγ spots than the CSP control well. Only two pools were positive in all screens in CPS, GAP, and RAS immunized mice (pools 79 and 171). All immunizations induced strong ELISPOT responses to the columnsynthesized CSP-encoding control minigene (Fig. <ref type="figure" target="#fig_0">1A</ref> and Fig. <ref type="figure" target="#fig_1">S2</ref>). Pool 102 also contained the microarray-synthesized minigene encoding the SYVPSAEQI peptide of CSP and was positive in GAP and RAS immunizations, but statistically negative in the CPS screen because of higher background.</p><p>Microarray synthesized oligonucleotides are known to contain more errors than column-synthesized oligonucleotides <ref type="bibr" target="#b34">(35,</ref><ref type="bibr" target="#b35">36)</ref>. Because the CSP peptide and single minigene were better able at detecting T-cell responses than the library-based minigene, efforts are underway to increase the signal-to-noise in the HTS system. Our findings showed that CPS immunization induced the largest increase in peripheral CD8α LO /CD11a HI T cells-indicative of recent antigenic stimulation (37), followed by FabB/f and then RAS (Fig. <ref type="figure" target="#fig_0">1</ref>), consistent with earlier data comparing GAP and RAS approaches <ref type="bibr" target="#b26">(27)</ref>. Thus, it appears that more diverse responses are achieved by GAP and CPS approaches compared with RAS immunization, and we identified two reproducibly positive pools herein.</p><p>Identification of a T-Cell Epitope in the P. yoelii Ribosomal Protein L3.</p><p>We evaluated pools 79 and 171 for T-cell target antigens by ELISPOT and MHC binding studies. Pool 79 contained 10 coding sequences for proteins PY02320 (six minigenes), PY02325, PY02338, and PY02348 (two minigenes) and pool 171 contained 10 coding sequences for proteins PY05859 (two minigenes), PY05881, PY05897 (five minigenes), and PY05908 (two minigenes). Upon 9-mer peptide deconvolution, no single response accounted for the reactivity of Pool 79, possibly indicating that targets outside of the 9-mer core were targeted or that multiple responses contributed to the pool positivity. In contrast, Pool 171 was reproducibly reactive in immunized but not naïve mice (Fig. <ref type="figure" target="#fig_1">2 A</ref> and<ref type="figure">B</ref>) and a single peptide from the PY05881 ribosomal protein L3 (GYKSGMSHI) predicted to bind H2-K d generated ELISPOT responses (Fig. <ref type="figure" target="#fig_1">2C</ref>).</p><p>The P. yoelii L3 ribosomal protein is expressed in liver and RBC stages <ref type="bibr" target="#b32">(33)</ref> and is conserved in Plasmodium berghei ANKA (PBANKA_051190), Plasmodium falciparum (PF10_0272), and Plasmodium vivax (PVX_111330). By ELISPOT, L3-specific cells responded to low nanomolar peptide concentrations, similar to the behavior of CSP-specific cells (Fig. <ref type="figure" target="#fig_2">3A</ref>). The L3 response was mediated by CD8 + T cells because anti-CD8 but not anti-CD4 antibodies blocked the response (Fig. <ref type="figure" target="#fig_2">3B</ref>). By H2-K d binding studies using RMA/S lymphoma cells, both L3 and CSP peptides demonstrated low nanomolar-strength MHC-specific binding to H2-K d (L3 K d = 0.7 nM compared with CSP K d 1.6 nM) (Fig. <ref type="figure" target="#fig_2">3C</ref>). The L3-specific ELISPOT response could also be blocked by using anti-H2-K d antibodies (Fig. <ref type="figure" target="#fig_2">S3</ref>).</p><p>CSP-and L3-specific responses could be detected in liver lymphocytes from CPS-and RAS-immunized mice by ELISPOT 6 d after immunization (Fig. <ref type="figure" target="#fig_3">S4</ref>). Because L3 lacks a canonical signal sequence and may not traffic to the parasitophorous vacuole or hepatocyte cytosol, we tested responses to cross-presented L3 as well. L3-specific T cells but not CSP-specific T cells were induced by using heat-treated iRBCs from P. yoeliiand P. berghei-infected mice (Fig. <ref type="figure" target="#fig_2">3D</ref>). In contrast, CSP-specific but not L3-specific T cells were induced by heat-treated GAP sporozoites (Fig. <ref type="figure" target="#fig_2">3E</ref>), consistent with the observation that sporozoites unable to invade hepatocytes can still cross-present CSP <ref type="bibr" target="#b37">(38)</ref>. Our findings suggest that L3 is not potently cross-presented by dead or dying sporozoites and instead is probably targeted after synthesis by infected hepatocytes. This finding agrees with most expression studies in Plasmodium spp., which consistently find abundant L3 transcripts and protein in liver <ref type="bibr" target="#b38">(39,</ref><ref type="bibr" target="#b39">40)</ref> and iRBC stages <ref type="bibr" target="#b40">(41)</ref>. Although low abundance L3 transcripts were detected in sporozoites <ref type="bibr" target="#b41">(42,</ref><ref type="bibr" target="#b42">43)</ref>, L3 protein was undetectable <ref type="bibr" target="#b43">(44)</ref> or nearly undetectable <ref type="bibr" target="#b41">(42,</ref><ref type="bibr" target="#b42">43)</ref> by mass spectrometry compared with later timepoints. L3 is a reported discrete malaria CD8 + T-cell epitope carried on BALB/c malaria-infected erythrocytes; a few additional epitopes were reported in C57BL/6 mice <ref type="bibr" target="#b44">(45)</ref>. These findings collectively show that the P. yoelii/berghei L3 peptide GYKSGMSHI is a CD8 + T-cell target in BALB/c mice.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>L3-Specific Response Fails to Boost in Sporozoite Hyperimmunized</head><p>Mice. Because L3-specific responses were detected after primary immunization, L3-and CSP-specific responses were monitored over the course of multiple immunizations. In all regimens, the CSP-specific ELISPOT response increased in frequency with each round of immunization, whereas the L3-specific response decreased after repeated immunizations (Fig. <ref type="figure" target="#fig_3">4A</ref>; CPS shown). Phycoerythrin (PE)-labeled CSP 280-288 /K d and allophycocyanin (APC)-labeled L3 48-56 /K d tetramers were used to isolate antigenspecific cells from naïve, acutely immunized and multiply immunized mice. In naïve mice, the precursor frequency of L3-specific cells routinely exceeded that of CSP-specific cells (Fig. <ref type="figure" target="#fig_3">4B</ref>). In all sporozoite immunizations, the frequency of CSP tetramer-stained cells continued to rise with each immunization, whereas L3-specific cells always decreased after reaching a peak after a single immunization. This finding was irrespective of whether RAS, GAP, or CPS regimens were used. Following primary sporozoite immunization or immunization with peptide-pulsed dendritic cells (DCs), CSP-and L3-specific tetramer-purified cells were CD11a HI , CD44 HI , CD62L LO with increasing killer cell lectin-like receptor subfamily G member 1 (KLRG1) (Fig. <ref type="figure" target="#fig_4">S5</ref>). In contrast, the expanded CSP-specific CTLs in hyperimmunized mice displayed a CD11a HI /CD62L LO phenotype with some persistent KLRG1 HI cells, whereas similar L3-specific cells became increasingly rare (Fig. <ref type="figure" target="#fig_4">S5</ref>). Thus, despite similar phenotypes during primary immunization, CSP-specific T cells were increased and activated in multiply sporozoite-immunized mice, whereas L3specific T cells failed to secondarily expand after additional sporozoite exposures.</p><p>Sporozoite-Induced L3 Cells form Functional Memory CTLs. Using in vivo killing assays, we evaluated the function of CSP-and L3-specific cells induced by sporozoite immunizations to look for differences between these CTLs. With repeated sporozoite exposures, CSP-specific killing significantly increased, whereas L3-specific killing did not (Fig. <ref type="figure" target="#fig_3">4C</ref>). To determine whether sporozoite-primed, L3-specific CTLs were functionally defective, we immunized naïve or RAS-hyperimmunized mice with a booster of peptide-pulsed DCs and tested for killing. When RAS-hyperimmunized mice were boosted with L3 peptide-pulsed DCs, antigen-specific killing was increased compared with naïve mice primed with alike DCs alone, suggesting that sporozoite immunization formed memory CTLs. Flow cytometry of splenocytes from mice immunized with CSP or L3 peptide-pulsed DCs showed consistently expanded populations of tetramer-stained CTLs (Fig. <ref type="figure" target="#fig_3">4D</ref>). Despite their functionality, mice were not protected from sporozoite challenge by a single immunization with L3-pulsed DCs (Fig. <ref type="figure">S6</ref>). To ascertain whether sporozoites could recall DC-primed CTLs, we reversed the order of immunizations and repeated in vivo killing assays. L3-specific killing in mice primed with L3 peptide-pulsed DCs was boosted by a secondary sporozoite immunization (Fig. <ref type="figure" target="#fig_3">4E</ref>). In all of these studies, CSP-specific responses could be potently triggered by any combination of DC and/or sporozoite immunizations.</p><p>To test whether heterologous prime-boost immunization could overcome the poor L3 response in sporozoite immunized mice, we primed mice with L3 peptide-pulsed DCs or GAP sporozoites and boosted with recombinant Listeria monocytogenes (Lm) expressing the L3 epitope (Lm-L3). Similar to the behavior of CSP-specific cells following multiple sporozoite immunizations, these heterologous prime-boost approaches expanded the population of activated (CD11a HI CD62L LO CD44 HI ) L3-specific T cells by 0.74 or 1.67 log 10 cells per spleen for L3 peptide-pulsed DC or GAP priming, respectively, compared with the appropriately matched Lm-L3 priming immunization alone (Fig. <ref type="figure" target="#fig_3">4</ref> F and G). Thus, in contrast to multiple sporozoite immunizations, a heterologous prime-boost approach expanded the L3-specific population and maintained its activated phenotype.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Prior Sporozoite Immunization Eliminates L3 Expression and Liver Stage Parasite Development and Prevents the Boosting of Responses Against</head><p>Late Liver Stage Antigens. Heterologous prime-boost studies presented above suggested that functional memory L3 CTLs were formed by priming with sporozoites. To explain the lack of L3 CTL boosting in response to subsequent sporozoite immunizations, we hypothesized that L3 antigen was insufficiently presented during secondary or later sporozoite immunizations because the developing adaptive immune response constrained the parasite such that L3 expression was suppressed during later immunizations. To test this hypothesis, we immunized mice one to three times with 2 × 10 4 P. yoelii GAP at 1-or 3-wk intervals. Unimmunized mice and mice 44 h after the last immunization were killed and total RNA was extracted from livers to evaluate parasite abundance and transcript expression. Regardless of the interval between immunizations (1 or 3 wk), prior sporozoite immunization reduced the liver parasite burden &gt;1,000-fold compared with the first exposure (Fig. <ref type="figure" target="#fig_4">5A</ref> and Table <ref type="table" target="#tab_0">1</ref>). In many multiply-immunized mice, parasite 18S rRNA was undetectable.  To study L3 expression and liver-stage development, additional early and late liver-stage parasite transcripts were analyzed by real-time RT-PCR 44 h after the last immunization. Most of the transcripts listed in Table <ref type="table" target="#tab_0">S1</ref> were detected at 44 h after a single GAP exposure, but were undetectable after subsequent immunizations (L3/PY05881, PY00204, PY02405, PY03995, PY02619, PY05756, PY05060, PY07509). One transcript (PY05756) was detected after primary and secondary but not tertiary exposure (Table <ref type="table" target="#tab_0">S1</ref>). L3 expression after one immunization was also confirmed by gel electrophoresis showing an amplified band of the appropriate size (Fig. <ref type="figure" target="#fig_4">5B</ref>). These studies confirm the absence of developing parasites in multiplyimmunized mice. The lack of L3 expression in later immunizations explains why L3 CTLs are primed by sporozoite immunization but not boosted by homologous sporozoite immunization and further supports heterologous strategies for inducing T-cell responses against malaria parasite antigens.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>Whole sporozoite immunization can protect animal and human subjects, with major contributions from antibody and T-cellmediated responses to CSP <ref type="bibr" target="#b45">(46)</ref>. However, as described earlier, CSP-specific immunity is not absolutely necessary or sufficient to attain immunological protection against challenge <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b20">(21)</ref><ref type="bibr" target="#b21">(22)</ref><ref type="bibr" target="#b22">(23)</ref><ref type="bibr" target="#b23">(24)</ref>. Thus, there is a need to identify individual immunogenic antigens so that they can be evaluated for inclusion in multicomponent subunit vaccines. Using a unique HTS system for CD8 + T-cell antigen identification <ref type="bibr" target="#b31">(32)</ref>, we, like others <ref type="bibr" target="#b27">(28)</ref>, detected many low frequency T-cell responses to sporozoite vaccinations, with a trend toward more diversity in less-attenuated parasites (e.g., CPS and GAP &gt; RAS), as has been reported <ref type="bibr" target="#b26">(27)</ref>. We identified a peptide from the L3 ribosomal protein as a CD8 + T-cell target in all sporozoite vaccination regimens and following immunization with heat-treated infected erythrocytes. Unlike the well-studied CSP antigen that coats the infectious sporozoite, the L3 protein is not highly expressed until later in the liver stage. Thus, this work identifies a specific CD8 + T-cell epitope carried on liver-stage and infected erythrocytes in BALB/c mice.</p><p>In this study, homologous sporozoite immunizations resulted in boosting of CSP-specific, but not L3-specific, CD8 + T-cell responses. Previous reports show that when multiple homologous sporozoite immunizations were given at 48-h intervals, there was no significant increase in CSP-specific CD8 T-cell expansion compared with a single dose of sporozoites ( <ref type="formula">47</ref>). This so-called "self-regulation" was due to antigen-specific CD8 + T cells that could eliminate antigen-presenting DCs <ref type="bibr" target="#b47">(48)</ref> and prevent the further expansion of naive CD8 + T cells specific for the same antigen. This phenomenon is thought to mimic the situation in hyperendemic field settings, where humans sometimes receive multiple malaria-infected mosquito bites daily. When the interval between immunizations is extended to a week or more as in our studies, we and others <ref type="bibr" target="#b26">(27)</ref> find that endogenous CSP-specific CD8 + T cells in fact increase in frequency after repeated sporozoite immunizations. Thus, CSP-specific T cells do not appear to be affected by self-regulation using our vaccination approach. Looking beyond CSP-specific cells, previous phenotyping of bulk CD8 + T cells showed that some portion of memory T-cell responses could be boosted by repeated sporozoite exposures. Lymphocytes from mice treated with homologous sporozoite immunizations showed an increase in the frequency of memory CD8 + T cells at a memory timepoint <ref type="bibr" target="#b36">(37)</ref>. We predict that  such increases following repeat sporozoite immunizations are responses against preformed or early liver stage antigens. Thus, with the right immunization interval, some CD8 + T-cell responses appear to boost in response to homologous sporozoite exposures.</p><p>In contrast to CSP-specific T cells, L3-specific CD8 + T cells failed to boost after repeated sporozoite immunizations. We first looked to see whether there were functional defects in L3-specific cells, but these cells were capable of killing peptide-coated target cells in an antigen-specific manner and could be restimulated with other forms of antigen. Instead, we found that the lack of L3specific CTL expansion following secondary sporozoite immunization was likely due to the strong antisporozoite immune response that essentially prevents L3 expression. We do not think that failed secondary L3 responses are due to self-regulation (i.e., killing or blocking) of L3 antigen-presenting cells-rather we think that the antigen is altogether absent because the parasite is killed before L3 expression is evident. L3 is therefore unlike most preerythrocytic malaria antigens studied to date-it is not abundant on the mosquito-derived sporozoite and likely requires productive infection of hepatocytes to be highly expressed. For such antigens, the first and second immunizations with homologous sporozoites occur in very different immunological settings.</p><p>Our data suggest that the loss of parasite antigen expression in multiply sporozoite immunized mice may complicate efforts to identify novel late-stage antigenic targets. The relative protection afforded by previous sporozoite immunization eliminates mRNA expression for numerous proteins known to be expressed during liver-stage development. Thus, late-stage antigens may not be sufficiently exposed during secondary or later immunizations such that responses against these antigens may fail to boost, whereas dominant immune responses progressively focus on preformed antigens like CSP and others expressed by the incoming sporozoite. Certainly CSP-specific responses are known to dominate the BALB/c immune response in sporozoite-immunized mice <ref type="bibr" target="#b21">(22)</ref>. However, recent studies suggest an important role for non-CSP responses as well. Mouse studies suggest that fewer CPS parasites and fewer CPS immunizations are required for protection compared with the RAS regimen <ref type="bibr" target="#b25">(26)</ref>. Similarly, a single CPS immunization via the bites of 12-15 P. falciparum NF54-infected mosquitoes protected 4 of 10 human subjects from developing detectable blood-stage parasitemia following a second CPS immunization and reduced the peak parasitemia &gt;20-fold in the remaining infected individuals <ref type="bibr" target="#b4">(5)</ref>. Although this human study was designed to test the efficacy of three CPS immunizations, relative protection from the second immunization was apparent even after the first immunization, similar to our findings here using GAP parasites. The increased potency of latearresting or WT sporozoites compared with heat-killed or early arresting sporozoites is thought to be due to expression of antigens found later in the liver stage or even in the erythrocyte stage. It would be desirable to identify such proteins because they could be combined with CSP to produce multicomponent subunit vaccines capable of acting at multiple checkpoints throughout parasite liverstage development. However, in retrospect it appears that multiple homologous sporozoite immunizations may have hamstrung screening efforts by biasing immune responses in favor of preformed antigens like CSP. Because of this effect, efforts that screen multiply-immunized mice with late liver-stage antigen libraries could be destined to fail.</p><p>Although the L3 antigen identified herein does not appear to be protective alone, L3-specific T-cell responses were boosted by using heterologous prime-boost immunization regimens. The lack of L3 boosting by repeated sporozoite exposures may be emblematic of a phenomenon affecting other liver-stage parasite antigens as well. Heterologous prime-boost approaches are being used for malaria vaccination-challenge studies in mice and humans <ref type="bibr" target="#b48">(49)</ref>. Our findings make the case for heterologous approaches at the antigen discovery phase as well. By inducing a broad immune repertoire, we may be able to generate responses capable of eradicating all malariainfected hepatocytes, including those missed by CSP-or other sporozoite-limited responses.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Materials and Methods</head><p>Reagents. Chemicals and antibodies are detailed in SI Materials and Methods. Recombinant Lm-L3 within the ovalbumin protein was a gift of Dietmar Zehn (Swiss Vaccine Research Institute, Lausanne, Switzerland) and is described in SI Materials and Methods.</p><p>Mice and Py17XNL Infection. Balb/cj and Thy1.1 + BALB/c mice from Jackson Laboratories (6-8 wk old) were housed in approved facilities at the University of Washington for studies approved by the Institutional Animal Care and Use Committee. Mice were infected i.v. with 1 × 10 2 to 2 × 10 5 WT, FabB/F (GAP), or irradiated (10,000 rad) P. yoelii 17XNL sporozoites obtained from the Center for Mosquito Production and Malaria Infection Research (CeMPMIR, Seattle Biomedical Research Institute, Seattle). The CPS protocol used 0.8 mg of chloroquine diphosphate i.p. daily for 10 d. Some mice received heattreated parasites or additional sporozoite immunizations as described in the text and SI Materials and Methods.</p><p>In Silico Library Protein Selection and Minigene Library Synthesis. Design, synthesis, pooling, and use of a minigene library containing 1,988 components predicted to bind BALB/c MHC is in SI Materials and Methods. The technique was as described <ref type="bibr" target="#b31">(32)</ref>.</p><p>IFNγ ELISPOT. Erythrocyte-depleted cell suspensions from spleens or livers were subjected to ELISPOT as described in SI Materials and Methods by using either peptides or minigene-transfected P815 cells. Antibodies against CD4, CD8, or H2-K d were used in some experiments. Counting is as described in SI Materials and Methods. MHC Binding. H2-K d -expressing RMA/S cells were used to test MHC binding as reported <ref type="bibr" target="#b49">(50)</ref>.</p><p>Magnetic-Activated Cell Sorting Purification and T-Cell Phenotyping. CD8 + T-cell purification was performed by negative selection magnetic-activated cell sorting (MACS; Miltenyi Biotech). Tetramer pulldown assays were as described (51) by using reagents described in SI Materials and Methods.</p><p>In Vivo Cytotoxicity Assay. Assays were performed after 8 h as reported <ref type="bibr" target="#b51">(52)</ref>.</p><p>Immunization with Peptide-Pulsed DCs or Lm-L3. Bone marrow-derived DCs were cultured by using BALB/c serum, treated with LPS and peptides, washed, and injected as in SI Materials and Methods. For Lm-L3 immunizations, stock bacteria were grown and injected i.v. as reported <ref type="bibr" target="#b52">(53)</ref>.  BALB/c mice were immunized one, two, or three times at 7-or 21-d intervals and then killed 44 h after the final sporozoite injection. Naïve mice were also killed as controls. Total liver RNA was purified and real-time RT-PCR was performed to measure mouse GAPDH mRNA and P. yoelii 18S rRNA. The parasite burden is shown as the ΔC T (C T Py 18S rRNA -C T mouse GAPDH mRNA), which is inversely proportional to the parasite load. CI, confidence interval. *P &lt; 0.0001 (unpaired t test comparison with unimmunized). calculated as in SI Materials and Methods. Expression of other transcripts was also tested as in SI Materials and Methods.</p><p>Statistical Analysis. Data were tabulated by using Microsoft Excel; P values were calculated by using Prism software (GraphPad). Unless noted, error bars depict ±1 SD.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Different sporozoite immunizations result in CD8 + T-cell responses that vary in magnitude and diversity. (A) Normalized HTS results from primary immunization with RAS (red), CPS (blue), and GAP regimens (black). Data are the mean normalized IFNγ spot count per well for 199 screening pools based on duplicate screening wells at 95% confidence. The x axis displays pools 1-199 in numerical order followed by control wells, as indicated. Pools 102 (containing a CSP epitope) and 171 and negative (N) and positive (P) controls are indicated. (B) Flow cytometry of peripheral blood leukocytes 6 d after immunization with 2 × 10 4 RAS or CPS parasites, assessing CD11a and CD8α to identify P. yoelii sporozoite-induced CD8 + T cells. Values adjacent to gated regions indicate percent of CD11a HI CD8a LO cells of all CD8 + T cells. (C) Average percentage of CD11a HI CD8α LO cells of all CD8 + T cells at the times after immunization. *P &lt; 0.0001 (two-way ANOVA); error bars, 95% CI, n = 9 mice per group; representative of two experiments. Filled bars, RAS; open bars, CPS.</figDesc><graphic coords="2,133.00,568.69,323.56,89.97" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. HTS identifies the P. yoelii ribosomal protein L3 as a T-cell antigen. (A) Subset of wells from primary HTS showing positive result in pool 171. (B) Pool 171-specific responses in naïve vs. sporozoite-immunized mice. (C) Deconvolution of pool 171 using individual minigenes shows that minigene 171.3 (from L3 ribosomal protein, PY05881) was the antigenic component of the pool.</figDesc><graphic coords="3,65.08,52.78,191.85,108.62" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. The L3-specific response is mediated by CD8 + T cells and can be induced by cross-priming. (A) IFNγ ELISPOT of CPS-immunized BALB/c mice with varied concentrations of CSP (SYVPSAEQI, open squares) or L3 (GYKSGMSHI, filled diamonds) peptides. SFU, IFNγ spot forming units (SFU) per million splenocytes. Compared with no peptide controls, all results were significant at P &lt; 0.05 for all peptide concentrations &gt;1 × 10 -9 M (unpaired t test; three samples per data point). (B) Antibodies were used to block CD4 and/or CD8 during the ELISPOT. Error bars show 95% CI; *P &lt; 0.05, **P &lt; 0.001; two samples per group. (C) RMA/S cells expressing H2-K d were incubated with the designated concentration of CSP (diamonds) or L3 (squares) peptide and monitored to determine the stabilization of H2-K d . A-C are representative of two experiments each. (D) Mice were immunized with heat-treated uninfected (squares) or infected-erythrocytes (P. yoelii, filled circles; P. berghei, open circles), and 7 d later ELISPOT was performed as in A by using 1 × 10 -7 M peptides. Data compiled from two experiments and presented as normalized SFU per million splenocytes (nSFU = SFU minus SFU of mock-treated controls). *P &lt; 0.05 (unpaired t test). (E) Mice immunized with live-(black squares) or heat-treated (gray diamonds) GAP sporozoites were compared with naïve mice (white squares) by ELISPOT as in D. *P &lt; 0.0001 (unpaired t test). In D and E, error bars, SEM; n = 2-3 per experiment for naïve mice and live GAP; n = 5 per experiment for heat-treated iRBCs and heat-treated GAP.</figDesc><graphic coords="3,41.10,352.46,239.73,180.62" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. L3-specific CTLs are not boosted by multiple sporozoite injections but can be boosted by heterologous immunization. (A) ELISPOT from BALB/c mice homologously immunized one or three times at 30-d intervals with 1 × 10 4 CPS. ELISPOT was performed on the day listed by using 1 × 10 -7 M CSP (open squares) or L3 (filled squares) peptides. *P = 0.002 (unpaired t test, 4-6 mice per group). (B) Flow cytometry for MACS tetramer-purified splenocytes from naïve mice or mice immunized once or three times with 2 × 10 4 GAP. Gates and values denote the percentage of tetramer-positive CD8 + CD4 -B220 -single cells. (C) In vivo killing of CSP-or L3-coated target cells in naïve mice (open squares) or mice immunized with 3× RAS (filled squares), CSP peptide-pulsed DCs (open triangles), 3× RAS then CSP peptide-pulsed DCs (filled triangles), L3 peptide-pulsed DCs (open circles) or 3× RAS then L3 peptide-pulsed DCs (filled circles). *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001 (unpaired t test; 2-3 mice per group). (D) Flow cytometry for MACS tetramerpurified splenocytes as in B from mice immunized 6 d earlier with mock-, CSP-or L3-peptide treated DCs. Gates and values as in B. (E) In vivo killing of CSP-or L3-coated target cells as in C in mice receiving CSP-pulsed DC priming and no booster immunization (open triangles), CSP DC priming and single RAS booster (filled triangles), L3 peptide-pulsed DC priming and no booster (open circles), or L3 peptide-pulsed DC priming and single RAS booster (filled circles). *P &lt; 0.05, **P &lt; 0.01 (unpaired t test); 4-5 mice per group. (F and G) Flow cytometry of total splenocytes showing CD11a HI L3 tetramer-stained CD8 + T cells in mice immunized with mock-or L3 peptide-pulsed DCs or 2 × 10 4 GAP parasites followed by L3-expressing Listeria infection 30 d later. The number of activated L3-specific cells per spleen was calculated and plotted in G. *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001 (unpaired t test; 5 mice per group).</figDesc><graphic coords="4,42.86,52.78,245.49,240.38" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Prior sporozoite immunization significantly reduces the load of liverstage parasites and eliminates detectable L3 transcript expression. (A) The ΔC T of murine GAPDH and P. yoelii 18S rRNA was determined by real-time RT-PCR 44 h after immunization. *P &lt; 0.0001 (unpaired t test; 5-8 mice per group). (B) Electrophoresis of L3-specific RT-PCR product obtained as in A. A specific-band was only detected in mice immunized once with sporozoites.</figDesc><graphic coords="4,337.10,501.45,173.84,165.60" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>Protection and Liver-Stage RT-PCR Studies. As described in SI Materials and Methods, RNA was harvested from livers of mice immunized with GAP or challenged with WT sporozoites 40-44 h after injection. Quantitative RT-PCR was performed for mouse GAPDH and P. yoelii 18S rRNA, and the ΔC T was</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>P. yoelii 18S rRNA liver-stage burden in GAPimmunized BALB/c mice</figDesc><table><row><cell>Interval, d</cell><cell>Sporozoite doses</cell><cell>ΔC T 18S (95% CI)</cell><cell>n mice (n exp)</cell></row><row><cell></cell><cell>0 (naïve)</cell><cell>12.98 (12.58-13.37)</cell><cell>7 (3)</cell></row><row><cell>7</cell><cell>1</cell><cell>2.56 (1.98-3.14)*</cell><cell>7 (3)</cell></row><row><cell></cell><cell>2</cell><cell>10.97 (8.62-13.31)</cell><cell>5 (2)</cell></row><row><cell></cell><cell>3</cell><cell>11.95 (11.08-12.81)</cell><cell>8 (3)</cell></row><row><cell></cell><cell>0 (naïve)</cell><cell>13.06 (11.58-14.54)</cell><cell>6 (2)</cell></row><row><cell>21</cell><cell>1</cell><cell>2.60 (0.40-4.80)*</cell><cell>8 (2)</cell></row><row><cell></cell><cell>2</cell><cell>7.40 (6.37-8.43)*</cell><cell>8 (2)</cell></row><row><cell></cell><cell>3</cell><cell>12.10 (11.40-12.80)</cell><cell>8 (2)</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Downloaded from https://www.pnas.org by 147.161.165.28 on March 4, 2025 from IP address 147.161.165.28.</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>ACKNOWLEDGMENTS. We thank <rs type="person">Crystal Rawlings</rs>, <rs type="person">Jay Shendure</rs>, <rs type="person">Nick Crispe</rs>, <rs type="person">Stefan Kappe</rs>, and the <rs type="institution">Center for Mosquito Production and Malaria Infection Research (Seattle Biomedical Research Institute)</rs> for assistance. S.C.M. is supported by <rs type="funder">National Institute of Allergy and Infectious Diseases</rs> Grant <rs type="grantNumber">1K08AI097238-01</rs>, and B.C.S. and S.C.M. are supported by the <rs type="funder">Bill and Melinda Gates Foundation</rs>. M.J.B. is an Investigator of the <rs type="funder">Howard Hughes Medical Institute</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_pbQx7b7">
+					<idno type="grant-number">1K08AI097238-01</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Protective immunity produced by the injection of x-irradiated sporozoites of plasmodium berghei</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Nussenzweig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vanderberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Most</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Orton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">216</biblScope>
+			<biblScope unit="issue">5111</biblScope>
+			<biblScope unit="page" from="160" to="162" />
+			<date type="published" when="1967">1967</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Immunization of man against sporozite-induced falciparum malaria</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Clyde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Most</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">C</forename><surname>Mccarthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Vanderberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Med Sci</title>
+		<imprint>
+			<biblScope unit="volume">266</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="169" to="177" />
+			<date type="published" when="1973">1973</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Genetically modified Plasmodium parasites as a protective experimental malaria vaccine</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Mueller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Labaied</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kappe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Matuschewski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">433</biblScope>
+			<biblScope unit="issue">7022</biblScope>
+			<biblScope unit="page" from="164" to="167" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Vaccine-like immunity against malaria by repeated causal-prophylactic treatment of liver-stage Plasmodium parasites</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Putrianti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Silvie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kordes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Borrmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Matuschewski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Infect Dis</title>
+		<imprint>
+			<biblScope unit="volume">199</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="899" to="903" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Protection against a malaria challenge by sporozoite inoculation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Roestenberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">N Engl J Med</title>
+		<imprint>
+			<biblScope unit="volume">361</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="468" to="477" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The complexity of protective immunity against liverstage malaria</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Doolan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Hoffman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">165</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1453" to="1462" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Cytotoxic T cells specific for the circumsporozoite protein of Plasmodium falciparum</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">334</biblScope>
+			<biblScope unit="issue">6179</biblScope>
+			<biblScope unit="page" from="258" to="260" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Cloned cytotoxic T cells recognize an epitope in the circumsporozoite protein and protect against malaria</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Romero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">341</biblScope>
+			<biblScope unit="issue">6240</biblScope>
+			<biblScope unit="page" from="323" to="326" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Malaria sporozoites leave behind trails of circumsporozoite protein during gliding motility</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Stewart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Vanderberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Protozool</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="389" to="393" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Plasmodium bergheiinfected primary hepatocytes process and present the circumsporozoite protein to specific CD8+ T cells in vitro</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Bongfen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Torgler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Renia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Corradin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">178</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="7054" to="7063" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Conserved protective mechanisms in radiation and genetically attenuated uis3(-) and uis4(-) Plasmodium sporozoites</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Baxter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Tarun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kappe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Nussenzweig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">4480</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">CSP-a model for in vivo presentation of Plasmodium berghei sporozoite antigens by hepatocytes</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Balam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Bongfen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Guillaume</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Corradin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">51875</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">In vitro activity of CD4+ and CD8+ T lymphocytes from mice immunized with a synthetic malaria peptide</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rénia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="issue">18</biblScope>
+			<biblScope unit="page" from="7963" to="7967" />
+			<date type="published" when="1991">1991</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Effector functions of circumsporozoite peptide-primed CD4+ T cell clones against Plasmodium yoelii liver stages</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rénia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">150</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1471" to="1478" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Cutting edge: The IgG response to the circumsporozoite protein is MHC class II-dependent and CD1d-independent: Exploring the role of GPIs in NK T cell activation and antimalarial responses</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Molano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">164</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="5005" to="5009" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">CD8+ cytolytic T cell clones derived against the Plasmodium yoelii circumsporozoite protein protect against malaria</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Rodrigues</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int Immunol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="579" to="585" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Memory CD8 T cell responses exceeding a large but definable threshold provide long-term immunity to malaria</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Schmidt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">37</biblScope>
+			<biblScope unit="page" from="14017" to="14022" />
+			<date type="published" when="2008">2008</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Plasmodium falciparum-specific cellular immune responses after immunization with the RTS,S/AS02D candidate malaria vaccine in infants living in an area of high endemicity in Mozambique</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Barbosa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Infect Immun</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="4502" to="4509" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Preclinical evaluation of the safety and immunogenicity of a vaccine consisting of Plasmodium falciparum liver-stage antigen 1 with adjuvant AS01B administered alone or concurrently with the RTS,S/AS01B vaccine in rhesus primates</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Pichyangkul</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Infect Immun</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="229" to="238" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Randomized, double-blind, phase 2a trial of falciparum malaria vaccines RTS,S/AS01B and RTS,S/AS02A in malarianaive adults: Safety, efficacy, and immunologic associates of protection</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Kester</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">Vaccine Evaluation Group</orgName>
+			</affiliation>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Infect Dis</title>
+		<imprint>
+			<biblScope unit="volume">200</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="337" to="346" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">A statistical interaction between circumsporozoite proteinspecific T cell and antibody responses and risk of clinical malaria episodes following vaccination with RTS,S/AS01E</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Ndungu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">52870</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">The circumsporozoite protein is an immunodominant protective antigen in irradiated sporozoites</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">444</biblScope>
+			<biblScope unit="issue">7121</biblScope>
+			<biblScope unit="page" from="937" to="940" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Sterile protection against malaria is independent of immune responses to the circumsporozoite protein</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Grüner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">1371</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Minimal role for the circumsporozoite protein in the induction of sterile immunity by vaccination with live rodent malaria sporozoites</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mauduit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Infect Immun</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2182" to="2188" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A role for immune responses against non-CS components in the cross-species protection induced by immunization with irradiated malaria sporozoites</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mauduit</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page">7717</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Protective T cell immunity against malaria liver stage after vaccination with live sporozoites under chloroquine treatment</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Belnoue</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">172</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="2487" to="2495" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Superior antimalarial immunity after vaccination with late liver stage-arresting genetically attenuated parasites</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Butler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Host Microbe</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="451" to="462" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Identification of non-CSP antigens bearing CD8 epitopes in mice immunized with irradiated sporozoites</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mishra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Vaccine</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">43</biblScope>
+			<biblScope unit="page" from="7335" to="7342" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Potency assays for novel T-cellinducing vaccines against malaria</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reyes-Sandoval</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">E</forename><surname>Pearson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Todryk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ewer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Mol Ther</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="72" to="80" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Identification of Plasmodium falciparum antigens by antigenic analysis of genomic and proteomic data</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Doolan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="9952" to="9957" />
+			<date type="published" when="2003">2003</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Immune responses to Plasmodium vivax pre-erythrocytic stage antigens in naturally exposed Duffy-negative humans: A potential model for identification of liver-stage antigens</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1859" to="1868" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Discovery of T cell antigens by high-throughput screening of synthetic minigene libraries</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Hondowicz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">e29949</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Laser capture microdissection and molecular analysis of Plasmodium yoelii liver-stage parasites</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Sacci</surname><genName>Jr</genName></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Aguiar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">O</forename><surname>Lau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Hoffman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Biochem Parasitol</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="285" to="289" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Innate immune response to malaria: Rapid induction of IFN-gamma from human NK cells by live Plasmodium falciparum-infected erythrocytes</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Artavanis-Tsakonas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Riley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">169</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2956" to="2963" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Accurate gene synthesis with tag-directed retrieval of sequence-verified DNA molecules</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shendure</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="913" to="915" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Error correction in gene synthesis technology</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Saaem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="147" to="154" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Extreme CD8 T cell requirements for anti-malarial liver-stage immunity following immunization with radiation attenuated sporozoites</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Butler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">P</forename><surname>Badovinac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Harty</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Pathog</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page">1000998</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Priming of CD8+ T cell responses following immunization with heat-killed Plasmodium sporozoites</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Hafalla</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1179" to="1186" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Evidence-based annotation of the malaria parasite&apos;s genome using comparative expression profiling</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">1570</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">A combined transcriptome and proteome survey of malaria parasite liver stages</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Tarun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="305" to="310" />
+			<date type="published" when="2008">2008</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Discovery of gene function by expression profiling of the malaria parasite life cycle</title>
+		<author>
+			<persName><forename type="first">Le</forename><surname>Roch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">G</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">301</biblScope>
+			<biblScope unit="issue">5639</biblScope>
+			<biblScope unit="page" from="1503" to="1508" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">A proteomic view of the Plasmodium falciparum life cycle</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Florens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">419</biblScope>
+			<biblScope unit="page" from="520" to="526" />
+			<date type="published" when="2002">2002. 6906</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Global analysis of transcript and protein levels across the Plasmodium falciparum life cycle</title>
+		<author>
+			<persName><forename type="first">Le</forename><surname>Roch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">G</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2308" to="2318" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">A comprehensive survey of the Plasmodium life cycle by genomic, transcriptomic, and proteomic analyses</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="issue">5706</biblScope>
+			<biblScope unit="page" from="82" to="86" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Blood-stage Plasmodium berghei infection generates a potent, specific CD8+ T-cell response despite residence largely in cells lacking MHC I processing machinery</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">S</forename><surname>Lau</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Infect Dis</title>
+		<imprint>
+			<biblScope unit="volume">204</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1989" to="1996" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Whole parasite vaccination approaches for prevention of malaria infection</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Butler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Vaughan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Harty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Kappe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Immunol</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="247" to="254" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Early self-regulatory mechanisms control the magnitude of CD8+ T cell responses against liver stages of murine malaria</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Hafalla</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">171</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="964" to="970" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Memory CD8+ T cell responses expand when antigen presentation overcomes T cell self-regulation</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Cockburn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chakravarty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Overstreet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>García-Sastre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zavala</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">180</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="64" to="71" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">A human Phase I/IIa malaria challenge trial of a polyprotein malaria vaccine</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Porter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Vaccine</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">43</biblScope>
+			<biblScope unit="page" from="7514" to="7522" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Alloreactive cytotoxic T-cell function, peptide nonspecific</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Müllbacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lobigs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Kos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Langman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Scand J Immunol</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="563" to="569" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Tracking epitope-specific T cells</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Moon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Protoc</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="565" to="581" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Swift development of protective effector functions in naive CD8(+) T cells against malaria liver stages</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Exp Med</title>
+		<imprint>
+			<biblScope unit="volume">194</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="173" to="180" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Complete but curtailed T-cell response to very lowaffinity antigen</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Zehn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Bevan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">458</biblScope>
+			<biblScope unit="issue">7235</biblScope>
+			<biblScope unit="page" from="211" to="214" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

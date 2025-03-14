@@ -1,0 +1,2259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main"></title>
+				<funder>
+					<orgName type="full">EMBL</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Spanish Ministry of Education and Science</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">European Science Foundation Exchange</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Marie Curie Biostar programmes</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Juan</forename><forename type="middle">M</forename><surname>Vaquerizas</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Sarah</forename><forename type="middle">K</forename><surname>Kummerfeld</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Sarah</forename><forename type="middle">A</forename><surname>Teichmann</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Nicholas</forename><forename type="middle">M</forename><surname>Luscombe</surname></persName>
+						</author>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">F603FA0B9777EA044FA202C7866C8DBB</idno>
+					<idno type="DOI">10.1038/nrg2538</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Cellular life must recognize and respond appropriately to diverse internal and external stimuli. By ensuring the correct expression of specific genes, the transcriptional regulatory system plays a central part in controlling many biological processes, ranging from cell cycle progression 1 and maintenance of intracellular metabolic and physio logical balance, to cellular differentiation and develop mental time courses <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> . Numerous diseases arise from a breakdown in the regulatory system: transcription fac tors (TFs) are overrepresented among oncogenes 5 , and a third of human developmental disorders have been attributed to dysfunctional TFs 6 . Furthermore, altera tions in the activity and regulatory specificity of TFs are likely to be a major source for phenotypic diversity and evolutionary adaptation <ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> . Indeed, increased sophistica tion of the transcriptional regulatory system seems to have been a principal requirement for the emergence of metazoan life <ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref> .</p><p>Much of our basic knowledge of transcriptional reg ulation derives from molecular biological and genetic investigations. Diverse arrays of proteins are crucial for successful transcription by RNA polymerase in eukary otic cells. These proteins include general transcription factors, co-factors, histones and chromatin remodelling proteins. In addition, a host of sequencespecific DNA binding TFs direct transcription initiation to specific promoters 14 .</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Gene Ontology</head><p>(GO). A widely used classification system of gene functions and other gene attributes that uses a controlled vocabulary.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>InterPro</head><p>A database of conserved protein families, domains and motifs that can be used to annotate amino acid sequences. The presence of a protein domain is often indicative of a particular molecular function.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SELEX</head><p>A procedure to identify protein ligands. For DNA-binding proteins, the protein is mixed with a pool of double-stranded oligonucleotides that contain a random core of nucleotides flanked by specific sequences. The protein-DNA complex is recovered, the oligonucleotides amplified by PCR and sequenced to reveal the binding specificity of the protein.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Orthologues</head><p>Loci in two species that are derived from a common ancestral locus by a speciation event. This is different from paralogous members of a gene family that are derived from duplication events.</p><p>completely sequenced genomes based on a set of hidden Markov models of DNAbinding domain families from the Pfam and SuPeRFAMIlY databases. Several com putational studies have examined individual mamma lian TF families in detail, but only a few have attempted to identify the full complement of human TFs <ref type="bibr" target="#b28">29,</ref><ref type="bibr" target="#b29">30</ref> .</p><p>Some previous studies of TF repertoires -particu larly those in large genomes -may contain misleading predictions for several reasons. Most of these studies depended on identifying genes that are homologous to previously characterized regulators; however, there are technical limitations to sequence search methods, and algorithms can sometimes output false positive hits. Moreover, even among true positives, some DNA binding domains also exist in nonTF proteins, making these domains unreliable markers of sequencespecific DNAbinding functionality. As a result of these difficul ties, we still lack a comprehensive characterization of the human TF repertoire.</p><p>Here, we overcome some of these difficulties by focusing on a precise definition of sequencespecific DNAbinding regulators, which are among the best defined protein domains. We also minimize prediction errors by manually examining each locus that encodes a potential DNAbinding function. In doing so, we present a comprehensive and highquality census of TFs in the human genome. As most of these TFs have not been experimentally characterized for regulatory function, we evaluate their tissuespecific expression, genomic distribution and evolutionary conservation. Together, these results provide a solid foundation for further systematic characterization of human TFs in their bio logical context, through traditional molecular approaches and also using genomics techniques, such as chromatin immunoprecipitation, proteinbinding microarrays and highthroughput SELEX.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identifying the TF repertoire</head><p>To identify the repertoire of TFs in the human genome we define a class of proteins that binds DNA in a sequencespecific manner, but are not enzymatic or do not form part of the core initiation complex. First we assembled a list of DNAbinding domains and families from the InterPro database (release 17). For each entry we examined the description and associated literature to assess their sequencespecific DNAbinding capabili ties, which resulted in an accurate list of 347 domains and families (Supplementary information S1 (PDF), S2 (.txt file)). We then extracted 4,610 proteins from the International Protein Index (IPI) database <ref type="bibr" target="#b30">31</ref> that show a significant match with these selected DNAbinding domains. This group of proteins mapped to 1,960 human genomic loci in the ensembl Genome Browser database (release 51) <ref type="bibr" target="#b31">32</ref> .</p><p>Next, we manually inspected each locus and grouped them according to our confidence in their TF func tionality (Supplementary information S1 (PDF); the full data set is found in Supplementary information S3 (.txt file)): at the highest level, probable TFs have experi mental evidence for regulatory function in any mam malian organism or have an equivalent protein domain arrangement; possible TFs contain nonpromiscuous InterPro DNAbinding domains that are never found in nonTFs, but for which we do not have further func tional evidence; and unlikely TFs comprise predicted genes, genes containing promiscuous InterPro DNA binding domains or genes with an established molecular function other than transcription (such as nucleoporins, threonine phosphatases or splicing factors). Finally, we also included 27 curated probable TFs from other sources, such as GO or TRANSFAC <ref type="bibr" target="#b32">33</ref> ; these TFs contain undefined DNAbinding domains, and were therefore missed using the above procedure.</p><p>This resulted in a highconfidence data set of 1,391 genomic loci (~6% of the total number of protein coding genes) that encode TFs, which we will focus on for the remainder of this Analysis article, and a further 216 loci representing possible TFs (see Supplementary information S3 (.txt file) for the data set). estimates of the coverage of our approach range from 85% to 94% (Supplementary information S1 (PDF)) suggesting an upper bound of ~1,700-1,900 TFcoding genes in the human genome.</p><p>Despite the care that we have taken in compiling this data set, there are a few possible sources of inaccura cies. Our method depends heavily on the content of the InterPro database, and the ability of the search algo rithms to detect these domains in protein sequences. The repertoire should be updated when new InterPro entries for newly discovered DNAbinding domains, or refinements of existing ones, and more sensitive search methods become available. In addition, the annotation of the human genome is still in a state of flux -espe cially in the annotation of genes -so part of the rep ertoire will be affected by new releases of the genome. Finally, our manual curation depends on the existing literature about each gene, and our own annotations will need to be updated as new findings are reported. The repertoire will be improved as these underlying data sources are updated. Overall, we expect these limit ations to be small compared with the improvements that our data provide over previous resources.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Limited knowledge of TF functions</head><p>We gauged the extent of our current knowledge about the regulatory function of these TFs by assessing PubMed abstracts and annotations in the GO database. The literature analysis (FIG. <ref type="figure" target="#fig_0">1a</ref>), based on the number of times a TF is cited in an abstract, shows an uneven dis tribution of information that is biased towards those TFs involved in diseases. Three TFs, including the tumour suppressor p53, have accumulated more citations than all other TFs.</p><p>Further analysis using the GO database (FIG. <ref type="figure" target="#fig_0">1b</ref>) showed that most human TFs are unannotated, indi cating that they remain uncharacterized. In fact, when we inspect the source of these annotations, it is evident that most observations are inferred from studies in other organisms and may not apply directly to human orthologues. Of the assigned regulatory functions, con trol of developmental processes (such as tissue and organ development), cellular processes (for example,</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Nature Reviews | Genetics</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Number of citations</head><p>Response to stimulus (66)   Localization (24)   Immune system process (30)   Metabolic process (109)  signal transduction) and stimulatory response (includ ing immune response and sensory perception) are the most highly represented. Of course, these annotations are often general, and one must return to the original publications in order gain detailed understanding of the functions of the gene. These observations are not surprising in themselves, but they emphasize how little we know about the biolog ical processes that most of these TFs mediate. Directing research efforts into these uncharacterized TFs -for example, using highthroughput genomic surveys to describe key features combined with detailed examina tion using traditional molecular approaches -could accelerate our understanding of these regulators. The TF forkhead box P3 (FOXP3) is an excellent example of how research interest can suddenly arise following a key finding, and how followup studies can rapidly improve our understanding of regulatory function. FOXP3 was first described in 2001 as the cause of Xlinked mouse scurfy and human neonatal diabetes mellitus, enter opathy and endocrinopathy syndrome <ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b34">35</ref> ; but only ten further papers were published on this gene during 2001-2002. However, since the discovery of the role of FOXP3 in Tcell development in 2003 (REFS 36,37)  there have been 2,382 publications, including several ChIP-chip (chromatin immunoprecipitation coupled with microarray) studies exploring its genomewide binding sites <ref type="bibr" target="#b37">38,</ref><ref type="bibr" target="#b38">39</ref> . Greater understanding of how this TF operates has been translated into its clinical use as a marker for transplant rejection <ref type="bibr" target="#b39">40</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Structural features</head><p>The most common classification of TFs is based on the structure of their DNAbinding domains <ref type="bibr" target="#b40">41</ref> . Grouping TFs by structural domain has been extremely useful in uncovering how they recognize and bind specific DNA sequences, as well as providing insights into their evo lutionary histories. Moreover, in some instances the DNAbinding domain provides clues to their function; for example, homeodomaincontaining TFs are often associated with developmental processes, and those in the interferon regulatory factor family are generally asso ciated with triggering immune responses against viral infections <ref type="bibr" target="#b40">41</ref> .</p><p>We will not describe these families in detail here, as this has been done elsewhere <ref type="bibr" target="#b40">41</ref> . It is worth noting, however, that three types of TF dominate in the human genome and account for over 80% of the repertoire (FIG. <ref type="figure" target="#fig_1">2</ref>; Supplementary information S4 (.txt)): the C 2 H 2 zincfinger (675 TFs), homeodomain (257 TFs) and helix-loophelix (87 TFs). These results agree with previous studies in the mouse, in which the same three families account for the majority of TFs <ref type="bibr" target="#b21">22</ref> . We note that C 2 H 2 zinc fingers, and some other domains, interact with both DNA and RNA; however, we have included them here as we are currently unable to distinguish proteins that interact with one or the other -further experimental work will be necessary before this is possible.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tissue-dependent TF expression</head><p>We examined the tissuedependent expression of TFs using the Genome Novartis Foundation SymAtlas data set <ref type="bibr" target="#b41">42</ref> , which contains measurements of transcript levels for 79 human tissues, tumour samples and cell lines, obtained using the Affymetrix GeneChip HGu133A. We reprocessed the raw data and set robust and objective expression thresholds to define the pres ence or absence of genes in the biological sample (Supplementary information S1 (PDF)). We excluded tumour samples and cell lines from further analysis, and focused on 32 healthy major tissues and organs. Of course, TF activity often depends on posttranslational events, and gene expression does not necessarily indi cate regulatory activity. However, it is still useful to assess the extent of TF expression as it provides the first line of evidence for the locations in which they may function. TFs with multiple DNA-binding domains were classified in each of their respective families. Families with less than five members were classified as 'other'.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Nature Reviews | Genetics</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Number of TFs</head><formula xml:id="formula_0">Z N F -C 2 H 2 H o m e o d o m a i n H L H b Z i p F o r k h e a d P 5 3 H M G E T S I P T / T I G P O U M A D S A N D I R F T D P Z N F -G A T A D M H e a t s h o c k S T A T C P 2 R F X A P 2 M A D s -b o x O t h e r N H</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RNA-Seq</head><p>The use of high-throughput sequencing techniques for transcriptomic profiling.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Propensity values</head><p>A measure of tissue specificity that normalizes the expression value of a TF across all samples, and the expression of all TFs in a single sample. It is commonly used to measure the distribution of amino acids types in different features of protein structures. <ref type="figure" target="#fig_2">3a</ref> shows the aver age expression of probe sets mapping to the 873 TF and 10,922 nonTF genes represented on Affymetrix GeneChips across the 32 human samples examined. The plot confirms observations from previous molecular studies, that is, TFs tend to be expressed at lower levels than nonTF genes (p &lt; 10 -16 ; ttest) <ref type="bibr" target="#b42">43</ref> . Mechanistically this makes sense: the effect of a single TF molecule is amplified by transcribing many copies of mRNA from a target gene. Moreover, it is easy to trigger a regulatory event by altering TF concentrations or activity if their expression levels are kept low. Finally, cells need to ensure that TFs recognize the correct target sites in the genome. Maintaining lower expression levels would allow TFs to bind the highest affinity sites, and keep lower affin ity sites free for activation under special conditions, or nonfunctional sites free from undesired binding <ref type="bibr" target="#b43">44</ref> .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Levels of TF expression. FIGURE</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>TF expression patterns.</head><p>Of the 873 TFs that are repre sented on the array, 510 are expressed in at least one tis sue. The rest do not rise above the threshold for detection, which means that either they are not present or the arrays are not sensitive enough to detect them.</p><p>The number of expressed TFs varies greatly between tis sue types, ranging from approximately 150 in the appen dix, skeletal muscle and skin, to over 300 in the whole brain, thyroid and placenta (FIG. <ref type="figure" target="#fig_2">3b</ref>). The proportion of TFs relative to all expressed genes, however, is remark ably stable at ~6% across all samples. Two related fac tors could account for the variation between tissues in the number of expressed TFs. First, tissues contain multiple cell types and the number of TFs will rise with increasing varieties of cells in the sample; for example, the thyroid expresses a greater number of TFs than the liver, as the liver has a more homogeneous composition consisting mainly of hepatocytes. Second, some cells need more genes to function normally, and the number of expressed TFs might vary in line with the corre sponding regulatory requirements. Intuitively, it would be attractive to propose that complex or metabolically active tissues, such as the brain, utilize more TFs than simple tissues, such as the appendix; however, it is dif ficult to provide a firm conclusion for this observation as we do not know the precise origins of the tissue sam ples or the way in which they were obtained. Further work using higherresolution data -generated through new techniques such as transcriptomic sequencing (RNA-Seq) <ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b45">46</ref> -should shed more light on this matter.</p><p>The heat map in FIG. <ref type="figure" target="#fig_3">4</ref> displays the pattern of TF expression across the 32 major tissues examined. We calcu lated propensity values as a measure of tissuespecific expression for each TF (Supplementary information S1 (PDF)). This groups TFs into two categories: 161 TFs that are present in all or most tissues with similar expression levels (ubiquitous TFs); and 349 TFs that are selectively expressed in a few tissues (specific TFs). The ubiquitous category includes familiar TFs, such as the circadian regulator ClOCK, the oncogenic and growthfactor activated Kruppel family member GlI2, and Tbox 1 (TBX1). Though many of these entries are annotated with very specific and localized regulatory functions, their broad expression profiles suggest participation in a much wider range of processes. For example, TBX1, although primarily known as a developmental factor <ref type="bibr" target="#b46">47</ref> , also continues to be expressed in the adult organism.</p><p>The 349 specifically expressed TFs are interesting as they are involved in defining the precise nature of indi vidual tissues. 123 of these factors display distinct expres sion levels in one tissue compared with all other samples and can be considered as potential markers; these include TFs that are expressed only in one tissue as well as those that are expressed widely, but with significantly elevated expression in a single tissue. examples include the testis zincfinger protein ZBTB32 (REF. 48) or the heartspecific NKX21 transcription factor <ref type="bibr" target="#b48">49</ref> . Furthermore, 226 tissue specific TFs display shared specificity among groups of related tissues. In general, there is substantial overlap in TF expression between the developing and adult stages of the same tissues. For example, fetal and adult lungs both express 14 lungspecific TFs -including the epi thelial PAS domain protein 1 (ePAS1), which is thought to upregulate hypoxiainduced genes <ref type="bibr" target="#b49">50</ref> . Adult and embry onic thyroids share seven thyroidspecific regulators; these include NKhomeobox 1 (NKX21), which activates genes that are essential for maintaining the differentiated cellular phenotype <ref type="bibr" target="#b50">51</ref> .</p><p>There is also shared specificity among adult tissues with similar physiological function and cellular composi tion. We observe that components of the central nervous system (whole brain, spinal cord and fetal brain) have seven specific TFs in common, including the thyroid hormone receptor alpha (THRA) and arylhydrocarbon receptor nuclear translocator 2 (ARNT2) <ref type="bibr" target="#b51">52</ref> . each of these tissues also utilizes unique TFs: for example, the fetal brain contains the Nmyc protooncogene (MYCN), the inactivation of which impairs control of cell pro liferation, differentiation and nuclear size in neuronal progenitors <ref type="bibr" target="#b52">53</ref> . Finally, apparent multipletissue specificity could result from crosscontamination during sample prepara tion. This is most evident in the case of whole blood, with TFs found in the blood also being detected in seemingly unrelated organs containing many blood vessels (such as lungs), and related tissues with a high concentration of white blood cells (such as tonsil, thymus, lymph node and bone marrow tissue).</p><p>Unannotated TFs. The expression data for the 172 com pletely unannotated TFs is of particular interest, as their expression patterns provide preliminary insights into their potential regulatory functions. There are 69 unanno tated TFs that fall in the category of general expression. For example, ZNF444 or FOXJ2 are highly and ubiquitously expressed, and this pattern could indicate an important function. 103 of the unannotated TFs have a tissue specific expression, suggesting that they control processes that are characteristic of individual tissues. For example, the expression of ZNF337 in the fetal brain suggests that it might be involved in brain development, and therefore is an excellent candidate for further investigation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Combinatorial usage.</head><p>Another aspect of TFs that requires further research is their combinatorial usage, which allows great precision and flexibility in dictating the trans criptional programme of different tissues <ref type="bibr" target="#b12">13</ref> . The twotier system of general and specific TFs (FIGURE <ref type="figure" target="#fig_2">3c</ref>), suggests different potential regulatory scenarios. ubiquitous TFs alone -in isolation or in combination with each othermight control the general cellular machinery, and com binations of specific TFs might regulate tissuespecific genes. Alternatively, and we expect this to occur most commonly, ubiquitous TFs might serve as a platform to regulate a broad set of genes, which are then finetuned by specific regulators.</p><p>An interesting example is the serum response factor (SRF): it is a ubiquitously expressed TF that is involved in controlling multiple processes, including cell prolifera tion and differentiation <ref type="bibr" target="#b53">[54]</ref><ref type="bibr" target="#b54">[55]</ref><ref type="bibr" target="#b55">[56]</ref><ref type="bibr" target="#b56">[57]</ref> . SRF activity is modulated at several levels, including by the Rho family GTPase signal ling pathway <ref type="bibr" target="#b57">58</ref> as well as by interactions with other pro teins <ref type="bibr" target="#b58">59,</ref><ref type="bibr" target="#b59">60</ref> . A recent ChIP-chip study has shown that SRF binds to a large number of locations <ref type="bibr" target="#b60">61</ref> , acting as a global regulator, and thus particular target genes are likely to be activated when SRF combines with other specifically expressed TFs <ref type="bibr" target="#b61">62</ref> . An illustration of this is SRF function in the determination of the smooth muscle phenotype, which is dependent on the interaction of SRF with the TFs NFAT and HeRP1 (REFS 63,64), or its role in prostate differentiation and function, which is dependent on its interaction with NKX31 (REF. 65).</p><p>Cooperativity between TFs is known to involve extensive protein-protein interactions, both within fam ilies of homomeric and heteromeric TFs <ref type="bibr" target="#b65">66</ref>  Heat map of transcription factor (TF) expression (rows) in 32 organs and tissues (columns). intersecting cells are shaded according to expression level (dark red for low expression and blue for high expression). Ubiquitous and specific TFs are grouped according to their expression profiles using hierarchical clustering (before setting an expression level threshold). Ubiquitous regulators are expressed at similar levels across most tissues, whereas specific regulators are expressed at significantly different levels in certain tissues (supplementary information s1 (PDF)). Expression levels below the threshold of detection are depicted as white cells.</p><p>in future studies will help to elucidate patterns of com binatorial regulation and ultimately the regulatory functions of these TFs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evolutionary history of human TFs</head><p>The function and genomic organization of genes are intimately connected with how they have evolved <ref type="bibr" target="#b11">12</ref> . Therefore, in order to gain an insight into the highly structured and coordinated regulatory functions of TFs, we studied several aspects of their evolution.</p><p>Evolution of the TF repertoire. First we studied the history of the TF repertoire, using phylogenetic relation ships provided by the ensembl Compara database (version 51). FIGURE <ref type="figure" target="#fig_5">5a</ref> shows the evolutionary history of the 1,391 TF genes and their orthologues for which data are available, across 24 eukaryotic genomes ranging from yeast to chimpanzee. There are five groups of TFs with distinct patterns of conservation: those that are present only in primates; predominantly in mammals, vertebrates or metazoa; and finally in most eukaryotes including yeast (Supplementary information S1 (PDF)). These groups appeared through periodic expansions in the TF repertoire along the human lineage -the proliferation of new regulatory genes coincided with the emergence of increasing organismal complexity, and they enabled organisms to develop new functionalities. For instance, the homeodomain family of TFs appeared during the emergence of a body plan in animals <ref type="bibr" target="#b67">68</ref>  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>H . s a p i e n s P . t r o g l o d y t e s M . m u l a t t a P . a b e l i i M . m u s c u l u s R . n o r v e g i c u s C . p o r c e l l u s B . t a u r u s C . f a m i l i a r i s E . c a b a l l u s M . d o m e s t i c a O . a n a t i n u s T . r u b r i p e s T . n i g r o v i r i d i s G . a c u l e a t u s D . r e r i o X . t r o p i c a l i s G . g a l l u s C . i n t e s t i n a l i s C . s a v i g n y i A . a e g y p t i A . g a m b i a e D . m e l a n o g a s t e r C . e l e g a n s S . c e r e v i s i a e</head><p>Primates Mammals Vertebrates Metazoa Eukaryotes example, the large group of primatespecific regulators suggests that TF expansions continued until recently in human evolution. This point is stressed by the fact that 13% of the human TF repertoire appeared in primates, whereas only 2% of metabolic enzymes originate from this period (data not shown). We found that the expansions occurred unevenly for TFs containing different types of DNAbinding domains (FIG. <ref type="figure" target="#fig_5">5b</ref>). As mentioned above, homeodomain TFs first appeared in metazoan organisms and expanded rapidly in vertebrates, whereas helix-loop-helix TFs originated in metazoan organisms and have not expanded signifi cantly since. The C 2 H 2 zincfinger family grew at several evolutionary stages, including with the appearance of vertebrates, and most substantially during the emergence of mammals and primates. Other domains, such as the CCAAT factor domain, are present in all eukaryotes, and have not increased substantially since their appearance. These TF expansions are interesting as they might have provided evolution with a way of modifying or creating different expression patterns for TFs, such as tissue specific ones, by duplication followed by promoter diver gence. This would explain, for example, why TFs such as eTS1 and eTS2 share a functional redundancy, but are expressed in different parts of the body <ref type="bibr" target="#b68">69,</ref><ref type="bibr" target="#b69">70</ref> . In this Analysis article we do not consider the expansions that occurred in nonhuman lineages, but different TF fami lies are known to have proliferated in other organisms (such as the nuclear hormone receptors in worms <ref type="bibr" target="#b19">20</ref> ).</p><p>Previous work suggested that the size of TF fami lies is influenced in part by the number of different DNA sequences that they are able to recognize <ref type="bibr" target="#b70">71,</ref><ref type="bibr" target="#b71">72</ref> . In other words, DNAbinding domains that can diver sify their collection of target sequences should occur in greater numbers in a genome. This could explain why C 2 H 2 zincfinger proteins -with their ability to mutate amino acid positions that directly interact with DNA bases, and their capacity to extend the length of  the targetbinding site by linking multiple domains in a sequential manner -constitute the largest group of TFs <ref type="bibr" target="#b72">73,</ref><ref type="bibr" target="#b73">74</ref> . We also emphasize that the success of a par ticular protein family does not necessarily indicate the importance of individual TFs, and there are many TFs containing unusual DNAbinding domains that are cen tral to human transcriptional regulation (for example, the interferon regulatory family <ref type="bibr" target="#b74">75</ref> ).</p><p>Chromosomal distribution of TFs. The local distribu tion of TF genes relative to each other is also of interest.</p><p>Previous studies have described tandem clusters of par alogous genes, such as olfactory and immune receptors, that arose from largescale intrachromosomal duplica tions <ref type="bibr" target="#b75">76,</ref><ref type="bibr" target="#b76">77</ref> . Similarly, for TFs, there are welldocumented cases of biologically important clusters of Hox genes on chromosomes 2, 7, 12 and 17 (REF. 78) (FIG. <ref type="figure" target="#fig_6">6</ref>).</p><p>To identify similar clusters, we searched for genomic regions that contain an unusually high proportion of TFs. We scanned each chromosome using a 500 kb slid ing window and counted the number of TF and nonTF genes that occur in this region (Supplementary informa tion S1 (PDF)). In total, there are 23 highdensity clusters containing 284 TF genes (20% of all TFs), including the Hox regions and previously reported C 2 H 2 zincfinger containing genes on chromosome 19 (REFS 79,80). except for the Hox genes, all the clusters consist entirely of C 2 H 2 zincfingers.</p><p>We can distinguish between two types of clusters based on the evolutionary history of the TFcoding genes that they contain. The first type, comprising 15 clusters, consists of a series of paralogues, suggesting that they arose through repeated tandem duplications from a founding locus. The Hox clusters belong to this category and their origins are documented elsewhere <ref type="bibr" target="#b67">68,</ref><ref type="bibr" target="#b80">81</ref> . The C 2 H 2 zincfinger clusters on chromosome 19 arose from a similar process. These consist entirely of a particular class of TFs called KRAB-ZNF, which combine Cterminal DNAbinding zincfingers with an Nterminal Kruppel associated box domain. Having undergone recent and rapid expansion, these TFs constitute the single largest family of regulators in the human genome (~400 genes), but their biological functions are largely unknown <ref type="bibr" target="#b81">82</ref> . One of the clusters is primate specific, and seems to be undergoing further expansion: interspersed within the clusters and other genomic locations are several human specific paralogues of the gene ZNF705A <ref type="bibr" target="#b82">83</ref> . A recent study showed that the KRAB-ZNF genes on chromo some 19 are extensively bound by proteins that promote heterochromatin formation <ref type="bibr" target="#b83">84</ref> . The resulting packed chromosomal structure probably prevented recombi nationmediated deletion of recently duplicated TFs, thereby contributing to the expansion of this family.</p><p>By contrast, the second type of cluster -comprising eight regions -does not consist of paralogues. These clusters reside in centromeres and telomeres, which participate in intense genomic shuffling through recombination. We anticipate that the TFcoding genes in these clusters arose independently of each other at diverse locations of the genome, and relocated over time to form these clusters. In support of this view, there is a cluster on chromosome 16 containing nine genes; in the mouse genome, orthologues of these genes exist as two separate clusters on human chromosomes 16 and 17.</p><p>It is not obvious why so many TFs should colocalize in this way; but the fact that some clusters have been retained for hundreds of millions of years indicates a strong selective pressure to stabilize the spatial organi zation of these genes <ref type="bibr" target="#b67">68</ref> . Hox genes can be used to explain one possible reason for cluster formation: in order to function properly, TFs within each Hox region must be expressed in a precisely coordinated manner, and the clustered arrangement allows them to be controlled by a common set of distal enhancers <ref type="bibr" target="#b84">85,</ref><ref type="bibr" target="#b85">86</ref> .</p><p>using the SymAtlas data set we assessed whether any other gene clusters display similar patterns of co expression. Although we observed the coordinated repression of members of some clusters, we did not find any clusters that were coordinately upregulated in specific tissues. This type of localized gene expres sion control has been reported previously <ref type="bibr" target="#b86">87</ref> , and one possible explanation for coordinated gene expression control is chromatin condensation, which limits TF and polymerase access to entire genomic regions. However, these types of observations are extremely sensitive to the quality of the underlying microarray data, and further analysis with additional data sets will be required before we can draw firm conclusions.</p><p>Evolution of new regulatory functions. Finally, having observed the conservation of TFs, we evaluated whether orthologues from different organisms retain equivalent regulatory functions. This is of interest as there is cur rent discussion about the extent to which the evolution of regulatory proteins contributes to phenotypic differ ences between species <ref type="bibr" target="#b87">88</ref> . In practical terms, this could also help us to identify the roles of human TFs, as it would be possible to infer functions from similar regulators in other organisms.</p><p>Previous studies of enzymes have shown that pairs of proteins with sequence similarities above 40% tend to share the same catalytic activity <ref type="bibr" target="#b88">89,</ref><ref type="bibr" target="#b89">90</ref> . Related work has examined the relationship between the age of a gene and its biological function: older, more conserved genes usually take part in basic cellular functions, whereas newer, less conserved genes are associated with spe cialized or speciesspecific tasks. From this it follows that older genes should be broadly expressed as they are required throughout the organism, and tissue specificity should increase with decreasing age of genes <ref type="bibr" target="#b90">91</ref> . The gene expression data did not demonstrate this trend as we found that TFs of all ages were both ubiquitously and specifically expressed.</p><p>A recent paper suggested that TFs that control developmental processes tend to be older than other types of regulators <ref type="bibr" target="#b8">9</ref> . We observed several examples of proteins that control fundamental cellular processes that follow this pattern. For example, cell division cycle 5like (CDC5L) encodes a ubiquitously expressed cell cycle regulator, with a function that is conserved from yeast to humans <ref type="bibr" target="#b91">92</ref> . However, conservation of function is difficult to assess across the entire repertoire, as so few TFs have known functions.</p><p>The idea that phenotypic differences between organisms -particularly closely related ones such as humans and chimpanzees -may arise from changes in gene regulation, as well as from alterations to protein coding genes, is not new <ref type="bibr" target="#b92">93,</ref><ref type="bibr" target="#b93">94</ref> . Support for this opin ion has increased recently, as comparative surveys of primate genomes have failed to reveal dramatic differences among genes that mediate the most dis tinguishing traits, such as cognitive, behavioural and dietary processes <ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b94">95</ref> .</p><p>In support of this view, several studies have shown that TFcoding genes tend to be under greater positive evolutionary selection compared with other genes <ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b7">8</ref> . A highly publicized example is forkhead box 2 (FOXP2), a TF that is relevant to language development in humans <ref type="bibr" target="#b95">96</ref> . Although the gene is one of the most con served among mammals, it contains two amino acid changes that are present in the human gene but not in that of other primates, strongly suggesting that it was targeted for selection during recent human evolution <ref type="bibr" target="#b96">97</ref> . In parallel, there is evidence for positive selection within the promoter sequences in the human genome -regions that are rich in TFbinding sequences -and that this has occurred primarily upstream of genes that are known for their involvement in neural function and nutrition <ref type="bibr" target="#b97">98</ref> . In turn, these differences have had a direct impact on the DNAbinding activity of TFs. This was demonstrated in a ChIP-chip study of four highly con served liverspecific regulators in humans and mice, in which 40% to 90% of binding sites differed between the two organisms <ref type="bibr" target="#b98">99</ref> . At the level of gene expression, comparisons of primate transcriptomes showed that, whereas most genes have maintained similar profiles, a small subset of genes -particularly TFs -display significantly changed expression levels in the human lineage <ref type="bibr">100,</ref><ref type="bibr">101</ref> .</p><p>One of the striking observations from these studies is that apparently minor differences in the underlying nucleotide sequence can have profound effects on regu latory function. This effect might depend on where the nucleotide changes occur; for example, the mutations in FOXP2 correspond to the DNAbinding and dimer ization interfaces of the protein 102 . However, this case is in contrast to the observation that the liverspecific TFs in the ChIP-chip study mentioned above seem to function similarly despite the large differences in their binding locations. In fact, a largescale rewiring of the transcriptional regulatory network in E. coli, which was achieved by adding new binding sites to promoters, showed that the bacteria is robust against most pertur bations 103 . Therefore, the picture that emerges is one in which TFcoding genes and their target sites evolve quickly -probably faster for binding sites than for the TFs -but the full impact of these changes on regulatory function is yet to be understood.</p><p>for our understanding of how TFs combine to exert their regu latory effect. By indicating where TFs are present we provide a starting point for future studies into the activity of individual TFs and how groups of TFs mediate biologi cal processes of interest. Analysis of chromosomal clus tering of TF genes and examination of their evolutionary histories also yield insights into how these regulators may function. In addition, we build on previous findings of diseasecausing regulators: large numbers of TFs that we do not detect in normal tissues become highly expressed in diseased conditions.</p><p>Of course, the observations discussed here constitute only a first attempt to describe these regulators, and there are important caveats that should be considered when using the data. The SymAtlas data set is restricted by the fact that not all TFs are represented on the arrays used in this study; this means that we were unable to assess the expression of more than 500 TFs. Nonetheless, as the existing data covers twothirds of TFs, we expect our findings to be robust. The repertoire itself also has weak nesses: at present, we include all genes encoding C 2 H 2 zincfingers, as they are a major group of regulators; however, a major future challenge will be to distinguish between proteins that bind DNA from those that prima rily complex with RNA. We will overcome many of these limitations as new data types become available. Indeed, transcriptomic data derived from highthroughput sequencing methods, such as RNASeq, will yield pre cise expression levels for every TF, as the method does not depend on array design. The quality of the repertoire itself will also continue to improve, as better annotations of the human genome are released and a greater range of descriptions of TF functions are published.</p><p>Finally, the data and observations presented here will be a valuable and reliable resource for a broad range of research into human transcriptional regulation. It would be possible to use the repertoire computationally to assess how the TFs themselves are regulated through tran scriptional, posttranscriptional and posttranslational mechanisms in order to transform incoming signals into a regulatory output. For example, TFs are thought to integrate numerous signals through the action of microRNAs, and it would be straightforward to carry out a preliminary survey to identify nucleic acids that are predicted to target transcripts encoding for TFs <ref type="bibr">110,</ref><ref type="bibr">111</ref> . experimentally, it will be possible to use the reper toire as a foundation for genomescale assays to estab lish the precise DNAbinding specificities of these TFs, using technologies such as protein-binding arrays 112 and highthroughput SeleX 113 . In vivo, ChIP-chip 114 or ChIP-seq 115,116 will determine genomic binding locations under different cellular conditions. A combination of these approaches, along with detailed followup studies using traditional molecular approaches, will dramatically improve our understanding of the control underlying important biological processes. ultimately, it might be possible to predict how the actions of different regulators lead to particular outcomes, and to apply these predic tions in clinical settings, such as directing the progression of stem cell differentiation 117 . In conclusion, we are only just beginning to understand what TFs do in humans.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fisher's exact test</head><p>A statistical test of independence between two categorical variables.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Protein-binding array</head><p>A high-throughput technique to determine DNA-binding affinities of proteins using microarrays displaying synthetic oligonucleotides.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ChIP-Seq</head><p>The combination of chromatin immunoprecipitation (ChIP) experiments with high-throughput sequencing techniques to quantitate protein targeting or chromatin modifications across the entire genome.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>TFs and human diseases</head><p>Transcriptional misregulation has been associated with a diverse set of diseases, including cancer and develop mental syndromes <ref type="bibr" target="#b5">6,</ref><ref type="bibr">104,</ref><ref type="bibr">105</ref> . We do not provide an extended analysis here, as it is covered in greater depth elsewhere <ref type="bibr">106,</ref><ref type="bibr">107</ref> . Briefly, to evaluate the overall impact of TFs in human diseases, we examined the proportion of TF genes included within the OMIM database, which contains information of Mendelianinherited monogenic diseases 108 . We identified 164 TFs (~12% of the total repertoire; p = 0.018 for association of TFs with diseases using a Fisher's exact test) that are directly responsible for 277 diseases or syndromes. Among these, a significant proportion is related to developmental defects, high lighting the importance of TFs during the early stages of development <ref type="bibr" target="#b5">6</ref> .</p><p>Misregulation of TF genes themselves also has impor tant implications for more complex, or multigenic, dis eases such as cancer or Parkinson's disease 109 . We studied TF expression levels across five leukaemia and lymphoma samples included in the SymAtlas data set, and found 25 TFs that were expressed exclusively in the disease samples but not in the healthy tissues that we discussed above (data not shown). However, it is not possible to determine whether the change in TF expression is directly responsible for the disease or is an indirect effect of other defects. This type of information will be revealed through further experiments and advances in the methods used to determine the transcriptional regulatory networks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>This Analysis article has presented a census of sequence specific DNAbinding TFs in the human genome. Transcriptional regulation in higher organisms is of great current research interest; however, much of the work so far has focused on identifying binding sites through a combination of experimental methods, such as chroma tin immunoprecipitation and computational predictions using motif searches. A major limitation to studying the regulators themselves has been the lack of a reliable data set of TFs in the human genome, a difficulty that is com pounded by the large number of false predictions that can accompany the automated identification of genes encod ing DNAbinding domains. By manually inspecting every entry in the data set, we have minimized such errors. As a result the repertoire here is of high quality, and can be used as a basis to design further computational and experimental studies.</p><p>Most of these TFs remain uncharacterized: this is highlighted by the observation that just three regulators (p53, eR and FOS) have more publications than all the other TFs put together. By incorporating publicly avail able genomic data sets, we provide clues into how these TFs might operate. For example, the SymAtlas microar ray data set allowed us to investigate the expression of TFs across 32 major tissues.</p><p>Our analysis expanded the existing knowledge of ubiquitous and specific regulators by illustrating this phenomenon on a genomewide scale. Intriguingly, few TFs are present in an intermediate number of tis sues. This pattern of expression will have implications</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 |</head><label>1</label><figDesc>Figure 1 | current state of knowledge about transcription factors in the human genome. a | For the top 20 most cited transcription factors (TFs) in PubMed the number of studies performed in humans (blue bars) and in all other organisms (grey bars) is shown. ER* combines the citations for ERs1 and ERs2, which were indistinguishable in the literature search; similarly, sTAT5* includes citations for both sTAT5A and sTAT5B. b | summary of biological processes regulated by TFs.Annotations were obtained from the Gene Ontology database, excluding those based only in electronic annotation. Numbers of annotated TFs are given in parentheses; each gene can be annotated with more than one function.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 |</head><label>2</label><figDesc>Figure 2 | transcription factors classified by DnA-binding domain. Transcription factors (TFs) were classified into families according to their DNA-binding domain composition. interPro parent-child relationships between DNA-binding domains were used as the basis for TF family definition (supplementary information s1 (PDF)).TFs with multiple DNA-binding domains were classified in each of their respective families. Families with less than five members were classified as 'other'.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 |</head><label>3</label><figDesc>Figure 3 | expression level of transcription factors in 32 human organs and tissues. a | Distribution of gene expression levels for transcription factors (TFs) (red) and non-TFs (blue) in different tissue types, shown as a box plot. in all samples, non-TF genes have higher average expression than TFs. b | Numbers of TFs expressed in each sample (blue bars) and the proportion of expressed TFs versus all expressed genes,given as a percentage (red points). The numbers of expressed regulators vary widely, ranging from about 150 in the appendix to over 300 in the fetal lung. However, in all tissues, TFs constitute ~6% of expressed genes. c | Number of tissues in which transcription factors are expressed (see also supplementary information s1 (PDF)). Regulators are either expressed generally(30-32 samples) or specifically (1-3 samples). The U-shaped distribution in which factors are expressed in most tissues or in few tissues is robust against outliers (data not shown).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 |</head><label>4</label><figDesc>Figure4| Heat map representation of transcription factor expression in 32 human organs and tissues. Heat map of transcription factor (TF) expression (rows) in 32 organs and tissues (columns). intersecting cells are shaded according to expression level (dark red for low expression and blue for high expression). Ubiquitous and specific TFs are grouped according to their expression profiles using hierarchical clustering (before setting an expression level threshold). Ubiquitous regulators are expressed at similar levels across most tissues, whereas specific regulators are expressed at significantly different levels in certain tissues (supplementary information s1 (PDF)). Expression levels below the threshold of detection are depicted as white cells.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>, and the Hox proteins -a subgroup of regu lators in this family -have a central role in controlling segmental patterning during development. In another Nature Reviews | Genetics Proportion of TF class per taxa 0</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 |</head><label>5</label><figDesc>Figure 5 | conservation of human transcription factors across 24 eukaryotic genomes. a | Heat map of transcription factors (TFs) (rows) and species (columns) are hierarchically clustered according to the presence (blue intersecting cells) or absence (white) of orthologous genes. The coloured bar on the left indicates whether TFs are primate specific (purple), mammal specific (blue), vertebrate specific (pink), Metazoa specific (yellow) or present in all eukaryotes (green) (supplementary information s1 (PDF)). b | For human TFs in the three largest families, the proportion that are conserved in each taxonomic group is shown.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 6 |</head><label>6</label><figDesc>Figure 6 | Locations of transcription factor clusters in the human genome. There are 23 chromosomal loci that contain a high density of transcription factor (TF) genes (red boxes). The Hox clusters are present on chromosomes 2, 7, 12 and 17 (blue bars). Green bars represent previously described zinc-finger clusters on chromosome 19. MT, mitochondrial DNA.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>www.nature.com/reviews/genetics © 2009 Macmillan Publishers Limited. All rights reserved</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>© 2009 Macmillan Publishers Limited. All rights reserved</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>The authors thank <rs type="person">J. Herrero</rs> and <rs type="person">A. Vilella</rs> for assistance using Ensembl Compara. J.M.V. thanks the <rs type="funder">Spanish Ministry of Education and Science</rs>, the <rs type="funder">European Science Foundation Exchange</rs> Grant and the <rs type="funder">Marie Curie Biostar programmes</rs> for funding. N.M.L. acknowledges funding from <rs type="funder">EMBL</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>FURTHER INFORMATION</head></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Serial regulation of transcriptional regulators in the yeast cell cycle</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Simon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="697" to="708" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">FoxOs at the crossroads of cellular metabolism, differentiation, and transformation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Accili</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Arden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="421" to="426" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">E2A proteins are required for proper B cell development and initiation of immunoglobulin gene rearrangements</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bain</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="885" to="892" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Regulation of transcription by proteins that control the cell cycle</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Dynlacht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">389</biblScope>
+			<biblScope unit="page" from="149" to="152" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Structural and functional properties of genes involved in human cancer</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Furney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">3</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Online Mendelian Inheritance in Man (OMIM) as a knowledgebase for human developmental disorders</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Boyadjiev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Jabs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Genet</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="253" to="266" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Natural selection on proteincoding genes in the human genome</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Bustamante</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Genome-wide study demonstrating that human TFs are under strong positive selection</title>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="volume">437</biblScope>
+			<biblScope unit="page" from="1153" to="1157" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Patterns of evolutionary constraints on genes in humans</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>De</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lopez-Bigas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teichmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Evol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">275</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Functional protein divergence in the evolution of Homo sapiens</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lopez-Bigas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>De</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teichmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">33</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Scaling laws in the functional content of genomes</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Van Nimwegen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Genet</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="479" to="484" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Protein family expansions and biological complexity</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Vogel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chothia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Comput. Biol</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">48</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kirschner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gerhart</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Evolvability</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page" from="8420" to="8427" />
+			<date type="published" when="1998">1998</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Transcription regulation and animal diversity</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Levine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tjian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">424</biblScope>
+			<biblScope unit="page" from="147" to="151" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+	<note>A discussion of how progressively more elaborate transcriptional regulation has contributed to organismal complexity</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Orchestrated response: a symphony of transcription factors for gene control</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lemon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tjian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2551" to="2569" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">DBD -taxonomically broad transcription factor predictions: new content and functionality</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="88" to="D92" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The repertoire of DNA-binding transcriptional regulators in Escherichia coli K-12</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Perez-Rueda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Collado-Vides</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="1838" to="1847" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Identification and analysis of DNA-binding transcription factors in Bacillus subtilis and other Firmicutes -a genomic approach</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Moreno-Campuzano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Janga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Perez-Rueda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">147</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">FTFD: an informatics pipeline supporting phylogenomic analysis of fungal transcription factors</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Park</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="1024" to="1025" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">SGD: Saccharomyces Genome Database</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Cherry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="73" to="79" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A compendium of Caenorhabditis elegans regulatory transcription factors: a resource for mapping transcription regulatory networks</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Reece-Hoyes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">110</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">FlyTF: a systematic review of site-specific transcription factors in the fruit fly Drosophila melanogaster</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Adryan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teichmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1532" to="1533" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Mouse brain organization revealed through direct genome-scale TF expression analysis</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Gray</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">306</biblScope>
+			<biblScope unit="page" from="2255" to="2257" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">PlnTFDB: an integrative plant transcription factor database</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Riano-Pachon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page">42</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Arabidopsis transcription factors: genome-wide comparative analysis among eukaryotes</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Riechmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="2105" to="2110" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+	<note>The first genome-wide survey of TF repertoires for eukaryotic organisms</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Initial sequencing and analysis of the human genome</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">S</forename><surname>Lander</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">409</biblScope>
+			<biblScope unit="page" from="860" to="921" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">The sequence of the human genome</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Venter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">291</biblScope>
+			<biblScope unit="page" from="1304" to="1351" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Gene Ontology: tool for the unification of biology</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ashburner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Genet</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="25" to="29" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">InterPro: the integrative protein signature database</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hunter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="224" to="D228" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">An ORFeome-based analysis of human transcription factor genes and the construction of a microarray to interrogate their expression</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Messina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="2041" to="2047" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Transcription factor expression in lipopolysaccharide-activated peripheral-blood-derived mononuclear cells</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Roach</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="16245" to="16250" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">The International Protein Index: an integrated database for proteomics experiments</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Kersey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1985" to="1988" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Hubbard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ensembl Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="610" to="D617" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">TRANSFAC: an integrated system for gene expression regulation</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Wingender</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="316" to="319" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Disruption of a new forkhead/ winged-helix protein, scurfin, results in the fatal lymphoproliferative disorder of the scurfy mouse</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Brunkow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Genet</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="68" to="73" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">X-linked neonatal diabetes mellitus, enteropathy and endocrinopathy syndrome is the human equivalent of mouse scurfy</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Wildin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Genet</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="18" to="20" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Control of regulatory T cell development by the transcription factor Foxp3</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hori</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nomura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sakaguchi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">299</biblScope>
+			<biblScope unit="page" from="1057" to="1061" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Foxp3 programs the development and function of CD4 + CD25 + regulatory T cells</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Fontenot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Gavin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Rudensky</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Immunol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="330" to="336" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Foxp3 occupancy and regulation of key target genes during T-cell stimulation</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">445</biblScope>
+			<biblScope unit="page" from="931" to="935" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Genome-wide analysis of Foxp3 target genes in developing and mature regulatory T cells</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">445</biblScope>
+			<biblScope unit="page" from="936" to="940" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Value of FOXP3 expression in peripheral blood as rejection marker after miniature swine lung transplantation</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Satoda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Heart Lung Transplant</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="1293" to="1301" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">A review of DNA-binding domain structures and their interactions with DNA</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Luscombe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">1</biblScope>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+	<note>An overview of the structures of protein-DNA complexes</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">A gene atlas of the mouse and human protein-encoding transcriptomes</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Su</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="6062" to="6067" />
+			<date type="published" when="2004">2004</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>This paper presents the microarray experiments underlying the SymAtlas gene expression data for human and mouse organs, tissues and cell lines</note>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Global analysis of protein expression in yeast</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ghaemmaghami</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">425</biblScope>
+			<biblScope unit="page" from="737" to="741" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Rationalization of gene regulation by a eukaryotic transcription factor: calculation of regulatory region occupancy from predicted binding affinities</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Clarke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">323</biblScope>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">The transcriptional landscape of the yeast genome defined by RNA sequencing</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Nagalakshmi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">320</biblScope>
+			<biblScope unit="page" from="1344" to="1349" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">RNA-Seq: a revolutionary tool for transcriptomics</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gerstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Snyder</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Rev. Genet</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="57" to="63" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+	<note>A recent overview of the use of ultra-high-throughput sequencing technologies for measuring transcript levels</note>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">TBX1 is responsible for cardiovascular defects in velo-cardio-facial/DiGeorge syndrome</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Merscher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="619" to="629" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">The zinc finger domain of Tzfp binds to the tbs motif located at the upstream flanking region of the Aie1 (aurora-C) kinase gene</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">276</biblScope>
+			<biblScope unit="page" from="19631" to="19639" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Nkx2-5 pathways and congenital heart disease; loss of ventricular myocyte lineage specification leads to progressive cardiomyopathy and complete heart block</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pashmforoush</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="373" to="386" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Heterogeneity in binding and geneexpression regulation by HIF-2α</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Koizume</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biochem. Biophys. Res. Commun</title>
+		<imprint>
+			<biblScope unit="volume">371</biblScope>
+			<biblScope unit="page" from="251" to="255" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">The T/ebp null mouse: thyroid-specific enhancer-binding protein is essential for the organogenesis of the thyroid, lung, ventral forebrain, and pituitary</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kimura</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="60" to="69" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Deletion of the thyroid hormone receptor α1 prevents the structural alterations of the cerebellum induced by hypothyroidism</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Morte</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page" from="3985" to="3989" />
+			<date type="published" when="2002">2002</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">cDNA cloning and tissue-specific expression of a novel basic helix-loop-helix/PAS factor (Arnt2) with close sequence similarity to the aryl hydrocarbon receptor nuclear translocator (Arnt)</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hirose</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1706" to="1713" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Neuronal migration in the murine rostral migratory stream requires serum response factor</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Alberti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">102</biblScope>
+			<biblScope unit="page" from="6148" to="6153" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Restricted inactivation of serum response factor to the cardiovascular system</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Miano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="17132" to="17137" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">p67SRF is a constitutive nuclear protein implicated in the modulation of genes required throughout the G1 period</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gauthier-Rouviere</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Regul</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="575" to="588" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Serum response factor is essential for mesoderm formation during mouse embryogenesis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Arsenian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">EMBO J</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="6289" to="6299" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">The Rho family GTPases RhoA, Rac1, and CDC42Hs regulate transcriptional activation by SRF</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wynne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Treisman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page" from="1159" to="1170" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Ternary complex factors: growth factor regulated transcriptional activators</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Treisman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Genet. Dev</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="96" to="101" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Crystal structure of a ternary SAP-1/SRF/ c-fos SRE DNA complex</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Mo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="page" from="495" to="506" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Serum response factor binding sites differ in three human cell types</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Cooper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="136" to="144" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Differential usage of signal transduction pathways defines two types of serum response factor target gene</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gineitis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Treisman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">276</biblScope>
+			<biblScope unit="page" from="24531" to="24539" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Nuclear factor of activated T cells and serum response factor cooperatively regulate the activity of an α-actin intronic enhancer</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">V</forename><surname>Gonzalez Bosc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">280</biblScope>
+			<biblScope unit="page" from="26113" to="26120" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">HERP1 inhibits myocardin-induced vascular smooth muscle cell differentiation by interfering with SRF binding to CArG box</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Doi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arterioscler. Thromb. Vasc. Biol</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="2328" to="2334" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Structural and functional analysis of domains mediating interaction between the bagpipe homologue, Nkx3.1 and serum response factor</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Fillmore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Zimmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Exp. Biol. Med. (Maywood)</title>
+		<imprint>
+			<biblScope unit="volume">233</biblScope>
+			<biblScope unit="page" from="297" to="309" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">One billion years of bZIP transcription factor evolution: conservation and change in dimerization and DNA-binding site specificity</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">D</forename><surname>Amoutzias</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Biol. Evol</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="827" to="835" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">A conserved lysine in the estrogen receptor DNA binding domain regulates ligand activation profiles at AP-1 sites, possibly by controlling interactions with a modulating repressor</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Uht</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucl. Recept</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">2</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">The genesis and evolution of homeobox gene clusters</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Garcia-Fernandez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Rev. Genet</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="881" to="892" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">ETS-1 and ETS-2 are upregulated in a transgenic mouse model of pigmented ocular neoplasm</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>De La Houssaye</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Vis</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="1912" to="1928" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">A model for gene evolution of the ets-1/ets-2 transcription factors based on structural and functional homologies</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Albagli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="3259" to="3271" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Coding limits on the number of transcription factors</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Itzkovitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tlusty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Alon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">239</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Protein-DNA interactions: amino acid conservation and the effects of mutations on binding specificity</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">M</forename><surname>Luscombe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Thornton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">320</biblScope>
+			<biblScope unit="page" from="991" to="1009" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Zinc finger-DNA recognition: crystal structure of a Zif268-DNA complex at 2.1 A</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">P</forename><surname>Pavletich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">O</forename><surname>Pabo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">252</biblScope>
+			<biblScope unit="page" from="809" to="817" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Base sequence discrimination by zinc-finger DNA-binding domains</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Nardelli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">349</biblScope>
+			<biblScope unit="page" from="175" to="178" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">IRFs: master regulators of signalling by Toll-like receptors and cytosolic pattern-recognition receptors</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Honda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Taniguchi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Rev. Immunol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="644" to="658" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Conservation of sequence and structure flanking the mouse and human β-globin loci: the β-globin genes are embedded within an array of odorant receptor genes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bulger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">96</biblScope>
+			<biblScope unit="page" from="5129" to="5134" />
+			<date type="published" when="1999">1999</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Olfactory receptor gene cluster on human chromosome 17: possible duplication of an ancestral receptor repertoire</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ben-Arie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hum. Mol. Genet</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="229" to="235" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Vertebrate homeobox gene nomenclature</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">71</biblScope>
+			<biblScope unit="page" from="551" to="553" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Human chromosome 19 and related regions in mouse: conservative and lineage-specific evolution</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dehal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">293</biblScope>
+			<biblScope unit="page" from="104" to="111" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">The DNA sequence and biology of human chromosome 19</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Grimwood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">428</biblScope>
+			<biblScope unit="page" from="529" to="535" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">An insight into the phylogenetic history of HOX linked gene families in vertebrates</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Abbasi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Grzeschik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Evol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">239</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">KRAB zinc finger proteins: an analysis of the molecular mechanisms governing their increase in numbers and complexity during evolution</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Looman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Biol. Evol</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="2118" to="2130" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">A comprehensive catalog of human KRAB-associated zinc finger genes: insights into the evolutionary history of a large family of transcriptional repressors</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Huntley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="669" to="677" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Human heterochromatin proteins form large domains containing KRAB-ZNF genes</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Vogel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1493" to="1504" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Genomic regulatory blocks encompass multiple neighboring genes and maintain conserved synteny in vertebrates</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Kikuta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="545" to="555" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Highly conserved syntenic blocks at the vertebrate Hox loci and conserved regulatory elements within and outside Hox gene clusters</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="6994" to="6999" />
+			<date type="published" when="2006">2006</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">A gene expression map for Caenorhabditis elegans</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">293</biblScope>
+			<biblScope unit="page" from="2087" to="2092" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">The evolution of cell types in animals: emerging principles from molecular studies</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Arendt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Rev. Genet</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="868" to="882" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Assessing annotation transfer for genomics: quantifying the relations between protein sequence, structure and function through traditional and probabilistic scores</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kreychman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gerstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">297</biblScope>
+			<biblScope unit="page" from="233" to="249" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">Evolution of function in protein superfamilies, from a structural perspective</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Todd</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Orengo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Thornton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mol. Biol</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="page" from="1113" to="1143" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Relationship between the tissue-specificity of mouse gene expression and the evolutionary origin and function of the proteins</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Freilich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">56</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">A cdc5 + homolog of a higher plant, Arabidopsis thaliana</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hirayama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shinozaki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="13371" to="13376" />
+			<date type="published" when="1996">1996</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">Teleonomic mechanisms in cellular metabolism, growth, and differentiation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Monod</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Jacob</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cold Spring Harb. Symp. Quant. Biol</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="389" to="401" />
+			<date type="published" when="1961">1961</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Evolution at two levels in humans and chimpanzees</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Wilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">188</biblScope>
+			<biblScope unit="page" from="107" to="116" />
+			<date type="published" when="1975">1975</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">A scan for positively selected genes in the genomes of humans and chimpanzees</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nielsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">170</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">A forkhead-domain gene is mutated in a severe speech and language disorder</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Lai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">413</biblScope>
+			<biblScope unit="page" from="519" to="523" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">Molecular evolution of FOXP2, a gene involved in speech and language</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Enard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">418</biblScope>
+			<biblScope unit="page" from="869" to="872" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title level="a" type="main">Promoter regions of many neuraland nutrition-related genes have experienced positive selection during human evolution</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Haygood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Genet</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="1140" to="1144" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">Tissue-specific transcriptional regulation has diverged significantly between human and mouse</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Odom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Genet</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="730" to="732" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<monogr>
+		<title level="m" type="main">A ChIP-chip study showing that functionally equivalent TFs bind to different sites in the human and mouse genomes</title>
+		<imprint>
+			<biblScope unit="page">100</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">Parallel patterns of evolution in the genomes and transcriptomes of humans and chimpanzees</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Khaitovich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">309</biblScope>
+			<biblScope unit="page">101</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title level="a" type="main">Expression profiling in primates reveals a rapid evolution of human transcription factors</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gilad</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">440</biblScope>
+			<biblScope unit="page" from="242" to="245" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+	<note>A microarray study suggesting that changes in gene expression levels might be important in distinguishing between different primate species. 102</note>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title level="a" type="main">Structure of the forkhead domain of FOXP2 bound to DNA</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Stroud</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Structure</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">103</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title level="a" type="main">Evolvability and hierarchy in rewired bacterial gene networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Isalan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">452</biblScope>
+			<biblScope unit="page">104</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<analytic>
+		<title level="a" type="main">Highly consistent patterns for inherited human diseases at the molecular level</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Lopez-Bigas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Blencowe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Ouzounis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">105</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title level="a" type="main">Transcription factors as targets for cancer therapy</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Darnell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Rev. Cancer</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">106</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title level="a" type="main">Transcription factors in disease</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Engelkamp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Van Heyningen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Genet. Dev</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">107</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title level="a" type="main">Human disease genes</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jimenez-Sanchez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Childs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Valle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">409</biblScope>
+			<biblScope unit="page">108</biblScope>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title level="a" type="main">Database resources of the National Center for Biotechnology Information</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">L</forename><surname>Wheeler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page">109</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title level="a" type="main">GATA transcription factors directly regulate the Parkinson&apos;s disease-linked gene α-synuclein</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Scherzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="page">110</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title level="a" type="main">Systematic functional characterization of cis-regulatory motifs in human core promoters</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sinha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">111</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title level="a" type="main">elegans genome-scale microRNA network contains composite feedback motifs with high flux capacity</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Martinez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genes Dev</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page">112</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title level="a" type="main">A high-throughput assay of DNA-binding specificities for 168 mouse TFs using protein-binding microarrays</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Berger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="47" to="59" />
+			<date type="published" when="2006">2008. 2006</date>
+		</imprint>
+	</monogr>
+	<note>Cell</note>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<monogr>
+		<title level="m" type="main">A study combining SELEX and motif-finding methods to identify the DNA-binding specificities and target regions for five mammalian TFs</title>
+		<imprint>
+			<biblScope unit="page">114</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title level="a" type="main">GATA-1 binding sites mapped in the β-globin locus by using mammalian chIp-chip analysis</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Horak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="page">115</biblScope>
+			<date type="published" when="2002">2002</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title level="a" type="main">Genome-wide mapping of in vivo protein-DNA interactions</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">316</biblScope>
+			<biblScope unit="page">116</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title level="a" type="main">Refs 115 and 116 are the first uses of chromatin immunoprecipitation and ultra-high-throughput sequencing to determine genome-wide binding sites of mammalian TFs 117</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Robertson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Methods</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="651" to="657" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+	<note>Genome-wide profiles of STAT1 DNA association using chromatin immunoprecipitation and massively parallel sequencing</note>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title level="a" type="main">An intrinsic mechanism of corticogenesis from embryonic stem cells</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gaspard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">455</biblScope>
+			<biblScope unit="page" from="351" to="357" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

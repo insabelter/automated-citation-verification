@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Ensemble unsupervised autoencoders and Gaussian mixture model for cyberattack detection</title>
+				<funder ref="#_ggd3mRW">
+					<orgName type="full">National Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_gcE24Ez">
+					<orgName type="full">Ningbo Natural Science Foundation, China</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date>10 January 2022 0306</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Peng</forename><surname>An</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">College of Electronics and Information Engineering</orgName>
+								<orgName type="institution">Ningbo University of Technology</orgName>
+								<address>
+									<postCode>315211</postCode>
+									<settlement>Ningbo Zhejiang</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhiyuan</forename><surname>Wang</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">International College of Football</orgName>
+								<orgName type="institution">Tongji University</orgName>
+								<address>
+									<postCode>200092</postCode>
+									<settlement>Shanghai</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Chunjiong</forename><surname>Zhang</surname></persName>
+							<email>chunjiongzhang@tongji.edu.cn</email>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Tongji University</orgName>
+								<address>
+									<postCode>201804</postCode>
+									<settlement>Shanghai</settlement>
+									<country key="CN">PR China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Ensemble unsupervised autoencoders and Gaussian mixture model for cyberattack detection</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published">10 January 2022 0306</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">AE680AA4C32D468EFDD224B44B02D127</idno>
+					<idno type="DOI">10.1016/j.ipm.2021.102844</idno>
+					<note type="submission">Received 14 September 2021; Received in revised form 29 November 2021; Accepted 10 December 2021</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:53+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>Multidomain data Cyberattacks Deep autoencoder</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Previous studies have adopted unsupervised machine learning with dimension reduction functions for cyberattack detection, which are limited to performing robust anomaly detection with high-dimensional and sparse data. Most of them usually assume homogeneous parameters with a specific Gaussian distribution for each domain, ignoring the robust testing of data skewness. This paper proposes to use unsupervised ensemble autoencoders connected to the Gaussian mixture model (GMM) to adapt to multiple domains regardless of the skewness of each domain.</p><p>In the hidden space of the ensemble autoencoder, the attention-based latent representation and reconstructed features of the minimum error are utilized. The expectation maximization (EM) algorithm is used to estimate the sample density in the GMM. When the estimated sample density exceeds the learning threshold obtained in the training phase, the sample is identified as an outlier related to an attack anomaly. Finally, the ensemble autoencoder and the GMM are jointly optimized, which transforms the optimization of objective function into a Lagrangian dual problem. Experiments conducted on three public data sets validate that the performance of the proposed model is significantly competitive with the selected anomaly detection baselines.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Cyberattacks have become a popular topic in recent years as an increasing number of terminal devices are connected to the Internet. They are highly threatening to the information security of individuals because of the large number of computer viruses spreading in the network, and various types of cyberattacks have emerged in endless streams. Examples of such attacks include disclosure, modification and deletion of specific data, attempts at unauthorized access, manipulation of information, and other malicious behaviors that make a system unreliable and unstable. This damage produces incalculable and disastrous consequences for users of the system <ref type="bibr" target="#b6">(Gong et al., 2019)</ref>. It is becoming increasingly important to secure users' data through the popularization of networking applications.</p><p>However, it has always been difficult to develop an effective and compatible method for complex high-dimensional data <ref type="bibr" target="#b23">(Rezvy, Petridis, Lasebae, &amp; Zebin, 2018)</ref>. With the rapid development of artificial intelligence, methods based on deep learning are envisioned as competent approaches for cyberattack detection. Some scholars have therefore adopted an unsupervised machine learning method with dimension reduction functions, known as the autoencoder framework <ref type="bibr" target="#b0">(Andresini, Appice, Di Mauro, Loglisci, &amp; Malerba, 2019;</ref><ref type="bibr" target="#b29">Xu, Qian, &amp; Hu, 2019)</ref>, but this kind of method is limited to performing robust anomaly detection for network intrusion data with high dimensionality and sparsity without supervision. This is because when the dimension of the input data increases, it is more difficult to estimate the density of multidomain data in the original feature space. Additionally, an input sample may easily be regarded as an abnormal event that has a low probability of being observed <ref type="bibr" target="#b25">(Shone, Ngoc, Phai, &amp; Shi, 2018)</ref>. To address the performance degradation caused by high dimensions, many works have concentrated on dimension reduction, which searches for a lower-dimensional representation by reducing the number of variables in the data <ref type="bibr" target="#b10">(Kim, Kwon, Chang, &amp; Paik, 2020;</ref><ref type="bibr" target="#b34">Zong et al., 2018)</ref>. The major drawback is the weak assumption of homogeneous parameters of a specific Gaussian distribution with respect to each domain of data, which significantly deteriorates the original data properties.</p><p>Depending on the type of cyberattack, it is usually possible to classify network traffic into different domains. For example, the classic KDDcup'99 network intrusion data set has been found to have four domains: denial of service (DoS), remote to local (R2L), user to root (U2R) and Probe <ref type="bibr" target="#b2">(Chen et al., 2018)</ref>. The size of each domain is different, and they do not follow a homogeneous distribution. Therefore, treating attack samples indiscriminately will affect the results of anomaly detection and may even mislead the entire machine learning process. Many customized neural network models that are used in a single domain can achieve good anomaly detection performance, but the effect on multidomain data is poor because of the limited ability to acquire the complex information of high-dimensional distributions. One major solution in recent decades to yield enriched features is to decouple the learning process following <ref type="bibr" target="#b3">Dromard, Roudière, and Owezarski (2016)</ref> and <ref type="bibr" target="#b33">Zhou and Paffenroth (2017)</ref>, but this method is still unable to obtain sufficient features of anomalous attack samples and thereby fails to obtain accurate detection results. Cyberattack data are usually collected from a large number of heterogeneous network devices that exhibit uncertainties and severe skewness, which is fatal for conventional machine learning. The prospect is that the multidomain machine learning methods developed in recent years can better address abnormal network intrusion problems of multidomain data by making full use of the features of multidomain data to achieve optimal performance while simultaneously saving training time and model resources. The core of multidomain machine learning is to obtain a model with the smallest average risk in multiple domains and to treat different cyberattacks as independent domains <ref type="bibr" target="#b7">(Hu, Li, Liu, &amp; Li, 2020;</ref><ref type="bibr" target="#b21">Qian et al., 2019)</ref>.</p><p>Therefore, the key problem to be solved in this paper is to use hidden information in multidomain data to improve the performance of the anomaly detection model using multidomain machine learning. For this purpose, a multichannel ensemble autoencoder combined with an attention mechanism is devised. To maintain the different distributions of multidomain data in a low-dimensional hidden space, the minimum reconstructed error of the multichannel autoencoder is fed back to GMM, and the expectation maximization (EM) algorithm is used to estimate the mixing probability of the components. When the estimated sample density exceeds the learning threshold obtained in the training phase, the sample is identified as an attack anomaly. Because the robust optimization algorithm enables multidomain machine learning models to obtain common feature representations and the models can adapt to different domains, this paper further develops an optimized combination of ensemble autoencoders and GMM so that the model used in each domain is optimal.</p><p>Based on the above idea, the main contributions of this study lie in the following three areas:</p><p>• An ensemble framework of multichannel network anomaly detection called the ensemble multichannel mixed model (EM 3 ) is proposed that combines deep autoencoders and the GMM model. • A robust optimization version of EM 3 for multiple domains, namely, EM 3+ , is proposed, which transforms the optimization problem of the objective function into a Lagrangian dual problem. • A series of experiments are conducted on two classic data sets and a newly published data set from 2020, which to the best of our knowledge is the first work that performs algorithms on both differentiated data domains and data distributions.</p><p>The rest of this paper is organized as follows. Related works are presented in Section 2. Section 3 provides detailed descriptions of the proposed framework, which includes parameter learning and the realization of a robust optimization model. The results of a series of experiments are reported in Section 4, followed by the conclusions drawn in Section 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related work</head><p>Internet attackers constantly improve their intrusion methods, resulting in the existence of various types of abnormal data in network traffic. It is therefore becoming increasingly urgent to devise effective approaches that are able to contend with increasingly complex cyberattacks <ref type="bibr" target="#b21">(Qian et al., 2019;</ref><ref type="bibr" target="#b34">Zong et al., 2018)</ref>. The existing library has documented many works with respect to anomaly detection, and the most popular method is the integration of autoencoders in a specific computing framework.</p><p>Autoencoders are a type of artificial neural network and are used in both feature engineering and anomaly detection. There are two major types of research on the applications of autoencoders in network intrusion anomaly detection. One type of research mainly uses the autoencoder and a variant of it that incorporates a deep network to recognize distributional heterogeneity by constantly learning and reconstructing normal and abnormal samples. For example, some studies have used automatic variational encoders for network intrusion anomaly detection and have proposed a unified paradigm conversion system based upon unsupervised Gaussian mixture variational autoencoders <ref type="bibr" target="#b13">(Liao, Guo, Chen, &amp; Li, 2018)</ref>. This method first generates sample distributions through training and extracts reconstructed features and then uses a deep simplified network to estimate the mixing probability of the components through the potential distribution. The authors of <ref type="bibr" target="#b6">Gong et al. (2019)</ref> used an autoencoder extended with a storage module. Given an input, the code is first obtained from the encoder and is then used as a query sentence to retrieve the most relevant storage items to reconstruct the features. <ref type="bibr" target="#b23">Rezvy et al. (2018)</ref> applied a dense neural network algorithm based on a deep autoencoder in cyberattack detection and evaluated the algorithm with the benchmark data set NSL-KDD. The results show that the deep autoencoder can effectively distinguish the differences in low-dimensional spaces for both normal and abnormal samples in low dimensions so that this algorithm can achieve excellent detection performance. The other type of research focuses on a combination of an autoencoder and functions based on distance metrics or probability distributions. <ref type="bibr" target="#b10">Kim et al. (2020)</ref> established an anomaly detection algorithm based on an admissibility attribute, which includes an objective function of integral probability measurement and a type I autoencoder called Lipschitz. The proposed Wasserstein distance metric achieves Lipschitz continuity by minimizing the approximate Wasserstein distance and penalty functions. Other relevant work includes the stacked asymmetric deep autoencoder <ref type="bibr" target="#b17">(Majumdar &amp; Tripathi, 2017;</ref><ref type="bibr" target="#b27">Wang, Xu, Huang, Wang, &amp; Lai, 2018)</ref>, used for unsupervised feature learning, and the deep autoencoder-based GMM <ref type="bibr" target="#b34">(Zong et al., 2018)</ref>, which uses a deep autoencoder to generate a low-dimensional representation and inputs the reconstructed error of the input data points into the GMM, which can not only maintain the original deep autoencoder but also discover high-quality and nonlinear features <ref type="bibr" target="#b33">(Zhou &amp; Paffenroth, 2017)</ref>.</p><p>In summary, recent studies based on deep autoencoders indicate that a scheme that combines dimensionality reduction and density estimation is effective in network attack anomaly detection. However, the obvious disadvantage is that the joint optimization of dimensionality reduction and density estimation is usually computationally difficult under a generic framework <ref type="bibr" target="#b0">(Andresini et al., 2019;</ref><ref type="bibr" target="#b14">Liu et al., 2020)</ref>, and the performance of the model is mainly affected by two limitations. The first is that they cannot handle the heterogeneity of data from different domains and cannot capture the subtle differences in different data distributions. The second is that they cannot obtain the variable information of samples in a low-dimensional space but simply estimate the sample density, which restricts the complex training process of multidomain data <ref type="bibr" target="#b8">(Injadat, Moubayed, Nassif and Shami, 2020)</ref>.</p><p>Although deep autoencoders achieve good performance in single-domain tasks, in many practical situations, a unified model for multidomain data is required for shared tasks. Therefore, multidomain machine learning technology is used to obtain cross-domain adaptability and inherit the advantages of multitask learning at the same time <ref type="bibr" target="#b7">(Hu et al., 2020)</ref>. Early work <ref type="bibr" target="#b19">(Peng &amp; Dredze, 2016)</ref> with regard to multidomain machine learning focused on deep neural network models, which shared training weights in the early layers and used special weights in the later layers. For example, solutions were proposed in <ref type="bibr" target="#b4">Fourure et al. (2017)</ref> that shared all core parameters except those in the batch and instance normalization layers, where different domains were modeled separately in individual neural networks. Based on this, <ref type="bibr" target="#b26">Vaca and Niyaz (2018)</ref>, as an extension, proposed a new parameterization method for the standard residual network architecture, which aimed to increase the number of parameters in a limited way in order to improve the level of parameter sharing between domains. However, these early works did not consider the risk of increased computational complexity caused by the large number of model parameters, which makes such models weak with respect to convergence <ref type="bibr">(Injadat, Moubayed and Shami, 2020)</ref>. In more recent works inspired by the success of transfer learning, <ref type="bibr" target="#b1">Berriel et al. (2019)</ref> and <ref type="bibr" target="#b22">Ren and Lee (2018)</ref> proposed a combination of serial and parallel network adapters for multidomain data. They obtained domain-related models with adjustable budgets in terms of the number of parameters and computational complexity. To adjust the computational complexity of the network, they adopted a pretrained architecture to derive a specialized deep model for each domain and then incorporated a budget-aware adapter to select the most relevant feature channel to better process the data from the new domain. Among recent works, there are also some studies that improve domain adaptability through adversarial learning. They decompose a deep network into feature extractor and classifier components and then train each component by tuning its partner <ref type="bibr" target="#b28">(Xu, Chen, Zuo, Yan, &amp; Lin, 2018)</ref>. They either use a deep cocktail network (DCTN) to deploy multidirectional adversarial learning to minimize the difference between the targets and multidomain data <ref type="bibr" target="#b5">(Ganin et al., 2016)</ref> or use domain-specific representation learning <ref type="bibr" target="#b24">(Schoenauer-Sebag et al., 2019)</ref>, where the data come from similar but heterogeneous distributions.</p><p>Although multidomain machine learning solves the problem of domain adaptability to some extent through assumptions about specific data distributions, the performance of most models is poor in practice because they ignore the nature of data skewness and lack a process that effectively determines the robustness of multidomain data. It is claimed that ignoring the inconsistency of the data size and the heterogeneity of the data distribution generated by network traffic will have a serious impact on the detection results and may even mislead the entire machine learning process. In contrast to existing works, the current study focuses on extracting the hidden relationship between data that are not independent and identically distributed (non-IID) and unbalanced data and performing robust optimization on data from different domains so that the proposed scheme can further improve domain adaptability without relying on assumptions about the data distribution.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Proposed framework</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">System overview</head><p>The purpose of this research is to perform effective anomaly detection on network intrusion samples from different domains.</p><p>The key problem to be solved is the feature learning and reconstruction of high-dimensional multidomain data. However, most of the current studies using single-channel networks cannot capture the hidden spatial information of data in different domains, and the features of the reconstructed errors do not include the differential representation of heterogeneous distributions. Therefore, EM 3 is proposed, as shown in Fig. <ref type="figure" target="#fig_0">1</ref>. Overall, EM 3 consists of two parts: the ensemble network and estimation network. The ensemble network uses a deep autoencoder to reduce the dimensionality of the input multidomain samples, and the estimation network feeds back the latent distribution learned from the ensemble autoencoder and the reconstructed error features to the GMM, using the potential distribution and the EM algorithm to estimate the sample density. To avoid the decoupling and suboptimal performance of feature learning for multidomain data, the system performs joint optimization on the ensemble autoencoder and GMM. The use of the GMM protects the ensemble of autoencoders from a local suboptimum, and the use of an autoencoder provides a prior  distribution of samples for the GMM. When the estimated sample density exceeds the learning threshold obtained in the training phase, the samples are identified as outliers. The major notation used in this study is listed in Table <ref type="table" target="#tab_0">1</ref>.</p><p>In what follows, each part of the system is described in three steps. First, an ensemble of deep autoencoders is utilized to reduce the dimensionality of multidomain data. The deep autoencoder is a popular deep learning model that is constructed with several autoencoders. Each autoencoder minimizes the reconstructed error between the input data and output data. Given an unlabeled 𝑛-dimensional sample set 𝐱 = [𝑥 1 , 𝑥 2 , … , 𝑥 𝑛 ] ∈ ℜ 1×𝑛 , the autoencoder uses an activation function such as sigmoid to transform the input data set into a hidden representation and then maps it back into a reconstructed vector 𝐱 ′ . That is, the autoencoder attempts to learn the functions 𝐷(𝐸(𝐱)) = 𝐱 ′ ≈ 𝐱, where 𝐷 (⋅) and 𝐸 (⋅) are the decoder and encoder function, respectively. To measure the reconstructed error, the mean square error is used in this paper. And we utilized cross entropy as the cost function. Due to the difficulty of parameter selection, an individual deep autoencoder will probably show a low generalization ability. An ensemble of multiple deep autoencoders is developed to enhance the generalization performance by combining a series of activation functions <ref type="bibr" target="#b32">(Zhang, Li, Gao, Chen, &amp; Li, 2020)</ref>. Let h = 𝜓( wx + b) denote the hidden representation, where 𝜓 is the combination of the activation functions of the hidden layer, w is the weight matrix with respect to the parameters and b is the bias vector. The proposed system inputs high-dimensional multidomain data into each channel and obtains the hidden space distribution of the reduced dimensionality and reconstructed error features for each channel:</p><formula xml:id="formula_0">𝑧 𝑙 𝑐 = 𝐸 𝑙 (𝐱),<label>(1)</label></formula><p>where 𝑧 𝑐 is the hidden space of the autoencoder for channel 𝑙.</p><p>Assume there are 𝐿 channels in total. The minimum reconstruction error 𝑧 𝑟 is represented as:</p><formula xml:id="formula_1">𝑧 𝑟 = min { ℎ 1 ( 𝐱, 𝐱 ′ ) , ℎ 2 ( 𝐱, 𝐱 ′ ) , … , ℎ 𝐿 ( 𝐱, 𝐱 ′ )} , (<label>2</label></formula><formula xml:id="formula_2">)</formula><p>where ℎ(⋅) is the set of reconstructed error function of the autoencoder, which contains one of the relative absolute square error, Euclidean distance and cosine similarity <ref type="bibr" target="#b20">(Pratama &amp; Kang, 2020)</ref>. Some existing studies use a single autoencoder as input, which largely ignores the fine discrimination of the reconstruction error features of multidomain data, resulting in suboptimal performance. Reconstructed error features in multiple autoencoders can provide richer information for the estimation network, thereby improving the model's reasoning ability.</p><p>Second, to balance the complexity and expressive ability of the model, we use the attention model to optimize the hidden space of each channel so that important information is selected. An attention model based upon the encoder-decoder framework is widely adopted in natural language processing, image classification and speech recognition tasks because of its ability to optimize the memory information of hidden space in multiple channels. The encoder projects 𝐱 onto a hidden vector representation 𝐡. The decoder uses a recurrent network to maintain an internal hidden state 𝐳 and uses the attention model to weight the feature vectors based on a score function:</p><formula xml:id="formula_3">𝑠𝑐𝑜𝑟𝑒 𝑡 = 𝑓 𝑎 (𝐳 𝑡-1 , 𝐡 𝑡 ),<label>(3)</label></formula><p>where 𝑡 is the number of iterations and 𝑓 𝑎 is a fully connected neural network with a single hidden layer <ref type="bibr" target="#b32">(Zhang et al., 2020)</ref>.</p><p>Clearly, this equation takes both the previous decoder hidden state and the feature vectors at the 𝑡'th iteration as input.</p><p>The two most commonly used attention functions are additive attention and dot-product attention. Here, we choose additive attention because it computes a compatibility function using a feed-forward network with a single hidden layer. The attention weight is computed using the following function:</p><formula xml:id="formula_4">𝐚 𝑙 𝑡 = sof tmax ( 𝑑 𝑙 𝑡 𝐰 𝑙 𝑡 𝑧 𝑙 𝑐 ) , (<label>4</label></formula><formula xml:id="formula_5">)</formula><p>where 𝑑 𝑡 is the state of the encoder at the 𝑡'th iteration, 𝑙 ∈ 𝐿 is the channel, and 𝐚 is the attentive weight after using the softmax function. With the obtained attentive weights, the weighted sum of all the hidden vectors 𝑧 𝑐 is represented by:</p><formula xml:id="formula_6">𝑧 𝑐 = 𝐿 ∑ 𝑙=1 𝐚 𝑙 𝑡 𝑧 𝑙 𝑐 .</formula><p>(5)</p><p>Finally, the proposed system combines 𝑧 𝑐 with the minimum error feature of the ensemble network into a new hidden space vector 𝐳 = [ 𝑧 𝑐 , 𝑧 𝑟 ] .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Parameter learning</head><p>EM 3 jointly optimizes the parameters of the ensemble autoencoder and GMM in an end-to-end manner and uses a separate estimation network to promote parameter learning. Joint optimization can balance the reconstruction of multiple autoencoders in the ensemble network and contribute to density estimation and regularization, thereby avoiding local optimization and reducing the reconstructed errors. To make the probability model effective, we optimize the model with the addition of objective functions and reparameterization techniques.</p><p>The GMM converts high-dimensional data into a mixture of single-mode Gaussian distributions, which can solve mathematical problems in high-dimensional spaces. When training samples, the EM algorithm is used to solve the parameters <ref type="bibr" target="#b34">(Zong et al., 2018)</ref>. Given the latent space distribution 𝑧 and the number of mixed components 𝑟, the GMM uses the softmax function to generate an 𝑟-dimensional vector for each sample, represented as Γ𝑥 = [ γ𝑥1 , γ𝑥2 , … , γ𝑥𝑟 ] , where γ𝑥𝑖 , 1 ≤ 𝑖 ≤ 𝑟, denotes the probability that the 𝑖'th component of the GMM produces 𝐱. In the maximization stage of the EM algorithm, the parameters of the GMM are estimated using 𝑁 samples and the corresponding mixed probability Γ𝑥 as in Eq. ( <ref type="formula" target="#formula_7">6</ref>):</p><formula xml:id="formula_7">φ𝑟 = 𝑁 ∑ 𝑖=1 γ𝑖𝑟 𝑁 , μ𝑟 = ∑ 𝑁 𝑖=1 γ𝑖𝑘 𝐳 𝑖 𝑁 ∑ 𝑁 𝑖=1 γ𝑖𝑟 , σ𝑘 = ∑ 𝑁 𝑖=1 γ𝑖𝑟 (𝐳 𝑖 -μ𝑟 ) 2 ∑ 𝑁 𝑖=1 γ𝑖𝑟 . (<label>6</label></formula><formula xml:id="formula_8">)</formula><p>where μ𝑟 is the average of GMM component probabilities and σ𝑘 is the corresponding variance.</p><p>In the prediction stage, we utilize the sample energy as the anomaly score. The sample energy characterizes the degree to which a sample deviates the trained distribution. When the anomaly score exceeds a user-defined threshold, it is recognized as an abnormal value. The energy of the samples 𝜉(𝐳) can be formulated as follows:</p><formula xml:id="formula_9">𝜉(𝐳) = -log ⎛ ⎜ ⎜ ⎝ 𝑟 ∑ 𝑘=1 φ𝑘 exp(-1 2 (𝐳 -μ𝑟 ) T )σ -1 𝑟 (𝐳 -μ𝑟 ) √ |2𝜋σ 𝑟 | ⎞ ⎟ ⎟ ⎠ , (<label>7</label></formula><formula xml:id="formula_10">)</formula><p>where | ⋅ | is the determinant of the matrix.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Robust optimization for multiple domains</head><p>To make the model perform well in various domains, it is necessary to improve the performance of the domain with a small number of samples to prevent the samples in this domain from reducing the overall model performance. In this section, a robust optimization method, namely, EM 3+ , based on the EM 3 framework is proposed. Multidomain learning aims to obtain common behaviors across related problems, so the core idea is to learn domain-specific parameters guided by shared parameters. Multidomain learning algorithms are simple to implement and scale to very large data sets. They process multiple streams of data from many different sources, transferring knowledge between domains through a shared model <ref type="bibr" target="#b15">(Luong, Pham, &amp; Manning, 2015)</ref> </p><formula xml:id="formula_11">min 𝐰 { 𝑘 ∑ 𝑚=1 max 𝑝 𝐩𝐟(𝐰 𝑚 ) + 𝛽 𝑘 ∑ 𝑚=1 1 𝑘 ‖ ‖ ŵ -𝐰 𝑚 ‖ ‖𝐹 },<label>(8)</label></formula><p>where</p><formula xml:id="formula_12">{ 𝐩 ∈ 𝑘 | | | ∑ 𝑘 𝑚=1 𝑝 𝑚 = 1; ∀𝑘, 𝑝 𝑚 ≥ 0 }</formula><p>is the dual management factor and 𝛽 &gt; 0 is the penalty factor. 𝐩 can also be treated as an adversarial distribution of different domains, and its default value is calculated as 𝑝 𝑚 = 1 𝑘 . Then, we have Eq. ( <ref type="formula" target="#formula_13">9</ref>):</p><formula xml:id="formula_13">𝐟 (𝐰) = [𝑓 1 (𝐰) , 𝑓 2 (𝐰) , … , 𝑓 𝑚 (𝐰)] 𝑇 , (<label>9</label></formula><formula xml:id="formula_14">)</formula><p>where 𝑓 𝑖 (𝐰) = ℎ(𝑥 𝑖 𝑚 , 𝑦 𝑖 𝑚 ;𝐰). The second term of Eq. ( <ref type="formula" target="#formula_11">8</ref>) narrows the difference in the parameters of the multidomain model through the average value 𝐰. Obviously, it is a minimax problem that satisfies the Karush-Kuhn-Tucker (KTT) condition according to <ref type="bibr" target="#b30">Yu (2020)</ref>. Therefore, the optimization problem of the objective function can be considered equivalent to the Lagrangian dual problem. It is known that a key to minimax optimization is that the formula is very sensitive to outliers. If there is a domain with significantly lower performance than other domains, the objective function of the domain with poor performance will dominate the entire multidomain learning process, which will seriously affect the performance of the training model in different domains. For this reason, this paper normalizes the loss of each domain to prevent the 𝐩 of a poor domain from being larger and to ensure that each domain has a smooth training process. To this end, we use the Lagrangian relaxation mode, as given in Eq. ( <ref type="formula" target="#formula_15">10</ref>):</p><formula xml:id="formula_15">max 𝐩 𝑇 𝑚 𝐟 𝑚 (𝐰) + 𝜂(𝑝 1 + 𝑝 2 + ⋯ + 𝑝 𝑘 -1),<label>(10)</label></formula><p>where 𝜂 ≥ 0 and 𝑝 𝑘 ≥ 0.</p><p>The dual problem is formulated as Eq. ( <ref type="formula" target="#formula_16">11</ref>):</p><formula xml:id="formula_16">max 𝑝 min 𝐰 𝐩 𝑇 𝑚 𝐟 𝑚 (𝐰) + 𝜂(𝑝 1 + 𝑝 2 + ⋯ + 𝑝 𝑘 -1)<label>(11)</label></formula><p>To solve the minimax optimization problem presented in Eq. ( <ref type="formula" target="#formula_16">11</ref>), we use the gradient descent method to learn the model and the gradient ascent method to update the adversarial distribution. The 𝑝 value can be obtained using the approximate gradient descent algorithm <ref type="bibr" target="#b18">(Mariño &amp; Míguez, 2006)</ref> in Eq. ( <ref type="formula" target="#formula_17">12</ref>):</p><formula xml:id="formula_17">𝑝 𝑘 = 𝑝𝑟𝑜𝑥 𝑡ℎ (𝑝 𝑘-1 -𝑡 𝑘-1 ∇𝑓 (𝐰)) (<label>12</label></formula><formula xml:id="formula_18">)</formula><p>where 𝑡 is the step size of each gradient.</p><p>Let 𝜒(𝑝) = 𝜂 ( 𝑝 1 + 𝑝 2 + ⋯ + 𝑝 𝑘 -𝟏 ) ; according to the definition of 𝑝𝑟𝑜𝑥 𝑡ℎ <ref type="bibr" target="#b12">(Li, Zou, &amp; Zhong, 2020)</ref>, Eq. ( <ref type="formula" target="#formula_17">12</ref>) is expanded to obtain Eq. ( <ref type="formula" target="#formula_19">13</ref>):</p><formula xml:id="formula_19">𝑝 + = argmin 𝑝 ( 𝜒 (𝑝) + 1 2𝑡 𝑝 + 𝑡∇𝑓 (𝐰) 2 2 ) = arg min 𝑝 ( 𝜒 (𝑝) + 𝑓 (𝐰) + ∇𝑓 (𝐰) 𝑇 𝑝 + 1 2𝑡 𝑝 2 2 )<label>(13)</label></formula><p>The expression in parentheses is a second-order expansion of 𝑓 near 𝑝, and 𝑝 + is the minimum value of the approximate function. Furthermore, we have Eqs. ( <ref type="formula">14</ref>) and ( <ref type="formula" target="#formula_20">15</ref>):</p><formula xml:id="formula_20">0 ∈ 𝑡𝜕𝜒 ( 𝑝 + ) + ( 𝑝 + -𝑝 + 𝑡∇𝑓 (𝐰) ) (14) 𝐺 𝑡 (𝐰) ∶= 𝑝 -𝑝 + 𝑡 ∈ 𝜕𝜒 ( 𝑝 + ) + ∇𝑓 (𝐰),<label>(15)</label></formula><p>where 𝐺 𝑡 (𝐰) = 𝜕𝜒 ( 𝑝 + ) + ∇𝑔(𝐰) is approximated as the subgradient of the function 𝑓 and 𝑝 + can be simplified as 𝑝 + = 𝑝 -𝑡𝐺 𝑡 (𝐰) so that the dual management factor 𝑝 is obtained for each domain.</p><p>To find the shared model parameters 𝐰, the robust optimization algorithm is used as follows: The multidomain machine learning model initializes the model parameters of each domain. It randomly samples p*n samples for iteration to obtain the loss function of each domain and then uses the gradient descent algorithm to update the 𝑝 value. When the update is complete, the average value of the model parameters ŵ is reassigned to the model parameters in the corresponding domain until the end of training.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Experiments</head><p>The purpose of this study is to detect network intrusion in different domains using the proposed EM 3 framework. In this section, a series of experiments are conducted to test whether the proposed EM 3 is competitive with respect to specific measures compared to other algorithms. The data sets used in the experiment are detailed in Section 4.1, followed by a Section 4.2 that describes the baselines based on frequently used algorithms in the network intrusion anomaly detection area. Section 4.3 presents the experimental settings used in the experiment, and the results are reported in Section 4.4. All of the experiments are performed with PyTorch and the Python SK-learning library on a RHEL7.5 server with an Intel Xeon E5-2687w 3.1 GHz CPU and NVIDIA Quadro P4000 GPU.</p><p>P. <ref type="bibr">An et al.</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Data sets</head><p>Three public data sets are used in this experiment. The first is KDDcup'99 <ref type="bibr" target="#b34">(Zong et al., 2018)</ref>, which comprises network connection and system audit data collected over 9 weeks by MIT using TCPdump. This data set simulates data samples of different user types, network traffic and attack methods. Each sample is described with 41 features. The data set includes 14,258 normal samples and 713 abnormal samples in total. The multiple domains can be divided into DoS, R2L, U2R and Probe domains. For the experiment, we randomly sample 20,000 data points for each of the DoS, R2L, and Probe types, where anomalies account for 10%. Since the size of the U2R data is small, we set 1000 U2R data points, and the abnormal proportion is 5%. For the nominal features in this data set, we coded them according to numerical categories. Taking protocol as an example, the Transmission Control Protocol (TCP) was coded as 0, the User Datagram Protocol (UDP) was coded as 1 and the Internet Control Message Protocol (ICMP) was coded as 2.</p><p>The second data set is CICMalDroid 2020 <ref type="bibr" target="#b16">(Mahdavifar, Kadir, Fatemi, Alhadidi, &amp; Ghorbani, 2020)</ref>. This data set is for Android malware that contains the most complete static and dynamic network connection features among publicly available data sets, including the latest and most complex Android samples as of 2018. In this experiment, the top 9 features were selected for experimentation through principal component analysis (PCA). The multiple domains of this data set are Adware, Banking Malware, Short Message Service (SMS) Malware and Mobile Riskware. Each type contains 20,000 entities, of which abnormal data account for 10%.</p><p>The last data set is AWID <ref type="bibr" target="#b26">(Vaca &amp; Niyaz, 2018)</ref>. It is collected from a small network environment for 802.11 networks, which typically involves 11 client computers. The data are a wireless local area network (WLAN) data stream captured in a packet-based format, and the multiple domains of this data set are Flooding, Impersonation, and Injection. Each domain contains 20,000 entities, where abnormal data account for 10%.</p><p>Since the KDDcup'99 and CICMalDroid 2020 data sets are structured numerical data, there are no garbled codes or symbols in the data, so this experiment normalizes them and encodes them with one hot encoding. However, the missing, garbled, and duplicated data in the AWID data set cannot be directly input to the model. We perform data cleaning, data transformation, and feature selection on the original data set. During data cleaning, this experiment uses replacement and zero padding to convert dirty data into quality data. Constants are used to fill the missing data in the set, and the existing special symbols and garbled codes are cleared or replaced. Since the AWID data set contains 154 features with both numerical and character data, we convert nonnumerical features such as wlan.ra and wlan.da into numerical features.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Baselines</head><p>To compare the performance difference of the proposed model with and without robust optimization, the experiment uses the following baselines:</p><p>• The one-class support vector machine (OCSVM) <ref type="bibr" target="#b33">(Zhou &amp; Paffenroth, 2017</ref>) is a commonly used kernel-based outlier detection method. When making predictions, the model searches for a hyperplane; the samples marked on this hyperplane are considered positive samples, and vice versa. All tasks in this experiment use radial basis function kernels. • The deep autoencoding Gaussian mixture model (DAGMM) <ref type="bibr" target="#b34">(Zong et al., 2018</ref>) combines a GMM with a deep autoencoder.</p><p>The model uses the deep autoencoder to generate a low-dimensional representation and reconstructed error for each input data point and then inputs it to the GMM. The parameters of the deep autoencoder and the hybrid model are optimized simultaneously in an end-to-end manner, and a separate estimation network is used to promote the parameter learning of the hybrid model. The estimated density of the sample is used as an anomaly detection criterion. • Adversarially learned anomaly detection (ALAD) <ref type="bibr" target="#b31">(Zenati, Romain, Foo, Lecouat, &amp; Chandrasekhar, 2018</ref>) combines an autoencoder with the standard generative adversarial network (GAN) algorithm and uses representative learning to measure the similarity in the data space. By combining the autoencoder with the GAN, the feature representation can be used as the basis for the reconstruction target in the GAN discriminator.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Settings</head><p>The learning rate of the models used on the KDDcup'99 and AWID data sets is set to 0.001, and the learning rate of the models used on the CICMalDroid 2020 data set is set to 0.0007, while the batch sizes are 256 and 128, respectively. The hyperparameters 𝜆 1 and 𝜆 2 of the regularized objective function are set to 0.1 and 0.0001 based on cross-validation experiments. To test the multichannel neural network in this study, the number of channels is set to 3 for simplification. The channels are the deep simple networks of <ref type="bibr">[100,</ref><ref type="bibr">64,</ref><ref type="bibr">32,</ref><ref type="bibr">16,</ref><ref type="bibr">1,</ref><ref type="bibr">16,</ref><ref type="bibr">32,</ref><ref type="bibr">64,</ref><ref type="bibr">100]</ref>, <ref type="bibr">[112, 82, 56, 28, 1, 28, 56, 82, 112] and [60, 30, 10, 10, 30, 60]</ref>, where the digits represent the number of neurons in the network.</p><p>The experiment consists of two parts. The first part of the experiment was conducted on data from the undifferentiated domain. In this setting, we did not divide the data set into domains following traditional solutions to show whether the performance of EM 3 proposed in this paper is competitive in a single domain. In the second part of the experiment, we divided the data set into domains to show whether the performance of the EM 3 framework proposed in this paper is competitive in multiple domains. We used the F1 value as the evaluation standard of the model performance based on the calculation of the accuracy and recall rate because it is a commonly used evaluation index for abnormality detection problems. The accuracy rate is the most intuitive performance measure; it is the ratio of the correctly predicted observations to the total observations. The recall rate is the ratio of correctly predicted positive observations to all observations in the actual class, and the F1 value is the weighted average of the accuracy rate and the recall rate. When the F1 value is higher, the model is better.</p><p>P. An et al. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.1.">On an undifferentiated domain</head><p>Table <ref type="table" target="#tab_2">2</ref> shows the result matrix for running the model on different data sets when no domain distinction is made on the data sets, as measured by F1. EM 3 has the highest F1 value on all data sets, followed by ALAD. This is because ALAD does not use the information represented by dimensionality reduction in the autoencoder hidden space. Although DAGMM uses a GMM and a deep autoencoder, its F1 value is reduced significantly, by approximately 1.6%, compared with EM 3 because EM 3 utilizes an attention model to select the optimal information of the multichannel autoencoder hidden space, and the ensemble autoencoder is more effective than the single autoencoder for data dimensionality reduction. The F1 value of the OCSVM model is the smallest. Compared with EM 3 , the performance is reduced by approximately 16%, and the performance is reduced by approximately 15.2% compared with ALAD. In addition, the model has a higher F1 value on the KDDcup'99 data set and a lower F1 value on the AWID data set, which is attributed to the fact that there is less available information in the AWID data set. To the best of our knowledge, previous work has mainly applied this data set to classification tasks, and for the first time, we are using it for unsupervised anomaly detection testing.</p><p>In summary, the EM 3 proposed by this research obtained the best F1 value on the selected data set. The ensemble deep autoencoder produces a low-dimensional representation of data and the reconstructed errors, which effectively utilizes the hidden information in the network intrusion data. Furthermore, the attention mechanism is used to optimize the latent space distribution, which is an advantage that support vector machines do not have. In addition, EM 3 uses the reconstructed minimum error based on the Euclidean distance and cosine similarity measure to expand the difference distribution between normal samples and abnormal samples so that GMM can better learn the sample distribution.</p><p>The normal and abnormal samples in the hidden space of EM 3 are visualized in Fig. <ref type="figure" target="#fig_1">2</ref>, which shows a low-dimensional representation of the hidden space of different channels in an ensemble network. The normal and abnormal samples can be better separated in low dimensions under the EM 3 framework because their samples overlap very little. EM 3 dynamically selects the autoencoder with the smallest reconstructed error for different data sets and jointly optimizes the autoencoder and GMM parameters in an end-to-end manner, which helps the autoencoder eliminate local optimization and obtain better compression results. In addition, the use of the GMM provides the model with more meaningful sample distributions for different domains. Fig. <ref type="figure" target="#fig_3">3</ref> presents the convergence of the models on different data sets. Clearly, the loss of each model decreases as the epoch increases. EM 3 decreases most rapidly compared to the other algorithms, which means that EM 3 has the best convergence ability. Specifically, the loss of EM 3 becomes constant after the algorithm runs approximately three epochs for all the selected data sets. However, the loss of the other algorithms depends on the data sets. SVM, DAGMM and ALAD have nearly the same loss changes for the KDD data set, and they reach stability when the algorithms run for more than eight epochs. For the Android data set, DAGMM is superior to SVM and ALAD. The loss of DAGMM reaches stability when the epoch number reaches two, while SVM and ALAD become stable when the epoch number reaches eleven and thirteen, respectively. For the AWID data set, the curve changes in different ways. SVM and ALAD converge faster than DAGMM, which reaches stability after 21 epochs. Moreover, the enlarged local charts indicate that EM 3 has the smallest loss value compared to the other algorithms, although all of them converge after several epochs.</p><p>When running the algorithm on the CICMalDroid 2020 data set, the model is stable after 3 epochs. The fast model learning speed mainly depends on two properties of the proposed method. First, we use 9 features of the data and a three-channel deep autoencoder, which can quickly learn the features of the data. Second, the attention mechanism chooses the hidden space so that the GMM can better learn the sample distribution of the data. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.2.">On differentiated domains</head><p>Table <ref type="table">3</ref> presents the results of the algorithms running on different domains. Clearly, the proposed EM 3 is superior to the other algorithms when the domains of the data sets are differentiated. For the KDDcup'99 data set, OCSVM is not able to recognize the abnormal samples of the U2R domain (F1 = 0.4887), while it obtains acceptable accuracy on the DoS domain (F1 = 0.7414), which means that the performance of the OCSVM algorithm depends on the distribution of each domain and is not robust to the data set. DAGMM and ALAD have relatively similar performances because they both use a combination of autoencoders and other models. For example, the DAGMM model combines an autoencoder and a GMM, and ALAD combines an autoencoder and a GAN.</p><p>Moreover, nearly all of the algorithms follow a similar trend when they are used on the domains of the CICMalDroid 2020 data set except that DAGMM outperforms ALAD in terms of specific domains such as Adware and Banking. On average, algorithms running on the domains of KDDcup'99 obtain the highest values, and algorithms running on the AWID data set have the lowest values. The reason for this is that the amount of data becomes small after it is cleaned, resulting in insufficient model training. In addition, some features are filled, which makes the model unable to learn the changes in each feature. EM 3 is optimal on each domain of the AWID data set. Fig. <ref type="figure" target="#fig_6">4</ref> shows the hidden space of the KDDcup'99 data, which shows that EM 3 can better distinguish the abnormal and normal samples in various domains of the data set.</p><p>It is worth noting that the performance of EM 3+ is improved in each domain of the data set relative to that of EM 3 . EM 3+ improves by at least 0.2% on KDDcup'99 and at least 2% on CICMalDroid 2020. EM 3+ is an updated version based on the robust     <ref type="table" target="#tab_3">4</ref>. The number of parameters of EM 3 and DAGMM is very close, but far less than that of ALAD. This indicates that EM 3 costs less than ALAD. Considering time and parameters together, overall EM 3 has a more competitive time complexity and fewer model parameters, illustrating the conclusion that EM 3 can be deployed flexibly and quickly on current hardware.   </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. Algorithm framework.</figDesc><graphic coords="4,116.49,58.96,311.28,110.40" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. Representation of data sets in the hidden space. Purple and yellow circles represent low-dimensional representations of normal and abnormal samples, respectively. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)</figDesc><graphic coords="9,52.17,58.96,439.92,402.19" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>P.An et al.    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig. 3 .</head><label>3</label><figDesc>Fig. 3. Loss variation versus running epochs.</figDesc><graphic coords="10,47.06,58.96,450.24,380.88" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>Fig. 5(a) shows the time spent by each algorithm in the training and testing stages. The OCSVM has the least training time, and the ALAD has the most training time. The time spent by EM 3 is almost the same as DAGMM but is obviously shorter than ALAD. In the testing stage shown in Fig. 5(b), EM 3 takes less time than DAGMM and ALAD. These findings indicate that EM 3 has a faster detection speed for both normal and abnormal samples after the training stage is completed. The number of parameters of each model is reported in Table4. The number of parameters of EM 3 and DAGMM is very close, but far less than that of ALAD. This indicates that EM 3 costs less than ALAD. Considering time and parameters together, overall EM 3 has a more competitive time complexity and fewer model parameters, illustrating the conclusion that EM 3 can be deployed flexibly and quickly on current hardware.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>P.An et al.    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Fig. 4 .</head><label>4</label><figDesc>Fig. 4. Hidden space representation of the KDDcup'99 data domains as an example. Purple and yellow circles represent low-dimensional representations of normal and abnormal samples, respectively. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)</figDesc><graphic coords="11,55.62,58.96,433.20,406.37" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Fig. 5 .</head><label>5</label><figDesc>Fig. 5. Time spent on training stage and testing stage.</figDesc><graphic coords="12,48.78,58.96,446.88,195.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1</head><label>1</label><figDesc>Notation.</figDesc><table><row><cell>Notation</cell><cell>Meaning</cell></row><row><cell>𝐱</cell><cell>Sample set</cell></row><row><cell>𝐱</cell><cell></cell></row></table><note><p>′ Reconstructed vector of the sample set 𝑛 Dimensions of the samples 𝐷 (⋅) Decoder 𝐸 (⋅) Encoder 𝜓 Combination of the activation functions of the hidden layer 𝐰 Weight matrix with respect to the parameters 𝐛 Bias vector 𝑧 𝑐 Hidden space of the autoencoder ℎ(⋅) Loss function of the autoencoder 𝑓 𝑎 Fully connected neural network 𝑑 𝑡 State of the encoder at the 𝑡'th iteration a Attentive weight matrix z Hidden state Γ𝑥 Mixing probability of the GMM 𝑏 𝜆 Estimation network 𝜉(⋅) Sample energy 𝑝 Dual management factor</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>. Given a data set 𝐱 ∈ { 𝐱 1 , 𝐱 2 , … 𝐱 𝑘 }of 𝑘 domains of cyberattacks, the data set of the 𝑚'th domain is 𝑆 𝑚 = 𝑦 𝑖 𝑚 is the corresponding label of the sample. The objective function of multidomain learning can be formulated as the following empirical risk:</figDesc><table><row><cell>{</cell><cell>𝑥 𝑖 𝑚 , 𝑦 𝑖 𝑚</cell><cell>} , where 𝑥 𝑖 𝑚 is the 𝑖'th training</cell></row><row><cell>sample and</cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 2</head><label>2</label><figDesc>F1 values of models.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">KDDcup'99</cell><cell>AWID</cell><cell></cell><cell cols="2">CICMalDroid 2020</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell cols="2">OCSVM</cell><cell>0.7954</cell><cell></cell><cell>0.4354</cell><cell></cell><cell>0.6211</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell cols="2">DAGMM</cell><cell>0.9369</cell><cell></cell><cell>0.4899</cell><cell></cell><cell>0.7516</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>ALAD</cell><cell></cell><cell>0.9377</cell><cell></cell><cell>0.5102</cell><cell></cell><cell>0.7881</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>EM 3</cell><cell></cell><cell>0.9523</cell><cell></cell><cell cols="2">0.5612</cell><cell>0.8323</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Table 3</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell cols="4">Results of the algorithms on multidomain data sets.</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>Data sets</cell><cell>KDDcup'99</cell><cell></cell><cell></cell><cell></cell><cell cols="2">CICMalDroid 2020</cell><cell></cell><cell></cell><cell>AWID</cell><cell></cell><cell></cell></row><row><cell>Domains</cell><cell>DoS</cell><cell>Probe</cell><cell>R2L</cell><cell>U2R</cell><cell>Adware</cell><cell>Banking</cell><cell>SMS</cell><cell>Mobile</cell><cell>Flooding</cell><cell>Impersonation</cell><cell>Injection</cell></row><row><cell>OCSVM</cell><cell>0.7414</cell><cell>0.6912</cell><cell>0.5358</cell><cell>0.4887</cell><cell>0.5878</cell><cell>0.6157</cell><cell>0.5542</cell><cell>0.6712</cell><cell>0.3952</cell><cell>0.3276</cell><cell>0.4012</cell></row><row><cell>DAGMM</cell><cell>0.8282</cell><cell>0.7845</cell><cell>0.6641</cell><cell>0.7285</cell><cell>0.6745</cell><cell>0.6871</cell><cell>0.5927</cell><cell>0.6925</cell><cell>0.4118</cell><cell>0.3956</cell><cell>0.4571</cell></row><row><cell>ALAD</cell><cell>0.8325</cell><cell>0.7756</cell><cell>0.6714</cell><cell>0.6148</cell><cell>0.6642</cell><cell>0.6581</cell><cell>0.6155</cell><cell>0.7011</cell><cell>0.4214</cell><cell>0.3812</cell><cell>0.4482</cell></row><row><cell>EM 3</cell><cell>0.9021</cell><cell>0.8327</cell><cell>0.7895</cell><cell>0.7725</cell><cell>0.7144</cell><cell>0.6853</cell><cell>0.6657</cell><cell>0.7339</cell><cell>0.4857</cell><cell>0.4337</cell><cell>0.5017</cell></row><row><cell>EM 3+</cell><cell>0.9211</cell><cell>0.8531</cell><cell>0.7975</cell><cell>0.8012</cell><cell>0.7158</cell><cell>0.7015</cell><cell>0.6987</cell><cell>0.7619</cell><cell>0.5042</cell><cell>0.4681</cell><cell>0.5359</cell></row><row><cell>4.4. Results</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4</head><label>4</label><figDesc>Number of parameters that training is completed. . It converts the multidomain objective function from the original problem to the dual problem and obtains the highest performance in almost every domain. It is concluded that the common feature representation of multidomain data can adapt to different domains, even if there are few data in a domain.</figDesc><table><row><cell>Algorithm</cell><cell>OCSVM</cell><cell>DAGMM</cell><cell>ALAD</cell><cell>EM 3</cell></row><row><cell>Number of parameters</cell><cell>836</cell><cell>2135</cell><cell>5032</cell><cell>3512</cell></row><row><cell>optimization of EM 3</cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>P.An et al.   </p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>This research was supported by <rs type="funder">Ningbo Natural Science Foundation, China</rs> <rs type="grantNumber">2019A610106</rs> and <rs type="funder">National Natural Science Foundation of China</rs> under Grant No. <rs type="grantNumber">61502256</rs>. <rs type="person">Peng An</rs> and <rs type="person">Zhiyuan Wang</rs> has equal contribution to this paper.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_gcE24Ez">
+					<idno type="grant-number">2019A610106</idno>
+				</org>
+				<org type="funding" xml:id="_ggd3mRW">
+					<idno type="grant-number">61502256</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Exploiting the auto-encoder residual error for intrusion detection</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Andresini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Appice</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Di Mauro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Loglisci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Malerba</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2019 IEEE European Symposium on Security and Privacy Workshops (EuroS&amp;PW)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="281" to="290" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Budget-aware adapters for multi-domain learning</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Berriel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lathuillere</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nabi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Klein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Oliveira-Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sebe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="382" to="391" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Machine learning based mobile malware detection using highly imbalanced network traffic</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Han</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">433</biblScope>
+			<biblScope unit="page" from="346" to="364" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Online and scalable unsupervised network anomaly detection method</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dromard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Roudière</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Owezarski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Network and Service Management</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="34" to="47" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Multi-task, multi-domain learning: application to semantic segmentation and pose regression</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Fourure</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Emonet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fromont</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Muselet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Neverova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Trémeau</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neurocomputing</title>
+		<imprint>
+			<biblScope unit="volume">251</biblScope>
+			<biblScope unit="page" from="68" to="80" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Domain-adversarial training of neural networks</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ganin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ustinova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ajakan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Germain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Larochelle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Laviolette</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Machine Learning Research</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="2096" to="2030" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Memorizing normality to detect anomaly: Memory-augmented deep autoencoder for unsupervised anomaly detection</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Le</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Saha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Mansour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Venkatesh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE/CVF International Conference on Computer Vision</title>
+		<meeting>the IEEE/CVF International Conference on Computer Vision</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="page" from="1705" to="1714" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Flow adversarial networks: Flowrate prediction for gas-liquid multiphase flows across different domains</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Neural Networks and Learning Systems</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="475" to="487" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Multi-stage optimized machine learning framework for network intrusion detection</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Injadat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Moubayed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">B</forename><surname>Nassif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shami</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TNSM.2020.3014929</idno>
+		<ptr target="http://dx.doi.org/10.1109/TNSM.2020.3014929" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Network and Service Management</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Detecting botnet attacks in IoT environments: An optimized machine learning approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Injadat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Moubayed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shami</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICM50269.2020.9331794</idno>
+		<ptr target="http://dx.doi.org/10.1109/ICM50269.2020.9331794" />
+	</analytic>
+	<monogr>
+		<title level="m">2020 32nd International Conference on Microelectronics (ICM)</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="1" to="4" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Lipschitz continuous autoencoders in application to anomaly detection</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><surname>-G</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kwon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Paik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Artificial Intelligence and Statistics</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="2507" to="2517" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Pmlr</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Learning graph neural networks with approximate gradient descent</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zhong</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2012.03429</idno>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A unified unsupervised gaussian mixture variational autoencoder for high dimensional outlier detection</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2018 IEEE International Conference on Big Data (Big Data)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="1208" to="1217" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Generative adversarial active learning for unsupervised outlier detection</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TKDE.2019.2905606</idno>
+		<ptr target="http://dx.doi.org/10.1109/TKDE.2019.2905606" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Knowledge and Data Engineering</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1517" to="1528" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">Effective approaches to attention-based neural machine translation</title>
+		<author>
+			<persName><forename type="first">M.-T</forename><surname>Luong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Pham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Manning</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1508.04025</idno>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Dynamic android malware category classification using semi-supervised deep learning</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>An</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE Intl Conf on Dependable, Autonomic and Secure Computing, Intl Conf on Pervasive Intelligence and Computing, Intl Conf on Cloud and Big Data Computing, Intl Conf on Cyber Science and Technology Congress (DASC/PiCom/CBDCom/CyberSciTech)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2020">2020. 2020</date>
+			<biblScope unit="page" from="515" to="522" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Asymmetric stacked autoencoder</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Majumdar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tripathi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2017 International Joint Conference on Neural Networks (IJCNN)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="911" to="918" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">An approximate gradient-descent method for joint parameter estimation and synchronization of coupled chaotic systems</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">P</forename><surname>Mariño</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Míguez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physics Letters. A</title>
+		<imprint>
+			<biblScope unit="volume">351</biblScope>
+			<biblScope unit="issue">4-5</biblScope>
+			<biblScope unit="page" from="262" to="267" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Multi-task multi-domain representation learning for sequence tagging</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dredze</surname></persName>
+		</author>
+		<idno>CoRR, abs/1608.02689</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Trainable activation function with differentiable negative side and adaptable rectified point</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pratama</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D.-K</forename><surname>Kang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Neural Networks, and Complex Problem-Solving Technologies</title>
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="1" to="18" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Robust optimization over multiple domains</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+		<meeting>the AAAI Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="4739" to="4746" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Cross-domain self-supervised multi-task feature learning using synthetic imagery</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">J</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="762" to="771" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Intrusion detection and classification with autoencoded deep neural network</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rezvy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Petridis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lasebae</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zebin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Security for Information Technology and Communications</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="142" to="156" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Multi-domain adversarial learning</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Schoenauer-Sebag</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Heinrich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schoenauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sebag</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">F</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Altschuler</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1903.09239</idno>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">A deep learning approach to network intrusion detection</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Shone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">N</forename><surname>Ngoc</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">D</forename><surname>Phai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Shi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Emerging Topics in Computational Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="41" to="50" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">An ensemble learning based wi-fi network intrusion detection system (wnids)</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">D</forename><surname>Vaca</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Niyaz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE 17th International Symposium on Network Computing and Applications (NCA)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2018">2018. 2018</date>
+			<biblScope unit="page" from="1" to="5" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Stacked discriminative denoising auto-encoder based recommender system</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Lai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Intelligent Science and Big Data Engineering</title>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="276" to="286" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Deep cocktail network: Multi-source unsupervised domain adaptation with category shift</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Zuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Lin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+		<meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="3964" to="3973" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Data-driven network intelligence for anomaly detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Q</forename><surname>Hu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Network</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="88" to="95" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Optimization of combined power and modeling attacks on VR PUFs with Lagrange multipliers</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Circuits and Systems II: Express Briefs</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2512" to="2516" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Adversarially learned anomaly detection</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zenati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Romain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-S</forename><surname>Foo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lecouat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Chandrasekhar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2018 IEEE International Conference on Data Mining (ICDM)</title>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2018">2018</date>
+			<biblScope unit="page" from="727" to="736" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Intelligent fault diagnosis of rotating machinery using a new ensemble deep auto-encoder method</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Measurement</title>
+		<imprint>
+			<biblScope unit="volume">151</biblScope>
+			<biblScope unit="page">107232</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Anomaly detection with robust deep autoencoders</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Paffenroth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+		<meeting>the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="665" to="674" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Deep autoencoding gaussian mixture model for unsupervised anomaly detection</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Min</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lumezanu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Cho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Conference on Learning Representations</title>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

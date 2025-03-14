@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">CTFFIND4: Fast and accurate defocus estimation from electron micrographs</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Alexis</forename><surname>Rohou</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Janelia Research Campus</orgName>
+								<orgName type="institution">Howard Hughes Medical Institute</orgName>
+								<address>
+									<addrLine>19700 Helix Drive</addrLine>
+									<postCode>20147</postCode>
+									<settlement>Ashburn</settlement>
+									<region>VA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Nikolaus</forename><surname>Grigorieff</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Janelia Research Campus</orgName>
+								<orgName type="institution">Howard Hughes Medical Institute</orgName>
+								<address>
+									<addrLine>19700 Helix Drive</addrLine>
+									<postCode>20147</postCode>
+									<settlement>Ashburn</settlement>
+									<region>VA</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">CTFFIND4: Fast and accurate defocus estimation from electron micrographs</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">562CC547CCBC1769254D5399AD88A3F2</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:52+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>CTF</term>
+					<term>defocus</term>
+					<term>astigmatism</term>
+					<term>phase plate</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>CTFFIND is a widely-used program for the estimation of objective lens defocus parameters from transmission electron micrographs. Defocus parameters are estimated by fitting a model of the microscope's contrast transfer function (CTF) to an image's amplitude spectrum. Here we describe modifications to the algorithm which make it significantly faster and more suitable for use with images collected using modern technologies such as dose fractionation and phase plates. We show that this new version preserves the accuracy of the original algorithm while allowing for higher throughput. We also describe a measure of the quality of the fit as a function of spatial frequency and suggest this can be used to define the highest resolution at which CTF oscillations were successfully modeled.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Estimating the electron microscope's objective lens defocus and astigmatism from micrographs is of great importance in the three-dimensional reconstruction of biological specimens (reviewed by <ref type="bibr" target="#b1">Cheng et al., 2015)</ref>. Many programs are available for this purpose. Of those, CTFFIND3 <ref type="bibr" target="#b10">(Mindell and Grigorieff, 2003)</ref> is widely used and thought to perform well under a range of circumstances <ref type="bibr" target="#b8">(Marabini et al., 2015)</ref>.</p><p>We present an updated version of this program, called CTFFIND4, which aims to match the quality of results obtained with CTFFIND3 and to do so significantly faster.</p><p>Like its predecessor, CTFFIND4 models the microscope's contrast transfer function (CTF) as a 2-dimensional function of the spatial frequency vector g:</p><formula xml:id="formula_0">CTF λ, g, Δ f , C s , Δφ = -ω 1 sin χ λ, g ,Δ f , C s , Δφ -ω 2 cos χ λ, g ,Δ f , C s , Δφ<label>(1)</label></formula><p>where the frequency-dependent phase shift χ is a function of the electron wavelength λ, the objective defocus Δ f and the spherical aberration C s ,</p><formula xml:id="formula_1">χ λ, g , Δ f , C s , Δφ = πλ g 2 Δ f - 1 2 λ 2 g 2 C s + Δφ, (2)</formula><p>and Δφ is an additional phase shift introduced by a phase plate, in the absence of which Δφ = 0. ω 2 is the fraction of total contrast attributed to amplitude contrast, arising for example from electrons scattered outside the objective aperture or those removed by energy filtering <ref type="bibr" target="#b13">(Yonekura et al., 2006)</ref>. The value of this parameter depends on the specimen characteristics (e.g. ice thickness, heavy metal stains) as well as microscope properties (e.g. acceleration voltage, diameter of the objective aperture) and must be given by the user. The relative phase contrast is ω 1 = 1 -w 2 2</p><p>.</p><p>Equation 1 can be simplified and made more computationally efficient <ref type="bibr" target="#b3">(Fernando and Fuller, 2007)</ref>:</p><formula xml:id="formula_2">CTF λ, g, Δ f , C s , Δφ, ω 2 = -sin χ λ, g ,Δ f , C s , Δφ, ω 2 (3) with χ λ, g ,Δ f , C s , Δφ, ω 2 = πλ g 2 Δ f - 1 2 λ 2 g 2 C s + Δφ + tan -1 ω 2 / 1 -ω 2 2 ,<label>(4)</label></formula><p>where the tan -1 term can be precomputed, so that evaluating the CTF only requires one trigonometric function call.</p><p>To account for astigmatism of the objective lens two defocus values, Δ f 1 and Δ f 2 , are defined, which describe the lens' defocus along normal directions:</p><formula xml:id="formula_3">Δ f = 1 2 Δ f 1 + Δ f 2 + ΔΔ f cos 2 α g -α ast ,<label>(5)</label></formula><p>where α g is the angle between g and the X axis in reciprocal space. The astigmatism is defined by its magnitude ΔΔ f = Δ f 1 -Δ f 2 and its polar angle α ast , the angle between the image X axis and the direction along which Δ f = Δ f 1 (Figure <ref type="figure" target="#fig_4">1</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">User input</head><p>By default, input parameter values are given interactively, with a question-answer sequence inspired by that of the IMAGIC image processing package <ref type="bibr" target="#b5">(van Heel et al., 1996)</ref>, including help messages (given in response to "?") and default answers which are updated with the user's previous answers.</p><p>Alternatively, the user can give the --old-school-input command-line option, in which case CTFFIND4 will accept the same input as CTFFIND3 but use the CTFFIND4 algorithms described here. This feature is meant to facilitate the use of CTFFIND4 in the context of pre-existing scripts and workflows, though it does not allow access to new features such as movie processing or phase shift determination.</p><p>Aside from the obvious input parameters (micrograph file name, microscope acceleration voltage etc.), the user must choose a number of parameter values (listed in Table <ref type="table" target="#tab_0">1</ref>), for which suggested defaults are built in to the program. These default values should be taken as guides only, but may serve as good starting points when searching for optimal input parameters.</p><p>Optionally, the user may supply pre-computed amplitude spectra (using command-line option --amplitude-spectrum-input), in which case amplitude spectrum calculation (Section 3.1) will be bypassed. Background subtraction (Section 3.2) can also be bypassed by giving --filtered-amplitude-spectrum-input.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Algorithm</head><p>CTFFIND4 mostly re-implements CTFFIND3 with a few modifications. To summarize, the algorithm consists of computing an amplitude spectrum from the input micrograph, estimating the spectrum's background, subtracting this from the original spectrum, and evaluating the similarity between theoretical two-dimensional CTF functions and the remaining oscillatory signal. The parameters for the theoretical CTF are varied until the similarity is maximized, yielding an estimate of the microscope's defocus and astigmatism parameters.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Amplitude spectrum</head><p>The amplitude spectrum is computed by taking the absolute of the Fourier transform of the whole micrograph (padded to square dimensions if necessary). The amplitude spectrum is then down-sampled to the desired dimensions by Fourier truncation, which discards terms outside a user-defined central part of the Fourier transform of the amplitude spectrum.</p><p>The size of the decimated amplitude spectrum, N d , is chosen by the user. To lower the computational cost of the scoring function, it should be kept as small as possible (see section 3.3). However, a small spectrum may not describe CTF oscillations accurately enough, leading to increased errors in parameter estimates. This is epecially true in cases of large defocus (for a more quantitative description of this effect, see <ref type="bibr" target="#b11">Penczek et al., 2014)</ref>. The default spectrum size in CTFFIND4 is 512 × 512 pixels, which is sufficient in the majority of cases, but in many instances users may wish to use smaller dimensions (e.g. 256 × 256) for computational efficiency.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Background subtraction</head><p>Most of the power in experimental images is concentrated in the lowest spatial frequencies, giving a dominant peak centered at the origin of the amplitude spectrum and a slowdecreasing ramp towards high frequencies, on top of which amplitude oscillations due to the CTF are sometimes barely discernible. To estimate this ramp, both versions of CTFFIND use the same box-convolution algorithm: the down-sampled amplitude spectrum is convoluted in real space with a square boxcar function, and the resulting smooth spectrum is subtracted from the signal.</p><p>The convolution operation is carried out only at radii corresponding to frequencies greater than g min . Pixels near the origin are left unchanged, so that after subtraction of the smoothed spectrum they are set to 0. In addition, the central 3 pixels in each direction (x and y) are ignored by the convolution kernel, so that any artefacts in the central cross of the amplitude spectrum do not affect the quality of background subtraction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Scoring function</head><p>We use the normalized cross correlation coefficient between the CTF and the experimental, decimated and background-subtracted amplitude spectrum A d as a target function for our search and refinement of CTF parameters:</p><formula xml:id="formula_4">CC = ∑ g min &lt; g ≤ g max A d (g) ⋅ CTF(g) ∑ g min &lt; g ≤ g max A d (g) 2 ⋅ ∑ g min &lt; g ≤ g max CTF(g) 2<label>(6)</label></formula><p>The cross-correlation is computed by iterating over all pixels in A d which lie between the radii corresponding to spatial frequencies g min and g max . The computational cost of evaluating this function is therefore proportional to</p><formula xml:id="formula_5">N d 2 ⋅ g max -g min 2 .</formula><p>In some cases CTF oscillations are not clearly detectable above background noise, such that cross-correlation values are low and they do not discriminate sufficiently between the correct (unknown) set of parameter values and alternatives. Because microscopists commonly aim to minimize astigmatism during data collection however, it is often helpful to prefer CTF parameter values which imply lower astigmatism. To this end, the user can place a restraint on ΔΔ f , the amplitude of astigmatism, by specifying ΔΔ f res . The final score S is then:</p><formula xml:id="formula_6">S = CC - ΔΔ f 2 2ΔΔ f res 2 N CC ,<label>(7)</label></formula><p>where N CC is the number of pixels which were included in the computation of CC. The restraint (second) term in Equation <ref type="formula" target="#formula_6">7</ref>will penalize parameter values which imply very astigmatic CTFs and this penalty will be especially significant when CTF oscillations are weak so that CC tends to be small. The strength of the penalty will be greater with lower ΔΔ f res and larger astigmatism ΔΔ f . In CTFFIND4, this restraint can be turned off by setting ΔΔ f res &lt; 0, in which case S = CC. If ΔΔ f res is set to zero by the user, it is internally set to a small value (100 Å, corresponding to a very strong restraint) to avoid division by zero.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.4.">Search for astigmatism angle</head><p>During execution of CTFFIND3, most of the computation time is spent on an initial 3dimensional exhaustive search over Δ f 1 , Δ f 2 and α ast . To make our program more efficient, we first estimate α ast separately, using an algorithm described by <ref type="bibr" target="#b4">van Heel et al. (2000)</ref>.</p><p>First, the preprocessed amplitude spectrum A d is mirrored along one of its axes. It is then aligned rotationally against its mirrored self using a 1-dimensional exhaustive search with 5° steps. α ast is then taken to be half of the rotation angle which relates the two mirror images.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.5.">Search for defocus values</head><p>In the next step, α ast is fixed and an exhaustive 2-dimensional search is done between Δ f min and Δ f max to find the values of Δ f 1 and Δ f 2 which maximize S.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.6.">Refinement of astigmatism &amp; defocus value</head><p>The final step of the algorithm consists of a 3-dimensional conjugate-gradient maximization of S, which yields the final estimates of the values Δ f 1 , Δ f 2 and α ast .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.7.">Processing dose-fractionated movies</head><p>Under some circumstances, improved CTF oscillations may be recovered from experimental micrographs by averaging amplitude spectra of movie frames rather than computing the amplitude spectrum from the sum of aligned frames <ref type="bibr" target="#b0">(Bartesaghi et al., 2014)</ref>. <ref type="bibr" target="#b9">McMullan et al. (2015)</ref> observed a similar phenomenon in their study of Thon rings from amorphous ice and suggested an optimal dose of 4 e -/Å 2 to observe oscillation around 3.7 Å.</p><p>CTFFIND4 supports CTF estimation from movies by allowing the user to give a stack of frames as input and specify Nf rames , the number of frames to average together before computing amplitude spectra. If the user sets Nf rames = 1, amplitude spectra are computed from each frame and then averaged.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.8.">Processing micrographs recorded using phase plates</head><p>Volta phase plates <ref type="bibr" target="#b2">(Danev et al., 2014)</ref> have recently become available commercially. Unlike other phase plate designs, they introduce a phase shift of scattered relative to unscattered electrons which is variable over time/irradiation and may therefore need to be measured during data collection and/or a posteriori from the collected images. We added a phase shift term Δφ to our CTF model (see Equation <ref type="formula">2</ref>), which can be fit to A d simultaneously with Δ f 1 and Δ f 2 so that users may estimate their phase plate's phase shift. If the user specifies that a phase shift should be fit, α ast is estimated first as usual (see Section 3.4), but the exhaustive search is then 3-dimensional Δ f 1 , Δ f 2 , Δφ and the subsequent maximization is 4dimensional (including α ast ).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Outputs</head><p>A summary text file is output, to which the final estimates of Δ f 1 , Δ f 2 , α ast and Δφ for each input micrograph are written (one line per micrograph), as well as the final cross-correlation between A d and the fit CTF (Equation <ref type="formula" target="#formula_6">7</ref>). The other outputs of CTFFIND4 are concerned with giving the user feedback regarding the quality of the fit.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1.">Diagnostic image</head><p>A diagnostic image is generated, showing |CTF fit | overlaid onto a version of A d thresholded to improve contrast of the Thon rings (Figure <ref type="figure">2</ref>). This is meant to provide qualitative feedback and relies on the user's expertise to judge whether the fit was satisfactory and/or until which resolution the fit was successful.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Diagnostic fit profile</head><p>CTFFIND4 also computes 1D profiles of A d and |CTF fit |, A d 1D and |CTF fit | 1D . In the simple case where ΔΔ f = 0, these are simply radial averages with bin width b, e.g.:</p><formula xml:id="formula_7">A d 1D r i = r i - b 2 &lt; g ≤ r i + b 2 A d (g) r i - b 2 &lt; g ≤ r i + b 2 1 (8)</formula><p>Evaluating these 1D profiles in the case of astigmatic CTF functions ΔΔ f ≠ 0 is not trivial and this problem has been approached by several authors (e.g. <ref type="bibr" target="#b7">Mallick et al., 2005)</ref>. Our approach's first step is to count, for every pixel, the number n of CTF extrema between it and the origin of the amplitude spectrum image. To find the spatial frequencies of CTF extrema requires solving the derivative of Equation 3 with respect to χ,</p><formula xml:id="formula_8">cos χ λ, g , Δ f , C s , Δφ, ω 2 = 0,<label>(9)</label></formula><p>for which there is an infinite number of solution, exactly n of which are below any given spatial frequency |g|:</p><formula xml:id="formula_9">nπ - π 2 ≤ χ λ, g , Δ f , C s , Δφ, ω 2 ≤ n + 1 π - π 2 , (<label>10</label></formula><formula xml:id="formula_10">) so that n = 1 π χ λ, g , Δ f , C s , Δφ, ω 2 + 1 2 ,<label>(11)</label></formula><p>where ⌊ ⌋ denotes the floor function. We hold this count in memory as image E (Figure <ref type="figure">3</ref>).</p><p>This allows the grouping of pixels according to their "position" along the CTF (number of preceding extrema), as opposed to their spatial frequency (distance from the origin)<ref type="foot" target="#foot_1">foot_1</ref> and thus average them regardless of astigmatism. Specifically, we wish to compute the 1D profile of A d along the direction of average defocus α mid = α ast + π/4, in bins of width b = 1 pixel centered at frequencies r i indexed by i = 1, …, N d / 2 . To this end we define S(r i ), the set of g vectors which index pixels that can be averaged together into A d 1D r i because they have the same number of preceding extrema [E(g)] and because their assigned CTF fit values are closer to the value of CTF fit along α mid at r i than at any other bin center r j j ≠ i :</p><formula xml:id="formula_11">S r i = g: E g = E r i , α mid CTF fit g -CTF fit r i , α mid &lt; CTF fit g -CTF fit r j , α mid ,<label>(12)</label></formula><p>where we use set-builder notation; {x : p(x)} denotes the set of values of variable x such that p(x) is satisfied, ^ denotes conjunction. The values of A d at pixels within set S(r i ) can then be averaged to give A d 1D r i :</p><formula xml:id="formula_12">A d 1D r i = g ∈ S r i A d g S r i ,<label>(13)</label></formula><p>where | | denotes the cardinality of a set. Similarly for CTF fit :</p><formula xml:id="formula_13">CTF fit 1D r i = g ∈ S r i CTF fit g S r i ,<label>(14)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Estimating the quality of fit</head><p>In an attempt to provide a quantitative measure of the quality of fit, we implemented a spatial frequency-dependent measure of the correlation between CTF fit 1D and A d 1D , similar to that described by <ref type="bibr" target="#b6">Huang et al. (2003)</ref>. We chose the normalized cross-correlation, computed at intervals delimited by the maxima of CTF fit 1D along α mid :</p><formula xml:id="formula_14">CC f it r = ∑ r max i &lt; r′ ≤ r max i + 1 A d 1D r′ CTF fit r′, α mid , (<label>15</label></formula><formula xml:id="formula_15">)</formula><p>where we have omitted the usual normalization terms for clarity, and where r max (i) and r max (i + 1) are the frequencies of the CTF extrema immediately preceding and following r.</p><formula xml:id="formula_16">A d 1D</formula><p>, CTF fit and CC fit are output by CTFFIND4 as a text file which can be plotted using an accompanying script (Figure <ref type="figure" target="#fig_3">4</ref>). In addition, an estimate is made of the highest resolution up to which a "good" fit to A d is obtained. We chose the criterion of CC f it r ≥ 0.75 heuristically for this purpose, with the hope that a criterion based on a statistical significance test may be derived and implemented in future versions of the software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Benchmarking</head><p>In the following paragraphs, CTFFIND versions 3.5 and 4.0.16 were used.</p><p>Executable binaries and source code for both are available at <ref type="url" target="http://grigoriefflab.janelia.org/ctf">http://grigoriefflab.janelia.org/ ctf</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1.">Speed</head><p>We expect that the time spent by CTFFIND4 evaluating S, the objective function, is </p><formula xml:id="formula_17">proportional to N d 2 g max -g min 2 × Δ f max -Δ f min Δ f step + 90 5 whereas for CTFFIND3 it is proportional to N d 2 g max -g min 2 × Δ f max -Δ f min Δ f step</formula><formula xml:id="formula_18">+ Δ f step Δ f max -Δ f min</formula><p>Other parts of the algorithm (such as the computation of A d ) may also affect the speed-up somewhat.</p><p>We measured execution times of CTFFIND3 and CTFFIND4 with micrographs of bacteriorhodopsin, which had been used in benchmarking CTFFIND3 <ref type="bibr" target="#b10">(Mindell and Grigorieff, 2003)</ref>, as inputs. Using the same parameters as had been used by Mindell and Grigorieff, one would expect a 9-fold speedup in the search over S, but we only observed a 007E 3.7-fold speedup (Table <ref type="table" target="#tab_1">2</ref>). We assume that this is because under those circumstances, CTFFIND4 spends proportionally less time evaluating S and more time on other parts of the algorithm.</p><p>As a separate test we ran both versions on a set of 24 micrographs of 3712 × 3712 pixels (set #3 from the CTF challenge, see below) using the default parameter values listed in Table <ref type="table" target="#tab_0">1</ref> and 16 CPU threads. Under those circumstances, CTFFIND4 achieved speed-ups of ~ 10fold relative to CTFFIND3 (µ = 9.85, σ = 0.24).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2.">Accuracy</head><p>The micrographs of bacteriorhodopsin provide a useful benchmark for the accuracy of defocus parameter estimation because an earlier crystallographic study estimated their defocus parameters. We found that both versions of CTFFIND were similarly accurate, with errors on the order of a few nanometers (Table <ref type="table" target="#tab_1">2</ref>).</p><p>Assuming that CTFFIND3 provides accurate estimates of defocus parameters under most circumstances, we also aimed to ensure that CTFFIND4's estimates closely matched those from CTFFIND3 under a wide range of circumstances, despite the significant algorithmic changes between the two versions. To this end, we ran both versions on all 9 sets of micrographs made available by <ref type="bibr" target="#b8">Marabini et al. (2015)</ref> as part of the CTF challenge, and computed the percentage difference in estimates of defocus parameters between the two versions. We found discrepancies in defocus estimates were usually below 1%, but that discrepancies in α ast were often large, in the tens of degrees (Table <ref type="table" target="#tab_3">3</ref>), presumably because under experimental conditions (high noise) and with low levels of astigmatism (ΔΔ f /Δ f 1 on the order of 2%), this parameter is poorly determined by the Thon rings. Discrepancies In α ast estimates were notably reduced for one of the sets of micrographs (#9), which consisted of simulated images and had the largest mean astigmatism. They were also very low (1.75 degrees on average) when processing bacteriorhodopsin micrographs, which have relatively large amounts of astigmatism (12 to 20% of Δ f 1 ; Table <ref type="table" target="#tab_1">2</ref>).</p><p>In a significant departure from earlier versions, CTFFIND4 does not discard any parts of the input image when computing its amplitude spectrum. We reasoned that this feature, intended mainly to avoid artefacts in the Fourier transform due to sharp features such as photographic film labels or pieces of dust, was no longer necessary, since the vast majority of datasets are no longer recorded on film, and since features such as film labels can be removed by cropping the micrographs with any of the common image processing packages. In fact, we had noticed that when no features such as film labels were present in the input image, and when only some regions of the micrograph contained carbon film, CTFFIND3's algoritm would often discard those regions. This reduced the amplitude of Thon rings and we hypothesized it might also reduce the accuracy of defocus parameter estimates, though we did not test this. In any case we did not see a need to maintain such a feature in new versions of CTFFIND.</p><p>To test whether including all areas of the input image in the computation of the spectrum would hinder CTF fitting when dealing with photographic films, we also processed set #5 from the CTF challenge <ref type="bibr" target="#b8">(Marabini et al., 2015)</ref>, which consisted of 17 digitized films including film labels. Despite very strong artefacts in the spectra, CTFFIND4's defocus parameter estimates were still within 1% of CTFFIND3's, suggesting our new version may be generally usable, even in those cases.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3.">Quality of fit</head><p>To assist in the assessment of its defocus parameter estimates, CTFFIND4 computes an estimate of the maximum resolution at which the agreement between the fit CTF and the experimental signal oscillations is significant (see section 4.3). We chose the threshold for significance (CC fit = 0.75) heuristically with the goal that the provided estimate correlate well with our visual impression of the fit.</p><p>Testing this metric with the CTF challenge datasets, we found that it generally agreed with our visual estimate of the amplitude of Thon rings above background. For example, it tended to report higher fit resolutions for micrographs with carbon than those without (Table <ref type="table" target="#tab_3">3</ref>: compare sets #3, with carbon, and #4, without carbon).</p><p>We have also found that it can help diagnose mis-calibrated runtime parameters. For example, the micrographs of set #9, which were simulated in silica with a significant amount of astigmatism, clearly have Thon rings extending beyond Nyquist frequency, but our CC fit = 0.75 criterion initially indicated a good fit only up to 7.4 Å. When runtime parameters were improved (by removing the restraint on astigmatism, and increasing N d to 512 to avoid CTF aliasing), the mean fit resolution went up to 3.4 Å, and the reported degree of astigmatism (7.6 %) became more consistent with that reported by <ref type="bibr" target="#b8">Marabini et al. (2015,</ref> see row 9* of Table <ref type="table" target="#tab_3">3</ref>). This suggests that the CC fit may be a valid measure of the goodness of fit of the estimated CTF to experimental micrographs. Two defocus values, Δ f 1 and Δ f 2 , and an angle, α ast define an astigmatic CTF. The effective defocus at an arbitrary point g (scattering vector) in reciprocal space is defined by Equation <ref type="formula" target="#formula_3">5</ref>. Adapted from Figure <ref type="figure">3</ref> of <ref type="bibr" target="#b10">Mindell and Grigorieff (2003)</ref>. Diagnostic image from micrograph #1 of set #7 of the CTF challenge, output by CTFFIND4 using runtime parameters detailed in Table <ref type="table" target="#tab_3">3</ref>. The 2-dimensional CTF (CTF fit ) is overlayed onto the preprocessed amplitude spectrum (A d ) up to the radius corresponding to g max .</p><p>Figure <ref type="figure">3</ref>:</p><p>Image E generated from the CTF fit to micrograph #1 of set #7 of the CTF challenge. At every pixel (corresponding to a spatial frequency vector g), this image records n, the number of preceding CTF extrema (Equation <ref type="formula" target="#formula_10">11</ref>). Here this value is color-coded, so that pixels at spatial frequencies before the first extremum of the CTF, which have value 0, are displayed in dark blue. Pixels that have 35 or more preceding CTF extrema are shown in dark red. . One would normally solve this by increasing N d , but we restricted ourselves to previously-used parameter values for this experiment (see caption to Table <ref type="table" target="#tab_3">3</ref> for more details). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Δ f step</head><p>Step size of initial search for defocus (500 Å)</p><p>ΔΔ f res Astigmatism restraint (100 Å)</p><p>N f rames Number of frames to average (1)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Δφ min</head><p>Lower bound of initial phase shift search (0 rad)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Δφ max</head><p>Upper bound of initial phase shift search (3.15 rad)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Δφ step</head><p>Step size of initial phase shift search (0.01 rad) Comparison of defocus parameter estimates from CTFFIND3 and CTFFIND4 to those obtained by crystallographic refinement of bacteriorhodopsin <ref type="bibr" target="#b10">(Mindell and Grigorieff, 2003)</ref>. The differences e between crystallographic values and those obtained by CTFFIND are given in nm Δ f 1 , Δ f 2 and degrees (α ast ).</p><p>Runtimes are given in seconds and were measured on a single Intel(r) Xeon(r) E5-287W CPU core operating at 3.10 GHz. To make runtimes comparable, the computation of 1D profiles and extra statistics were turned off in CTFFIND4 (they added ~2 seconds to the runtime). Speedups report the ratio of CTFFIND3 to CTFFIND4</p><p>runtimes. The following parameters were used: N d = 128, g min CTFFIND3 and CTFFIND4 find very similar defocus parameter values for CTF challenge micrographs. Nine sets of micrographs (described in <ref type="bibr" target="#b8">Marabini et al., 2015)</ref> were processed with CTFFIND4, using the same parameters as had been used in one of the authors' (N.G.) submission to the CTF challenge using CTFFIND3.</p><formula xml:id="formula_19">-1 = 200Å, g max -1 = 3Å, Δ f min = 1000Å, Δ f max = 10000Å, Δ f step = 500Å.</formula><p>Those parameters were: N d = 256, g min  </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>the multiplication in the last set of parentheses). The speedup in that part of the program should therefore be on the order of 1/ 5 90</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>Figure 1:</figDesc><graphic coords="12,84.15,62.00,503.71,412.56" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>Figure 2:</figDesc><graphic coords="13,156.00,62.00,360.00,360.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Output diagnostic plots describing the experimental amplitudes (A d 1D , green), the fit CTF ( CTF fit 1D , orange) and goodness of fit (CC fit , blue) for micrograph #1 of set #7 of the CTF challenge. For this micrograph, the final estimates were Δ f 1 = 29070 Å, Δ f 2 = 28313Å and α ast = 56.5°. The highest resolution at which Thon rings were deemed to be modeled correctly was 6.5 Å. The experimental amplitude profile (green) is normalized such that: the minima of the oscillations are set to 0.0; the second peak of the power spectrum (in this case at around 0.04) is 0.95; the maxima of oscillations are further normalized to 0.1 if their maxima would be &lt;0.1 otherwise. Because of aliasing, one does not observe zeroes in CTF fit 1D</figDesc><graphic coords="15,84.00,62.00,504.00,295.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>- 1 =</head><label>1</label><figDesc>200Å, g max -1 = 8Å, Δ f min = 1000Å, Δ f max = 90000Å, Δ f step = 200Å, ΔΔ f res = 200Å. For set #9, CTF parameters were also estimated with adjusted parameters N d = 512 and ΔΔ f res = -100 Å (which inactivates the astigmatism restraint) and the results are shown in line 9*. For each set, the mean (µ) and standard deviation (σ) of the difference є between CTFFIND 4 and CTFFIND3's estimates of each of the defocus parameters Δ f 1 , Δ f 2 , α ast are shown as percentages or degrees, as are measures of the amount of astigmatism ΔΔ f /Δ f 1 and estimates of the highest resolution (in Å) at which Thon rings are reliably fit, as given by the CC fit = 0.75 criterion.Set # % ∈ Δ f 1 % ∈ Δ f 2 %ΔΔ f /Δ f 1 є(α ast )(°)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 :</head><label>1</label><figDesc>Input parameters whose values must be chosen by the user. The four parameters below the dashed line are only required when a stack of frames is given as input (N frames ; see Section 3.7) or when the user indicates that a phase plate with variable phase shift was used (Δφ min , Δφ max , Δφ step ; see Section 3.8).</figDesc><table><row><cell>xSymbol</cell><cell>Description (default value, unit)</cell></row><row><cell>ω 2</cell><cell>Relative amplitude contrast (0.07)</cell></row><row><cell>N d</cell><cell>Size of spectrum (512 pixels)</cell></row><row><cell>g min -1</cell><cell>Min. resolution in target function (30 Å)</cell></row><row><cell>g max -1</cell><cell>Max. resolution in target function (5 Å)</cell></row><row><cell>Δ f min</cell><cell>Lower bound of initial defocus search (5000 Å)</cell></row><row><cell>Δ f max</cell><cell>Upper bound of initial defocus search (50000 Å)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc></figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>ast ) Runtime CC fit =0.75 (Å)</head><label></label><figDesc>The astigmatism restraint was turned off. The amplitude of astigmatism ΔΔ f was 727, 845, 884 and 812 Å, or 12%, 15%, 15% and 20% of Δ f 1 for the four micrographs respectively. Profiling indicated that CTFFIND4 spent only ~15% of execution time evaluating S, which may explain why the measured speedup did not match the predicted 9-fold speedup.</figDesc><table><row><cell cols="3">Micrograph CTFFIND3</cell><cell></cell><cell></cell><cell cols="2">CTFFIND4</cell><cell></cell><cell></cell><cell></cell><cell>Speedup</cell></row><row><cell cols="2">є(Δf b3730 0.6</cell><cell>-6.1</cell><cell>-3.5</cell><cell>3.9</cell><cell>2.4</cell><cell>-0.7</cell><cell>-8.1</cell><cell>1.1</cell><cell>4.5</cell><cell>3.7</cell></row><row><cell>b3736</cell><cell>10</cell><cell>1.8</cell><cell>-3.5</cell><cell>3.9</cell><cell>12.7</cell><cell>2</cell><cell>-4</cell><cell>1.1</cell><cell>3.2</cell><cell>3.7</cell></row><row><cell>b3737</cell><cell cols="2">-22.2 10.2</cell><cell>-1.9</cell><cell>3.9</cell><cell>9.8</cell><cell>3.1</cell><cell>-0.1</cell><cell>1.1</cell><cell>3.5</cell><cell>3.6</cell></row><row><cell>b3739</cell><cell>-0.3</cell><cell>0.9</cell><cell>1.1</cell><cell>3.9</cell><cell>-0.6</cell><cell>2</cell><cell>1.2</cell><cell>1.1</cell><cell>3.1</cell><cell>3.6</cell></row></table><note><p>1 ) є(Δf 2 ) є(α ast ) Runtime є(Δf 1 ) є(Δf 2 ) є(α</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 3 :</head><label>3</label><figDesc></figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>J Struct Biol. Author manuscript; available in PMC 2019 September 25.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_1"><p>in some respects, this is similar to what is achieved by phase unwrapping (see e.g.Vargas et al.,  </p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_2"><p>2013)   </p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>Our thanks go to <rs type="person">Tim Grant</rs> for many helpful discussions and suggestions and for reading the manuscript. We're also grateful to anonymous reviewer #2 of our initial submission, who had several insightful suggestions, particularly regarding Section 4.2.</p></div>
+			</div>			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Structure of β-galactosidase at 3.2-Å resolution obtained by cryo-electron microscopy</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bartesaghi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Matthies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Banerjee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Merk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Subramaniam</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1402809111</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="11709" to="11714" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A Primer to Single-Particle Cryo-Electron Microscopy</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Grigorieff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Penczek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Walz</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.cell.2015.03.050</idno>
+		<idno type="PMID">25910204</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">161</biblScope>
+			<biblScope unit="page" from="438" to="449" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Volta potential phase plate for infocus phase contrast transmission electron microscopy</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Danev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Buijsse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Khoshouei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Plitzko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Baumeister</surname></persName>
+		</author>
+		<idno>pnas.1418377111</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences of the United States of America</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">1073</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Determination of astigmatism in TEM images</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">V</forename><surname>Fernando</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Fuller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J StructBiol</title>
+		<imprint>
+			<biblScope unit="volume">157</biblScope>
+			<biblScope unit="page" from="189" to="200" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Singleparticle electron cryo-microscopy: towards atomic resolution</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Van Heel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Gowen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Matadeen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">V</forename><surname>Orlova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Finn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pape</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schatz</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Patwardhan A</surname></persName>
+		</author>
+		<idno type="PMID">11233408</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Quarterly reviews of biophysics</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="307" to="369" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">A new generation of the IMAGIC image processing system</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Van Heel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Harauz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">V</forename><surname>Orlova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schatz</surname></persName>
+		</author>
+		<idno type="DOI">10.1006/jsbi.1996.0004</idno>
+		<idno type="PMID">8742718</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of structural biology</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page" from="17" to="24" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Automated determination of parameters describing power spectra of micrograph images in electron microscopy</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Baldwin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mullapudi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Penczek</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jsb.2003.10.011</idno>
+		<idno type="PMID">14643211</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Structural Biology</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="page" from="79" to="94" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">ACE: automated CTF estimation</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Mallick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Carragher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Potter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Kriegman</surname></persName>
+		</author>
+		<idno type="PMID">15935913</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ultramicroscopy</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="8" to="29" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">CTF Challenge: Result summary</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Marabini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Carragher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Downing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Frank</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Grassucci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Heymann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jonic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">Y</forename><surname>Liao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Ludtke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Patwari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Piotrowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Quintana</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">O</forename><surname>Sorzano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stahlberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vargas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">R</forename><surname>Voss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Carazo</surname></persName>
+		</author>
+		<idno>1016/j.jsb.2015.04.003</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Structural Biology</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Thon rings from amorphous ice and implications of beam-induced Brownian motion in single particle electron cryo-microscopy</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Mcmullan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Vinothkumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Henderson</surname></persName>
+		</author>
+		<idno>.1016/j.ultramic.2015.05.017</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ultramicroscopy</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Accurate determination of local defocus and specimen tilt in electron microscopy</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Mindell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Grigorieff</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/S1047-8477(03)00069-8</idno>
+		<idno type="PMID">12781660</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Structural Biology</title>
+		<imprint>
+			<biblScope unit="volume">142</biblScope>
+			<biblScope unit="page" from="334" to="347" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">CTER-rapid estimation of CTF parameters with error assessment</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Penczek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Loerke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cmt</forename><surname>Spahn</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ultramic.2014.01.009</idno>
+		<idno type="PMID">24562077</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ultramicroscopy</title>
+		<imprint>
+			<biblScope unit="volume">140</biblScope>
+			<biblScope unit="page" from="9" to="19" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">FASTDEF: Fast defocus and astigmatism estimation for high-throughput transmission electron microscopy</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vargas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Otón</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Marabini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jonic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>De La Rosa-Trevín</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Carazo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Cos</forename><surname>Sorzano</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jsb.2012.12.006</idno>
+		<idno type="PMID">23261401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Structural Biology</title>
+		<imprint>
+			<biblScope unit="volume">181</biblScope>
+			<biblScope unit="page" from="136" to="148" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Electron energy filtering significantly improves amplitude contrast of frozen-hydrated protein at 300kV</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yonekura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Braunfeld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Maki-Yonekura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Agard</forename><surname>Da</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J StructBiol</title>
+		<imprint>
+			<biblScope unit="volume">156</biblScope>
+			<biblScope unit="page" from="524" to="536" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Evaluating the storm water management model to improve urban water allocation system in drought conditions</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jiaping</forename><surname>Ren</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Majid</forename><surname>Khayatnezhad</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Finance</orgName>
+								<orgName type="department" key="dep2">Birmingham Business School</orgName>
+								<orgName type="department" key="dep3">College of Social Sciences</orgName>
+								<orgName type="institution">University of Birmingham</orgName>
+								<address>
+									<addrLine>Edgbaston</addrLine>
+									<postCode>B15 2TT</postCode>
+									<settlement>Birmingham</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Environmental Sciences and Engineering</orgName>
+								<orgName type="institution" key="instit1">Ardabil Branch</orgName>
+								<orgName type="institution" key="instit2">Islamic Azad University</orgName>
+								<address>
+									<settlement>Ardabil</settlement>
+									<country key="IR">Iran</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Evaluating the storm water management model to improve urban water allocation system in drought conditions</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">426DAC9375A4EA978DF0A0DB8A2CB9CB</idno>
+					<idno type="DOI">10.2166/ws.2021.027</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:01+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>landscape system</term>
+					<term>surface and sub-surface flows</term>
+					<term>water planning</term>
+					<term>water scarcity</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Improving the urban water allocation system has depended on the different technical and managerial components. One of the main solutions for increasing the available capacity is the predetermined plan for constructing a water circulation system to restore the existing water resources. For this objective, a combination model was conducted based on the storm-water management technique (SMT) and environment landscape system (ELS) under drought condition. A hydrological framework was established using the long-term meteorological information in central China to estimate the extreme values of surface water in each stress period. Data analysis system was generated at three meteorological point of the study area and the developed model was incorporated to simulate the behavior of the subsurface flow. Consequently, a growth simulation model was designed according to the soil structure and vegetation canopy cover to formulate a real-time plan for the restoration of ELS. Results showed that the proposed model could be improved the water productivity in urban and environment consumptions. Furthermore, the technical analysis confirmed the suitability and applicability of the developed plan in cities with water shortage.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>According to the previous studies, water shortage is a reason to implement the environment landscape system (ELS) in urban management framework to achieve the sustainability of water resources. Developing a combination system for landscape restoration and storm water management model (SWMM) could be a new urban rainwater management concept. For this object, it is necessary to determine the hydrologic characteristics to establish a sustainable system using the urban landscape and the storm management model. The development of a restoration system that can integrate stormwater management functions is a necessary step to truly realize the sustainable development of green cities.</p><p>The Chinese government has begun implementing the ELS plan to resolve the drought in urban water supplement.</p><p>The construction of the proposed plan is a complex systematic project that requires a large amount of data to support the city's physical geography, socioeconomics, water resources, and ecological environment. Moreover, EPA's Storm Water Management Model (SWMM) has been incorporated to the decision system which was used in the previous studies for planning, analysis, and design related to stormwater runoff, and drainage systems in urban areas. However, the implementation of the landscape plan based on the SWMM encountered some obstacles and challenges. The meteorological situation of a city with water shortage was incorporated to establish the surface water hydrological model of Teaneck Creek in central China.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>MATERIAL AND METHODS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Urban landscape system</head><p>To create a stable structure in urban water consumption, it is necessary to pay attention to the flow circulation mechanism, the use of unconventional water sources with acceptable quality such as rain and floods. Investigations showed that currently the development and use of unplanned water resources to solve the problem of water scarcity is a strategic policy. Desalination, groundwater balancing and the effective use of rainfall are examples of these policies. In addition, reuse of water such as rainwater and flood control and its application for urban use after treatment is essential based on regional conditions. The schematic of the considered structure to combine the water environment restoration system and storm water management model (SWMM) was shown in Figure <ref type="figure" target="#fig_3">1</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Storm-water management model (SWMM)</head><p>SWMM is a dynamic hydraulic-hydrologic simulation model that is used for single event or long-term data set of runoff quantity and quality from primarily urban areas. The runoff component operates on a collection of sub-catchment areas that receive precipitation and generate runoff and pollutant loads. The routing portion transports this runoff The basic equations used in SWMM have been updated in several stages. These changes have occurred due to modules that must be changed for different conditions. However, the main process of the model and its assumptions are based on basic principles. The environmental components required to simulate a project are hydrological information, In the main framework of the landscape plan, a block paver system could be applied with impervious paver blocks laid on the sand or pea gravel layer supported with a gravel storage layer below. Rainwater is collected in the open space between the blocks and transported to the storage area and native soil below. One of the other equipment is a rainwater reservoir (bucket) for collecting the rainwater, which will be released or reused during a drought period.</p><p>The reservoir can be located on the surface or subsurface with the storage capacity larger than the common bucket.</p><p>Rain garden is a hydraulic structure that could be constructed in a landscape to collect the rain water from a roof, road or street and helps it to penetrate into the ground.</p><p>Grass and flower plantation can be a cost effective and beautiful way to reduce runoff from the proposed landscape.</p><p>Moreover, rain gardens provide shelter and food for song birds, butterflies, and other wildlife and helps to filter out pollutants in runoff. More advanced rain gardens with drainage systems are often applied to as bioretention to amend soils.</p><p>Vegetative depressions includes depressions, ditches or slopes covered with grass and other vegetation. Vegetative depressions slow down the speed of collected runoff and give it more time to penetrate the underlying native soil.</p><p>Infiltration ditches are shallow trenches with stone or rubble that construct temporary subsurface storage of stormwater runoff, thereby enhancing the natural capacity of the ground to store and drain water. They allow water to infiltrate into the surrounding soils from the bottom and sides of the trench. Usually, Infiltration ditches should receive inflow from an adjacent impermeable surface, but point source inflows may be acceptable. Additionally, a continuous permeable pavement system should be designed to achieve the artificial porous media through the road immediately, where the rainwater will penetrate into the site at a natural speed.</p><p>Green roof system is an extension for the common roof which involves a root repellent system, water-proofing, drainage system, filter, and vegetation cover. They contain vegetation that allows rainfall to penetrate and store water for evapotranspiration. Green roofs are particularly cost effective in dense urban areas with high land values and in large industrial or office buildings where stormwater management costs may be high. Downpipe treatment is a beneficial system for cities with combined sewerage structures to cut off down pipes which is used to store rainfall or help for seepage into the soil. Moreover, this system allows the rainwater to drain into permeable landscape areas and lawns instead of direct flow in gutters.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model calibration</head><p>Calibration and verification of hydrodynamic models is a topic that has been considered by many researchers and users of these models. Point of view research papers confirmed the need for a calibration process but the calibration methods were different <ref type="bibr">(Kleidorfer et</ref>  </p><formula xml:id="formula_0">ΔV ¼ P þ S i þ G i À ETa À I À S 0 À G 0 ± T (1)</formula><p>where ΔV ¼ storage capacity variation; P ¼ precipitation; S i ¼ surface water infiltration; G i ¼ surface water infiltration;</p><formula xml:id="formula_1">ETa ¼ actual evapotranspiration; I ¼ infiltration; S 0 ¼ surface water seepage; G 0 ¼ surface water seepage; T ¼ tidal current.</formula><p>The surface flow rate will be obtained using the Manning equation.</p><formula xml:id="formula_2">Q ¼ 1 n AR 2=3 S 1=3 (2)</formula><p>where Infiltration rate (I r ) is one of the main component of the decision system that is formulated as follow:</p><formula xml:id="formula_3">Q ¼ discharge, n ¼ Manning roughness coefficient A ¼ cross-</formula><formula xml:id="formula_4">I r ¼ I s (1 þ C p (SM m À SM)=SM m )<label>(3)</label></formula><p>where I s ¼ infiltration rate under the saturated condition;</p><p>C p ¼ the permeability coefficient; SM m ¼ soil water capacity;</p><formula xml:id="formula_5">SM ¼ soil water content.</formula><p>The actual transplantation (ETa) value is obtained by applying a correction factor to the potential evapotranspiration which is calculated by the following equations:</p><formula xml:id="formula_6">ETp i ¼ 1:6 10τ i θ a (4) θ ¼ X τ i 5 1:514 (5) E ¼ 0:675θ 3 À 77:1θ 2 þ 17920θ þ 0:49 (6)</formula><p>where ETp ¼ the monthly potential evapotranspiration (ETp);</p><formula xml:id="formula_7">τ i ¼ the average monthly temperature, θ ¼ the local thermal</formula><p>index, E ¼ is the actual evaporation. In the developed simulation, it is assumed that the groundwater inflow (G i ) is negligible and not included in the water budget calculation (Tan et al. 2017). Although there is some evidence of groundwater movement in some places, there is a highly impermeable clay layer under most parts of the system, minimizing the impact of groundwater. In this study, 10 measured precipitation events were used to calibrate the model and three events were considered for model validation (Table <ref type="table" target="#tab_0">1</ref>).</p><p>Infiltration coefficients, the amount of permeable and impermeable lands were the components that need to uncer-  <ref type="table" target="#tab_1">2</ref>.</p><p>The calibration of the model continues until it is determined by statistical indicators that the results of the calibrated model are in good agreement with the measured data. To evaluate the models from the statistical indicators of EFF model efficiency, the mean of the second root of the error is RMSE, the normalized RMSE (NRMSE), the residual mass coefficient of CRM.</p><formula xml:id="formula_8">EFF ¼ 1 À P n i¼1 (O m À O c ) 2 P n i¼1 (O m À O m ) 2 0 B B B @ 1 C C C A × 100 (7) RMSE ¼ 1 À P n i¼1 (O m À O c ) 2 n 0 B B @ 1 C C A 1 2 (8) CRM ¼ 1 À P n i¼1 O m À P n i¼1 O c P n i¼1 O m 0 B B B @ 1 C C C A × 100 (9)</formula><p>where O m is the measured value, O c is the calibrated value, n is the number of samples used and O is the average value of the observed parameter.  The percentage of permeability</p><formula xml:id="formula_9">PPer À 30%-þ 30%</formula><p>percentage of water received is transferred to the transport module. In the next step, transport module that is composed of a set of units with transfer and processing features including pipes, channels, etc., which is embodied in the combination of nodes and connections. The user-defined hydrological process can also be set to receive input from the surface module and groundwater module.</p><p>Runoff flow rate in urban environments due to the impermeability of land cover increases the speed and volume of outflow. Hydrological planning in urban conditions is complex with more design and evaluation components and is significantly affected by the urbanization process. In these regions, slope, surface coverage, permeability and social and economic constraints have a greater and more multifaceted impact than the natural environment. Therefore, simulating and monitoring the flow path from rainfall to storage or consumption is a complex process with different sources of uncertainty <ref type="bibr">(Muleta et al. )</ref>.</p><p>In this study, SWMM was simulated using the meteorological data recorded in central China. There are some equipment including 1. Catchment sub basin, 2. Node, 3. Connecting passage and 4. Rain gauge which have been implemented in different modules to generate the simulation system.</p><p>Catchment sub basin can be divided into water area and water free area, while water area can be divided into flow area and water storage area. Sub-watershed is the smallest hydrological unit, only the only outlet is set, and the setting parameters include rain gauge, outlet, impervious rate, etc.</p><p>Node is the confluence or inflection point of the water passage path. There are many types of visualization objects of nodes, including intersections, outfalls, diverters and reservoirs. The intersection is the connection point of the drainage system pipeline, and the main input parameters include the elevation of the inner bottom, the height from the surface, and the external inflow data. The outfall is the final node of the drainage system, and the main input parameters include invert elevation, boundary condition type, etc. Connecting passage is usually composed of transportation conduit in the drainage system.</p><p>The connected visualization equipment mainly includes a conduit, water pump, flow regulator, etc. Rain gauge provides rainfall data for sub-basins. The rainfall data can be the precipitation data measured in a user-defined time period or imported from outside. The main input parameters include data type, time step, precipitation data source, etc.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS AND DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Model evaluation</head><p>The results of evaluation criteria for model calibration and validation processes are summarized in Table <ref type="table" target="#tab_2">3</ref>. According to the table, the accuracy of the model is acceptable for pre- Comparing the different outflow ratios shows the relationship between the outflow and rainfall in estimated methods. As shown in Figure <ref type="figure" target="#fig_11">4</ref>, as the rainfall time increases, the total outflow of the three roads is increasing. Among them, the proportion of river outflow increases with rainfall time, while the proportion of total outflow of bricks and subsurface drainage system decreases, which indicates that the impact of water flow capacity on roads is greater.</p><p>After rainfall intensity increases, more water flows out through the river channel. Therefore, it can be seen that the faster the runoff, the more important the river outflow becomes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Runoff capture rate and storage capacity</head><p>The criterion for selecting an appropriate solution is considering the environmental, economic, social and technical </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Runoff hydrograph</head><p>The traditional development model will cause problems such as the change of land cover type, the advance of peak runoff time, the increase of peak flow and total   The effect of reducing flood peaks under heavy rainfall conditions is not enough. For the source section, control measures that consider process control were proposed, and new and old measures were adjusted through model simulations. The comparison results show that the new source control measures not only eliminate the negative impact on the river ecology, but also improve the river ecological environment flood peak reduction capacity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DATA AVAILABILITY STATEMENT</head><p>All relevant data are available from an online repository or repositories. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>According to the United Nations, there are more than half of the world's population in urban areas, which are affected by urban development. The volume and maximum discharge of urban floods are increased considering the reduction of permeable urban area (Chunlin et al. ; Bellos &amp; Tsakiris ; Wang et al. ). Many studies have been conducted around the world in relation to runoff estimation in urban basins and flow simulation as well as evaluation of surface water collection and disposal network in urban basins, which shows the importance of this issue ( Jia et al. ; Imaizumi et al. ; Yang et al. ). Modeling in urban watersheds has become important due to problems related to water resources management such as floods and pollution control. Hence, the approach of engineers in recent years is towards computer models for estimating and simulating runoff. Therefore, many rainfallrunoff models with different capabilities and complexities have been developed and used to predict floods. These models include SWMM, URBAN, MIDUSS, STORM, RISURSIM, ILLUDASS, etc. The SWMM model is a powerful tool for urban drainage calculations and runoff management. Simplicity of work and its power in quantitative and qualitative analysis and management of floods in urban areas are the features of this model (Gironas et al. 2010; Fei et al. ). Jang et al. (2007) investigated the effectiveness of the SWMM model in a number of natural watersheds in South Korea. Park et al. (2008) simulated the flow hydrograph and the volume of pollutant loads in the South Korean sewer drainage network using the SWMM model. The results showed that the SWMM model had a good estimate of peak discharge and runoff volume. Yu et al. (2014) used the SWMM model to estimate the runoff of Jinan city in China. They used fourteen events to validate and evaluate the model's performance, and eventually found that the model could be used in large cities. Jia et al. () conducted a study using the SWMM model to simulate a drainage network in a Chinese Olympic village. Sun et al. () estimated the parameters and uncertainties in the SWMM model in Syracuse. Kourtis et al. () evaluated the SWMM model for two Greek urban basins. In addition to these studies, other researchers have used this model for different regions of the world (Krebs et al. 2013; Huang et al. 2015; Del-Guidice and Padulano 2016; Wu ).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head></head><label></label><figDesc>through a system of channels, subsurface pipes, storage/ treatment pools, regulators and pumps. SWMM tracks the flow depth, flow rate, and quality of water during a simulation period made up of multiple time steps in each subcatchment (Tobio et al. ; Xu et al. ).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>surface and groundwater resources, water delivery and storage systems, pollutant accumulation and treatment, and quantitative impact control (Kumar et al. ; Johannessen et al. ). SWMM 5 has recently been extended to model the hydrologic performance of specific types of low-impact development (LID) controls. The LID controls that the user can choose include the following seven green infrastructure practices: permeable pavement, rain gardens, green roofs, street planters, rain barrels, infiltration trenches, and vegetative swales (Leandro &amp; Martins ).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 1 |</head><label>1</label><figDesc>Figure 1 | Schematic system of water circulation.</figDesc><graphic coords="3,64.01,111.69,358.71,244.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head></head><label></label><figDesc>al. ; Jain et al. ; Formiga et al. ; James et al. ). The water cycle balance in the hydrological range has the parameters of rainfall, surface water infiltration, evapotranspiration, groundwater flow and deep infiltration. These parameters are calculated based on hydraulic, hydrological and hydrogeological information (Mattar &amp; Alamoud ). Therefore, it is necessary to estimate the mentioned values in calibration process and specified in the water balance equation using the following equation.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>section area of the discharge; R ¼ the hydraulic radius, and S ¼ the hydraulic gradient (Chow et al. ).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head></head><label></label><figDesc>tainty analysis. The initial values of these parameters should be adjusted in the calibration stage. Then analyze the curve of observed flow and measured flow of each calibration simulation to verify the model. However, the parameters affecting the concentration time of the basin have been used for calibration, which are equivalent width, basin slope, percentage of permeable and impermeable areas, weighting coefficient of permeable and impermeable areas and depression storage. The range of changes of the initial parameters to calibrate the important parameters of the SWMM model are presented in Table</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>Landscape simulation based on SWMM SWMM hydraulically simulates runoff and concentration time and its relationship to rainfall intensity in an urban environment. Furthermore, it is able to calculate the runoff flow in open canals, pipelines and other waterways using the dynamic wave equation. SWMM can also include water pollution load changes in calculations to consider water quality parameters. It also uses several modules to determine the amount of runoff drainage and provides an acceptable estimates. Therefore, SWMM model calculates runoff generation and variation curves by calculating water distribution between different modules with the occurrence of precipitation. In SWMM, rain gauge is used to estimate the amount, duration and intensity of rainfall over time. In this study, rainfall was recorded in the atmospheric module and the volume of water and pollutants affected by rainfall was transferred directly to the surface module. The surface module receives runoff and pollution load from the atmospheric module and transfers it to the groundwater module based on the characteristics of each sub-basin that is a subset of the surface module. Groundwater module operates as an aquifer layer and receives precipitation and infiltrating contaminants from the surface module. A</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head></head><label></label><figDesc>Figure3. The maximum flow rate for the river is estimated between 60 and 64%. After the river, road, underground drainage and permeable surfaces had the highest runoff capacity, respectively. Figure2shows the comparison between the measured and calibrated flow rate of rainwater at different times (early (T1), mid-term (T2), and late (T3)).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figure 2 |</head><label>2</label><figDesc>Figure 2 | Rainfall pattern and outflow hydrograph for three storm events.</figDesc><graphic coords="7,64.01,111.69,454.60,497.99" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 3 |</head><label>3</label><figDesc>Figure 3 | Percentage of measured and calibrated outflow in different times.</figDesc><graphic coords="8,43.43,111.69,454.60,278.02" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 4 |</head><label>4</label><figDesc>Figure 4 | The relationship between the total amount of outflow and rainfall in four outflow ways.</figDesc><graphic coords="8,43.43,438.80,227.46,144.45" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 5 |</head><label>5</label><figDesc>Figure 5 | Runoff capture rate versus required storage volume.</figDesc><graphic coords="8,303.48,439.82,227.46,172.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 6 |</head><label>6</label><figDesc>Figure 6 | Effect of construction on site hydrology.</figDesc><graphic coords="9,64.01,111.69,227.46,172.69" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 |</head><label>1</label><figDesc> 12, and 13  were used for verification)</figDesc><table><row><cell></cell><cell>Rainfall</cell><cell></cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>Peak flow</cell></row><row><cell>Storm number</cell><cell>Depth (mm)</cell><cell>Peak (mm/hr)</cell><cell>Duration (min)</cell><cell>(m 3 /s)</cell></row><row><cell>1</cell><cell>13.1</cell><cell>4.6</cell><cell>247</cell><cell>31</cell></row><row><cell>2</cell><cell>7.6</cell><cell>3.8</cell><cell>322</cell><cell>36</cell></row><row><cell>3</cell><cell>9.7</cell><cell>4.1</cell><cell>365</cell><cell>42</cell></row><row><cell>4</cell><cell>3.2</cell><cell>2.7</cell><cell>473</cell><cell>28</cell></row><row><cell>5</cell><cell>7.5</cell><cell>3.2</cell><cell>418</cell><cell>35</cell></row><row><cell>6</cell><cell>21.5</cell><cell>5.2</cell><cell>243</cell><cell>43</cell></row><row><cell>7</cell><cell>11.8</cell><cell>4.1</cell><cell>267</cell><cell>33</cell></row><row><cell>8</cell><cell>5.7</cell><cell>2.3</cell><cell>353</cell><cell>27</cell></row><row><cell>9</cell><cell>32.4</cell><cell>6.3</cell><cell>264</cell><cell>54</cell></row><row><cell>10</cell><cell>14.9</cell><cell>4.7</cell><cell>297</cell><cell>46</cell></row><row><cell>11</cell><cell>8.2</cell><cell>3.9</cell><cell>334</cell><cell>37</cell></row><row><cell>12</cell><cell>22.1</cell><cell>5.9</cell><cell>326</cell><cell>39</cell></row><row><cell>13</cell><cell>4.6</cell><cell>3.4</cell><cell>430</cell><cell>31</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 |</head><label>2</label><figDesc>Initial range of calibrated parameters</figDesc><table><row><cell>Parameter</cell><cell cols="2">Index Value</cell><cell>Reference</cell></row><row><cell>Permeable area</cell><cell>PA</cell><cell>0-2.8</cell><cell>Huber &amp;</cell></row><row><cell></cell><cell></cell><cell></cell><cell>Dickinson ()</cell></row><row><cell>Impervious area</cell><cell>IA</cell><cell>0-11.033</cell><cell>Huber &amp;</cell></row><row><cell></cell><cell></cell><cell></cell><cell>Dickinson ()</cell></row><row><cell>Depression storage of</cell><cell cols="2">DSP 2.7-5</cell><cell>Tsihrintzis and</cell></row><row><cell>permeable area</cell><cell></cell><cell></cell><cell>Hamid (1998)</cell></row><row><cell>Depression storage of</cell><cell cols="2">DSI 0.2-3.5</cell><cell>Huber &amp;</cell></row><row><cell>impervious area</cell><cell></cell><cell></cell><cell>Dickinson ()</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 |</head><label>3</label><figDesc>Error indicators for evaluating the calibration and verification results</figDesc><table><row><cell>Storm number</cell><cell>EFF (%)</cell><cell>RMSE (m 3 /s)</cell><cell>CRM (m 3 /s)</cell></row><row><cell>1</cell><cell>78</cell><cell>7.6</cell><cell>À0.045</cell></row><row><cell>2</cell><cell>81</cell><cell>6.9</cell><cell>0.031</cell></row><row><cell>3</cell><cell>92</cell><cell>4.3</cell><cell>À0.004</cell></row><row><cell>4</cell><cell>83</cell><cell>6.3</cell><cell>0.015</cell></row><row><cell>5</cell><cell>94</cell><cell>3.6</cell><cell>0.0045</cell></row><row><cell>6</cell><cell>77</cell><cell>7.2</cell><cell>À0.048</cell></row><row><cell>7</cell><cell>82</cell><cell>6.7</cell><cell>À0.035</cell></row><row><cell>8</cell><cell>89</cell><cell>5.1</cell><cell>0.0087</cell></row><row><cell>9</cell><cell>90</cell><cell>5.1</cell><cell>0.017</cell></row><row><cell>10</cell><cell>86</cell><cell>5.8</cell><cell>0.012</cell></row><row><cell>11</cell><cell>91</cell><cell>3.7</cell><cell>À0.067</cell></row><row><cell>12</cell><cell>79</cell><cell>7.4</cell><cell>À0.054</cell></row><row><cell>13</cell><cell>88</cell><cell>5.6</cell><cell>0.0091</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>Downloaded from http://iwaponline.com/ws/article-pdf/doi/10.2166/ws.2021.027/837657/ws2021027.pdf by guest</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>J. Ren &amp; M. Khayatnezhad | Water management in water scarce cities Water Supply | in press | 2021</p></note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main"> Comparing various methods of building representation for 2D flood modelling in built-up areas</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bellos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tsakiris</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11269-014-0702-3</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Water Resources Management</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="379" to="397" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">T</forename><surname>Chow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Maidment</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">W</forename><surname>Mars</surname></persName>
+		</author>
+		<author>
+			<persName><surname></surname></persName>
+		</author>
+		<title level="m">Applied Hydrology</title>
+		<imprint>
+			<publisher>Mcgraw-Hill</publisher>
+			<biblScope unit="page">572</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main"> Characterization and first flush analysis in road and roof runoff in Shenyang, China</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chunlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Miao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yuanman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jiping</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fengyun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yanyan</surname></persName>
+		</author>
+		<idno type="DOI">10.2166/wst.2014.203</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Water Science &amp; Technology</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page">397</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main"> Contamination of heavy metals in game fishes in Shanghai and fish consumption safety assessment</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Fei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shan-Qing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">U</forename><surname>Yan-Ping</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">China Environmental Science</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="754" to="760" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main"> Storm water management model calibration using multiobjective evolutionary algorithms</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">T M</forename><surname>Formiga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Carvalho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Silva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Soares</surname></persName>
+		</author>
+		<idno type="DOI">10.1590/s1413-41522016131862</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Engenharia Sanitaria E Ambiental</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="697" to="707" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Dickinson</surname></persName>
+		</author>
+		<title level="m"> Storm Water Management Model, Version 4: User&apos;s Manual</title>
+		<meeting><address><addrLine>Athens, Georgia</addrLine></address></meeting>
+		<imprint/>
+		<respStmt>
+			<orgName>Environmental Research Laboratory, Office of Research and Development, US Environmental Protection Agency</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main"> Interpretation of recent alpine landscape system evolution using geomorphic mapping and L-band InSAR analyses</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Imaizumi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nishiguchi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Matsuoka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Trappmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stoffel</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.geomorph.2018.03.013</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Geomorphology</title>
+		<imprint>
+			<biblScope unit="volume">310</biblScope>
+			<biblScope unit="page" from="125" to="137" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main"> Estimation of subcatchment area parameters for Storm Water Management Model (SWMM) using geo-informatics</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Agrawal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Bhanderi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Jayaprasad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Patel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Agnihotri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Samtani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Geocarto International</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="15" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main"> Fast calibration, validation and evaluation of large, continuous urban SWMM models</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Robert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>James</surname></persName>
+		</author>
+		<idno type="DOI">10.2175/193864716819707526</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Water Environment Federation</title>
+		<meeting>the Water Environment Federation</meeting>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="2632" to="2633" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main"> Planning of LID-BMPs for urban runoff control: the case of Beijing Olympic village</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Iu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chu</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.seppur.2011.04.026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal Separation and Purification Technology</title>
+		<imprint>
+			<biblScope unit="page" from="112" to="119" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Combating aggressive macrophyte encroachment on a typical Yangtze River lake: lessons from a long-term remote sensing study of vegetation</title>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yésou</surname></persName>
+		</author>
+		<author>
+			<persName><surname></surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s10452-016-9609-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Aquatic Ecology</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="177" to="189" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main"> The transferability of SWMM model parameters between green roofs with similar build-up</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">G</forename><surname>Johannessen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Hamouz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Gragne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Muthanna</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jhydrol.2019.01.004</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Hydrology</title>
+		<imprint>
+			<biblScope unit="volume">569</biblScope>
+			<biblScope unit="page" from="816" to="828" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main"> Optimization of measurement campaigns for calibration of a conceptual sewer model</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kleidorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Moederl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Rauch</surname></persName>
+		</author>
+		<idno type="DOI">10.2166/wst.2009.154</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Water Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="1523" to="1530" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A Calibration and validation of SWMM model in two urban catchments in Athens, Greece</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">M</forename><surname>Kourtis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kopsiaftis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bellos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Tsihrintzis</surname></persName>
+		</author>
+		<author>
+			<persName><surname></surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">15th International Conference on Environmental Science and Technology Rhodes</title>
+		<meeting><address><addrLine>Greece</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017-09-02">31 August to 2 September 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main"> GIS-based SWMM model for simulating the catchment response to flood events</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Chahar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Dhanya</surname></persName>
+		</author>
+		<idno type="DOI">10.2166/nh.2016.260</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Hydrology Research</title>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="384" to="394" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main"> Methodology for linking 2D overland flow models with the sewer network model SWMM 5.1 based on dynamic link libraries</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leandro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Martins</surname></persName>
+		</author>
+		<idno type="DOI">10.2166/wst.2016.171</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Water Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="3017" to="3026" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main"> Gene expression programming approach for modeling the hydraulic performance of labyrinth-channel emitters</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Mattar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Alamoud</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.compag.2017.09.029</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Electronics in Agriculture</title>
+		<imprint>
+			<biblScope unit="volume">142</biblScope>
+			<biblScope unit="page" from="450" to="460" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main"> Bayesian approach for uncertainty analysis of an urban storm water model and its application to a heavily urbanized watershed</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Muleta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcmillan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Amenu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Burian</surname></persName>
+		</author>
+		<idno type="DOI">10.1061/(ASCE)HE.1943-5584.0000705</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Hydrologic Engineering</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1360" to="1371" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main"> Assessment of the SWMM model uncertainties within the generalized likelihood 4 uncertainty estimation (GLUE) framework for a high resolution urban sewershed</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Hall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hydrological Processes</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main"> Storm water quality calibration by SWMM: a case study in Northern Spain</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Temprano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Arango</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cagiao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Suarez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Tejero</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Water SA</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="55" to="63" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main"> Optimization of the design of an urban runoff treatment system using stormwater management model (SWMM)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A S</forename><surname>Tobio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Maniquiz-Redillas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/19443994.2014.922288</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Desalination and Water Treatment</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="3134" to="3141" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main"> Simulating the responses of a low-trophic ecosystem in the east China Sea to decadal changes in nutrient load from the Changjiang (Yangtze) River</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Zhao</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s00343-018-0001-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Chinese Journal of Oceanology and Limnology</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="14" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main"> Linking landscape, land system and design approaches to achieve sustainability</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wu</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/1747423X.2019.1602677</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Land Use Science</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="173" to="189" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main"> SWMM-based methodology for block-scale LID-BMPs planning based on site-scale multi-objective optimization: a case study in Tianjin</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s11783-017-0934-6</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers of Environmental Science and Engineering</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="51" to="62" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main"> Terrain gradient effect of ecosystem service value in middle reach of Yangtze River, China</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">G</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Qu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Journal of Applied Ecology</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="976" to="986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main"> Rainstorm water logging simulations based on SWMM and LISFLOOD models</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Hydroelectric Engineering</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="68" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main"> Pollutant reduction effectiveness of low-impact development drainage system in a campus</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Meng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Frontiers of Environmental Science &amp; Engineering</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="110" to="117" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Knowledge map visualization of technology hotspots and development trends in China&apos;s textile manufacturing industry</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Ruihang</forename><surname>Huang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Donghua University</orgName>
+								<address>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="institution">Shanghai Zhongqiao Vocational and Technical University</orgName>
+								<address>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Ping</forename><surname>Yan</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Shanghai Zhongqiao Vocational and Technical University</orgName>
+								<address>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Xiaoming</forename><surname>Yang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Donghua University</orgName>
+								<address>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">Donghua University</orgName>
+								<address>
+									<postCode>200000</postCode>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Knowledge map visualization of technology hotspots and development trends in China&apos;s textile manufacturing industry</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">8E3AB1111F1D1497A1C989C5BA4FF574</idno>
+					<idno type="DOI">10.1049/cim2.12024</idno>
+					<note type="submission">Received: 28 December 2020 -Revised: 4 February 2021 -Accepted: 8 February 2021 -</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:59+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The knowledge map and visualization on the technological hotspots and the developmental trends of China's textile manufacturing industry is investigated to understand the developmental frontiers of the textile manufacturing industry technology. This work contributes to the knowledge of research and development trends of the textile manufacturing and apparel industry in a macroscopic way. The Web of Science database and the core set of the Web of Science was explored and 2852 articles in the related fields are identified from 2010 to 2019. The scientific knowledge map of the textile manufacturing technology industry is explored using CiteSpace software. For the last decade, the developmental status, research hotspots and developmental trends of the textile manufacturing and apparel industry are analysed and summarised from the perspectives of key words, hot trends and core authors. The outcomes obtained reveal that in the past 10 years, through the analysis of the technical literature of the textile manufacturing industry, different perspectives were explored where the textile manufacturing industry develops from the initial textile manufacturing treatment. The decolourisation and removal of azo dyes and other traditional textile manufacturing to the composite materials, cotton fabrics leads to the improvement of textile manufacturing wastewater treatment. Currently, the textile manufacturing industry technology has gradually developed towards an intelligent knowledge visualization and decision support. Therefore, this work suggests the developmental directions of textile manufacturing from traditional to intelligent trends, further providing a reference for the later developmental trend and the dynamic planning of China's textile manufacturing industry technology.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">| INTRODUCTION</head><p>With the rapid development of science and technology, the individual's living standards are constantly improving. For the survival of mankind, textile manufacturing and apparel products are widely distributed around the world as one of the basic needs, and they also lead the industrialisation process in most countries. The textile manufacturing and apparel industry not only satisfies people's daily life, but also is a symbol of the cultural development of a region. It is the most traditional and fashionable industry and plays an extremely positive role in people's employment <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b1">2]</ref>. However, the economy has entered the late stage of industrialisation, and economic growth has shifted from a high speed to a 'new normal' of medium and high speed, now in China. It is found that textile manufacturing, as an industry with high water consumption and high pollution, accounts for about 2.5% of the country's total water consumption above designated size every year on average, and wastewater discharge ranks among the top three in various industries <ref type="bibr" target="#b2">[3]</ref>. Therefore, due to the green development, the reform and development of the textile manufacturing industry has become the focus of scientific research scholars.</p><p>The origin of the textile manufacturing industry has a long history. After the invention of the British textile manufacturing - 243   machinery and steam engine in the mid-and late 18th century, started the first industrial revolution, where the textile manufacturing and clothing trade has been an important part of the global commodity trade for more than 200 years <ref type="bibr" target="#b3">[4]</ref>. In China, the development of the textile manufacturing industry began in the 'Industrial salvation' during the modern Westernisation Movement. As a leading industry in the industrial sector, it had a hard time in the development. The textile manufacturing industry began to enter a period of prosperity after its invention in China. The development of the textile manufacturing industry can be divided into four stages: initial development, rapid development, structural adjustment and optimization and upgrading. Today, on the one hand, the Chinese textile manufacturing are facing dual challenges brought by the developed and developing countries. On the other hand, the domestic and foreign textile manufacturing and apparel consumer markets have huge potential. Meanwhile, at the arrival of the Internet + era, China's textile manufacturing industry will experience new reform <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref>. Many researchers have investigated it. Mondal et al. studied the environmental issues and wastewater treatment schemes involved in the textile manufacturing industry, and finally found that the advanced oxidation method is very effective in removing pollutants in terms of efficiency and cost requirements <ref type="bibr" target="#b8">[9]</ref>. Ashyap et al. designed and proposed an inverted E-shaped antenna with a simple and compact structure, made of only fabric materials, and formed by using appropriate loading rectangular slots/notches and inserting a strip line. After it is tested, the miniaturised antenna has an efficiency of 79%, significantly improving the efficiency compared to other antennas. It is a promising and wearable candidate antenna <ref type="bibr" target="#b9">[10]</ref>; Ali et al. used radio frequency identification (RFID) to inspect effective textile manufacturing supply chain activities, and used investigation methods to collect necessary textile manufacturing import and export related data. It was found that the quality of the employee service plays a moderating role between RFID and the operation of the textile manufacturing and apparel industry, and it helps practitioners solve related industry problems <ref type="bibr" target="#b10">[11]</ref>; Almohammed et al. introduced the material properties, standards and manufacturing process of electronic textile manufacturing, and analysed the importance of current electronic textile manufacturing processes and material selection. It was found that the electronic textile manufacturing materials, technology, and design can provide high-performance materials for body-centric applications in the future <ref type="bibr" target="#b11">[12]</ref>.</p><p>The contemporary challenges in the textile manufacturing industry are mainly focussed on the consumer's point of view. China is the largest producer of textiles and garments in the world and various contemporary issues related to the textile manufacturing industry are depicted in Figure <ref type="figure" target="#fig_0">1</ref>.</p><p>The challenges in the textile manufacturing industry includes:</p><p>1. Shortage in Raw Material Supply: This has occurred due to the shutting down of some units in China as per the pollution issues. It has resulted in unpredictable rise in the cost of raw materials in the market.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Increasing Cost of Raw Material:</head><p>The raw material cost has also increased besides the other prevailing challenges of the textile manufacturing industry <ref type="bibr" target="#b12">[13]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Compliance: Environmental Issue:</head><p>The textile industry worldwide has been facing an issue of meeting the social and environmental norms of the international market. These environmental compliances are often not of the textile importer's concerns of raising an issue for the textile manufacturing industry <ref type="bibr" target="#b13">[14]</ref>. 4. Infrastructure Bottlenecks: Another challenge of the textile industry is the low infrastructure quality that acts as a bottleneck for the industrial applications. 5. Labourer's shortage: The shortage of skilled labourers is also a key challenge for the textile industry to manufacture in time and to meet the demands of the customers.</p><p>These issues may be overcome by indulging the new processes, latest infrastructure, involving new sectors as well as new mindsets. The new reforms are being introduced by the government for creating the possibilities of business alleviation and foreign direct investment in order to foster business partnerships. Along with the development of infrastructure, trained and skilled workforces is being indulged in different sectors of textile industry <ref type="bibr" target="#b14">[15,</ref><ref type="bibr" target="#b15">16]</ref>. Usage of environment friendly textile and fabrics has led to the creation of a sustainable environment, thereby, overcoming these current and vital issues providing possible solutions for the textile manufacturing industry.</p><p>In this work, in order to analyse the technical hot spots of China's the textile manufacturing industry and its developmental trends, 2852 English articles related to the textile manufacturing technology industry from 2010 to 2019 in the Web of Science database are selected. The CiteSpace (a scientific article analysis tool) is used to draw the scientific knowledge map of the textile manufacturing technology industry to analyse and summarise the developmental status and hotspots. The developmental trends of the global textile manufacturing and apparel industry. In order to grasp the developmental trend of the textile manufacturing and apparel industry in a macroscopic way, this research work contributes in providing a reference direction for the development of China's textile manufacturing and apparel industry.</p><p>The rest of this article is organised as follows: Section 2 presents the material and methods used in this research work, results are discussed in section 3 followed by the concluding remarks in section 4. understandable format. The tools used for visualisation of the knowledge are effective in supporting the decision-making process by finding the new possibilities and measuring the decision outcomes. The usage of visual analytical tools for performing exploratory analysis plays a vital role in operational control in the textile manufacturing industry. With the advancement of computer capabilities and latest scientific interventions, visual analytics has emerged as a latest advent in data exploration supporting the interactive visual interfaces <ref type="bibr" target="#b16">[17,</ref><ref type="bibr" target="#b17">18]</ref>. Moreover, the designing of an interactive knowledge visualization tool may further improve the collaborative practices among the companies supporting the industry 4.0 scenario <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref>. The visualization of percentage share of textile retail segment in the textile sector are provides in Figure <ref type="figure" target="#fig_1">2</ref>.</p><p>From Figure <ref type="figure" target="#fig_1">2</ref>, it is depicted that the majority segment (39%) of textile sector is covered by the clothing and textile industry and other (61%) is divided into various other small sectors. Visualisation tools have emerged as a fundamental support in the decision-making process and the visual exploration involves three steps: overview, zooming and filtering out of useful information and detailed on demand exploration. The operational control in manufacturing can be utilised for semistructured decision-making problems, but the detailed model for manufacturing environment is unfeasible for practical implementations <ref type="bibr" target="#b21">[22]</ref>. However, optimization is possible using the structured decision process. In this work, the evidences for future exploration are presented for enabling the detailed analysis of visualisation in context of the textile manufacturing industry.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">| Research design</head><p>The textile manufacturing industry framework for the research design used in this work is depicted in Figure <ref type="figure">3</ref>.</p><p>The visual analysis of the knowledge map is used to explore the status and main body of the global textile manufacturing technology in recent years. The trend in the number of published articles is obtained through statistics on the publication of articles, and the references, authors and keywords of the textile manufacturing technology journals worldwide are studied. The CiteSpace software and bibliometric technology are adopted to excavate the long-term development path and research progress of the global textile manufacturing industry knowledge and technology, which will promote the selection and in-depth development of the China's textile manufacturing industry technology research topics. However, there is still a lack of visual research on the global textile manufacturing industry system. According to the inspiration of scholars in the related fields and the literature on domestic textile manufacturing hotspots, literature statistics and quantitative analysis methods are adopted to study the global textile manufacturing industry with the CiteSpace from an empirical point of view, and to sort out, classify, and analyse the knowledge and technology hotspots of the global textile manufacturing industry.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">| Literature search strategy</head><p>The Web of Science database was searched, and the core set of Web of Science in the database is selected to investigate. When it is explored, the textile manufacturing technology, textile manufacturing, and textile manufacturing industry are used as the subject keywords, and the search result was found to be 4123. Then, select 'Article (thesis)' as the article type. After invalid and duplicate data is screened and delimited, a total of 2852 related research articles in the global textile manufacturing and apparel industry from 2010 to 2019 are </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">| Article publication evaluation</head><p>To evaluate and analyse the searched literature, first, the number of publications in the technical field of the textile manufacturing industry from 2010 to 2019 is used to know the progress of research and development in this field as a whole. Then, the keyword co-occurrence map and keyword time zone view are used to study the developmental hotspots and dynamic changes. After core authors are analysed, the mainstream research direction of  <ref type="bibr" target="#b22">[23]</ref>. In the knowledge network, key nodes occupy a key position, which can show the influence and relevance of nodes. Centrality can describe the accurate number of the key node size, which represents the frequency of this keyword node showing in the researched literature group, that is, the larger the key node shown in the map, the greater its frequency in the article group, which means that the greater the degree of its association with the vocabulary node appearing in other articles, the more frequent the information exchange <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref>. The abstracts of the retrieved 2852 articles are segmented, classified, and noun phrases are extracted as cluster tags of the same type of keywords to obtain the keywords' co-occurrence map in the technical field of the textile manufacturing industry from 2010 to 2019, as shown in Figure <ref type="figure">5</ref>.</p><p>The co-occurrence map of keywords in the technical field of the textile manufacturing industry from 2010 to 2019 shows that the keywords are in the order of frequency, followed by technology, textile manufacturing, decolourisation, removal, degradation, and performance and they are at the core of the research part in the technical field of the textile manufacturing industry in the past 10 years. The colour distinction in the figure further shows that in 2010 and 2011, the main research on textile manufacturing technology was the treatment of textile manufacturing wastewater, the decolourisation and removal of azo dyes, and the textile manufacturing fabric performance, etc. During the time, scholars mainly focused on the traditional textile manufacturing research in the textile manufacturing field. Until 2015, on the basis of previous research, the textile manufacturing research such as composite materials and cotton fabrics were added, and the further treatment of textile manufacturing wastewater once again showed that the protection of the environment was paid attention. The use of the photocatalytic wastewater treatment technology was more energy-saving and efficient than traditional technologies, which means that during this period, researchers made great achievements in the treatment of the textile manufacturing wastewater. In 2018, research on wearable electronic products appeared for the first time. With the rapid development of artificial intelligence, a trend of 'smart textile manufacturing' also emerged in the technical field of the textile manufacturing industry, and various researches on wearable electronic devices, such as sensors, quietly emerged in 2019. The research related to the smart textile manufacturing became a hot topic. Therefore, the research and analysis of the textile manufacturing field in the 10 years from 2010 to 2019 shows that the research in the textile manufacturing technology field is related to the treatment of dye wastewater and the selection and performance of textile manufacturing fabrics as a whole. Moreover, the analysis of the keyword information in recent years indicates that textile manufacturing materials have gradually developed into nanoparticles and composite materials, which is a signal that textile manufacturing technology is gradually becoming intelligent.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">| Dynamic analysis of research hotspots</head><p>A hot spot refers to a node that one thing develops rapidly or suddenly appears in a short period of time, which is a new research trend in academia. It emphasises the new development direction of industrial knowledge, and is also a feature of suddenness in time and space in the literature <ref type="bibr" target="#b26">[27]</ref>. Hotspots are generally the latest research directions. The time when each hotspot appears is the time when the research changes and is an important symbol of the dynamic development and evolution of the knowledge network. To more clearly know the continuation of the key research content in the textile manufacturing technology field in time, the time zone view is further drawn <ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref>. The time zone view focuses on analysing the evolution of knowledge from the time dimension, so that the update and mutual influence of literature can be more clearly displayed <ref type="bibr" target="#b30">[31]</ref>.  direction in the textile manufacturing technical field, which shows the importance of environmental issues in academia. In addition, the last tag word shows that the research on smart textile manufacturing in this field will exists as a research focus for a long time in the future.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">| Analysis of core authors</head><p>Usually, the high-quality literature of the core authors reflects the research direction of the field, so through the research on the core authors of the retrieved literature can know the development focus of the textile manufacturing technical field. By setting the relevant parameters in the CiteSpace, and analysing 2852 articles, the core author relationship map of the textile manufacturing technical field from 2010 to 2019 can be obtained, as shown in Figure <ref type="figure" target="#fig_5">8</ref>.</p><p>In the core author relationship map, the size of the node indicates the amount of publication of the author's literature, and the connection of the node indicates the cooperation between the authors. Through statistics, as shown in Figure <ref type="figure" target="#fig_5">8</ref>, the top ten core authors have published a total of 1111 articles in the past 10 years. The core author with the largest number of articles in the field of textile manufacturing technology is ANONYMOUS, who published 490 articles in 2010-2019, mainly studying the coating and tensile properties of textile manufacturing materials. The core author with the second largest number of publications is ROBINSONT, who published 159 articles in 2010-2019, mainly researching dye degradation, the textile manufacturing decolourisation and wastewater treatment. The third-ranked core author is DOS SANTOS AB, who published 86 articles in 2010-2019, focusing on the microbial decolourisation of azo dyes. A further comparison of the relevant research of the core authors shows that in the early 2010s, traditional dyeing and finishing processes and textile manufacturing wastewater treatment were research hotspots in this field. The overall analysis shows that the relationship between authors in the textile manufacturing technical field is not close. Some authors have less cooperation, and the cooperation within small groups is more extensive. There are also many marginal scientific scholars who have published some articles in this field.</p><p>The number of articles published by the core authors in the textile manufacturing technical from 2010 to 2019 is carried on statistics, as shown in Table <ref type="table">1</ref>. Among the top 10 authors, FORGACS E has the highest intensity and has the closest cooperation with the core authors, followed by ANONY-MOUS and ROBINSON T, who have published 490 and 259 articles respectively. In addition, GUPTA VK and DOS SANTOS AB have low intensity, with 69 and 86 articles respectively. The remaining five authors publish about 60 articles respectively, but their intensity is negligible. This also further shows that from the long-term development of this field, academic exchanges and cooperation are extremely important. Only more communication and cooperation between core authors can bring the development of the textile manufacturing industry to a new level.</p><p>In addition, the analysis of the literature in the field of the textile manufacturing industry technology from 2010 to 2019 form the perspectives of keywords co-occurrence, and dynamic changes of research hotspots, and the relationship map of the core authors indicates the developmental trend and direction of the textile manufacturing industry technology. Keywords are usually the finishing touches of academic papers, including the main research content and research directions of the study <ref type="bibr" target="#b31">[32]</ref>. The hot spot is the latest research direction and an important symbol in the dynamic development and evolution of knowledge networks <ref type="bibr" target="#b32">[33]</ref>. The core author refers to the author with a high number of published articles and high influence on industry research <ref type="bibr" target="#b33">[34]</ref>. Through the analysis of literature in the textile manufacturing technical field in the past 10 years from different angles, from the perspective of research content, the research hotspots from 2010 to 2011 were the treatment of textile manufacturing in the textile manufacturing and apparel field, the decolourisation and removal of azo dyes, and the study of the textile manufacturing fabric properties, indicating that in this period of time, the research on the textile manufacturing by scientific researchers in this field was mainly concentrated on the traditional research from the year 2012 to 2015, in addition to the research on traditional textile manufacturing, such as composite materials and cotton fabrics were added apart from the research on the improvement of textile manufacturing wastewater treatment technology. After developing it for three to four years, research on wearable electronic products appeared for the first time in 2018. With the rapid development of artificial intelligence, the technology of the textile manufacturing industry was gradually moving towards intelligent development. By 2019, key technologies such as sensors and capacitors were more common.</p><p>An overall analysis of the textile manufacturing field from different perspectives in the past 10 years shows that the global textile manufacturing industry materials are also a research focus, which are constantly changing over time. First, from the perspective of development, the performance upgrade and functionalisation of composite fibre materials are the core themes of related research. Moreover, the research on antibacterial properties, bacterial cellulose, stretchability, thermal properties and other related properties appearing after 2010, is an important development direction. The antibacterial related research has repeatedly appeared after 2013, which shows that the performance is very consistent with the current social development, thus showing strong continuity. Secondly, from the perspective of research and development technology, in the process of researching various fibre materials, physical technology (micro-nano, photoelectric, etc.) and chemical technology (photocatalysis, etc.) are applied by researchers to modify the performance of the original material, thereby improving its basic performance. Thirdly, from the perspective of discipline development, the textile manufacturing industry technology is intertwined and integrated with various disciplines such as polymer chemistry and physics in the research process, which further strengthens the cross-complementation, integration and innovation of high technology. Finally, the development of the textile manufacturing technology will have high-tech ecological safety performance with more highquality, multi-purpose, multi-effect, and durable products.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">| CONCLUSION</head><p>This work uses CiteSpace software to analyse the literature in the textile manufacturing industry technology field from 2010 to 2019. The Web of Science database is summarised to sort out research keywords, hotspots and developmental trends in the textile manufacturing industry technology field in the past 10 years. The developmental direction of textile manufacturing technology from tradition to intelligence is found by avoiding subjective privacy. Furthermore, the repeated study of the textile manufacturing waste water treatment to fit the green sustainable development plan  proposed by China provides a basis for the later developmental trend and the dynamic planning of China's textile manufacturing industry technology. This work provides future research directions for sustaining a positive look at the differences in the relevant research area on the textile manufacturing industry technology in domestic and foreign countries. The advantages can be taken from the foreign textile manufacturing technology combined with the current development in the field of the textile manufacturing industry in China to set a new record. This research work strives for the future perspective to achieve a leapfrog development in the textile manufacturing research.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>F I G U R E 1</head><label>1</label><figDesc>Contemporary issues in the textile manufacturing industry finally determined. Figure 4 shows the number of English articles published from 2010 to 2019. The figure shows that in the past 10 years, in the textile manufacturing technical field, the number of publications in the textile manufacturing industry has increased from 171 in 2010 to 489 in 2019, showing an upward trend over time.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>F I G U R E 2</head><label>2</label><figDesc>Knowledge Visualisation of percentage share of textile retail segment in the textile sector F I G U R E 3 Framework for Research design 246 -HUANG ET AL. 25168398, 2021, 3, Downloaded from https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cim2.12024, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 6</head><label>6</label><figDesc>is the time zone view of keyword clustering in the textile manufacturing technology field. As shown in Figure 6, the analysis of the time zone view of the keyword clustering in the technical fields of the global textile manufacturing industry from 2010 to 2019 shows that the research hotspot in 2010 was the treatment of textile manufacturing in the textile manufacturing and apparel field. It is mainly about the decolourisation and adsorption properties of textile manufacturing. In 2011, the design and optimization of various textile manufacturing-related became a new research trend. In 2012, the research focussed on the study of synthetic dyes in textile manufacturing, reusing them through biodegradation and oxidation. In 2013 and 2014, more research was focussed on nanoparticles and composite materials, and the textile manufacturing design process was optimised to increase the efficiency. In 2015 and 2016, textile manufacturing fabrics received a great attention. The antibacterial fabrics made of cotton fabrics and graphene reflect that research in the field of textile manufacturing technology begun to gradually develop towards intelligence. From 2017 to 2019, the main focus was given on sensors and supercapacitors in the textile manufacturing field, further reflecting the emphasis on smart textile manufacturing-related research in the global textile manufacturing and apparel field. Therefore, the overall trend of the global textile manufacturing and apparel industry is to develop towards automation and intelligence. The transition F I G U R E 4 Number of publications in the textile manufacturing technical field from 2010 to 2019 from manual textile manufacturing to intelligent textile manufacturing is an important measure for the upgrading and transformation of textile manufacturing enterprises.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 7</head><label>7</label><figDesc>is a timeline view of the citation label word clustering in the textile manufacturing technology field, which is used to identify the development of the research frontier and derivative relationship in the textile manufacturing industry at different stages. The timeline view of the label word clustering of citations in the textile manufacturing technology field from 2010 to 2019 is analysed, where #0∼#6 are the cluster numbers. The clustering information shows that the cluster labels and their numbers in the cited articles vary with the time axis. From them, the research intensity of the suspensions has not changed significantly as the time axis. The core research positions of long-lasting, washable, matter, congo and protective gradually decrease over time. The smart cluster label gradually increases over time in core research positions. On the whole, six of the seven clusters are related to textile manufacturing wastewater and traditional textile manufacturing. With the improvement of people's awareness of environmental protection, the decolourisation of dyestuffs in textile manufacturing wastewater has become a crucial research F I G U R E 5 The co-occurrence map of keywords in the technical field of the textile manufacturing industry from 2010 to 2019 F I G U R E 6 Time zone view of keyword clustering in the textile manufacturing technology field from 2010 to 2019 248 -HUANG ET AL.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>F I G U R E 7</head><label>7</label><figDesc>Timeline view of the label word clustering of citations in the textile manufacturing technology field from 2010 to 2019</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>F I G U R E 8</head><label>8</label><figDesc>The core authors relationship map in the textile manufacturing technical field from 2010 to 2019 TA B L E 1 Articles published by core authors in the textile manufacturing technical field in 2010-2019</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>25168398, 2021, 3, Downloaded from https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/cim2.12024, Wiley Online Library on [04/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License</p></note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SUPPORTING INFORMATION</head><p>Additional supporting information may be found online in the Supporting Information section at the end of this article.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Exploring the role of TQM and supply chain practices for firm supply performance in the presence of information technology capabilities and supply chain technology adoption: a case of Textile manufacturing firms in Pakistan</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Basheer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Uncertain Supply Chain Management</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="275" to="288" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Exploiting Textile manufacturing mechanical anisotropy for fabric-based pneumatic actuators</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Cappello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Soft Robot</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="662" to="674" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Effect of visco-elastic silk-chitosan microcomposite scaffolds on matrix deposition and biomechanical functionality for cartilage tissue engineering</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chameettachal</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Journal of Tissue Engineering and Regenerative Medicine</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1212" to="1229" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">An optical-fibre-based smart Textile manufacturing (smart socks) to manage biomechanical risk factors associated with diabetic foot amputation [J]</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Najafi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of diabetes science and technology</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="668" to="677" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A process-level water conservation and pollution control performance evaluation tool of cleaner production technology in Textile manufacturing industry</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. J Clean Prod</title>
+		<imprint>
+			<biblScope unit="volume">143</biblScope>
+			<biblScope unit="page" from="1137" to="1143" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The effect of TQM on organisational performance: empirical evidence from the Textile manufacturing sector of a developing country using SEM</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shafiq</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lasrado</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hafeez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Total Qual Manag Bus Excel</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="31" to="52" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Conductive polymer-based electro-conductive Textile manufacturing composites for electromagnetic interference shielding: a review [J]</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Maity</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Chatterjee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Industrial Textile manufacturings</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="2228" to="2252" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Optimization of signal quality over comfortability of Textile manufacturing electrodes for ECG monitoring in fog computing based medical applications</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Future Generat Comput Syst</title>
+		<imprint>
+			<biblScope unit="volume">86</biblScope>
+			<biblScope unit="page" from="515" to="526" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Study of environmental issues in Textile manufacturing industries and recent wastewater treatment technology</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mondal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Baksi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bose</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. World Scientific News</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="98" to="109" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Inverted E-shaped wearable Textile manufacturing antenna for medical applications</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y I</forename><surname>Ashyap</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="35214" to="35222" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Radio frequency identification (RFID) technology as a strategic tool towards higher performance of supply chain operations in Textile manufacturing and apparel industry of Malaysia</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Haseeb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Uncertain Supply Chain Management</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="215" to="226" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Electro-Textile manufacturing wearable antennas in wireless body area networks: materials, antenna design, manufacturing techniques, and human body consideration-a review</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Almohammed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ismail</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sali</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Textile manufacturing Research Journal</title>
+		<imprint>
+			<biblScope unit="page">0040517520932230</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">A blockchain framework for securing connected and autonomous vehicles</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rathee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">3165</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Study of issues and challenges of different routing Protocols in wireless sensor network</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kaur</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fifth international Conference on image information processing (ICIIP)</title>
+		<imprint>
+			<date type="published" when="2019">2019. 2019</date>
+			<biblScope unit="page" from="585" to="590" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Blockchain based smart contracts for internet of medical things in e-healthcare</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sharma</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Electronics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page">1609</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A hybrid framework for multimedia data processing in IoThealthcare using blockchain technology</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Rathee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimed Tool Appl</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="23" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A visual analytics agenda</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Thomas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Cook</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE computer graphics and applications</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="10" to="13" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Visual analysis of time-series similarities for anomaly detection in sensor networks Computer graphics forum</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Steiger</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="401" to="410" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Normalisation techniques for collaborative networks</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Vafaei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kybernetes</title>
+		<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A route stability-based multipath QoS routing protocol in cognitive radio ad hoc networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Alqahtani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alotaibi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Network</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2931" to="2951" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Industry 4.0: a survey on technologies, applications and open research issues</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of industrial information integration</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Pawlak</surname></persName>
+		</author>
+		<title level="m">Solving Complex industrial problems without statistics</title>
+		<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">An overview on corporate response towards sustainability issues in Textile manufacturing industry</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Desore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Narula</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Environ Dev Sustain</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1439" to="1459" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Influence of industry 4.0 on the production and service sectors in Pakistan: evidence from Textile manufacturing and logistics industries</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Imran</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Soc Sci</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page">246</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Bibliometric and visualised analysis of research on major e-commerce journals using Citespace [J]</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kurcz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Electron Commer Res</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="219" to="237" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Research hotspots and trends of domestic corporate social Responsibility-visualization analysis of knowledge map based on CNKI and Citespace V [J]</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Huang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Open J Bus Manag</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">04</biblScope>
+			<biblScope unit="page">797</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Knowledge mapping of protective clothing research-a bibliometric analysis based on visualization methodology</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Textile manufacturing Research Journal</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="3203" to="3220" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Treatment technologies for pharmaceutical effluents-A scientometric study</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Davarazar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Environ Manag</title>
+		<imprint>
+			<biblScope unit="volume">254</biblScope>
+			<biblScope unit="page">109800</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+	<note>J</note>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">The role of financial management in bringing efficiency in supply chain management</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">L</forename><surname>Agustina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Int J Supply Chain Manag</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Visualization analysis of graphene and its composites for heavy metal wastewater applications</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Environ Sci Pollut Control Ser</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">27</biblScope>
+			<biblScope unit="page" from="27752" to="27760" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">The role of financial management in bringing efficiency in supply chain management</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">L</forename><surname>Agustina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Int J Supply Chain Manag</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1" to="9" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Emerging nanogenerator technology in China: a review and forecast using integrating bibliometrics, patent analysis and technology roadmapping methods</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Nano energy</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="322" to="330" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Emerging trends and new developments in Lancang-Mekong River: a bibliometric visualization analysis</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Junlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ziqian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Xue</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. River Res Appl</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="862" to="871" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Recent evolution of research on industrial Heritage in Western Europe and China based on bibliometric analysis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J]. Sustainability</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">13</biblScope>
+			<biblScope unit="page">5348</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

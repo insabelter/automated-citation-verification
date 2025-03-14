@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Magnetic Breakdown and Klein Tunneling in a Type-II Weyl Semimetal</title>
+				<funder>
+					<orgName type="full">Foundation for Fundamental Research on Matter (FOM)</orgName>
+				</funder>
+				<funder ref="#_6FWpAUV">
+					<orgName type="full">Netherlands Organization for Scientific Research (NWO/OCW)</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016">10 JUNE 2016</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>O'brien</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Instituut-Lorentz</orgName>
+								<orgName type="institution">Universiteit Leiden</orgName>
+								<address>
+									<postBox>P. O. Box 9506</postBox>
+									<postCode>2300 RA</postCode>
+									<settlement>Leiden</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">M</forename><surname>Diez</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Instituut-Lorentz</orgName>
+								<orgName type="institution">Universiteit Leiden</orgName>
+								<address>
+									<postBox>P. O. Box 9506</postBox>
+									<postCode>2300 RA</postCode>
+									<settlement>Leiden</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">C</forename><forename type="middle">W J</forename><surname>Beenakker</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Instituut-Lorentz</orgName>
+								<orgName type="institution">Universiteit Leiden</orgName>
+								<address>
+									<postBox>P. O. Box 9506</postBox>
+									<postCode>2300 RA</postCode>
+									<settlement>Leiden</settlement>
+									<country key="NL">The Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Magnetic Breakdown and Klein Tunneling in a Type-II Weyl Semimetal</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2016">10 JUNE 2016</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">5C13F9AE6A718C04E1F89B2682D7E231</idno>
+					<idno type="DOI">10.1103/PhysRevLett.116.236401</idno>
+					<note type="submission">Received 21 April 2016;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:46+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The band structure of a type-II Weyl semimetal has pairs of electron and hole pockets that coexist over a range of energies and touch at a topologically protected conical point. We identify signatures of this Weyl point in the magnetic quantum oscillations of the density of states, observable in thermodynamic properties. Tunneling between the electron and hole pockets in a magnetic field is the momentum space counterpart of Klein tunneling at a p-n junction in real space. This magnetic breakdown happens at a characteristic field strength that vanishes when the Fermi level approaches the Weyl point. The topological distinction between connected and disconnected pairs of type-II Weyl cones can be distinguished by the qualitatively different dependence of the quantum oscillations on the direction of the magnetic field.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Weyl semimetals provide a condensed matter realization of massless relativistic fermions <ref type="bibr" target="#b0">[1]</ref>. Their spectrum features a diabolo-shaped surface in energy-momentum space that separates helical electronlike states (moving in the direction of the momentum) from holelike states (moving opposite to the momentum) <ref type="bibr" target="#b1">[2]</ref>. These "Weyl cones" are the three-dimensional analogue of the two-dimensional Dirac cones in graphene. The third spatial dimension provides a topological protection, by which the conical point (Weyl point) cannot be opened up unless two Weyl cones of opposite helicity are brought together in momentum space <ref type="bibr" target="#b2">[3]</ref>.</p><p>Although the Weyl point cannot be locally removed, the cones can be tilted and may even tip over <ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref>. For the relativistic Weyl cone such a distortion is forbidden by particle-hole symmetry, but that is not a fundamental symmetry in condensed matter. While in graphene the high symmetry of the honeycomb lattice keeps the cone upright, strain providing only a weak tilt <ref type="bibr" target="#b12">[13]</ref>, the tilting can be strong in 3D Weyl semimetals. This leads to a natural division of Weyl cones into two topologically distinct types <ref type="bibr" target="#b8">[9]</ref>. In type I the cone is only weakly tilted so that the electronlike states and holelike states occupy separate energy ranges, above or below the Weyl point. In type II the cone has tipped over so that electron and hole states coexist in energy. Many experimental realizations of a type-II Weyl semimetal have recently been reported <ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref>.</p><p>In a magnetic field the coexisting electron and hole pockets of a type-II Weyl semimetal are coupled by tunneling through the Weyl point (Fig. <ref type="figure" target="#fig_0">1</ref>). Here we investigate how this process, a momentum space manifestation of Klein tunneling <ref type="bibr" target="#b21">[22]</ref>, affects the magnetic quantum oscillations of the density of states (de Haas-van Alphen effect), providing a unique thermodynamic signature of the topologically protected band structure (an alternative to proposed transport signatures <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref>). Because the quantum oscillations are governed by extremal cross sections of the Fermi surface, one might wonder whether some symmetry is required to align the extremal cross section with the Weyl point, so that it becomes observable. Our analysis shows that a magnetic field axis for this alignment exists generically, because of the Möbius strip topology of the projective plane. We first consider Klein tunneling through a single type-II Weyl point, and then turn to pairs of Weyl cones of opposite helicity, which can be combined in topologically distinct ways <ref type="bibr" target="#b7">[8]</ref>-with a qualitatively different dependence on the Klein tunneling probability.</p><p>To first order in momentum k, the Hamiltonian of a Weyl cone has the generic form Tunneling between the pockets happens with a probability T that tends to unity when their minimal separation Δk → 0. This magnetic breakdown is a manifestation of Klein tunneling in momentum space.</p><formula xml:id="formula_0">H ¼ X ij v ij k i σ j þ a tilt k x σ 0 ;<label>ð1Þ</label></formula><p>in terms of Pauli matrices σ i , i ∈ fx; y; zg (unit matrix σ 0 ). The eigenvalues lie on two hyperboloid sheets E AE ,</p><formula xml:id="formula_1">E AE ¼ a tilt k x AE ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi X ijl v il v jl k i k j s ;<label>ð2Þ</label></formula><p>that touch at the Weyl point k ¼ 0.</p><p>For sufficiently small a tilt the Fermi surface contains either electronlike states in E þ or holelike states in E -, depending on the sign of the Fermi energy relative to the Weyl point. With increasing a tilt the Weyl cone is tilted in the (arbitrarily chosen) x direction, and when it tips over coexisting electron and hole states appear on the Fermi surface. This is the type-I to type-II Weyl semimetal transition <ref type="bibr" target="#b8">[9]</ref>.</p><p>The hyperboloid dispersion (2) only holds near the Weyl point. In the physical realizations of a type-II Weyl semimetal the Fermi surface closes away from the Weyl point, forming compact electron and hole pockets. A cross section is defined by fixing an axis (unit vector n) and choosing a coordinate q along that axis. The intersection of the Fermi surface with the plane n • k ¼ q is an oriented contour C AE ðqÞ enclosing the signed area A AE ðqÞ (positive for C þ and negative for C -). The contours are the classical momentum-space orbits for a magnetic field B in the n direction, the change in orientation between C þ and C -resulting from the sign change of the effective mass in the electron and hole pockets.</p><p>Semiclassical quantization of the orbits produces Landau tubes <ref type="bibr" target="#b25">[26]</ref>, with quantized cross-sectional area</p><formula xml:id="formula_2">A AE ðqÞ ¼ 2πðn þ νÞeB=ℏ; n¼ AE1; AE2:<label>ð3Þ</label></formula><p>The Maslov index ν ¼ 1=2 for massive electrons, while ν ¼ 0 for massless Weyl fermions <ref type="bibr" target="#b26">[27]</ref>. The Landau tubes give rise to oscillations in the density of states periodic in 1=B [28],</p><formula xml:id="formula_3">δρ=ρ 0 ¼ Ref½-iA 00 AE ðq c Þ -1=2 e 2πiðF AE =B-νÞ g;<label>ð4Þ</label></formula><p>with frequency given by the Onsager relation <ref type="bibr" target="#b27">[29,</ref><ref type="bibr" target="#b28">30]</ref> </p><formula xml:id="formula_4">F AE ¼ ðℏ=2πeÞjA AE j:<label>ð5Þ</label></formula><p>The extremal area A AE ¼ A AE ðq c Þ is the area at which the first derivative dA AE ðqÞ=dq ¼ 0. The contour enclosing the extremal area is denoted by C AE . The two sheets E AE of a type-II Weyl cone are coupled by quantum tunneling. This magnetic-field-induced tunneling between electron and hole pockets is the momentum space counterpart of Klein tunneling at a p-n junction in graphene <ref type="bibr" target="#b29">[31]</ref>, and can be analyzed along the same lines <ref type="bibr" target="#b30">[32]</ref>.</p><p>The effect of a magnetic field B in, say, the y direction, with vector potential A ¼ ðBz; 0; 0Þ, is accounted for by the substitution k x ↦k x þ eBz (setting ℏ ¼ 1). In momentum representation, the Schrödinger equation Hψ ¼ Eψ reads</p><formula xml:id="formula_5">iU 0 ∂ψ ∂k z ¼ Uðk z Þψ; U 0 ¼ eB X j v xj σ j þ a tilt σ 0 ;<label>ð6aÞ</label></formula><formula xml:id="formula_6">Uðk z Þ ¼ Eσ 0 - X ij v ij k i σ j -a tilt k x σ 0 :<label>ð6bÞ</label></formula><formula xml:id="formula_7">For a tilt &gt; ð P j v 2 xj Þ 1=2</formula><p>the matrix U 0 is positive definite, so that it can be factorized as U 0 ¼ VV † with invertible V and we may write</p><formula xml:id="formula_8">i∂ψ=∂k z ¼ V -1 Uðk z ÞðV † Þ -1 ψ ≡ Hðk z Þψ;<label>ð7Þ</label></formula><formula xml:id="formula_9">with Hðk z Þ ¼ H 0 þ H 1 k z . If we interpret k z ≡ t as "time,"</formula><p>this looks like a Schrödinger equation for a spin-1=2 particle with time-dependent Hamiltonian HðtÞ. Because the t dependence of HðtÞ is linear, we can use the Landau-Zener formula for the tunneling probability between the electron and hole pockets <ref type="bibr" target="#b31">[33]</ref>. Quite generally, for a two-level system with timedependent Hamiltonian</p><formula xml:id="formula_10">HðtÞ ¼ αt þ c γ γ Ã βt þ c 0 ;<label>ð8Þ</label></formula><p>the Landau-Zener tunnel probability is</p><formula xml:id="formula_11">T ¼ expð-2πjγj 2 jα -βj -1 Þ:<label>ð9Þ</label></formula><p>The matrix ( <ref type="formula" target="#formula_8">7</ref>) is of the form (8) in the basis where H 1 is diagonal, so in that basis we can read off the coefficients α, β, γ needed to determine T.</p><p>For a specific example we consider the Hamiltonian (1) with v ij ¼ v i δ ij , which for a tilt &gt; v x represents a type-II Weyl cone. We find</p><formula xml:id="formula_12">T ¼ exp - πℏ eB v 2 x E 2 þ v 2 y k 2 y ða 2 tilt -v 2 x Þ v z ða 2 tilt -v 2 x Þ 3=2 ¼ exp - πℏ 4eBv z ðΔkÞ 2 ða 2 tilt -v 2 x Þ 1=2 ;<label>ð10Þ</label></formula><p>with Δk the minimal separation of the contours C þ and C -. This has the general form of the interband tunnel probability in the theory of magnetic breakdown <ref type="bibr" target="#b28">[30,</ref><ref type="bibr" target="#b32">[34]</ref><ref type="bibr" target="#b33">[35]</ref><ref type="bibr" target="#b34">[36]</ref>, with a breakdown field B c ∝ ðΔkÞ 2 . The characteristic feature of Klein tunneling is that the tunnel probability T → 1 and B c → 0 at the conical point of the band structure-here a 3D Weyl point and a 2D Dirac point in Ref. <ref type="bibr" target="#b21">[22]</ref>. To illustrate the effect of Klein tunneling between electron and hole pockets on the magnetic quantum oscillations in the density of states, we consider the model Hamiltonian <ref type="bibr" target="#b37">[37]</ref> </p><formula xml:id="formula_13">H ¼ τ z ðt 0 σ x sin k x þ t 0 σ y sin k y Þ þ tτ z σ 0 sin k z þ τ x σ 0 ðμ -t cos k x -t cos k y -t cos k z Þ þ bτ 0 σ z þ ½a tilt sin k x þ ξð1 -cos k x Þτ 0 σ 0 :<label>ð11Þ</label></formula><p>This is a tight-binding Hamiltonian on a cubic lattice (lattice constant a 0 ¼ 1), with a spin and orbital degree of freedom on each lattice site (Pauli matrices σ i and τ i , respectively). The time-reversal symmetry breaking term b splits the Dirac cone into two Weyl cones separated along the z axis. To produce a type-II Weyl semimetal we have added a tilting term a tilt and a term ξ that breaks the symmetry between the electron and hole pockets.</p><p>As derived in Appendix A of the Supplemental Material <ref type="bibr" target="#b38">[38]</ref>, near a Weyl point the effective low-energy Hamiltonian has the form (1) with diagonal velocity tensor</p><formula xml:id="formula_14">v ij ¼ v i δ ij given by v x ¼ v y ¼ ð2t -μÞ 2 -t 2 þ b 2 2bð2t -μÞ t 0 ;<label>ð12aÞ</label></formula><formula xml:id="formula_15">v z ¼ 1 2b ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi ffi ½ðt -μÞ 2 -b 2 ½b 2 -ð3t -μÞ 2 q :<label>ð12bÞ</label></formula><p>The Hamiltonian (11) retains a mirror symmetry in the x-z plane (to be removed later on), which implies that for a magnetic field in the y direction the areas A AE ðk y Þ are extremal for k y ¼ 0. By means of exact diagonalization <ref type="bibr" target="#b39">[39]</ref> we have calculated the partial density of states ρðE; B; k y Þ ¼ P p δ½E -E p ðB; k y Þ for k y ¼ 0, assuming that this gives the dominant contribution to the magnetic quantum oscillations. We choose the gauge A ¼ ð0; 0; -BxÞ, with a rational flux Ba 2 0 ¼ 1=N × h=e through a unit cell. The lattice has dimensions N × NM in the x-z plane (M ≫ N ≫ 1), with periodic boundary conditions in both directions.</p><p>Figure <ref type="figure">2</ref> shows the energy spectrum as a function of magnetic field and Fig. <ref type="figure" target="#fig_2">3</ref> shows the periodicity of the magnetic oscillations, extracted from a Fourier transform of the density of states. When the Fermi level is far from the Weyl point E ¼ 0, the electron and hole pockets contribute separately with frequencies F AE set by the extremal areas A AE . The slopes dF AE =dE have opposite sign in the two pockets, signifying the opposite sign of the cyclotron effective mass</p><formula xml:id="formula_16">m AE ¼ ℏ 2 2π d dE jA AE j:<label>ð13Þ</label></formula><p>Near the Weyl point a low-frequency component appears at the difference jF þ -F -j, and the individual high-frequency components F AE are suppressed. In a semiclassical description, the orbit responsible for the difference frequency is the "figure of eight" orbit formed by joining C þ to C -at the Weyl point [see Fig. <ref type="figure" target="#fig_0">1(b)</ref>]. The corresponding effective mass</p><formula xml:id="formula_17">m Σ ¼ ℏ 2 2π d dE jA þ þ A -j ð<label>14Þ</label></formula><p>FIG. <ref type="figure">2</ref>. Energy spectrum at k y ¼ 0 of the type-II Weyl semimetal with Hamiltonian (11 governs the Landau fan in Fig. <ref type="figure">2</ref>,</p><formula xml:id="formula_18">) (parameters t ¼ 1, t 0 ¼ 2, μ ¼ 3, b ¼ 1.2, a tilt ¼ 1.7, ξ ¼ 0.</formula><formula xml:id="formula_19">E p ðBÞ ¼ E p ð0Þ þ p × ℏeB=m Σ :<label>ð15Þ</label></formula><p>Notice the absence of a 1=2 offset from the integer p, canceled by a Berry phase. The tunnel probability <ref type="bibr" target="#b9">(10)</ref> evaluates for our model parameters to TðEÞ ¼ exp½-0.52NðE=tÞ 2 . The contribution of an orbit to the Fourier amplitude contains a factor t ¼ ffiffiffi ffi T p for each transmission through the Weyl point and a factor r ¼ ffiffiffiffiffiffiffiffiffiffiffi 1 -T p for each reflection <ref type="bibr" target="#b40">[40]</ref>. In Fig. <ref type="figure" target="#fig_3">4</ref> we plot the peak heights of Fig. <ref type="figure" target="#fig_2">3</ref> as a function of energy. The solid lines are fits to Ω AE ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi 1 -TðEÞ p and Ω Σ TðEÞ, with energyindependent fit parameters Ω AE , Ω Σ . We take for the inverse field strength N ¼ 850, the midpoint of the interval used in the Fourier transform. A good match to the predicted Gaussian TðEÞ is obtained.</p><p>The above analysis was simplified by the mirror symmetry in the x-z plane, because we could immediately identify the special magnetic field axis for which the extremal contours C AE in the electron and hole pockets both touch the Weyl point when E → 0, allowing for Klein tunneling. One might wonder how restrictive this alignment is-is it possible to find such a special axis in the absence of any symmetry? The answer is yes, as we demonstrate with the help of Fig. <ref type="figure">5</ref>. At E ¼ 0 we plot the polar and azimuthal angles θ AE , ϕ AE of the magnetic field axis for which the extremal contour C AE touches the Weyl point. Because ðθ; ϕÞ and ðπ -θ; π þ ϕÞ represent the same axis, we may restrict ϕ to the range ½0; π-half the usual range for spherical coordinates-identifying the end points ðθ; 0Þ and ðπ -θ; πÞ. The ðθ; ϕÞ plane with these "twisted" periodic boundary conditions is the so-called projective plane P 2 , and has the topology of a Möbius strip.</p><p>If the loops L þ ¼ ðθ þ ; ϕ þ Þ and L -¼ ðθ -; ϕ -Þ both wind around the Möbius strip, as they do in Fig. <ref type="figure">5</ref>, they must necessarily intersect because of the twist. The point of intersection is the special axis at which both C þ and C - touch the Weyl point. In Appendix B in the Supplemental Material <ref type="bibr" target="#b38">[38]</ref> we show that such noncontractible loops always exist if the Fermi surface is convex, independent of any symmetry requirement.</p><p>So far we considered Klein tunneling at a single Weyl point. A second Weyl point of opposite helicity necessarily and Ω Σ T, with the transmission probability TðEÞ calculated from Eq. ( <ref type="formula" target="#formula_12">10</ref>) and energy-independent fit parameters Ω AE , Ω Σ . When two frequency lines in Fig. <ref type="figure" target="#fig_2">3</ref> cross we cannot reliably determine the individual amplitudes-which explains some of the large scatter in the data points. FIG. <ref type="figure">5</ref>. Magnetic field axis L AE ¼ ðθ AE ; ϕ AE Þ for which the extremal contour C AE at E ¼ 0 touches the Weyl point. The dashed curves correspond to the Hamiltonian <ref type="bibr" target="#b10">(11)</ref> with the parameters of Fig. <ref type="figure" target="#fig_0">1</ref>. For the solid curves we have broken the mirror symmetry by adding the term V 0 τ 0 σ 0 sin k y with V 0 ¼ 0.5. The intersection of L þ and L -(encircled) is the special axis at which Klein tunneling between electron and hole pockets produces magnetic quantum oscillations with the difference frequency jF þ -F -j, suppressing both the electron and hole frequencies F AE . The intersection is protected by the topology of the Möbius strip (indicated by arrows, which show how the edges at ϕ ¼ 0; π should be glued with a twist). FIG. <ref type="figure">6</ref>. Left panels: Dependence on the orientation of the magnetic field of the amplitude of the magnetic quantum oscillations (normalized to unit maximal amplitude), for a fixed Fermi energy E F ¼ 0. Pairs of type-II Weyl points at E ¼ 0 with disconnected or connected Fermi surfaces are compared. The right panels show a cross section through the electron and hole pockets. For each curve in the left panels the corresponding orbit is indicated. The calculations, detailed in Appendix C in the Supplemental Material <ref type="bibr" target="#b38">[38]</ref>, are for the Hamiltonian <ref type="bibr" target="#b10">(11)</ref> with parameters t ¼ 1, μ ¼ 3, b ¼ 1.2, a tilt ¼ 1.7 for all panels and t 0 ¼ 2, ξ ¼ 0.08 (top panels); t 0 ¼ 1.7, ξ ¼ 0.24 (bottom panels). exists in the Brillouin zone, and this allows for topologically distinct Fermi surfaces <ref type="bibr" target="#b7">[8]</ref>. In Fig. <ref type="figure">6</ref> we illustrate how Klein tunneling can distinguish connected from disconnected pairs of type-II Weyl cones, by the qualitatively different dependence on the magnetic field orientation. Experimentally, Klein tunneling through a type-II Weyl point can be detected in measurements of the de Haas-van Alphen effect in the magnetic susceptibility. With sufficient doping WTe 2 would produce disconnected type-II Weyl cones near the Fermi energy <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b41">41]</ref>, while they are connected in undoped LaAlGe <ref type="bibr" target="#b14">[15]</ref>. Klein tunneling is a powerful diagnostic for such topologically distinct Fermi surfaces.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 .</head><label>1</label><figDesc>FIG. 1. (a) Fermi surface of a type-II Weyl semimetal, calculated from the model Hamiltonian (1), showing the electron and hole pockets touching at the Weyl point. Equienergy contours in planes perpendicular to the magnetic field B are indicated. The magnetic quantum oscillations have a periodicity in 1=B determined by the contour that encloses an extremal area. (b) Intersection of the Fermi surface with a plane perpendicular to B that passes near the Weyl point. Electron and hole pockets are bounded by a contour C AE enclosing an area A AE . The semiclassical orbit of an electron follows the contour in the direction of the arrow. Tunneling between the pockets happens with a probability T that tends to unity when their minimal separation Δk → 0. This magnetic breakdown is a manifestation of Klein tunneling in momentum space.</figDesc><graphic coords="1,341.03,443.33,98.78,103.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>PRL 116 ,</head><label>116</label><figDesc>236401 (2016) P H Y S I CA L R E V I E W L E T T E</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>FIG. 3 .</head><label>3</label><figDesc>FIG.2. Energy spectrum at k y ¼ 0 of the type-II Weyl semimetal with Hamiltonian<ref type="bibr" target="#b10">(11)</ref> (parameters t ¼ 1, t 0 ¼ 2, μ ¼ 3, b ¼ 1.2, a tilt ¼ 1.7, ξ ¼ 0.08).The black dotted curves are the exact numerical results, the red dashed lines form the semiclassical Landau fan (15) for tunnel-coupled electron and hole pockets. The individual pockets are responsible for the highfrequency oscillations superimposed on the fan.</figDesc><graphic coords="3,375.71,47.57,123.54,92.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>FIG. 4 .</head><label>4</label><figDesc>FIG. 4. Energy dependence of the Fourier amplitudes from Fig. 3. The curves are fits to Ω AE ffiffiffiffiffiffiffiffiffiffiffi 1 -T pand Ω Σ T, with the transmission probability TðEÞ calculated from Eq. (10) and energy-independent fit parameters Ω AE , Ω Σ . When two frequency lines in Fig.3cross we cannot reliably determine the individual amplitudes-which explains some of the large scatter in the data points.</figDesc></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><p>We thank <rs type="person">I. Adagideli</rs>, <rs type="person">P. Baireuther</rs>, <rs type="person">J. A. Hutasoit</rs>, <rs type="person">B. Tarasinski</rs>, and <rs type="person">M. Wimmer</rs> for valuable discussions. This research was supported by the <rs type="funder">Foundation for Fundamental Research on Matter (FOM)</rs>, the <rs type="funder">Netherlands Organization for Scientific Research (NWO/OCW)</rs>, and an <rs type="grantName">ERC Synergy Grant</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_6FWpAUV">
+					<orgName type="grant-name">ERC Synergy Grant</orgName>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Elektron und gravitation. I</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Weyl</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/BF01339504</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Phys</title>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+			<biblScope unit="page">330</biblScope>
+			<date type="published" when="1929">1929</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Accidental degeneracy in the energy bands of crystals</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Herring</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRev.52.365</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">365</biblScope>
+			<date type="published" when="1937">1937</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Volovik</surname></persName>
+		</author>
+		<title level="m">The Universe in a Helium Droplet</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Fermionic microstates within the Painlevé-Gullstrand black hole</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Huhtala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Volovik</surname></persName>
+		</author>
+		<idno type="DOI">10.1134/1.1484981</idno>
+	</analytic>
+	<monogr>
+		<title level="j">JETP</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">853</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Generalization of chiral symmetry for tilted Dirac cones</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kawarabayashi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hatsugai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Morimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Aoki</surname></persName>
+		</author>
+		<idno type="DOI">10.1142/S2010194512006046</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Phys. Conf. Ser</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">145</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Quantum transport in Dirac materials: Signatures of tilted and anisotropic Dirac and Weyl cones</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Trescher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sbierski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Brouwer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Bergholtz</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.91.115135</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page">115135</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Prediction of Weyl semimetal in orthorhombic MoTe 2</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-C</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">N</forename><surname>Ali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Felser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Yan</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.92.161107</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page">161107</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Structured Weyl Points in Spin-Orbit Coupled Fermionic Superfluids</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.115.265304</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="page">265304</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Type-II Weyl semimetals</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Soluyanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gresch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q-S</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Troyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Dai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Bernevig</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/nature15768</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">527</biblScope>
+			<biblScope unit="page">495</biblScope>
+			<date type="published" when="2015">2015</date>
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename><surname>Autés</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gresch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Soluyanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Troyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">V</forename><surname>Yazyev</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1603.04624</idno>
+		<title level="m">Robust type-II Weyl semimetal phase in transition metal diphosphides XP 2 (X ¼ Mo, W)</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">TaIrTe4: A ternary type-II Weyl semimetal</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Koepernik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Kasinathan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">V</forename><surname>Efremov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Khim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Borisenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Büchner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Van Den</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Brink</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.93.201101</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page">201101</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><surname>Muechler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alexandradinata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Neupert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Car</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.01398</idno>
+		<title level="m">Tilted Dirac fermions</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Tilted anisotropic Dirac cones in quinoid-type graphene and α-ðBEDT-TTFÞ 2 I 3</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">O</forename><surname>Goerbig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-N</forename><surname>Fuchs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Montambaux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Piechon</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.78.045415</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page">45415</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Mccormick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ochi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Suzuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Arita</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Trivedi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kaminski</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1603.06482</idno>
+		<title level="m">Spectroscopic evidence for type II Weyl semimetal state in MoTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<author>
+			<persName><forename type="first">S.-Y</forename><surname>Xu</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1603.07318</idno>
+		<title level="m">Discovery of Lorentz-violating Weyl fermion semimetal state in LaAlGe materials</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">K</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Denlinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Fedorov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zhou</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1603.08508</idno>
+		<title level="m">Experimental observation of topological Fermi arcs in type-II Weyl semimetal MoTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">K</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Rajamathi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">P</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">X</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Peng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C.-C</forename><surname>Hwang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Z</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-K</forename><surname>Mo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Vobornik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fujii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S P</forename><surname>Parkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Felser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">H</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.00139</idno>
+		<title level="m">Observation of the Type-II Weyl semimetal phase in MoTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Electronic evidence for type II Weyl semimetal state in MoTe</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Liang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.01706</idno>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">N</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">J</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Weber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Magrez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bugnon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Berger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Matt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">Z</forename><surname>Ma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">Q</forename><surname>Lv</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Plumb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Radovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Pomjakushina</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Conder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Qian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Dil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mesot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shi</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.02116</idno>
+		<title level="m">Discovery of Weyl semimetal state violating Lorentz invariance in MoTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Spectroscopic evidence of type II Weyl semimetal state in</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.04218</idno>
+	</analytic>
+	<monogr>
+		<title level="j">WTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">H</forename><surname>Jo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Huang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Bud'ko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Canfield</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kaminski</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.05176</idno>
+		<title level="m">Observation of Fermi arcs in type-II Weyl semimetal candidate WTe</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Dirac nodal pockets in the antiferromagnetic parent phase of FeAs superconductors</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Sebastian</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.80.224512</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">224512</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Chiral magnetic effect in the absence of Weyl node</title>
+		<author>
+			<persName><forename type="first">M.-C</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M.-F</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevB.92.205201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">92</biblScope>
+			<biblScope unit="page">205201</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Zyuzin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Tiwari</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1601.00890</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Intrinsic anomalous hall effect in type-II Weyl semimetals</title>
+		<imprint/>
+	</monogr>
+	<note>to be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.04030</idno>
+		<title level="m">Unusual magneto-response in type-II Weyl semimetals</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">W</forename><surname>Ashcroft</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Mermin</surname></persName>
+		</author>
+		<title level="m">Solid State Physics</title>
+		<meeting><address><addrLine>Boston, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cengage Learning</publisher>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H.-Z</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S.-Q</forename><surname>Shen</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1604.01681</idno>
+		<title level="m">Anomalous phase shift of quantum oscillation in 3D topological semimetals</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Interpretation of the de Haas-van Alphen effect</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Onsager</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/14786440908521019</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Mag</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">1006</biblScope>
+			<date type="published" when="1952">1952</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><surname>Shoenberg</surname></persName>
+		</author>
+		<title level="m">Magnetic Oscillations in Metals</title>
+		<meeting><address><addrLine>Cambridge, England</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Colloquium: Andreev reflection and Klein tunneling in graphene</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W J</forename><surname>Beenakker</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/RevModPhys.80.1337</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">80</biblScope>
+			<biblScope unit="page">1337</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Common-path interference and oscillatory Zener tunneling in bilayer graphene p-n junctions</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nandkishore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Levitov</surname></persName>
+		</author>
+		<idno type="DOI">10.1073/pnas.1101352108</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. U.S.A</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page">14021</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Landau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Lifshitz</surname></persName>
+		</author>
+		<title level="m">Course of Theoretical Physics</title>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Elsevier</publisher>
+			<date type="published" when="1977">1977</date>
+			<biblScope unit="volume">3</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Bloch electrons in a magnetic field</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Blount</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRev.126.1636</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page">1636</biblScope>
+			<date type="published" when="1962">1962</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Anomalous Magneto-Oscillations and Spin Precession</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Keppeler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Winkler</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.88.046401</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page">46401</biblScope>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">the Landau-Zener tunnel probability needs to be regularized to account for a logarithmically diverging reflection phase. For an analysis of this subtlety we refer to A. A. Slutskin, Dynamics of conduction electrons under magnetic breakdown conditions</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>For</surname></persName>
+		</author>
+		<author>
+			<persName><surname>≲ B C</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sov. Phys. JETP</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">474</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Landau-Zener model: Effects of finite coupling duration</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">V</forename><surname>Vitanov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Garraway</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevA.53.4288</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page">4288</biblScope>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Onsager phase factor of quantum oscillations in the organic metal θ-ðBEDT-TTFÞ 4 CoBr 4 ðC 6 H 4 Cl 2 Þ</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Audouarda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-Y</forename><surname>Fortin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Vignolles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Lyubovskii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">I</forename><surname>Zhilyaeva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">N</forename><surname>Lyubovskaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Canadell</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.synthmet.2013.03.011</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Synth. Met</title>
+		<imprint>
+			<biblScope unit="volume">171</biblScope>
+			<biblScope unit="page">51</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Electromagnetic Response of Weyl Semimetals</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Vazifeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Franz</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.111.027201</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page">27201</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+	<note>The Hamiltonian (11) differs from that in this reference by the addition of the a tilt and ξ terms, and also in the replacement of τ y σ 0 sin k z by τ z σ 0 sin k z . This last change was introduced to produce small electron and hole pockets that do not spread out over the entire Brillouin zone.</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<idno type="DOI">10.1103/PhysRevLett.116.236401</idno>
+		<ptr target="http://link.aps.org/supplemental/10.1103/PhysRevLett.116.236401forappen-dixes" />
+		<imprint/>
+	</monogr>
+	<note>See Supplemental Material</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">To discretize the model Hamiltonian (11) we used the KWANT</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Groth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wimmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Akhmerov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Waintal</surname></persName>
+		</author>
+		<idno type="DOI">10.1088/1367-2630/16/6/063065</idno>
+	</analytic>
+	<monogr>
+		<title level="j">New J. Phys</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">63065</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note>Kwant: a software package for quantum transport</note>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Damping of field-induced chemical potential oscillations in ideal two-band compensated metals</title>
+		<idno type="DOI">10.1103/PhysRevB.77.134440</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. B</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page">134440</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+	<note>At the special Fermi energy where electron and hole pockets have the same area, additional. We do not see this feature in Fig. 4, presumably because our data is too noisy.</note>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Quantum Oscillations, Thermoelectric Coefficients, and the Fermi Surface of Semimetallic WTe 2</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fauqué</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Behnia</surname></persName>
+		</author>
+		<idno type="DOI">10.1103/PhysRevLett.114.176601</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page">176601</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note>This recent experimental study of magnetic quantum oscillations in semimetallic WTe 2 reports the sudden appearance of a new frequency above a critical field. Since the new frequency is the sum rather than the difference of the low-field frequencies, it cannot be associated with Klein tunneling through a Weyl point.</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Monotonicity properties of a function involving the psi function with applications</title>
+				<funder ref="#_bT4w3vX #_X3nGxP4 #_CbJEr6q">
+					<orgName type="full">Natural Science Foundation of China</orgName>
+				</funder>
+				<funder ref="#_qMhDPk5 #_Mkqc9Z7">
+					<orgName type="full">unknown</orgName>
+				</funder>
+				<funder ref="#_WdnSdZ7">
+					<orgName type="full">Natural Science Foundation of Zhejiang Province</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Tie-Hong</forename><surname>Zhao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematics and Computation Sciences</orgName>
+								<orgName type="institution">Hunan City University</orgName>
+								<address>
+									<postCode>413000</postCode>
+									<settlement>Yiyang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Zhen-Hang</forename><surname>Yang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematics and Computation Sciences</orgName>
+								<orgName type="institution">Hunan City University</orgName>
+								<address>
+									<postCode>413000</postCode>
+									<settlement>Yiyang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yu-Ming</forename><surname>Chu</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Mathematics and Computation Sciences</orgName>
+								<orgName type="institution">Hunan City University</orgName>
+								<address>
+									<postCode>413000</postCode>
+									<settlement>Yiyang</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Monotonicity properties of a function involving the psi function with applications</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">D4BFCEBC77F62A9E4E32C4FC6D9569B6</idno>
+					<idno type="DOI">10.1186/s13660-015-0724-2</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:54+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>gamma function</term>
+					<term>psi function</term>
+					<term>monotonicity</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In this paper, we present the best possible parameter a ∈ (1/15, ∞) such that the functions ψ (x + 1) -L x (x, a) and ψ (x + 1) -L xx (x, a) are strictly increasing or decreasing with respect to x ∈ (0, ∞), where L(x, a) = 1 90a 2 +2 log(x 2 + x + 3a+1 3 ) + 45a 2 90a 2 +2 log(x 2 + x + 15a-1 45a ) and ψ(x) is the classical psi function. As applications, we get several new sharp bounds for the psi function and its derivatives.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>For real and positive values of x, Euler's gamma function and its logarithmic derivative ψ, the so-called psi function, are defined by (x) = +∞  t x- e -t dt, ψ(x) = (x) (x) , respectively. For extensions of these functions to complex variables and for basic properties see <ref type="bibr">[]</ref>. Recently, the gamma function and psi function ψ have been the subject of intensive research. In particular, many remarkable inequalities and monotonicity properties for these functions can be found in the literature [-]. Recently, <ref type="bibr">Yang []</ref> introduced the function</p><formula xml:id="formula_0">L(x, a) =  a  +  log x  + x + a +   + a  a  +  log x  + x + a - a (.)</formula><p>and proved that the double inequality</p><formula xml:id="formula_1">L(x, a) &lt; ψ(x + ) &lt; L(x -, b) +  x</formula><p>holds for all x &gt;  if and only if a ≤ a  = . . . . and b ≥ ( +  √ )/ = . . . . if a ∈ (/, ∞) and b ∈ (/, ∞), where a  is the unique solution of the equation L(, a) = ψ().</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Partial derivative computations give</head><formula xml:id="formula_2">L x (x, a) =  a  +  x +  x  + x + a +   + a  a  +  x +  x  + x + a- a , (  .  ) L xx (x, a) = -  a  +  x  + x -a +   (x  + x + a +   )  - a  a  +  x  + x +  a +   (x  + x + a- a )  , (  .  ) L xxx (x, a) =  a  +  (x + )(x  + x -a) (x  + x + a +   )  + a  a  +  (x + )(x  + x +  a ) (x  + x + a- a )  . (.) It is not difficult to verify that lim x→∞ ψ(x + ) -L(x, a) x - = - (a -+ √   )(a -- √   ) ,a (.)</formula><p>by use of the L'Hôspital's rule and the formula</p><formula xml:id="formula_3">ψ (x) ∼  x +  x  +  x  -  x  +  x  -  x  + • • • (x → ∞) (  .  ) given in [].</formula><p>The main purpose of this paper is to present the best possible parameter a ∈ (/, ∞) such that the functions ψ (x + ) -L x (x, a) and ψ (x + ) -L xx (x, a) are strictly increasing or decreasing with respect to x ∈ (, ∞), and establish several new sharp bounds for the psi function and its derivatives. All numerical computations are carried out using the MATHEMATICA software.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Lemmas</head><p>In order to prove our main results we need several lemmas, which we present in this section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lemma . (see []</head><p>) Let L(x, a) be defined on (, ∞) × (/, ∞) by (.). Then the following statements are true:</p><p>(i) the functions a → ∂L(x, a)/∂x is strictly decreasing, a → ∂  L(x, a)/∂x  is strictly increasing and a → ∂  L(x, a)/∂x  is strictly decreasing on (/, ∞);</p><formula xml:id="formula_4">(ii) the function a → L xx (x, a) -L xx (y, a) is strictly decreasing on (/, ∞) if x &gt; y &gt; ; (iii) the inequalities ψ (x + ) -L x [x, ( +  √ )/] &gt; , ψ (x + ) -L xx [x, ( +  √ )/] &lt; , and ψ (x + ) -L xxx [x, ( +  √ )/] &gt;  hold for all x &gt; .</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lemma . (see [])</head><p>The identity</p><formula xml:id="formula_5">ψ n (x + ) -ψ n (x) = (-) n n! x n+</formula><p>holds for all x &gt;  and n ∈ N.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Lemma . (see []</head><p>) Let λ ∈ R and f be a real-valued function defined on the interval</p><formula xml:id="formula_6">I = (λ, ∞) with lim x→∞ f (x) = . Then f (x) &lt;  if f (x + ) -f (x) &gt;  for all x ∈ I, and f (x) &gt;  if f (x + ) -f (x) &lt;  for all x ∈ I.</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Main results</head><p>Theorem . Let L(x, a) be defined on (, ∞) × (/, ∞) by (.) and F a (x) = ψ(x + ) -L(x, a). Then the following statements are true:</p><formula xml:id="formula_7">(i) F a (x) is strictly increasing with respect to x on (, ∞) if and only if a ≥ a  = ( +  √ )/ = . . . . ; (ii) F a (x) is strictly decreasing with respect to x on (, ∞) if and only if a ≤ a  = ( -π  +  √ π  -π  + )/[(π  -)] = . . . . . Proof (i) If F a (x) is strictly increasing with respect to x on (, ∞), then lim x→∞ [x  F a (x)] ≥ .</formula><p>Making use of L'Hôspital's rule and (.) we get</p><formula xml:id="formula_8">lim x→∞ ψ(x + ) -L(x, a) x - = -   lim x→∞ x  F a (x) = - (a -+ √   )(a -- √   ) ,a ≤ . (.) Therefore, a ≥ a  = ( +  √ )/ follows easily from (.) and a ∈ (/, ∞). If a ≥ a  = ( +  √ )/, then Lemma .(i) and (iii) lead to F a (x) = ψ (x + ) -L x (x, a) ≥ ψ (x + ) -L x (x, a  ) &gt;  for all x ∈ (, ∞).</formula><p>Therefore, F a (x) is strictly increasing with respect to x on (, ∞).</p><p>(ii) If F a (x) is strictly decreasing with respect to x on (, ∞), then</p><formula xml:id="formula_9">F a () = ψ () -L x (, a) ≤ . (.) It follows from (.) and ψ () = π  / that ψ () -L x (, a) = (π  -)a  -( -π  )a -π  +  (a + )(a -) . (.) Therefore, a ≤ a  = ( -π  +  √ π  -π  + )/[(π  -)] follows from (.) and (.) together with a ∈ (/, ∞).</formula><p>Next, we prove that F a (x) is strictly decreasing with respect to</p><formula xml:id="formula_10">x on (, ∞) if a ≤ a  . From Lemma .(i) we clearly see that it is enough to prove that F a  (x) &lt; ψ (x + ) -L x (x, a  ) &lt;  for all x ∈ (, ∞).</formula><p>Let x &gt;  and a &gt; /. Then it follows from (.), (.), and Lemma . that</p><formula xml:id="formula_11">lim x→∞ F a (x) = lim x→∞ ψ (x + ) -L x (x, a) = , (.) F a (x + ) -F a (x) = ψ (x + ) -ψ (x + ) -L x (x + , a) + L x (x, a) = - (x + ) +  (a  + )[(x + )  + (x + ) + a+  ] - a  [(x + ) + ] (a  + )[(x + )  + (x + ) + a- a ] + x +  (a  + )(x  + x + a+  ) + a  (x + ) (a  + )(x  + x + a- a ) -  (x + )  = q(x, a) p(x, a) , (  .  ) where q(x, a) = (a +  √ -  )( + √   -a) a (x + )  - (a +   )  (a -  )  a  , (  .  ) p(x, a) = (x + )  x  + x + a +   x  + x + a +   × x  + x +   -  a x  + x +   -  a &gt;  (.) and ∂q(x, a) ∂a = - (a  + ) ,a  (x + )  - (a +   )(a -  )(,a  + ) ,a  &lt; . (.)</formula><p>We divide the proof into two cases. Case . x ∈ (/, ∞). Then from (.) and (.) together with a  &lt; / we get</p><formula xml:id="formula_12">q(x, a  ) &gt; q x,   &gt; q   ,   = ,, ,,, &gt; . (.)</formula><p>Equation (.) and inequalities (.) and (.) lead to</p><formula xml:id="formula_13">F a  (x + ) -F a  (x) &gt; . (.)</formula><p>Therefore, F a  (x) &lt;  follows from Lemma . and (.) together with (.). Case . x ∈ (, /]. Then Lemma .(i) and a  &gt; / lead to</p><formula xml:id="formula_14">L xx (x, a  ) &gt; L xx x,   . (  .   )</formula><p>It follows from (.) and Lemma .(iii) together with (.) that</p><formula xml:id="formula_15">F a  (x) = ψ (x + ) -L xx (x, a  ) &lt; L xx (x, a  ) -L xx (x, a  ) = P(x) Q(x) , (  .   )</formula><p>where </p><formula xml:id="formula_16">Q(x) = x  + x +   x  + x +   × x + x  + x  + x  +   (x + )  &gt;  (.</formula><formula xml:id="formula_17">(x) &lt; F a  () = . Theorem . Let L(x, a) be defined on (, ∞) × (/, ∞) by (.), F a (x) = ψ(x + ) -L(x, a)</formula><p>and a  = . . . . is the unique solution of the equation L xx (, a) = ψ (). Then the following statements are true:</p><p>(i) F a (x) is strictly decreasing with respect to x on (, ∞) if and only if</p><formula xml:id="formula_18">a ≥ a  = ( +  √ )/ = . . . . ; (ii) F a (x) is strictly increasing with respect to x on (, ∞) if and only if a ≤ a  . Proof (i) If F a (x) is strictly decreasing with respect to x on (, ∞), then lim x→∞ [x  F a (x)] ≤ .</formula><p>Making use of L'Hôspital's rule and (.) we get</p><formula xml:id="formula_19">lim x→∞ ψ(x + ) -L(x, a) x - =   lim x→∞ x  F a (x) = - (a -+ √   )(a -- √   ) ,a ≤ . (.)</formula><p>Therefore, a ≥ a  = ( +  √ )/ follows easily from (.) and a ∈ (/, ∞).</p><formula xml:id="formula_20">If a ≥ a  = ( +  √ )/, then F a (x) = ψ (x + ) -L xx (x, a) ≤ ψ (x + ) -L xx (x, a  ) &lt; </formula><p>follows easily from Lemma .(i) and (iii).</p><p>(ii) If F a (x) is strictly increasing with respect to x on (, ∞), then</p><formula xml:id="formula_21">F a () = ψ () -L xx (, a) ≥ . (.)</formula><p>It follows from Lemma .(i) that the function a → F a () is strictly decreasing on (/, ∞). Note that</p><formula xml:id="formula_22">F a  () = , a  ∈ (/, /), (.) F / () =   - ∞ n=  n  = . . . . &gt; , (.) F / () = , , - ∞ n=  n  = -. . . . &lt; . (.)</formula><p>Therefore, a ≤ a  follows from (.)-(.) and the monotonicity of the function a → F a ().</p><p>If a ≤ a  , then we only need to prove that F a  (x) &gt;  for all x ∈ (, ∞) by Lemma .(i).</p><p>We divide the proof into two cases. Case . x ∈ (/, ∞). Then from (.), (.), Lemma .(ii), Lemma . and a  &lt; / we get</p><formula xml:id="formula_23">lim x→∞ F a  (x) = lim x→∞ ψ (x + ) -L xx (x, a  ) = , (.) F a  (x + ) -F a  (x) = ψ (x + ) -ψ (x + ) -L xx (x + , a  ) -L xx (x, a  ) &lt;  (x + )  -L xx x + ,   -L xx x,   = - r(x) s(x) , (  .   )</formula><p>where </p><formula xml:id="formula_24">s(x) = x + x  +   x + x  +   × x + x  +   x + x  +   (x + )  &gt;  (.</formula><formula xml:id="formula_25">() = ψ () -L xx (, a  ) =  we know that it is enough to prove that F a  (x) &gt; .</formula><p>It follows from (.) and Lemma .(i) and (iii) together with a  &gt; / that</p><formula xml:id="formula_26">F a  (x) = ψ (x + ) -L xxx (x, a  ) &gt; L xxx (x, a  ) -L xxx x,   = - R(x) S(x) , (  .   )</formula><p>Therefore, F a  (x) &gt;  follows from (.)-(.).</p><p>Let a  = ( +  √ )/, a  = ( -π  +  √ π  -π  + )/[(π  -)], and a  = . . . . be the unique solution of the equation L xx (, a) = ψ (). Then (.) and (.) lead to</p><formula xml:id="formula_27">L x (x, a  ) = x +   x + x  + / x  + x  + x  / + x/ + / , (  .   ) L x (x, a  ) = x +   x  + x + π  (π  -) x  + x  + π  - (π  -) x  + π  - (π  -) x +  (π  -) , (  .   ) L xx (x, a  ) = -   (,x  + ,x  + ,x  + ,x  + ,x  + ,x + ) (x  + x  + x  + x + )  , (.) L xx x,   = -   x  + ,x  + ,x  + ,x  + x  + x +  (x  + x + )  (x  + x + )  . (.)</formula><p>From Lemma .(i), Theorems . and ., (.)-(.), and a  &gt; / we have the following.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Corollary .</head><p>(i) The double inequalities</p><formula xml:id="formula_28">L x (x, a  ) &lt; ψ (x + ) &lt; L x (x, a  )</formula><p>and</p><formula xml:id="formula_29">L xx (x, a  ) &lt; ψ (x + ) &lt; L xx (x, a  )</formula><p>hold for all x &gt;  with the best possible constants a  , a  , and a  . (ii) The double inequalities</p><formula xml:id="formula_30">x +   x + x  +   x  + x  + x   + x  +   &lt; ψ (x + ) &lt; x +   x  + x + π  (π  -) x  + x  + π  - (π  -) x  + π  - (π  -) x +  (π  -) -   x  + ,x  + ,x  + ,x  + x  + x +  (x  + x + )  (x  + x + )  &lt; ψ (x + ) &lt; -   (,x  + ,x  + ,x  + ,x  + ,x  + ,x + ) (x  + x  + x  + x + ) </formula><p>hold for all x &gt; .</p><p>Let a ∈ (   , -π  + √ π  -π  + (π  -) ] and γ = . . . . be the Euler-Mascheroni constant. Then from Lemma .(ii) and the fact that F a () = -γ -L(, a) and lim x→∞ F a (x) =  we get Corollary . immediately. ] with the best possible constant -γ -L(, a).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Corollary</head><p>In particular, taking a = /, /, √ /, / and using (.) one has </p><formula xml:id="formula_31"></formula></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>. The double inequalityL(x, a) &lt; ψ(x + ) &lt; L(x, a)γ -L(, a)holds for all x &gt;  and a ∈ (   , -π  + √ π  -π  + (π  -)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>,,,x  + ,,,,x  + ,,,,x  + ,,,,x  + ,,,x -,,,.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>(.)</cell></row><row><cell cols="4">From (.) we clearly see that</cell><cell></cell></row><row><cell cols="2">P(x) &lt; </cell><cell></cell><cell></cell><cell>(.)</cell></row><row><cell cols="5">for x ∈ (, /] since P(x) is strictly increasing on (, /] and</cell></row><row><cell>P</cell><cell> </cell><cell>= -</cell><cell>,,,,,,, ,,,,</cell><cell>&lt; .</cell></row><row><cell cols="5">Equation (.) and inequalities (.) and (.) lead to the conclusion that F a  (x) is</cell></row><row><cell cols="4">strictly decreasing on (, /]. Therefore, F a </cell><cell></cell></row></table><note><p>) and P(x) = ,,,x  + ,,,x  + ,,,,x  + ,,,,x  + ,,,,x  + ,,,,x  + ,</p></note></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>The authors wish to thank the anonymous referees for their careful reading of the manuscript and their fruitful comments and suggestions. The research was supported by the <rs type="funder">Natural Science Foundation of China</rs> under Grants <rs type="grantNumber">11301127</rs>, <rs type="grantNumber">61374086</rs> and <rs type="grantNumber">11171307</rs>, and the <rs type="funder">Natural Science Foundation of Zhejiang Province</rs> under Grant <rs type="grantNumber">LY13A010004</rs>. Received: <rs type="grantNumber">8 April 2015</rs> Accepted: <rs type="grantNumber">1 June 2015</rs></p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_bT4w3vX">
+					<idno type="grant-number">11301127</idno>
+				</org>
+				<org type="funding" xml:id="_X3nGxP4">
+					<idno type="grant-number">61374086</idno>
+				</org>
+				<org type="funding" xml:id="_CbJEr6q">
+					<idno type="grant-number">11171307</idno>
+				</org>
+				<org type="funding" xml:id="_WdnSdZ7">
+					<idno type="grant-number">LY13A010004</idno>
+				</org>
+				<org type="funding" xml:id="_qMhDPk5">
+					<idno type="grant-number">8 April 2015</idno>
+				</org>
+				<org type="funding" xml:id="_Mkqc9Z7">
+					<idno type="grant-number">1 June 2015</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>where S(x) = (x + )   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare that they have no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Authors' contributions</head><p>All authors contributed equally to the writing of this paper. All authors read and approved the final manuscript.</p><p>Author details </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">T</forename><surname>Whittaker</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Watson</surname></persName>
+		</author>
+		<title level="m">GN: A Course of Modern Analysis</title>
+		<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Sharp inequalities for digamma and polygamma functions</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Alzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Forum Math</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="181" to="221" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Monotonicity properties of the gamma function</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Alzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Batir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Lett</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="778" to="781" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Some new inequalities for gamma and polygamma functions</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Batir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JIPAM. J. Inequal. Pure Appl. Math</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">103</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">On some properties of digamma and polygamma functions</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Batir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">328</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="452" to="465" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Complete monotonicity and logarithmically complete monotonicity properties for the gamma and psi functions</title>
+		<author>
+			<persName><forename type="first">C-P</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Math. Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">336</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="812" to="822" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Monotonicity properties of functions related to the psi function</title>
+		<author>
+			<persName><forename type="first">C-P</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Appl. Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">217</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="2905" to="2911" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Inequalities involving gamma and psi function</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Meh</forename><surname>Ismail</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="129" to="140" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Monotonicity of some functions involving the gamma and psi functions</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Koumandos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">264</biblScope>
+			<biblScope unit="page" from="2261" to="2275" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Accurate estimates of the gamma function involving the PSI function</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mortici</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Numer. Funct. Anal. Optim</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="469" to="476" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Some properties of the gamma and psi functions, with applications</title>
+		<author>
+			<persName><forename type="first">S-L</forename><surname>Qiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vuorinen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Comput</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">250</biblScope>
+			<biblScope unit="page" from="723" to="742" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Inequalities for the gamma function</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Batir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch. Math</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="554" to="563" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Sharp bounds for the psi function and harmonic numbers</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Batir</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Math. Inequal. Appl</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="917" to="925" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Sharp inequalities for the psi function and harmonic numbers</title>
+		<author>
+			<persName><forename type="first">B-N</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Analysis</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="201" to="208" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Some properties of the psi and polygamma functions</title>
+		<author>
+			<persName><forename type="first">B-N</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hacet. J. Math. Stat</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="219" to="231" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Some properties of functions related to the gamma and psi functions</title>
+		<author>
+			<persName><forename type="first">C-P</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Srivastava</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Integral Transforms Spec. Funct</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="153" to="164" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Three classes of logarithmically completely monotonic functions involving gamma and psi functions</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Qi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Integral Transforms Spec. Funct</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">7-8</biblScope>
+			<biblScope unit="page" from="503" to="509" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">An inequality involving the gamma function and the psi function</title>
+		<author>
+			<persName><forename type="first">X-M</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y-M</forename><surname>Chu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Mod. Math</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="67" to="73" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">Z-H</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1408.2245</idno>
+		<title level="m">The monotonicity and convexity of a function involving digamma one and their applications</title>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+	<note>math.CA</note>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abramowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Stegun</forename></persName>
+		</author>
+		<title level="m">IA: Handbook of Mathematical Functions with Formulas, Graphs, and Mathematical Tables</title>
+		<meeting><address><addrLine>Washington</addrLine></address></meeting>
+		<imprint>
+			<publisher>US Government Printing Office</publisher>
+			<date type="published" when="1964">1964</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">On some properties of the gamma function</title>
+		<author>
+			<persName><forename type="first">Á</forename><surname>Elbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Laforgia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Am. Math. Soc</title>
+		<imprint>
+			<biblScope unit="volume">128</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2667" to="2673" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

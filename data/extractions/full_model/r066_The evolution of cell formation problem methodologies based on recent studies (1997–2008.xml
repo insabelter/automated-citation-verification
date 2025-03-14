@@ -1,0 +1,2690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The evolution of cell formation problem methodologies based on recent studies (1997-2008): review and directions for future research</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Grammatoula</forename><surname>Papaioannou</surname></persName>
+							<email>g.papaioannou@lboro.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">The Business School</orgName>
+								<orgName type="institution">Loughborough University</orgName>
+								<address>
+									<postCode>LE11 3TU</postCode>
+									<settlement>Loughborough</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><forename type="middle">M</forename><surname>Wilson</surname></persName>
+							<email>j.m.wilson@lboro.ac.uk</email>
+							<affiliation key="aff0">
+								<orgName type="department">The Business School</orgName>
+								<orgName type="institution">Loughborough University</orgName>
+								<address>
+									<postCode>LE11 3TU</postCode>
+									<settlement>Loughborough</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">School of Management &amp; Business</orgName>
+								<orgName type="institution">Aberystwyth University</orgName>
+								<address>
+									<postCode>SY23 3DD</postCode>
+									<settlement>Aberystwyth</settlement>
+									<region>Wales</region>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The evolution of cell formation problem methodologies based on recent studies (1997-2008): review and directions for future research</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">01B026BA383E7AA0CB3192BBF2DD7AB9</idno>
+					<idno type="DOI">10.1016/j.ejor.2009.10.020</idno>
+					<note type="submission">submitted to Loughborough&apos;s Research Preprint submitted to European Journal of Operational Research May 10, 2011</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:49+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>group technology</term>
+					<term>cellular manufacturing systems</term>
+					<term>cell formation problem</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This paper presents a literature review of the Cell Formation (CF) problem concentrating on formulations proposed in the last decade. It refers to a number of solution approaches that have been employed for CF such as mathematical programming, heuristic and metaheuristic methodologies and artificial intelligence strategies. A comparison and evaluation of all methodologies is attempted and some shortcomings are highlighted. Finally, suggestions for future research are proposed useful for CF researchers.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Group Technology (GT) can be defined as a manufacturing philosophy identifying similar parts and grouping them together to take advantage of their similarities in manufacturing and design <ref type="bibr" target="#b103">(Selim et al. (1998)</ref>). Cellular Manufacturing (CM) is an application of GT and has emerged as a promising alternative manufacturing system. CM could be characterised as a hybrid system linking the advantages of both the jobbing (flexibility) and mass (efficient flow and high production rate) production approaches.</p><p>CM entails the creation and operation of manufacturing cells. Parts are grouped into part families and machines into cells. As reported by <ref type="bibr" target="#b127">Wemmerlov and Hyer (1989)</ref> the aim of CM is to reduce setup and flow times and therefore to reduce inventory and market response times. Setup times are reduced by using part family tooling and sequencing, whereas flow times are reduced by minimising setup and move times, wait times for moves and by using small transfer batches. Moreover, in a survey by <ref type="bibr" target="#b128">Wemmerlov and Johnson (1997)</ref>, CM is promoted as the primary factor for the simplification of production planning and control procedures.</p><p>The design of cellular manufacturing systems has been called Cell Formation (CF). Given a set of part types, processing requirements, part type demand and available resources (machines, equipment, etc.), a general design of cellular manufacturing consists of the following approaches: (a) Part families are formed according to their processing requirements, (b) Machines are grouped into manufacturing cells, (c) Part families are assigned to cells. Note that the above steps are not necessarily performed in the above order or even sequentially. Depending upon the procedures/formulations employed to form manufacturing cells and part families, three solution strategies are identified <ref type="bibr" target="#b103">(Selim et al. (1998)</ref>): (a) Part families are formed first and then machines are grouped into cells according to the part families. This solution strategy is referred to as Part Family Identification (PFI), (b) Manufacturing cells (grouped machines) are first created based on similarity in part routings and then the parts are allocated to cells. This solution strategy is referred to as Machine Groups Identification (MGI), (c) Part families and manufacturing cells are formed simultaneously. This is referred to as Part Families/Machine Grouping (PF/MG) solution strategy.</p><p>For better understanding of a CF system and how cells are formed and parts flow, within and between cells an example is shown here where seven machine types and ten parts are taken into account together with multiple machines of the same type for each machine. Moreover, part/machine utilisation amounts and part machine operation sequences showing the actual production flow are also included. A visual representation of a cell formation system given the specifications described above is provided in Figure <ref type="figure" target="#fig_0">1</ref>.</p><p>The problem to be solved is: allocate each machine to a cell where the number of cells to be formed is to be determined and allocate each part, in accordance with a known processing sequence, to machines for processing. The objective of the problem is to minimise the total cost comprising of intercellular movements and machine set-ups. The model formed may be generalised to include more complex cost structure and other features. Please note that each item in the square boxes, i.e. M k i , denotes the instance k of machine of type i currently used within a cell. Also the elements in the arrows use the notation, r(s) to indicate that part r is using s capacity units of the machine 1 that the arrow is pointing at. All parts follow a certain machine route, shown by the direction of the arrows until they are produced. The latter is indicated with an outgoing arrow from a part/machine processing block pointing to nowhere.</p><p>In the last three decades much work has been undertaken seeking effective methods for the CF problem. A first attempt to classify the approaches, results in the following three categories:</p><p>1 It is assumed that for each machine instance only a unity of its capacity can be spent on processing a certain part. Where no part number or capacity is shown on a line a part is moving to another cell to continue processing, e.g. part 2.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>• Informal methods</head><p>• Part coding analysis methods</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>• Production based methods</head><p>Informal methods or visual methods or simply "eye-balling" methods rely on the visual identification of the correspondent part families and machine cells. This methodology is trivial only when the number of parts and machines is small or could be larger but with considerable flows. Otherwise, the identification task becomes impossible.</p><p>In part coding analysis (PCA) methodologies the design characteristic of the parts has an important role in the formation of part families. These methodologies use a coding system to assign numerical weights to part characteristics and identify families using some classification scheme. PCA-based systems are traditionally design oriented or shape-based, therefore they are ideal for component variety reduction.</p><p>The core classification is production based methods, which can further be classified as follows:</p><p>• Cluster analysis</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>• Graph partitioning approaches</head><p>• Mathematical programming methods</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>• Heuristic and Metaheuristic algorithms</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>• Artificial intelligence methodologies</head><p>Cluster analysis is composed of many diverse techniques for recognizing structure in a complex data set. The main objective of this cell formation tool is to group either objects or entities or attributes into clusters such that individual elements within a cluster have a high degree of "natural" association among themselves and very little "natural association" between clusters. Clustering procedures can be classified as array based clustering, hierarchical clustering and non-hierarchical clustering techniques.</p><p>In array based clustering the processing requirements of components on machines can be represented by the machine/part matrix formulation. The machine/part matrix has zero and one entries (a ij ). A '1' entry in row i and column j of the matrix indicates that component j has an operation on machine i, whereas a '0' entry indicates that it does not. The array based techniques try to allocate machines to groups and parts to associated families by appropriately rearranging the order of rows and columns to find a block diagonal form of the a ij = 1 entries in the machine-part matrix. The literature yields a number of array-based clustering algorithms with the most recent been the Close Neighbour algorithm <ref type="bibr" target="#b49">(Boe and Cheng (1991)</ref>).</p><p>Hierarchical clustering for CF comprises two stages. Initially, some form of similarity or dissimilarity between machines or parts is employed, in order to create machine cells or part families. Later, machines or parts are separated into a few broad cells, each of which is further divided into smaller groups and each of these further partitioned and so on until terminal groups are generated which cannot be subdivided. Essentially hierarchical techniques can be classified into two: (a) Divisive methods where the process starts with all the data (machines or parts) in a single group and a series of partitions is created until each machine (part) is in a singleton cluster and, (b) Agglomerative methods where the process starts with singleton clusters and proceeds to merge them into larger partitions until a partition containing the whole set is obtained. Important work utilising agglomerative methods can be found in <ref type="bibr" target="#b70">Gupta and Seifoddini (1990)</ref> and <ref type="bibr" target="#b69">Gupta (1993)</ref>. Also <ref type="bibr" target="#b121">Vakharia and Wemmerlov (1990)</ref> proposed a methodology for the CF problem, this time based on the identification of part families rather than machine cells.</p><p>Non-hierarchical clustering methods are iterative methods but they also employ a measure of similarity or dissimilarity for grouping parts or machines. They begin with either an initial partition of the data set or the choice of a few seed points. In either case, one has to decide the number of clusters in advance. The most recent non-hierarchical procedures have been proposed by Jayakrishnan <ref type="bibr">Nair and</ref><ref type="bibr">Narendran (1998, 1999)</ref>.</p><p>Although cluster analysis methodologies are simple to implement and solutions can be obtained in reasonable amounts of time they have a main drawback: usually only one objective is taken into account i.e. the minimisation of intercell movements where only part operations and the machines involved are considered. Other product data (such as operational sequences and processing times) are not incorporated into the design process. Thus, solutions obtained may be valid in limited situations. Similarly not much data could be included in graph partitioning approaches where a graph or network representation is employed for the CF problem, and machines and/or parts are treated as vertices and the processing of parts as edges. Other important work employing graph partitioning approaches can be found in <ref type="bibr" target="#b94">Ng (1993)</ref> and <ref type="bibr" target="#b84">Lin et al. (1996)</ref>.</p><p>Mathematical Programming formulations for CF are nonlinear or linear integer programming problems and have been used in a number of circumstances offering the distinct advantage of being able to incorporate ordered sequences of operations, alternative resource plans, non consecutive part operations on the same machine, setup and processing times, the use of multiple identical machines as well as outsourcing of parts. However, the more manufacturing data involved in a CF model the more computationally intractable this becomes for realistically large scale data sets. Due to the NP-hard nature of the CF problem heuristic, metaheuristic and hybrid metaheuristic approaches have been successfully proposed producing acceptable solutions in reasonable time. Further, the decision making process in a manufacturing system often involves uncertainties and ambiguities. Under such circumstances, fuzzy methodologies have proved to be effective tools for taking fuzziness into consideration. Moreover, neural networks have been employed successfully for CF due to their robust nature.</p><p>The primary objective of the present paper is not to provide a review of all the CF literature available but to highlight recent studies concentrating on methodologies such as: mathematical programming, heuristics, metaheuristics, hybrid metaheuristics and artificial intelligent approaches. Research papers, where either a static or a dynamic environment has been employed, are identified and further discussed. A static environment refers to the traditional cellular manufacturing system where no changes in demand are taken into account, whereas a dynamic environment examines cases where part demand volume and part mix change reflecting fluctuating market requirements. Further, an attempt is made to identify possible future directions useful for researchers and practitioners who wish to pursue research on the CF problem and choose the appropriate technique for their study.</p><p>Good and useful discussions of cellular manufacturing systems can be found in <ref type="bibr" target="#b114">Suresh and Meredith (1985)</ref>, <ref type="bibr" target="#b105">Singh (1993)</ref>, <ref type="bibr" target="#b76">Joines et al. (1995)</ref>, <ref type="bibr" target="#b100">Reisman et al. (1997)</ref>, <ref type="bibr" target="#b103">Selim et al. (1998)</ref>, <ref type="bibr" target="#b47">Balakrishnan and Cheng (2007)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">CF Solution Methods</head><p>In this section major contributions to the CF problem will be identified and described broadly. Later, certain key characteristics of these contributions will be tabulated (in Table <ref type="table" target="#tab_1">2</ref>). Classifications of methods for the CF problem have been proposed by many researchers. For the purpose of this review a classification based on mathematical programming approaches, heuristics, metaheuristics, hybrid metaheuristics and artificial intelligent methodologies is provided in Figure <ref type="figure" target="#fig_1">2</ref>. Based on this classification a number of procedures are reviewed with key elements emerging such as: problem formulation, i.e. objectives and constraints involved; solution approach employed; size of problems solved; quality of solutions obtained.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CF Solution Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mathematical</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1.">Mathematical Programming</head><p>Mathematical Programming formulations can be used in a number of circumstances involving a wide range of manufacturing data. Several types of integer programming formulations have been proposed over the last three decades by a number of researchers: <ref type="bibr" target="#b80">Kusiak (1987)</ref>, <ref type="bibr" target="#b104">Shtub (1989)</ref>, <ref type="bibr" target="#b52">Choobineh (1988)</ref>, <ref type="bibr" target="#b126">Wei and Gaither (1990)</ref>, <ref type="bibr" target="#b48">Boctor (1991)</ref>, <ref type="bibr" target="#b134">Zhu et al. (1995)</ref>. Most of these research papers are identified and discussed by <ref type="bibr" target="#b103">Selim et al. (1998)</ref> together with the model of a comprehensive but hard to solve mathematical programming formulation with the objective of minimising simultaneously cost assignment of part operations, machines, workers and tooling to cells.</p><p>Due to the combinatorial complexity of this model the authors identified sub problems (with fewer constraints and variables) which had been proposed by several researchers, proceeded with a general classification of CF procedures based on their employed methodology, and identified a number of useful suggestions for future research. <ref type="bibr" target="#b130">Won and Lee (2004)</ref> proposed a modified p-median approach for efficient GT cell formation with the objective of maximising the sum of similarities between machines in the same cell. The authors commented that the original p-median formulation <ref type="bibr" target="#b80">(Kusiak (1987)</ref>) when applied to real applications was severely restricted due to two major factors: problem size and software type. Their new formulation had two major advantages when compared with the classical p-median model: speedy implementation, and large CF problem capability even when using education-purpose software. <ref type="bibr" target="#b63">Foulds et al. (2006)</ref> developed a mixed integer mathematical programming model where machine modification, as a key constraint not included in earlier studies, was introduced. It is often the case for CF that it is important to be able to reassign parts to additional machines, in order to create a better cell system configuration and also avoid duplication of machines which might be very expensive. Thus, they introduced machine modification to allow further processing of a part within the same cell to reduce intercellular travel and they claimed that the cost of such modifications could be balanced by the consequent reduction in intercell travel cost. The objective was to minimise the sum of the machine modification costs and the intercell travel. This problem was called the Sustainable Cell Formation Problem (SCFP). For small problems XPRESS M P was used and for medium scale problems the authors proposed and analyzed greedy and tabu search heuristics. <ref type="bibr" target="#b58">Diaby and Nsakanda (2006)</ref> developed a comprehensive integer programming problem for the part routing problem (PRP) in cellular manufacturing systems where both operations and part quantities for each of the parts to be manufactured in specific machines were addressed. Several alternate process plans existed for each product and any given operation could be performed on alternate machines at different costs. The objective was to minimise the total material handling, production, outsourcing and setup costs subject to satisfying all part demands and not exceeding any of the machine capacity limits. Due to the PRP computational complexity a Lagrangean relaxationbased approach was developed to generate near optimal solutions to large scale capacitated problems for a cellular manufacturing system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2.">Heuristics</head><p>Heuristic algorithms have popularly been implemented for many practical applications as they are designed to provide an alternative framework for solving a problem in contrast with a set of restricted rules-constraints that cannot vary. Although heuristic approaches do not guarantee to provide optimal solutions (usually sub-optimal results are derived) they are very useful in producing an acceptable solution in reasonable time. <ref type="bibr" target="#b93">Mukattash et al. (2002)</ref> proposed three heuristic procedures. Given a CF solution, the heuristics were designed to assign parts to the cells in the presence of alternative process plans, multiple alternative machines and processing times. CF with the presence of alternative process plans and multiple types of machines led to the elimination of exceptional elements. When multiple types of machines were considered some exceptional elements were also eliminated. The exceptional elements could be further added to the bottleneck machines thus increasing machine utilisation. The heuristics were tested using small problem sizes only. <ref type="bibr" target="#b50">Chan et al. (2003)</ref> developed a heuristic algorithm that addressed problems of machine allocation in cellular manufacturing only when the intra-cell materials flow was taken into account. The proposed algorithm used an adaptive approach to relate machines in a cell by examining the merged part flow weights of machine pairs. The establishment of the part flow weight included practical constraints, such as the part-handling factor and the number of parts per transportation. The objective function employed was to minimise the total travelling score within one cell in which the total travelling distance was covered. The current algorithm outperformed other approaches as it provided near optimum solutions. <ref type="bibr" target="#b79">Kim et al. (2004)</ref> considered a more comprehensive CF problem with a multi-objective machine formulation. Part route families and machine cells needed to be determined in such a way that minimisation of the total sum of intercell part movements and maximum machine workload imbalance could be achieved. A two-phase heuristic algorithm was proposed. In the first phase, representative part routes with part route families were determined whereas in the second phase the remaining part routes were allocated to part route families. The authors concluded that the two-phase heuristic algorithm was effective in minimising intercell part movements and maximum machine workload imbalance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.">Metaheuristics</head><p>Over the past two decades, metaheuristics have been mainly developed for the solution of NP-hard combinatorial optimisation (CO) problems. The CF problem is considered to be a complex and difficult optimisation problem. Many researchers in order to gain more benefits of the CF problem have applied metaheuristic algorithms. Five of the most notable members of the metaheuristics group are: Simulated Annealing (SA), Tabu Search (TS), Genetic Algorithms (GAs), Ant Colony Optimisation (ACO) and Particle Swarm Optimisation (PSO), as shown in Figure <ref type="figure" target="#fig_1">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.1.">Simulated Annealing and Tabu Search</head><p>Simulated Annealing (SA) and Tabu Search (TS) algorithms have a common characteristic as the search process starts from one initial state (the initial solution) and describes a trajectory in the state space. SA is said to be the oldest among metaheuristics. Suggestions for its performance improvement were produced by <ref type="bibr" target="#b62">Eglese (1990)</ref>. Also <ref type="bibr" target="#b110">Souilah (1995)</ref> presents the general SA algorithm and also shows how it has been used to group resources into manufacturing cells, to design the intra-cell layout, and to place the manufacturing cells on the available shop-floor surface. TS is one of the most successful metaheuristics for the application to CO problems. A description of the method and its concepts can be found in <ref type="bibr" target="#b65">Glover and Laguna (1997)</ref>. <ref type="bibr" target="#b120">Vakharia and Chang (1997)</ref> developed two heuristic methods for the CF problem both based on simulated annealing and tabu search algorithms. The objective function of their model was the minimisation of the total cost of the machines required as well as the materials handling cost for loads transferred between cells. A considerable amount of data was considered, such as processing times and transportation costs. The performance of their heuristics was examined using published as well as industrial data. The latter is an important element for CF since the algorithm was evaluated in real situations showing its practicality and applicability. The results obtained indicated that simulated annealing outperformed tabu search in terms of solution quality and computational time. <ref type="bibr" target="#b106">Sofianopoulou (1999)</ref> developed a a nonlinear programming model for solving the CF problem where multiple copies of machines were taken into account together with alternative process plans for part types. The objective of the model was to minimise the total amount of intercellular movement. The processing sequence for each part type was also considered to determine the exact number of intercellular movements. A two-dimensional SA metaheuristic was proposed to produce enhanced system configurations of random instances of medium sized production systems. <ref type="bibr" target="#b44">Aljaber et al. (1997)</ref> modelled the CF problem based on graph approaches and more specifically a pair of shortest spanning path problems, one for the machines (rows)and one for the parts (columns) without taking into account additional manufacturing data. The authors proposed a TS heuristic algorithm for the solution of both problems.</p><p>As part of the cellular manufacturing design process, machines must be grouped in cells and the corresponding part families must be assigned. Limits on both the number of machines per cell and the number of parts per family can be considered. <ref type="bibr" target="#b86">Lozano et al. (1999)</ref> proposed a weighted sum of intracell voids and intercellular moves to evaluate the quality of the solutions. They developed a TS algorithm that systematically explored feasible machine cells configurations determining the corresponding part families using a linear network flow model. The performance of this TS was benchmarked against two SA approaches, another TS approach and three existing heuristics. <ref type="bibr" target="#b111">Spiliopoulos and Sofianopoulou (2003)</ref> proposed a two stage heuristic approach for the manufacturing cell design problem and a TS scheme for its solution. The first stage tackled parts grouping whereas the second eliminated intercellular traffic flow. The TS algorithm, as the third stage to be implemented, integrated proper short and long term memory structures and an overall search strategy for their use. At the code development phase special care was taken to enhance the exploration capability of the algorithm by correlating search statistics with the values of the search parameters. The resulting algorithm proved to be robust and the results were encouraging. <ref type="bibr" target="#b85">Logendran and Karim (2003)</ref> produced a nonlinear integer programming model for addressing two different issues for the CF problem: (a) the availability of alternative locations for a cell and, (b) the use of alternative routes to move part loads between cells when the capacity of the material transporter employed is limited. It is worth noting that the inclusion of a material transporter in a CF system has received only limited attention in the literature. In addition other elements, such as machine capacity limitations, batches of part demands, non-consecutive operations of parts and maximum number of machines assigned to a cell, were also taken into account. The non-linear model was converted into a mixed integer programming model by explicitly fixing the values of key variables in order to obtain a solution of a small sized problem. The choice of fixed values was then permuted, creating a set of small models, and the model with the smallest objective function value was selected. A long term TS algorithm to improve solutions was initially developed followed by six different versions of it in order to investigate the impact of long term memory and the use of fixed versus variable tabu list sizes. All heuristic approaches outperformed the mixed integer programming model obtaining solutions close to optimal in less than a minute. <ref type="bibr" target="#b131">Wu et al. (2004)</ref> considered a CF problem when process plans for parts and production factors such as production volume and cell size were taken into account. The aim was to decompose the manufacturing shop into several manufacturing cells so that the total part flow within the cells can be maximised. For solving this problem a comprehensive TS heuristic algorithm that consisted of a dynamic tabu tenure and a long term memory structure was proposed. Two methods for quickly generating the initial solutions were proposed, namely the group-and-assign and the random approach. Computational results were observed to be very good for a group-and-assign methodology applied to the proposed TS approach for small to medium sized problems. <ref type="bibr" target="#b82">Lei and Wu (2006)</ref> worked beyond a single objective for CF and presented a Pareto optimality based multi-objective tabu search (MOTS) algorithm with objectives: minimisation of the weighted sum of intercell and intra-cell moves and minimisation of the total cell load variation. A new approach was proposed to determine the non-dominated solutions among the solutions produced by the tabu search algorithm. The computational results demonstrated the strong ability of MOTS in multi-objective optimisation.</p><p>In contrast to all studies above which can be characterised as static, Tavakkoli-Moghaddam et al. <ref type="bibr">(2008)</ref> proposed an integer linear programming model addressing the dynamic nature of a CF system. A multi-period planning horizon was assumed where product mix and demand were different but deterministic in each period, i.e. the cells formed in the current period may not be optimal in the period that follows. Thus reconfiguration of cells was required consisting of reforming part families, machine groups and machine cell allocation. Their objective was to minimise intercell movement and machine costs simultaneously. Due to the NP-hard nature of CF model a SA algorithm was developed. The results obtained via the SA were compared with the optimal results found via the mathematical model. The SA proved to be efficient with mean deviations from the optimal to be less than four percent.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3.2.">Evolutionary Algorithms and Ant Colony Optimization</head><p>Both Evolutionary Algorithms (EA) and Ant Colony Optimisation (ACO) could be characterised as population-based searches. Evolutionary algorithms (EA) are inspired by nature's capability to evolve living beings well adapted to their environment. EA prove to be particularly popular due to their added characteristic of being able to search the solution space not from a single point but from a population of points in parallel. There are several variants of EA but for the purpose of this work two are identified: a) Genetic Algorithms (GAs) <ref type="bibr" target="#b71">(Holland (1975)</ref>), which has been used quite extensively for CF, b) Scatter Search (SS) <ref type="bibr" target="#b91">(Marti et al. (2006)</ref>), and c) Particle Swarm Optimization (PSO) <ref type="bibr" target="#b78">(Kennedy and Eberhart (1995)</ref>) which has been employed for CF only recently.</p><p>The core operation for GAs is based on evolution which usually starts from a population of randomly generated individuals and happens in generations. In each generation, the fitness of every individual in the population is evaluated, multiple individuals are stochastically selected from the current population (based on their fitness), and modified (recombined and possibly randomly mutated) to form a new population. The new population is then used in the next iteration of the algorithm. Commonly, the algorithm terminates when either a maximum number of generations has been produced, or a satisfactory fitness level has been reached for the population.</p><p>In contrast to GAs, SS, which was first introduced by <ref type="bibr" target="#b64">Glover (1977)</ref>, is founded on the premise that designs and methods for creating new solutions afford significant benefits beyond of those derived from resource to randomization. Solutions are purposely generated to take account of characteristics in various parts of the solution space. SS orients its exploration to a set of reference points that typically consists of good solutions obtained by prior problem solving efforts. The criteria for 'good' are not restricted to objective function values and may apply to sub-collections of solutions rather than to a single solution.</p><p>PSO is inspired by flocking birds and it is initialised with a population of random solutions evolving over generations to find optima. Generally speaking, the set of rules that govern PSO are: evaluate, compare and imitate. The evaluation phase measures how well each particle (candidate solution) solves the problem at hand. The comparison phase identifies the best particles. The imitation phase produces new particles based on some of the best particles previously found. These three phases are repeated until a given stopping criterion is met. The objective is to find the particle that best solves the target problem.</p><p>ACO is one of the newest metaheuristics for the application to CF problems. The basic ideas of ACO were introduced in <ref type="bibr" target="#b60">Dorigo et al. (1996)</ref>, <ref type="bibr" target="#b59">Dorigo et al. (1999)</ref>. ACO was inspired by the foraging behavior of real ants <ref type="bibr">(Deneubourg et al. (1990)</ref>) and its search process can be described as the evolution of a probability distribution over the search process. <ref type="bibr" target="#b125">Venugopal and Narendran (1992)</ref> were the first researchers to approach the CF problem using GAs. Their objective was the minimisation of the intercell movements of parts and balancing of loads in the cells. A different population of solutions was employed for each of the objectives. The solution representation was simple and efficient where each machine in the plant corresponded to a gene in the chromosome. The value of the gene defined the owning cell of the respective machine. The total number of cells was predefined and the processing time of parts was also taken under consideration. <ref type="bibr" target="#b66">Gravel et al. (1998)</ref> considered a version of the CF problem that allowed the existence of alternative process plans for the parts. A double-loop EA was employed for the solution of the problem with the objective of minimising the volume of intercell moves and balancing the workload within cells. For the external loop of the EA, Venugopal and Naredran's coding for the assignment of machines to cells was used. A second internal loop that determined the allocation of process plans to parts was employed for the evaluation of solution created in the external loop. Different multi-objective optimisation approaches were tested, including the epsilon-constraint approach and the weighted-sum approach. <ref type="bibr" target="#b89">Mak et al. (2000)</ref> proposed an adaptive genetic approach as an effective means of providing the optimal solution to the CF problem. The objective was to group parts and machines into clusters by sequencing the rows and columns of a part/machine incidence matrix to maximise the bond energy measure of the matrix. The proposed approach was different from the use of traditional GAs, because an adaptive scheme was adopted to adjust the genetic parameters during the genetic search process. The effectiveness of the approach was demonstrated by applying it to numerical results and a number of benchmark problems obtained from the literature. <ref type="bibr">Solimanpur et al. (2004a)</ref> formulated a multi-objective integer programming model for the CF problem with independent cells. A GA with multiple fitness functions was proposed to solve their model. Two features made their proposed algorithm differ from previous approaches i.e.: (a) a system-atic uniform design-based technique which was used to determine the search directions, and (b) the search of the solution space in multiple directions instead of a single direction. The results validated the effectiveness of the proposed algorithm. <ref type="bibr" target="#b55">Defersha and Chen (2006)</ref> developed a comprehensive mathematical programming model with the objective of minimising machine investment cost, intercellular material handling cost, operating cost, subcontracting cost, tool consumption cost, set-up cost, and system reconfiguration cost in an integrated manner. Also the model involved many other elements such as alternative routings, sequence of operations, identical machines, workload balancing and machine separation requirements. Due to the complexity of the proposed model only small sized problems could be solved. For large scale problems the authors proposed an efficient heuristic based on a GA. The proposed heuristic was evaluated by comparing the computational results with the optimal solutions for small and medium sized problems and the optimal solution of a larger solution obtained under certain assumptions.</p><p>The same authors <ref type="bibr" target="#b56">(Defersha and Chen (2008)</ref>) proposed later a mathematical programming model for an integrated dynamic CF and a multi-item multi-level capacitated lot sizing problem considering the impact of lot size on product quality. This model was an extension of the model discussed in <ref type="bibr" target="#b51">Chen (2001)</ref> where product structure (bill-of-materials), machine capacity, workload balancing, alternative routings and impacts of lot sizes on product quality were not taken into account. However, integrated models of this type may impose computational difficulties and may not be solvable using off-theshelf optimization software even for small size problems. For this reason, the authors developed a linear programming embedded GA. The algorithm searched over the integer variables and for each visited integer solution the corresponding values of the continuous variables were determined by solving a linear programming subproblem using the simplex algorithm. Numerical examples showed that the proposed method was efficient and effective in searching for near optimal solutions. <ref type="bibr" target="#b132">Wu et al. (2007)</ref> proposed a hierarchical GA to simultaneously form manufacturing cells and determine the group layout of cellular manufacturing. The main feature of this algorithm was the development of a hierarchical chromosome structure to encode two important cell design decisions, a new selection scheme to dynamically consider two correlated fitness functions and a group mutation operator to increase the probability of mutation. From the computational results it was proved that both proposed structures and oper-ators developed were effective in terms of improving solution quality as well as accelerating convergence.</p><p>Tavakkoli-Moghaddam et al. ( <ref type="formula">2007</ref>) presented a fuzzy linear mixed-integer programming model for design of CM systems with fuzzy part demands and product mix changeable under a multi-period planning horizon. The objective was to minimize the sum of the constant/ variable/ relocation machine costs as well as inter-cell movements cost. Because of the complexity of the proposed model, which was a combinatorial nonlinear optimization, the authors developed an efficient GA with novel representation and operators for solving the proposed model. A number of data sets of small, medium and large-sized problems were generated to evaluate the performance of the proposed model and the efficiency of the developed GA. <ref type="bibr" target="#b46">Bajestani et al. (2009)</ref> have also addressed the dynamic nature of the CF problem and proposed a multi-objective model where the total cell load variation and sum of miscellaneous costs such as machine cost, inter-cell material handling cost, and machine relocation cost were to be minimised simultaneously. Due to the NP-hard nature of this problem, the authors developed a multi-objective scatter search for finding locally Pareto-optimal frontier. The latter was compared with two genetic algorithms from the literature. The computational results proved the superiority of the proposed approach. <ref type="bibr" target="#b45">Andrés and Lozano (2006)</ref> were the first authors to consider a PSO algorithm for the CF problem. The objective involved was the minimization of inter-cell movements. A number of published results were used to assess the proposed algorithm. The computational results showed that the proposed algorithm can generate optimal or near optimal solutions but only for small data sets. <ref type="bibr" target="#b61">Durán et al. (2008)</ref> proposed a modified PSO algorithm. The main modification made to the original PSO algorithm is that the current algorithm did not use the vector of velocities as the standard PSO algorithm does. The proposed algorithm used the concept of proportional likelihood with modifications, a technique that is used in data mining techniques. Some simulations were presented and compared. The criterion used to group the machines in cells was based on the minimization of inter-cell movements. The computational results showed that the PSO algorithm is able to find the optimal solutions in almost all instances. <ref type="bibr" target="#b72">Islier (2005)</ref> developed an ACO algorithm for the CF problem in order to get block diagonalised structures for the part/machine incidence matrices.</p><p>The grouping problem was first represented as an artificial ant system, via which better and better groupings were obtained as semi-blind ants could find their way by a communication-supported random search process. The proposed technique was compared with other approaches such as GA, SA and TS. The most remarkable outcome was that ant systems performed better than the other techniques as far as an equal number of solution alternatives was concerned. <ref type="bibr" target="#b98">Prabhaharan et al. (2005)</ref> also proposed an ACO approach for grouping the machines, with the objective of minimising total cell load variation and total intercellular moves. A number of parameters were also considered in this study, such as demands for numbers of parts, routing sequences, processing time, machine capacities and machine workload status. The results of the ACO approach were compared with a GA taken from the literature. The former proved to have better performance. <ref type="bibr" target="#b77">Kao and Li (2008)</ref> presented a part clustering algorithm for the CF problem that used the concept of the recognition system of artificial ants. The proposed algorithm mimicked the random meetings of real ants to build up the ability of object recognition and then to form many initial part clusters with high similarities. These initial part clusters were further merged into larger and larger clusters in an agglomerative way until the designated number of part families was reached. The effectiveness of this algorithm was tested with a variety of data sets collected from the literature. <ref type="bibr" target="#b112">Spiliopoulos and Sofianopoulou (2008)</ref> proposed an ACO algorithm, which used a tight eigenvalue-based bound to guide and accelerate the search, when minimisation of intercellular moves was considered. The resulting algorithm produced most promising results for medium to large scale problems. <ref type="bibr" target="#b92">Megala and Rajendran (2008)</ref> considered the problem of cell formation with the objective of maximising the grouping efficacy and developed an ACO algorithm to obtain machine cells and part families. Their proposed algorithm was tested by using many benchmark data sets. The grouping efficacy obtained was compared with grouping efficacies of existing approaches. The comparison showed that the new algorithm performed very well in terms of maximising the grouping efficacy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4.">Neural Networks</head><p>Neural networks (NNs) have been widely applied in CF due to their robust and adaptive nature. Different types of NNs have been employed successfully with the most popular being: Hopfield network, self-organizing map (SOM), adaptive resonance theory (ART1) and transiently chaotic neural network. <ref type="bibr" target="#b135">Zolfaghari and Liang (1997)</ref> proposed a new structure of Hopfield neural network, OSHN, for the machine grouping problems. The OSHN was designed in conjunction with an objective-guided search. The solution quality of the algorithm was tested using twenty eight machine grouping problems collected from the literature. The main advantages of the proposed approach were that it did not require the training process and could effectively handle bottleneck machines. <ref type="bibr" target="#b83">Liang and Zolfaghari (1999)</ref> presented a neural network approach to the machine cell/part family formation problem considering processing time, lot size, machine capacity, and machine duplication. A generalised grouping efficiency index incorporating processing times and lot sizes has been proposed and used to guide the neural network algorithm's search process towards the global optimum. The computational results obtained were compared against those obtained via a SA approach. <ref type="bibr" target="#b87">Lozano et al. (2001)</ref> considered a more comprehensive CF problem where the sequence of operations on part types was also included. The authors proposed two sequence-based neural network approaches with the objective of minimising transportation costs, i.e. both intra and inter cellular movements. Of the two energy-based neural network approaches investigated, namely Hopfield model and Potts Mean Field Annealing, the latter proved to give better and faster solutions. <ref type="bibr" target="#b107">Soleymanpour et al. (2002)</ref> addressed a number of drawbacks of previous neural network-based approaches for the CF problem and proposed a Transiently Chaotic Neural Network algorithm with supplementary procedures to overcome a number of deficiencies. The current algorithm was tested on a number of existing data sets, and also compared with various approaches from the literature where its superiority was proved.</p><p>Saidi-Mehrabad and <ref type="bibr">Safaei (2007)</ref> proposed a nonlinear integer programming model for the CF problem under dynamic conditions where alternative process plans and a sequence of operations were taken into account. A linearised form of the proposed model was produced and the optimum solution was found in a number of test problems. In addition, due to the NP-hard nature of the CF problem, a neural network approach was employed based on mean field theory for solving the proposed model. Comparison of optimum and neural approach solutions showed the efficiency of the NN approach. <ref type="bibr" target="#b68">Guerrero et al. (2002)</ref> proposed a two phase strategy for grouping parts into families and machines into cells. In phase one, the part family formation problem (PFFP) was modelled as a quadratic programming problem where weighted similarity coefficients were computed and parts were clustered using a new self-organizing neural network (SONN). In phase two, a linear network flow model was used to assign machines to families. To test the proposed approach, different problems from the literature were solved. As benchmark a Maximum Spanning Tree heuristic <ref type="bibr" target="#b86">(Lozano et al. (1999)</ref>) was also used. <ref type="bibr" target="#b42">Solimanpur et al. (2004b)</ref> studied the sensitivity, feasibility and robustness of the Transiently Chaotic Neural Network for solving the CF problem. The dynamics of the network were demonstrated through an example, whereas the effect of the size of the CF problem on the feasibility and robustness of the proposed network was investigated through test problems from the literature. <ref type="bibr" target="#b122">Venkumar and Haq (2005)</ref> proposed a modified binary adaptive ART1 algorithm for the CF problem. The input to the algorithm was the machine/part matrix comprised of the binary digits '0' and '1'. The generated output was the list of the part families, machine cells and number of exceptional elements. This method was applied to known benchmark problems from the literature where it was found to outperform other algorithms in terms of minimising the number of exceptional elements. The same authors <ref type="bibr" target="#b123">(Venkumar and Haq (2006)</ref>) also proposed another algorithm for the CF problem, this timed based on Kohonen self-organising map neural network. The effectiveness of the cell formation problem was measured in terms of the number of exceptional elements, bottleneck parts, and grouping efficiency. The results of testing proved the superiority of the proposed approach.</p><p>Dagli and Huggahalli (1995) adopted the ART1 network with an application in machine-part CF and later <ref type="bibr">Yang and Yang (2008)</ref> proposed a modified ART1 neural learning algorithm to overcome a number of drawbacks. In the modified ART1, the vigilance parameter was estimated by the data in order to be more efficient and reliable for selecting a vigilance value. The authors applied the proposed algorithm to machine-part CF. Several examples were presented to illustrate its efficiency. In comparison with the Dagli and Huggahalli (1995) methodology the modified ART1 neural learning algorithm provided better results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5.">Fuzzy Theory</head><p>The decision making process in a manufacturing system often involves uncertainties and ambiguities. A number of researchers have applied fuzzy clustering, fuzzy mathematics, fuzzy mathematical programming and fuzzy neural networks for the CF problem. <ref type="bibr" target="#b90">Masnata and Settineri (1997)</ref> tailored a fuzzy c-means clustering algorithm for developing a non-binary approach to group technology based on the capabilities of fuzzy logic. They also integrated fuzzy c-means with the strategy for minimum make-span scheduling. <ref type="bibr" target="#b113">Susanto et al. (1999)</ref> modified a fuzzy clustering approach presented by <ref type="bibr" target="#b53">Chu and Hayya (1991)</ref> and proposed a new fuzzy c-means and assignment technique able to perform part-type clusters and machine-type clusters separately. A numerical example was illustrated and problems that arose in implementing this approach were discussed. The proposed algorithm increased the global efficiency of the resulting manufacturing cells. <ref type="bibr" target="#b88">Lozano et al. (2002)</ref> also proposed a modified approach of the standard fuzzy c-means clustering algorithm <ref type="bibr" target="#b53">(Chu and Hayya (1991)</ref>) by taking into account the effect of the weighting component on the fuzziness of the solution and the linking between the degree of membership of parts as well as machines and the prototypes of machine cells and part families. The modified algorithm clustered the part types and machines concurrently, while annealing with the weighting component, leading to a crisp solution where the whole objective function was approximately equal to the sum of the number of voids and exceptional elements in the part machine grouping obtained. The results obtained showed that the proposed algorithm, although it required more computational time than the standard approach, gave better solutions when compared to the best non-fuzzy cell formation algorithms. <ref type="bibr" target="#b119">Torkul et al. (2006)</ref> employed fuzzy logic to study the design of part families and machine cells simultaneously. Their main aim was to compare manufacturing cell design made of fuzzy clustering algorithm (fuzzy c-means) with the crisp methods. The computational results obtained proved the superiority of fuzzy clustering solutions for selected data sets. <ref type="bibr" target="#b99">Ravichandran and Rao (2001)</ref> proposed a new fuzzy clustering algorithm and a new similarity coefficient for sub-grouping parts/machines before the optimal grouping and for optimal grouping. For analyzing output, the proposed algorithm performed quite well when compared to a fuzzy c-means clustering algorithm and other conventional algorithms. The results showed that the new approach to fuzzy part-family formation and grouping efficiency provided a more realistic solution methodology for part family formation in CM applications. <ref type="bibr" target="#b97">Park and Suresh (2003)</ref> addressed the problem of identifying families of parts with similar routing sequences by proposing an improved fuzzy ART neural network approach and comparing it with traditional hierarchical clustering procedures. New representation schemes, clustering performance measures and experimental procedures were developed in this process. Both fuzzy ART neural network and traditional, hierarchical clustering procedures were used to address the part-machine grouping problem with considerations of operation sequences and problem sizes larger than those considered in the past. The experiments proved the superior performance of fuzzy ART over hierarchical clustering. <ref type="bibr" target="#b129">Won and Currie (2007)</ref> proposed a more comprehensive Fuzzy ART approach for part-machine grouping, named Fuzzy ART/RSS-RSS (Fuzzy ART/ReaRRangement-ReaSSignment), where parameters such as the operation sequences with multiple visits to the same machine, production volume of parts and multiple copies of machines were taken into account. Their approach was based on a non-binary part/machine matrix where all parameters involved were incorporated simultaneously. The algorithm adopted a two phase approach to find the proper block diagonal solution where parts and machines were assigned to their most preferred part families and machine cells, for minimisation of intercellular movements and maximisation of within-cell machine utilisation. To prove the robustness of the proposed algorithm a modified procedure of replicated clustering was also presented. Results showed that the Fuzzy ART/RRR-RSS algorithm had robustness and recoverability for large size ill-structured data sets. <ref type="bibr" target="#b101">Safaei et al. (2008)</ref> developed a fuzzy programming-based approach to solve an extended mixed-integer programming model for a dynamic CF problem. The dynamic condition indicated a multi-period planning horizon, in which product mix and demand in each period were different having as a result the need for reconfiguration as the best cells designed for one period may not be the most efficient for subsequent periods. Moreover, in real manufacturing systems some parameters turn out to be uncertain in nature. For the purposes of this paper, the fluctuation in part demand and the availability of manufacturing facilities in each period were regarded as piecewise fuzzy numbers to provide coefficients in the objective function and the technological matrix respectively. The main aim was to determine the optimal cell configuration in each period with the maximum degree of satisfying the fuzzy objective under the given constraints. <ref type="bibr" target="#b96">Papaioannou and Wilson (2008)</ref> proposed a comprehensive mathematical programming formulation where parts are assigned to machines and machines to cells simultaneously by taking into account part machine operation sequences, part/machine utilization amounts, part/machine set-up costs and multiple machines of the same type. The objective function combined minimising the number of distinct cells used by each part, set-up costs when allocating machines to cells and the number of times a part revisits a cell for a later machine operation. The authors considered the fuzziness concept in some of the constraints and the main objective function involved and used a number of existing fuzzy operators and membership functions to solve the fuzzy models mathematically. To illustrate the behavior of the proposed models, a number of numerical examples were generated and the associated computational results were compared and discussed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6.">Hybrid Metaheuristics</head><p>Over the last few years, interest in hybrid metaheuristics <ref type="bibr" target="#b115">(Talbi (2002)</ref>) has risen considerably among researchers in combinatorial optimisation. Hybrid metaheuristics are a skillful combination of a metaheuristic with other optimization techniques providing a more efficient behavior and a higher flexibility. The latter can be achieved by combining the complementary strengths of metaheuristics on one side with the strengths of, for example, more classical optimization techniques on the other side. <ref type="bibr" target="#b95">Nsakanda et al. (2006)</ref> presented a comprehensive model for designing a CM system when there are multiple routings for each part with multiple alternative routings for each of those process plans. The authors proposed a solution methodology based on a combination of GAs and large-scale optimization techniques. A computational study was carried out to prove the algorithm's efficiency when large scale data sets are used. Also additional testing was carried out with smaller problems, which were special cases of their proposed model, in order to compare their approach with existing models. <ref type="bibr" target="#b73">James et al. (2007)</ref> presented a hybrid grouping GA for the CF problem that combined a local search with a standard grouping GA to form part/machine cells. Computational results were produced using the grouping efficacy measure for a set of CF data sets borrowed from the literature. The hybrid grouping genetic approach outperformed the standard grouping GA by exceeding the solution quality on all test problems and by reducing the variability among the solutions found. Overall, the proposed algorithm performed well on all test problems by either exceeding or matching the solution quality of the results presented in the literature.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Comparison of CF methods</head><p>As can be seen from the previous section a significant but not exhaustive list of research papers has been included emphasizing work on CF carried over the last decade. It is worth noting that these papers were selected to be included in this review as their contribution towards CF covers a large spectrum of research directions over the last ten years. All papers have been classified based on different methodologies employed such as mathematical programming, heuristics/metaheuristics and artificial intelligence approaches and their contribution discussed.</p><p>For the purpose of this section a comparison and evaluation of the CF formulations is carried out. Table <ref type="table">1</ref> presents a numbered list of CF reference sources and Table <ref type="table" target="#tab_1">2</ref> a comparison of these numbered sources based on major criteria. The latter involves major objectives and constraints included, solution approaches employed, maximum size of problem data solved, identification of whether the optimum value or deviation from the optimum solution is provided when largest problem solved and whether methodology has been compared to other existing methodologies and finally implementation tools adopted. Major objectives are identified as minimisation of intercellular movements, machine/load utilisation and numerous cost considerations such as: machine operating cost, machine modification costs, machine (re)configuration cost, subcontracting cost, machine setup cost, inventory holding cost, replacement costs of defective parts. Also major constraints are described as: part/machine operation sequences, multiple machines of the same type, part/machine utilisation or processing times, alternative process plans and multi-period time horizon when a dynamic CF system is encountered. A number of conclusions can be drawn from Table <ref type="table" target="#tab_1">2</ref> such as:</p><p>• Most of the formulations for CF propose a mathematical programming model with the main objective of minimising the total number of intercellular movements. Other mathematical programming formulations involve cost related objective functions and only a few consider machine/load utilisation as a goal parameter for CF;</p><p>• Mathematical programming formulations for CF are hard to implement due to computational limitations for large scale problems. Hence, the majority of these formulations serve for setting the problem up and for providing a lower bound or a sub optimum value against which computational results of additional methodologies proposed within each study can be compared;</p><p>• Most of the proposed models involve two or three of the identified major constraints but only very few comprehensive formulations have been proposed;</p><p>• The largest size of problem solved varies amongst authors. The number of machines and number of cells are principal determinants of the complexity of the CF problem. The number of parts is a secondary factor influencing problem difficulty and this number will generally rise in proportion to the number of machines;</p><p>• The dynamic nature of the CF problem reflecting today's market requirements has received attention in the last five years with a few formulations being proposed. A multi-period time horizon constraint is assumed where reconfiguration of cells is required as the best cell design for one period may not be the same for subsequent periods;</p><p>• Due to the NP-hard nature of the CF problem, methodologies such as heuristic and metaheuristic strategies have been employed to integrate larger scale systems meeting today's requirements. The most popular metaheuristics employed in the last decade are GAs, TS and SA;</p><p>• PSO and ACO have only recently received attention for CF. The former has been employed for clustering purposes for CF when a part/machine incidence matrix was considered, whereas the latter has been proposed for addressing in most of the studies the intercellular layout of the CF problem;</p><p>• Only a few hybrid formulations, where a combination of methodologies is examined, have been produced for CF;</p><p>• Fuzzy theory has been employed mainly for clustering purposes and within mathematical programming formulations for addressing uncertainty in certain model parameters;</p><p>• Neural network algorithms have been employed quite extensively over the last decade for the CF problem, however only a few of them addressed a more comprehensive CF problem with additional constraints within;</p><p>• Most of the proposed methodologies in the last decade focus on a single criterion for CF. Only a few studies deal with multiple objectives;</p><p>• Only half of the studies in the literature have their results compared with other existing methodologies. The reason for this is that both objective and constraint specification of the methods differ.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Suggestions for future research</head><p>Based on the CF methodologies classification and comparison a number of suggestions are presented here regarding possible future research directions for the CF problem for both newly and already established researchers.</p><p>A large number of different methodologies have been proposed for the CF problem over the last decade as shown in Table <ref type="table" target="#tab_1">2</ref>. In order to be able to evaluate those methodologies and obtain overall performance criteria, i.e. applicability, practicability, there is still a need for objectively comparing them on benchmark problems.</p><p>All CF approaches that have been proposed have been tested with a variety of problem sizes and in some cases compared with existing methodologies. An additional stage which would complement the process of evaluating results would be to use industrial data to test a proposed formulation's stability and ability for reconfiguration when real situations are encountered.</p><p>The main focus of the CF problem is to group parts into part families and machines into machine cells when certain objective functions are taken into account. In the past, it has been suggested by <ref type="bibr" target="#b103">Selim et al. (1998)</ref>, that to achieve the goal of creating efficient manufacturing cells it is imperative to go beyond just grouping parts and machines by adding workers and tools as third and fourth dimensions to parts and machines respectively to meet industrial specifications. To the best knowledge of the authors the latter has not been examined during the last decade by any CF study, hence more attention should be given to utilising workers and tools.</p><p>More attention should be given to employing metaheuristics such as PSO and ACO which seem particularly promising and their performances should be compared with traditional metaheuristics such as SA, TS and GAs.</p><p>The majority of CF procedures ignore any changes in demand over time caused by product redesign and uncertainties due to volume variation, part mix variation, and resource unreliability. It is only recently that some researchers have addressed a dynamic CF problem, thus it would be useful if some well known techniques could be extended to incorporate a multi-period planning horizon and act further as benchmarks for newer methodologies.</p><p>The applicability of the CF approaches is also limited due to the unavailability of an interactive software program supporting such an application. It would be beneficial if future research methods could include interactive support software for facilitating industrial applications.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusions</head><p>This paper presented a literature review for the CF problem concentrating mainly on research undergone during the last decade. A significant, but not exhaustive, list of research papers was identified and classified based on different methodologies employed such as mathematical programming, heuristics/metaheuristics, fuzzy theory and neural networks. All proposed formulations were compared and evaluated on the basis of both constraints and objectives involved, solution methodologies employed, computational results obtained and solution techniques applied. Finally, a number of future suggestions were identified which should prove useful for CF researchers. It is clear that research on the CF problem is an active area with many papers published in the last decade. In this review it has been identified that a number of elements included in the research agenda proposed by <ref type="bibr" target="#b8">Selim et al. (1998)</ref> such as inclusion of part/machine utilisation, multiple machines of the same type, operation processing requirements, unstable demand environment have been addressed over the last decade by a number of researchers as shown in Table <ref type="table" target="#tab_1">2</ref>. On the other hand, some other important features such as applicability of CF approaches in an industrial context, manufacturing cells where not only parts and machines are taken into account but also tools and workers, and an overall assessment and comparison of existing methodologies using realistic problem sizes have not yet been considered, thus future research could concentrate in this area to incorporate more realism in models. Finally, some additional components could be included in the future agenda for CF: researchers should focus more on multiple objectives rather than single objectives, the dynamic nature of the CF should be included when more comprehensive models are taken into account reflecting reality; more attention should be given to PSO and ACO as both seem promising methodologies for CF; uncertainty in part/machine utilisation could be studied by employing fuzzy theory; hybrid metaheuristics are powerful tools which should be employed more frequently for complex systems such CF.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Cells formed and part flows, within and between cells.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: CF solution methods classification for current paper.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 :</head><label>2</label><figDesc>Comparison of the CF methods No. DS=Largest data set used (machines × parts) O=Provides optimal solution when largest data set used D=Provides percentage deviation from the optimum or lower bound for largest data set used C=Is compared to other existing methodologies (Y=yes and N=no).</figDesc><table><row><cell>Objectives</cell><cell>Constraints</cell><cell>Solution Approaches</cell><cell cols="2">Comp. Results</cell><cell>Impl. Tools</cell></row><row><cell cols="3">O1 O2 O3 C1 C2 C3 C4 C5 MP H T S A G P SS F N</cell><cell>DS</cell><cell>O D C</cell></row><row><cell>1.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>N</cell><cell>C</cell></row><row><cell>2.</cell><cell></cell><cell></cell><cell>(78×325)</cell><cell>N</cell><cell>ZOOM/XMP</cell></row><row><cell>3.</cell><cell></cell><cell></cell><cell>(100×500)</cell><cell>N</cell><cell>Fortran</cell></row><row><cell>4.</cell><cell></cell><cell></cell><cell>(7×25)</cell><cell>Y</cell></row><row><cell>5.</cell><cell></cell><cell></cell><cell></cell><cell>N</cell><cell>N/A</cell></row><row><cell>6.</cell><cell></cell><cell></cell><cell>(15×30)</cell><cell>N</cell><cell>Bor. Delphi</cell></row><row><cell>7.</cell><cell></cell><cell></cell><cell>(30×90)</cell><cell>Y</cell></row><row><cell>8.</cell><cell></cell><cell></cell><cell>(20×30)</cell><cell>N</cell><cell>Fortran</cell></row><row><cell>9.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell><cell>C</cell></row><row><cell>10.</cell><cell></cell><cell></cell><cell>(30×41)</cell><cell>Y</cell><cell>Turbo C++</cell></row><row><cell>11.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell></row><row><cell>12.</cell><cell></cell><cell></cell><cell>(9×9)</cell><cell>Y</cell></row><row><cell>13.</cell><cell></cell><cell></cell><cell>(50×100)</cell><cell>Y</cell></row><row><cell>14.</cell><cell></cell><cell></cell><cell>(13×13)</cell><cell>Y</cell></row><row><cell>15.</cell><cell></cell><cell></cell><cell>(20×40)</cell><cell>Y</cell></row><row><cell>16.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell><cell>Borland C++</cell></row><row><cell>17.</cell><cell></cell><cell></cell><cell>(50×150)</cell><cell>Y</cell></row><row><cell>18.</cell><cell></cell><cell></cell><cell>(15×30)</cell><cell>N</cell><cell>LINGO &amp; C++</cell></row><row><cell>19.</cell><cell></cell><cell></cell><cell>(30×30)</cell><cell>N</cell><cell>Fortran</cell></row><row><cell>20.</cell><cell></cell><cell></cell><cell>(25×40)</cell><cell>Y</cell></row><row><cell>21.</cell><cell></cell><cell></cell><cell>(50×150)</cell><cell>N</cell><cell>Pascal &amp; Lindo</cell></row><row><cell>22.</cell><cell></cell><cell></cell><cell>(40×40)</cell><cell>N</cell></row><row><cell>23.</cell><cell></cell><cell></cell><cell>(18×5)</cell><cell>N</cell><cell>CPLEX &amp; C</cell></row><row><cell>24.</cell><cell></cell><cell></cell><cell>(15×30)</cell><cell>N</cell></row><row><cell>25.</cell><cell></cell><cell></cell><cell>(8×20)</cell><cell>N</cell></row><row><cell>26.</cell><cell></cell><cell></cell><cell>(20×30)</cell><cell>N</cell><cell>Lingo</cell></row><row><cell>27.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell></row><row><cell>28.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell></row><row><cell>29.</cell><cell></cell><cell></cell><cell>(40×100)</cell><cell>Y</cell><cell>C++</cell></row><row><cell>30.</cell><cell></cell><cell></cell><cell>(10×10)</cell><cell>N</cell><cell>C</cell></row><row><cell>31.</cell><cell></cell><cell></cell><cell>(5×7)</cell><cell cols="2">N XPRESS M P &amp; C</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">... continues on next page</cell></row></table></figure>
+		</body>
+		<back>
+
+			
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>We would like to thank the anonymous reviewers for their thoughtful comments/suggestions that improved the exposition.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m">Table 1: List of sources</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Liang</forename><surname>Zolfaghari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Islier</title>
+		<imprint>
+			<biblScope unit="page">27</biblScope>
+			<date type="published" when="1997">1997. 2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Chang</forename><surname>Vakharia</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<biblScope unit="page">28</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Prabhaharan</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Aljaber</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<biblScope unit="page">29</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Haq</forename><surname>Venkumar</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Settineri</forename><surname>Masnata</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<biblScope unit="page">30</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Lozano</forename><surname>Andrés</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Selim</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<biblScope unit="page">31</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Foulds</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Diaby and Nsakanda</title>
+		<author>
+			<persName><surname>Gravel</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998">1998. 2006</date>
+			<biblScope unit="page">32</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Lozano</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="page">33</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Wu</forename><surname>Lei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sofianopoulou</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<date type="published" when="1999">2006. 1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Nsakanda</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Zolfaghari</forename><surname>Liang</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="page">35</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Chen</forename><surname>Defersha</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Susanto</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="page">36</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Haq</forename><surname>Venkumar</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Mak</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<biblScope unit="page">37</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Torkul</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Rao</forename><surname>Ravichandran</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page">38</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Wu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Lozano</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page">39</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>James</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page">14</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Mukattash</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page">15</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Guerrero</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Saidi-Mehrabad</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Safaei</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page">16</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<author>
+			<persName><surname>Soleymanpour</surname></persName>
+		</author>
+		<title level="m">Won and Currie</title>
+		<imprint>
+			<date type="published" when="2002">2002. 2007</date>
+			<biblScope unit="page">42</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Lozano</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page">43</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Chen</forename><surname>Defersha</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">18</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Karim</forename><surname>Logendran</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Durán</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">19</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title/>
+	</analytic>
+	<monogr>
+		<title level="j">Spiliopoulos and Sofianopoulou</title>
+		<imprint>
+			<biblScope unit="page">45</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Safaei</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">20</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Suresh</forename><surname>Park</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page">46</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Won and Lee</title>
+		<author>
+			<persName><forename type="first">Yang</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Yang</forename></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2008. 2004</date>
+			<biblScope unit="page">21</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page">22</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Kim</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page">48</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Li</forename><surname>Kao</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<title level="m" type="main">Spiliopoulos and Sofianopoulou</title>
+		<author>
+			<persName><surname>Wu</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2004. 2008</date>
+			<biblScope unit="volume">49</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Solimanpur</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2004. 2008</date>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">25</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<author>
+			<persName><surname>Solimanpur</surname></persName>
+		</author>
+		<title level="m">Megala and Rajendran</title>
+		<imprint>
+			<date type="published" when="2004">2004b. 2008</date>
+			<biblScope unit="page">51</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<editor>Bajestani et al.</editor>
+		<imprint>
+			<date type="published" when="2005">2005. 2009</date>
+			<biblScope unit="page">52</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">A tabu search approach to the cell formation problem</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Aljaber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Baek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="169" to="185" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">A particle swarm optimization algorithm for part-machine grouping</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Andrés</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lozano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Robotics and Computer-Integrated Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="468" to="474" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">A multi-objective scatter search for a dynamic cell formation problem</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Bajestani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rabbani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Rahimi-Vahed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Khoshkhou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Operations Research</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="777" to="794" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Multi-period planning and uncertainty issues in cellular manufacturing: A review and future directions</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Balakrishnan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="page" from="281" to="309" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">A linear formulation of the machine-part cell formation problem</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">F</forename><surname>Boctor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="343" to="356" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">A close neighbour algorithm for designing cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">J</forename><surname>Boe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2097" to="2116" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">A heuristic algorithm for machine assignment in cellular layout</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Y</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Ip</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page" from="49" to="73" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A model for integrated production planning in cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Integrated Manufacturing Systems</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="275" to="284" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">A framework for the design of cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Choobineh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1161" to="1172" />
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">A fuzzy clustering approach to manufacturing cell formation</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Hayya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1457" to="1487" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Machine-part family formation with the adaptive resonance theory paradigm</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Dagli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Huggahalli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="893" to="913" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Machine cell formation using a mathematical model and a genetic-algorithm-based heuristic</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Defersha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="2421" to="2444" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">A linear programming embedded genetic algorithm for an integrated cell formation and lot sizing considering product quality</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Defersha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">187</biblScope>
+			<biblScope unit="page" from="46" to="69" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">The self organising exploratory pattern of the Argentine ant</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Deneubourg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Aron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Goss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Pasteels</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Insect Behaviour</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="159" to="168" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Large scale capacitated part-routing in the presence of process and routing flexibilities and setup costs</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Diaby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Nsakanda</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Operational Research Society</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="1100" to="1112" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Ant algorithms for discrete optimisation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorigo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Di Caro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sampels</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Life</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="137" to="172" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Ant system: Optimisation by a colony of cooperating agents</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorigo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Maniezzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Colorni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Systems, Man, and Cybernetics -Part B</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="29" to="41" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">A PSO-based Clustering Algorithm for Manufacturing Cell Design</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Durán</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Consalter</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/WKDD.2008</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Workshop on Knowledge Discovery and Data Mining</title>
+		<imprint>
+			<publisher>IEEE Computer Society</publisher>
+			<date type="published" when="2008">2008. 2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Simulated Annealing: A tool for Operational Research</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Eglese</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="271" to="281" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">The sustainable cell formation problem: manufacturing cell creation with machine modification costs</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">R</forename><surname>Foulds</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>French</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Wilson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Operations Research</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1010" to="1032" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Heuristics for integer programming using surrogate constraints</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Glover</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Decision Sciences</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="156" to="166" />
+			<date type="published" when="1977">1977</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<monogr>
+		<title level="m" type="main">Tabu Search</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Glover</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Laguna</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1997">1997</date>
+			<publisher>Kluwer Academic Publishers</publisher>
+			<pubPlace>Norwell, MA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Efficient solutions to the cellformation problem with multiple routings via a double-loop genetic algorithm</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gravel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Nsakanda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Price</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="286" to="298" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">A Review of Cellular Manufacturing Assumptions, Advantages, and Design Techniques</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Greene</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sadowski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Operations Management</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="85" to="97" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Manufacturing cell formation using a new self-organizing neural network</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Guerrero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lozano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Canca</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kwok</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="377" to="382" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Design of manufacturing cells for flexible environment considering alternative routing</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Gupta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1259" to="1273" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">Production data based similarity coefficient for machine-component grouping decisions in the design of a cellular manufacturing system</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Gupta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Seifoddini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1247" to="1269" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<monogr>
+		<title level="m" type="main">Adaptation in Natural and Artificial Systems</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Holland</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1975">1975</date>
+		</imprint>
+		<respStmt>
+			<orgName>Ann Arbor, University of Michigan, Michigan</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Group technology by an ant system algorithm</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Islier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="913" to="932" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">A hybrid grouping genetic algorithm for the cell formation problem</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>James</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">B</forename><surname>Keeling</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Operations Research</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="2059" to="2079" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">CASE: a clustering algorithm for cell formation with sequence data</title>
+		<author>
+			<persName><forename type="first">Jayakrishnan</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Narendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="157" to="179" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">ACCORD: a bicriterion algorithm for cell formation using ordinal and ratio level data</title>
+		<author>
+			<persName><forename type="first">Jayakrishnan</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Narendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="539" to="556" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">A comprehensive review of production-oriented manufacturing cell formation techniques</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Joines</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Culbreth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Flexible Automation and Intelligent Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="254" to="264" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Ant colony recognition systems for part clustering problems</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">L</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="4237" to="4258" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Particle Swarm Optimization</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Eberhart</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE International Conference on Neural Networks</title>
+		<meeting>the IEEE International Conference on Neural Networks<address><addrLine>Perth, Australia</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE Service Center</publisher>
+			<date type="published" when="1995">1995</date>
+			<biblScope unit="page" from="12" to="13" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">A two-phase heuristic algorithm for cell formation problems considering alternative part routes and machine sequences</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">O</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Baek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Baek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">18</biblScope>
+			<biblScope unit="page" from="3911" to="3927" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">The generalized group technology concept</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kusiak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="561" to="569" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Optimal decomposition of large scale networks</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Vogt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mickle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Institute of Electrical and Electronic Engineers Transactions on Systems Man and Cybernetics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="369" to="375" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Tabu search for multiple-criteria manufacturing cell design</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="950" to="956" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Machine cell formation considering processing times and machine capacities: An ortho-synapse Hopfield neural netowrk approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zolfaghari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Intelligent Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="437" to="447" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">A heuristicbased procedure for the weighted production -cell formation problem</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">L</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Dessouky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IIE Transactions</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="579" to="589" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Design of manufacturing cells in the presence of alternative cell locations and material transporters</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Logendran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Karim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Operational Research Society</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="1059" to="1075" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">A one-step tabu search algorithm for manufacturing cell design</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lozano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Adenso-Díaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Eguia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Onieva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Operational Research Society</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="509" to="516" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Machine grouping using sequence-based similarity coefficients and neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lozano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Canca</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Guerrero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>García</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Robotics and Computer Integrated Manufacturing</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="399" to="404" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Modified fuzzy Cmeans algorithm for cellular manufacturing</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lozano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dobado</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Larrañeta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Onieva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fuzzy Sets and Systems</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page" from="23" to="32" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">An adaptive genetic algorithm for manufacturing cell formation</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Mak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">S</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">X</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="491" to="497" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">An application of fuzzy clustering to cellular manufacturing</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Masnata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Settineri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1077" to="1094" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Principles of Scatter Search</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Marti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Laguna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Glover</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">169</biblScope>
+			<biblScope unit="page" from="359" to="372" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">An ant colony algorithm for cellformation in cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Megala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Rajendran</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="298" to="335" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Heuristic approaches for part assignment in cell formation</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Mukattash</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Adil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">K</forename><surname>Tahboub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="329" to="341" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b94">
+	<analytic>
+		<title level="a" type="main">Worst-case analysis of an algorithm for cellular manufacturing</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="384" to="398" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b95">
+	<analytic>
+		<title level="a" type="main">Hybrid genetic approach for solving large-scale capacitated cell formation problems with multiple routings</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Nsakanda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Diaby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">L</forename><surname>Price</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">171</biblScope>
+			<biblScope unit="page" from="1051" to="1070" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b96">
+	<analytic>
+		<title level="a" type="main">Fuzzy extensions to integer programming models of cell-formation problems in machine scheduling</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Papaioannou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Wilson</surname></persName>
+		</author>
+		<idno>1007/s10479-008-0423-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Operations Research</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b97">
+	<analytic>
+		<title level="a" type="main">Performance of Fuzzy ART neural network and hierarchical clustering for part-machine grouping based on operation sequences</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Suresh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="3185" to="3216" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b98">
+	<analytic>
+		<title level="a" type="main">Machine cell formation for cellular manufacturing systems using an ant colony system approach</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Prabhaharan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Muruganandam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Asokan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Girish</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="1013" to="1019" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b99">
+	<analytic>
+		<title level="a" type="main">A new approach to fuzzy part-family formation in cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Ravichandran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C S</forename><surname>Rao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="591" to="597" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b100">
+	<analytic>
+		<title level="a" type="main">Cellular manufacturing: A statistical review of the literature(1965-1995)</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reisman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Motwani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Cheng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Operations Research</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="508" to="520" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b101">
+	<analytic>
+		<title level="a" type="main">A fuzzy programming approach for a cell formation problem with dynamic and uncertain conditions</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Saidi-Mehrabad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Sassani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Fuzzy Sets and Systems</title>
+		<imprint>
+			<biblScope unit="volume">159</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="215" to="236" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b102">
+	<analytic>
+		<title level="a" type="main">A new model of dynamic cell formation by a neural approach</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Saidi-Mehrabad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Safaei</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="1001" to="1009" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b103">
+	<analytic>
+		<title level="a" type="main">Cell Formation in Group Technology: Review Evaluation and Directions for Future Research</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Selim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Askin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Vakharia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="20" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b104">
+	<analytic>
+		<title level="a" type="main">Modelling group technology cell formation as a generalized assignment problem</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shtub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="775" to="782" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b105">
+	<analytic>
+		<title level="a" type="main">Design of Cellular Manufacturing Systems: An Invited Review</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Singh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">69</biblScope>
+			<biblScope unit="page" from="284" to="291" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b106">
+	<analytic>
+		<title level="a" type="main">Manufacturing cells design with alternative process plans and/or replicate machines</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sofianopoulou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="707" to="720" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b107">
+	<analytic>
+		<title level="a" type="main">A transiently chaotic neural network approach to the design of cellular manufacturing</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Soleymanpour</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shankar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2225" to="2244" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b108">
+	<analytic>
+		<title level="a" type="main">A multi-objective genetic algorithm approach to the design of cellular manufacturing systems</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Solimanpur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shankar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1419" to="1441" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b109">
+	<analytic>
+		<title level="a" type="main">Feasibility and robustness of transiently chaotic neural networks applied to the cell formation problem</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Solimanpur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shankar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="1065" to="1082" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b110">
+	<analytic>
+		<title level="a" type="main">Simulated annealing for manufacturing systems layout design</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Souilah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="592" to="614" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b111">
+	<analytic>
+		<title level="a" type="main">Designing manufacturing cells: a staged approach and a tabu search algorithm</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Spiliopoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sofianopoulou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2531" to="2546" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b112">
+	<analytic>
+		<title level="a" type="main">An efficient ant colony optimization system for the manufacturing cells formation system</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Spiliopoulos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sofianopoulou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanved Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="589" to="597" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b113">
+	<analytic>
+		<title level="a" type="main">A new fuzzy-c-means and assignment technique-based cell formation algorithm to perform part-type clusters and machine-type clusters</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Susanto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Price</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Production Planning &amp; Control</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="375" to="388" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b114">
+	<analytic>
+		<title level="a" type="main">Achieving factory automation principles through group technology principles</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Suresh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Meredith</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Operations Management</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="151" to="167" />
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b115">
+	<analytic>
+		<title level="a" type="main">A taxonomy of hybrid metaheuristics</title>
+		<author>
+			<persName><forename type="first">E.-G</forename><surname>Talbi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Heuristics</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="541" to="564" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b116">
+	<analytic>
+		<title level="a" type="main">Solving a dynamic cell formation problem using metaheuristics</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Aryanezhad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vasei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Azaron</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Applied Mathematics and Computation</title>
+		<imprint>
+			<biblScope unit="volume">170</biblScope>
+			<biblScope unit="page" from="761" to="780" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b117">
+	<analytic>
+		<title level="a" type="main">A new approach for the cellular manufacturing problem in fuzzy dynamic conditions by a genetic algorithm</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Aryanezhad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Vasei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Azaron</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Intelligent &amp; Fuzzy Systems</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="363" to="376" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b118">
+	<analytic>
+		<title level="a" type="main">A new solution for a dynamic cell formation problem with alternative routing and machine costs using simulated annealing</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Tavakkoli-Moghaddam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Safaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Sassani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Operational Research Society</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="916" to="924" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b119">
+	<analytic>
+		<title level="a" type="main">An application of fuzzy clustering to manufacturing cell design</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Torkul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">H</forename><surname>Cedimoglou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Geyik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Intellegent &amp; Fuzzy Systems</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="173" to="181" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b120">
+	<analytic>
+		<title level="a" type="main">Cell formation in group technology: a combinatorial search approach</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Vakharia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y.-L</forename><surname>Chang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="2025" to="2043" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b121">
+	<analytic>
+		<title level="a" type="main">Designing a cellular manufacturing system: a materials flow approach based on operation sequences</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Vakharia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Wemmerlov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IIE Transactions</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="84" to="97" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b122">
+	<analytic>
+		<title level="a" type="main">Manufacturing cell formation using modified ART1 networks</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Venkumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Haq</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="909" to="916" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b123">
+	<analytic>
+		<title level="a" type="main">Complete and fractional cell formation using Kohonen self-organizing map networks in cellular manufacturing system</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Venkumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Haq</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">15</biblScope>
+			<biblScope unit="page" from="4257" to="4271" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b124">
+	<analytic>
+		<title level="a" type="main">Strategic subcontracting for efficient disaggregated manufacturing</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vannelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1715" to="1728" />
+			<date type="published" when="1987">1987</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b125">
+	<analytic>
+		<title level="a" type="main">A genetic algorithm approach to the machine-component grouping problem with multiple objectives</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Venugopal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">T</forename><surname>Narendran</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="469" to="480" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b126">
+	<analytic>
+		<title level="a" type="main">An optimal model for cell formation decisions</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Wei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gaither</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Decision Sciences</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="416" to="433" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b127">
+	<analytic>
+		<title level="a" type="main">Cell Manufacturing in the US Industry: A Survey of Users</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Wemmerlov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">L</forename><surname>Hyer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="1511" to="1530" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b128">
+	<analytic>
+		<title level="a" type="main">Cellular Manufacturing at 46 User Plants: Implementation Experiences and Performance Improvements</title>
+		<author>
+			<persName><forename type="first">U</forename><surname>Wemmerlov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Johnson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="29" to="49" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b129">
+	<analytic>
+		<title level="a" type="main">Fuzzy ART/RRR-RSS: a two phase neural network algorithm for part machine grouping in cellular manufacturing</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Won</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Currie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2073" to="2104" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b130">
+	<analytic>
+		<title level="a" type="main">Modified p-median approach for efficient GT cell formation</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Won</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">C</forename><surname>Lee</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="495" to="510" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b131">
+	<analytic>
+		<title level="a" type="main">A tabu search approach to the cell formation problem</title>
+		<author>
+			<persName><forename type="first">T.-H</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Low</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W.-T</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Advanced Manufacturing Technology</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="916" to="924" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b132">
+	<analytic>
+		<title level="a" type="main">A genetic algorithm for cellular manufacturing design and layout</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chao-Hsien</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">181</biblScope>
+			<biblScope unit="page" from="156" to="167" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b133">
+	<analytic>
+		<title level="a" type="main">Machine-part cell formation in group technology using a modified ART1 method</title>
+		<author>
+			<persName><forename type="first">M.-S</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">European Journal of Operational Research</title>
+		<imprint>
+			<biblScope unit="volume">188</biblScope>
+			<biblScope unit="page" from="140" to="152" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b134">
+	<analytic>
+		<title level="a" type="main">An efficient zero-one formulation of the cell formation problem</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Heady</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Reiners</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Industrial Engineering</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="911" to="916" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b135">
+	<analytic>
+		<title level="a" type="main">An objective-guided ortho-synapse Hopfield approach to machine grouping problems</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zolfaghari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Production Research</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2773" to="2792" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

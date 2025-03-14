@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Security Analysis on the Decentralized Energy Trading System Using Blockchain Technology</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Sandi</forename><surname>Rahmadika</surname></persName>
+							<email>sandika@pukyong.ac.kr</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Interdisciplinary Program of Information Security</orgName>
+								<orgName type="department" key="dep2">Graduate School PKNU Department of IT Convergence and Application Engineering</orgName>
+								<orgName type="institution">Pukyong National University</orgName>
+								<address>
+									<settlement>Busan</settlement>
+									<country key="KR">South Korea</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Diena</forename><forename type="middle">Rauda</forename><surname>Ramdania</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Jurusan Teknik Informatika</orgName>
+								<orgName type="department" key="dep2">Fakultas Sains dan Teknologi</orgName>
+								<orgName type="institution">Universitas Islam Negeri Sunan Gunung Djati Bandung</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Maisevli</forename><surname>Harika</surname></persName>
+							<email>3maisevli@jtk.polban.ac.id</email>
+							<affiliation key="aff2">
+								<orgName type="institution">JTK Politeknik Negeri Bandung</orgName>
+								<address>
+									<settlement>Jawa Barat</settlement>
+									<country key="ID">Indonesia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Security Analysis on the Decentralized Energy Trading System Using Blockchain Technology</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BD31A5969609680013A3F0B737945E72</idno>
+					<idno type="DOI">10.15575/join.v3i1.207</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:57+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Blockchain</term>
+					<term>energy trading</term>
+					<term>microgrid</term>
+					<term>peer-to-peer network</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Blockchain turns both currencies and commodities into a digital form without relying on a middleman, allowing one person to trade with another, including trading renewable energy. This study aims to explore the implementation of blockchain technology in the energy sector. The method used involves describing, exploring, and analyzing the prominent implementation of blockchain technology in energy trading. The research has found that the current form of centralized energy trading systems still suffers from security concerns and a lack of quality of service. A decentralized energy system using blockchain technology allows parties to create energy trading transactions via microgrid. Blockchain technology promises an immutable, single source of truth from multiple sources without third-party involvement. Furthermore, we analyzed the security issues and highlighted the performance of several attacks that might occur in the proposed system. Understanding these aspects is crucial for developing a secure and efficient energy trading platform.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>The trading of energy systems is evolving towards a more decentralized model that accommodates heterogeneous, competitive energy sources and energy storage systems (ESS). Most modern financial infrastructures are centralized and involve a trusted third party, which handles accounts, processes payments, and provides security <ref type="bibr" target="#b0">[1]</ref>, <ref type="bibr" target="#b1">[2]</ref>. In general, the centralized trading system still has some drawbacks and becomes the death knell for energy providers. The decentralized possesses a single point of failure from a middleman that may disrupt trading activities <ref type="bibr" target="#b2">[3]</ref>- <ref type="bibr" target="#b4">[5]</ref> as it directly affects consumer satisfaction. Hence, the research related to trading activities to improve the quality of service has been extensively developed by experts, including the trading system using blockchain technology in the energy sector.</p><p>The initial step for trading renewable energy systems has been exploring, integrating, and making connections for equipment with distributed energy resource systems such as solar energy in a decentralized peer-to-peer network. As it has for centuries, commerce relies on trust and verified identity, with a cryptography protocol module embedded in the system to ensure data credibility and other security measures. Starting as a niche system on the market, nowadays, it attracts the interest of experts in several industries <ref type="bibr" target="#b5">[6]</ref>.</p><p>The essence of the decentralized system in the energy sector (see <ref type="bibr">Fig 1)</ref> is based on a powerful idea to organize, properly structure, and steer to improve the quality of service. It gives many advantages, such as flexibility, scalability, etc. Furthermore, a third party whose service is needed in the industries is no longer necessary in a decentralized blockchain system. Henceforth, it increases the transaction speed, reduces the cost, and improves the quality of service of a trading system. Instead of only consuming energy, the blockchain allows prosumers with surplus energy to create a trading activity to sell their energy via an intelligent grid. Several researchers have proposed a concept of decentralized energy trading through multi-signatures and the anonymous messaging stream <ref type="bibr" target="#b6">[7]</ref>, <ref type="bibr" target="#b7">[8]</ref>. The system is built by following the Bitcoin protocol via peer-to-peer messages (anonymity transaction). There are two types of communication in the system: sending a private message and broadcasting the message. The algorithm of energy trading between the payer and payee is also given in this paper. If there is any dispute during the transaction, the Distribution System Operator (DSO) can solve the problems among the parties. The authors did not elaborate on the attacker's performance, such as selfish mining, eclipse attack, and double spending attack in the model.</p><p>Imbault et al. <ref type="bibr" target="#b8">[9]</ref> proposed the green blockchain concept for managing energy and exploring and creating a green certificate in an eco-district. There are no details </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>45</head><p>related to the security issues in this system. Recently, Danzi et al. <ref type="bibr" target="#b9">[10]</ref> showed the concept of distributed proportional fairness control via a blockchain smart contract. The study aimed to enhance efficiency, especially regarding transmission losses in the smart grid.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. RESEARCH METHOD A. FUNDAMENTAL OF BLOCKCHAIN</head><p>The blockchain network can be described as a data structure used to create ledgers containing much transaction information <ref type="bibr" target="#b10">[11]</ref>- <ref type="bibr" target="#b12">[13]</ref>. As it has for centuries, commerce relies on trust and verified identity with cryptography protocol modules embedded in the system to ensure the credibility of the data and other security manners. As shown in Fig <ref type="figure" target="#fig_1">2</ref>, the timestamp is used in digital documents to prevent the attacker from tamperproofing it. The block in the blockchain is like a seal; if the attacker tries to break the seal, everyone is allowed to know the action. Each owner transfers the coin to the next by digitally signing a hash of the previous transaction and the public key of the next owner and adding these to the end of the coin <ref type="bibr" target="#b13">[14]</ref>, <ref type="bibr" target="#b14">[15]</ref>. The hash is produced by running the contents of the block in question through a cryptographic hash function, e.g., Bitcoin uses SHA-256. An ideal cryptographic hash function can easily create a hash for any input, but it is challenging to derive the input. In blockchain architecture, a block consists of two main parts: the transaction block, which contains all the transactions within the block, and the block header. The block header is a short and strictly formatted data field that prepends every block. It includes six fields, each serving a different function. Table <ref type="table" target="#tab_1">1</ref> provides a detailed description of the functionalities of these fields. In various sectors, blockchain is being used to build some purposes such as financial registries <ref type="bibr" target="#b15">[16]</ref> and operational registries <ref type="bibr" target="#b16">[17]</ref>, <ref type="bibr" target="#b17">[18]</ref> , and one of the most popular ones is the smart contracts <ref type="bibr" target="#b18">[19]</ref>, <ref type="bibr" target="#b19">[20]</ref>: a. Financial registries: Cryptocurrencies such as Litecoin, Bitcoin, and Dogecoin can be alternatives to real currencies in the blockchain system. b. Operational registries: Blockchain allows the tracking and certifying of specific products or assets, including renting contracts, land registers, and notary deals or votes. c. Smart contracts (automated actions on the blockchain) are account-holding objects that contain several code functions to make decisions, store data, and send cryptocurrencies to the next owner. The smart contract can execute the code (self-executing).</p><p>Proof-of-work in Bitcoin, proof-of-stake, and so on are various consensus protocols that keep the blockchain secure <ref type="bibr" target="#b20">[21]</ref>. It depends on the consensus protocol. The blocks are created and added to the blockchain differently. In proof of work, blocks are made by mining, which keeps the blockchain safe. A probability of finding nNonce of proof H for given target T is:</p><formula xml:id="formula_0">𝑃(𝐻 ≤ 𝑇) = 𝑇 2 256</formula><p>(1)</p><p>The disadvantage of proof-work is related to efficiency, which wastes too many computational resources to find the target value (hash puzzle). The hash in PoW begins with several zero-bit hashes (SHA-256) and involves scanning for value when hashing data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. RESILIENT OVERLAY NETWORK</head><p>An extensive distributed system is an overlay network that delivers content, applications, and services to a global audience <ref type="bibr" target="#b21">[22]</ref>. The chord algorithm in the overlay network provides a fast-distributed computation of hash function mapping keys to nodes responsible for them. It uses consistent hashing <ref type="bibr" target="#b22">[23]</ref>, which has several good properties. With high probability, when a 𝑛 𝑡ℎ node joins (or leaves) the network, only an O(1/N) fraction of the keys are moved to a different location. This is the minimum necessary to maintain a balanced load <ref type="bibr" target="#b23">[24]</ref>. Fig. <ref type="figure" target="#fig_2">3</ref> shows a possible three-layered software structure for a cooperative mirror system. The highest layer would provide an interface to users, including naming.  From the client's side, there is a block, such as a file system, block store, and the chord itself. Block stores and chords are connected to another server and the client from the server. The primary usage of the chord protocol is a query value <ref type="bibr" target="#b20">[21]</ref> from a client to find a successor (k). This refers to an O(N) query time, and the N refers to the number of rings applied.</p><p>As shown in Fig 4 ., each node has a successor and a predecessor. The successor to a node is the next node in the identifier circle in a clockwise direction. The predecessor is counter-clockwise. However, typically, there are "holes" in the sequence (because of failure or departure). Regarding the possibility of the holes, each node records an arc of 2𝑟 + 1 nodes in the middle of which it stands, i.e., the list of 𝑟 nodes preceding it and 𝑟 nodes following it. This list results in a high probability that a node can correctly locate its successor or predecessor, even if the network suffers from a high failure rate <ref type="bibr" target="#b20">[21]</ref>.</p><p>In our system model, the chord-based distributed system is used to know the node location among the neighbors in the decentralized trading system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. RESULT AND DISCUSSION A. DECENTRALIZED ENERGY TRADING MODEL</head><p>A prominent example of a blockchain trading energy system is the Brooklyn microgrid <ref type="bibr" target="#b23">[24]</ref> as shown in Figure <ref type="figure" target="#fig_4">5</ref>, designed in the USA. It can be described as a solution that combines the security and transparency between the neighbors offered by the blockchain concept. The system aims to measure the ability of blockchain technology to buy and sell energy among the neighbors and how effective blockchain technology is adopted.  Decentralized storage of the transaction on the blockchain system allows for keeping a distributed, transparent, and secure record of energy transactions between the parties, which is tamper-proof from the attacker. A decentralized energy trading system would no longer require third-party involvement, e.g., banks and energy companies, to do energy trading activities among the traders. Instead, the process will run automatically, and the energy will be sent after the miner solves the proof-ofwork and propagates to the entire network, which, in the end, the prosumer will get his/her reward. The router transmits the packet data of record transactions from a source to another computer in the peer-to-peer network. The wireless routers use WPA-PSK and PSK Pass Phrases to connect with other devices, and every message is encrypted using AES (Advanced Encryption Standard). The prosumer who has surplus energy and wants to sell the energy announces to the network by giving details on the amount of energy and the price. The consumers will be able to see that announcement, and if they want to do the transaction, it will be executed by the miners via a smart contract.</p><p>After a transaction is broadcast to the Bitcoin network. When that happens, it is said that the transaction has been mined at a depth of 1 block. With each subsequent block found, the number of blocks deep increases by one. To be secure against double-spending, a transaction should not be considered as confirmed until it is several blocks deep. The cumulative distribution function (CDF) of blocks based on Fig <ref type="figure" target="#fig_5">6</ref> shows that approximately 30% of Bitcoin blocks take between 10 and 40 minutes to be generated <ref type="bibr" target="#b25">[26]</ref>.</p><p>In a selfish mining attack, an attacker tries to find a new block by solving a proof-of-work puzzle, keeping the block secret, and mining continuously till it reaches the longest chain on the blockchain network. The selfish chain publishes its secret block if only the honest network comes close to its secret network or when the selfish chain wants to claim unfair rewards. It will affect the rational miner to ISSN 2527-9165 (Online) Security Analysis on the Decentralized Energy Trading System Using Blockchain Technology (Sandi Rahmadika, Diena Rauda Ramdania, Maisevli Harika) 47 join the selfish mining pool. The rational miners prefer to enter the pool with the highest revenue.</p><p>The selfish miner relies on power mining (resources), as shown in Fig <ref type="figure">7</ref>, and always competes with the honest miner to find a new block. Once their network becomes the longest, the selfish miner will quickly invalidate the valid block from the honest miner. The current assumption of the Bitcoin system is safe as long as 51% of the mining power is under the honest miner, but Eyal and Sirer <ref type="bibr" target="#b20">[21]</ref> show the attacker can gain unfair revenue with 25% hashing power.</p><p>The components model in the network architecture performs a key role in supporting the continuity of a system, and it has the input and output gateway of the data blocks. In charge of distributing and replicating the data record of a transaction in the peer-to-peer network, the component requires knowledge of data block location and the ability to fetch data blocks in the appropriate node containing the requested data and return it to the requester. III. CONCLUSION Blockchain technology is used to trade renewable energy systems in an environment among neighbors in the peer-to-peer network. We discussed a model for trading energy in a small environment using blockchain technology and then analyzed possible security issues. The performance of the attacker is also presented. Blockchain technology with cryptographic embedded to support the security issues is a potential solution to create a secure trading renewable energy system in the environment among the neighbors. The energy and commodity transaction life cycle, even for simple transactions, involves a multitude of processes within each company and across market participants. Blockchain turns currencies and commodities into a digital form without relying on middlemen, allowing one person to trade with another. In the future, a strategy is needed to prevent various attacks, especially in the overlay network.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig 1 .</head><label>1</label><figDesc>Fig 1. Centralized and decentralized structure</figDesc><graphic coords="1,314.42,486.50,214.38,78.75" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig 2 .</head><label>2</label><figDesc>Fig 2. The information a block (transaction)</figDesc><graphic coords="2,66.98,373.86,213.30,155.88" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig 3 .</head><label>3</label><figDesc>Fig 3. Chord-based distributed system</figDesc><graphic coords="2,342.67,598.11,157.68,85.00" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig 4 .</head><label>4</label><figDesc>Fig 4. Chord-based distributed systemAs shown inFig 3,  the chord algorithm has a basic structure from client to server. From the client's side, there is a block, such as a file system, block store, and the chord itself. Block stores and chords are connected to another server and the client from the server. The primary usage of the chord protocol is a query value<ref type="bibr" target="#b20">[21]</ref> from a client to find a successor (k). This refers to an O(N) query time, and the N refers to the number of rings applied.As shown in Fig 4., each node has a successor and a predecessor. The successor to a node is the next node in the identifier circle in a clockwise direction. The predecessor is counter-clockwise. However, typically, there are "holes" in the sequence (because of failure or departure). Regarding the possibility of the holes, each node records an arc of 2𝑟 + 1 nodes in the middle of which it stands, i.e., the list of 𝑟 nodes preceding it and 𝑟 nodes following it. This list results in a high probability that a node can correctly locate its successor or predecessor, even if the network suffers from a high failure rate<ref type="bibr" target="#b20">[21]</ref>.In our system model, the chord-based distributed system is used to know the node location among the neighbors in the decentralized trading system.</figDesc><graphic coords="3,116.95,78.65,113.33,100.30" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Fig 5 .</head><label>5</label><figDesc>Fig 5.  Brooklyn microgrid network<ref type="bibr" target="#b24">[25]</ref> </figDesc><graphic coords="3,89.40,590.71,168.42,141.70" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Fig 6 .</head><label>6</label><figDesc>Fig 6. Block generation time in Bitcoin</figDesc><graphic coords="3,336.65,78.65,170.05,98.19" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Bitcoin block header format</figDesc><table><row><cell>Field</cell><cell>Description</cell><cell>Size</cell></row><row><cell>Version</cell><cell>Block Vers.num</cell><cell>4 bytes</cell></row><row><cell cols="2">Hash-Prev block Hash of prev.header</cell><cell>32 bytes</cell></row><row><cell cols="2">Merkle root hash Tx Merkle root hash</cell><cell>32 bytes</cell></row><row><cell>Time</cell><cell>Unix time stamp</cell><cell>4 bytes</cell></row><row><cell>nBits</cell><cell>Current difficulty</cell><cell>4 bytes</cell></row><row><cell>Nonce</cell><cell cols="2">Allows miners search 4 bytes</cell></row></table></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Blockchain&apos;s roles in strengthening cybersecurity and protecting privacy</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kshetri</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Telecomm. Policy</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1027" to="1038" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A system view of financial blockchains</title>
+		<author>
+			<persName><forename type="first">W.-T</forename><surname>Tsai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Blower</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2016 IEEE Symposium on Service-Oriented System Engineering (SOSE)</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="450" to="457" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Demystifying blockchain and distributed ledger technology-hype or hero?</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mclean</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Deane-Johns</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Law Rev. Int</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="97" to="102" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The interplay between decentralization and privacy: the case of blockchain technologies</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">De</forename><surname>Filippi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Peer Prod. Issue</title>
+		<imprint>
+			<biblScope unit="issue">7</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Blockchain technology and decentralized governance: Is the state still necessary?</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Atzori</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Available SSRN</title>
+		<imprint>
+			<biblScope unit="page">2709713</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Bitcoin and Blockchain Security</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Karame</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Androulaki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="s">Information Security and Privacy Series</title>
+		<imprint>
+			<publisher>United States of America, Artech House</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Security and Privacy in Decentralized Energy Trading Through Multi-Signatures, Blockchain and Anonymous Messaging Streams</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">Z</forename><surname>Aitzhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Svetinovic</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/TDSC.2016.2616861</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans Dependable Secur. Comput</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="840" to="852" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A blockchain-based smart grid: towards sustainable local energy markets</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mengelkamp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Notheisen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Beer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Dauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Weinhardt</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/S00450-017-0360-9/METRICS</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. Sci. -Res. Dev</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="207" to="214" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">The green blockchain: Managing decentralized energy production and consumption</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Imbault</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Swiatek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Beaufort</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Plana</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/EEEIC.2017.7977613</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Conference Proceedings -2017 17th IEEE International Conference on Environment and Electrical Engineering and 2017 1st IEEE Industrial and Commercial Power Systems Europe</title>
+		<meeting><address><addrLine>EEEIC / I and CPS Europe</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Distributed proportional-fairness control in microgrids via blockchain smart contracts</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Danzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Angjelichinoski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Stefanovic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Popovski</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/SMARTGRIDCOMM.2017.8340713</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2017 IEEE International Conference on Smart Grid Communications</title>
+		<meeting><address><addrLine>SmartGridComm</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="45" to="51" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">Bitcoin: A Peer-to-peer Electronic Cash System</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nakamoto</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Blockchain solutions for big data challenges: A literature review</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Karafiloski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mishev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IEEE EUROCON 2017-17th International Conference on Smart Technologies</title>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="763" to="768" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Trading realworld assets on blockchain: an application of trust-free transaction systems in the market for lemons</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Notheisen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Cholewa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Shanmugam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bus. Inf. Syst. Eng</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page" from="425" to="440" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Micropayments for decentralized currencies</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pass</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shelat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security</title>
+		<meeting>the 22nd ACM SIGSAC Conference on Computer and Communications Security</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="207" to="218" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">An efficient method to enhance Bitcoin wallet security</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2017 11th IEEE International Conference on Anticounterfeiting, Security, and Identification</title>
+		<imprint>
+			<publisher>ASID)</publisher>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="26" to="29" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Blockchain and its coming impact on financial services</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Fanning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Centers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Corp. Account. Financ</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="53" to="57" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Secure and Trustable Electronic Medical Records Sharing using Blockchain</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dubovitskaya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ryu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schumacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AMIA Annu Symp Proc</title>
+		<imprint>
+			<biblScope unit="volume">2017</biblScope>
+			<biblScope unit="page" from="650" to="659" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Public service operational efficiency and blockchain -A case study of Companies House, UK</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shahaab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Maude</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hewage</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/J.GIQ.2022.101759</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Gov Inf Q</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">101759</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Applications of smart-contracts and smart-property utilizing blockchains</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Hillbom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Tillström</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">Smart contracts and their application in supply chain management</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Law</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+		<respStmt>
+			<orgName>Massachusetts Institute of Technology</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Systematizing Decentralization and Privacy: Lessons from 15 Years of Research and Deployments</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Troncoso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Isaakidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Danezis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Halpin</surname></persName>
+		</author>
+		<idno type="DOI">10.1515/popets-2017-0056</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Priv. Enhancing Technol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="404" to="426" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Overlay Networks: An Akamai Perspective</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">K</forename><surname>Sitaraman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kasbekar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Lichtenstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jain</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/9781118909690.CH16</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Advanced Content Delivery, Streaming, and Cloud Services</title>
+		<imprint>
+			<biblScope unit="volume">9781118575</biblScope>
+			<biblScope unit="page" from="305" to="328" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Chord: A scalable peer-to-peer lookup service for internet applications</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Stoica</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Morris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Karger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Kaashoek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Balakrishnan</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/964723.383071</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ACM SIGCOMM Comput. Commun. Rev</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="149" to="160" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Designing microgrid energy markets: A case study: The Brooklyn Microgrid</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mengelkamp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gärttner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kessler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Orsini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Weinhardt</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/J.APENERGY.2017.06.054</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Appl Energy</title>
+		<imprint>
+			<biblScope unit="volume">210</biblScope>
+			<biblScope unit="page" from="870" to="880" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Blockchain Technology in Finance</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Treleaven</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Yang</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MC.2017.3571047</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Comput. (Long Beach Calif</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="14" to="17" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<ptr target="https://blockchain.info/charts/avg-confirmation-time" />
+		<title level="m">Average Confirmation Time in Bitcoin</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

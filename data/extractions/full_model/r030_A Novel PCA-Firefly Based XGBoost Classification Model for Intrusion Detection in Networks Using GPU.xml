@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Novel PCA-Firefly Based XGBoost Classification Model for Intrusion Detection in Networks Using GPU</title>
+				<funder ref="#_9Vbs2fQ">
+					<orgName type="full">Deanship of Scientific Research at Prince Sattam Bin Abdulaziz University</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2020-01-27">27 January 2020</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Sweta</forename><surname>Bhattacharya</surname></persName>
+							<email>sweta.b@vit.ac.in</email>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information Technology and Engineering</orgName>
+								<orgName type="institution">VIT -Vellore</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<region>Tamil Nadu</region>
+									<country>India;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Siva</forename><surname>Rama Krishnan</surname></persName>
+							<email>siva.s@vit.ac.in</email>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information Technology and Engineering</orgName>
+								<orgName type="institution">VIT -Vellore</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<region>Tamil Nadu</region>
+									<country>India;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Praveen</forename><surname>Kumar</surname></persName>
+							<email>praveenkumarreddy@vit.ac.in</email>
+						</author>
+						<author>
+							<persName><forename type="first">Reddy</forename><surname>Maddikunta</surname></persName>
+							<idno type="ORCID">0000-0003-4209-2495</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information Technology and Engineering</orgName>
+								<orgName type="institution">VIT -Vellore</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<region>Tamil Nadu</region>
+									<country>India;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Rajesh</forename><surname>Kaluri</surname></persName>
+							<email>rajesh.kaluri@vit.ac.in</email>
+							<idno type="ORCID">0000-0003-2073-9833</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information Technology and Engineering</orgName>
+								<orgName type="institution">VIT -Vellore</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<region>Tamil Nadu</region>
+									<country>India;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Saurabh</forename><surname>Singh</surname></persName>
+							<idno type="ORCID">0000-0003-2073-9833</idno>
+							<affiliation key="aff1">
+								<orgName type="department">School of Computer, Information and Communication Engineering</orgName>
+								<orgName type="institution">Kunsan National University</orgName>
+								<address>
+									<postCode>54150</postCode>
+									<settlement>Gunsan</settlement>
+									<country>Korea;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Thippa</forename><surname>Reddy Gadekallu</surname></persName>
+							<idno type="ORCID">0000-0003-0097-801X</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Information Technology and Engineering</orgName>
+								<orgName type="institution">VIT -Vellore</orgName>
+								<address>
+									<postCode>632014</postCode>
+									<region>Tamil Nadu</region>
+									<country>India;</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Mamoun</forename><surname>Alazab</surname></persName>
+							<email>mamoun.alazab@cdu.edu.au</email>
+							<idno type="ORCID">0000-0003-4209-2495</idno>
+							<affiliation key="aff2">
+								<orgName type="department">IT and Environment</orgName>
+								<orgName type="laboratory">Senior IEEE Member</orgName>
+								<orgName type="institution">Charles Darwin University</orgName>
+								<address>
+									<postCode>0815</postCode>
+									<settlement>Darwin</settlement>
+									<country key="AU">Australia</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Usman</forename><surname>Tariq</surname></persName>
+							<email>u.tariq@psau.edu.sa</email>
+							<idno type="ORCID">0000-0001-7672-1187</idno>
+							<affiliation key="aff3">
+								<orgName type="department">College of Computer Engineering and Sciences</orgName>
+								<orgName type="institution">Prince Sattam bin Abdulaziz University</orgName>
+								<address>
+									<addrLine>Al-Khraj</addrLine>
+									<postCode>11942</postCode>
+									<country key="SA">Saudi Arabia</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Novel PCA-Firefly Based XGBoost Classification Model for Intrusion Detection in Networks Using GPU</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2020-01-27">27 January 2020</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">82E573AA58C27C7EB79EF5BCBAF4F705</idno>
+					<idno type="DOI">10.3390/electronics9020219</idno>
+					<note type="submission">Received: 26 December 2019; Accepted: 15 January 2020;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>intrusion detection system</term>
+					<term>principal component analysis (PCA)</term>
+					<term>firefly</term>
+					<term>XGBoost</term>
+					<term>One-Hot encoding</term>
+					<term>machine learning</term>
+					<term>Google Colab GPU</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The enormous popularity of the internet across all spheres of human life has introduced various risks of malicious attacks in the network. The activities performed over the network could be effortlessly proliferated, which has led to the emergence of intrusion detection systems. The patterns of the attacks are also dynamic, which necessitates efficient classification and prediction of cyber attacks. In this paper we propose a hybrid principal component analysis (PCA)-firefly based machine learning model to classify intrusion detection system (IDS) datasets. The dataset used in the study is collected from Kaggle. The model first performs One-Hot encoding for the transformation of the IDS datasets. The hybrid PCA-firefly algorithm is then used for dimensionality reduction. The XGBoost algorithm is implemented on the reduced dataset for classification. A comprehensive evaluation of the model is conducted with the state of the art machine learning approaches to justify the superiority of our proposed approach. The experimental results confirm the fact that the proposed model performs better than the existing machine learning models.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>Life without internet has almost become impossible in the present day and age. The potential of internet is enormous and its growth has been reflected in the functioning of business models pertaining to education, entertainment, healthcare and all the various types of organizations around the world. However, use of internet in every sphere of human life has its own challenges. The most significant challenge deals with data security. Network intrusion is a situation of security breach due to unauthorized access in a computational network. The process of identifying the different types of intrusions in a network is performed by an intrusion detection system (IDS) <ref type="bibr" target="#b0">[1]</ref>. The attacks in the IDS can be categorized as Probe attack, DoS attack, R2L attack, U2R attack. In probe attack, the unauthorized personnel 'sniffs' the network and identifies the vulnerabilities of a particular target resource. As an example, the attacker can use an uncommon port number as the identification with other IP addresses to attack on different ports. The DoS attacks are targeted to make the network resources unavailable by flooding unnecessary data packets by the attacker. In this case, an internal attack can be generated where the user targets a particular network resource and floods it with internet control message protocol (ICMP) by using a simple command "ping -t". A U2R attack is an attack where the attacker gains access to the root privileges of the network. This leads to several disasters such as gaining unauthorized access to the a control list where the users can modify permissions as per their convenience. In R2L attack the attacker gets unauthorized access into the victim's network thereby sniffing of the data gets easier, which can be prevented by having a virtual private network (VPN) framework <ref type="bibr" target="#b1">[2]</ref>. In order to combat these network attacks, there is a dire need for deploying efficient IDS, which acts as a surveillance system for detecting anomalies in the incoming network traffic. Any malicious activity in the network is immediately reported to the network operation center (NOC). The IDS can be deployed either in the network or in a host. Based on the deployment type the IDS can be categorised as network IDS or host IDS. The network IDS is implemented in the border router as well as in various subnets to detect any abnormal behaviour in the network traffic. Such abnormalities are recorded as logs in the IDS servers to prevent similar attacks on the network perimeter. The host IDS, on the contrary, is deployed on each individual host and the incoming and outgoing network traffic is monitored for abnormalities <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>. The existing data is compared with the previous data log and any discrepancies detected are reported to the administrator.</p><p>IDS systems can be hardware as well as software oriented wherein the software based IDS is far more convenient and configurable than the hardware based IDS, which faces issues in handling data traffic requiring rigorous maintenance tasks. In spite of such issues research on hardware based IDS has gained immense momentum for the detection of attacks. The emphasis hence has been more on the performance of advanced graphics processors, which provide higher performance in the detection of attacks using hardware based IDS.</p><p>Since any network is extremely vulnerable to such attacks, organizations need to have efficient defensive mechanisms installed and deployed to identify the maximum possible threats. NIDS and HIDS sensors are resource expensive and impractical to be deployed covering the entire network. Inability to strategically optimize the usage of IDS could lead to important resources being exposed to adversarial attacks. Any IDS framework comes bundled with pre-defined signatures, which alert to any anomalies in the network traffic. However this framework needs to be customized to adhere to all possible organizational needs. Moreover, investigation of IDS alerts tend to be extremely resource intensive, and might require additional information from other network tools to confirm and decide on the seriousness of the alerts generated. These decisions require security expert personnel capable of the interpretation of system outputs and computing of crucial functions. Hence experienced security experts are required for the remediation, detection and management of such threats <ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref>.</p><p>As the dataset used in this work has huge dimension, an effective dimensionality reduction mechanism had to be developed to reduce the burden of the classifier. Moreover, a dimensionality reduction mechanism would facilitate the classifier to choose the most important attributes and eliminate the attributes that have negative impact on the performance of the classifiers. This motivated us to design a model making use of a PCA based firefly algorithm to effectively choose the most relevant attributes from the IDS dataset. The features selected from this hybrid PCA-firefly algorithm are therefore trained using the XGBoost classifier. The performance of the proposed model is then evaluated with existing algorithms.</p><p>The rest of the paper is organized as follows: Section 2 presents related work, Section 3 discusses briefly the background algorithms used in this work, Section 4 discribes the proposed methodology, Section 5 highlights the results of exprimentation and Section 6 incorporates the conclusion and points out the direction of future works.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related Work</head><p>Intrusion detection is a major task of any network security tool. The various intrusion detection and prevention systems deployed in networks have associated performance and efficiency issues. The performance of the IDS depends on its accuracy in detecting network anomalies with decreased number of false positive alarms being generated. Various researchers have worked to resolve such performance issues by implementing various machine learning approaches on IDS datasets <ref type="bibr" target="#b5">[6]</ref>. Support vector machines (SVM), multi-layer perceptron network and various other ML techniques have been used, each with limitations pertinent to the handling of large network datasets. Researchers have proposed the use of classification techniques to eradicate such accuracy and performance issues in the prediction of malicious network activities. Apart from the popular machine learning techniques extreme learning machine (ELM) and NSL knowledge discovery data mining have been identified as a standard for the evaluation of intrusion detection mechanisms in the network <ref type="bibr" target="#b6">[7]</ref>. Researchers have also implemented random forest classifier on the IDS dataset sample. Such approaches have helped in the experimentation of datasets and analysing effects of malicious attacks considering various perspectives and dimensions <ref type="bibr" target="#b7">[8]</ref>.</p><p>It is well known that applications of machine learning has a successful track record of automatically detecting and classifying intrusions both at network and host level in the quickest time frame. However, it is also essential to consider the volatility and ever changing characteristics of the malicious attacks involving larger volumes of stake holders. This issue needs to be resolved providing scalability. Moreover, the available datasets require continuous updates based on the dynamic characteristics of malware attacks. Several researchers have suggested the implementation of deep learning models and deep neural networks (DNN) for the development of flexible and dynamic IDS that would be capable of efficiently detecting and classifying capricious network attacks <ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">[11]</ref>. The results of the DNN model reveal potential of high dimensional feature representation of the IDS data when fed into hidden layers in comparison to the other machine learning approaches. Based on the performance of the DNN model, the authors have proposed a scalable hybrid IDS-AlertNet system that would efficiently monitor network traffic and proactively send alert on cyber attacks. In coordination with the use of DNN, convolutional neural network algorithms have also been identified as an advanced and superior technology for extraction of features in an intrusion dataset for the classification purposes <ref type="bibr" target="#b11">[12]</ref>.</p><p>There exists almost eleven datasets namely DARPA, KDD99, ISC2012 and ADFA13, which have been used for classification and analysis of intrusion datasets. However, most of these datasets fail to incorporate network traffic diversity, volume and versatility related information on malicious attacks. Moreover, there are cases of anonymous packet information, insufficient payload information, lack of features and metadata <ref type="bibr" target="#b12">[13]</ref>. The classical machine learning algorithms when applied to the biased public and biased datasets fail to yield accurate results making them impractical to be used in real-time situations. The authors hence have split the datasets in a disjoint fashion across multiple time scales for the purpose of training and testing of the ML model. Image processing techniques in combination with optimal parameterization and deep learning models have helped to enhance robustness in the network and eradicate malwares completely. Since the approach provides visual detection of network intrusion it is justified as a real time solution for the deployment of intrusion detection system <ref type="bibr" target="#b13">[14]</ref>.</p><p>Newer attacks pop up every day and identifying these attacks is a major challenge. Once the attacks have been identified, the IDS have to be fed in with appropriate responses, which constitute data gathering, feature selection and decision system. Deep learning is said to be one of the best approaches, which can be used in IDS due to the fact that its training duration is less and accuracy is better. The authors in <ref type="bibr" target="#b14">[15]</ref> survey different deep learning approaches incorporated in IDS and present a comparative analysis of the same.</p><p>Burstiness of data has been given a huge importance to information security so that the value of data can be used for business intelligence. The speed at, which the data is generated every second has made detection of attacks a challenging task. The authors in <ref type="bibr" target="#b15">[16]</ref> have used Spark-Chi-SVM technique for intrusion detection. The authors also use ChiSqSelector for feature selection and a built-in intrusion detection technique is used with the help of support vector machine (SVM) classifier on Apache Spark Big Data platform. The authors conclude that Spark-Chi-SVM technique offers higher performance by reducing the training duration and is also effective for Big data scenarios.</p><p>Machine and deep learning techniques have been significantly implemented for IDS in wireless sensor network (WSN). For observing the major network resources in WSN, the researchers implement Boltzmann machine-based clustered IDS (RBC-IDS), which is a DL-based IDS technique. In the study <ref type="bibr" target="#b16">[17]</ref>, researchers analyse the performance of RBC-IDS, compare it to the existing adaptive machine learning-based IDS and conclude that the detection duration of RBC-IDS is roughly twice than the ASCH-IDS.</p><p>Several researchers have used nature-inspired optimization algorithms along with machine learning algorithms for classifying the datasets. Advantages of using nature inspired algorithms is that, they can help the classifiers in overcoming the problem of getting struck at local minima. The authors in <ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref> propose several hybrid classification models using nature inspired algorithms like cuckoo search, BAT, firefly, genetic algorithms etc, to classify diabetes and heart disease datasets. The authors <ref type="bibr" target="#b21">[22]</ref> compared RIFCM algorithm with existing algorithms for the suitability in analyzing satellite images. In <ref type="bibr" target="#b22">[23]</ref> the authors proved a novel algorithm to cluster categorical data with rough set theory. A new algorithm based on rough sets on fuzzy approximation and intuitionistic fuzzy approximation is proposed by the authors in <ref type="bibr" target="#b23">[24]</ref>. The authors in <ref type="bibr" target="#b24">[25]</ref> proposed a hybrid intuitionistic fuzzy and rough set-based approach for the classification of breast cancer dataset.</p><p>Most of the studies conducted in this area have primarily focused on application of optimized machine learning and neural network approaches for intrusion detection. However, the optimum level of accuracy has not been achieved due to their narrow focus and emphasis only on the application techniques and failure to consider feature engineering. In order to fulfill this objective, in our present study we have used PCA and firefly to choose the most significant features eliminating irrelevant ones, which have negative effect on the accuracy of the prediction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Background</head><p>XGBoost: XGBoost is an optimized gradient tree boosting system that creates decision trees in a sequential form <ref type="bibr" target="#b25">[26]</ref>. It possesses the capability to compute relevant calculations relatively faster in all the computing environments. Hence, XGBoost is widely used for its performance in modeling newer attributes and classification of labels. The application of XGBoost algorithm has gained immense momentum with its implementations in tabular and structured datasets. The evolution of XGBoost algorithm started with the decision tree based approach wherein graphical representations of possible solutions for a decision is computed depending on certain conditions. Then, an ensemble meta algorithm aggregating predictions from various decision trees based on majoritarian voting technique was created named 'bagging'. This bagging approach further evolved to construct a forest or aggregation of decision trees by randomly selecting features. The performance of the models was boosted by reducing the errors from building sequential models. As a further improvement the gradient decent algorithm was employed to reduce the errors in the sequential model. Finally XGBoost algorithm was identified as an helpful approach to optimize the gradient boosting algorithm by removing missing values, eliminating overfitting issues using parallel processing. The system optimization in XGBoost algorithm is achieved by implementing parallelization, Tree pruning and Hardware optimization as shown in Figure <ref type="figure" target="#fig_0">1</ref>. The algorithm supports three forms of gradient boosting namely, gradient boosting machine for the learning rate; stochastic gradient boosting consisting of sub-sampling and regularized gradient boosting , which includes L1 and L2 regularizations. </p><formula xml:id="formula_0">A = 1 m m ∑ i A i<label>(2) 2.</label></formula><p>Standard deviation (S): For standard deviation calculation, the standard distance from the data set A i must be determined at a certain point A. The computation of S involves measuring distance square from all data points to the average set. The data pints are counted and partitioned to obtain a positive square root, as shown in Equation ( <ref type="formula" target="#formula_1">3</ref>).</p><formula xml:id="formula_1">S = 1 m m ∑ i=1 (A i -A) 2<label>(3) 3.</label></formula><p>Covariance: Covariance configuration is very much the same as variance configuration as shown in Equation (4).</p><formula xml:id="formula_2">Cov(A, B) = ∑ m i=1 (A i -A)(B i -B) m<label>(4) 4.</label></formula><p>Eigenvalues and eigenvectors of a matrix: If X is an m * m matrix, then A = 0 is an eigenvector of X , where µ is a scalar for eigenvalue Y and A = 0 .  </p><formula xml:id="formula_3">A m * n =              </formula><formula xml:id="formula_4">              = [a 1 , a 2 , ..., a m ]<label>(1) 1.</label></formula><p>Mean: Assume a 1 , a 2 , a 3 , .....a m indicates the arbitrary variables for sample size m. The average of the dataset is a arbitrary parameter as shown by Equation <ref type="bibr" target="#b1">(2)</ref>.</p><formula xml:id="formula_5">A = 1 m m i A i<label>(2) 2.</label></formula><p>Standard deviation (S): For standard deviation calculation, the standard distance from the data set A i must be determined at a certain point A. The computation of S involves measuring distance square from all data points to the average set. The data pints are counted and partitioned to obtain a positive square root, as shown in Equation <ref type="bibr" target="#b2">(3)</ref>.</p><formula xml:id="formula_6">S = 1 m m i=1 A i -A 2 (3)</formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.</head><p>Covariance: Covariance configuration is very much the same as variance configuration as shown in Equation (4).</p><formula xml:id="formula_7">Cov(A, B) = m i=1 A i -A B i -B m<label>(4) 4.</label></formula><p>Eigenvalues and eigenvectors of a matrix: If X is an m * m matrix, then A 0 is an eigenvector of X , where µ is a scalar for eigenvalue Y and A 0 .</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>5.</head><p>Cumulative proportion: The cumulative proportion of sample variance explained by the first k principal components is calculated as shown in Equation ( <ref type="formula">5</ref>).</p><formula xml:id="formula_8">λ 1 + λ 2 + ... + λ k λ 1 + λ 2 + ... + λ p (5)</formula><p>where λ k is kth eigenvalue, p the number of variables. 6.</p><p>Mahalanobis distance: The Mahalanobis distance measures the distance from each point in multivariate space to the overall mean or centroid, utilizing the covariance structure of the data is shown in Equation <ref type="bibr" target="#b5">(6)</ref>.</p><formula xml:id="formula_9">Y i = Y i -YS -1 Y i -Y<label>(6)</label></formula><p>where Y i data value vector at row i, Y mean vector, S -1 inverse of the covariance matrix Firefly algorithm: Among numerous Swarm intelligent algorithms, firefly algorithm is one of modern nature-inspired algorithm developed by Yang in 2007. Based on the firefly characteristics, firefly algorithm is mainly used to solve complex problem <ref type="bibr" target="#b27">[28]</ref>. As per the genetic nature of fireflies, any firefly can be fascinated by other firefly and they don't have discrimination with respect to sex. Due to the brightness of the fireflies, attraction among any two fireflies gets increased and similarly when the two fireflies are distant the attraction decreases. Thus the attraction among fireflies is directly proportional to the brightness based on the distance between two fireflies. This entire process is determined by an objective function f (x), where x = x 1 , x 2 , x 3 ...x n .</p><p>Firefly algorithm follows a different process compared to other bio-inspired algorithms. Here, at the beginning, brightness of each firefly can be measured by the objective function. Next the initial population of firefly is generated, thereby determining the light intensity of all fireflies for the generated population. The distance between two firefles is calculated based on the light intensity of two fireflies x i , x j . If the distance is less between the two fireflies x i , x j then the nearby fireflies re grouped and the attractiveness among them is computed. Similarly, the distance is calculated for all the other fireflies by updating the values of x i , x j . At the end, all the fireflies are ranked and the best fireflies are selected, which are in close proximity to one another.</p><p>Firefly algorithm has a high convergence rate and it is easy to find the solution for complex problems with limited population.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Proposed Methodology</head><p>This section discusses about the proposed PCA-firefly based XGBoost model in detail. Figure <ref type="figure" target="#fig_3">2</ref> presents the proposed methodology for classification of IDS dataset. The dataset is collected from the open source Kaggle repository. Data pre-processing is an extremely crucial aspect in data analysis, which has direct effect on the accuracy of prediction. In majority of the cases, the dataset consists of missing values, missing attributes, heterogeneous and noisy data with outliers and irrelevant information included. Several techniques have been adopted like aggregation, sampling, random sampling, stratified sampling, discretization, binarization, attribute transformation and dimensionality reduction for the pre-processing of data. As part of our study a three tier approach is opted for pre-processing of the data set.</p><p>The dataset used in our study consisted of 43 attributes holding categorical and numerical data, which was not apt for training of the ML algorithm. In order to transform the data to a common format, One-Hot encoding technique was adopted, which converted categorical data to numerical values. The standard scaler technique was then applied on the dataset, which standardizes the features and transforms the mean of the distribution to 0 ensuring that most of the dataset values range between 0 and 1. The PCA algorithm is further applied on this transformed dataset for dimensionality reduction. This approach basically helps to reduce the number of random variables to precise set of principal variables thereby contributing towards accuracy in the prediction results. To optimize more, firefly optimization algorithm selects the best attributes from this precise reduced dataset. Firefly algorithm is an approach based on the biological phenomenon pertaining to the behaviour of fireflies. A firefly generally attracts, protects its partner by flashing fluorescent lights emitted from its body. The intensity of the light depends on the distance of one fly from the other and also intensity of the light after absorption in the air. The same phenomenon is used for optimized searching for dimensionality reduction wherein the most significant attributes are considered in the machine learning model for prediction. To train this dataset, XGBoost algorithm takes an iterative boosting approach using an advanced ensemble technique for the training of the dataset. Instead of training the models in isolation, in the iterative boosting approach, the errors generated by the preceding boosting trees are corrected by the successive ones until optimized result is achieved delivering higher accuracy in prediction.</p><p>The model commences by performing One-Hot encoding <ref type="bibr" target="#b28">[29]</ref> for transformation of the data. One-Hot encoding is a technique in machine learning pre-processing stage that help in converting categorical data into a form, which is suitable for ML algorithms. The hybrid PCA-firefly algorithm is applied on the transformed dataset for dimensionality reduction.</p><p>In machine learning models dimensionality reduction plays an extremely major role in reducing the number of redundant attributes considered, thereby reducing the time complexity by selecting the most significant attributes contributing towards improvement of prediction results. In our study, a hybrid of PCA-firefly algorithm is used to achieve dimensionality reduction. PCA basically will help to identify low dimensions for summarization of data from high dimension data. This ensures the elimination of redundant attributes from the dataset.</p><p>Electronics 2020, xx, 5 7 of 15 variables thereby contributing towards accuracy in the prediction results. To optimize more, firefly optimization algorithm selects the best attributes from this precise reduced dataset. Firefly algorithm is an approach based on the biological phenomenon pertaining to the behaviour of fireflies. A firefly generally attracts, protects its partner by flashing fluorescent lights emitted from its body. The intensity of the light depends on the distance of one fly from the other and also intensity of the light after absorption in the air. The same phenomenon is used for optimized searching for dimensionality reduction wherein the most significant attributes are considered in the machine learning model for prediction. To train this dataset, XGBoost algorithm takes an iterative boosting approach using an advanced ensemble technique for the training of the dataset. Instead of training the models in isolation, in the iterative boosting approach, the errors generated by the preceding boosting trees are corrected by the successive ones until optimized result is achieved delivering higher accuracy in prediction.</p><p>The model commences by performing One-Hot encoding <ref type="bibr" target="#b28">[29]</ref> for transformation of the data. One-Hot encoding is a technique in machine learning pre-processing stage that help in converting categorical data into a form, which is suitable for ML algorithms. The hybrid PCA-firefly algorithm is applied on the transformed dataset for dimensionality reduction.</p><p>In machine learning models dimensionality reduction plays an extremely major role in reducing the number of redundant attributes considered, thereby reducing the time complexity by selecting the most significant attributes contributing towards improvement of prediction results. In our study, a hybrid of PCA-firefly algorithm is used to achieve dimensionality reduction. PCA basically will help to identify low dimensions for summarization of data from high dimension data. This ensures the elimination of redundant attributes from the dataset. To further improve on the selection of features, firefly algorithm (FA) is used in the proposed method. The implementation of FA has dual advantages. Firstly, the whole population is subdivided into groups and each group, crowd around a single mode-the local optimum. The best solution is selected from all these modes. Secondly, the subdivision of groups allow all local optima to be found simultaneously when the size of the population is higher than the number of modes. Hence the most relevant features or attributes are selected for training the ML algorithm. This concept in FA will contribute towards reduction of training time and later when machine learning algorithm is applied on the reduced data with optimized and relevant features, there will be considerable improvement in the classification results. To further improve on the selection of features, firefly algorithm (FA) is used in the proposed method. The implementation of FA has dual advantages. Firstly, the whole population is subdivided into groups and each group, crowd around a single mode-the local optimum. The best solution is selected from all these modes. Secondly, the subdivision of groups allow all local optima to be found simultaneously when the size of the population is higher than the number of modes. Hence the most relevant features or attributes are selected for training the ML algorithm. This concept in FA will contribute towards reduction of training time and later when machine learning algorithm is applied on the reduced data with optimized and relevant features, there will be considerable improvement in the classification results.</p><p>As mentioned earlier, the reduced dataset is further exposed to XGBoost ML algorithm for classification. Finally, the superiority of the framework is justified and established by the comparing the performance of the proposed model with traditional ML algorithms. In this work we chose XGBoost classifier as XGBoost has several advantages when compared with other ML algorithms.</p><p>Some of the advantages of XGBoost algorithm are given below:</p><p>• As XGBoost has inbuilt L1 and L2 regularization, it does not suffers from overfitting problem.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>•</head><p>It is much faster than gradient boosting algorithms as it utilizes parallel processing.</p><p>• It has the capability to handle missing values.</p><p>The algorithm for the proposed model is given below:</p><p>1.</p><p>Intrusion detection dataset collected from Kaggle is fed to One-Hot encoding scheme to convert all the categorial data into numeric data.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>2.</head><p>Using the standard scaler method, all attributes of the transformed data is normalized into a range between 0 to 1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.</head><p>Apply PCA algorithm for dimensionality reduction.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>4.</head><p>Apply firefly optimization algorithm to select best attributes from the reduced dataset. The firefly algorithm is illustrated below:</p><p>(a) N no of solutions are randomly generated. (b)</p><p>Fitness value is calculated using Equation <ref type="bibr" target="#b6">(7)</ref>.</p><formula xml:id="formula_10">M = F PCA + c + O P (<label>7</label></formula><formula xml:id="formula_11">)</formula><p>where M is the fitness value in the present work, F PCA is features obtained by applying PCA, O p is the objective function considered as accuracy, c is the constant ranging between [0, 1] (c) Update the solutions using the following Equation <ref type="bibr" target="#b7">(8)</ref>.</p><formula xml:id="formula_12">F t+1 i = F t i -γ xt 0 e -βC 2 a F t j -F t i + ξ t ψ t i (<label>8</label></formula><formula xml:id="formula_13">)</formula><p>where F t+1 i denotes updated ith position, F t i denotes current ith solution, F t j denotes current jth solution, which is the brighter fly, ξ t denotes the randomization parameter, ψ t i is a vector of random number from Gaussion distribution at time t, γ xt 0 , β are the constants related to the attractiveness of the firefly. The firefly algorithm terminates once all attributes are evaluated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>5.</head><p>The reduced intrusion detection dataset from the previous step is then trained using XGBoost classifier. 6.</p><p>Using testing data, the performance of the model is evaluated considering accuracy, specificity and sensitivity metrics.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>7.</head><p>The proposed hybrid model is compared with traditional ML algorithms.</p><p>The main contributions of this work are:</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>•</head><p>Reducing the burden and time complexity of the machine learning models.</p><p>• Improvement in the performance of ML model by choosing the best features and eliminating the features, which negatively impact the performace of the classifier by using PCA.</p><p>• Further enhancement in the performance of PCA, using properties of firefly algorithm to avoid premature convergance there by choosing the optimal features.</p><p>• Use of Google Colab, a GPU based framework offered by Google for speeding up training time of the classifier.</p><p>• Evaluation of performance of the proposed model with state-of-the-art classifiers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Results and Discussion</head><p>The dataset considered for testing the proposed model is huge. Commensurate to the size of the data, RAM required to accomodate the dataset during transformation, normalization, dimensionality reduction and training of the model is also massive. Hence, the proposed work is carried out in Google Colab GPU platform. The substantial additional computational power and data handling capacity provided by the GPU platform has helped in the analysis of multiple inputs simultaneously from the dataset of such large size. The hard disk provided by Google platform is 50 GB and RAM of 25 GB. Python 3.7 was used for implementation of machine learning algorithms. The dataset used in this work is collected from Kaggle <ref type="bibr" target="#b29">[30]</ref>. This dataset has 43 attributes and 125,973 instances. Some of the important attributes of this dataset are duration, protocol type, service, source bytes, destination bytes, wrong fragments, urgent, hot, number of failed logins, logged in, number compromised, error rate, etc. The metrics used for evaluating the model are accuracy, specificity and sensitivity.</p><p>The original dataset had 43 attributes. After One-Hot encoding technique is applied, number of attributes were enhanced to 3024. After applying PCA, number of attributes have been reduced to 2694. The attributes are further reduced to 2386 with the application of the hybrid firefly algorithm. Figure <ref type="figure" target="#fig_6">3</ref> shows the number of attributes for all these models.</p><p>Electronics 2020, xx, 5 9 of 15</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>•</head><p>Further enhancement in the performance of PCA, using properties of firefly algorithm to avoid premature convergance there by choosing the optimal features.</p><p>• Use of Google Colab, a GPU based framework offered by Google for speeding up training time of the classifier.</p><p>• Evaluation of performance of the proposed model with state-of-the-art classifiers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Results and Discussion</head><p>The dataset considered for testing the proposed model is huge. Commensurate to the size of the data, RAM required to accomodate the dataset during transformation, normalization, dimensionality reduction and training of the model is also massive. Hence, the proposed work is carried out in Google Colab GPU platform. The substantial additional computational power and data handling capacity provided by the GPU platform has helped in the analysis of multiple inputs simultaneously from the dataset of such large size. The hard disk provided by Google platform is 50 GB and RAM of 25 GB. Python 3.7 was used for implementation of machine learning algorithms. The dataset used in this work is collected from Kaggle <ref type="bibr" target="#b29">[30]</ref>. This dataset has 43 attributes and 125,973 instances. Some of the important attributes of this dataset are duration, protocol type, service, source bytes, destination bytes, wrong fragments, urgent, hot, number of failed logins, logged in, number compromised, error rate, etc. The metrics used for evaluating the model are accuracy, specificity and sensitivity.</p><p>The original dataset had 43 attributes. After One-Hot encoding technique is applied, number of attributes were enhanced to 3024. After applying PCA, number of attributes have been reduced to 2694. The attributes are further reduced to 2386 with the application of the hybrid firefly algorithm. Figure <ref type="figure" target="#fig_6">3</ref> shows the number of attributes for all these models.  Accuracy, sensitivity and specificity are the most important metrics popularly used to analyse the performance of the machine learning algorithms. The statistical graph in Figure <ref type="figure" target="#fig_7">4</ref> highlights the performance evaluation of KNN classifier based approach considering the same metrics. In case of the metrics of sensitivity, the classical KNN and KNN-PCA-firefly reveal to be equally sensitive (91.3%) with KNN-PCA (85.6%) being slightly less sensitive than the others. It is also observed that specificity values in case of KNN-PCA-firefly (99.8%), KNN-PCA (99.7%) and KNN (99.7%) are almost  Accuracy, sensitivity and specificity are the most important metrics popularly used to analyse the performance of the machine learning algorithms. The statistical graph in Figure <ref type="figure" target="#fig_7">4</ref> highlights the performance evaluation of KNN classifier based approach considering the same metrics. In case of the metrics of sensitivity, the classical KNN and KNN-PCA-firefly reveal to be equally sensitive (91.3%) with KNN-PCA (85.6%) being slightly less sensitive than the others. It is also observed that specificity values in case of KNN-PCA-firefly (99.8%), KNN-PCA (99.7%) and KNN (99.7%) are almost same with KNN-PCA-firefly being minutely higher in value. Finally it is evident from the graph that the application of KNN-PCA-firefly algorithms yields better performance than KNN (99.3%) and integration of KNN-PCA (99.2%) with higher value of accuracy (99.4%) than the others, which helps to justify the superiority of this framework.</p><p>same with KNN-PCA-firefly being minutely higher in value. Finally it is evident from the graph that the application of KNN-PCA-firefly algorithms yields better performance than KNN (99.3%) and integration of KNN-PCA (99.2%) with higher value of accuracy (99.4%) than the others, which helps to justify the superiority of this framework. In case of naive Bayes based approach as shown in Figure <ref type="figure" target="#fig_12">5</ref>, it is observed that for all the metrics (specificity, sensitivity and accuracy), the combination of Naive-Bayes-PCA-firefly algorithm yields higher value than the Naive-Bayes-PCA (accuracy-75.3%, sensitivity-68.5% and specificity-94.1%) and classical naive Bayes algorithm (accuracy-80.3%, sensitivity-73.5% and specificity-96.1%) with sensitivity value of 76.8%, specificity value of 97.2% and accuracy value of 84.2%.</p><p>In case of random forest based approach as shown in Figure <ref type="figure" target="#fig_13">6</ref>, it is observed that for the specificity and accuracy metrics, the application of classical random forest (specificity-99.9%, accuracy-%), Random Forest-PCA (specificity-99.7%, accuracy-99.4%) and Random Forest-PCA-firefly yield almost equal values although Random Forest-PCA-firefly having slightly higher value (specificity-99.9% and accuracy-99.8%) in comparison with the other two approaches. However, in case of sensitivity, variation is observed in the values with random forest having value of 90.3%, Random Forest-PCA having value of 80.2% and Random Forest-PCA-firefly having highest value of 91.6%.</p><p>Similarly in case of support vector machine based approach as shown in Figure <ref type="figure">7</ref>, it is observed that for the specificity and accuracy metrics, the application of classical SVM (specificity-99.6%, accuracy-97.2%), SVM-PCA (specificity-98.1%, accuracy-95.2%) and SVM-PCA-firefly yield almost equal values although SVM-PCA-firefly generates slightly higher value (specificity-99.8% and accuracy-97.5%) in comparison with the other two approaches. However, in case of sensitivity, variation is observed in the values with SVM having value of 81.2%, SVM-PCA having value of 79.3% and SVM-PCA-firefly having highest value of 84.4%. In case of naive Bayes based approach as shown in Figure <ref type="figure" target="#fig_12">5</ref>, it is observed that for all the metrics (specificity, sensitivity and accuracy), the combination of Naive-Bayes-PCA-firefly algorithm yields higher value than the Naive-Bayes-PCA (accuracy-75.3%, sensitivity-68.5% and specificity-94.1%) and classical naive Bayes algorithm (accuracy-80.3%, sensitivity-73.5% and specificity-96.1%) with sensitivity value of 76.8%, specificity value of 97.2% and accuracy value of 84.2%.</p><p>In case of random forest based approach as shown in Figure <ref type="figure" target="#fig_13">6</ref>, it is observed that for the specificity and accuracy metrics, the application of classical random forest (specificity-99.9%, accuracy-%), Random Forest-PCA (specificity-99.7%, accuracy-99.4%) and Random Forest-PCA-firefly yield almost equal values although Random Forest-PCA-firefly having slightly higher value (specificity-99.9% and accuracy-99.8%) in comparison with the other two approaches. However, in case of sensitivity, variation is observed in the values with random forest having value of 90.3%, Random Forest-PCA having value of 80.2% and Random Forest-PCA-firefly having highest value of 91.6%.</p><p>Similarly in case of support vector machine based approach as shown in Figure <ref type="figure">7</ref>, it is observed that for the specificity and accuracy metrics, the application of classical SVM (specificity-99.6%, accuracy-97.2%), SVM-PCA (specificity-98.1%, accuracy-95.2%) and SVM-PCA-firefly yield almost equal values although SVM-PCA-firefly generates slightly higher value (specificity-99.8% and accuracy-97.5%) in comparison with the other two approaches. However, in case of sensitivity, variation is observed in the values with SVM having value of 81.2%, SVM-PCA having value of 79.3% and SVM-PCA-firefly having highest value of 84.4%.  In the application of XGBoost based approach as shown in Figure <ref type="figure">8</ref>, it is observed that for the specificity metrics, simple XGBoost (specificity-99.9%) and XGBoost-PCA-firefly (specificity-99.9%) have equal specificity in comparison to XGBoost-PCA with a slightly lower specificity value of 98.2%. Considering the accuracy metrics, all the three approaches yield almost same accuracy percentages (99%). However, for the sensitivity measure XGBoost-PCA-firefly based algorithm clearly wins the  In the application of XGBoost based approach as shown in Figure <ref type="figure">8</ref>, it is observed that for the specificity metrics, simple XGBoost (specificity-99.9%) and XGBoost-PCA-firefly (specificity-99.9%) have equal specificity in comparison to XGBoost-PCA with a slightly lower specificity value of 98.2%. Considering the accuracy metrics, all the three approaches yield almost same accuracy percentages (99%). However, for the sensitivity measure XGBoost-PCA-firefly based algorithm clearly wins the In the application of XGBoost based approach as shown in Figure <ref type="figure">8</ref>, it is observed that for the specificity metrics, simple XGBoost (specificity-99.9%) and XGBoost-PCA-firefly (specificity-99.9%) have equal specificity in comparison to XGBoost-PCA with a slightly lower specificity value of 98.2%. Considering the accuracy metrics, all the three approaches yield almost same accuracy percentages</p><p>The comparative analysis of all the combined approaches (KNN-PCA-firefly, naive Bayes-PCA-firefly, random forest-PCA-firefly, SVM-PCA-firefly, XGBoost-PCA-firefly) in Figure <ref type="figure" target="#fig_17">9</ref> highlight the fact, that the performance of XGBoost-PCA-firefly outperforms the other machine learning algorithms considering the accuracy (99.9%), sensitivity (93.1%) and specificity (99.9%) metrics. This helps to establish the fact that the predictions generated from the application of XGBoost-PCA-firefly have higher competency in decision making and hence can be relied upon as a constructive approach in machine learning.</p><p>Electronics 2020, xx, 5 13 of 15 highlight the fact, that the performance of XGBoost-PCA-firefly outperforms the other machine learning algorithms considering the accuracy (99.9%), sensitivity (93.1%) and specificity (99.9%) metrics. This helps to establish the fact that the predictions generated from the application of XGBoost-PCA-firefly have higher competency in decision making and hence can be relied upon as a constructive approach in machine learning. If the training time is keenly observed in the study, it clearly indicates the positive effect of the application of PCA and firefly on the traditional and advanced machine learning models. There is a significant reduction in time when PCA is applied on the naive Bayes, KNN, random forest, SVM and XGBoost algorithms. The training time gets further reduced when firefly algorithm is applied enhancing the performance of the machine learning model. However, if we look more precisely on the training time data of naive Bayes-PCA-firefly, KNN-PCA-firefly, random forest-PCA-firefly; the XGBoost-PCA-firefly model consumes higher training time. However, this aspect could be eliminated from a being a significant point to ponder due to its superior performance metrics namely accuracy, sensitivity and specificity. The training time for all the models considered in the experimentation are consolidated in Table <ref type="table" target="#tab_0">1</ref>.</p><p>From the Figures 4-8 the following points can be observed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1.</head><p>Reducing the dimensions and eliminating irrelevant attributes using PCA has improved the performance of all the classifiers. 2.</p><p>Performance of the classifiers with PCA is further improved by applying firefly algorithm, as it chooses optimal features, which affect the performance of the classifier positively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.</head><p>Number of attributes considered for training models are drastically reduced with the application If the training time is keenly observed in the study, it clearly indicates the positive effect of the application of PCA and firefly on the traditional and advanced machine learning models. There is a significant reduction in time when PCA is applied on the naive Bayes, KNN, random forest, SVM and XGBoost algorithms. The training time gets further reduced when firefly algorithm is applied enhancing the performance of the machine learning model. However, if we look more precisely on the training time data of naive Bayes-PCA-firefly, KNN-PCA-firefly, random forest-PCA-firefly; the XGBoost-PCA-firefly model consumes higher training time. However, this aspect could be eliminated from a being a significant point to ponder due to its superior performance metrics namely accuracy, sensitivity and specificity. The training time for all the models considered in the experimentation are consolidated in Table <ref type="table" target="#tab_0">1</ref>.</p><p>From the Figures 4-8 the following points can be observed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>1.</head><p>Reducing the dimensions and eliminating irrelevant attributes using PCA has improved the performance of all the classifiers. 2.</p><p>Performance of the classifiers with PCA is further improved by applying firefly algorithm, as it chooses optimal features, which affect the performance of the classifier positively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>3.</head><p>Number of attributes considered for training models are drastically reduced with the application of hybrid PCA-firefly algorithm. 4.</p><p>The proposed model reduces the training time thereby reducing the burden of the classifier.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>5.</head><p>The proposed hybrid PCA-firefly with XGBoost classifier model outperforms the other models considered in terms of accuracy, sensitivity and specificity with minor compromise in training time. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.">Conclusions and Future Work</head><p>In this research, we have proposed a hybrid principal component analysis (PCA)-Firefly based XGBoost machine learning model for the classification of IDS datasets. The dataset used in the study is a publicly available one collected from Kaggle. The framework employed starts with the One-Hot encoding approach for the transformation of the IDS dataset. The transformed data is then exposed to a hybrid PCA-firefly algorithm with the purpose of dimensionality reduction. The XGBoost algorithm is applied to this reduced dataset for classification of unanticipated cyber attacks. The results obtained from the experimental analysis suggest the proposed approach is more accurate in comparison to the traditional machine learning approaches. Based on the inferences drawn from this study, the future direction lies in implementing similar approaches towards intrusion prevention systems along with honeypots.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .a</head><label>1</label><figDesc>Figure 1. XGBoost.Principal component analysis (PCA): PCA is one of the dimensional reduction techniques used in the selection and extraction of data features<ref type="bibr" target="#b26">[27]</ref>. Feature selection is the method of transforming data into useful features by reducing size of the data. PCA reduces the variable count based on the significance using orthogonal linear combinations of the original parameters with the most significant variance.The basic knowledge of PCA is briefly described in the following. Assume a 1 , a 2 , a 3 ...a n are stochastic n dimensional input data records represented by a matrix A m * n as shown in Equation (1).</figDesc><graphic coords="5,167.68,81.17,265.32,184.24" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. XGBoost. Principal component analysis (PCA): PCA is one of the dimensional reduction techniques used in the selection and extraction of data features [27]. Feature selection is the method of transforming data into useful features by reducing size of the data. PCA reduces the variable count based on the significance using orthogonal linear combinations of the original parameters with the most significant variance. The basic knowledge of PCA is briefly described in the following. Assume a 1 , a 2 , a 3 ...a n are stochastic n dimensional input data records represented by a matrix A m * n as shown in Equation (1).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>a</head><label></label><figDesc>11 ... a 1n a 21 ... a 2n ... ... ... a m1 ... a mn</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Proposed methodology for classification of an intrusion detection system (IDS) dataset.</figDesc><graphic coords="7,99.46,380.23,397.98,221.58" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Proposed methodology for classification of an intrusion detection system (IDS) dataset.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>(d) N fitness values are generated for each of the iteration in firefly algorithm. (e) Using 4. (a) to 4. (d) the best attributes are selected using fitness function. (f)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Number of attributes.</figDesc><graphic coords="9,142.42,360.79,309.54,218.90" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figures 4 -</head><label>4</label><figDesc>Figures 4-8 illustrate the performance of the KNN, naive Bayes, random forest, SVM, and XGBoost classifiers on intrusion detection dataset without dimensionality reduction, in combination with PCA and hybrid PCA-firefly algorithms.Accuracy, sensitivity and specificity are the most important metrics popularly used to analyse the performance of the machine learning algorithms. The statistical graph in Figure4highlights the performance evaluation of KNN classifier based approach considering the same metrics. In case of the metrics of sensitivity, the classical KNN and KNN-PCA-firefly reveal to be equally sensitive (91.3%) with KNN-PCA (85.6%) being slightly less sensitive than the others. It is also observed that specificity values in case of KNN-PCA-firefly (99.8%), KNN-PCA (99.7%) and KNN (99.7%) are almost</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Number of attributes.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head>Figures 4 -</head><label>4</label><figDesc>Figures 4-8 illustrate the performance of the KNN, naive Bayes, random forest, SVM, and XGBoost classifiers on intrusion detection dataset without dimensionality reduction, in combination with PCA and hybrid PCA-firefly algorithms.Accuracy, sensitivity and specificity are the most important metrics popularly used to analyse the performance of the machine learning algorithms. The statistical graph in Figure4highlights the performance evaluation of KNN classifier based approach considering the same metrics. In case of the metrics of sensitivity, the classical KNN and KNN-PCA-firefly reveal to be equally sensitive (91.3%) with KNN-PCA (85.6%) being slightly less sensitive than the others. It is also observed that specificity values in case of KNN-PCA-firefly (99.8%), KNN-PCA (99.7%) and KNN (99.7%) are almost same with KNN-PCA-firefly being minutely higher in value. Finally it is evident from the graph that the application of KNN-PCA-firefly algorithms yields better performance than KNN (99.3%) and integration of KNN-PCA (99.2%) with higher value of accuracy (99.4%) than the others, which helps to justify the superiority of this framework.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Performance evaluation of KNN classifier.</figDesc><graphic coords="10,91.32,88.17,429.83,303.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_11"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Performance evaluation of KNN classifier.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_12"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Performance evaluation of naive Bayes classifier.</figDesc><graphic coords="11,89.28,403.64,429.83,303.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Performance evaluation of random forest classifier.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head>Figure 5 . 15 Figure 5 .</head><label>5155</label><figDesc>Figure 5. Performance evaluation of naive Bayes classifier.</figDesc><graphic coords="11,89.51,88.81,429.83,303.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Performance evaluation of random forest classifier.</figDesc><graphic coords="11,89.51,420.60,429.83,303.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_16"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. Performance evaluation of random forest classifier.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_17"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Comparative analysis of machine learning algorithms with proposed approach.</figDesc><graphic coords="13,64.61,198.57,477.59,337.73" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_18"><head>Figure 9 .</head><label>9</label><figDesc>Figure 9. Comparative analysis of machine learning algorithms with proposed approach.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Time taken for training the datasets.</figDesc><table><row><cell>NB</cell><cell></cell><cell>KNN</cell><cell></cell><cell>RF</cell><cell></cell><cell>SVM</cell><cell></cell><cell>XGB</cell><cell></cell></row><row><cell>NB</cell><cell>88.7</cell><cell>KNN</cell><cell>86</cell><cell>RF</cell><cell>24</cell><cell>SVM</cell><cell>1608</cell><cell>XGB</cell><cell>280</cell></row><row><cell>NB+PCA</cell><cell>81.6</cell><cell>KNN+PCA</cell><cell>78</cell><cell>RF+PCA</cell><cell>18.7</cell><cell>SVM+PCA</cell><cell>1574.2</cell><cell>XGB+PCA</cell><cell>278.3</cell></row><row><cell cols="10">NB+PCA+FF 76.4 KNN+PCA+FF 71.5 RF+PCA+FF 14.6 SVM+PCA+FF 1520.3 XGB+PCA+FF 268.3</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="funding">
+<div><p>Funding: This project was supported by the <rs type="funder">Deanship of Scientific Research at Prince Sattam Bin Abdulaziz University</rs> under the research project <rs type="grantNumber">2019/01/9432</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_9Vbs2fQ">
+					<idno type="grant-number">2019/01/9432</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>(99%). However, for the sensitivity measure XGBoost-PCA-firefly based algorithm clearly wins the race revealing highest value of sensitivity (93.1%) than the other two approaches (XGBoost-92.3%, XGBoost-PCA-91.8%).</p><p>Electronics 2020, xx, 5 12 of 15 race revealing highest value of sensitivity (93.1%) than the other two approaches (XGBoost-92.3%, XGBoost-PCA-91.8%).  The comparative analysis of all the combined approaches (KNN-PCA-firefly, naive Bayes-PCA-firefly, random forest-PCA-firefly, SVM-PCA-firefly, XGBoost-PCA-firefly) in Figure 9   The comparative analysis of all the combined approaches (KNN-PCA-firefly, naive Bayes-PCA-firefly, random forest-PCA-firefly, SVM-PCA-firefly, XGBoost-PCA-firefly) in Figure 9 </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest:</head><p>The authors announce that there is no discrepancy of interests concerning the publication of this research.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">A taxonomy and survey of intrusion detection system design techniques, network threats and datasets</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Hindy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Brosset</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bayne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Seeam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Tachtatzis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Atkinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Bellekens</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1806.03517</idno>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Intrusion Detection System (IDS) and Their Types</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pradhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Nayak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Pradhan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Securing the Internet of Things: Concepts, Methodologies, Tools, and Applications</title>
+		<meeting><address><addrLine>Hershey, PA, USA</addrLine></address></meeting>
+		<imprint>
+			<publisher>IGI Global</publisher>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="page" from="481" to="497" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Host-based intrusion detection system with system calls: Review and future trends</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Xue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chen</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/3214304</idno>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Comput. Surv. (CSUR)</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">98</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">HIDS: A host based intrusion detection system for cloud computing environment</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Deshpande</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Sharma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Peddoju</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Junaid</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s13198-014-0277-7</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Syst. Assur. Eng. Manag</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="567" to="576" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Adaptive and online network intrusion detection system using clustering and extreme learning machines</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Roshan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Miche</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Akusok</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lendasse</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jfranklin.2017.06.006</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Frankl. Inst</title>
+		<imprint>
+			<biblScope unit="volume">355</biblScope>
+			<biblScope unit="page" from="1752" to="1779" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">An Adaptive Ensemble Machine Learning Model for Intrusion Detection</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Shan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2923640</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="82512" to="82521" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Performance comparison of support vector machine, random forest, and extreme learning machine for intrusion detection</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Basheri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Iqbal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rahim</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2018.2841987</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="33789" to="33795" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Classification of attack types for intrusion detection systems using a machine learning algorithm</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Cheong</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2018 IEEE Fourth International Conference on Big Data Computing Service and Applications (BigDataService)</title>
+		<meeting>the 2018 IEEE Fourth International Conference on Big Data Computing Service and Applications (BigDataService)<address><addrLine>Bamberg, Germany</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018-03-29">26-29 March 2018</date>
+			<biblScope unit="page" from="282" to="286" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Deep Learning Approach for Intelligent Intrusion Detection System</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vinayakumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Soman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Poornachandran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Al-Nemrat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Venkatraman</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2895334</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="41525" to="41550" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Cybercrime: the case of obfuscated malware</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Venkatraman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Watters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Alazab</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Global Security, Safety and Sustainability &amp; e-Democracy</title>
+		<meeting><address><addrLine>Thessaloniki, Greece</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="204" to="211" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Hybrids of support vector machine wrapper and filter based framework for malware detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Huda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Abawajy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abdollalihian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Islam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yearwood</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.future.2014.06.001</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Future Gener. Comput. Syst</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="376" to="390" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">An Improved Convolutional Neural Network Model for Intrusion Detection in Networks</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">U</forename><surname>Khan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kumar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2019 Cybersecurity and Cyberforensics Conference (CCC)</title>
+		<meeting>the 2019 Cybersecurity and Cyberforensics Conference (CCC)<address><addrLine>Melbourne, Australia</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019-05-09">8-9 May 2019</date>
+			<biblScope unit="page" from="74" to="77" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Toward Generating a New Intrusion Detection Dataset and Intrusion Traffic Characterization</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Sharafaldin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Lashkari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Ghorbani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the ICISSP</title>
+		<meeting>the ICISSP<address><addrLine>Madeira, Portugal</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018-01-24">22-24 January 2018</date>
+			<biblScope unit="page" from="108" to="116" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Robust Intelligent Malware Detection Using Deep Learning</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Vinayakumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alazab</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Soman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Poornachandran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Venkatraman</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ACCESS.2019.2906934</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="46717" to="46738" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Deep learning in intrusion detection systems</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Karatas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Demir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">K</forename><surname>Sahingoz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2018 International Congress on Big Data, Deep Learning and Fighting Cyber Terrorism (IBIGDELFT)</title>
+		<meeting>the 2018 International Congress on Big Data, Deep Learning and Fighting Cyber Terrorism (IBIGDELFT)<address><addrLine>ANKARA, Turkey</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018-12-04">3-4 December 2018</date>
+			<biblScope unit="page" from="113" to="116" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Intrusion detection model using machine learning algorithm on Big Data environment</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Othman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Ba-Alwi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">T</forename><surname>Alsohybe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Al-Hashida</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/s40537-018-0145-4</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J. Big Data</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">34</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">On the feasibility of deep learning in sensor network intrusion detection</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Otoum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kantarci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Mouftah</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/LNET.2019.2901792</idno>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Netw. Lett</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="68" to="71" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Cuckoo search optimized reduction and fuzzy logic classifier for heart disease and diabetes prediction</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">R</forename><surname>Gadekallu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Khare</surname></persName>
+		</author>
+		<idno type="DOI">10.4018/IJFSA.2017040102</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Fuzzy Syst. Appl</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="25" to="42" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Hybrid firefly-bat optimized fuzzy artificial neural network based classifier for diabetes diagnosis</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">T</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Khare</surname></persName>
+		</author>
+		<idno type="DOI">10.22266/ijies2017.0831.03</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Intell. Eng. Syst</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="18" to="27" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Heart disease classification system using optimised fuzzy rule based algorithm</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">T</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Khare</surname></persName>
+		</author>
+		<idno type="DOI">10.1504/IJBET.2018.094122</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Biomed. Eng. Technol</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="183" to="202" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Hybrid genetic algorithm and a fuzzy logic classifier for heart disease diagnosis</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">T</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P K</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Lakshmanna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Rajput</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kaluri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Srivastava</surname></persName>
+		</author>
+		<idno type="DOI">10.1007/s12065-019-00327-1</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Evol. Intell</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A comparative study of RIFCM with other related algorithms from their suitability in analysis of satellite images using other supporting techniques</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Purushotham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Tripathy</surname></persName>
+		</author>
+		<idno type="DOI">10.1108/K-12-2012-0126</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Kybernetes</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page" from="53" to="81" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">An algorithm for clustering categorical data using rough set theory</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Tripathy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ghosh</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Sdr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2011 IEEE Recent Advances in Intelligent Computational Systems</title>
+		<meeting>the 2011 IEEE Recent Advances in Intelligent Computational Systems<address><addrLine>Trivandrum, Kerala, India</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011-09-24">22-24 September 2011</date>
+			<biblScope unit="page" from="867" to="872" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Rough sets on fuzzy approximation spaces and intuitionistic fuzzy approximation spaces</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Tripathy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Rough Set Theory: A True Landmark in Data Analysis</title>
+		<meeting><address><addrLine>Berlin/Heidelberg, Germany</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="3" to="44" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">A hybrid scheme for breast cancer detection using intuitionistic fuzzy rough set technique</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Chowdhary</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Acharjya</surname></persName>
+		</author>
+		<idno type="DOI">10.4018/IJHISI.2016040103</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Healthc. Inf. Syst. Inform</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="38" to="61" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Assessing rear-end collision risk of cars and heavy vehicles on freeways using a surrogate safety measure</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.aap.2018.01.033</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Accid. Anal. Prev</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="149" to="158" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Use of principal component analysis (PCA) and hierarchical cluster analysis (HCA) for multivariate association between bioactive compounds and functional properties in foods: A critical perspective</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Granato</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Santos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Escher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">L</forename><surname>Ferreira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Maggio</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.tifs.2017.12.006</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Food Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="83" to="90" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Coupling a firefly algorithm with support vector regression to predict evaporation in northern Iran</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Moazenzadeh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mohammadi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Shamshirband</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Chau</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/19942060.2018.1482476</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Eng. Appl. Comput. Fluid Mech</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="584" to="597" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Endpoint Temperature Prediction model for LD Converters Using Machine-Learning Techniques</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Hwang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Phan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2019 IEEE 6th International Conference on Industrial Engineering and Applications (ICIEA)</title>
+		<meeting>the 2019 IEEE 6th International Conference on Industrial Engineering and Applications (ICIEA)<address><addrLine>Tokyo, Japan</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2019-04-15">12-15 April 2019</date>
+			<biblScope unit="page" from="22" to="26" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Intrusion Detection</title>
+		<author>
+			<persName><surname>Kaggle</surname></persName>
+		</author>
+		<ptr target="https://www.kaggle.com/what0919/intrusion-detection" />
+		<imprint>
+			<date type="published" when="2019-12-12">12 December 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

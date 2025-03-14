@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Global, In Vivo, and Site-Specific Phosphorylation Dynamics in Signaling Networks</title>
+				<funder>
+					<orgName type="full">Danish National Research Foundation</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2006-11-02">November 2, 2006</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Jesper</forename><forename type="middle">V</forename><surname>Olsen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for Experimental BioInformatics</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">University of Southern Denmark</orgName>
+								<address>
+									<postCode>DK-5230</postCode>
+									<settlement>Odense</settlement>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Proteomics and Signal Transduction</orgName>
+								<orgName type="institution">Max-Planck-Institute for Biochemistry</orgName>
+								<address>
+									<postCode>D-82152</postCode>
+									<settlement>Martinsried</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Blagoy</forename><surname>Blagoev</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for Experimental BioInformatics</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">University of Southern Denmark</orgName>
+								<address>
+									<postCode>DK-5230</postCode>
+									<settlement>Odense</settlement>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Florian</forename><surname>Gnad</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Proteomics and Signal Transduction</orgName>
+								<orgName type="institution">Max-Planck-Institute for Biochemistry</orgName>
+								<address>
+									<postCode>D-82152</postCode>
+									<settlement>Martinsried</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Boris</forename><surname>Macek</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for Experimental BioInformatics</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">University of Southern Denmark</orgName>
+								<address>
+									<postCode>DK-5230</postCode>
+									<settlement>Odense</settlement>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Proteomics and Signal Transduction</orgName>
+								<orgName type="institution">Max-Planck-Institute for Biochemistry</orgName>
+								<address>
+									<postCode>D-82152</postCode>
+									<settlement>Martinsried</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Chanchal</forename><surname>Kumar</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Proteomics and Signal Transduction</orgName>
+								<orgName type="institution">Max-Planck-Institute for Biochemistry</orgName>
+								<address>
+									<postCode>D-82152</postCode>
+									<settlement>Martinsried</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Peter</forename><surname>Mortensen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for Experimental BioInformatics</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">University of Southern Denmark</orgName>
+								<address>
+									<postCode>DK-5230</postCode>
+									<settlement>Odense</settlement>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Matthias</forename><surname>Mann</surname></persName>
+							<email>mmann@biochem.mpg.de</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Center for Experimental BioInformatics</orgName>
+								<orgName type="department" key="dep2">Department of Biochemistry and Molecular Biology</orgName>
+								<orgName type="institution">University of Southern Denmark</orgName>
+								<address>
+									<postCode>DK-5230</postCode>
+									<settlement>Odense</settlement>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Proteomics and Signal Transduction</orgName>
+								<orgName type="institution">Max-Planck-Institute for Biochemistry</orgName>
+								<address>
+									<postCode>D-82152</postCode>
+									<settlement>Martinsried</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Global, In Vivo, and Site-Specific Phosphorylation Dynamics in Signaling Networks</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2006-11-02">November 2, 2006</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">A98D8266119709184310DB52C83DEE6E</idno>
+					<idno type="DOI">10.1016/j.cell.2006.09.026</idno>
+					<note type="submission">Received: June 16, 2006 Revised: August 1, 2006 Accepted: September 19, 2006</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:58+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Cell signaling mechanisms often transmit information via posttranslational protein modifications, most importantly reversible protein phosphorylation. Here we develop and apply a general mass spectrometric technology for identification and quantitation of phosphorylation sites as a function of stimulus, time, and subcellular location. We have detected 6,600 phosphorylation sites on 2,244 proteins and have determined their temporal dynamics after stimulating HeLa cells with epidermal growth factor (EGF) and recorded them in the Phosida database. Fourteen percent of phosphorylation sites are modulated at least 2-fold by EGF, and these were classified by their temporal profiles. Surprisingly, a majority of proteins contain multiple phosphorylation sites showing different kinetics, suggesting that they serve as platforms for integrating signals. In addition to protein kinase cascades, the targets of reversible phosphorylation include ubiquitin ligases, guanine nucleotide exchange factors, and at least 46 different transcriptional regulators. The dynamic phosphoproteome provides a missing link in a global, integrative view of cellular regulation.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>The mammalian cell constantly receives signals from its surroundings to which it has to respond appropriately. For example, growth-factor signals are integrated with internal-state information and lead to decisions on cell growth, differentiation, or proliferation <ref type="bibr" target="#b21">(Hunter, 2000;</ref><ref type="bibr" target="#b36">Pawson and Nash, 2003;</ref><ref type="bibr" target="#b45">Schlessinger, 2000)</ref>. Many human diseases, including multiple forms of cancer, arise through deregulation of this information processing capability. In recent decades, our knowledge of the players in signal transduction mechanisms has been painstakingly accumulated, mainly through the study of individual molecules in specific pathways. More recently, the emergence of technologies allowing high-throughput, system-wide experiments-such as microarray analysis-has provided a detailed and objective view of downstream transcriptional changes following various stimuli. However, many critical events involved in cellular responses are mediated by changes in posttranslational protein modifications rather than transcriptional changes. Thus, protein modification can influence and control enzymatic activity, protein conformation, protein-protein interactions, and cellular localization. Even for protein phosphorylation, which affects an estimated one-third of all proteins and is the most widely studied posttranslational modification <ref type="bibr" target="#b9">(Cohen, 2001)</ref>, only a small subset of total in vivo sites has been discovered so far. Development of global and quantitative methods for elucidating dynamic phosphorylation events is therefore essential for a systematic understanding of cellular behavior.</p><p>Phosphorylation has traditionally been studied largely by in vitro assays, a method which has recently been extended using protein chip arrays <ref type="bibr" target="#b39">(Ptacek et al., 2005)</ref>. Likewise, synthetic peptides have served as kinase substrates and allowed extraction of consensus motifs <ref type="bibr" target="#b50">(Songyang et al., 1994)</ref>, which were then incorporated into in silico prediction programs <ref type="bibr" target="#b58">(Yaffe et al., 2001)</ref>. Unfortunately, kinases are often less specific in vitro than they are in vivo, necessitating additional experimental approaches. Mass spectrometry (MS) has become a powerful technology for proteomics and a method of choice for unbiased (i.e., hypothesis-free) analysis of in vivo phosphorylation <ref type="bibr" target="#b0">(Aebersold and Mann, 2003;</ref><ref type="bibr" target="#b8">Chen and White, 2004;</ref><ref type="bibr" target="#b16">Ficarro et al., 2002;</ref><ref type="bibr" target="#b30">Mumby and Brekken, 2005;</ref><ref type="bibr" target="#b43">Rush et al., 2005;</ref><ref type="bibr" target="#b44">Salomon et al., 2003;</ref><ref type="bibr" target="#b52">Stover et al., 2004)</ref>.</p><p>Intracellular signal transduction mediated by receptor tyrosine kinases, such as the epidermal growth factor (EGF) receptor, is governed by phosphorylation of downstream protein kinases and their substrates <ref type="bibr" target="#b21">(Hunter, 2000;</ref><ref type="bibr" target="#b36">Pawson and Nash, 2003)</ref>, and several MS studies have focused on tyrosine-phosphorylation ''early events'' after growth-factor treatment <ref type="bibr" target="#b4">(Blagoev et al., 2003</ref><ref type="bibr" target="#b5">(Blagoev et al., , 2004;;</ref><ref type="bibr" target="#b25">Kratchmarova et al., 2005;</ref><ref type="bibr" target="#b60">Zhang et al., 2005)</ref>. These approaches employed anti-phosphotyrosine antibodies, which exclude detection of downstream serine/threonine kinase signaling. Other studies have identified large numbers of phosphorylation sites, but without a functional context <ref type="bibr" target="#b3">(Beausoleil et al., 2004)</ref>. We have recently described an integrated phosphoproteomic technology combining phosphopeptide enrichment, high-accuracy identification, and stable isotope labeling by amino acids in cell culture (SILAC) <ref type="bibr" target="#b34">(Ong et al., 2002)</ref> to quantify changes in phosphopeptide levels. Initially we applied these methods to the yeast pheromone response pathway <ref type="bibr" target="#b19">(Gruhler et al., 2005)</ref>. We have now improved and extended this approach and combined it with the time-course method <ref type="bibr" target="#b2">(Andersen et al., 2005;</ref><ref type="bibr" target="#b5">Blagoev et al., 2004)</ref> to study, for the first time, the global in vivo phosphoproteome and its temporal dynamics upon growth-factor stimulation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Phosphopeptide Sequencing and Determination of Temporal Profiles</head><p>Our quantitative, phosphopeptide-specific approach combines SILAC for quantitation, strong-cation exchange chromatography (SCX) and titanium dioxide (TiO 2 ) chromatography for phosphopeptide enrichment, and highaccuracy multistage MS (Figure <ref type="figure" target="#fig_0">1</ref>). Three populations of HeLa cells are SILAC encoded with both arginine and lysine using three distinct isotope forms (''double-triple labeling'') and stimulated by EGF (150 ng/ml) for different times. Cells are mixed and separated into cytosolic and nuclear fractions, and the proteins are enzymatically digested. The resulting peptide mixtures are then separated into 13 fractions by SCX, and phosphopeptides are enriched on TiO 2 beads in the presence of 2,5-dihydrobenzoic acid <ref type="bibr" target="#b26">(Larsen et al., 2005)</ref> (Figure <ref type="figure" target="#fig_0">1A</ref>). Each fraction is analyzed by online liquid chromatography (LC) MS on a hybrid linear ion trap/Fourier transform mass spectrometer (LTQ-FT) with two consecutive stages of fragmentation for unambiguous phosphopeptide identification <ref type="bibr" target="#b3">(Beausoleil et al., 2004;</ref><ref type="bibr" target="#b32">Olsen and Mann, 2004</ref>) (Figure <ref type="figure" target="#fig_0">1B</ref>). In a second, independent experiment, we used the novel linear ion trap/orbitrap mass spectrometer (LTQ-Orbitrap) <ref type="bibr" target="#b28">(Makarov et al., 2006)</ref>. In this case, phosphopeptides were fragmented by multistage activation (''pseudo-MS 3 '') <ref type="bibr" target="#b46">(Schroeder et al., 2004</ref>) (Figure <ref type="figure" target="#fig_0">1C</ref>). All labeled peptides elute as characteristic triplets, with their intensity reflecting the relative amounts at the three time points. Two time-course experiments are combined using the common time point (5 min of EGF stimulation), providing a five-time-point profile (Figure <ref type="figure" target="#fig_0">1D</ref>). Quantitation of phosphorylation sites was done by MSQuant software <ref type="bibr" target="#b47">(Schulze and Mann, 2004)</ref> and checked manually for all peptides. Extracted ion current (XIC) values indicate that our mea-surements spanned a phosphopeptide abundance range of between 10 3 and 10 4 .</p><p>More than 10,000 phosphopeptides were detected in 116 LC MS analyses. We achieved greater than 99% certainty of phosphopeptide identification through the subppm accuracy of peptide mass measurements, double fragmentation of peptides losing a phospho-group (MS 2 and MS 3 ), and the isotope-state information present in the SILAC peptide triplet (see Table <ref type="table" target="#tab_0">S1</ref> and Figure <ref type="figure" target="#fig_0">S1</ref> in the Supplemental Data available with this article online). Furthermore, peptides were typically sequenced several times in different forms-for instance, those containing oxidized methionine or missed tryptic cleavage sites (see Supplemental Experimental Procedures and Table <ref type="table">S2</ref> for a listing of all peptides and their ratios). Our analysis identified 6,600 phosphorylation sites on a total of 2,244 proteins (Figure <ref type="figure" target="#fig_1">2</ref>).</p><p>The above analysis establishes the sequence and number of phosphorylation sites for each phosphopeptide. In some cases, the fragmentation spectra do not contain sufficient information to determine the site of phosphorylation within a peptide with single amino acid accuracy. We therefore developed a phospho-site analysis pipeline using a posttranslational modification (PTM) score for localization, which assigns probabilities to each of the possible sites based on their distinguishing fragment ions (Figures <ref type="figure" target="#fig_4">S2-S4</ref>). The PTM score is based on an algorithm that makes use of the four most intense fragment ions per 100 m/z units in an MS 2 or MS 3 spectrum <ref type="bibr" target="#b32">(Olsen and Mann, 2004)</ref>. All possible combinations of serine, threonine, and tyrosine phosphorylation are tested, and the combinations with the highest scores are reported (for details, see Experimental Procedures and Supplemental Data). Furthermore, we extracted from the literature 22 consensus motifs from 15 of the most common kinases and matched all candidate phospho-sites against these motifs (Table <ref type="table">S3</ref>). Given the peptide sequence and number of phosphorylation sites for each phosphopeptide, we grouped potential phosphorylation sites into four categories depending on their PTM localization score and motifs (Figure <ref type="figure" target="#fig_1">2B</ref>). In the category with highest confidence in localization (class I), the site in question had a localization probability for the phospho-group of at least 0.75. That is, the added probability of all other potential sites is less than 0.25. In class II, the localization probability is between 0.75 and 0.25, but these sites also had to match one of the 22 kinase motives. Class III sites had the same localization probabilities as class II but did not match any of the motifs. Finally, class IV sites (not shown in the figure) had localization probabilities below 0.25. Note, however, that the probability that the peptide is phosphorylated is still larger than 99%, even for class IV peptides. Many of the kinase motifs have very limited specificity, which is reflected in the fact that a third of the phospho-sites matched with two or more motifs (Table <ref type="table">S4</ref>).</p><p>To determine the distribution of quantitation errors, we measured the SILAC ratios of all nonphosphorylated peptides. Protein expression is not expected to change appreciably within the time frame of our experiment, so the SILAC triplets of nonphosphorylated peptides should be 1:1:1. The standard deviation of the measured ratios was below 20% for all four preparations (Figure <ref type="figure" target="#fig_5">S5</ref>). For the analysis of dynamic changes as a result of growth-factor treatment, a cutoff value of a 2-fold change in either direction is therefore very conservative. A total of 1,046 phosphopeptides were in this category, which we term here ''regulated phosphopeptides.''</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The In Vivo Phosphoproteome</head><p>In their classic study using phosphoamino acid analysis, Hunter and coworkers found relative abundances of 0.05%, 10%, and 90% for phosphotyrosine (pY), phosphothreonine (pT), and phosphoserine (pS) in normally growing cells <ref type="bibr" target="#b22">(Hunter and Sefton, 1980)</ref>. Here we determined the distribution between individually identified sites to be 103 pY (including 53 induced by EGF), 670 pT, and 4,901 pS sites (class I sites, Figure <ref type="figure" target="#fig_1">2C</ref>). Thus, our new data set, based on more than 2,000 phosphoproteins, suggests that the distribution of pY, pT, and pS sites is 1.8%, 11.8%, and 86.4%-very close to the original estimate for serine and threonine, but an order of magnitude higher for tyrosine. This apparent discrepancy is not due simply to tyrosine phosphorylation induced by growthfactor treatment because many EGF-regulated sites were also detected in the basal state. Instead, the likely reason is that tyrosine phosphorylation tends to occur on less abundant proteins compared to serine and threonine phosphorylation. On a per-protein basis, pY sites would therefore be underrepresented in the phosphoamino acid analysis. Another contributing factor may be the fact that pY is less stable in phosphoamino acid analysis than pS/pT, whereas we have found no evidence that the phosphopeptide enrichment method discriminates between these modification types.</p><p>We next averaged the time profiles of the upregulated phosphorylation sites and normalized them to their maximal fold change. Figure <ref type="figure" target="#fig_1">2D</ref> shows that, on average, dynamic changes in tyrosine phosphorylation occur much faster and from a lower basal level compared to serine/ threonine phosphorylation.</p><p>We found phosphorylation sites on a wide variety of proteins, and about half the proteins contained more than one site (Table <ref type="table">S2</ref>). Figure <ref type="figure" target="#fig_1">2E</ref> shows a Gene Ontology (GO) <ref type="bibr" target="#b59">(Zeeberg et al., 2003)</ref> analysis of the in vivo phosphoproteome. GO localization information existed for 1,589 of the 2,244 phosphoproteins. Almost half of the phosphorylation events occurred on nuclear proteins, whereas only one-third of all proteins in the database were assigned as nuclear by GO, indicating that phosphorylation preferentially targets nuclear proteins. The proportion of regulated proteins closely paralleled the total number of phosphorylations of nuclear proteins. As expected, proteins annotated as extracellular were significantly underrepresented in the phosphoproteome. Although there is evidence of a mitochondrial phosphoproteome <ref type="bibr" target="#b35">(Pagliarini and Dixon, 2006)</ref>, proteins annotated as mitochondrial by GO were underrepresented, as were plasma membrane proteins. As membrane proteins are often of low abundance and we did not specifically enrich the plasma membrane in this analysis, we are less likely to identify phosphorylation events associated with them. Conversely, proteins associated with the cytoskeleton, which are generally of higher abundance, were almost twice as likely to be detected in the phosphoproteome as compared with their proportion in the database, and they accounted for an even higher share of the regulated sites. This illustrates that, at the current state of technology, our phosphopeptide screen is still not comprehensive. We may also miss certain phosphopeptides that are either too small or too large in mass to be readily measurable in our current MS setup. Therefore, absence of a phosphorylation site from our data set does not necessarily mean that it does not exist. Given that we have observed 2,244 phosphoproteins in a single cell line and taking into account the sensitivity and dynamic range limitations of current MS technology <ref type="bibr" target="#b11">(de Godoy et al., 2006)</ref>, it is clear that a large proportion of cellular proteins are phosphorylated.</p><p>We compared our data set with all annotated human phospho-sites in the SwissProt database from experimental data or inferred from homologous sequences (3,262 sites in version 48.0) and also included four previous phosphoproteomics data sets in our analysis <ref type="bibr" target="#b1">(Amanchy et al., 2005;</ref><ref type="bibr" target="#b3">Beausoleil et al., 2004;</ref><ref type="bibr" target="#b52">Stover et al., 2004;</ref><ref type="bibr" target="#b53">Thelemann et al., 2005)</ref>. We found that more than 90% of our sites were novel with respect to SwissProt. From the four previous data sets, we were able to map 1,890 sites onto IPI version 3.13. Of these, 691 (37%) were also found in our data set (Table <ref type="table">S5</ref>). Given that the previous studies generally used lower-resolution MS and different experimental conditions, this is a relatively high value. As in the case of SwissProt, close to 90% of our data are novel compared with these previous studies. Taken together, our data suggest that, despite several decades of research into phosphorylation, most in vivo phosphorylation sites have still not been detected.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Phosphoproteome Dynamics</head><p>EGF signaling begins with activation of the EGF receptor and extends through a cascade of downstream kinases to mediate the increased phosphorylation of a large number of substrate proteins. The overall levels of phosphorylated proteins within a specific cellular compartment are also affected by other processes, including dephosphorylation by protein phosphatases, protein degradation via ubiquitination, and translocation of the protein to another subcellular location. Our experiment measures the net effect of all these diverse processes that collectively regulate the dynamic phosphoproteome.</p><p>To search for patterns in the time profiles of the regulated phosphopeptides, we explored several clustering techniques. Clustering algorithms have been applied extensively to the analysis of gene-expression data, including time-series data sets. We found fuzzy c-means (FCM) clustering to be better suited to our analysis than hard partitioning algorithms, such as k-means, hierarchical clustering, or self-organizing maps (Figure <ref type="figure" target="#fig_2">3</ref> and Experimental Procedures). In FCM clustering, each profile is assigned a grade of membership for a set of clusters (represented by color in Figure <ref type="figure" target="#fig_2">3</ref>). FCM offers robust clus-tering with regards to noise by variation of a fuzzification parameter m, which limits the contribution of ill-behaved profiles to the clustering process. We iteratively explored combinations of cluster sizes and fuzzification parameters and found optimal partitioning with c = 6 and m = 2. There  Clusters turned out to contain functionally related members and were named to reflect their specific components. For example, cluster A was enriched in tyrosine-phosphorylated peptides involved in membrane-proximal signal events and was therefore termed ''signal initiators.'' Similarly, cluster D was termed ''negative feedback'' because it contained phospho-sites from RAF, MEK2, and EGFR, which are each involved in downregulation of the EGF pathway <ref type="bibr" target="#b20">(Hunter, 1998;</ref><ref type="bibr" target="#b45">Schlessinger, 2000)</ref>.</p><p>We next investigated whether different phospho-sites within the same protein were regulated in the same manner. Interestingly, most proteins (77%) that had a regulated phosphopeptide also had at least one additional phosphopeptide that behaved differently-i.e., that was either unchanging or else in a different cluster. For instance, Figure <ref type="figure" target="#fig_2">3</ref> contains a tyrosine phosphorylation site of the adaptor protein Shc with the signal initiator time profile and a serine phosphorylation site in the ''late negative regulators'' cluster <ref type="bibr" target="#b37">(Pelicci et al., 1992)</ref>. As another example, we detected two serine phosphorylated peptides from Temporal profiles were assigned to six clusters by fuzzy c-means clustering. The y axis is log 10 transformed and normalized, and the number of phosphopeptides is given in parentheses. Each trace is color coded according to its membership value for the respective cluster (see color bar). Each cluster is designated by the function of prominent members. Examples of such members are given for each cluster. tuberin (TSC2) <ref type="bibr" target="#b42">(Roux et al., 2004)</ref>. One of these was unchanging, while the other had a ''late stimulator'' profile following EGF stimulation. Our data set shows that, in general, phosphorylation is regulated differently on different sites within the same protein. This finding suggests that the degree of phosphorylation should always be measured site specifically rather than for the protein as a whole in order to obtain accurate and functionally relevant understanding of activation kinetics. It also suggests that protein phosphorylation typically serves different functions on different sites of the protein, a fact that is already appreciated for a number of well-studied signaling proteins.</p><p>We grouped regulated phosphopeptides into functional protein classes in Table <ref type="table">S6</ref> and<ref type="table">Figure</ref>   <ref type="table" target="#tab_0">1</ref>). Traditionally, cellular signaling research has focused either on the early events in the cytoplasm or else directly on the resulting changes in transcriptional levels; thus, information about the transcription factors responsible for the observed gene-expression differences is lacking. Our study now reveals that the EGF signal spreads to at least 46 transcriptional regulators within the relatively short time frame of 20 min. Only a subset of these transcription factors have previously been known to be involved in growthfactor signaling, and some were not even known to be regulated by phosphorylation. WBRS9 and DAFT-1 are such examples, from which we identified seven phosphopeptides and two phosphopeptides, respectively (Table <ref type="table">S2</ref>). However, only pS-189 in WBRS9 and pS-1456 in DAFT-1 increased upon EGF stimulation, implicating them as the regulatory sites (Table <ref type="table" target="#tab_0">1</ref>). Moreover, analysis of the regulated phosphorylation sites using Phosida (see below) indicated 33 novel phosphorylation sites from 19 different transcription factors. Both transcriptional regulators and coregulators display mainly late stimulator and ''terminal effector'' kinetic classes.</p><p>Apart from the canonical signaling axis leading to geneexpression changes, EGF also affects the cytoskeleton. Table <ref type="table">S6</ref> contains 27 regulated phosphopeptides of Regulated phosphoproteins fall into seven major functional categories. For each category, the consensus kinetic curves of its members (from Figure <ref type="figure" target="#fig_2">3</ref>) are drawn in proportion to the number of phosphopeptides in that cluster. For additional data, see Table <ref type="table">S6</ref>.</p><p>Cell 127, 635-648, November 3, 2006 ª2006 Elsevier Inc. 641 actin-binding proteins, with diverse kinetic profiles. There were also 21 proteins interacting with small GTPases, many of them regulating cytoskeleton-associated functions, with late stimulator or late negative regulator time profiles <ref type="bibr" target="#b6">(Bos, 2005;</ref><ref type="bibr" target="#b49">Soderling and Scott, 2006)</ref>. Ubiquitination, like phosphorylation, is a diverse and widespread cellular control mechanism <ref type="bibr" target="#b12">(Devoy et al., 2005;</ref><ref type="bibr" target="#b14">Dikic and Giordano, 2003;</ref><ref type="bibr" target="#b56">Waterman and Yarden, 2001)</ref>. While ubiquitination was not measured directly in this experiment, a group of 12 ubiquitin ligases, including E1-, E2-, and E3-type enzymes, was dynamically phosphorylated following EGF stimulation and provide an interesting link between these two regulatory systems. Ubiquitin ligases had late stimulator or ''early negative regulator'' time profiles. Another intriguing class of proteins with very different time profiles was a diverse set of RNA-binding proteins </p><formula xml:id="formula_0">CTF KTEMDKpSPFNSPSPQDSPR A IPI00026673 CUTL1 RRHpSpSVSDSQPCEPPpSVGTEYSQGASPQPQHQLK D IPI00220159 DAFT-1 RNpSVERPAEPVAGAATPSLVEQQK C IPI00032936 ERF RVpSSDLQHATAQLSLEHR C IPI00032936 ERF TPADTGFAFPDWAYKPESpSPGSR C IPI00011593 Fra2 RSpSSSGDQSSDSLNpSPTLLAL C IPI00011593 Fra2 SHPYpSPLPGLASVPGHMALPRPGVIK D IPI00289547 Jun D DEPQTVPDVPSFGEpSPPLpSPIDMDTQER C IPI00395737 LUZP1 RSpSSEGLSK D IPI00163729 MRTF-A FGSTGSpTPPVpSPTPSER B IPI00163729 MRTF-A pSPAAFHEQR B IPI00329152 MRTF-B pSPAAFHEQIK B IPI00102820 MTSG1 NSGSFPpSPSIpSPR F IPI00033016 Myc KFELLPTPPLpSPSRR B IPI00418606 NFIB MYpSPICLTQDEFHPFIEALLPHVR B IPI00166491 PHF2 ALRPPTpSPGVFGALQNFK C IPI00166491 PHF2 RKGpSDDAPYpSPTAR C IPI00291638 RB1CC1 pSTELVLpSPDMPR D IPI00297694 RNF4 RLPQDHADSCVVpSpSDDEELSR D IPI00549473 Similar to ILF-1 pSAPApSPTHPGLMSPR E IPI00164672 SMIF HAPTYTIPLpSPVLpSPTLPAEAPTAQVPPSLPR D IPI00063647 SPAG9 ERPISLGIFPLPAGDGLLpTPDAQK C IPI00030783 STAT5 (cytoplasm) AVDGpYVKPQIK A IPI00030783 STAT5 (nuclear) AVDGpYVKPQIK C IPI00414482 TF3C-alpha NSSTDQGpSDEEGSLQK C IPI00414482 TF3C-alpha RRApSWASENGETDAEGTQMTPAK C IPI00217957 TMBS62 ETRIpSFVEEDVHPK C IPI00069817 WBRS9 EDEGRREpSINDR D IPI00008137 Zfp295 EHAPLApSPVENK D</formula><p>and RNA-processing factors (represented by 26 phosphopeptides). Figure <ref type="figure" target="#fig_4">4</ref> summarizes the variety of cellular functions directly influenced by EGF signaling.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cellular Control by Dynamic Phosphorylation</head><p>A major advantage of following the temporal dynamics of phospho-sites instead of whole proteins is that signaling outcomes can be more directly connected to responsible upstream or downstream events. The phosphorylation of receptor molecules not only activates various signaling cascades but also deactivates the processes in later stages. These events are separated in time and were easily resolved in our analysis. The autophosphorylation of the EGF receptor on multiple tyrosine residues is the critical step initiating the propagation of the signal inside the cell <ref type="bibr" target="#b21">(Hunter, 2000;</ref><ref type="bibr" target="#b36">Pawson and Nash, 2003;</ref><ref type="bibr" target="#b45">Schlessinger, 2000)</ref>. In contrast, Ser/Thr phosphorylation often attenuates the signal by negative feedback <ref type="bibr" target="#b10">(Countaway et al., 1989;</ref><ref type="bibr" target="#b20">Hunter, 1998;</ref><ref type="bibr" target="#b45">Schlessinger, 2000)</ref>. Accordingly, we detected signal initiator profiles for all of the EGFR peptides containing Tyr1069, Tyr1092, Tyr1110, Tyr1138, Tyr1172, and Tyr1197, while phosphorylation of EGFR on Thr693, Ser991, and Thr993 instead showed delayed kinetics, peaking after 10 min (Figure <ref type="figure" target="#fig_5">5A</ref>). Moreover, it was recently reported that, in addition to ERK1/2, p38 MAPK is also capable of phosphorylating EGFR at Thr693, which could account for its considerably higher phosphorylation at later time points <ref type="bibr" target="#b57">(Winograd-Katz and Levitzki, 2006)</ref> (Figures <ref type="figure" target="#fig_5">5A</ref> and<ref type="figure" target="#fig_5">5B</ref>). Fine-tuning mechanisms are not limited to receptors and may affect proteins at all levels of signaling pathways. Supporting this notion, we identified two novel in vivo phosphorylation sites in kinases within the canonical RAF-MEK-ERK cascade <ref type="bibr" target="#b29">(Marshall, 1994)</ref>, namely Ser186 on A-RAF and Ser23 on MEK2. The phosphorylation motifs-and more importantly, the kinetic profiles of these sites-clearly suggest negative feedback regulation by the downstream kinases ERK1/2 (Table <ref type="table">S6</ref> and Figure <ref type="figure" target="#fig_2">3D</ref>). In a similar fashion, direct activation of protein kinases can be precisely monitored by the phosphorylation in their activation loops <ref type="bibr" target="#b23">(Karin and Hunter, 1995;</ref><ref type="bibr" target="#b29">Marshall, 1994)</ref>. For example, we observed that EGF stimulation of HeLa cells leads to more rapid and transient activation of both ERK1 and ERK2 as compared with the delayed and prolonged activation of p38 MAPK (Figure <ref type="figure" target="#fig_5">5B</ref>).</p><p>Another general principle commonly used in cellular signaling is the phosphorylation-dependent translocation of proteins such as kinases and transcriptional regulators into the nucleus. Signal transducer and activator of transcription 5 (STAT5) is a latent transcription factor retained in its inactive state in the cytosol. Upon growth-factor stimulation, STAT5 is activated by phosphorylation on Tyr694, leading to its dimerization and nuclear translocation <ref type="bibr" target="#b7">(Bromberg and Darnell, 2000)</ref>. This translocation was readily apparent in our analysis through the dynamic phospho-profiles of Tyr694 of STAT5 in the cytosol and the nucleus (Figure <ref type="figure" target="#fig_5">5C</ref>). We observed rapid phosphorylation of STAT5 in the cytosolic fractions, peaking as early as the first minute of EGF stimulation. In the nuclear fraction, however, an increasing profile was detected for the same phosphopeptide, with an accumulation rate mirroring its decreasing amounts in the cytosol (Figure <ref type="figure" target="#fig_5">5C</ref>).</p><p>Our data identify a unique combination of in vivo signaling components and their relevant regulatory sites. This could be particularly useful for deciphering the action of complex transcription factors, as illustrated below for activator protein 1 (AP-1), a dimeric complex composed of combinations of members of the Jun, Fos, and ATF families of transcription factors. The dimer partner composition of AP-1 determines differential DNA binding-site specificity and as a result regulates the expression of a distinct subset of genes <ref type="bibr" target="#b48">(Shaulian and Karin, 2002;</ref><ref type="bibr" target="#b54">van Dam and Castellazzi, 2001)</ref>. Moreover, MAPK-dependent phosphorylation of members from all three families has been shown to regulate AP-1 activity <ref type="bibr" target="#b24">(Karin et al., 1997;</ref><ref type="bibr" target="#b31">Murphy et al., 2002;</ref><ref type="bibr" target="#b55">Ventura et al., 2003)</ref>. Here we provide evidence that EGF-dependent gene regulation in HeLa cells involves at least four members of the AP-1 complex, namely JunD, Fra2, ATF2, and ATF7 (Figures <ref type="figure" target="#fig_5">5D-5F</ref>). Although we identified five phosphorylation sites on Fra2, only the peptide containing pSer308 and pSer320 changed significantly, associating these two sites with relevant regulatory activity (Figure <ref type="figure" target="#fig_5">5D</ref>). Likewise, we have identified activating phosphorylations in JunD, while the corresponding phospho-sites in JunB did not change during the course of stimulation (Figure <ref type="figure" target="#fig_5">5E</ref>). These results indicate that JunD plays a more prominent role downstream of EGFR than its close relative JunB. For the remaining family of AP-1-related transcription factors, we have observed three regulatory sites for ATF2 and three for ATF7. Only the ATF2 phosphorylation on Thr69 and Thr71 by p38 MAPK, which leads to enhanced AP-1 activity <ref type="bibr" target="#b24">(Karin et al., 1997;</ref><ref type="bibr" target="#b40">Raingeaud et al., 1996)</ref>, has previously been described. The phosphorylation of the corresponding sequence in ATF7 exhibited similar delayed kinetics strictly following the activation profile of p38 (Figure <ref type="figure" target="#fig_5">5F</ref>). Thus, our results not only position ATF7 downstream in EGF-stimulated signaling cascades and provide its regulatory sites but also point toward p38 MAPK as the kinase responsible for their phosphorylation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Phosida Database</head><p>The current data set comprises more phosphorylation sites than all previous studies combined. To enable efficient use of these data by the scientific community, we have created a database called Phosida, for phosphorylation site database (<ref type="url" target="http://www.phosida.com">http://www.phosida.com</ref>). Phosida lists phosphorylation sites associated with particular projects and proteomes or, alternatively, displays phosphorylation sites found for any protein or protein group of interest (Figure <ref type="figure" target="#fig_6">6</ref>). The data are crossreferenced to information in SwissProt and the International Protein Index (IPI) database. Importantly, Phosida links extensive mass spectrometric peptide information to the phosphorylation sites, such as identical sites on several peptides with the same temporal profiles in response to stimulus (EGF stimulation, in this case). Furthermore, we have submitted our phosphorylation data to the Phospho.ELM database <ref type="bibr" target="#b13">(Diella et al., 2004)</ref> and the Human Proteome Reference Database <ref type="bibr" target="#b38">(Peri et al., 2004)</ref> and have uploaded previous phosphoproteome data sets to Phosida.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>We have developed and applied a strategy combining triple-encoding SILAC for monitoring activation profiles, SCX and TiO 2 chromatography for phosphopeptide enrichment, and high-accuracy mass spectrometric characterization. Identification of numerous phosphorylation sites of transcription factors and other low-abundance regulatory proteins demonstrates that the technology can probe the phosphoproteome in considerable depth. The approach is completely generic for identification of key phosphorylation events in signaling pathways and is applicable to any cell culture system that can be SILAC labeled. It can also be used to study crosstalk between (F) Profile for a kinase and its known substrates. p38 starts to phosphorylate its substrates shortly after its own phosphorylation and activation.</p><p>signals, perturbations such as drug treatment, and knockouts or siRNA-induced knockdowns of signaling molecules. While acquisition and especially analysis of the data is currently very time consuming, advances in automation should make quantitative phosphoproteomics easier to perform in the future.</p><p>A global, unbiased view of the in vivo phosphoproteome reveals that a large proportion of cellular proteins are phosphorylated and that only a small subset of total phosphorylation sites are regulated in response to a stimulus. The observation that individual phospho-sites on a protein are typically regulated differently suggests that proteins generally serve as integrating platforms for a variety of incoming stimuli. This integration of signals could be independent, with phosphorylation of each site occurring separately from the others, or it could be dependent, for example, on when a ''priming site'' is necessary for subsequent phosphorylation events. While phosphorylation is not the only regulatory system in the cell, it is intimately tied to many other systems, as demonstrated here by identification of regulatory sites on ubiquitin ligases, GEFs, actin-binding proteins, RNAinteracting proteins, and other important protein classes. Our data also pinpoint a large number of transcriptional regulators or coregulators to which the growth-factor stimulus is distributed.</p><p>Future studies could connect these data directly to downstream gene-expression changes as measured by microarray technology and/or to protein-expression changes as measured by quantitative proteomics. Integrated with other large-scale data sets, quantitative phosphoproteomics should provide an interesting foundation for a system-wide modeling of cell signaling events.</p><p>Perhaps of more immediate use, it contains a treasure trove of detailed and time-resolved information about numerous individual signaling events controlled by Phosida information for the phosphopeptides of Shc, including matching kinase motifs, localization p value, cellular compartment where the peptide was found, and data for its phosphorylation dynamics. Information for the tyrosine-phosphorylated peptide ELFDDP-SpYVNVQNLDK is displayed. The database is freely accessible at <ref type="url" target="http://www.phosida.com">http://www.phosida.com</ref>. phosphorylation. For example, debate has raged for years as to whether Grb2, a key adaptor protein, undergoes tyrosine phosphorylation <ref type="bibr" target="#b27">(Li et al., 2001)</ref>. Here we identified two phosphorylation sites on Grb2 with certainty: Tyr169 and Tyr209, both located within the carboxy-terminal SH3 domain (see Table <ref type="table">S2</ref>). The different kinetic profiles of the two sites now support the notion that efficient Sos dissociation from the activated complex requires combinatorial Grb2 phosphorylation <ref type="bibr" target="#b5">(Blagoev et al., 2004;</ref><ref type="bibr" target="#b27">Li et al., 2001)</ref>. In a similar way, such data sets may greatly accelerate cell signaling research by providing scientists with critical information about regulatory sites and their dynamics on various kinases, adaptors, transcriptional regulators, and other key signaling molecules. Only a limited number of kinase mutations have been found in cancers <ref type="bibr" target="#b51">(Stephens et al., 2005)</ref>, indicating that changes in activity are more often the cause of disease progression and suggesting that large-scale and quantitative phosphorylation screens could be used to monitor cancer development.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>EXPERIMENTAL PROCEDURES</head><p>Cell Culture, Fractionation, and Peptide Preparation Serum-starved HeLa cells (human cervix epithelial adenocarcinoma cells) labeled with L-arginine and L-lysine, L-arginine-U-13 C 6</p><p>14 N 4 and L-lysine-2 H 4 , or L-arginine-U-13 C 6 -15 N 4 and L-lysine-U-13 C 6 -15 N 2 (6 3 15 cm dishes per condition; $95% confluent cells) were treated with 150 ng/ml of EGF for 0 min, 5 min, and 10 min. A second, identically labeled set of HeLa cells was treated with EGF for 1 min, 5 min, and 20 min. Otherwise, conditions were similar to those described in <ref type="bibr" target="#b5">Blagoev et al. (2004)</ref>. Mixed cells were centrifuged and cell membranes were disrupted using a Dounce glass homogenizer. Nuclear pellets were separated from cytoplasm by centrifugation.</p><p>Protein digestion was performed essentially as in <ref type="bibr" target="#b17">Foster et al. (2003)</ref>, strong-cation exchange chromatography of digests as in <ref type="bibr" target="#b19">Gruhler et al. (2005)</ref>, and TiO 2 enrichment of phosphopeptides essentially as in <ref type="bibr" target="#b26">Larsen et al. (2005)</ref>. Details are given in Supplemental Experimental Procedures.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mass Spectrometric Analysis</head><p>Titansphere eluates were analyzed by online C 18 reversed-phase nanoscale liquid chromatography-tandem mass spectrometry essentially as described in <ref type="bibr" target="#b19">Gruhler et al. (2005)</ref> with a few modifications. Briefly, experiments were performed on an Agilent 1100 nanoflow system (Agilent Technologies) connected to a 7 tesla Finnigan LTQ-FT (Thermo Electron, Bremen, Germany) equipped with a nanoelectrospray ion source (Proxeon Biosystems, Odense, Denmark). The mass spectrometer was operated in the data-dependent mode to automatically switch between MS, MS 2 , and neutral loss-dependent MS 3 acquisition.</p><p>Data-dependent settings were chosen to trigger an MS 3 scan when a neutral loss of 97.97, 48.99, or 32.66 Da was detected among the ten most intense fragment ions. Former target ions selected for MS 2 were dynamically excluded for 60 s. Total cycle time was approximately 3 s. In a second set of experiments, a hybrid linear ion trap/orbitrap instrument was used (LTQ-Orbitrap, Thermo Electron). The instrument was operated with the ''lock mass'' option as recently described <ref type="bibr" target="#b33">(Olsen et al., 2005)</ref>. Survey spectra were acquired with a resolution of 60,000 in the orbitrap while acquiring up to five tandem mass spectra in the LTQ part of the instrument. During fragmentation, the neutral loss species at 97.97, 48.99, or 32.66 m/z below the precursor ion were activated in turn for 30 ms each (pseudo-MS 3 ; see <ref type="bibr" target="#b46">Schroeder et al., 2004)</ref>.</p><p>Assigning Peptide Sequences Using MASCOT and MSQuant Raw MS 2 and MS 3 spectra were centroided and merged into a single peak-list file and searched against the human IPI protein database versions 3.04 and 3.07, the former of which contains 48,968 protein sequences including known nonhuman contaminants such as porcine trypsin and Achromobacter lyticus endoproteinase Lys-C.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical Analysis of Assigned Peptide Sequences and Quantitation</head><p>To establish a cutoff score threshold for a false-positive rate of less than one percent (p &lt; 0.01), we performed a MASCOT search against a concatenated target/decoy database <ref type="bibr" target="#b15">(Elias et al., 2005)</ref> consisting of a combined forward and reverse version of the IPI human database. All spectra and all sequence assignments made by MASCOT were imported into MSQuant (<ref type="url" target="http://msquant.sourceforge.net">http://msquant.sourceforge.net</ref>). Here, the assignment of individual phosphorylation sites in MS 2 and MS 3 spectra were automatically scored using an algorithm similar to the one we have published previously for MS 3 spectra scoring <ref type="bibr" target="#b32">(Olsen and Mann, 2004)</ref>. The scoring is probability based and makes use of the four most intense fragment ions per 100 m/z units. For the localization PTM score from MS 2 spectra, fragment ions are expected to retain the phospho-group (+80 Da), whereas in neutral loss-triggered MS 3 spectra, the fragments are matched as ÀH 2 O (+HPO 3 À H 3 PO 4 ; À18 Da). The algorithm calculates the putative b and y ions in the observed mass range for all possible combinations of phosphorylation sites within a peptide sequence and determines the number of matches, k.</p><p>The PTM localization probability score is À10 3 log 10 (p), where the probability p is calculated as p = ðk!=½n!ðn À kÞ!$½p k $½ð1 À pÞ ðnÀkÞ Þ = ðk!=½n!ðn À kÞ!$½0:04 k $½0:96 ðnÀkÞ Þ;</p><p>where n is the total number of possible b and y ions (see Figures <ref type="figure" target="#fig_2">S3</ref> and<ref type="figure" target="#fig_6">S6</ref> for examples). Phosphopeptide quantitation was likewise performed with the help of MSQuant. For each identified SILAC triplet, MSQuant calculated the three XIC values, and the assignments used for quantitation were visually displayed and validated. XICs for the first and last member of the triplet were normalized with respect to the common 5 min point of stimulation, which was scaled to one.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clustering of Regulated Phosphopeptides</head><p>The raw ratios for the time profiles of regulated phosphopeptides were log 10 transformed and then normalized so that, for each profile, the mean was zero and standard deviation was one. The normalization of data ensures that phosphopeptides with similar temporal patterns are close in Euclidean space. The transformed profiles were then clustered using the Mfuzz toolbox <ref type="bibr" target="#b18">(Futschik and Carlisle, 2005)</ref>, which is based on the open-source statistical language R <ref type="bibr">(RDC Team, 2006)</ref>. We used the fuzzy c-means (FCM) clustering algorithm, which is part of the toolbox. FCM clustering is a soft partitioning clustering method that requires two main parameters (c = number of clusters, m = fuzzification parameter) and uses Euclidean distance as the distance metric. FCM assigns to each profile a membership value in the range [0,1] for each of the c cluster. The algorithm iteratively assigns the profile to the cluster with the nearest cluster center while minimizing an objective function. Parameter m plays an important role in deriving robust clusters that are not greatly influenced by noise and random artifacts in data. For our analysis, the optimal values of c and m were derived by the iterative refinement procedure as described in <ref type="bibr" target="#b18">Futschik and Carlisle (2005)</ref>. The final clustering was done with the parameters c = 6 and m = 2.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Quantitative and Time-Resolved Phosphoproteomics Using SILAC (A) Three cell populations are SILAC encoded with normal and stable isotope-substituted arginine and lysine amino acids, creating three states distinguished by mass. Each population is stimulated for a different length of time with EGF, and the experiment is repeated to yield five time points. Cells are combined, lysed, and enzymatically digested, and phosphopeptides are enriched and analyzed by mass spectrometry. (B) Mass spectra of eluting peptides reveal SILAC triplets (same peptide from the three cell populations), and these triplets are remeasured in selected ion monitoring (SIM) scans for accurate mass determination. Phosphopeptides are identified by loss of the phospho-group in a first fragmentation step followed by sequence-related information from a second fragmentation step. (C) Same peptide as in (B) but measured on the LTQ-Orbitrap. Inset shows a magnification of the SILAC peptide selected for fragmenting. Right-hand panel shows the result of multistage activation of the peptide. (D) Raw data of a phosphopeptide from the protein programmed cell death 4. The three peptide intensities in the two experiments are combined using the 5 min time point, resulting in the quantitative profile shown in the inset.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Results of Large-Scale Phosphopeptide Sequencing (A) Distribution between singly and multiply phosphorylated peptides (some peptides were both singly and multiply phosphorylated and occur in more than one category). (B) Phosphorylation-site analysis. See text for definition of classes I, II and III. (C) Distribution of the pY/pS/pT phosphoproteome. (D) Averaged and normalized time profile of all regulated tyrosine and serine/threonine phosphorylation sites. (E) Gene Ontology (GO) analysis of the in vivo phosphoproteome.</figDesc><graphic coords="5,106.58,101.59,382.64,361.98" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Clustering of Dynamic Phosphorylation Profiles</figDesc><graphic coords="6,59.75,101.82,286.88,482.06" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>4. One class of regulated proteins comprises kinases and phosphatases (represented by 23 phosphopeptides), spanning the entire EGF cascade from the receptor through RAF and MEK to the MAP kinases (ERK1, ERK2, and p38). The main kinetic clusters in this functional class are initiators, activators, and terminators of EGF signaling, all showing increasing levels of phosphorylation during the 20 min time course of EGF treatment. Interestingly, transcriptional regulators made up a large class of regulated proteins. In addition to 26 different transcription factors with 34 regulated phosphopeptides, there were 20 transcriptional coregula-tors with EGF-dependent phosphorylation sites (Table</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Functional Categories of Regulated Phosphoproteins</figDesc><graphic coords="7,70.75,101.59,454.28,297.92" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. Regulatory Information from Specific Phosphorylation Sites (A) EGF receptor and negative feedback. Tyrosine phosphorylation sites (pY) have fast kinetics, whereas serine/threonine phosphorylation (pS, pT) occurs with a time delay. (B) Activation profiles from the mitogen-activated protein kinase (MAPK) family. (C) Translocation of activated STAT5 from the cytosol to the nucleus. (D) Multiply phosphorylated transcription factor Fra2. Only one of the phosphopeptides is regulated by EGF. (E) Related but differentially regulated transcription factors. Both JunD and JunB are phosphorylated at the paralogous sites, but only in JunD are these sites regulated (shown by overlapping peptides for the Jun B site, yellow and violet traces).(F) Profile for a kinase and its known substrates. p38 starts to phosphorylate its substrates shortly after its own phosphorylation and activation.</figDesc><graphic coords="10,59.75,101.59,454.28,412.38" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 6 .</head><label>6</label><figDesc>Figure 6. The Phosida Database</figDesc><graphic coords="11,70.75,101.82,286.88,414.14" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>EGF-Regulated Transcription-Factor Phospho-Sites    </figDesc><table><row><cell>IPI Number</cell><cell>Protein Name</cell><cell>Phosphopeptide Sequence</cell><cell>Cluster</cell></row><row><cell>IPI00234446</cell><cell>ATF-2</cell><cell>KMPLDLpSPLATPIIR</cell><cell>D</cell></row><row><cell>IPI00234446</cell><cell>ATF-2</cell><cell>NDSVIVADQpTPpTPTR</cell><cell>D</cell></row><row><cell>IPI00009975</cell><cell>ATF-7</cell><cell>ESSEPTGpSPAPVIQHSSATAPSNGLSVR</cell><cell>C</cell></row><row><cell>IPI00009975</cell><cell>ATF-7</cell><cell>TDSVIIADQpTPpTPTR</cell><cell>D</cell></row><row><cell>IPI00006079</cell><cell>Bclaf1</cell><cell>STFREEpSPLR</cell><cell>D</cell></row><row><cell>IPI00029795</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="636" xml:id="foot_0"><p>Cell 127, 635-648, November 3, 2006 ª2006 Elsevier Inc.</p></note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_1"><p>Cell 127, 635-648, November 3, 2006 ª2006 Elsevier Inc. 645</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>We thank other members of the <rs type="institution">Center for Experimental BioInformatics (CEBI)</rs> and the <rs type="institution">Department of Proteomics and Signal Transduction at the Max-Planck Institute for Biochemistry</rs> for help and fruitful discussions, especially <rs type="person">Sonja Kru ¨ger</rs>, <rs type="person">Marcus Kru ¨ger</rs>, <rs type="person">Gaby Sowa</rs>, <rs type="person">Cuiping Pan</rs> for experimental assistance. <rs type="person">Angus Lamond</rs>, <rs type="person">Leonard Foster</rs>, and <rs type="person">Shao-En Ong</rs> provided important comments on the manuscript. TiO 2 spheres were a kind gift from <rs type="institution">GL Sciences (Tokyo)</rs>. <rs type="person">Alexandre Podtelejnikov</rs> and <rs type="person">Søren Gade</rs> of <rs type="affiliation">Proxeon Biosystems A/S</rs> are acknowledged for their help with bioinformatic analysis using Protein-Center. Work at CEBI is supported by a generous grant from the <rs type="funder">Danish National Research Foundation</rs>.</p></div>
+			</div>
+			<listOrg type="funding">
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supplemental Data</head><p>Supplemental Data include Supplemental Experimental Procedures, Supplemental References, six figures, and six tables and can be found with this article online at <ref type="url" target="http://www.cell.com/cgi/content/full/127/3/635/DC1/">http://www.cell.com/cgi/content/full/127/3/ 635/DC1/</ref>.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Mass spectrometry-based proteomics</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Aebersold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">422</biblScope>
+			<biblScope unit="page" from="198" to="207" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Phosphoproteome analysis of HeLa cells using stable isotope labeling with amino acids in cell culture (SILAC)</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Amanchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Kalume</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Iwahori</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pandey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Proteome Res</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1661" to="1671" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Nucleolar proteome dynamics</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Andersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">W</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Leung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">E</forename><surname>Lyon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">I</forename><surname>Lamond</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">433</biblScope>
+			<biblScope unit="page" from="77" to="83" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Large-scale characterization of HeLa cell nuclear phosphoproteins</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Beausoleil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jedrychowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Elias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Villen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Cohn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Cantley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Gygi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="12130" to="12135" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">A proteomics strategy to elucidate functional proteinprotein interactions applied to EGF signaling</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Blagoev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kratchmarova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="315" to="318" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Temporal analysis of phosphotyrosine-dependent signaling networks by quantitative proteomics</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Blagoev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kratchmarova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="1139" to="1145" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Linking Rap to cell adhesion</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Bos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="123" to="128" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">The role of STATs in transcriptional control and their impact on cellular function</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bromberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Darnell</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Jr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="2468" to="2473" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Proteomic analysis of cellular signaling</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">G</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>White</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Rev. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="343" to="354" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">The role of protein phosphorylation in human health and disease. The Sir Hans Krebs Medal Lecture</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cohen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Eur. J. Biochem</title>
+		<imprint>
+			<biblScope unit="volume">268</biblScope>
+			<biblScope unit="page" from="5001" to="5010" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Mechanism of phosphorylation of the epidermal growth factor receptor at threonine 669</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Countaway</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">C</forename><surname>Northwood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">264</biblScope>
+			<biblScope unit="page" from="10828" to="10835" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Status of complete proteome analysis by mass spectrometry: SILAC labeled yeast as a model system</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>De Godoy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Olsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>De Souza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mortensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">50</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The ubiquitin-proteasome system and cancer</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Devoy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Soane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Welchman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Mayer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Essays Biochem</title>
+		<imprint>
+			<biblScope unit="volume">41</biblScope>
+			<biblScope unit="page" from="187" to="203" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Phospho.ELM: a database of experimentally verified phosphorylation sites in eukaryotic proteins</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Diella</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Cameron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gemund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Linding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Via</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kuster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sicheritz-Ponten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Blom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Gibson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Bioinformatics</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">79</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Negative receptor signalling</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Dikic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Giordano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="128" to="135" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Comparative evaluation of mass spectrometry platforms used in large-scale proteomics investigations</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Elias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Haas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Faherty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Gygi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Methods</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="667" to="675" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Phosphoproteome analysis by mass spectrometry and its application to Saccharomyces cerevisiae</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Ficarro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Mccleland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">T</forename><surname>Stukenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Burke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shabanowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Hunt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>White</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="301" to="305" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Unbiased quantitative proteomics of lipid rafts reveals high specificity for signaling factors</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>De Hoog</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="5813" to="5818" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Noise-robust soft clustering of gene expression time-course data</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Futschik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Carlisle</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Bioinform. Comput. Biol</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="965" to="988" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Quantitative phosphoproteomics applied to the yeast pheromone signaling pathway</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Gruhler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Olsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mohammed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mortensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Faergeman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">N</forename><surname>Jensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="310" to="327" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">The Croonian Lecture 1997. The phosphorylation of proteins on tyrosine: its role in cell growth and disease</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hunter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philos. Trans. R. Soc. Lond. B Biol. Sci</title>
+		<imprint>
+			<biblScope unit="volume">353</biblScope>
+			<biblScope unit="page" from="583" to="605" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Signaling-2000 and beyond</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hunter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="113" to="127" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Transforming gene product of Rous sarcoma virus phosphorylates tyrosine</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hunter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Sefton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="1311" to="1315" />
+			<date type="published" when="1980">1980</date>
+			<pubPlace>USA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Transcriptional control by protein phosphorylation: signal transmission from the cell surface to the nucleus</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hunter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Biol</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="747" to="757" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">AP-1 function and regulation</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Karin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Zandi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="240" to="246" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Mechanism of divergent growth factor effects in mesenchymal stem cell differentiation</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kratchmarova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Blagoev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Haack-Sorensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Kassem</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">308</biblScope>
+			<biblScope unit="page" from="1472" to="1477" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Highly selective enrichment of phosphorylated peptides from peptide mixtures using titanium dioxide microcolumns</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Larsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Thingholm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">N</forename><surname>Jensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Roepstorff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Jorgensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="873" to="886" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Tyrosine phosphorylation of Grb2 by Bcr/Abl and epidermal growth factor receptor: a novel regulatory mechanism for tyrosine kinase signaling</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Couvillon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Brasher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Van Etten</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">EMBO J</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="6793" to="6804" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Performance evaluation of a hybrid linear ion trap/orbitrap mass spectrometer</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Makarov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Denisov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kholomeev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Balschun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Lange</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Strupat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Horning</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">78</biblScope>
+			<biblScope unit="page" from="2113" to="2120" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">MAP kinase kinase kinase, MAP kinase kinase and MAP kinase</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">J</forename><surname>Marshall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Opin. Genet. Dev</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="82" to="89" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Phosphoproteomics: new insights into cellular signaling</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mumby</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Brekken</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">230</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Molecular interpretation of ERK signal duration by immediate early gene products</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">O</forename><surname>Murphy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Fingar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Blenis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="556" to="564" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Improved peptide identification in proteomics by two consecutive stages of mass spectrometric fragmentation</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Olsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="13417" to="13422" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Parts per million mass accuracy on an Orbitrap mass spectrometer via lock mass injection into a C-trap</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Olsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>De Godoy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Macek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mortensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pesch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Makarov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Lange</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Horning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="2010" to="2021" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Stable isotope labeling by acids in cell culture, SILAC, as a simple and accurate approach to expression proteomics</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Ong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Blagoev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kratchmarova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Kristensen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Steen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pandey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="376" to="386" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Mitochondrial modulation: reversible phosphorylation takes center stage?</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Pagliarini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Dixon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trends Biochem. Sci</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="26" to="34" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Assembly of cell regulatory systems through protein interaction domains</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pawson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Nash</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">300</biblScope>
+			<biblScope unit="page" from="445" to="452" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A novel transforming protein (SHC) with an SH2 domain is implicated in mitogenic signal transduction</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pelicci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Lanfrancone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Grignani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcglade</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Cavallo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Forni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Nicoletti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Pawson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Pelicci</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">70</biblScope>
+			<biblScope unit="page" from="93" to="104" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Human protein reference database as a discovery resource for proteomics</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Peri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Navarro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">Z</forename><surname>Kristiansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Amanchy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Surendranath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Muthusamy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Gandhi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">N</forename><surname>Chandrika</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Deshpande</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Suresh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nucleic Acids Res</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="497" to="D501" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Global analysis of protein phosphorylation in yeast</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ptacek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Devgan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Michaud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fasolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Jona</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Breitkreutz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sopko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">438</biblScope>
+			<biblScope unit="page" from="679" to="684" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">MKK3-and MKK6-regulated gene expression is mediated by the p38 mitogen-activated protein kinase signal transduction pathway</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Raingeaud</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Whitmarsh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Barrett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Derijard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1247" to="1255" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">R: A Language and Environment for Statistical Computing</title>
+		<author>
+			<orgName type="collaboration">RDC Team ; R Development Core Team</orgName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">R Foundation for Statistical Computing)</title>
+		<meeting><address><addrLine>Vienna</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Tumor-promoting phorbol esters and activated Ras inactivate the tuberous sclerosis tumor suppressor complex via p90 ribosomal S6 kinase</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Roux</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Ballif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Anjum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Gygi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Blenis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="13489" to="13494" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Immunoaffinity profiling of tyrosine phosphorylation in cancer cells</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rush</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Moritz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">L</forename><surname>Goss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">J</forename><surname>Spek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">M</forename><surname>Zha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Polakiewicz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Comb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="94" to="101" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Profiling of tyrosine phosphorylation pathways in human cells using mass spectrometry</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Salomon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Ficarro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Brill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brinker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><forename type="middle">T</forename><surname>Phung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ericson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Sauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brock</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Horn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Schultz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Peters</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Natl. Acad. Sci. USA</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="443" to="448" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Cell signaling by receptor tyrosine kinases</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schlessinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="211" to="225" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">A neutral loss activation method for improved phos-phopeptide sequence analysis by quadrupole ion trap mass spectrometry</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Schroeder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shabanowitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Hunt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Coon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anal. Chem</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="3590" to="3598" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">A novel proteomic screen for peptide-protein interactions</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">X</forename><surname>Schulze</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Biol. Chem</title>
+		<imprint>
+			<biblScope unit="volume">279</biblScope>
+			<biblScope unit="page" from="10756" to="10764" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">AP-1 as a regulator of cell life and death</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Shaulian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Karin</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="131" to="E136" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">WAVE signalling: from biochemistry to biology</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Soderling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Scott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biochem. Soc. Trans</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="73" to="76" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Use of an oriented peptide library to determine the optimal substrates of protein kinases</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Songyang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Blechner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hoagland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Hoekstra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Piwnica-Worms</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Cantley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr. Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="973" to="982" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A screen of the complete protein kinase gene family identifies diverse patterns of somatic mutations in human breast cancer</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Stephens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Edkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Davies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Greenman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hunter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Bignell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Teague</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Stevens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Genet</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page" from="590" to="592" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Differential phosphoprofiles of EGF and EGFR kinase inhibitor-treated human tumor cells and mouse xenografts</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Stover</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cadwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Marto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Root</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mestan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stumm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Ornatsky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Orsi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Radosevic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Liao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">69</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Phosphotyrosine signaling networks in epidermal growth factor receptor overexpressing squamous carcinoma cells</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Thelemann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Petti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Iwata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hunt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Settinari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Fenyo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gibson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Haley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="356" to="376" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Distinct roles of Jun: Fos and Jun: ATF dimers in oncogenesis</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Van Dam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Castellazzi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="2453" to="2464" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">c-Jun NH(2)-terminal kinase is essential for the regulation of AP-1 by tumor necrosis factor</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Ventura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Lamb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Flavell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Davis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Biol</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2871" to="2882" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Molecular mechanisms underlying endocytosis and sorting of ErbB receptor tyrosine kinases</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Waterman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yarden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">FEBS Lett</title>
+		<imprint>
+			<biblScope unit="volume">490</biblScope>
+			<biblScope unit="page" from="142" to="152" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Cisplatin induces PKB/ Akt activation and p38(MAPK) phosphorylation of the EGF receptor</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">E</forename><surname>Winograd-Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Levitzki</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/sj.onc.1209737</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Oncogene</title>
+		<imprint>
+			<date type="published" when="2006-06-19">2006. June 19, 2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">A motif-based profile scanning approach for genomewide prediction of signaling pathways</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Yaffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">G</forename><surname>Leparc</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Obata</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Volinia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Cantley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="348" to="353" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">GoMiner: a resource for biological interpretation of genomic and proteomic data</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">R</forename><surname>Zeeberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Feng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T</forename><surname>Fojo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sunshine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Narasimhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">W</forename><surname>Kane</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Reinhold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lababidi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">28</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Time-resolved mass spectrometry of tyrosine phosphorylation sites in the epidermal growth factor receptor signaling network reveals dynamic modules</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Wolf-Yadlin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">L</forename><surname>Ross</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">J</forename><surname>Pappin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Rush</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">A</forename><surname>Lauffenburger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>White</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol. Cell. Proteomics</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="1240" to="1250" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Thermal Conductivity and Specific Heat of Noncrystalline Solids</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Keller</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">R</forename><forename type="middle">O</forename><surname>Pohl</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Halidesr</forename><forename type="middle">W</forename><surname>Roberts</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">R</forename><surname>Ruppin</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physics</orgName>
+								<orgName type="laboratory">Laboratory of Atomic and Solid State Physics</orgName>
+								<orgName type="institution">Cornell University</orgName>
+								<address>
+									<postCode>14850</postCode>
+									<settlement>Ithaca</settlement>
+									<region>Nets York</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">University of North CaroHna</orgName>
+								<address>
+									<postCode>27514</postCode>
+									<settlement>Chapel Hill</settlement>
+									<region>North Carolina</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Thermal Conductivity and Specific Heat of Noncrystalline Solids</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">9FA87564EB45B526F80F0863027A8084</idno>
+					<note type="submission">Received 28 May 1971 Received 22 April 1971</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>23Although Hughes's curves are densitometer traces, the experimental procedures followed were such that the results should be proportional to the absorption coefficient, or nearly so tA. E. Hughes (private communica- tion)]. In any case, the quantitative significance of the experimental results is not of major importance for our primary purpose, which is to illustrate our computation- al approach.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>The thermal conductivity of noncrystalline dielectric solids differs markedly from that of crystalline ones. ' As an example, Fig. <ref type="figure">1</ref> shows the conductivities of crystalline and vitreous silicon dioxide. In crystals, the conductivity increases with decreasing temperature because the anhar- monic umklapp processes become less frequent, and hence the phonon mean free path increases. Eventually, the mean free path becomes comparable to the sample dimensions, and the conductivity goes through a maximum and then decreases as the specific heat decreases.</p><p>The conductivity of crystals depends very much on the material, and in ad- dition any disturbance of the lattice periodicity lowers the conductivity in a sometimes very characteristic way, as shown in Fig. <ref type="figure">1</ref>, for example.</p><p>In noncrystalline solids, the conductivity is several orders of magnitude smaller than in crystals, it decreases monotonically with decreasing tempera- ture, and furthermore it is independent of the chem- ical composition: In Fig. <ref type="figure">2</ref>, the conductivity of vitreous silica~' 7 is compared with that of silica- based glasses containing large amounts of other oxides. <ref type="bibr">'</ref> The conductivities are practically surfaces. Heatflow parallel to g axis in the quartz sam- ple. The data above 100'K for quartz after Eucken (Ref.</p><p>1) and for vitreous silica after Ratcliffe (Ref. 6). Note that an impurity concentration of order 0. 1% in the KCl crystal results in a conductivity smaller than that of the glass (the conductivity of pure KCl is similar to that of quartz). In KCl: CN, the low conductivity is caused by resonance scattering of the phonons by quasirotational states with energies close to 1.6 and 18 cm ~(0. 13 &amp;10 and 1.4 &amp;10  <ref type="bibr">13)</ref>. Crown glass (unspecified composition): I (Ref. 10).</p><p>"Soft" soda-lime glass (approximate composition: 70% SiO2, 15% Na2O, and 10% Cao): X (Refs. 11 and 12). A summary of the chemical composition of glasses can be found in Ref. 6.</p><p>phonon mean free path / is defined by where E is the thermal conductivity, C" the specific heat of the plane lattice waves, and v the Debye sound velocity, /at1 'K is found tobe of order 10 lcm in glasses, i. e. , 100times the wavelength of the domi- identical. Even noncrystalline solids with completely different chemical compositions, such as s 14-1v varnishes 18 Se 12 and Geoa 19 all have very similar conductivities (Fig. <ref type="figure" target="#fig_1">3</ref>).</p><p>The only exceytions appear to be glass ceramics <ref type="bibr">'</ref> such Rs Pyroceram, Rnd tile partially cl'ys- tallizing yolymers, such as nylon and Tef lone'4'~'33 and polyethylene. ' Their conductivities are consid- erably smaller below 1 'K than those of the noncrys- talline solids, they depend on the sample, and they usually vary more rayidly with temperature.</p><p>The dependence of the conductivity on the crystallinity of polyethylene has been studied by <ref type="bibr">Salinger. 3</ref> The complete lack of sensitivity to composition in the noncrystalline solids would be understandable if the conductivity were as low as it could possibly be, corresponding to a diffusion of the vibrational en- ergy from one atom to the neighboring ones. But this is not the case. A crystal containing as few as 0. 1% of foreign ions can have a conductivity lower than that of the glasses (see Fig. nant lattice vibrations or 10 intermolecular spacings. Qnly Rt the highest temperatures, where glasses Rnd crystals have approximately equal conduetivities, is l of the order of the intermolecular spacing, i. e. , 10 7 em. 2' We will return to this point later in Fig. <ref type="figure">9</ref>. Consequently, the problem has to be stated as follows: Why do all noncrystalline solids have the same (high) conductivity at low temperatures, and why do Rll the curves have the same characteristic shape with a plateau in the neighbor- hood of 10 'K'P This question was the starting point for the present investigation.</p><p>Two models have been suggested to explain the conductivity of glasses. In the first model,</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Klemens</head><p>proposed tllat the scRtterlng 18 cRused by spatial fluctuations in the sound velocity and by a certain amount of long-range order and that this affects the transverse phonons more than the longi- tudinal ones. At temperatures below the plateau (10 'K), the heat is mainly carried by longitudinal phonons, which are uncoupled fxom the transverse yhonons. At around 10 'K, the onset of the anhar- monic interaction couples the phonons in the different branches and hence lowers the mean free path of the longltudinRl phonons, which cRu8es the plateau. Eventually, the conductivity increases Rgain becRuse the speclflc heat lncreRses. As Rn alternative model, Klemens" proposed that in non- crystalline solids the heat carrying plane-wave phonons are resonantly scattered by local. ized phonons in a way similar to the resonant scattering found in crystals containing substitutional molecules with low-f requency quasi. rotational degrees of freedom (see Fig. <ref type="figure">1</ref>) or in crystals con- taining defects causing resonant modes. 28 Such a scattering, in particular, could explain the plateau occurring in the temperature region in which most of the heat is carried by yhonons whose frequencies are close to those of the spatially localized modes. These modes should be observable in the specific heat of glasses. It is known that the low-tempera; ture specific heat of the same substance in the glassy phase is larger than that in the crystalline phase. ' This has been observed in SiO2, 29 " B Q 36 Se 3'?~39 glyeerO1 <ref type="bibr">31' 32v40</ref> Rnd yOlyethylene <ref type="bibr">41</ref> As an example, we show in Fig. <ref type="figure">4</ref> the specific heats of SiQ2 in the vitreous and in the crystalline phase (n-quartz) plotted as C"T svs T. The spe- cific heats of the two phases of SiQ2 calculated in the Debye limit from elastic measurements are very similar. Therefore, the difference between the vitreous and crystalline specific heat has often been referred to as an excess specific heat and has been associated with some extra modes characteristic for the glassy phase. Dreyfus, Fernandes, Rnd Maynard 2 have suggested that these modes could be the localized modes responsible for the resonance scattering in the glassy phase. This  model has also been applied to Se" Rnd, GeQ2, " and it has been concluded that the frequencies needed to explain the phonon scattering do agree with the frequencies of these excess modes.</p><p>Both the structure scattering and the localized mode scattering do not give a plausible reason for a particularly important experimental fact, namely, that all noncrystalline solids have practically iden- tical thermal conductivities. This fact suggests that the scattering must have a very simple origin, extremely independent of structural details or the vibrational spectrum of the solids.</p><p>We end our introduction by pointing out a moat peculiar fact demonstrated in Fig. <ref type="figure">4</ref>: At the lowest temperatures investigated, there is no sign that the specific heat of the vitreous silica approaches that computed from elastic measurement:8 in the Debye approximation.</p><p>Instead, in both samples seems to be an indication of an upturn beginning below 2 'K.</p><p>This behavior appears not to be restricted to SiQ2, as shown in Fig. <ref type="figure">5</ref> for the polymers polystyrene (PS) and polymethylmethacrylate (PMMA), 4' for glycerol, 46 and for vitreous GeQ2. <ref type="bibr">7</ref> The yuxyose of this yaper is threefold: (a) To present an extension of thermal conduc- tivity measurements on noncrystalline solids to different materials and to even lower temperatures, foil glued to the sample or to an evaporated gold film. Through the proper choice of the various components of this heat leak we obtained the sample to bath time constants shown in Fig. <ref type="figure" target="#fig_4">6</ref>. Heat pulse duration was varied between 0. 5 and 2 sec.</p><p>The time constants for the thermal equilibration between heater and thermometer and the sample was always found to be less than 1 sec, the time constant of the Wheatstone bridge used to measure the temperature.</p><p>The time constant 7 for thermal equilibrium within the sample was estimated from the heat diffusion equation to be FIG. <ref type="figure">5</ref>. Specific heat of several amorphous materials plotted as C"/T vs T: PS and PMMA <ref type="bibr">(after Ref. 45)</ref>, glassy glycerol <ref type="bibr">(after Refs. 31,</ref><ref type="bibr">32,</ref><ref type="bibr">40 and 46)</ref>, and vit- reous german1a <ref type="bibr">(after Ref. 47</ref>). Yhe dashed lines rep- resent the low-temperature specific heat calculated from the sound velocities. There is some experimental uncer- tainty in the data on PMMA, indicated by the two short dashed lines. in order to further demonstrate the striking inde- pendence of the material.</p><p>(b) To suggest a model which can quantitatively explain the thermal conductivity in the temperature range from a few degree Kelvin on up, and to test this model on three different substances. (c) To show that the specific heat of noncrystal- line solids below 1 'K does not follow the expected Debye T law, but instead approaches a linear variation with temperature. This striking behavior seems to be characteristic for noncrystalline solids, and to be independent of accidental impurities.</p><p>This anomaly may also be responsible for the thermal conductivity below 1 'K. Its origin is yet un- known.</p><p>r=C"md yZ,</p><p>(2)</p><formula xml:id="formula_0">200</formula><p>where C"m and E are the heat capacity and thermal conductivity of the sample, respectively, and d is a characteristic length, typically a diameter of the sample.</p><p>For the noncrystalline samples used in this investigation, this v was less than 0. 1 sec at the lowest temperatures, and increased to approx- imately 1 sec at 1 K. For the crystals, v was even shorter. The largest source of error was random building vibrations transmitted to the sample, causing random temperature fluctuations and hence uncertainties in the determination of the sample temperature while the sample temperature returned to that of the bath following a heat pulse.</p><p>These fluctuations caused a maximum error of 20% in the specific heat below 0. 1 'K, but were negli- gible above 0. 2'K. As a test of our technique, we measured the specific heat C"of single crystal Rl)81 and 8101 (Flg. 7). Our results al'e ill good agreement with earlier data (RbBr, Rollefson et al. , <ref type="bibr">~T&amp;0.</ref> 2'K; quartz, White and Birch, 39 II. EXPERIMENTAL METHODS Thermal conductivity was measured with the steady-state method in cryostats designed to span the temperature range 0. 05-100 K, Speclflc heat was measured with the transient heating technique described earlier. <ref type="bibr">'</ref> For this, the sample was in thermal contact with the heat sink through a heat leak. After a heat pulse has been applied to the sample through an electrical heater (25-I1-diam nichrome, 50 cm long, glued to the sample with GE 7031 varnish), the initial temperature increase of the samples decayed exponentially through the heat leak. The time constant T» of this cooling had to be large compared to the duration of the pulse and to any time constant associated with thermal equilibrium within the sample and between sample and heater or thermometer (a piece of a 220-0 Speer resistor). The heat leak consisted of a 50- p-thick copper w1re o1 a short piece of 1-mm-diam graphite rod fastened with Epoxy to a thin copper with which the temperature of the sample returned to that of the bath after the sample had been heated for a short time ( 1 see) w'ith a known energy. Excitations which have relaxation times larger than v'» will remain unnoticed in this kind of experiment. We did not find that our results depended on the ~,b chosen. We conclude that all time constants associated with thermal equilibration with- in the sample were much shorter than ~» (see text). V. Specific heat of RbBr and quartz. The solid ines» Cv, RbBr 9 V~10 (W sec g F )T and Cv, quarts =5.7&amp;10 ' (W'seeg 'K )T agree with those calculated from elastic measurements, and in the temperature range of overlap, also with earlier specific-heat measurements (BbBr, T&amp;0.2 K, Ref. 50, quartz, T&amp;1.4 K, Ref. 29).</p><p>5.0 T&amp;1.4 'K). At the lowest temperatures, below 0. 15 'K in Rbar and below 0.4 'K in quartz, C" ceases to vary as T'. For alkali halides, such an anomaly is known (NaF, " KC1, " NaBr, " RbC1") and has been shown to decrease with increasing pur- ity of the samples. The anomaly has been attributed to tunneling impurities, ' present even in the purest crystals in concentrations below the 1-ppm level. A similar anomaly in A1203 occurring around 10 'K has been explained with low-energy spin states of impurities. ' Although we have not yet investigated whether the anomaly in Rbar and in quartz is indeed caused by similar impurities, we assume that it will be absent in perfect crystals. In any event, this anomaly is over ten times smaller than the specific heat we will be concerned with in glasses.</p><p>Thermal conductivity was measured on natural quartz (Valpey Corp. ) on pieces of vitreous silica (GE 201) and Pyrex (Corning VV40) and on a piece of selenium stringsawed from the specific-heat boule described below. Sample dimensions were approximately 5x 5x40 mm; the surfaces were sandblasted.</p><p>Also measured was a piece of alu- minogermanate (Corning QV54) with the following composition (by weight): GeOz 50/0, A40» 25%, Cao 15%, Bao 5%, and Zn 5%. '</p><p>The specific-heat samples used are listed in Table <ref type="table">I</ref>. The quartz was natural material, Spec- trosil 8 was synthetic silica, which according to its manufacturer contained a total of about 0. 1 ppm of metallic impurities and 0. 1% weight of hydroxyl (see below, caption of Fig. <ref type="figure" target="#fig_1">13</ref>). A chemical analy- sis of the Pyrex samples5 xevealed iron concentra- tions of 2. Sx19'a cm 3 (100 ppm) in the Pyrex VV40 and 2. Qx10'» cm» (12 ppm) in the Pyrex QVOO. The selenium sample was outgassed and melted in a TABLE I. Specific-heat samples used in this investigation. Also listed is room-temperature mass density, molecu- lar weight, and the O'K Debye sound velocity ez as calculated from elastic measurements, except for Se {see footnotef). quartz tube and quenched in air after melting. ~The germania sample was melted at 1250 C in vacuum in a Pt crucible, kept at that temperature for 18 h in oxygen at 1 atm, rapidly cooled to 600 'C and then slowly to room temperature.</p><p>The sample showed an absorption with a maximum absorption constant k = 15 cm ' at 2450 A. This defect is asso- ciated with an oxygen deficiency (F 'center). "</p><p>Using Smakula's equation and assuming an oscillator strength f = 1, ' we determined a defect concentra- tion of 1x10'g cm (5 ppm).</p><p>The simplest way to analyze thermal conductivity data is in the dominant-phonon approximation.</p><p>In this approximation, one assumes that the heat is carried exclusively by those phonons which con- tribute most to the specific heat at that temperature, i. e. , those phonons for which dC"/der is a maximum.</p><p>In the Debye approximation, the angular frequency of the dominant phonons is 5. 65x10" radsec '</p><p>(3 cm ' in the wave-number measure) at 1 'K and is proportional to the temperature. Thus, if C"and v are known, l (va, ) can be determined from the ex- periment with the help of Eq. (1). A simple esti- mate of the error to be expected if this method is used to determine the frequency dependence of the phonon mean free path was made as follows: The phonon scattering rates 7 "',(&amp;o) resulting from iso- topic mixtures in crystals are known both from theory and experiment. s %Ye analyzed the thermal conductivity data obtained on Ge crystals of dif- ferent isotopic compositions' with the dominant- phonon approximation and obtained a relaxation rate g "',(or~, ) which varied as the fourth power of frequency and which differed from the theoretically predicted rateg6 r,'"(~)by less than a factor of 2.</p><p>Another test for the validity of the dominant-phonon approximation, involving phonon resonance scattering, was performed by <ref type="bibr">Narayanamurti and</ref> Pohl. "</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. EXPERIMENTAL RESULTS AND DISCUSSION</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>A. Thermal Conductivity</head><p>The thermal conductivities of vitreous and crystalline SiO~measured in this investigation have been compared in Fig. <ref type="figure">1</ref>. In Fig. <ref type="figure">8</ref> we compare the con- ductivities of several vitreous materials. As we pointed out in the introduction, all noncrystalline materials have practically identical conductivities. This is confirmed by our measurements.</p><p>Our data, which extend to lower temperatures, show that the conductivities vary as T" with n-1. 8, below 1'K.</p><p>The mean free paths, determined for quartz, vi- treous silica, germania, ' and selenium with the help of Eq. ( <ref type="formula">1</ref>) in the dominant-phonon approxima- tion, are compared in Fig. <ref type="figure">9</ref>. The specific heat used for this analysis was that of the crystal phase, except for GeO" for which the specific heat is available only for the glassy phase. 8. Thermal conductivity of vitreous silica, Pyrex 7740, and selenium between 0. 06 and 100'K and of alumin- ogermanate glass between 1 and 100'K. For comparison included is the conductivity of vitreous Ge02 (Fig. <ref type="bibr">3 and</ref> Ref. 19). Our data on vitreous silica and on Pyrex 7740 agree closely with those obtained by Herman <ref type="bibr">(Ref.</ref> 2).</p><p>The data on Se are twice as large as those reported in Ref. 12. As far as we know, this is the only case where the conductivity of a noncrystalline solid has been found to be sample dependent. This difference may result from a difference in sample preparation: White et g$. <ref type="bibr">(Ref. 12)</ref> quenched their sample in water; our sample was cooled in air.</p><p>l ((d aom) ~etta, m r (3)   reminding us of a Rayleigh scattering process.</p><p>Static point defects, such as foreign atoms, vacan- cies, interstitial atoms, or isotopes in crystal lattices, cause such phonon scattering. %e attempt to explain the observed mean free possibly introduced by not using the vitreous specific heats will be discussed below, but it is negli- gible for the present discussion, which deals with temperatures above 1'K. The sound velocities used were the ones listed in Table <ref type="table">I</ref>. At high tem- peratures, the mean free paths for crystalline and vitreous materials alike approach the order of a few angstrom, i.e. , the interatomic separation, as is to be expected. As the temperature decreases, the mean free path increases very rapidly (almost exponentially) in the crystal. The mean free paths in the vitreous samples also increase, although not as rapidly, and with no sign of a resonance scattering process. In the region around 10 'K, the mean free path in these samples varies approximately as the fourth power of the temperature, or in the dom- On the other hand, it is known from numerous studies that the phonon scattering in crystals con- taining substitutional foreign atoms is usually quite well described by the mass mismatch alone between the impurity and the host atom, even if charge compensation in the case of ionic crystals requires the incorporation of a vacancy or an interstitial ion together with the impurity. We refer to the work by Walker and co-workers~and also to a review on doped alkali haljdes.</p><p>For an order-of- magnitude estimate of the average scattering rate by the single intexstitial atom and the vacancy associated with it, we therefore assume that this rate is close to that caused by the missing mass alone (the mass of the displaced atom). With that assumption, we have reduced the calculation to that of the isotope effect. The missing mass causes an isotopic Ray- leigh scattering with the scattering rate~s (1) for quartz and for vitreous SiO2, Ge02, and Se. Spe- cific heats used for the evaluation of l(T) divas that of crystal quartz (Refs. 25, 29, and 30), vitreous GeO2 (Ref. 47), extrapolated below 2 'K vrith the help of the Debye model (Fig. <ref type="figure">5</ref>), and crystal Se (Ref. 39). Sound velocities used are listed in Table <ref type="table">I</ref>. The dashed lines are theoretical values for the phonon mean free paths calculated from our "isotopic" scattering model. At the top of the figure are indicated the phonon @wavelengths and frequencies for SiO2</p><p>(both vitreous and crystalline} in the dominant-phonon approximation.</p><p>paths in the noncrystalline systems with the follow- ing model: We view these solids as crystals, in which every atom (or molecule) is displaced from its crystal lattice site by a random amount and in a random direction. It sits somewhere on an inter- stitial site. Hence, the solid consists of as many interstitial atoms as there are atoms in the solid.</p><p>Because of the random displacement, the total scattering rate of these intexstitial atoms will be given by the sum of the scattering rates of the in- dividual atoms. This is similar to the phonon scattering by the random mass fluctuations in an isotopically mixed crystal: In the most general case, no atom has a mass equal to the average mass and the different isotopes are distributed randomly over the lattice sites. In this case, too, the total scattering rate is equal to the sum of the individual scattering rates. In contrast to the isotopic scat- tering, however, the magnitude of the scattering by individual interstitial atoms or vacancies is not known. This ignorance is caused largely by the fact that it is difficult to produce interstitials or vacancies in controlled and sufficiently large num- 1. '= 0, ra)'/4vn'</p><p>Here, Ao is the volume of the individual atoms, v the sound velocity, and I' measures the mass mis- match and the concentration of defects:</p><formula xml:id="formula_1">I"=Q, f, (1-m, /m)'. l =4m v /Aolo .<label>(6)</label></formula><p>For SiO~and GeO~the volume Qo chosen was that of the molecules (3. V6x10 ' and 4. 95x10 " cm', respectively), since these molecules can be regarded at low temperatures as the rigid units of which the solid is formed. For Se, the atomic vol- ume 2. 92x10 cm was used. The mean free paths obtained from Eq. ( <ref type="formula" target="#formula_1">6</ref>) have been plotted in Fig. <ref type="figure">9</ref>, in the dominant-phonon approximation, and agree very well with the experimental values in the tempexature region in which the mean free path varies as T One must not take this amazingly good agreement between our model calculation and the experiment too seriouslv. What we believe to have shown is that the agreement is better than to within an order of magnitude.</p><p>This caution seems advised for the following three reasons: (a) The dominant-phonon approximation can introduce an error of about a factor of 2, as mentioned in Sec. II. (b) In using <ref type="bibr">Ell.</ref> (1) to de'tel'111111e 'tile 111eall fl'ee patll, olle must use the specific heat of the plane-wave phonons. Haman scattering and far-infrared absorption mea- surements have been interpreted as indicating the existence of low-frequency modes of probably low group velocity, " "the excess modes referred to f, is the fraction of the ith defect, m, its mass, and m is the average mass. In our case, f, = 1 and m, =0, since the atom is missing. in the Introduction.</p><p>In our analysis, we have, therefore, taken as C" the specific heat of the crystalline phase, where available, namely, for SiO Si02 9' ' 4 and Se, ~3 although we are by no means convinced that this is the proper choice. In GeO~, however, only the vitreous phase has been measured. 7 <ref type="bibr">'6</ref> The lack of knowledge of the appropriate specific heat introduced a possible error estimated not to exceed a factor of 5, the maximum difference between the specific heats of vitreous and crystalline phase, for SiQ2, and Se. (c) Finally, we should ask the fundamental question whether it is at all reasonable to describe the lattice vibrations carrying the heat in glasses with plane elastic waves having a Debye density of states in the temperature and frequency range under consideration. Equation ( <ref type="formula">4</ref>) is based on this assumption. With the presently available experimental information this question cannot be answered. On the other hand, almost any fluctuation from uniform density will produce a scattering proportional (b p/p)2, similar in form to Eq. ( <ref type="formula">4</ref>). One of the great attractions of the isotopic model must not be forgotten among all the legitimate concerns, and that is its simplicity. It seems to be invevitable that any theory attempting to explain the experimental observations will have to be about as simple as the isotopic model in order to be equally useful for all noncrystalline solids.</p><p>To summarize, we have obtained the following remarkable result: In the temperature range above decreases as the fourth power of the temperature, and its magnitude is close to that predicted by the "isotopic" model. Above 20 K the mean free path approaches the intermolecular separation. The characteristic plateau of the conductivity of non- crystalline solids also finds a very simple explanation: The phonon mean free path decreases with increasing temperature, and finally reaches a con- stant value. The specific heat, on the other hand, increases with increasing temperature, and finally reaches a constant value. The plateau occurs in the temperature region in which the product of mean free path and specific heat happens to be temperature independent.</p><p>According to this picture, the plateau has nothing to do with a resonance dip, and its origin is actually similar to that of the maximum in the conductivity curve of a crystal.</p><p>Below 5 'K, the mean free path changes less rapidly than as T 4. Below 1 'K in vitreous silica and Pyrex it varies as T ' . The same tempera- ture dependence is found in vitreous Se below 0. 3 K, and even the vitreous GeO~data appear to approach the same temperature dependence (between 0. 5 and 1. 2'K, the mean free path varies as T '4). In their work on the polymers PS, polyvenylacetate, and PMMA, Choy et al. found ~0( T-&amp;.4~0. i in the temperature interval 0. 4 -1.0 'K. '~T his behavior cannot be explained with our model. It appears as if a different scattering mechanism becomes dom- inant in this temperature range. Indications for this scattering have been reported before for silicabased glasses and some polymers'": As explanation, <ref type="bibr">Chang and Jones' and Anderson et al. in-</ref> voked phonon scattering by some internal boundaries of 10 3-cm spacing. Independent evidence for such boundaries has never been reported as far as we know. Also, what kind of boundary scattering would one have to assume in order to explain such a tem- perature dependence of the conductivity 7 These questions must remain unanswered.</p><p>The specific heat of glasses, to be discussed in Sec. III(B), shows an anomalous behavior below 1 'K. Conceivably, a connection exists between the low-temperature anomaly and the phonon scattering at these tempera- tures. We will return to this point.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>B. Specific Heat</head><p>We have measured the specific heat of vitreous and crystalline Si02, and of vitreous GeO~and Se, below 1. <ref type="bibr" target="#b52">5</ref> 'K (see Figs. <ref type="bibr">10 -12)</ref>. Our data show a specific- heat anomaly below 1 'K in all three vitreous solids. This anomaly is proportional to T in Si02 and GeO2, and, as far as one can tell from the data, also in Se. The first suspicion is that this anomaly is caused by some impurities. It has been shown by  <ref type="bibr">Ref. 66)</ref> above 1.4 K. The latter data, in turn, agree we11 with earlier data by Antoniou and Morrison (Ref. 47 and Fig. <ref type="figure">5</ref>) except between 2 and 5'K, where Antoniou's data are up to 20% smaller than %ycherley's (see Ref. 66}. The dashed line is the Debye specific heat calculated from the sound velocities in vitreous Ge02.</p><p>%e begin by comparing the low-temperature spe- cific heat of vitreous SiO2 with that of two samples of Pyrex glass (Fig. <ref type="figure">15</ref>). Pyrex, too, shows an anomaly, but it does depend on the sample, and it has the shape expected for a Schottky specific-heat anomaly. It was first observed by <ref type="bibr">Fisher et al. '</ref> in Pyrex 7740 (see uppermost solid curve in Fig. <ref type="figure">15</ref>). In a magnetic field, the anomaly shifted to higher temperatures.</p><p>It was suggested that the anomaly was caused by the spins of iron impurities. This was confirmed by our results: %e found that the anomaly increased with increasing iron concen- tration. Chemical analysis revealed 100 ppm of iron in Pyrex '7740, and 12 ppm in Pyrex 9V00. From the entropy associated with the anomaly, we determined a concentration (assuming a two-level system) of 200 ppm and 50 ppm for the two glasses, in reasonable agreement with the analytic data. In vitreous silica Hornung et al. s' found no change of the specific-heat anomaly in a magnetic field of 90 'kG, which speaks against electronic states in this material.</p><p>Motional states of ions are another possible cause for the anomaly, since such states are quite insen- sitive to magnetic fields because of the large ionic mass. 8'69 Since motional states of iona should be that the motional states of F ions in NaBr, associated with the tunneling motion of the fluorine ion in the bromine vacancy, can cause a linear specific-heat anomaly below 1 K. This anomaly was found to scale with the fluorine concen- tration, and was practically absent in undoped crystals. In contrast, the anomaly in glasses seems to be quite independent of the sample, as shown in Fig. <ref type="figure" target="#fig_1">13</ref>, where C"T ' is plotted against Ta for several samples of vitreous SiO~of different origins, and also in Fig. <ref type="figure">14</ref> for GeO~and Se. The anomalies are represented by the following expressions: EC"=(0.7x 10 6Wsecg ''K 2) T.</p><p>Note that these anomalies are comparable in magni- tude to the electronic specific heat of copper, which is C"=(1.2xl0 ~Wsecg ''K ) T. The most amazing fact about our anomalies is their apparent independence of the substance and accidental impurities. This suggests a common origin, con- ceivably the amorphous state itself. In Sec. III C, we will discuss this further. This material has more metallic impurities than Spectrosil B, but only about 3-ppm (by weight) hydroxyl f W. C.  <ref type="bibr">(Ref. 66,</ref><ref type="bibr">solid</ref> cylinder of Amersil silica), Zeller (this work, Spectrosil B). According to its manufacturer Spectrosil B contains less than 0. 1 ppm of Fe and Ca, less than 0. 04 ppm of Na, Al, and B, less than 0. 004 ppm of Ga, K, Mn, and P, and less than 0.0002 ppm of As, Sb, and Cu. It does, however, contain 0. 1 .% hydroxyl (catalog, Thermal American Fused Quartz Co. , Montville, ¹ J.). In spite of their different origins, the samples appear to have similar low-temperature anomalies. concentration could be much larger than 5x10'~c m <ref type="bibr">3.</ref> In any event, an upper limit of the dipole moment P = 0. 2 D = 0. 04e A mould have to be assumed in order to explain the dielectric results and the sye- cific-heat anomaly with the motion of the same atoms. Although this is a very small dipole mo- ment (polarizable defects in alkali halides have moments ranging between 0. 3 and 6 D'~) it is not out of the range of what might be exyected in a solid with predominantly covalent bonding. Hence, atomic motions cannot be ruled out with certainty at this point. Dielectric measurements with higher precision are under way. <ref type="bibr">Fiory's observations do,</ref> however, contain strong evidence against 1ow-lying states of electrons.</p><p>Excitations seen in specific heat below 1 'K have energies corresponding to less than 1 cm ' in the wave-number measure. Although no evidence for polarizable states was found in the kilocycle range, one might hope to see them in far-infrared optical absorption measurements.</p><p>Sievers" searched for this absorption in vitreous silica and in plexiglass (PMMA). At helium temperatures, silica was transparent (absorption constant 0 &amp; 0. 04 cm ') from v =4 cm ' to the longest wavelengths studied, cor- responding to v=1. 5 cm . This is consistent with an extrayolation to longer wavelength of the optical absorption measured by Stolen at p&amp;10 cm ' and a temperature 7=8'7'K. In PMMA, Sievers found IOOO, 50 expected to influence the electric yolarizability, Fiory '. measured the dielectric constant of a piece of vitreous silica cut off from one of our specific-heat samples, at temperatures above 0. 1'K, in the fre- quency range 102-10 sec '. The dielectric constant decreased with decreasing temperature, and was temperature independent below 0. 5 K to within the experimental resolution. With the assumption that the yolarizable ions have dipole moments of order 1 debye (uncorrected for local fields), Fiory's measurements lead to an upper limit of 10'6 cm ' for their concentration. From the entropy associated with the specific heat, a lower limit of about n=5x10" cm ' can be determined. For this analy- sis it was assumed that the linear syecific-heat anomaly did not extend beyond approximately 1 'K, since above this temperature the rapid rise of the specific heat does not allow indentification of a possible extension of the linear term any more. Hence, the 14. Specific heat of crystalline and vitreous Se and of vitreous Ge02, plotted as C"T vs T . Note the displaced abscissas for the two substances. The specifie- heat anomalies are approximately equal for both samples, and approach a linear temperature dependence. Indica- tions for similar anomalies were presented earlier, for PS, PMMA, and glycerol (see Fig. <ref type="figure">5</ref>).  <ref type="table">I</ref>). A. : pyrex, C"=(1.14x10 6 Wsecg ' K ) T; 8: vitreous Si02, C"= (8. 07 x 10-7W sec g 'K ) T; C: crystal Si02, C"=(5.5x10 Wsecg K )T . k &amp;0. 04cm ' between 1.5 and 15cm '. Hence, these measurements also failed to give evidence for polarizable states.</p><p>At this point, the only other measurements in which the anomaly may have been observed are the thermal conductivity measurements described above. Below 1 'K, the conductivity of all noncrys- talline solids was found to vary with a temperature dependence close to T, or T'eto T", to be exact. Assume that the low-temperature specific heat of these solids contains a T' background whose magnitude is determined by the sound velocities in the Debye approximation, and that these Debye phonons are the only excitations which can carry heat. The mean free paths below 1 'K obtained with this assumption, vary approximately as T ' (see Fig. <ref type="figure">9</ref>). If the excitations associated with the linear specific-heat anomaly act as scatterers for the plane-wave phonons, then it would be conceivable that the linear increase of the specific heat with increasing temperature would be reflected by a decrease of the phonon mean free path varying as the inverse of the temperature or close to it.</p><p>With this picture, we conclude that a linear specificheat anomaly should also exist in all other noncrys- talline solids whose conductivity has been found to vary close to T below 1'K. With the help of this argument we can add tentatively Pyrex and other silica-based glasses (see Fig. <ref type="figure">2</ref>) and also the aluminogermanate glass (Fig. <ref type="figure">8</ref>) to the list of ma- terials with a linear specific-heat anomaly.</p><p>In summary, all noncrystalline solids studied to date have a low-temperature specific-heat anomaly of order 10 ~(W sec g 'K ~)T or show some indication for it. The excitations associated with this anomaly so far have not been influenced by dc magnetic fields and by low-and high-frequency electric fields. There is the possibility that they can scatter phonons. If these excitations are connected with atomic motion, for instance of the kind known for tunneling defects, they must have very small electric dipole moments. Conceivably, large numbers of atoms form glassy domains, tied together in the solid with weak forces, and cause excitations in the 1 'E range. The linear specific-heat anomaly could also suggest one-dimensional chains. Under the arbitrary assumption that the sound velocity along these chains equals that in the bulk, it follows that about 10' chains per cm are needed in order to explain the magnitude of the observed anomaly. '</p><p>Because of the low frequencies involved in thermal excitations below 1 'K, each chain would have to be longer than 103 A (see the scale for Xd, in Fig. <ref type="figure">9</ref>).</p><p>How such linear chains, essentially decoupled from the rest of the solid, can exist in the glass is not understood.</p><p>One aspect, however, is quite clear: Any model aiming at an understanding of this anomaly has to be extremely simple in order to be equally applic- able to a large number, if not to all, noncrystal- line solids. Herein lies the great attraction of the problem.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>I. INTRODUCTION</head><p>The parameter q = (s Iny/s ln V)r, which describes the volume dependence of the Gruneisen parameter (y= VPBr/C") emerges frequently in discussions of the thermoelastic properties of solids. Since no theoretical microscopic calculations of q have been performed in the past, except for a recent w'ork on inert-gas crystals, some simple assumptions about its numerical value have usually been made. Most often, q appears in relations which also involve the <ref type="bibr">Anderson-</ref>Griineisen parameters, which describe the temperature dependence of the bulk moduli and are defined by ' 1 8 lnBs (8 lnB)</p><p>Here, Bs and B~a re the adiabatic and the isother- mal bulk moduli, respectively, and I|I is the coeffi- cient of volume expansion. Some formulas for 6s, which have been given in the past, were based on the assumption that q «1, which does not hold fox' the alkali halides, as will be shown later. <ref type="bibr">Ander-</ref> son, on the other hand, after giving expressions fox' 5s and 5~which involve q, employed the more rea-sonable approximation that q= 1. The assumption that y is proportional to the volume (which implies q= 1) seems to be the most popular. It has been used in theories of shock-wave propagation' and also in various discussions of equations of state. ~v Another approach has been adopted by Rice~in his discussion of the alkali metals. By making the assumption that the Griineisen parameter, as well as the adiabatic bulk modulus, is a function of volume only, he was able to derive a simple explicit ex- pression for the dependence of y on volume. In terms of the parameter q, his relation is q= @+1.</p><p>A slgniflcRnt feature of the pRx'Rmetex' q ls thRt it can be calculated directly from lattice-dynamical models. A calculation of this type, based on a sixparameter shell model, is presented in Sec. ID.</p><p>The results Rx'e compared w'1th q values obtRlned in Sec. II from room-temperature ultrasonic and thermodynamic data. The low-temperature behav- ior of q is discussed in Sec. IV.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. EVALUATION OF q FROM THERMODYNAMIC AND ULTRASONIC DATA</head><p>The most convenient expression for q in terms of available experimental quantities is q= I+ (I+ TPy)bg -Bg+y+ 7 c) in@</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>FIG. 1. Thermal conductivity of crystalline and of vit- reous Si02 and of crystalline KC1: CN (ncm-=4. 9x10~9 cm ). Sample dimensions; 5&amp;5~40 mm, sandblasted -3</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>FIG. 3 .</head><label>3</label><figDesc>FIG. 3. Comparison of the thermal conductivity of vitreous silica with that of the polymer PMMA (Befs. 14-17) sobd varnish (GE 7031) (Ref. 18), vitreous selenium (Ref. 12), and vitreous Geo2 (germania) (Ref. 19). The curve for silica is a composite curve after Fig. 2.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>FIG. 4. Specific heat of vitleous Si02 andCFy'stal    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>FIG. 6 .</head><label>6</label><figDesc>FIG.6. Some of the experimental time constants v»</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>FIG.V. Specific heat of RbBr and quartz. The solid ines» Cv, RbBr 9 V~10 (W sec g F )T and Cv, quarts</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head></head><label></label><figDesc>FIG. 8. Thermal conductivity of vitreous silica, Pyrex 7740, and selenium between 0. 06 and 100'K and of alumin- ogermanate glass between 1 and 100'K. For comparison</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head></head><label></label><figDesc>FIG. 9. Average phonon mean free path )(T) after Eq.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_9"><head></head><label></label><figDesc>FIG. 10. Specific heat of vitreous and of crystalline Si02. Our data (open circles) agree well with earlier data in the temperature region of overlap. For references see Fig. 4. The dashed line below 0.4 oK marks the specific heat computed for crystalline Si02 from elastic measurements.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_10"><head></head><label></label><figDesc>FIG. 11. Specific heat of vitreous Ge02. Our data (open circles) join on smoothly to the data by Wycherley(Ref. 66)    </figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_13"><head></head><label></label><figDesc>FIG.12 Specific heat of vitreous and crystalline Se.Our data (open circles) join on smoothly to the data byLasjaunias (Ref. 39)  above 1.4'K. High-temperature data after Anderson {Ref. 37) andDesorbo (Ref.  38}. The dashed lines are interpolations, drawn for clarity. Calcu- lations of the Debye specific heat from elastic data are not available.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_14"><head></head><label></label><figDesc>FIG. 14. Specific heat of crystalline and vitreous Se</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_15"><head></head><label></label><figDesc>FIG. 15. Specific heat of SiO&amp; and of Pyrex. Data points were obtained during present investigation; samples are listed in Table I. The solid lines are crystal Si02 (after Ref. 29); top curve: 7740 Pyrex (after Ref. 8); solid line just below: vitreous silica (after Ref. 30). The dashed lines are the specific heats calculated from elastic data (see Table I). A. : pyrex, C"=(1.14x10 6 Wsecg</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>Specific heat of vitleous Si02 and CFy'stal quartz, plotted as C"T vs T. A: I. R. Vitreosil (Ref. 29) B. vitreous silica (after Refs. 30-32); C &amp;-quartz {after Refs. 29, 33,and 34). The bvo short dashed lines indicate the specific heats calculated from elastic mea- surements: For vitreous silica, C", &amp; = 8. 07 &amp; 10 ? (W sec g ~'K 4)T3, calculated from v~",,1 =4. 1&amp;&amp; 105 em sec (Ref.25). For crystal quartzCo e&amp; =5.5+ 10? ( see g ~K ~)T calculated from v~~e&amp; =4.4&amp;&amp;105 cm sec ~(Ref. 35). See also Table I. The dashed curve shows CvT 3 for quartz in the Debye approximation for a Debye temperature of 552'K (based on the number density of cggoms in the quartz).</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head></head><label></label><figDesc>Since elastic data were unavailable, the value listed was calculated from the specific heat of the crystalline phase, see I. C.Lasjaunias, Compt. Rend. B269, 763   0.969).</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell>Temp.</cell><cell>Mass</cell><cell></cell><cell></cell></row><row><cell></cell><cell></cell><cell>Mass (g)</cell><cell>range ('K)</cell><cell>density (g cm"3)</cell><cell>Molec. weight</cell><cell>Vg (10~cmsec ~)</cell></row><row><cell>G'. -quartz 0'-quartz</cell><cell>Valpey Valpey</cell><cell>44. 0 122.9</cell><cell>0.8 -2. 0 0.1-0.9</cell><cell>2.6</cell><cell>60.09</cell><cell></cell></row><row><cell>Speetrosil B Spectrosil B Pyrex 7740 " Pyrex 9700" Vitr. Se Vitr. Ge02 81Br (cryst. )</cell><cell>Thermal American Thermal American Corning Corning Xerox' Cornell Cornell"</cell><cell>29.0 110.0 43.0 46.0 53.6 57.3 39.7</cell><cell>0.3-2.0 0.13-0.8 0.3-2.0 0.3-2.0 0.1-1.5 0.08-1.8 0.08-1.2</cell><cell>4. 25 3.6 3.43'</cell><cell>60.09 78.96 104.6 165.4</cell><cell>3.65' 1. 54' 2. 61 .59'</cell></row><row><cell>~After Ref. 35.</cell><cell></cell><cell></cell><cell cols="4">'Sample kindly supplied by Dr. Mark Myers, Xerox</cell></row><row><cell cols="3">Li20 0.2%. 8203 12.9/0, Na20 3.8%» Al203 2. 2%» K20 0.4%» and Approximate composition (by weight): Si02 80. 5%,</cell><cell cols="2">Research Laboratory.</cell><cell></cell><cell></cell></row><row><cell>Laboratory,</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table><note><p><p><p><p>After %. P. Mason, in American Institute of Physics Handbook (Mcoraw-Hill, Neer York, 1963), pp. 3-88. Extrapolated to 0 'K. Approximate composition (by weight): Si02 80%» 8203 13%, Na20 5%, and Al203 2%. This sample was kindly supplied by Dr. A. A. Erikson, Corning Research f gAfter Ref. 47. "Same sample as the one studied in Ref. 50. After J. T. Lewis, A. Lehoezky, and, C. V. Briscoe, Phys. Bev. 161, 8VV</p>(</p>196V)</p>. Mass density quoted is the one at 4'K.</p></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head></head><label></label><figDesc>Dumbaugh and P. C. Schultz, EecycloPedkr Of Chemical TecknoEogy, edited by%'. Kirk-Othmer (Wiley, New York, 1969), Vol. 18, p. 73j, Hornung ef gE.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_0"><p>'K (15 cm '), the average phonon mean free path</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>ACKNOWLEDGMENTS</head><p>The first impulse to study heat transfer in glasses came from conversations with <rs type="person">Dr. K. Dransfeld</rs> </p></div>
+			</div>			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Additional support was received from the Advanced Research Projects Agency through the facilities of the Materials Science Center at Cornell University, Material Science Center Report <ref type="bibr">No. 1556 (unpublished)</ref>.</p><p>This work is part of the M. S. thesis of R. C. Zeller submitted to the Cornell Graduate School (unpublished).</p><p>We also refer to this thesis for a review of the work up to 1970 on the thermal conductivity, spe- cific heat, elastic properties, and light scattering and absorption performed on noncrystalline solids, Materials Science Center Report <ref type="bibr">No. 1453 (unpublished)</ref>.</p><p>)Present address: Department of Physics, Northamp- ton County Area Community College, Bethlehem, Pa.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>18017.</head><p>A. Eucken, Ann. Physik 34, 185 (1911}. </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">We want to thank them and also our colleagues</title>
+		<author>
+			<persName><surname>Cornell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="middle">J W</forename><surname>Dr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Wilkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">A T</forename><surname>Stephens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">J A</forename><surname>Fiory</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Krumhansl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">¹</forename><forename type="middle">W</forename><surname>Dr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">A J</forename><surname>Ashcroft</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>White</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">J A</forename></persName>
+		</author>
+		<editor>E. Wycherley and Dr. A. J.</editor>
+		<imprint/>
+	</monogr>
+	<note>their permission to show their unpublished low-temperature data on vitreous silica. Leadbetter for informing us about their work on GeO~. We are very grateful to Dr. W.</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Wedding of the Corning Research Labortory and to Dr. Mark Myers from the Xerox Research Laboratory for some of the samples used in this work. We also wish to thank</title>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">A A</forename><surname>Dumbaugh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Dr</forename><forename type="middle">B</forename><surname>Erikson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="middle">P J</forename><surname>Dr</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Vergano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">G. Schmidt of the Crystal Growing Laboratory of Cornell&apos;s Materials</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+			<date type="published" when="1966">1966</date>
+		</imprint>
+	</monogr>
+	<note>of the Owens-Qlinios Corp. for his advice regarding the preparation of the GeO2 sample. 3rd. ed.. Chap</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Wo</forename><surname>Do</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Sewal</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Narayanamurtl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys e Reve</title>
+		<imprint>
+			<biblScope unit="volume">463</biblScope>
+			<date type="published" when="1966">1966</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Fisher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Brodale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Hornung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Giauque</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instr</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">365</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Ratcliffe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Glass Technol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">113</biblScope>
+			<date type="published" when="1963">1963</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Seeman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1927">1927</date>
+		</imprint>
+		<respStmt>
+			<orgName>Cornell University</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Ph. D. thesis</note>
+	<note>unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Fisher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Brodale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Hornung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Giauque</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instr</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">108</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename><surname>Anderson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Reese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Nheatley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Sci. Instr</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page">1386</biblScope>
+			<date type="published" when="1963">1963</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Chang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Jones</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Bev</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="page">2055</biblScope>
+			<date type="published" when="1962">1962</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Berman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Rosenberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brit. J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="1955">1955</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>White</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">B</forename><surname>Woods</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">T</forename><surname>Elford</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Bev</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">111</biblScope>
+			<date type="published" when="1958">1958</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">W B</forename><surname>~~r</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Stevens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phil Mag</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page">897</biblScope>
+			<date type="published" when="1932">1932</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>~4</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Berman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Roy. Soc. (London) A</title>
+		<imprint>
+			<biblScope unit="volume">208</biblScope>
+			<biblScope unit="page">90</biblScope>
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><surname>~5w</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Reese</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">37</biblScope>
+			<biblScope unit="page">864</biblScope>
+			<date type="published" when="1966">1966</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Eiermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">H</forename><surname>Hellwege</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Polymer Sci</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page">99</biblScope>
+			<date type="published" when="1962">1962</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Eiermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Choy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Salinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Chiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page">597</biblScope>
+			<date type="published" when="1961">1961. 1970</date>
+		</imprint>
+	</monogr>
+	<note>Kunststoffe</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">H</forename><surname>~sj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Mctaggart</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Slack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cryogenics</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">384</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Kurt</forename><surname>Guckelsberger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jean-Claude</forename><surname>Lasjaunias</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Compt. Rend</title>
+		<imprint>
+			<biblScope unit="volume">270</biblScope>
+			<biblScope unit="page">1427</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H A</forename><surname>Laudy</surname></persName>
+		</author>
+		<title level="m">Physics of Non-Crystall&amp;re Solids</title>
+		<editor>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Prins</surname></persName>
+		</editor>
+		<meeting><address><addrLine>North-Holland; Amsterdam</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Heese</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Tucker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">43</biblScope>
+			<biblScope unit="page">105</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Powell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Rogers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">O</forename><surname>Coffin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Bes. Natl. Bur. Std. (U. S.)</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">349</biblScope>
+			<date type="published" when="1957">1957</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<author>
+			<persName><forename type="first">G</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Salinger</surname></persName>
+		</author>
+		<title level="m">Proceedings of the Third International Conference on the Physics of Noncrystalline Solids</title>
+		<editor>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Douglas</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">B</forename><surname>Ellis</surname></persName>
+		</editor>
+		<meeting>the Third International Conference on the Physics of Noncrystalline Solids<address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+	<note>to be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">C</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename></persName>
+		</author>
+		<idno>No. 1453</idno>
+		<imprint>
+			<date type="published" when="1971">1971</date>
+		</imprint>
+		<respStmt>
+			<orgName>Co»ell University ; Cornell Materials Science Center</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Report</note>
+	<note>unpublished. unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Charles</forename><surname>Kittel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page">972</biblScope>
+			<date type="published" when="1949">1949</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">G</forename><surname>Klemens</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc. Roy. Soc. (London) A</title>
+		<imprint>
+			<biblScope unit="volume">208</biblScope>
+			<biblScope unit="page">108</biblScope>
+			<date type="published" when="1951">1951</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<author>
+			<persName><forename type="middle">G</forename><surname>~p</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Klemens</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Pohl</surname></persName>
+		</author>
+		<title level="m">Localized Excitations in Solids</title>
+		<editor>
+			<persName><forename type="first">Il</forename><forename type="middle">F</forename><surname>Wallis</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Plenum</publisher>
+			<date type="published" when="1968">1968</date>
+			<biblScope unit="page">296</biblScope>
+		</imprint>
+	</monogr>
+	<note>Ref. 20</note>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>White</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Birch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Glasses</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">85</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Flubacher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Leadbetter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Morrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">P</forename><surname>Stoicheff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">53</biblScope>
+			<date type="published" when="1959">1959</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Simon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Physik</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page">241</biblScope>
+			<date type="published" when="1922">1922</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">F</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Lange</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Z. Physik</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="page">227</biblScope>
+			<date type="published" when="1926">1926</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Westrum</surname><genName>Jr</genName></persName>
+		</author>
+		<title level="m">Proceedings of the I&apos;ourth International Congress on Glass</title>
+		<meeting>the I&apos;ourth International Congress on Glass<address><addrLine>Paris; Paris</addrLine></address></meeting>
+		<imprint>
+			<publisher>Chaix</publisher>
+			<date type="published" when="1956">1956. 1956</date>
+			<biblScope unit="page">396</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wietzel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Anorg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Allgem. Chem</title>
+		<imprint>
+			<biblScope unit="volume">116</biblScope>
+			<biblScope unit="page">71</biblScope>
+			<date type="published" when="1921">1921</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">41</biblScope>
+			<date type="published" when="1959">1959</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">F</forename><surname>Westrum</surname><genName>Jr</genName></persName>
+		</author>
+		<title level="m">Thermodynamics and Trans-Port Properties of Gases, Liquids and Solids</title>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>McGraw-Hill</publisher>
+			<date type="published" when="1959">1959</date>
+			<biblScope unit="page">275</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">T</forename><surname>Yc</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Anderson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soc</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="page">36</biblScope>
+			<date type="published" when="1937">1937</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><surname>Desorbo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">1144</biblScope>
+			<date type="published" when="1953">1953</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Jean-Claude</forename><surname>Lasjaunias</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Compt. Rend</title>
+		<imprint>
+			<biblScope unit="volume">269</biblScope>
+			<biblScope unit="page">763</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">E</forename><surname>Og</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">F</forename><surname>Gibson</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Giauque</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Am. Chem. Soe</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page">93</biblScope>
+			<date type="published" when="1923">1923</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">E</forename><surname>~j</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Tucker</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Reese</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page">1388</biblScope>
+			<date type="published" when="1967">1967</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">B</forename><surname>Dreyfus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">¹</forename><forename type="middle">C</forename><surname>Fernandes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Maynard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Letters A</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">647</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Lasjaunias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Maynard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Noncryst</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Solids</surname></persName>
+		</author>
+		<title level="m">Proceedings of the Twelfth International Conference on I osv Temperature Physics</title>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Bibeyron</surname></persName>
+		</editor>
+		<meeting>the Twelfth International Conference on I osv Temperature Physics<address><addrLine>Kyoto; Kyoto, Japan</addrLine></address></meeting>
+		<imprint>
+			<publisher>Eizo Kanda {Academic Press of Japan</publisher>
+			<date type="published" when="1970-05">May. 1970. 1971</date>
+			<biblScope unit="page">827</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Choy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Hunt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Salinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem, Phys</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page">3629</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">S</forename><surname>Craig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Massena</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Mallya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">108</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">A</forename><surname>~a</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Antoniou</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Morrison</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page">1873</biblScope>
+			<date type="published" when="1965">1965</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Harrison</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hev. Sci. Instr</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">145</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Carslaw</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Jaeger</surname></persName>
+		</author>
+		<title level="m">Conduction of Heat in Solids</title>
+		<meeting><address><addrLine>Oxford, England</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford U. P</publisher>
+			<date type="published" when="1948">1948</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Hollefson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Peressini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Alexander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">;</forename><forename type="middle">P</forename><surname>Harrison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Lombardo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>Peressini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page">557</biblScope>
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Rollefson</surname></persName>
+		</author>
+		<idno>Re- port No. 1382</idno>
+		<imprint>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+		<respStmt>
+			<orgName>Cornell University ; Cornell Materials Science Center</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">Ph. D. thesis</note>
+	<note>unpublished. unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">V</forename><surname>Narayanamurti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">O</forename><surname>Pohl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page">201</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Q</forename><surname>Fugate</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Swenson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Phys</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">3034</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<monogr>
+		<title level="m">Analytical Facility</title>
+		<editor>
+			<persName><forename type="middle">J</forename><surname>Dr</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Both</surname></persName>
+		</editor>
+		<imprint>
+			<biblScope unit="volume">56</biblScope>
+		</imprint>
+		<respStmt>
+			<orgName>Cornell Besearch Center ; Cornell Materials Science Center</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Thermai Conductivity And -Specific Heat</forename><surname>Of</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Mark</forename><surname>Dr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">;</forename><surname>Myers</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Garino-Canina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Appl. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">110</biblScope>
+			<date type="published" when="1961">1961</date>
+		</imprint>
+		<respStmt>
+			<orgName>Xerox Research Laboratory</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Vergano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Uhlmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Chem. Glasses</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">30</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><surname>Callas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Hev</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page">1046</biblScope>
+			<date type="published" when="1959">1959</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">H</forename><surname>~t</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">%</forename><surname>Geballe</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hull</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Hev</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page">773</biblScope>
+			<date type="published" when="1958">1958</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Harrington</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Walker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Hev</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">882</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Sehvrartz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Walker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">155</biblScope>
+			<biblScope unit="page">759</biblScope>
+			<date type="published" when="1967">1967</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Marvin</forename><surname>Hass</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Solids</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page">415</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Stolen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Phys. Chem. Glasses</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page">83</biblScope>
+			<date type="published" when="1970">1970</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">T T</forename><surname>~p</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Whalley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Trans. Faraday Soc</title>
+		<imprint/>
+	</monogr>
+	<note>to be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>%ycherley</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1969">1969</date>
+			<pubPlace>England</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>School of Chemistry, University of Bristol</orgName>
+		</respStmt>
+	</monogr>
+	<note>Ph. D. thesis. unpublished</note>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="middle">W</forename><surname>~k</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">.</forename><forename type="middle">A</forename><surname>Hornung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Fisher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">%</forename><forename type="middle">' F</forename><surname>Brodale</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Giauque</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Chem. Phys</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page">4878</biblScope>
+			<date type="published" when="1969">1969</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename></persName>
+		</author>
+		<imprint>
+			<biblScope unit="page">68</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">and%. %&apos;. %&apos;ebb</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brand</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Letzring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">S</forename><surname>Sack</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Bev. Sei. Instr</title>
+		<imprint/>
+	</monogr>
+	<note>to be published</note>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T</forename><surname>Fiory</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hev. Sci. Instr</title>
+		<editor>
+			<persName><forename type="middle">T</forename><surname>~oa</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Fiory</surname></persName>
+		</editor>
+		<imprint/>
+	</monogr>
+	<note>to be published. unpublished data</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

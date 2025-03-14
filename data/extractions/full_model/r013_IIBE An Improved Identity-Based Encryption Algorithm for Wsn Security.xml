@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">IIBE: An Improved Identity-Based Encryption Algorithm for WSN Security</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2021-09-20">20 September 2021</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Chunhua</forename><surname>Cao</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Software Engineering Institute of Guangzhou</orgName>
+								<address>
+									<postCode>510990</postCode>
+									<settlement>Guangzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="institution">University of Perpetual Help System</orgName>
+								<address>
+									<postCode>0900</postCode>
+									<settlement>Manila</settlement>
+									<country key="PH">Philippines</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yana</forename><surname>Tang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Software Engineering Institute of Guangzhou</orgName>
+								<address>
+									<postCode>510990</postCode>
+									<settlement>Guangzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Deyan</forename><surname>Huang</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Software Engineering Institute of Guangzhou</orgName>
+								<address>
+									<postCode>510990</postCode>
+									<settlement>Guangzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Weimin</forename><surname>Gan</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">Software Engineering Institute of Guangzhou</orgName>
+								<address>
+									<postCode>510990</postCode>
+									<settlement>Guangzhou</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Chunjiong</forename><surname>Zhang</surname></persName>
+							<email>chunjiongzhang@tongji.edu.cn</email>
+							<idno type="ORCID">0000-0002-6711-3486</idno>
+							<affiliation key="aff2">
+								<orgName type="department">Department of Computer Science</orgName>
+								<orgName type="institution">Tongji University</orgName>
+								<address>
+									<postCode>201804</postCode>
+									<settlement>Shanghai</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">IIBE: An Improved Identity-Based Encryption Algorithm for WSN Security</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2021-09-20">20 September 2021</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">CBEF9CCE70D13F182F5102568D921CE0</idno>
+					<idno type="DOI">10.1155/2021/8527068</idno>
+					<note type="submission">Received 24 August 2021; Accepted 7 September 2021;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Wireless sensor networks (WSN) have problems such as limited power, weak computing power, poor communication ability, and vulnerability to attack. However, the existing encryption methods cannot effectively solve the above problems when applied to WSN. To this end, according to WSN's characteristics and based on the identity-based encryption idea, an improved identitybased encryption algorithm (IIBE) is proposed, which can effectively simplify the key generation process, reduce the network traffic, and improve the network security. e design idea of this algorithm lies between the traditional public key encryption and identity-based public tweezers' encryption. Compared with the traditional public key encryption, the algorithm does not need a public key certificate and avoids the management of the certificate. Compared with identity-based public key encryption, the algorithm addresses the key escrow and key revocation problems. e results of the actual network distribution experiments demonstrate that IIBE has low energy consumption and high security, which are suitable for application in WSN with high requirements on security.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction</head><p>WSN is a wireless network composed of sensor nodes in the form of self-organization, which collects and processes the relevant information of monitored objects in the target area and sends it to the observer <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref>.</p><p>As early as the middle of the last century, there appeared a network which combined sensors with wireless transmitters and carried out real-time data acquisition, which was the prototype of WSN. WSN began to mature, following the technical progress and the deepening of related research <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref>.</p><p>e application field of WSN has gradually developed from the military field to all walks of life, such as agricultural production, environmental monitoring, cultural relics protection, and medical care <ref type="bibr" target="#b14">[15]</ref>. Information encryption is the most core and basic technical method to protect information security <ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref>. e encryption process of data is to use encryption key and encryption algorithm to convert plaintext into ciphertext form that other users cannot understand, while decryption is the reverse process, using decryption key and decryption algorithm to recover the ciphertext into plaintext. Encrypted text is transmitted between users, and only the user with the decryption key can decrypt the encrypted text to obtain the plaintext <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr" target="#b20">[21]</ref>. In general, cryptosystems are divided into two types: one is symmetric cryptosystems and the other is public key cryptosystems.</p><p>Since WSN is usually deployed in an unattended environment, besides eavesdropping attacks, denial of service attacks, and other attacks faced by ordinary networks, it also faces the problems that WSN nodes are easy to be captured and counterfeited, and transmitted data are easy to be eavesdropped and tampered <ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref>. Currently, WSN has mediocre solution when facing the above security problems. Before these problems are solved, users cannot easily accept and deploy a WSN with security and data protection, which greatly limits WSN practical application.</p><p>In order to address the challenge of WSN security, IIBE is proposed. e main contributions of this paper are as follows:</p><p>(1) Compared with the traditional public key encryption, this algorithm does not need a public key certificate and avoids the management of certificates (2) Compared with other existing identity-based encryption algorithms, this algorithm solves the problem of key escrow and key revocation e rest of the paper is organized as follows. In Section 2, a literature review is studied in detail, while Section 3 provides the detailed methodology. Section 4 provides detailed results and discussion. Finally, the paper is concluded in Section 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Literature Review</head><p>At present, scholars have studied the improvement of symmetric/asymmetric encryption algorithms, the combination of various encryption algorithms, and some innovative encryption ideas.</p><p>Mostafaei et al. <ref type="bibr" target="#b21">[22]</ref> provided a solution to the flooding attack in WSN through message digest algorithm combined with public key encryption, which improved the network's ability to detect data packet transmission. NS2 simulation results show that this method is effective in preventing flooding attacks. However, this method only signs the data transmitted by nodes to prevent flooding attacks and has limited preventive effect on data eavesdropping attacks, so it needs to be combined with other encryption methods in practical applications.</p><p>Rachkidy et al. <ref type="bibr" target="#b22">[23]</ref> proposed a method of data storage combined with homomorphic encryption for some wireless sensor networks with insensitive real-time data, which is called DIOS. In some WSN (such as underwater sensor networks), people are more concerned about the whole data, rather than the data at a certain time. In view of this situation and considering that a large amount of data may cause loss to the sensor nodes if it is transmitted for a long time and a long distance, this literature puts forward that the data should be stored in a relay node in advance and preprocessed, so as to avoid the scattered and uninterrupted transmission of data. At the same time, homomorphic encryption is adopted to ensure security. is method is effective in some occasions, saving energy, and data can be stored safely. However, it is not suitable for most net-laying environments and has certain limitations.</p><p>Daniela and Giovanni <ref type="bibr" target="#b23">[24]</ref> improved the application of AES in WSN, put forward the encryption idea of seven rounds of encryption, and combined with the table lookup method to optimize each round of operation. e results of simulation test show that the algorithm has greatly improved operation efficiency, and the speed is 13 times higher than that of common AES algorithm with less than 1 KB storage space. Although the security is lower than the traditional AES encryption algorithm, it is still suitable for WSN with limited energy.</p><p>All the above methods have defects, which cannot fully meet the needs of practical application of wireless sensor networks. To solve the above problems, according to the characteristics of WSN and based on the idea of identity-based encryption, an improved identity-based encryption algorithm (IIBE) is proposed, which can effectively simplify the key generation process, reduce the network traffic, and improve the network security.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Methodology</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1.">Analysis of WSN Network Topology and Its Security</head><p>Problems. According to ZigBee protocol, WSN has three topologies: star topology, tree topology, and mesh topology, as shown in Figure <ref type="figure" target="#fig_0">1</ref>.</p><p>e network specified by ZIGBEE protocol is composed of main coordinator nodes, router nodes, and terminal nodes, and there is only one main coordinator network. Every device in the network, including master device and slave device, has a unique 64-bit long address (IEEE address) built in at the factory. After the network is built, each slave device will be randomly assigned to a unique 16-bit short address code in the network by the master coordinator. e long address code is an absolute address, while the short address code is a relative address. Based on a large amount of data and practical operation experience of wireless sensor networks, it can be concluded that the existing wireless sensor networks have problems such as limited energy, limited computing and storage capacity, periodicity of data collection, asymmetry of data flow, and limited communication channel width.</p><p>Taking the WSN network designed by ZIGBEE protocol as an example, the more serious attack forms are (1) black hole attack, (2) flooding attack, (3) data eavesdropping attack, and (4) server key escrow problem. Although the common asymmetric encryption algorithm can be used for identity authentication, because the authentication process is complicated and the key distribution is very inconvenient, people have been looking for an alternative method with efficient authentication capability.  <ref type="bibr" target="#b24">[25]</ref>. However, the current IBE algorithm still has some problems, such as too complicated operation and key escrow. How to improve IBE algorithm and make it really applied in WSN is a hot research topic at present. e common IBE scheme usually consists of four processes: initialization, private key generation and distribution, encryption, and decryption <ref type="bibr" target="#b25">[26]</ref>. Among them, the private key needs to be assigned to the user in advance through the secure channel, while the public key can be generated according to the public information of the user. e workflow of IBE mechanism is shown in Figure <ref type="figure">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.">Traditional IBE Encryption</head><p>e core of traditional IBE encryption algorithm is bilinear pairing operation, which needs to go through multiple rounds of polynomial iterative process, and the computational complexity is extremely high.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3.">Improved Identity-Based Encryption Algorithm lIBE.</head><p>On the basis of studying the encryption structure of traditional IBE algorithm, a scheme IIBE is proposed to solve the above key escrow and revocation problems. e design idea is as follows: the user's private key in the system is divided into two parts, one part is controlled by private key generator (PKG), and the other part is controlled by users themselves. When decrypting, PKG firstly decrypts the received ciphertext with a partial private key and gives the result to the user, and then, the user decrypts it with his own partial private key to obtain the final decrypted plaintext. If a user's key needs to be revoked, PKG does not help the user to decrypt it preliminarily. Because PKG does not master all the private keys, it can avoid the key escrow problem.</p><p>IIBE consists of five processes: system initialization, key extraction, public key extraction, encryption, and decryption. If ciphertext C is obtained by encryption algorithm (with params, P ID , and plaintext M as input), then running decryption algorithm (with params, D ID , X SID , and ciphertext C as input) will definitely get correct plaintext M. e specific operation process of IIBE encryption algorithm initialization and encryption and decryption is shown in Figure <ref type="figure" target="#fig_2">3</ref>.</p><p>e parameter design of IIBE encryption algorithm is shown in Table <ref type="table" target="#tab_3">1</ref> It can be seen from Table <ref type="table" target="#tab_1">2</ref> that the key security of the proposed IIBE algorithm is the highest. en, compare the computational complexity of different algorithms, as shown in Table <ref type="table" target="#tab_5">3</ref>.</p><p>It can be seen from Table <ref type="table" target="#tab_5">3</ref> that, compared with other algorithms, the computational complexity of the proposed IIBE algorithm in system initialization, helping device, and user key update is reduced from O (log N) to o (1), which means that the complexity of the proposed IIBE algorithm is the lowest.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Experimental Results and Analysis</head><p>4.1. Experimental Setup. In the experiment, the WSN node adopts CC2530 sensor network node of TI (Texas instruments) company <ref type="bibr" target="#b29">[30]</ref>, which has an enhanced C51 single chip microcomputer and 8k RAM storage space, and is powered by two No.5 batteries <ref type="bibr" target="#b30">[31,</ref><ref type="bibr" target="#b31">32]</ref>. WSN nodes are shown in Figure <ref type="figure">4</ref>. e actual network topology of IIBE is shown in Figure <ref type="figure" target="#fig_3">5</ref>. Settings of WSN network parameters are shown in Table <ref type="table" target="#tab_6">4</ref>.</p><p>Ten CC2530 nodes are used for network deployment, and all IIBE nodes in WSN are not set to sleep. All collected data are stored in the MySql database on the server side.</p><p>en, it will be tested from three aspects: energy consumption, network communication capability, and security capability.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2.">Energy Consumption Test.</head><p>Firstly, the energy consumption of several encryption algorithms is tested. e IIBE algorithm performs node authentication every 30 minutes and key update every two hours in order to approach the actual network deployment situation as much as possible. A total of about 100,000 pieces of actual data were collected by the experimental WSN network, and the fitting curve obtained by sorting out is shown in Figure <ref type="figure">6</ref>.</p><p>e ordinate of Figure <ref type="figure">6</ref> shows the average voltage of nodes in the actual distribution network, in volts. e abscissa is the network running time in hours. It can be seen that when the key length is 30 bits, AES encryption supported by CC2530 hardware has the longest duration, and the actual duration of IIBE encryption is about 83 hours, which is more than 10 hours shorter than AES encryption. However, considering that IIBE here sets up internode authentication every half hour, which is different from AES's simple encryption and decryption operation, it can be considered that IIBE can meet the energy consumption requirements when the key length is 30 bits. Generally speaking, the energy consumption of IIBE algorithm is weaker than that of AES, but it can still last for a long time and basically meet the design goals.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3.">Communication Performance Test.</head><p>In the experiment, the data that can be effectively counted are the amount of data sent by WSN nodes and received by the server, so compared with the concept of packet loss rate, the concept of data reception rate can describe the actual experiment more accurately. e calculation method of data reception rate <ref type="bibr" target="#b32">[33]</ref> is as follows:</p><formula xml:id="formula_0">Pr � 􏽐 n i�0 n (i)receive 􏽐 n i�0 n (i)send , (<label>1</label></formula><formula xml:id="formula_1">)</formula><p>where n (i) receive represents the number of data received by the server from ith node and b represents the number of data sent by ith node. On CC2530 WSN node, the data receiving rates of several methods with 30-bit key are tested, and about 40,000 experimental data are obtained. e statistical fitting curve of the results is shown in Figure <ref type="figure">7</ref>.</p><p>It can be seen from Figure <ref type="figure">7</ref> that when the network scale increases, the trend of traffic not only depends on the algorithm itself but also is greatly affected by the network layout.</p><p>e random distribution method adopted in the experiment makes some nodes close to the coordinator   </p><formula xml:id="formula_2">(log N) O (log N) O (log N) O (1) User key refresh O (log N) O (log N) O (log N) O (1) Encryption O (log N) O (log N) O (log N) O (log N) Decode O (log N) O (log N) O (log N) O (log N)</formula><p>Figure <ref type="figure">4</ref>: WSN node equipment used in experiment.   consume more energy and die faster, and the death of these nodes also affects the communication between other nodes and the coordinator. Because IIBE has a key exchange process in the initial stage, there is a large amount of communication in the initial stage. With the steady state of the network, the traffic volume of IIBE network is gradually stable. e algorithms such as DIOS and IBE, which have a large amount of communication, have a low reception rate, while the reception rate of IIBE and AES is higher than that of DIOS, so the reception rate of IIBE algorithm is basically acceptable.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Security and Communication Networks</head><note type="other">Server Coordinator Sensor nodes</note></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">Conclusion</head><p>Based on the encryption structure of traditional IBE algorithm, this paper proposes a scheme IIBE to solve the above key escrow and revocation problems. e design idea is as follows; the user's private key in the system is divided into two parts: one part is controlled by PKG and the other part is controlled by users themselves. Compared with the traditional public key encryption, this algorithm does not need public key certificates and avoids the management of certificates. Compared with identity-based public key encryption, this algorithm solves the problems of key escrow and key revocation. e whole system test shows that compared with traditional encryption algorithm, the proposed IIBE algorithm has the characteristics of low energy consumption, high encryption strength, and strong authentication capability and is suitable for WSN deployment environment with high security requirements. In the future, the performance of IIBE encryption algorithm will be tested in a larger area of WSN network, and the security of various attacks will be analyzed.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>( 1 )</head><label>1</label><figDesc>System initialization: the algorithm takes security parameter k as input and returns system parameters params and master-key. System parameters include the description of plaintext space M and ciphertext space C. e algorithm is run by PKG, params can be made public, and master-key is only known by PKG. (2) Key extraction: the algorithm takes params and a user's ID as input and returns the secret value x ID of ID and the key X SID . e algorithm can be run by user ID or PKG, and the secret value and key are not disclosed after being generated. (3) Public key extraction: the algorithm takes params and the secret value x ID of the user ID as input and returns the public key P ID of the user ID. e algorithm is run by user ID, and the generated public key P ID is made public. (4) Encryption: the algorithm takes params, plaintext M ∈ M, and public key P ID of user ID as input. e ciphertext C ∈ C corresponding to M or the termination symbol "⊥" indicates encryption failure, and encryption failure only occurs when the form of public key P ID is incorrect. (5) Decryption: the algorithm takes params, ciphertext C, private key D ID , and key X SID of user ID as input and returns plaintext M corresponding to C or termination symbol "⊥" to indicate decryption failure.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 :Figure 2 :</head><label>12</label><figDesc>Figure 1: ree topologies of ZigBee network.</figDesc><graphic coords="3,186.13,280.90,201.23,151.96" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: Initialization and encryption and decryption process of IIBE encryption algorithm.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 5 :</head><label>5</label><figDesc>Figure 5: Actual network topology of IIBE.</figDesc><graphic coords="6,191.88,83.80,113.80,56.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 6 :Figure 7 :</head><label>67</label><figDesc>Figure 6: Average voltage trend of WSN nodes.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>Algorithm. In 1984, Shamir et al. first proposed the concept of identity-based encryption (IBE), but in 2001, IBE was realized by Boneh et al. using bilinear pairings on elliptic curves</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc></figDesc><table><row><cell>.</cell></row><row><cell>e functions of each parameter are</cell></row><row><cell>(1) Public parameter s: the public parameter is randomly</cell></row><row><cell>generated by the server, not disclosed, only reserved</cell></row><row><cell>by the server, and used to issue the node private key.</cell></row><row><cell>However, participates in all encryption, decryption,</cell></row><row><cell>and authentication operations thereafter [27].</cell></row><row><cell>(2) Primitive element P: primitive element belongs to a</cell></row><row><cell>point in the finite field of elliptic curve, but it plays an</cell></row><row><cell>extremely important role in IIBE algorithm, so it is</cell></row><row><cell>an element alone. All points of finite fields can be</cell></row><row><cell>generated by p.</cell></row><row><cell>(3) Public information Q bob : it is some traceable and</cell></row><row><cell>unchangeable information of nodes.</cell></row><row><cell>(4) Public key Q: it is generated by public information</cell></row><row><cell>Q bob , which is a point on the elliptic curve finite field,</cell></row><row><cell>and can be generated by the node itself or other</cell></row><row><cell>nodes according to the public information.</cell></row><row><cell>(5) Random parameter r: it is randomly generated by</cell></row><row><cell>nodes, participating in the ciphertext generation</cell></row><row><cell>process and participating in the decryption process</cell></row><row><cell>in the form of rP.</cell></row><row><cell>(6) Hash function Hash: map a string to a certain point</cell></row><row><cell>in a finite field [28, 29].</cell></row><row><cell>(7) Mapping function number f: convert the string into</cell></row><row><cell>the corresponding binary code string.</cell></row><row><cell>(8) Node private key E: it is generated by the server and</cell></row><row><cell>assigned to the node.</cell></row><row><cell>(9) Original plaintext D: it needs to be mapped to binary</cell></row><row><cell>code string for encryption and decryption.</cell></row><row><cell>3.4. Comparative Analysis of Complexity. We compare IIBE,</cell></row><row><cell>AES, IBE, and DIOS from two aspects of key security and</cell></row><row><cell>computational complexity. e comparison results of key</cell></row><row><cell>security are shown in</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 1 :</head><label>1</label><figDesc>Parameter design of IIBE algorithm.</figDesc><table><row><cell></cell><cell>Common parameters</cell><cell>Primitive element</cell><cell>Public information</cell><cell>Public key</cell><cell>Random parameter</cell><cell>Hash function</cell><cell>Node private key</cell><cell>Mapping function</cell><cell>Original plaintext</cell></row><row><cell>Number of parameters</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell><cell>2</cell><cell>1</cell><cell>2</cell><cell>1</cell></row><row><cell>Elemental symbol</cell><cell>s</cell><cell>P</cell><cell>Q bob</cell><cell>Q</cell><cell>r</cell><cell>Hash</cell><cell>E</cell><cell>f</cell><cell>D</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 2 :</head><label>2</label><figDesc>Comparison of key security.</figDesc><table><row><cell>Dataset name</cell><cell>Forward security of key</cell><cell>Backward security of key</cell><cell>Help device key leak</cell></row><row><cell>IBE</cell><cell>√</cell><cell></cell><cell></cell></row><row><cell>AES</cell><cell>√</cell><cell></cell><cell></cell></row><row><cell>DIOS</cell><cell>√</cell><cell>√</cell><cell></cell></row><row><cell>IIBE</cell><cell>√</cell><cell>√</cell><cell>√</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 3 :</head><label>3</label><figDesc>Comparison of computational complexity.</figDesc><table><row><cell>Different stages</cell><cell>IBE</cell><cell>AES</cell><cell>DIOS</cell><cell>IIBE</cell></row><row><cell>System initialization</cell><cell>O (log N)</cell><cell>O (log N)</cell><cell>O (1)</cell><cell>O (1)</cell></row><row><cell>Help device key update</cell><cell>O (log N)</cell><cell>O (log N)</cell><cell>O (1)</cell><cell>O (1)</cell></row><row><cell>User key update</cell><cell>O (log N)</cell><cell>O (log N)</cell><cell>O (1)</cell><cell>O (1)</cell></row><row><cell>Help device key refresh</cell><cell>O</cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head>Table 4 :</head><label>4</label><figDesc>WSN network parameter setting.</figDesc><table><row><cell>Mesh area</cell><cell>Transmission frequency</cell><cell>Initial voltage (V)</cell><cell>Network topology</cell><cell>Longest packet sent in a single time (bit)</cell><cell>Arrangement mode</cell><cell>Key length (bit)</cell><cell>Dormancy</cell></row><row><cell cols="2">1 km × 1 km Random (0-60 s)</cell><cell>3.2</cell><cell>Net structure</cell><cell>120</cell><cell>Random</cell><cell>30</cell><cell>No</cell></row></table></figure>
+		</body>
+		<back>
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data Availability</head><p>e dataset used in this paper are available from the corresponding author upon request.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of Interest</head><p>e authors declare that they have no conflicts of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Development and characterization of a solarbased energy harvesting and power management system for a WSN node applied to optimized goods transport and storage</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Visconti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Ferri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pucciarelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Venere</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal on Smart Sensing and Intelligent Systems</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1637" to="1667" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Soft-WSN: software-defined WSN management system for IoT applications</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Misra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">Kumar</forename><surname>Roy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Obaidat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="2074" to="2081" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">BEST-MAC: bitmap-assisted efficient and scalable TDMA based WSN MAC protocol for smart cities</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Alvi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Bouk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ahmed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Yaqub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sarka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Song</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="312" to="322" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">A genetic algorithm-based, dynamic clustering method towards improved WSN longevity</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elhoseny</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>E-Minir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Riad</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Network and Systems Management</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Idle slots skipped mechanism based tag identification algorithm with enhanced collision detection</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">KSII Transactions on Internet and Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="2294" to="2309" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Positioning optimisation based on particle quality prediction in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IET Networks</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="107" to="113" />
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Redundant rule detection for software-defined networking</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">KSII Transactions on Internet and Information Systems</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="2735" to="2751" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">A secure and lowenergy zone-based wireless sensor networks routing protocol for pollution monitoring</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mehmood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lloret</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sendra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Communications and Mobile Computing</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">17</biblScope>
+			<biblScope unit="page" from="2869" to="2883" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A secure data routing schema for WSN using Elliptic Curve Cryptography and homomorphic encryption</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Elhoseny</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Elminir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Riad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yuan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of King Saud University -Computer and Information Sciences</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="262" to="275" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">WSN application for crop protection to divert animal intrusions in the agricultural land</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bapat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Shinde</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Deshpande</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Shaligram</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computers and Electronics in Agriculture</title>
+		<imprint>
+			<biblScope unit="volume">133</biblScope>
+			<biblScope unit="page" from="88" to="96" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">RWiN: new methodology for the development of reconfigurable WSN</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Grichi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Mosbahi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Khalgui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Automation Science and Engineering</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="109" to="125" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">An energy efficient routing protocol for correlated data using CL-LEACH in WSN</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Marappan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Rodrigues</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Networks</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1415" to="1423" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Novel fusion computing method for bio-medical image of WSN based on spherical coordinate</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">G</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">B</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">D</forename><surname>Zhang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Vibroengineering</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="522" to="538" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Metaheuristics for the lifetime of WSN: a review</title>
+		<author>
+			<persName><forename type="first">C.-W</forename><surname>Tsai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-P</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G.-N</forename><surname>Shiu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Sensors Journal</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2812" to="2831" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Restoring connectivity in a resource constrained WSN</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">K</forename><surname>Joshi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Younis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Network and Computer Applications</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="151" to="165" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Addressing-based routing optimization for 6LoWPAN WSN in vehicular scenario</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Yao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Sensors Journal</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="3939" to="3947" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Multi-gateway-based energy holes avoidance routing protocol for WSN</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rohini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Daya</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Informatics</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1" to="26" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A Fuzzy logic-based method to avert intrusions in wireless sensor networks using WSN-DS dataset</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Singh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Virmani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X.-Z</forename><surname>Gao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Computational Intelligence and Applications</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">2050018</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Deep reinforcement learningbased optimization for cache-enabled opportunistic interference alignment wireless networks</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">R</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Vehicular Technology</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="10433" to="10445" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Integrated networking, caching, and computing for connected vehicles: a deep reinforcement learning approach</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>He</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Yin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Vehicular Technology</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="44" to="55" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">roughput-aware cooperative reinforcement learning for adaptive resource allocation in device-to-device communication</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Muhidul</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Alam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Moullec</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Yaacoub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Future Internet</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="538" to="548" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Border surveillance with WSN systems in a distributed manner</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Mostafaei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">U</forename><surname>Chowdhury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Obaidat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Systems Journal</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Avoiding routing loops in a multi-stack WSN</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Rachkidy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Guitton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Misson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Communications</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="151" to="160" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Spatio-temporal optimization of perishable goods&apos; shelf life by a pro-active WSNbased architecture</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">V</forename><surname>Daniela</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Giovanni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page">2126</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Performance analysis of Hamming code for WSN-based smart grid applications</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Melike</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Güngr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Pinar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Turkish Journal of Electrical Engineering and Computer Sciences</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="125" to="137" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Utilizing active sensor nodes in smart environments for optimal communication coverage</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="11338" to="11348" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">An energy efficient schedule for IEEE 802.15.4/ZigBee cluster tree WSN with multiple collision domains and period crossing constraint</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ahmad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Hanzalek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Industrial Informatics</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">99</biblScope>
+			<biblScope unit="page" from="12" to="23" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">An energy efficient receiver-initiated MAC protocol for low-power WSN</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">F</forename><surname>Fernandes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Almeida</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Brandão</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Wireless Personal Communications</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="page" from="1" to="20" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Investigation on the influence caused by shield tunneling: WSN monitoring and numerical simulation</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Liu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Advances in Civil Engineering</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="11" />
+			<date type="published" when="2021">2021. 2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">An energy efficient and secure mechanism (EES-WSN) in wireless sensor networks for reliable data transmission</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aju</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Keshvi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Engineering Science and Technology Review</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="82" to="91" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Increasing WSN lifetime using clustering and fault tolerance methods</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sabah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Croock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Iraqi Journal for Electrical And Electronic Engineering</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Target positioning based on particle centroid drift in large-scale WSNs</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Xie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Access</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="127709" to="127719" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A communication strategy of proactive nodes based on loop theorem in wireless sensor networks</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2018 Ninth International Conference on Intelligent Control and Information Processing (ICICIP)</title>
+		<meeting>the 2018 Ninth International Conference on Intelligent Control and Information Processing (ICICIP)<address><addrLine>Wanzhou, China</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2018-11">November 2018</date>
+			<biblScope unit="page" from="160" to="167" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,3189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">The first five years of single-cell cancer genomics and beyond</title>
+				<funder ref="#_GAMWvZ4">
+					<orgName type="full">NCI (NIH)</orgName>
+				</funder>
+				<funder ref="#_3wu4DAV">
+					<orgName type="full">Lefkofsky Family Foundation</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Agilent University Relations</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Moonshot Knowledge Gap Award, Center for Genetics &amp; Genomics</orgName>
+				</funder>
+				<funder>
+					<orgName type="full">Center for Epigenetics at the MD Anderson Cancer Center</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Nicholas</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+							<email>nnavin@mdanderson.org</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Department of Genetics</orgName>
+								<orgName type="department" key="dep2">MD Anderson Cancer Center</orgName>
+								<orgName type="institution">University of Texas</orgName>
+								<address>
+									<postCode>77030</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country>USA;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Bioinformatics and Computational Biology</orgName>
+								<orgName type="department" key="dep2">MD Anderson Cancer Center</orgName>
+								<orgName type="institution">University of Texas</orgName>
+								<address>
+									<postCode>77030</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country>USA;</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Graduate Program in Genes and Development</orgName>
+								<orgName type="department" key="dep2">Graduate School of Biomedical Sciences</orgName>
+								<orgName type="institution">University of Texas Health Science Center at Houston</orgName>
+								<address>
+									<postCode>77030</postCode>
+									<settlement>Houston</settlement>
+									<region>Texas</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">The first five years of single-cell cancer genomics and beyond</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">1088-9051/15</idno>
+					</monogr>
+					<idno type="MD5">9CB6BA95B61945D2B86A6641FE729D78</idno>
+					<idno type="DOI">10.1101/gr.191098.115</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:51+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Single-cell sequencing (SCS) is a powerful new tool for investigating evolution and diversity in cancer and understanding the role of rare cells in tumor progression. These methods have begun to unravel key questions in cancer biology that have been difficult to address with bulk tumor measurements. Over the past five years, there has been extraordinary progress in technological developments and research applications, but these efforts represent only the tip of the iceberg. In the coming years, SCS will greatly improve our understanding of invasion, metastasis, and therapy resistance during cancer progression. These tools will also have direct translational applications in the clinic, in areas such as early detection, noninvasive monitoring, and guiding targeted therapy. In this perspective, I discuss the progress that has been made and the myriad of unexplored applications that still lie ahead in cancer research and medicine.</p><p>A single cell is the ultimate denomination of a multicellular organism. The human body is composed of approximately 37.2 trillion cells that live harmoniously among their neighbors <ref type="bibr" target="#b8">(Bianconi et al. 2013)</ref>. However, in cancer, a single cell can lead to the downfall of an entire organism. As a single cell begins its journey to evolve into a malignant mass of tumor cells, the lineages diverge and form distinct subpopulations resulting in intratumor heterogeneity. Clonal diversity is a salient feature of many human tumors (Navin et al. 2010;<ref type="bibr" target="#b24">Gerlinger et al. 2012;</ref><ref type="bibr" target="#b70">Shah et al. 2012</ref>) and provides fuel for evolution to select upon. A tumor is analogous to an ecosystem, and many principles from ecology and population genetics can help us understand how tumor cell populations respond to selective pressures <ref type="bibr" target="#b49">(Merlo et al. 2006;</ref><ref type="bibr" target="#b26">Greaves and Maley 2012)</ref>. Clonal diversity is likely to play an important role in invasion, metastasis, and the evolution of resistance to therapy (Navin 2014a). However, to date, our understanding of intratumor heterogeneity in the context of tumorigenesis has been poor-at best. The central problem inhibiting these studies is technical: Most genomic methods require micrograms of input material and thus are limited to reporting an average signal from a complex population of cells. To address this problem, single-cell sequencing (SCS) methods were developed and have revolutionized our understanding of cancer evolution and diversity. Additionally, these methods can provide insight into the role of rare cells to understand their role in tumor progression. Over the past five years, there has been extraordinary progress in the development and application of single-cell DNA and RNA sequencing methods for cancer research (Fig. <ref type="figure">1</ref>). However, many technical challenges and unexplored applications still lie ahead and serve as the basis of this perspective article (cf. Fig. <ref type="figure">2</ref>).</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The development of single-cell sequencing methods</head><p>A typical cancer cell contains ∼6-12 pg of DNA and 10-50 pg of total RNA (1%-5% mRNA), depending on the ploidy and the cell type <ref type="bibr" target="#b42">(Livesey 2003)</ref>. Therefore, the first step in any SCS experiment involves whole-genome amplification (WGA) or whole-transcriptome amplification (WTA) to obtain sufficient input material for constructing next-generation sequencing (NGS) libraries. During the amplification process, a number of technical errors may arise: allelic dropout events (one allele is not amplified), amplification distortion (transcripts are over/under amplified), false-positive (FP) errors (infidelity of the polymerase), and coverage nonuniformity (uneven amplification) <ref type="bibr">(Navin 2014a;</ref><ref type="bibr">Zhang et al. 2015a</ref>). The first DNA SCS method developed, single-nucleus sequencing (SNS), combined flow-sorting by DNA ploidy, degenerative-oligonucleotide-PCR (DOP-PCR), and next-generation sequencing to measure genome-wide copy number profiles of single cells using sequence read depth <ref type="bibr" target="#b56">(Navin et al. 2011;</ref><ref type="bibr" target="#b6">Baslan et al. 2012)</ref>. This method achieved ∼10% physical coverage of a single-cell genome, which was sufficient for measuring copy number aberrations, but inadequate for detecting mutations at base-pair resolution. To improve physical coverage, several single-cell DNA sequencing methods were subsequently developed (BGI, nuc-seq, SNES) that utilize the Phi29 enzyme to perform multiple-displacement amplification (MDA) <ref type="bibr" target="#b33">(Hou et al. 2012;</ref><ref type="bibr" target="#b85">Xu et al. 2012;</ref><ref type="bibr" target="#b45">Lohr et al. 2014;</ref><ref type="bibr" target="#b82">Wang et al. 2014;</ref><ref type="bibr" target="#b40">Leung et al. 2015)</ref>. These methods can now achieve &gt;90% coverage of a single-cell genome, allowing mutations to be detected at base-pair resolution. nuc-seq and SNES take advantage of G2/M single cells that have duplicated their genome prior to WGA, providing four copies of the genome as input material and thereby reducing technical error rates <ref type="bibr" target="#b82">(Wang et al. 2014;</ref><ref type="bibr" target="#b40">Leung et al. 2015</ref>). An alternative method uses a combination of MDA and adapter-ligation PCR called multiple annealing looping-based amplification cycles (MALBAC) which improves physical coverage, but at the cost of higher FP error rates due to the Bst polymerase, which does not have proofreading activity <ref type="bibr" target="#b90">(Zong et al. 2012)</ref>.</p><p>To profile RNA transcriptomes in single cells, initial methods used oligo-dT primers followed by ligation adapter PCR <ref type="bibr" target="#b76">(Tang et al. 2009)</ref> or linear transcription with T7 <ref type="bibr" target="#b29">(Hashimshony et al. 2012</ref>). These methods were challenged by strong 3 ′ bias due to the inefficiency of first-strand cDNA synthesis by reverse transcriptase. To address this problem, a method that has template switching activity was developed, called Smart-seq, using an MMLV reverse transcriptase <ref type="bibr" target="#b66">(Ramsköld et al. 2012;</ref><ref type="bibr" target="#b61">Picelli et al. 2014)</ref>. Further developments incorporated unique molecular identifiers (UMIs) to label each RNA molecule with unique barcodes prior to WTA amplification, thereby reducing amplification bias <ref type="bibr" target="#b35">(Islam et al. 2014)</ref>. Although progress in the development of single-cell DNA and RNA sequencing methods has been rapid, the development of single-cell epigenomic profiling methods has proven to be more challenging. Nevertheless, a few studies have forged ahead and made some initial progress despite many technical errors <ref type="bibr" target="#b27">(Guo et al. 2013;</ref><ref type="bibr" target="#b51">Nagano et al. 2013)</ref>. Detailed technical discussion of single-cell DNA and RNA sequencing methods is provided in other works (for review, see <ref type="bibr" target="#b17">de Bourcy et al. 2014;</ref><ref type="bibr">Navin 2014a;</ref><ref type="bibr" target="#b79">Van Loo and Voet 2014;</ref><ref type="bibr" target="#b84">Wu et al. 2014;</ref><ref type="bibr" target="#b81">Wang and Navin 2015)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clonal diversity and evolution in primary tumors</head><p>Most SCS research studies to date have focused on investigating intratumor heterogeneity and clonal evolution in primary tumors (Table <ref type="table" target="#tab_0">1</ref>). SCS provides a powerful approach for resolving clonal substructure and reconstructing phylogenetic lineages to understand the genetic relationship between individual tumor cells. Although intratumor heterogeneity presents a major challenge for clinical diagnostic sampling and targeted therapy, it also provides a unique opportunity to reconstruct tumor evolution by assuming that mutational complexity increases with time.</p><p>In the first SCS study of clonal evolution in a human tumor, SNS was used to profile genomic copy number in hundreds of single tumor cells from two breast cancer patients, which revealed a punctuated model of copy number evolution <ref type="bibr" target="#b56">(Navin et al. 2011)</ref>. In a subsequent study, single-cell copy number profiles were compared directly to single-cell exome data in two breast cancer patients, which showed that copy number evolution occurred early, in punctuated bursts, whereas point mutations evolved gradually over time, leading to extensive clonal diversity in the tumor mass <ref type="bibr" target="#b82">(Wang et al. 2014)</ref>. In this study, SCS also identified a large number of rare subclonal (&lt;1%) mutations that may play an important role in tumor evolution and therapy resistance.</p><p>Another group applied single-cell exome sequencing to study clonal diversity in a JAK2 myeloproliferative disease <ref type="bibr" target="#b33">(Hou et al. 2012</ref>) and a kidney tumor <ref type="bibr" target="#b85">(Xu et al. 2012)</ref>. These data showed that single cells share common founder mutations, suggesting evolution from a common origin, but had difficulty in resolving clonal substructure and genetic lineages due to high error rates. However, in subsequent studies, the same group applied singlecell exome sequencing to study clonal substructure in a muscle-invasive bladder cancer <ref type="bibr" target="#b41">(Li et al. 2012</ref>) and a colon cancer <ref type="bibr" target="#b86">(Yu et al. 2014)</ref>, which revealed two major subpopulations in each tumor that diverged but shared a common genetic lineage. Another group applied DNA SCS to delineate clonal diversity in glioblastoma, which revealed convergent evolution of EGFR mutations and rearrangements in different subclones from the same primary tumors <ref type="bibr" target="#b22">(Francis et al. 2014)</ref>.</p><p>DNA-SCS has also been applied to study hematological malignancies. In AML, DNA-SCS was used to reconstruct the order of mutations in three patients diagnosed with MDS-derived secondary AML to reconstruct mutational chronology <ref type="bibr" target="#b34">(Hughes et al. 2014)</ref>. In another study, an innovative approach was developed to study childhood acute lymphoblastic leukemia (ALL), in which the authors first performed deep-exome sequencing to identify mutations in the bulk DNA and then designed custom PCR primers for multiplexed targeted sequencing of 1479 single cells from six patients <ref type="bibr" target="#b23">(Gawad et al. 2014)</ref>. These studies identified early ETV6-RUNX1 translocations followed by multiclonal evolution in childhood AML patients.</p><p>Collectively, these initial studies provide strong evidence for clonal evolution <ref type="bibr" target="#b13">(Campbell and Polyak 2007;</ref><ref type="bibr" target="#b54">Navin and Hicks 2010;</ref><ref type="bibr" target="#b26">Greaves and Maley 2012)</ref> in many primary tumors and hematological malignancies. These data challenge the strict cancer stem cell model <ref type="bibr" target="#b14">(Clarke and Becker 2006;</ref><ref type="bibr" target="#b71">Shipitsin and Polyak 2008;</ref><ref type="bibr" target="#b78">Tomasson 2009)</ref> by showing that the majority of tumor cells have continued lineages and are capable of continued proliferation and clonal expansion. Furthermore, the phylogenetic trees from these studies show strong evidence of a common set of founder mutations in every cancer patient, suggesting that most solid tumors evolve from a single somatic cell in the normal tissue. These data argue strongly against mutagenic field effects and multicell origins, which would have resulted in independent genetic lineages that do not share any common founder mutations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Circulating tumor cells and metastatic dissemination</head><p>Several models of metastasis have been proposed (late dissemination, early seeding, and self-seeding) but remain difficult to resolve in most human cancers. The challenges lie both in the technical hurdle of resolving intratumor heterogeneity and in the difficulty in measuring genomic information in the key intermediates: circulating tumor cells (CTCs). The problem is that CTCs are extremely rare in the blood (1 in 10 6 ), and generally only 1-50 cells can be isolated from a typical 7.5-mL blood draw, providing limited input material for genomic studies.</p><p>Initial CTC studies focused mainly on measuring DNA mutations in CTCs and comparing them to matched primary and metastatic tumors. In one study, DNA-SCS was used to analyze CTCs from six patients with metastatic colon cancer, which showed that a large proportion of the point mutations in the primary tumor could be detected in the CTCs by targeted gene sequencing <ref type="bibr" target="#b30">(Heitzer et al. 2013)</ref>. In another study, MALBAC was used to per-form exome sequencing and copy number profiling of single CTCs from seven metastatic lung adenocarcinoma cancer patients, which showed that a substantial number of point mutations (59%) in the primary and metastatic tumors were detected in the CTCs <ref type="bibr" target="#b57">(Ni et al. 2013)</ref>. This study also showed that although the copy number profiles of single CTCs were highly stable in the blood and similar to the primary and metastatic tumors, point mutations displayed extensive variability. Another study in metastatic melanoma patients applied SNS to profile copy number in single CTCs, which also reported highly similar copy number profiles <ref type="bibr" target="#b67">(Ruiz et al. 2015)</ref>. Morphometric imaging was also combined with SNS to investigate copy number evolution in metastatic prostate cancer in response to abiraterone therapy <ref type="bibr" target="#b16">(Dago et al. 2014)</ref>, which identified convergent evolution of the androgen receptor (AR) amplification in different single tumor cells. Another group applied single-cell exome sequencing to profile CTCs and matched exome sequencing of primary and metastatic prostate tumors from the same patients <ref type="bibr" target="#b45">(Lohr et al. 2014)</ref>. This study revealed a direct genetic lineage of the CTCs to a minor clonal subpopulation in a distinct spatial region of the primary prostate tumor and showed that 51% of the mutations in the primary and metastatic tumors could be detected in the CTC populations.</p><p>RNA-SCS has also been applied to study the transcriptional programs of CTCs. In melanoma patients, RNA-SCS identified three distinct gene signatures in CTCs associated with metastasis <ref type="bibr" target="#b66">(Ramsköld et al. 2012)</ref>. In another study, RNA-SCS was used to study the dissemination of single CTCs and CTC clusters in metastatic breast cancer patients and mouse models <ref type="bibr" target="#b0">(Aceto et al. 2014)</ref>. These data identified plakoglobin as a key regulator of CTC clusters and showed that CTC clusters have increased metastatic potential relative to individual CTCs. In another study, RNA-SCS was applied to study metastasis in pancreatic cancer and reported that CTCs express their own extracellular matrix proteins in the blood <ref type="bibr" target="#b77">(Ting et al. 2014)</ref>. Collectively, these studies have greatly improved our fundamental understanding of CTCs, their transcriptional programs and their genetic relationship to the primary and metastatic tumors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Delineating complex chromosome rearrangements in single cells</head><p>During tumor evolution, chromosomes acquire complex numerical and structural rearrangements leading to gene dosage effects in oncogenes and tumor suppressors. Although aneuploid rearrangements are a hallmark of many human cancers <ref type="bibr" target="#b28">(Hanahan and Weinberg 2011)</ref>, most genomic studies represent endpoint analyses; and thus, there is little known about the dynamics and mechanics (how and when) of chromosome evolution during tumor progression. DNA-SCS provides a novel approach to measure copy number aberrations (CNAs) during tumor progression by comparing multiple single cells that represent different time points in evolution. Two studies in breast cancer investigated the evolutionary dynamics of CNAs in single cells using SNS <ref type="bibr" target="#b56">(Navin et al. 2011;</ref><ref type="bibr" target="#b82">Wang et al. 2014)</ref>. In both studies, the data show that complex aneuploid copy number changes were acquired early in tumor evolution, in punctuated bursts, followed by stable clonal expansions to form the tumor mass. This punctuated model of copy number evolution challenges the paradigm that CNAs are acquired gradually and sequentially over time <ref type="bibr" target="#b21">(Fearon and Vogelstein 1990;</ref><ref type="bibr" target="#b32">Höglund et al. 2002)</ref>, leading to successively more malignant stages of cancer. However, more work will be needed to determine if punctuated copy number evolution is common in many solid cancer types, or alternatively a phenomenon that is restricted to breast cancer patients. Other studies have identified another punctuated model of chromosome evolution called "chromothripsis" that refers to complex oscillating copy number aberrations that are restricted to single chromosomes or chromo-some arms <ref type="bibr" target="#b73">(Stephens et al. 2011)</ref>. Until recently, the evidence for a punctuated model of chromothripsis has been indirect; however, a recent study combined live cell imaging of single cancer cells in vitro with DNA-SCS to show direct evidence of chromothripsis via micronuclei formation <ref type="bibr">(Zhang et al. 2015b)</ref>. Future work along these lines can provide insight into how other complex aneuploid rearrangements are acquired over time, including "firestorms," "sawtooth" patterns <ref type="bibr" target="#b31">(Hicks et al. 2006)</ref>, and "chromoplexy" <ref type="bibr" target="#b5">(Baca et al. 2013)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Evolution of therapy resistance</head><p>Although many cancers show initial response to chemotherapy or targeted agents, most tumors eventually evolve resistance, often resulting in no further treatment options. The process by which tumors evolve chemoresistance remains poorly understood in most human cancers. Key questions remain on whether resistant clones are rare subpopulations that are preexisting in the tumor mass and selected after therapy (adaptive resistance), or alternatively, whether the therapeutic agents induce the generation of new mutations that confer a resistant phenotype (acquired resistance).</p><p>Another question is whether intratumor heterogeneity itself plays an important role in resistance evolution <ref type="bibr">(Navin 2014b)</ref>. Likewise, the role of epithelial-to-mesenchymal transition (EMT) and cell plasticity in conferring a resistance phenotype is just beginning to be understood, as recent studies show evidence that tumor cells may switch to a mesenchymal phenotype in response to chemotherapy <ref type="bibr" target="#b4">(Almendro et al. 2014)</ref>. SCS methods hold great potential for improving our understanding of resistance evolution in response to therapy. One of the first SCS-DNA studies to investigate genome evolution in response to therapy applied SNS to study copy number diversity in CTCs over four time points from metastatic prostate cancer patients treated with chemotherapy and Aberaterone <ref type="bibr" target="#b16">(Dago et al. 2014)</ref>. These data identified the emergence and selection of a preexisting minor subclonal population that was present in the first blood sample and showed androgen receptor amplification, supporting the adaptive model of therapy resistance evolution. In another study, RNA-SCS was used to study the transcriptomes of 336 single cells in lung adenocarcinoma cell lines in response to multityrosine kinase inhibitors, which identified several signaling pathways associated with resistance <ref type="bibr" target="#b75">(Suzuki et al. 2015)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Plasticity and cancer stem cells</head><p>Cancer stem cells (CSC) are hypothesized to be rare (&lt;1%) stem cell-like progenitor cells that have unlimited replicative potential and give rise to the major tumor cell populations <ref type="bibr" target="#b71">(Shipitsin and Polyak 2008)</ref>. CSCs are posited to be resistant to therapeutic agents and may reconstitute the tumor mass after therapy <ref type="bibr" target="#b63">(Polyak and Weinberg 2009)</ref>. Although the evidence for CSCs in blood cancers is overwhelming (due to the hierarchical nature of blood cell lineages), the evidence for CSC in most solid tumors remains controversial <ref type="bibr" target="#b62">(Polyak 2007;</ref><ref type="bibr" target="#b1">Adams and Strasser 2008;</ref><ref type="bibr" target="#b78">Tomasson 2009</ref>). The problem is that CSCs are very rare (&lt;1%) subpopulations in most tumors and therefore difficult to study with genomic methods. To date, there are no SCS studies that have directly compared CSC to differentiated populations in the same tumors. However, a recent study performed unbiased RNA-SCS to profile the transcriptomes in hundreds of single tumor cells from five glioblastoma patients <ref type="bibr" target="#b60">(Patel et al. 2014</ref>). Unexpectedly, this data showed that individual cancer cells displayed a large range of intermediate phenotypes that do not fall into distinct classes of epithelial or mesenchymal subpopulations as proposed by the classical EMT models <ref type="bibr" target="#b37">(Kalluri and Weinberg 2009)</ref>. Furthermore, although four distinct gene expression classes were previously reported in glioblastoma <ref type="bibr" target="#b80">(Verhaak et al. 2010)</ref>, these studies showed that single cells in the same glioblastoma tumor can exhibit multiple expression subtypes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Mutator phenotypes</head><p>The "mutator phenotype" posits that human cancers are driven by increased mutation rates-an elevated number of mutations per cell division, relative to normal cells <ref type="bibr" target="#b44">(Loeb et al. 1974;</ref><ref type="bibr" target="#b9">Bielas and Loeb 2005;</ref><ref type="bibr" target="#b43">Loeb 2011</ref>). However, measuring mutation rates in human tumors is challenging due to the fact that it is difficult to know the precise number of cell divisions that occurred during tumor growth. Although large-scale sequencing studies <ref type="bibr" target="#b3">(Alexandrov et al. 2013;</ref><ref type="bibr" target="#b38">Kandoth et al. 2013</ref>) often report increased mutation frequencies (total number of mutations), it remains unclear whether these mutations accumulated at a low mutation rate over many cell divisions or, alternatively, at a very high mutation rate in a few cell divisions. Previous studies using bulk sequencing methods have estimated that the mutation rate across many human cancers is on average 210-fold higher than normal cells <ref type="bibr" target="#b9">(Bielas and Loeb 2005;</ref><ref type="bibr" target="#b10">Bielas et al. 2006)</ref>. However, SCS methods can potentially provide more accurate measures of mutation rates by comparing mutation frequencies between single tumor cells. In one study, MALBAC was applied to investigate the mutation rate of a human colon cancer cell line <ref type="bibr" target="#b90">(Zong et al. 2012)</ref>, which reported a mutation rate of 2.5 nucleotide errors per cell division, which is only marginally higher than the normal error rate of cell division. In another study, nuc-seq was applied to investigate mutation rates in human breast tumors <ref type="bibr" target="#b82">(Wang et al. 2014)</ref>, which estimated the mutation rate in triple-negative breast cancer to be 13.3× (eight mutations per cell division), whereas an ER+ tumor showed mutation rate that was similar to normal cells. The mutation rates estimated from SCS data are substantially lower than previous estimates reported in bulk tissue samples <ref type="bibr" target="#b9">(Bielas and Loeb 2005;</ref><ref type="bibr" target="#b10">Bielas et al. 2006</ref>) but do show evidence for a modest increase in the mutation rate in human tumors. However, these initial studies were limited to only a few patients, and future work will be needed in which SCS is applied to a larger number of patients to understand the range of mutation rates across many human cancers.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>SCS in animal models</head><p>Animal models for cancer research, including genetically engineered mice (GEM) and xenografts, provide an unlimited source of genetic material and allow serial collection of samples over time, which are difficult to obtain from human patients. Xenografts are ideal systems for studying intratumor heterogeneity because they preserve the clonal diversity that was present in the original patient's tumors. In a recent study, DNA-SCS was performed in mouse xenografts from triple-negative breast cancer (TNBC) patients to study clonal dynamics and selection during the first few passages of the tumors to other recipient mice <ref type="bibr" target="#b19">(Eirew et al. 2014)</ref>. In these studies, targeted DNA-SCS was used to resolve the clonal architecture of the tumor after each successive passage, which showed strong selection of tumor clones and mutations in the first few passages in response to the new mouse stromal environment. In another study, RNA-SCS was applied to study CTCs and metastasis in mouse xenografts established from pancreatic cancer patients <ref type="bibr" target="#b77">(Ting et al. 2014</ref>) and breast cancer patients <ref type="bibr" target="#b0">(Aceto et al. 2014)</ref>. Although CTCs are difficult to isolate from human blood, mouse xenografts have the advantage of providing a much larger number of CTCs and are easy to isolate using fluorescent markers. In summary, combining SCS methods with GEMs and xenografts provides a powerful experimental system for studying clonal dynamics, metastasis, and potentially also therapeutic response.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Translational applications of SCS in the clinic</head><p>Single-cell DNA and RNA sequencing methods have a myriad of translational applications, including diagnostics, prognostics, targeted therapy, early detection, and noninvasive monitoring. In diagnostics, intratumor heterogeneity presents a formidable challenge for clinical sampling, because single samples may not accurately represent the tumor as a whole. SCS methods can resolve intratumor heterogeneity and provide accurate measures of genomic diversity, which can be used to calculate a "diversity index." These indexes are likely to have prognostic utility in predicting which cancer patients will be more likely to show poor response to therapy, higher probability of metastasis, or have poor overall survival <ref type="bibr" target="#b12">(Burrell et al. 2013;</ref><ref type="bibr" target="#b50">Murugaesu et al. 2013;</ref><ref type="bibr" target="#b4">Almendro et al. 2014)</ref>.</p><p>Another important clinical application of SCS methods is to guide targeted therapy. By sequencing and comparing multiple single cells, it is possible to construct a phylogenetic tree and heatmap that reveals the clonal substructure of a tumor. These genetic trees will allow oncologists to identify founder mutations in the "trunk" of the tree, which are ideal therapeutic targets, since they occurred early in tumor evolution and were inherited by all cells in the tumor. Alternatively, these trees can be used to devise combination therapies to target multiple tumor subpopulations independently.</p><p>Early detection is another clinical application of SCS, which can provide genomic information on rare tumor cells. In samples collected from bodily fluids (blood, urine, feces, and phlegm), it may be possible to isolate single cancer cells at the earliest stages of cancer progression. If driver mutations can be identified in multiple single cancer cells, then they may represent a clonal expansion, which could be followed by imaging techniques and surgical resection of microlesions. Another important clinical application of SCS is for obtaining genomic data sets from scarce clinical samples, which often contain only hundreds of tumor cells and are frequently unable to undergo genetic tests due to Quantity Not Sufficient (QNS).</p><p>Perhaps the most immediate application of SCS in the clinic will be in noninvasive monitoring. By isolating and sequencing single CTCs in the blood, it may be possible to measure somatic mutations that are present at the primary or metastatic tumor sites without the inherent risks that are associated with performing an invasive core biopsy directly at the organ site. Additionally, this noninvasive approach can allow the oncologist to collect serial samples over time during the course of therapy to monitor response and the emergence of resistant clones. Indeed, several initial studies have been encouraging by showing that &gt;50% of the mutations in the primary and metastatic tumors can be detected in CTCs from lung cancer <ref type="bibr" target="#b57">(Ni et al. 2013)</ref>, prostate cancer <ref type="bibr" target="#b45">(Lohr et al. 2014)</ref>, and colon cancer patients <ref type="bibr" target="#b30">(Heitzer et al. 2013)</ref>. In summary, SCS technologies are ready to make big strides into the clinic over the next five years.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Alternative methods to SCS</head><p>SCS is not always the best experimental approach to address every question in cancer biology. A notable limitation of SCS is that only a small number of cells can be sampled and analyzed at a reasonable cost (see Box 1: "How many single cells to sequence?"). This may lead to sampling bias and makes it difficult to detect rare cells in a population without first isolating and enriching the cells of interest. In many studies, the sampling of even 10 or 100 cells can greatly reduce technical errors and sampling bias when singlecell information is not needed. Alternatively, methods such as multiregion sequencing <ref type="bibr" target="#b24">(Gerlinger et al. 2012;</ref><ref type="bibr" target="#b87">Zhang et al. 2014</ref>) and ultra-deep sequencing methods <ref type="bibr" target="#b58">(Nik-Zainal et al. 2012;</ref><ref type="bibr" target="#b70">Shah et al. 2012</ref>) can also provide information on intratumor heterogeneity and clonal evolution.</p><p>Multiregion sequencing is a straightforward approach that can be used to sample multiple spatial regions within a tumor to resolve intratumor heterogeneity. However, an important limitation is that it requires that clones are spatially segregated in the tumor mass and thus cannot resolve intermixed subpopulations. Deep sequencing is another alternative approach, in which tumor genomes are sequenced at very high coverage depths, and mutation frequencies are clustered to identify subpopulations. Although straightforward, these methods are often confounded by copy number aberrations, which if not normalized accurately can lead to the overestimation of false subpopulations. In short, these approaches are more cost efficient and can mitigate sampling bias, but cannot resolve the combination of mutations in any given tumor cell.</p><p>Another alternative approach involves subcloning single cells to establish isogenic cell lines or organoid cultures. Isogenic cell lines or organoids can serve as proxies for single cells <ref type="bibr" target="#b69">(Sachs and Clevers 2014;</ref><ref type="bibr" target="#b11">Boj et al. 2015)</ref> and provide an unlimited source of genetic material. Furthermore, they allow functional studies to be performed and cell phenotypes to be measured, enabling connections to be drawn between genotypes and phenotypes. However, a notable limitation is that to establish isogenic cell lines, live cells are required, and many cells are unable to expand in culture, which may superficially select for cells that are good at surviving in culture.</p><p>Furthermore, the 2D or 3D microenvironment of cultures may not accurately reflect the tumor microenvironment, which can alter the transcriptional programs. Therefore, it is important to orthogonally validate findings that are derived from these systems in the original tumor samples to establish physiological relevance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Future applications in cancer research</head><p>Over the past five years, most SCS studies have focused mainly on delineating clonal evolution and diversity in primary tumors <ref type="bibr" target="#b56">(Navin et al. 2011;</ref><ref type="bibr" target="#b33">Hou et al. 2012;</ref><ref type="bibr" target="#b41">Li et al. 2012;</ref><ref type="bibr" target="#b85">Xu et al. 2012;</ref><ref type="bibr" target="#b22">Francis et al. 2014;</ref><ref type="bibr" target="#b82">Wang et al. 2014;</ref><ref type="bibr" target="#b86">Yu et al. 2014</ref>). However, the field has begun to shift toward studies on CTCs and understanding their role in metastatic dissemination <ref type="bibr" target="#b30">(Heitzer et al. 2013;</ref><ref type="bibr" target="#b57">Ni et al. 2013;</ref><ref type="bibr" target="#b45">Lohr et al. 2014)</ref>. These experiments are likely to provide new insight into the general models of metastasis in different human cancers. A few studies have also begun to investigate clonal evolution in the context of therapy <ref type="bibr" target="#b16">(Dago et al. 2014;</ref><ref type="bibr" target="#b75">Suzuki et al. 2015)</ref>, which will undoubtedly become a major area of SCS cancer research in the coming years. These studies will begin to address fundamental questions regarding adaptive versus acquired resistance when tumors are challenged by different therapeutic agents. SCS methods will also have important future applications for understanding genome evolution in early stage cancers, such as ductal carcinoma in situ (DCIS) and prostatic intraepithelial neoplasia (PIN), to identify the rare clones that escape their ducts and invade the surrounding tissues. Future SCS studies are also expected to provide insight into our understanding of cell plasticity and CSCs, by revealing their genetic and transcriptomic relationship to the differentiated tumor cell populations <ref type="bibr" target="#b74">(Stingl and Caldas 2007;</ref><ref type="bibr" target="#b71">Shipitsin and Polyak 2008;</ref><ref type="bibr" target="#b78">Tomasson 2009)</ref>. SCS methods will also have important applications for understanding intratumor heterogeneity in the context of immunotherapy to understand if tumors with increased genomic diversity will also be more immunogenic and therefore more susceptible to the new arsenal of immunotherapy agents and checkpoint inhibitors <ref type="bibr" target="#b59">(Pardoll 2012)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Technical challenges and emerging technologies</head><p>Although much progress has been made, a number of technical challenges still lie ahead before SCS methods can be widely adopted by the cancer research and clinical communities. Achieving high physical coverage (&gt;90%) in a single cell has largely been achieved <ref type="bibr" target="#b33">(Hou et al. 2012;</ref><ref type="bibr" target="#b90">Zong et al. 2012;</ref><ref type="bibr" target="#b82">Wang et al. 2014)</ref>, but current methods need to improve coverage uniformity and mitigate the technical error rates. Cost and throughput of SCS experiments are also major barriers in the field. To address these issues, several studies have begun to develop multiplexing strategies for SCS experiments. A recent method, called C-DOP-P, uses 96 barcodes to improve multiplexing of SNS and increase the throughput for single-cell copy number profiling <ref type="bibr" target="#b7">(Baslan et al. 2015)</ref>. Commercial microfluidic approaches such as the Fluidigm C1 system have also been developed for analyzing 96 single-cell RNA profiles in parallel using nanoliter reaction volumes. Another innovative method uses tens of thousands of microwells and beads with cell-specific barcodes that can potentially perform single-cell RNA sequencing on 10,000 or more cells <ref type="bibr" target="#b20">(Fan et al. 2015)</ref>. Perhaps the most promising new method for multiplexing is Drop-seq, which uses nanoliter droplets and barcoded beads to capture single cells and perform WTA, enabling RNA-SCS on 10,000-100,000 cells in a single run <ref type="bibr" target="#b48">(Macosko et al. 2015)</ref>. Similar approaches will need to be developed for single-cell DNA sequencing; however, this will be more of a challenge due to the absence of a polyA tail for hybridization to oligonucleotides on beads with cell identifiers. With these new technologies and the falling cost of next-generation sequencing methods, I expect that sequencing thousands of single cells in parallel will become routine in the near future. This will necessitate the development of new computational tools for analyzing large-scale SCS data sets, which are currently severely lacking. The problem is that single-cell DNA and RNA sequencing data sets have unique characteristics and technical errors that violate the assumptions of standard variant detection and expression analysis algorithms that were designed for bulk NGS data <ref type="bibr" target="#b72">(Stegle et al. 2015;</ref><ref type="bibr" target="#b81">Wang and Navin 2015)</ref>.</p><p>In the future, it will be important to begin connecting genotypic information with phenotypic information in single cells. This can be accomplished by connecting live-cell imaging techniques <ref type="bibr" target="#b68">(Sabouri-Ghomi et al. 2008)</ref> or intravital imaging in mice <ref type="bibr" target="#b2">(Alexander et al. 2013)</ref> with SCS methods to measure phenotypic properties in single cancer cells prior to isolation and genomic anal-ysis. Another important direction involves connecting in situ spatial information of single cancer cells in tissue sections to their genomic and transcriptomic profiles <ref type="bibr" target="#b15">(Crosetto et al. 2015)</ref>. This can be accomplished by isolating single cells from tissue sections using LCM, or alternatively by sequencing single cells directly in tissue sections using novel single-cell RNA sequencing methods <ref type="bibr" target="#b39">(Lee et al. 2014;</ref><ref type="bibr" target="#b46">Lovatt et al. 2014)</ref>. Another important area of technology development is to develop methods that can measure multiple layers of molecular information from the same single cells (e.g., DNA and RNA). Two recent studies demonstrated this technical feat by measuring both DNA copy number information and RNA expression from the same single cells <ref type="bibr" target="#b18">(Dey et al. 2015;</ref><ref type="bibr" target="#b47">Macaulay et al. 2015)</ref>, but further work will be needed to measure DNA mutations at base-pair resolution in parallel with RNA transcripts. Furthermore, the development of single-cell epigenomic methods has lagged far behind, but it is urgently needed for understanding cell plasticity and epigenomic reprogramming in tumors.</p><p>Another technical challenge that needs to be addressed is sample preparation for single-cell sequencing experiments. Generally, tumors are embedded in FFPE or flash frozen directly after surgery or biopsies are taken. This presents a technical challenge for analysis, since most single-cell sequencing methods require suspensions of cells for isolation, which must be prepared directly from fresh tissue samples. Unfortunately few, if any, samples have been prepared this way and stored in freezing media. To circumvent this problem, several studies have shown that nuclear suspensions can be prepared from archival frozen tissue samples <ref type="bibr" target="#b56">(Navin et al. 2011;</ref><ref type="bibr" target="#b6">Baslan et al. 2012</ref>) and used for DNA-SCS experiments. This is possible because the cytoplasmic membrane becomes ruptured during freezing, but the nuclear membrane remains intact through many freeze-thaw cycles. Sample preparation is particularly critical for single-cell RNA sequencing experiments, in which transcriptional programs can be skewed if the cells are not isolated and lysed quickly after the tissue is dissociated <ref type="bibr" target="#b35">(Islam et al. 2014)</ref>. In summary, new sample collection protocols will need to be put into place in hospitals in order to prepare single-cell suspensions directly after fresh tissue is collected by surgery.</p><p>Box 1: How many single cells to sequence?</p><p>Most SCS studies to date have analyzed an arbitrary number of cells, ranging from about 50-100 cells from each patient, a number that is mainly dictated by cost. The difficulty in estimating sample sizes (N) for SCS experiments is that these calculations rely on several important factors that are often difficult to measure, including (1) the diversity of the underlying population; (2) the sensitivity required for detecting rare clones (e.g., 1%); and (3) the technical variability of the SCS method. The statistical methods for estimating sample numbers from SCS experiments can be broadly classified into two categories: (1) retrospective estimations; and (2) prospective estimations. Retrospective methods involve back-calculations, in which an arbitrary number of single cells are sequenced (DNA or RNA) in a series of tumors, and a cumulative number of new mutations or transcripts are plotted as a function of the cumulative number of single cells, resulting in a saturation curve. This calculation is analogous to rarefaction calculations in ecology, which are derived from species capture-recapture experiments. In these plots, the cumulative number of species versus the cumulative number of samples are plotted in random order to determine the point at which the number of species detected reaches a plateau in the curve <ref type="bibr" target="#b25">(Gotelli and Colwell 2001)</ref>. Statistical methods for prospective calculations are more challenging to estimate; however, they do not require empirical data sets. A simple power calculation can be formalized as</p><formula xml:id="formula_0">P(d) = 1 -(1 -s) n ,</formula><p>where s is equivalent to the subclonal frequency, and n is equal to the number of single cells that need to be sequenced. Based on this equation, the detection of a 10% subclone would require sequencing at least n = 25 single cells to achieve a 0.9 detection power, whereas a 1.0 detection power would require n = 50 single cells. Similarly, n = 250 single cells are require to detect a 1% subclone with 0.9 detection power, and n = 500 single cells are required for 1.0 power. However, this calculation does not incorporate the number of replicate cells needed to mitigate false positive (FP) and false negative (FN) error rates and eliminate random errors, which may range from r = 2-5 replicate cells depending on the SCS technology (N * r). More sophisticated sample number estimations can be calculated using probabilistic methods from population genetics that were originally developed for discovering rare disease variants based on expected minor allele frequencies (MAFs) in the human population <ref type="bibr" target="#b83">(Wendl and Wilson 2009)</ref>. In summary, a number of statistical methods from ecology and population genetics are useful for estimating the sample sizes required for SCS experiments and should be considered before starting any single-cell sequencing study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Single-cell cancer genomics</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions and future directions</head><p>In the first five years since its inception, SCS has already revolutionized our understanding of cancer evolution and diversity. Although initial studies focused mainly on technology development and intratumor heterogeneity in primary tumors, the field has now shifted toward understanding more complex biological processes in cancer, including invasion, metastasis, and the evolution of therapy resistance. These tools have also begun to provide new insight into the role of rare cells in tumor progression, particularly in the context of metastatic dissemination. Future studies will begin to unravel the spatial organization of tumor clones in tissues and will connect phenotypic behaviors of cancer cells with their genotypes. This will require combining SCS with multiple experimental systems, including xenografts, GEMs, cell cultures, and organoid systems. As DNA-and RNA-SCS methods continue to mature, their translation into the clinic is inevitable and will have a major impact on patient lives.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Timeline of single-cell sequencing milestones in cancer research. This timeline depicts the major discoveries that have occurred in the cancer field of single-cell sequencing and related technology developments.</figDesc><graphic coords="2,87.99,71.38,432.00,186.35" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Applications of single-cell sequencing in cancer research. This figure displays the myriad of applications that single-cell sequencing methods have in cancer research: (A) resolving intratumor heterogeneity; (B) investigating clonal evolution in primary tumors; (C) studying invasion in early stage cancers; (D) tracing metastatic dissemination; (E) genomic profiling of circulating tumor cells; (F) investigating mutation rates and mutator phenotypes; (G) understanding resistance evolution to therapy; (H) understanding cancer stem cells and cell hierarchies; and (I ) studying cell plasticity and epithelialto-mesenchymal transition.</figDesc><graphic coords="3,84.02,71.38,288.00,329.95" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Table of single-cell sequencing publications in cancer research</figDesc><table><row><cell>Research</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>focus</cell><cell>Cancer type</cell><cell>Method</cell><cell>Reference</cell><cell>PMID</cell><cell>Short description</cell></row><row><cell>Primary tumor</cell><cell>Breast</cell><cell cols="2">DNA-SCS Navin et al. (2011)</cell><cell cols="2">21399628 Punctuated copy number evolution and clonal substructure</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>of breast tumors</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>Bladder</cell><cell cols="2">DNA-SCS Li et al. (2012)</cell><cell cols="2">23587365 Single-cell exome sequencing of muscle invasive bladder</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>cancer</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>Kidney</cell><cell cols="2">DNA-SCS Xu et al. (2012)</cell><cell cols="2">22385958 Single-cell exome sequencing of kidney tumor to study</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>diversity</cell><cell></cell></row><row><cell>Primary tumor</cell><cell cols="3">Myeloproliferative DNA-SCS Hou et al. (2012)</cell><cell cols="2">22385957 Single-cell exome sequencing of JAK1 negative</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">myeloproliferative neoplasm</cell></row><row><cell>Primary tumor</cell><cell>AML</cell><cell cols="2">DNA-SCS Jan et al. (2012)</cell><cell cols="2">22932223 Clonal evolution in preleukemic stem cells</cell></row><row><cell>Primary tumor</cell><cell>Glioblastoma</cell><cell cols="2">RNA-SCS Patel et al. (2014)</cell><cell cols="2">24925914 EMT and cell plasticity in glioblastoma</cell></row><row><cell>Primary tumor</cell><cell>Leukemia</cell><cell cols="2">DNA-SCS Potter et al. (2014)</cell><cell cols="2">24056532 Evolution and phylogeny of single cells in leukemia</cell></row><row><cell>Primary tumor</cell><cell>Breast</cell><cell cols="2">DNA-SCS Wang et al. (2014)</cell><cell cols="2">25079324 Mutator phenotypes and punctuated copy number evolution</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>in breast cancer</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>Colon</cell><cell cols="2">DNA-SCS Yu et al. (2014)</cell><cell cols="2">24699064 Single-cell exome sequencing of colon cancer to study</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>diversity</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>AML</cell><cell cols="2">DNA-SCS Hughes et al. (2014)</cell><cell cols="2">25010716 Targeted sequencing of acute myeloid leukemia to study</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>clonal evolution</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>Glioblastoma</cell><cell cols="2">DNA-SCS Francis et al. (2014)</cell><cell cols="2">24893890 Single nucleus sequencing to study EGFR evolution in</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>glioblastoma</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>ALL</cell><cell cols="2">DNA-SCS Gawad et al. (2014)</cell><cell cols="2">25425670 Targeted single-cell sequencing to study clonal substructure</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>in ALL</cell><cell></cell></row><row><cell>Primary tumor</cell><cell>Breast</cell><cell cols="2">DNA-SCS Baslan et al. (2015)</cell><cell cols="2">25858951 Multiplexed single-cell copy number profiling to study clonal</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell cols="2">diversity in breast tumors</cell></row><row><cell>Xenografts</cell><cell>Breast xenografts</cell><cell cols="2">DNA-SCS Eirew et al. (2014)</cell><cell cols="2">25470049 Clonal dynamics and evolution in xenografts</cell></row><row><cell>Cell lines</cell><cell>Colon</cell><cell cols="2">DNA-SCS Zong et al. (2012)</cell><cell cols="2">23258894 Mutation rates in a colon cancer cell line using MALBAC</cell></row><row><cell>CTCs</cell><cell>Melanoma</cell><cell cols="4">RNA-SCS Ramsköld et al. (2012) 22820318 Smart-seq method to profile full length single-cell mRNA</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>transcripts</cell><cell></cell></row><row><cell>CTCs</cell><cell>Breast</cell><cell cols="2">RNA-SCS Powell et al. (2012)</cell><cell cols="2">22586443 Single-cell RNA sequencing of CTCs and breast cancer cell</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>lines</cell><cell></cell></row><row><cell>CTCs</cell><cell>Colon</cell><cell cols="2">DNA-SCS Heitzer et al. (2013)</cell><cell cols="2">23471846 Targeted single-cell sequencing of colon cancer CTCs</cell></row><row><cell>CTCs</cell><cell>Lung</cell><cell cols="2">DNA-SCS Ni et al. (2013)</cell><cell cols="2">24324171 MALBAC single-cell exome sequencing of CTCs in lung</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>cancer</cell><cell></cell></row><row><cell>CTCs</cell><cell>Prostate</cell><cell cols="2">DNA-SCS Lohr et al. (2014)</cell><cell cols="2">24752078 Tracing genomic lineage of CTCs and metastases in prostate</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>cancer</cell><cell></cell></row><row><cell>CTCs</cell><cell>Pancreatic</cell><cell cols="2">RNA-SCS Ting et al. (2014)</cell><cell cols="2">25242334 Transcriptional profiling of single CTCs in pancreatic cancer</cell></row><row><cell>CTCs</cell><cell>Breast</cell><cell cols="2">RNA-SCS Aceto et al. (2014)</cell><cell cols="2">25171411 Single-cell transcriptome profiling of CTCs and CTC clusters</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>in breast cancer</cell><cell></cell></row><row><cell>CTCs/therapy</cell><cell>Prostate</cell><cell cols="2">DNA-SCS Dago et al. (2014)</cell><cell cols="2">25084170 Copy number profiling of single CTCs during therapy in</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>prostate cancer</cell><cell></cell></row><row><cell>Therapy</cell><cell>Cell lines</cell><cell cols="2">RNA-SCS Suzuki et al. (2015)</cell><cell cols="2">25887790 Transcriptome analysis of single lung cancer cell lines after</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>therapy</cell><cell></cell></row><row><cell cols="2">Chromothripsis Cell lines</cell><cell cols="2">DNA-SCS Zhang et al. (2015b)</cell><cell cols="2">26017310 SCS and live cell imaging to study chromothripsis formation</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell>via micronuclei</cell><cell></cell></row></table><note><p>This table lists publications on single-cell sequencing in cancer research, which are organized by research area.</p></note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0"><p>www.genome.org Cold Spring Harbor Laboratory Press on March 4, 2025 -Published by genome.cshlp.org Downloaded from</p></note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgments</head><p>N.E.N. is a Nadia's Gift <rs type="grantName">Foundation Damon Runyon-Rachleff Innovator</rs> (<rs type="grantNumber">DRR-25-13</rs>) and is supported by the <rs type="funder">Lefkofsky Family Foundation</rs>. N.E.N. is a T.C. Hsu Faculty Scholar. This work was supported by grants to N.E.N. from <rs type="funder">NCI (NIH)</rs> (<rs type="grantNumber">1RO1CA169244-01</rs>). This work was also supported by the <rs type="funder">Moonshot Knowledge Gap Award, Center for Genetics &amp; Genomics</rs>, and <rs type="funder">Center for Epigenetics at the MD Anderson Cancer Center</rs>, and an <rs type="funder">Agilent University Relations</rs> Grant. I thank <rs type="person">Anna Unruh</rs> for help in preparing the figure images, <rs type="person">Yong Wang</rs> for preparing the table, and <rs type="person">Alex Davis</rs> for useful discussions.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_3wu4DAV">
+					<idno type="grant-number">DRR-25-13</idno>
+					<orgName type="grant-name">Foundation Damon Runyon-Rachleff Innovator</orgName>
+				</org>
+				<org type="funding" xml:id="_GAMWvZ4">
+					<idno type="grant-number">1RO1CA169244-01</idno>
+				</org>
+			</listOrg>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Circulating tumor cell clusters are oligoclonal precursors of breast cancer metastasis</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Aceto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bardia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Miyamoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Donaldson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Wittner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Spencer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pely</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Engstrom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">158</biblScope>
+			<biblScope unit="page" from="1110" to="1122" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Is tumor growth sustained by rare cancer stem cells or dominant clones?</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Strasser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page" from="4018" to="4021" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Preclinical intravital microscopy of the tumour-stroma interface: invasion, metastasis, and therapy response</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Alexander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Weigelin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Winkler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Friedl</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="659" to="671" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Signatures of mutational processes in human cancer</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Alexandrov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nik-Zainal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Wedge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Aparicio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Behjati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">V</forename><surname>Biankin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Bignell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bolli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Borg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Børresen-Dale</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">500</biblScope>
+			<biblScope unit="page" from="415" to="421" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Inference of tumor evolution during chemotherapy by computational modeling and in situ analysis of genetic and phenotypic cellular diversity</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Almendro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">K</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Randles</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Itzkovitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Marusyk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ametller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Gonzalez-Farre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Muñoz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">G</forename><surname>Russnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Helland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Rep</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="514" to="527" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Punctuated evolution of prostate cancer genomes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Baca</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Prandi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Lawrence</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Mosquera</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Romanel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Drier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Park</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kitabayashi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">Y</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ghandi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">153</biblScope>
+			<biblScope unit="page" from="666" to="677" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Genome-wide copy number analysis of single cells</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Baslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Riggs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stepansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Troge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ravi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Esposito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lakshmi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Protoc</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1024" to="1041" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Optimizing sparse sequencing of single cells for highly multiplex copy number profiling</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Baslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ward</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cox</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Leotta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Riggs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>'italia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="714" to="724" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">An estimation of the number of cells in the human body</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Bianconi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Piovesan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Facchin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Beraudi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Casadei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Frabetti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Vitale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Pelleri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tassani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Piva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Human Biol</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="463" to="471" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Mutator phenotype in cancer: timing and perspectives</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Bielas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Loeb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Environ Mol Mutagen</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="206" to="213" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Human cancers express a mutator phenotype</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Bielas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">R</forename><surname>Loeb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">P</forename><surname>Rubin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>True</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Loeb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="18238" to="18242" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Organoid models of human and mouse ductal pancreatic cancer</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">F</forename><surname>Boj</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">I</forename><surname>Hwang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">I</forename><surname>Chio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">D</forename><surname>Engle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Corbo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jager</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ponz-Sarvise</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Tiriac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Spector</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">160</biblScope>
+			<biblScope unit="page" from="324" to="338" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The causes and consequences of genetic heterogeneity in cancer evolution</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Burrell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Mcgranahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bartek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Swanton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">501</biblScope>
+			<biblScope unit="page" from="338" to="345" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Breast tumor heterogeneity: cancer stem cells or clonal evolution?</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Polyak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Cycle</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="2332" to="2338" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Stem cells: the real culprits in cancer?</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Clarke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Becker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Am</title>
+		<imprint>
+			<biblScope unit="volume">295</biblScope>
+			<biblScope unit="page" from="52" to="59" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Spatially resolved transcriptomics and beyond</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Crosetto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bienko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Van Oudenaarden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Genet</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="57" to="66" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Rapid phenotypic and genomic change in response to therapeutic pressure in prostate cancer inferred by high content analysis of single circulating tumor cells</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Dago</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stepansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Carlsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Luttgen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Baslan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kolatkar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wigler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Bethel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Gross</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">101777</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A quantitative comparison of single-cell whole genome amplification methods</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>De Bourcy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">De</forename><surname>Vlaminck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Kanbar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Gawad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Quake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">105585</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Integrated genome and transcriptome sequencing of the same cell</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Dey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kester</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Spanjaard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bienko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Van Oudenaarden</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="285" to="289" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Dynamics of genomic clones in breast cancer patient xenografts at single-cell resolution</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Eirew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Steif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Khattra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Yap</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Farahani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gelmon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Mar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wan</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">518</biblScope>
+			<biblScope unit="page" from="422" to="426" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Expression profiling. Combinatorial labeling of single cells for gene expression cytometry</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">C</forename><surname>Fan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">K</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Fodor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">347</biblScope>
+			<biblScope unit="page">1258367</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A genetic model for colorectal tumorigenesis</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Fearon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Vogelstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="759" to="767" />
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">EGFR variant heterogeneity in glioblastoma resolved through single-nucleus sequencing</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Maire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">E</forename><surname>Manzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">A</forename><surname>Adalsteinsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Homer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Haidar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Blumenstiel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Pedamallu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Discov</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="956" to="971" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Dissecting the clonal origins of childhood acute lymphoblastic leukemia by single-cell genomics</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gawad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Koh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Quake</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="17947" to="17952" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Intratumor heterogeneity and branched evolution revealed by multiregion sequencing</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gerlinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Rowan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Horswell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Larkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Endesfelder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gronroos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Martinez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Matthews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stewart</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tarpey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">N Engl J Med</title>
+		<imprint>
+			<biblScope unit="volume">366</biblScope>
+			<biblScope unit="page" from="883" to="892" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Quantifying biodiversity: procedures and pitfalls in the measurement and comparison of species richness</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gotelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Colwell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ecol Lett</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="379" to="391" />
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Clonal evolution in cancer</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Greaves</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Maley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">481</biblScope>
+			<biblScope unit="page" from="306" to="313" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Single-cell methylome landscapes of mouse embryonic stem cells and early embryos analyzed using reduced representation bisulfite sequencing</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Wen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Tang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2126" to="2135" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Hallmarks of cancer: the next generation</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hanahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Weinberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="page" from="646" to="674" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">CEL-Seq: single-cell RNAseq by multiplexed linear amplification</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hashimshony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Wagner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Yanai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Rep</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="666" to="673" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Complex tumor genomes inferred from single circulating tumor cells by array-CGH and next-generation sequencing</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Heitzer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Auer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gasch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pichler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ulz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Hoffmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lax</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Waldispuehl-Geigl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Mauermann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lackner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="page" from="2965" to="2975" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Novel patterns of genome rearrangement and their association with survival in breast cancer</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hicks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krasnitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Lakshmi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Riggs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Leibu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Esposito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Alexander</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Troge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Grubor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1465" to="1479" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Multivariate analysis of chromosomal imbalances in breast cancer delineates cytogenetic pathways and reveals complex relationships among imbalances</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Höglund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gisselsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">B</forename><surname>Hansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Säll</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Mitelman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">62</biblScope>
+			<biblScope unit="page" from="2675" to="2680" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Single-cell exome sequencing and monoclonal evolution of a JAK2-negative myeloproliferative neoplasm</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Zhu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Tao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Shao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">148</biblScope>
+			<biblScope unit="page" from="873" to="885" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Clonal architecture of secondary acute myeloid leukemia defined by single-cell sequencing</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Hughes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Magrini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Demeter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">A</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Fulton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Fulton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">C</forename><surname>Eades</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Elliott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Heath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Westervelt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Genet</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">1004462</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Quantitative single-cell RNA-seq with unique molecular identifiers</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Islam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zeisel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Joost</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">La</forename><surname>Manno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Zajac</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kasper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lonnerberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Linnarsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="163" to="166" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Clonal evolution of preleukemic hematopoietic stem cells precedes human acute myeloid leukemia</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Snyder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Corces-Zimmerman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vyas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">L</forename><surname>Weissman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Quake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Majeti</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sci Transl Med</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="149" to="118" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">The basics of epithelial-mesenchymal transition</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kalluri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Weinberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Clin Invest</title>
+		<imprint>
+			<biblScope unit="volume">119</biblScope>
+			<biblScope unit="page" from="1420" to="1428" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Mutational landscape and significance across 12 major cancer types</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kandoth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Mclellan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Vandin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ye</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Niu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Mcmichael</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Wyczalkowski</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">502</biblScope>
+			<biblScope unit="page" from="333" to="339" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Highly multiplexed subcellular RNA sequencing in situ</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Daugharthy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Scheiman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kalhor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">C</forename><surname>Ferrante</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Terry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S</forename><surname>Jeanty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Amamoto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">343</biblScope>
+			<biblScope unit="page" from="1360" to="1363" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">SNES: single nucleus exome sequencing</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Leung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Waters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">55</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Single-cell sequencing analysis characterizes common and cell-lineagespecific mutations in a muscle-invasive bladder cancer</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tsang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Im</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gigascience</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page">12</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Strategies for microarray analysis of limiting amounts of RNA</title>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Livesey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Brief Funct Genomic Proteomic</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="31" to="36" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Human cancers express mutator phenotypes: origin, consequences and targeting</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Loeb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Cancer</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="450" to="457" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Errors in DNA replication as a basis of malignant changes</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Loeb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Springgate</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Battula</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Res</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="2311" to="2321" />
+			<date type="published" when="1974">1974</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Wholeexome sequencing of circulating tumor cells provides a window into metastatic prostate cancer</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">G</forename><surname>Lohr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">A</forename><surname>Adalsteinsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cibulskis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Choudhury</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rosenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cruz-Gordillo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Shalek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Satija</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="479" to="484" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Transcriptome in vivo analysis (TIVA) of spatially defined single cells in live tissue</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lovatt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">K</forename><surname>Ruble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Dueck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fisher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Spaethling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Wolf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Grady</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="190" to="196" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">G&amp;T-seq: parallel sequencing of single-cell genomes and transcriptomes</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">C</forename><surname>Macaulay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Haerty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kumar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">I</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">X</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Teng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goolam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Saurat</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Coupland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">M</forename><surname>Shirley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="519" to="522" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">Z</forename><surname>Macosko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Basu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Satija</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Nemesh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Shekhar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goldman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Tirosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Bialas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kamitaki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Martersteck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">161</biblScope>
+			<biblScope unit="page" from="1202" to="1214" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Cancer as an evolutionary and ecological process</title>
+		<author>
+			<persName><forename type="first">Lmf</forename><surname>Merlo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Pepper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Reid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>Maley</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Cancer</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="924" to="935" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Adapting clinical paradigms to the challenges of cancer clonal evolution</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Murugaesu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">K</forename><surname>Chew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Swanton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Pathol</title>
+		<imprint>
+			<biblScope unit="volume">182</biblScope>
+			<biblScope unit="page" from="1962" to="1971" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Single-cell Hi-C reveals cell-to-cell variability in chromosome structure</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Nagano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lubling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">J</forename><surname>Stevens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Schoenfelder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Yaffe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Dean</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Laue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tanay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Fraser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">502</biblScope>
+			<biblScope unit="page" from="59" to="64" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Cancer genomics: one cell at a time</title>
+		<author>
+			<persName><forename type="first">Navin</forename><surname>Ne ; A</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">452</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Tumor evolution in response to chemotherapy: phenotype versus genotype</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Rep</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="417" to="419" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Tracing the tumor lineage</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hicks</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Oncol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="267" to="283" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Inferring tumor progression from genomic heterogeneity</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Navin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Krasnitz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Meth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Riggs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Eberling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Troge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Grubor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="68" to="80" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Tumour evolution inferred by single-cell sequencing</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Navin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Troge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Andrews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rodgers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcindoo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Stepansky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Esposito</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">472</biblScope>
+			<biblScope unit="page" from="90" to="94" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Reproducible copy number variation patterns among single circulating tumor cells of lung cancer patients</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Ni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zhuo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Duan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Bai</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Chapman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proc Natl Acad Sci</title>
+		<imprint>
+			<biblScope unit="volume">110</biblScope>
+			<biblScope unit="page" from="21083" to="21088" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">The life history of 21 breast cancers</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Nik-Zainal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Van</forename><surname>Loo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Wedge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Alexandrov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Greenman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Lau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Raine</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Marshall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ramakrishna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">149</biblScope>
+			<biblScope unit="page" from="994" to="1007" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">The blockade of immune checkpoints in cancer immunotherapy</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Pardoll</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Cancer</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="252" to="264" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Single-cell RNA-seq highlights intratumoral heterogeneity in primary glioblastoma</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">P</forename><surname>Patel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Tirosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Trombetta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Shalek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Gillespie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wakimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Cahill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">V</forename><surname>Nahed</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">T</forename><surname>Curry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Martuza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">344</biblScope>
+			<biblScope unit="page" from="1396" to="1401" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Full-length RNA-seq from single cells using Smart-seq2</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Picelli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">R</forename><surname>Faridani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Björklund</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Winberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sagasser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Sandberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Protoc</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="171" to="181" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Breast cancer stem cells: a case of mistaken identity?</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Polyak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Stem Cell Rev</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page" from="107" to="109" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Transitions between epithelial and mesenchymal states: acquisition of malignant and stem cell traits</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Polyak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Weinberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Cancer</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="265" to="273" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Single-cell mutational profiling and clonal phylogeny in cancer</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Potter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ermini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Papaemmanuil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Cazzaniga</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Vijayaraghavan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Titley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kearney</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Greaves</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Res</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="2115" to="2125" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Single cell profiling of circulating tumor cells: transcriptional heterogeneity and diversity from breast cancer cell lines</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Powell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Talasaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Coram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Reddy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Telli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Advani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Carlson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Mollick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page">33788</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Full-length mRNA-Seq from single-cell levels of RNA and individual circulating tumor cells</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ramsköld</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Luo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">C</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Deng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">R</forename><surname>Faridani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Daniels</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Khrebtukova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>Loring</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Laurent</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Biotechnol</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="777" to="782" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Limited genomic heterogeneity of circulating melanoma cells in advanced stage patients</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ruiz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Luttgen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kolatkar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Kendall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Flores</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Topp</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Samlowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Mcclay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Bethel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys Biol</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page">16008</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Visualizing and quantifying adhesive signals</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Sabouri-Ghomi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Danuser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Cell Biol</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="541" to="550" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Organoid cultures for the analysis of cancer phenotypes</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Sachs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Clevers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Genet Dev</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="68" to="73" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">The clonal and mutational evolution spectrum of primary triple-negative breast cancers</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">P</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Goya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Oloumi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Ha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Turashvili</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Haffari</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">486</biblScope>
+			<biblScope unit="page" from="395" to="399" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">The cancer stem cell hypothesis: in search of definitions, markers, and relevance</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shipitsin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Polyak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lab Invest</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="page" from="459" to="463" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Computational and analytical challenges in single-cell transcriptomics</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Stegle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Teichmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Marioni</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Genet</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="133" to="145" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Massive genomic rearrangement acquired in a single catastrophic event during cancer development</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Stephens</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">D</forename><surname>Greenman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Yang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">R</forename><surname>Bignell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Mudie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Pleasance</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">W</forename><surname>Lau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Beare</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Stebbings</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">144</biblScope>
+			<biblScope unit="page" from="27" to="40" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Molecular heterogeneity of breast carcinomas and the cancer stem cell hypothesis</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Stingl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Caldas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Rev Cancer</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="791" to="799" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Single-cell analysis of lung adenocarcinoma cell lines reveals diverse expression patterns of individual cells invoked by a molecular target drug treatment</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Suzuki</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Matsushima</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Makinoshima</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sugano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kohno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Tsuchihara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Suzuki</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Genome Biol</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">66</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">mRNA-Seq whole-transcriptome analysis of a single cell</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Barbacioru</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Nordman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bodeau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">B</forename><surname>Tuch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Siddiqui</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="377" to="382" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">Single-cell RNA sequencing identifies extracellular matrix gene expression by pancreatic circulating tumor cells</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Ting</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Wittner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ligorio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Vincent</forename><surname>Jordan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Shah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Miyamoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">T</forename><surname>Aceto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bersani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Brannigan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Xega</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Rep</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="1905" to="1918" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<analytic>
+		<title level="a" type="main">Cancer stem cells: a guide for skeptics</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Tomasson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Cell Biochem</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="page" from="745" to="749" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<analytic>
+		<title level="a" type="main">Single cell analysis of cancer genomes</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Van Loo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Voet</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Genet Dev</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="82" to="91" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<analytic>
+		<title level="a" type="main">Integrated genomic analysis identifies clinically relevant subtypes of glioblastoma characterized by abnormalities in PDGFRA, IDH1, EGFR, and NF1</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">G</forename><surname>Verhaak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Hoadley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Purdom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Qi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Wilkerson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ding</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Golub</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Mesirov</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cancer Cell</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="98" to="110" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Advances and applications of single-cell sequencing technologies</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">E</forename><surname>Navin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Mol Cell</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="598" to="609" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Clonal evolution in breast cancer revealed by single nucleus genome sequencing</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Waters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Leung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Unruh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Roh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Scheet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Vattathil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Liang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">512</biblScope>
+			<biblScope unit="page" from="155" to="160" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">The theory of discovering rare variants via DNA sequencing</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Wendl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Wilson</forename><surname>Rk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Genomics</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">485</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Quantitative assessment of single-cell RNA-sequencing methods</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">F</forename><surname>Neff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Kalisky</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Dalerba</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Treutlein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Rothenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">M</forename><surname>Mburu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">L</forename><surname>Mantalas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">F</forename><surname>Clarke</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Methods</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="41" to="46" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<analytic>
+		<title level="a" type="main">Single-cell exome sequencing reveals single-nucleotide mutation characteristics of a kidney tumor</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Xu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tsang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell</title>
+		<imprint>
+			<biblScope unit="volume">148</biblScope>
+			<biblScope unit="page" from="886" to="895" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Discovery of biclonal origin and a novel oncogene SLC12A5 in colon cancer by single-cell sequencing</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Yu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">K</forename><surname>Wu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Hou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Res</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="701" to="712" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Intratumor heterogeneity in localized lung adenocarcinomas delineated by multiregion sequencing</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fujimoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Wedge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Seth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W</forename><surname>Chow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Cao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gumbs</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">346</biblScope>
+			<biblScope unit="page" from="256" to="259" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Calibrating genomic and allelic coverage bias in single-cell sequencing</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">A</forename><surname>Adalsteinsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cornils</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Jung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Maire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Ligon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Meyerson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jc ; A</forename><surname>Love</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Commun</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">6822</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">Chromothripsis from DNA damage in micronuclei</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">Z</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Spektor</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Cornils</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Francis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">K</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Meyerson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pellman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">522</biblScope>
+			<biblScope unit="page" from="179" to="184" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<analytic>
+		<title level="a" type="main">Genome-wide detection of singlenucleotide and copy-number variations of a single human cell</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Zong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">R</forename><surname>Chapman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><forename type="middle">S</forename><surname>Xie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">338</biblScope>
+			<biblScope unit="page" from="1622" to="1626" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

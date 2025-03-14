@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">General linewidth formula for steady-state multimode lasing in arbitrary cavities</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Chong</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">A</forename><forename type="middle">Douglas</forename><surname>Stone</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Division of Physics and Applied Physics</orgName>
+								<orgName type="department" key="dep2">School of Physical and Mathematical Sciences</orgName>
+								<orgName type="institution">Nanyang Technological University</orgName>
+								<address>
+									<postCode>637371</postCode>
+									<settlement>Singapore</settlement>
+									<country key="SG">Singapore</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Applied Physics</orgName>
+								<orgName type="institution">Yale University</orgName>
+								<address>
+									<postCode>06520</postCode>
+									<settlement>New Haven</settlement>
+									<region>Connecticut</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">General linewidth formula for steady-state multimode lasing in arbitrary cavities</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">CA358C9C3956C21EEF97ABC426F8EF7C</idno>
+					<idno type="DOI">10.1103/PhysRevLett.109.063902</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.2-SNAPSHOT" ident="GROBID" when="2025-03-14T13:56+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>numbers: 42</term>
+					<term>55</term>
+					<term>Ah, 42</term>
+					<term>55</term>
+					<term>Zz</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A formula for the laser linewidth of arbitrary cavities in the multimode non-linear regime is derived from a scattering analysis of the solutions to semiclassical laser theory. The theory generalizes previous treatments of the effects of gain and openness described by the Petermann factor. The linewidth is expressed using quantities based on the non-linear scattering matrix, which can be computed from steady-state ab initio laser theory; unlike previous treatments, no passive cavity or phenomenological parameters are involved. We find that low cavity quality factor, combined with significant dielectric dispersion, can cause substantial deviations from the Schawlow-Townes-Petermann theory.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>The intrinsic linewidth of a laser arises from quantum fluctuations and would be zero in the absence of spontaneous emission. It is the most important property of lasers which arises from the quantization of the electromagnetic field. Its value depends on the properties of the specific laser cavity and gain medium, and was first calculated in the seminal work of Schawlow and Townes (ST), who found the famous linewidth formula <ref type="bibr" target="#b0">[1]</ref> </p><formula xml:id="formula_0">δω ST = ω 0 γ 2 c 2P ,<label>(1)</label></formula><p>where ω 0 is the frequency of the laser mode, γ c is the linewidth of the relevant passive cavity resonance, and P is the modal output power. Note that in this formula the properties of the gain medium are absent. Improved theoretical analyses over the next several decades found three multiplicative corrections to the ST formula, all of which tended to increase the linewidth, in some cases by large factors <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b2">3]</ref>. One correction factor arises from incomplete inversion of the gain medium, and a second one from indirect phase fluctuations due to the instantaneous intensity change caused by spontaneous emission (the Henry α factor) <ref type="bibr" target="#b2">[3]</ref>. The third correction and the main focus of this Letter is the Petermann factor, K. First discovered in the context of transverse gain-guided semiconductor lasers <ref type="bibr" target="#b3">[4]</ref> and subsequently generalized <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref>, this factor arises from the non-Hermitian nature of the laser wave equation, due to the presence of the gain medium as well as the openness of the laser cavity (i.e. spatially non-uniform outcoupling loss). It always leads to an enhancement of the linewidth, even with uniform gain and no gain-guiding. Typically, it is calculated from the non-orthogonal passive cavity resonances as</p><formula xml:id="formula_1">K = dr |ϕ(r)| 2 dr ϕ(r) 2 2 ,<label>(2)</label></formula><p>where the integrals are taken over the cavity <ref type="bibr">[11]</ref>. In effect, the Petermann factor changes the ST linewidth by the replacement γ 2 c → Kγ 2 c . This is a significant correction for lasers with large outcoupling, in the range 1.1-1.6 for the conventional semiconductor lasers studied in Ref. <ref type="bibr" target="#b1">[2]</ref>. We shall refer to the standard theory, inclusive of the Petermann factor, as the Schawlow-Townes-Petermann (STP) theory.</p><p>The extensive and impressive literature on the Petermann factor <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b3">[4]</ref><ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref><ref type="bibr" target="#b9">[10]</ref><ref type="bibr" target="#b10">12</ref>] has, with one major exception <ref type="bibr" target="#b8">[9]</ref>, only treated single-mode lasing near threshold, neglecting the effects of spatial hole-burning. And apart from a recent paper by Schomerus <ref type="bibr" target="#b10">[12]</ref>, the literature has exclusively treated one-dimensional or waveguide lasers, and thus is not directly applicable to the wide variety of complex laser cavities developed during the past twenty years, such as microdisk and deformed-disk, photonic crystal, and random lasers. In this Letter, we derive a general formula for the intrinsic laser linewidth in arbitrary cavities, which is valid far from threshold, with strong spatial hole-burning, and in the multimode regime. The formula relates the linewidth to a non-linear self-consistent scattering matrix (S-matrix), and is based on the recently-developed Steady-state Ab initio Laser Theory (SALT) <ref type="bibr" target="#b11">[13]</ref><ref type="bibr" target="#b12">[14]</ref><ref type="bibr" target="#b13">[15]</ref><ref type="bibr" target="#b14">[16]</ref>.</p><p>SALT is a method for solving the steady-state properties of arbitrary lasing structures, without directly integrating the semiclassical laser equations. "Semiclassical" here refers to the fact that the field is treated via the classical Maxwell equations, whereas the properties of the gain medium are obtained from a quantum-mechanical calculation of a multi-level atom. SALT treats the openness of the cavity exactly, and the non-linear modal interactions and gain saturation are included to infinite order. Its results agree well with numerical integration of the laser equations, but it is computationally much more efficient <ref type="bibr" target="#b15">[17,</ref><ref type="bibr" target="#b16">18]</ref>. It has been applied to complex laser struc-tures such as random <ref type="bibr" target="#b13">[15]</ref> and photonic crystal lasers <ref type="bibr" target="#b17">[19]</ref>. We shall show that the quantum input-output theory of Refs. <ref type="bibr" target="#b18">[20,</ref><ref type="bibr" target="#b19">21]</ref> can be used to calculate quantum fluctuation properties ab initio, in terms of quantities obtainable from SALT. SALT associates each laser mode with a scattering pole-an eigenstate of a classical nonlinear Smatrix with infinite eigenvalue-at a real frequency. We derive a formula for the linewidths of a multimode laser in terms of the residues of these poles and a certain norm of the lasing eigenstate. For a low-Q cavity, the generalized linewidth formula typically finds substantial deviations from the STP prediction: typically the linewidth is significantly less than the standard theory predicts, and in the random laser example shown below, the laser has an anomalous power-dependence near threshold.</p><p>The multimode SALT equations are <ref type="bibr" target="#b14">[16]</ref>:</p><formula xml:id="formula_2">∇ 2 + c ( r) + γ ⊥ D( r) ω µ -ω a + iγ ⊥ ω 2 µ Ψ µ ( r) = 0, D( r) = D 0 ( r) 1 + n ν=1 Γ ν |Ψ ν ( r)| 2 -1 ,<label>(3)</label></formula><p>where Ψ µ is the µ th steady-state lasing mode, ω µ is its frequency, c is the passive cavity dielectric function, ⊥ is the gain medium linewidth, ω a is the atomic transition frequency, D 0 ( r) is the (possibly spatially-varying) pump, and</p><formula xml:id="formula_3">Γ ν ≡ γ 2 ⊥ /(γ 2 ⊥ + (ω ν -ω a ) 2 )</formula><p>is the gain curve. The effective pump D( r) contains an infiniteorder nonlinear "hole-burning" term, which gives rise to mode competition and gain saturation in a quantitatively precise manner. These coupled, time-independent, nonlinear equations are solved with the boundary condition of purely outgoing waves with frequency ω µ at infinity; the solution algorithm is discussed in Refs. <ref type="bibr" target="#b13">[15,</ref><ref type="bibr" target="#b14">16,</ref><ref type="bibr" target="#b16">18]</ref>.</p><p>From the solution to (3), we can compute a selfconsistent S-matrix for any complex frequency ω, not just the discrete lasing frequencies ω µ <ref type="bibr">[22]</ref>. By definition, this S-matrix has one or more poles on the real-ω axis, at ω = ω µ . It can be used to study the effects of vacuum fluctuations and spontaneous emission <ref type="bibr">[23]</ref>. Suppose the cavity has scattering channels indexed by j = 1, 2, . . . , N (e.g. waveguide modes or spherical waves, depending on the scattering geometry). The input and output photon operators, denoted by a 1 , . . . , a N and b 1 , . . . , b N respectively, obey an "input-output" relation <ref type="bibr" target="#b20">[24]</ref>:</p><formula xml:id="formula_4">b i (Ω) = j S ij (Ω) a j (Ω) + ρ V iρ (Ω) d † ρ (-Ω). (<label>4</label></formula><formula xml:id="formula_5">)</formula><p>Here the frequency Ω is measured from the lasing frequency of interest, which we denote by ω 0 , Ω ≡ ω -ω 0 . The d ρ 's are ladder operators for the external reservoirs corresponding to the gain medium, with the index ρ denoting appropriate degrees of freedom in the cavity/reservoir <ref type="bibr">[25]</ref>.</p><p>In order for a, b, and d to obey canonical commutation relations, e.g. [a i (Ω), a j (Ω )] = δ ij δ(Ω-Ω ), the S-matrix must be related to the reservoir coupling coefficients by the fluctuation-dissipation relation <ref type="bibr" target="#b20">[24]</ref> SS</p><formula xml:id="formula_6">† -V V † = 1,<label>(5)</label></formula><p>where 1 is the N × N identity matrix. Next, we define</p><formula xml:id="formula_7">a j (t) = 1 √ 2π dΩ a j (Ω) e -iΩt ,<label>(6)</label></formula><p>and similarly for b j (t) and d ρ (t), describing quantum amplitudes for the field envelopes. Inserting into (4) gives</p><formula xml:id="formula_8">b i (t) = dt k dΩ 2π S ik (Ω) e -iΩ(t-t ) a k (t ) + dt ρ dΩ 2π V iρ (Ω) e -iΩ(t-t ) d † ρ (t ).<label>(7)</label></formula><p>The first term describes scattering of input photons, and the second describes emission from the gain medium. S is strongly constrained by its symmetries. Firstly, optical reciprocity <ref type="bibr" target="#b21">[26]</ref> implies that S can be written as a symmetric matrix, so it has the eigenvalue decomposition</p><formula xml:id="formula_9">S = n |ψ n s n ψ * n |ψ n ψ * n |,<label>(8)</label></formula><p>where each |ψ n denotes a right eigenvector of S with eigenvalue s n , and ψ * n | denotes its unconjugated transpose. These eigenvectors are bi-orthogonal ( ψ * m |ψ n = 0 for m = n) and power-normalized ( ψ n |ψ n = 1).</p><p>Suppose that c (r) is real. The S-matrix of the passive cavity is unitary, and for a high-Q cavity with a resonance near ω 0 , one of the eigenvalues is approximately <ref type="bibr" target="#b22">[27]</ref>:</p><formula xml:id="formula_10">s 0 (Ω) ≈ e iϕ(Ω) Ω -iγ c /2 Ω + iγ c /2 ,</formula><p>where ϕ is an irrelevant phase factor and γ c is the cavity lifetime. The eigenvalue is unimodular for real Ω, and, as required by time-reversal symmetry, its poles and zeros lie at conjugate positions in the complex Ω plane. Adding gain pushes the zero and pole up in the complex frequency plane. The eigenvalue takes the form</p><formula xml:id="formula_11">s 0 (Ω) ≈ e iϕ (Ω) Ω -iΓ z Ω + iΓ p ,<label>(9)</label></formula><p>where Γ z and Γ p are the distances of the zero and pole from the real axis. The lasing threshold is reached as Γ p → 0 -; within the high-Q approximation the eigenvalue takes the form <ref type="bibr" target="#b8">(9)</ref> with Γ z ≈ γ c (the zero moves up the same distance as the pole). This approximation leads directly to the ST formula (high Q will imply K ≈ 1). For arbitrary Q, the S-matrix near Ω = 0 takes the form <ref type="bibr" target="#b8">(9)</ref>, with a generalized residue Γ L (Ω) replacing Ω -iΓ z .</p><p>We denote the eigenvector corresponding to this diverging eigenvalue by Ψ. In the S-matrix decomposition (8), the term with s 0 dominates, so we can write</p><formula xml:id="formula_12">S ≈ |Ψ s 0 Ψ * |Ψ Ψ * |. (<label>10</label></formula><formula xml:id="formula_13">)</formula><p>Using this together with Eq. ( <ref type="formula" target="#formula_6">5</ref>) gives</p><formula xml:id="formula_14">V V † ≈ |Ψ 1 |Ψ T Ψ| 2 |Γ L | 2 Ω 2 + Γ 2 p Ψ|. (<label>11</label></formula><formula xml:id="formula_15">)</formula><p>This equation is satisfied by the ansatz</p><formula xml:id="formula_16">V iρ = 1 Ψ T L Ψ L Γ L Ω + iΓ p Ψ i L u ρ , (<label>12</label></formula><formula xml:id="formula_17">)</formula><p>where u is some vector satisfying ρ u † ρ u ρ = 1, and Ψ i L , is the i th component of the S-matrix eigenvector for the lasing mode. Note that this relation applies not just to the first lasing mode at threshold, but also for above-threshold steady-state lasing modes, using the selfconsistent, non-linear S-matrix obtained from SALT.</p><p>Inserting ( <ref type="formula" target="#formula_16">12</ref>) into ( <ref type="formula" target="#formula_8">7</ref>) and performing the resulting contour integrals gives</p><formula xml:id="formula_18">b i (t) = - Γ L Ψ i L Ψ T L Ψ L t dt e -Γp(t-t ) F (t )<label>(13)</label></formula><formula xml:id="formula_19">F (t) ≡ j Ψ Lj a j (t) + i ρ u ρ d † ρ (t).<label>(14)</label></formula><p>Thus each output photon is a superposition of incoming photons and reservoir excitations from all earlier times. Above threshold, the gain medium undergoes stimulated emission, and the laser field acquires a mean value, B i , so that Eq. (13 becomes:</p><formula xml:id="formula_20">b i (t) = B i - Γ L Ψ i L Ψ T L Ψ L t dt e -Γp(t-t ) F (t ),<label>(15)</label></formula><p>where B i , the steady-state classical outgoing field amplitude in channel i, is related to Ψ i L by</p><formula xml:id="formula_21">|B i | 2 = P ω 0 Ψ i L 2 (<label>16</label></formula><formula xml:id="formula_22">)</formula><p>where P is the total output power of the mode. Due to the fluctuation operator F (t), the phase of the output field has a quantum uncertainty; the rate at which this uncertainty increases with time gives the laser coherence time scale. The fluctuation-induced phase changes are fed back into the classical value of B i , causing a random drift in the phase of the laser field. We ignore this feedback, instead taking a fixed value for B i for all t. This is justifiable because the integrand in <ref type="bibr" target="#b13">(15)</ref> vanishes exponentially for t -T , where T = 1/Γ p will turn out to be the coherence time. The calculations below apply to times much shorter than T . We choose the arbitrary global phase of B i to be real and positive for the specific channel i, and study the quantum fluctuations of the phase via the Hermitian quadrature operator <ref type="bibr" target="#b24">[29]</ref> </p><formula xml:id="formula_23">θ i = i(b † i -b i ) 2B i ,<label>(17)</label></formula><p>which for small phase angles corresponds to the phase of the laser output in channel i. Using ( <ref type="formula" target="#formula_19">14</ref>) and ( <ref type="formula" target="#formula_20">15</ref>), we compute the quantity θ i (t 1 )θ i (t 2 ) , taking a = d = a † i (t 1 ) a j (t 2 ) = 0 and taking the white noise correlator</p><formula xml:id="formula_24">d ρ (t 1 ) d † ν (t 2 ) = f ρ δ ρν δ(t 1 -t 2 ),<label>(18)</label></formula><p>where f ρ = [P 2 /(P 2 -P 1 )] ρ describes the local population inversion <ref type="bibr" target="#b20">[24]</ref>. The zero-point contributions to θ i (t 1 )θ i (t 2 ) from the photon input and the gain medium cancel exactly, leaving FIG. <ref type="figure">2:</ref> (color online) Laser linewidth vs. inverse modal output power 1/P , for the two lasers studied in Fig. <ref type="figure" target="#fig_0">1</ref>. The linewidths are computed using Eq. ( <ref type="formula" target="#formula_27">21</ref>), assuming the inversion factor f = 1. (a) The high-Q cavity laser linewidths show the standard 1/P dependence for both modes. (b)</p><formula xml:id="formula_25">θ i (t 1 )θ i (t 2 ) = |Γ L | 2 |Ψ T L Ψ L | 2 ω 0 4Γ p P e -Γp|t1-t2| f ,<label>(19)</label></formula><p>The linewidth of the first mode of the random laser deviates strongly from the 1/P Schawlow-Townes-Petermann dependence at lower pump values. At large pump values the linewidths of both mode 1 (solid curve) and mode 2 (dashed curve) vary as 1/P , but with values roughly half that of the standard STP prediction (dotted curve).</p><p>where P is the modal output power from Eq. ( <ref type="formula" target="#formula_21">16</ref>), and</p><formula xml:id="formula_26">f ≡ ρ f ρ |u ρ | 2<label>(20)</label></formula><p>is the inversion factor correction mentioned at the beginning of this Letter. The phase uncertainty accumulated over time ∆t is</p><formula xml:id="formula_27">[θ i (t + ∆t) -θ i (t)] 2 = ∆ω∆t + O(∆t 2 ), where ∆ω = |Γ L | 2 |Ψ T L Ψ L | 2 ω 0 2P f ≡ ω 0 γ 2 L 2P f<label>(21)</label></formula><p>This is our central result: a general linewidth formula in which</p><formula xml:id="formula_28">|Γ L | 2 /|Ψ T L Ψ L | 2 ≡ γ 2</formula><p>L replaces the quantity Kγ 2 c in the conventional Schawlow-Townes-Petermann linewidth formula. We can think of γ L as a generalized cavity decay rate, corrected for the presence of gain, openness, holeburning, and saturation. It is calculable ab initio, with no phenomenological parameters, from the non-linear classical S-matrix of SALT. The lasing eigenvector is found by diagonalizing the S-matrix at each lasing pole, and the residue Γ L is found by numerically integrating the relevant eigenvalue of the S-matrix around the pole. Eq. ( <ref type="formula" target="#formula_27">21</ref>) only includes the contribution to the laser linewidth from direct phase fluctuations; the indirect phase fluctuations <ref type="bibr" target="#b2">[3]</ref> have been omitted for simplicity.</p><p>The relation of the Petermann factor to the residue of the lasing pole for a waveguide laser was emphasized early on by Henry <ref type="bibr" target="#b5">[6]</ref>, and developed for more general cavities in an S-matrix formulation in Refs. <ref type="bibr" target="#b10">[12,</ref><ref type="bibr" target="#b25">30]</ref>, but in all previous cases for a single lasing mode at threshold, i.e. without non-linear effects. Goldberg et al. <ref type="bibr" target="#b8">[9]</ref> gave an excellent and detailed analysis of the linewidth for multimode lasing, including non-linear effects, but using an approach applicable only to one-dimensional cavities with spatially uniform dielectric functions. To our knowledge, our Eq. ( <ref type="formula" target="#formula_27">21</ref>), combined with SALT, is unique in providing a quantitative method for calculating the intrinsic laser linewidth in arbitrary cavities and pump profiles in the multimode, non-linear regime. Assuming steady-state multimode lasing exists, the present theory makes no significant further approximations, and hence it can be used to evaluate the validity of the STP linewidth formula <ref type="bibr" target="#b1">[2]</ref>.</p><p>We can connect Eq. ( <ref type="formula" target="#formula_27">21</ref>) to previous results involving quasi-modes, such as Refs. <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b6">7]</ref>, by examining the S-matrix of a passive cavity. A quasimode ϕ(r) is a purely-outgoing solution to the wave equation for a passive cavity with dielectric function (r), at complex frequency ω p , where Im(ω p ) ≡ -γ c /2. Let Ψ be the Smatrix eigenvector for this pole, normalized by Ψ † Ψ = 1, and let Γ be the residue of the eigenvalue. It can be shown</p><formula xml:id="formula_29">that [22] Im ω 2 p dr (r) |ϕ(r)| 2 = -Re[ω p ],<label>(22)</label></formula><formula xml:id="formula_30">(r) ϕ 2 (r) = i Γ - i 2ω p Ψ T Ψ. (<label>23</label></formula><formula xml:id="formula_31">)</formula><p>Here the spatial integrals are taken over the cavity. For real (r), and in the limit</p><formula xml:id="formula_32">|k p | Γ ∼ γ c , (22)-(23) give |Γ| 2 |Ψ T Ψ| 2 ≈ dr (r) |ϕ(r)| 2 dr (r) ϕ(r) 2 2 γ 2 c = Kγ 2 c .<label>(24)</label></formula><p>Thus, in this slightly generalized version, Kγ 2 c is approximately equal to our γ 2 L , when evaluated for the passive cavity. Note that both <ref type="bibr" target="#b20">(24)</ref> and its active-cavity generalization in Ref. <ref type="bibr" target="#b10">[12]</ref> do not include the effects of dielectric dispersion, which can have a significant effect on γ 2 L . Fig. <ref type="figure" target="#fig_0">1 compares γ 2</ref> L to Kγ 2 c for two one-dimensional microcavity multimode lasers: a high-Q, uniform cavity for which the two quantities agree rather well, and a low-Q random laser, for which major deviations are found. For the random laser, at pump strengths up to four times threshold, γ L for the first lasing mode depends strongly on P , causing the overall power dependence to depart substantially from the standard 1/P dependence (Fig. <ref type="figure">2</ref>). For higher pump strengths, γ L is approximately constant, but the conventional linewidth prefactor Kγ 2 c overestimates it by almost a factor of two. In the standard theory, the STP linewidth is expected to be a lower bound set by field quantization, but insofar as the usual STP formula relies on passive cavity quantities it is not a reliable bound. Analysis of our results indicates that this deviation from the STP theory arises from low cavity Q and from the frequency dispersion of the dielectric constant of the gain medium, which cause a significant reduction of the residue of the lasing pole at threshold compared to its value in the passive cavity. We do not believe that the apparent violation of the STP bound indicates any new quantum fluctuation properties of the laser. In future work, our generalized linewidth formula will allow such issues to be studied systematically.</p><p>This research was partially supported by NSF grant No. DMR-0908437, and by NRF (Singapore) grant No. NRFF2012-02. The authors would like to thank H. Cao, M. Devoret, and H. Schomerus for helpful discussions.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>FIG. 1 :</head><label>1</label><figDesc>FIG. 1: (color online) Output power and cavity decay rates γ 2 L for two uniformly pumped one-dimensional microcavity lasers. A slab of gain material with background = 1.2, bounded on the left by a perfect mirror and on the right by an = 9 slab (5% of the total length) acting as a partially transmitting mirror (left schematic). A random laser consisting of 50 slabs of gain material, each with background uniformly distributed in [1, 1.2] (right schematic). Both systems exhibit two-mode lasing at the high end of the pump range. Plots (a),(b) show modal output powers vs. the normalized pump [16]. Plots (c),(d) show the square of the generalized cavity decay rate γ 2 L ≡ |ΓL| 2 /|Ψ T L ΨL| 2 which determines the linewidths according to Eq. (21). Solid and dashed curves denote modes 1 and 2 respectively. The horizontal dotted lines show the conventional result, Kγ 2 c , computed from the passive cavity quasimodes, which fails for the random laser.</figDesc></figure>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Schawlow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Townes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page">1940</biblScope>
+			<date type="published" when="1958">1958</date>
+		</imprint>
+	</monogr>
+	<note>Note that the original paper found twice the value of Eq. (1) by working near threshold. Far above threshold, only phase fluctuations matter, leading to Eq. (1), which is nonetheless typically quoted as the ST linewidth. In this Letter, we calculate only the effect of phase fluctuations, so in the high-Q limit our results agree with Eq. (1) even at threshold.</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Hamel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Woerdman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page">1506</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Henry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Quant. Elect</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page">259</biblScope>
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Petermann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Quant. Elect</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page">566</biblScope>
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Haus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kawakami</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE J. Quant. Elect</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page">63</biblScope>
+			<date type="published" when="1985">1985</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>Henry</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Lightwave. Tech. LT</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page">288</biblScope>
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Siegman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page">1264</biblScope>
+			<date type="published" when="1989">1989. 1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">A</forename><surname>Hamel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Woerdman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page">2785</biblScope>
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Goldberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">W</forename><surname>Milonni</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sundaram</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">1969</biblScope>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">Y.-J</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">E</forename><surname>Siegman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">68</biblScope>
+			<biblScope unit="page">43808</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Schomerus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Review A</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page">61801</biblScope>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+	<note>In this paper a formula for the Petermann factor at the first threshold for the active cavity is found; it is not exact at the first threshold, as is our Eq. (21), but it agrees semi-quantitatively with our result. Schomerus&apos; formula does not apply to the non-linear and multimode regime.</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Türeci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Stone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Collier</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page">43822</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Türeci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Stone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page">13813</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">E</forename><surname>Türeci</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rotter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Stone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">320</biblScope>
+			<biblScope unit="page">643</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">D</forename><surname>Chong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">D</forename><surname>Stone</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">63824</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">16895</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Cerjan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page">475</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Chua</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Opt. Express</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page">1539</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Caves</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. D</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page">1817</biblScope>
+			<date type="published" when="1982">1982</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Jeffers</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Imoto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Loudon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. A</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page">3346</biblScope>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">W J</forename><surname>Beenakker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">81</biblScope>
+			<biblScope unit="page">1829</biblScope>
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Potton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rep. Prog. Phys</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="page">717</biblScope>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">F</forename><surname>Walls</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">J</forename><surname>Milburn</surname></persName>
+		</author>
+		<title level="m">Quantum Optics</title>
+		<meeting><address><addrLine>Berling</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lodahl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lagendijk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Phys. Rev. Lett</title>
+		<imprint>
+			<biblScope unit="volume">94</biblScope>
+			<biblScope unit="page">153905</biblScope>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Clerk</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rev. Mod. Phys</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page">1155</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">H</forename><surname>Schomerus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physica A</title>
+		<imprint>
+			<biblScope unit="volume">278</biblScope>
+			<biblScope unit="page">469</biblScope>
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
