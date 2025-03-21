@@ -9,6 +9,9 @@ Ablauf der Implementierung:
 - Auto-Download der PDFs über Zotero, falls nicht gefunden manuell überprüfen
     - Für einige PDF kein Institutional Access (dann über Google, sci-hub gesucht)
     - Einige PDFs sind retracted 
+- TEI extraction using GROBID model (small vs. full model comparison)
+    - improving the extraction by getting only the body text from the TEI (references for example are not useful for substaniating the statements)
+    - Additionally: Extracting the text manually for some special papers, where the text extraction failed: r071, r147
 
 Ideas for result improvements:
 - use full GROBID model
