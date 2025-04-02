@@ -1014,6 +1014,82 @@
                     "false_positives": 14,
                     "false_negatives": 36
                 }
+            },
+            "llama3.3": {
+                "all_labels": {
+                    "accuracy": 0.514,
+                    "total": 247,
+                    "correct": 127,
+                    "false_predictions": 120,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 109,
+                            "unsubstantiate": 98,
+                            "partially substantiate": 8,
+                            "fully substantiate": 3,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 7,
+                            "partially substantiate": 7,
+                            "fully substantiate": 0,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 124,
+                            "unsubstantiate": 47,
+                            "partially substantiate": 55,
+                            "fully substantiate": 22,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "all_labels_exclude_not_available": {
+                    "accuracy": 0.512,
+                    "total": 244,
+                    "correct": 125,
+                    "false_predictions": 119,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 108,
+                            "unsubstantiate": 97,
+                            "partially substantiate": 8,
+                            "fully substantiate": 3,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 7,
+                            "partially substantiate": 7,
+                            "fully substantiate": 0,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 122,
+                            "unsubstantiate": 46,
+                            "partially substantiate": 55,
+                            "fully substantiate": 21,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "two_labels": {
+                    "accuracy": 0.737,
+                    "total": 247,
+                    "correct": 182,
+                    "false_predictions": 65,
+                    "false_positives": 11,
+                    "false_negatives": 54
+                },
+                "two_labels_exclude_not_available": {
+                    "accuracy": 0.738,
+                    "total": 244,
+                    "correct": 180,
+                    "false_predictions": 64,
+                    "false_positives": 11,
+                    "false_negatives": 53
+                }
             }
         },
         "full_model_texts": {
