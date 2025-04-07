@@ -75,7 +75,7 @@ def prompting_model(df, model, save_intermediate_results=False, save_every=10, i
             df.at[index, 'Model Classification'] = response
 
             if save_intermediate_results and index % save_every == 0:
-                df.to_pickle(f"../data/dfs/{embedding}{'_no_prev_chunking' if no_prev_chunking else ''}/{grobid_model}/ReferenceErrorDetection_data_with_prompt_results_{model}_intermed.pkl")
+                df.to_pickle(f"../data/dfs/{embedding}{'_no_prev_chunking' if no_prev_chunking else ''}/{grobid_model}/ReferenceErrorDetection_data_with_prompt_results_{model.replace(':','.')}_intermed.pkl")
             end_time = time.time()
             print(f"Took {round(end_time - start_time, 2)} seconds", flush=True)
             print("==================================", flush=True)
@@ -100,4 +100,4 @@ print(ids_not_to_prompt)
 print("Start prompting script", flush=True)
 df2 = prompting_model(df2_old, model, save_intermediate_results=True, save_every=1, ids_not_to_prompt=ids_not_to_prompt)
 
-df2.to_pickle(f"../data/dfs/{embedding}{'_no_prev_chunking' if no_prev_chunking else ''}/{grobid_model}/ReferenceErrorDetection_data_with_prompt_results_{model}.pkl")
+df2.to_pickle(f"../data/dfs/{embedding}{'_no_prev_chunking' if no_prev_chunking else ''}/{grobid_model}/ReferenceErrorDetection_data_with_prompt_results_{model.replace(':','.')}.pkl")
