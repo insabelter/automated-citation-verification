@@ -1015,6 +1015,158 @@
                     "false_negatives": 36
                 }
             },
+            "llama3.1:405b": {
+                "all_labels": {
+                    "accuracy": 0.543,
+                    "total": 247,
+                    "correct": 134,
+                    "false_predictions": 113,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 109,
+                            "unsubstantiate": 95,
+                            "partially substantiate": 9,
+                            "fully substantiate": 5,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 5,
+                            "partially substantiate": 7,
+                            "fully substantiate": 2,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 124,
+                            "unsubstantiate": 34,
+                            "partially substantiate": 58,
+                            "fully substantiate": 32,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "all_labels_exclude_not_available": {
+                    "accuracy": 0.541,
+                    "total": 244,
+                    "correct": 132,
+                    "false_predictions": 112,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 108,
+                            "unsubstantiate": 94,
+                            "partially substantiate": 9,
+                            "fully substantiate": 5,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 5,
+                            "partially substantiate": 7,
+                            "fully substantiate": 2,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 122,
+                            "unsubstantiate": 33,
+                            "partially substantiate": 58,
+                            "fully substantiate": 31,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "two_labels": {
+                    "accuracy": 0.785,
+                    "total": 247,
+                    "correct": 194,
+                    "false_predictions": 53,
+                    "false_positives": 14,
+                    "false_negatives": 39
+                },
+                "two_labels_exclude_not_available": {
+                    "accuracy": 0.787,
+                    "total": 244,
+                    "correct": 192,
+                    "false_predictions": 52,
+                    "false_positives": 14,
+                    "false_negatives": 38
+                }
+            },
+            "llama3.3": {
+                "all_labels": {
+                    "accuracy": 0.514,
+                    "total": 247,
+                    "correct": 127,
+                    "false_predictions": 120,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 109,
+                            "unsubstantiate": 98,
+                            "partially substantiate": 8,
+                            "fully substantiate": 3,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 7,
+                            "partially substantiate": 7,
+                            "fully substantiate": 0,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 124,
+                            "unsubstantiate": 47,
+                            "partially substantiate": 55,
+                            "fully substantiate": 22,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "all_labels_exclude_not_available": {
+                    "accuracy": 0.512,
+                    "total": 244,
+                    "correct": 125,
+                    "false_predictions": 119,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 108,
+                            "unsubstantiate": 97,
+                            "partially substantiate": 8,
+                            "fully substantiate": 3,
+                            "invalid label": 0
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 7,
+                            "partially substantiate": 7,
+                            "fully substantiate": 0,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 122,
+                            "unsubstantiate": 46,
+                            "partially substantiate": 55,
+                            "fully substantiate": 21,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "two_labels": {
+                    "accuracy": 0.737,
+                    "total": 247,
+                    "correct": 182,
+                    "false_predictions": 65,
+                    "false_positives": 11,
+                    "false_negatives": 54
+                },
+                "two_labels_exclude_not_available": {
+                    "accuracy": 0.738,
+                    "total": 244,
+                    "correct": 180,
+                    "false_predictions": 64,
+                    "false_positives": 11,
+                    "false_negatives": 53
+                }
+            },
             "llama3.1:70b_annotated": {
                 "all_labels": {
                     "accuracy": 0.53,
@@ -1167,156 +1319,156 @@
                     "false_negatives": 34
                 }
             },
-            "llama3.1:405b": {
+            "llama3.1:70b_two_labels_annotated": {
                 "all_labels": {
-                    "accuracy": 0.543,
-                    "total": 247,
-                    "correct": 134,
-                    "false_predictions": 113,
+                    "accuracy": 0.712,
+                    "total": 250,
+                    "correct": 178,
+                    "false_predictions": 72,
                     "type_predictions": {
                         "unsubstantiate": {
-                            "total": 109,
-                            "unsubstantiate": 95,
-                            "partially substantiate": 9,
-                            "fully substantiate": 5,
+                            "total": 116,
+                            "unsubstantiate": 104,
+                            "partially substantiate": 0,
+                            "fully substantiate": 12,
                             "invalid label": 0
                         },
                         "partially substantiate": {
-                            "total": 14,
-                            "unsubstantiate": 5,
-                            "partially substantiate": 7,
-                            "fully substantiate": 2,
+                            "total": 0,
+                            "unsubstantiate": 0,
+                            "partially substantiate": 0,
+                            "fully substantiate": 0,
                             "invalid label": 0
                         },
                         "fully substantiate": {
-                            "total": 124,
-                            "unsubstantiate": 34,
-                            "partially substantiate": 58,
-                            "fully substantiate": 32,
+                            "total": 134,
+                            "unsubstantiate": 60,
+                            "partially substantiate": 0,
+                            "fully substantiate": 74,
                             "invalid label": 0
                         }
                     }
                 },
                 "all_labels_exclude_not_available": {
-                    "accuracy": 0.541,
-                    "total": 244,
-                    "correct": 132,
-                    "false_predictions": 112,
+                    "accuracy": 0.713,
+                    "total": 247,
+                    "correct": 176,
+                    "false_predictions": 71,
                     "type_predictions": {
                         "unsubstantiate": {
-                            "total": 108,
-                            "unsubstantiate": 94,
-                            "partially substantiate": 9,
-                            "fully substantiate": 5,
+                            "total": 115,
+                            "unsubstantiate": 103,
+                            "partially substantiate": 0,
+                            "fully substantiate": 12,
                             "invalid label": 0
                         },
                         "partially substantiate": {
-                            "total": 14,
-                            "unsubstantiate": 5,
-                            "partially substantiate": 7,
-                            "fully substantiate": 2,
+                            "total": 0,
+                            "unsubstantiate": 0,
+                            "partially substantiate": 0,
+                            "fully substantiate": 0,
                             "invalid label": 0
                         },
                         "fully substantiate": {
-                            "total": 122,
-                            "unsubstantiate": 33,
-                            "partially substantiate": 58,
-                            "fully substantiate": 31,
+                            "total": 132,
+                            "unsubstantiate": 59,
+                            "partially substantiate": 0,
+                            "fully substantiate": 73,
                             "invalid label": 0
                         }
                     }
                 },
                 "two_labels": {
-                    "accuracy": 0.785,
-                    "total": 247,
-                    "correct": 194,
-                    "false_predictions": 53,
-                    "false_positives": 14,
-                    "false_negatives": 39
+                    "accuracy": 0.712,
+                    "total": 250,
+                    "correct": 178,
+                    "false_predictions": 72,
+                    "false_positives": 12,
+                    "false_negatives": 60
                 },
                 "two_labels_exclude_not_available": {
-                    "accuracy": 0.787,
-                    "total": 244,
-                    "correct": 192,
-                    "false_predictions": 52,
-                    "false_positives": 14,
-                    "false_negatives": 38
+                    "accuracy": 0.713,
+                    "total": 247,
+                    "correct": 176,
+                    "false_predictions": 71,
+                    "false_positives": 12,
+                    "false_negatives": 59
                 }
             },
-            "llama3.3": {
+            "llama3.1:70b_two_labels_annotated_corrected_statements": {
                 "all_labels": {
-                    "accuracy": 0.514,
-                    "total": 247,
-                    "correct": 127,
-                    "false_predictions": 120,
+                    "accuracy": 0.704,
+                    "total": 250,
+                    "correct": 176,
+                    "false_predictions": 74,
                     "type_predictions": {
                         "unsubstantiate": {
-                            "total": 109,
-                            "unsubstantiate": 98,
-                            "partially substantiate": 8,
-                            "fully substantiate": 3,
+                            "total": 116,
+                            "unsubstantiate": 106,
+                            "partially substantiate": 0,
+                            "fully substantiate": 10,
                             "invalid label": 0
                         },
                         "partially substantiate": {
-                            "total": 14,
-                            "unsubstantiate": 7,
-                            "partially substantiate": 7,
+                            "total": 0,
+                            "unsubstantiate": 0,
+                            "partially substantiate": 0,
                             "fully substantiate": 0,
                             "invalid label": 0
                         },
                         "fully substantiate": {
-                            "total": 124,
-                            "unsubstantiate": 47,
-                            "partially substantiate": 55,
-                            "fully substantiate": 22,
+                            "total": 134,
+                            "unsubstantiate": 64,
+                            "partially substantiate": 0,
+                            "fully substantiate": 70,
                             "invalid label": 0
                         }
                     }
                 },
                 "all_labels_exclude_not_available": {
-                    "accuracy": 0.512,
-                    "total": 244,
-                    "correct": 125,
-                    "false_predictions": 119,
+                    "accuracy": 0.704,
+                    "total": 247,
+                    "correct": 174,
+                    "false_predictions": 73,
                     "type_predictions": {
                         "unsubstantiate": {
-                            "total": 108,
-                            "unsubstantiate": 97,
-                            "partially substantiate": 8,
-                            "fully substantiate": 3,
+                            "total": 115,
+                            "unsubstantiate": 105,
+                            "partially substantiate": 0,
+                            "fully substantiate": 10,
                             "invalid label": 0
                         },
                         "partially substantiate": {
-                            "total": 14,
-                            "unsubstantiate": 7,
-                            "partially substantiate": 7,
+                            "total": 0,
+                            "unsubstantiate": 0,
+                            "partially substantiate": 0,
                             "fully substantiate": 0,
                             "invalid label": 0
                         },
                         "fully substantiate": {
-                            "total": 122,
-                            "unsubstantiate": 46,
-                            "partially substantiate": 55,
-                            "fully substantiate": 21,
+                            "total": 132,
+                            "unsubstantiate": 63,
+                            "partially substantiate": 0,
+                            "fully substantiate": 69,
                             "invalid label": 0
                         }
                     }
                 },
                 "two_labels": {
-                    "accuracy": 0.737,
-                    "total": 247,
-                    "correct": 182,
-                    "false_predictions": 65,
-                    "false_positives": 11,
-                    "false_negatives": 54
+                    "accuracy": 0.704,
+                    "total": 250,
+                    "correct": 176,
+                    "false_predictions": 74,
+                    "false_positives": 10,
+                    "false_negatives": 64
                 },
                 "two_labels_exclude_not_available": {
-                    "accuracy": 0.738,
-                    "total": 244,
-                    "correct": 180,
-                    "false_predictions": 64,
-                    "false_positives": 11,
-                    "false_negatives": 53
+                    "accuracy": 0.704,
+                    "total": 247,
+                    "correct": 174,
+                    "false_predictions": 73,
+                    "false_positives": 10,
+                    "false_negatives": 63
                 }
             }
         },
