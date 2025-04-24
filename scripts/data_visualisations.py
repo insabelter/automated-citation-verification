@@ -1,13 +1,23 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def show_distribution(df, column_name, include_nan=True):
+citation_functions = {
+    "Use": ["Apply", "Extend"],
+    "Compare": ["Criticize", "Contrast", "Confirm"],
+    "Related": ["Definition/Proof", "Fundamentals", "Acknowledge"],
+    "Background": ["Introduction/Bigger picture", "Unrelated/Unclear"]
+}
+
+def show_distribution(df, column_name, include_nan=True, sorting=None):
     # Count the occurrences of each source, including NaN values if specified
     source_counts = df[column_name].value_counts(dropna=(not include_nan))
 
     # Replace NaN with a string label for visualization
     if include_nan:
         source_counts.index = source_counts.index.fillna('NaN')
+
+    if sorting:
+        source_counts = source_counts.reindex(sorting, fill_value=0)
 
     # Plot the bar diagram
     plt.figure(figsize=(10, 6))
@@ -19,12 +29,12 @@ def show_distribution(df, column_name, include_nan=True):
 
     # Add the total number above each bar, aligned vertically with the middle of the bar
     for p in ax.patches:
-        ax.annotate(str(p.get_height()), (p.get_x() + p.get_width() / 2., p.get_height() + 1), 
+        ax.annotate(str(p.get_height()), (p.get_x() + p.get_width() / 2., p.get_height() + (p.get_width()*0.5)), 
                     ha='center', va='center')
 
     plt.show()
 
-def show_distribution_pie(df, column_name, include_nan=True):
+def show_distribution_pie(df, column_name, include_nan=True, sorting=None):
     # Count the occurrences of each source, including NaN values if specified
     source_counts = df[column_name].value_counts(dropna=(not include_nan))
 
@@ -32,9 +42,12 @@ def show_distribution_pie(df, column_name, include_nan=True):
     if include_nan:
         source_counts.index = source_counts.index.fillna('NaN')
 
+    if sorting:
+        source_counts = source_counts.reindex(sorting, fill_value=0)
+
     # Plot the pie chart
     plt.figure(figsize=(8, 8))
-    plt.pie(source_counts, labels=source_counts.index, autopct='%1.1f%%', startangle=140)
+    plt.pie(source_counts, labels=source_counts.index, autopct='%1.1f%%', startangle=90, counterclock=False)
     plt.title('Distribution of column: ' + column_name)
     plt.show()
 
@@ -114,7 +127,7 @@ def show_distribution_comparison_pie(df1, df2, column_name, df1_name="Full Data"
     total_df1 = source_counts_df1.sum()
     labels_df1, percentages_df1 = filter_labels_and_percentages(source_counts_df1, total_df1, label_threshold_percent)
     wedges, texts, autotexts = axes[0].pie(
-        source_counts_df1, labels=labels_df1, autopct='%1.1f%%', startangle=140,
+        source_counts_df1, labels=labels_df1, autopct='%1.1f%%', startangle=90, counterclock=False,
         colors=[color_map[cat] for cat in source_counts_df1.index], pctdistance=0.85
     )
     for text in texts:
@@ -127,7 +140,7 @@ def show_distribution_comparison_pie(df1, df2, column_name, df1_name="Full Data"
     total_df2 = source_counts_df2.sum()
     labels_df2, percentages_df2 = filter_labels_and_percentages(source_counts_df2, total_df2, label_threshold_percent)
     wedges, texts, autotexts = axes[1].pie(
-        source_counts_df2, labels=labels_df2, autopct='%1.1f%%', startangle=140,
+        source_counts_df2, labels=labels_df2, autopct='%1.1f%%', startangle=90, counterclock=False,
         colors=[color_map[cat] for cat in source_counts_df2.index], pctdistance=0.85
     )
     for text in texts:
@@ -151,7 +164,7 @@ def show_retracted_distribution_pie(df):
 
     # Plot the pie chart
     plt.figure(figsize=(8, 8))
-    plt.pie(retracted_counts, labels=retracted_counts.index, autopct='%1.1f%%', startangle=140)
+    plt.pie(retracted_counts, labels=retracted_counts.index, autopct='%1.1f%%', startangle=90, counterclock=False)
     plt.title('Distribution of Retracted Articles')
     plt.show()
 
@@ -185,4 +198,83 @@ def show_source_distribution_citing_article_retracted(df):
     plt.ylabel('Count')
     plt.xticks(rotation=45, ha='right')
     plt.legend()
+    plt.show()
+
+def show_citation_function_main_distribution_pie(df, show_totals=False):
+    # Strip whitespaces from the "Citation Function: Main" column
+    df = df[df["Citation Function: Main"].notna()].copy()
+    df["Citation Function: Main"] = df["Citation Function: Main"].str.strip()
+
+    # Count the occurrences of each source, including NaN values if specified
+    source_counts = df["Citation Function: Main"].value_counts()
+
+    # Reindex source_counts to match the custom order
+    source_counts = source_counts.reindex(citation_functions.keys())
+
+    # Helper function to format labels with totals if required
+    def format_label(label, count):
+        return f"{label} ({count})" if show_totals else label
+
+    # Format labels with totals if the parameter is set to True
+    labels = [format_label(label, count) for label, count in zip(source_counts.index, source_counts)]
+
+    # Plot the pie chart
+    plt.figure(figsize=(8, 8))
+    plt.pie(source_counts, labels=labels, autopct='%1.1f%%', startangle=90, counterclock=False)
+    plt.title('Distribution of column: ' + "Citation Function: Main")
+    plt.show()
+
+def get_color(sub_function):
+    # Define colors for each main category
+    main_category_colors = {
+        "Use": "#1f77b4",  # Blue
+        "Compare": "#ff7f0e",  # Orange
+        "Related": "#2ca02c",  # Green
+        "Background": "#d62728"  # Red
+    }
+
+    # Generate sub-category colors based on main category colors
+    sub_function_colors = {}
+    for main_category, sub_categories in citation_functions.items():
+        base_color = main_category_colors[main_category]
+        for i, sub_category in enumerate(sub_categories):
+            # Adjust lightness for sub-categories
+            lightness_factor = 1 - (i * 0.2)
+            rgba = plt.cm.colors.to_rgba(base_color)
+            adjusted_rgba = tuple(channel * lightness_factor if index < 3 else channel for index, channel in enumerate(rgba))
+            sub_function_colors[sub_category] = plt.cm.colors.to_hex(adjusted_rgba)
+            
+    if sub_function in sub_function_colors:
+        return sub_function_colors[sub_function]
+    else:
+        print(f"Warning: {sub_function} not found in sub_function_colors.")
+        return "#000000"  # Default color (black) for unknown categories
+    
+def show_citation_function_sub_distribution_pie(df, show_totals=False):
+    sub_functions = [sub for sub_list in citation_functions.values() for sub in sub_list]
+
+    # Strip whitespaces from the "Citation Function: Sub" column
+    df = df[df["Citation Function: Sub"].notna()].copy()
+    df["Citation Function: Sub"] = df["Citation Function: Sub"].str.strip()
+
+    # Count the occurrences of each source, including NaN values if specified
+    source_counts = df["Citation Function: Sub"].value_counts()
+
+    # Reindex source_counts to match the custom order
+    source_counts = source_counts.reindex(sub_functions, fill_value=0)
+
+    # Map the colors to the sub-functions
+    colors = [get_color(sub_function) for sub_function in source_counts.index]
+
+    # Helper function to format labels with totals if required
+    def format_label(label, count):
+        return f"{label} ({count})" if show_totals else label
+
+    # Format labels with totals if the parameter is set to True
+    labels = [format_label(label, count) for label, count in zip(source_counts.index, source_counts)]
+
+    # Plot the pie chart with defined colors
+    plt.figure(figsize=(8, 8))
+    plt.pie(source_counts, labels=labels, autopct='%1.1f%%', startangle=90, counterclock=False, colors=colors)
+    plt.title('Distribution of column: ' + "Citation Function: Sub")
     plt.show()
