@@ -37,3 +37,11 @@ def reshape_model_classification(df):
             df.at[row.name, 'Model Classification Explanation'] = None
         df.at[row.name, 'Label'] = df.at[row.name, 'Label'].lower()
     return df
+
+def load_df_for_analysis(model_type, embedding, no_prev_chunking, gpt_model, batched, annotated=False, corrected_statements=False, two_labels=False, remove_added=True):
+    df = load_df(model_type, embedding, no_prev_chunking, gpt_model, batched, annotated, corrected_statements, two_labels)
+    if 'Suited for Task' in df.columns and remove_added:
+        df = df[df['Suited for Task'] != "Added"]
+    df = sort_df(df)
+    df = reshape_model_classification(df)
+    return df
