@@ -166,6 +166,15 @@ def calc_label_accuracies(results, exclude_not_available=False, as_portions=Fals
     
     return label_accuracies
 
+def count_preds_for_label(type_predictions_dict, label):
+    """
+    Count the number of predictions for a specific label in a results dictionary.
+    """
+    label_count = 0
+    for _, count in type_predictions_dict.items():
+        label_count += count[label]
+    return label_count
+
 def print_table_label_accuracies(label_accuracies, string_given=False, two_labels=False):
     if two_labels:
         if string_given:
