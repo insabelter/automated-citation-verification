@@ -47,9 +47,12 @@ def show_distribution_pie(df, column_name, include_nan=True, sorting=None):
     if sorting:
         source_counts = source_counts.reindex(sorting, fill_value=0)
 
+    # Format labels to include the count after the label name
+    labels = [f"{label} ({count})" for label, count in zip(source_counts.index, source_counts)]
+
     # Plot the pie chart
     plt.figure(figsize=(8, 8))
-    plt.pie(source_counts, labels=source_counts.index, autopct='%1.1f%%', startangle=90, counterclock=False)
+    plt.pie(source_counts, labels=labels, autopct='%1.1f%%', startangle=90, counterclock=False)
     plt.title('Distribution of column: ' + column_name)
     plt.show()
 
