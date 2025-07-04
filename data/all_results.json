@@ -125,6 +125,50 @@
                     "Substantiated": []
                 }
             }
+        },
+        "only_text_1024_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 126,
+                "FP": 72,
+                "TN": 43,
+                "FN": 6,
+                "accuracy": 0.684,
+                "precision": 0.636,
+                "recall": 0.955,
+                "specificity": 0.374,
+                "f1_score": 0.764,
+                "invalid_labels": {
+                    "Unsubstantiated": [
+                        null,
+                        null
+                    ],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 120,
+                "FP": 66,
+                "TN": 41,
+                "FN": 6,
+                "accuracy": 0.691,
+                "precision": 0.645,
+                "recall": 0.952,
+                "specificity": 0.383,
+                "f1_score": 0.769,
+                "invalid_labels": {
+                    "Unsubstantiated": [
+                        null,
+                        null
+                    ],
+                    "Substantiated": []
+                }
+            }
         }
     },
     "gpt-4.1-nano-2025-04-14": {
@@ -243,6 +287,122 @@
             }
         }
     },
+    "gpt-4.1-mini-2025-04-14": {
+        "256_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 102,
+                "FP": 16,
+                "TN": 99,
+                "FN": 30,
+                "accuracy": 0.814,
+                "precision": 0.864,
+                "recall": 0.773,
+                "specificity": 0.861,
+                "f1_score": 0.816,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 99,
+                "FP": 12,
+                "TN": 95,
+                "FN": 27,
+                "accuracy": 0.833,
+                "precision": 0.892,
+                "recall": 0.786,
+                "specificity": 0.888,
+                "f1_score": 0.835,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            }
+        },
+        "only_text_256_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 103,
+                "FP": 20,
+                "TN": 95,
+                "FN": 29,
+                "accuracy": 0.802,
+                "precision": 0.837,
+                "recall": 0.78,
+                "specificity": 0.826,
+                "f1_score": 0.808,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 99,
+                "FP": 16,
+                "TN": 91,
+                "FN": 27,
+                "accuracy": 0.815,
+                "precision": 0.861,
+                "recall": 0.786,
+                "specificity": 0.85,
+                "f1_score": 0.822,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            }
+        },
+        "1024_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 105,
+                "FP": 18,
+                "TN": 97,
+                "FN": 27,
+                "accuracy": 0.818,
+                "precision": 0.854,
+                "recall": 0.795,
+                "specificity": 0.843,
+                "f1_score": 0.824,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 101,
+                "FP": 13,
+                "TN": 94,
+                "FN": 25,
+                "accuracy": 0.837,
+                "precision": 0.886,
+                "recall": 0.802,
+                "specificity": 0.879,
+                "f1_score": 0.842,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            }
+        }
+    },
     "llama3.1.70b": {
         "256_20": {
             "all": {
@@ -259,9 +419,7 @@
                 "specificity": 0.861,
                 "f1_score": 0.772,
                 "invalid_labels": {
-                    "Unsubstantiated": [
-                        null
-                    ],
+                    "Unsubstantiated": [],
                     "Substantiated": []
                 }
             },
@@ -279,9 +437,7 @@
                 "specificity": 0.897,
                 "f1_score": 0.782,
                 "invalid_labels": {
-                    "Unsubstantiated": [
-                        null
-                    ],
+                    "Unsubstantiated": [],
                     "Substantiated": []
                 }
             }
@@ -318,6 +474,86 @@
                 "recall": 0.754,
                 "specificity": 0.925,
                 "f1_score": 0.83,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            }
+        },
+        "1024_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 99,
+                "FP": 16,
+                "TN": 99,
+                "FN": 33,
+                "accuracy": 0.802,
+                "precision": 0.861,
+                "recall": 0.75,
+                "specificity": 0.861,
+                "f1_score": 0.802,
+                "invalid_labels": {
+                    "Unsubstantiated": [
+                        null
+                    ],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 95,
+                "FP": 11,
+                "TN": 96,
+                "FN": 31,
+                "accuracy": 0.82,
+                "precision": 0.896,
+                "recall": 0.754,
+                "specificity": 0.897,
+                "f1_score": 0.819,
+                "invalid_labels": {
+                    "Unsubstantiated": [
+                        null
+                    ],
+                    "Substantiated": []
+                }
+            }
+        },
+        "only_text_1024_20": {
+            "all": {
+                "G (Total)": 247,
+                "P (Substantiated)": 132,
+                "N (Unsubstantiated)": 115,
+                "TP": 99,
+                "FP": 15,
+                "TN": 100,
+                "FN": 33,
+                "accuracy": 0.806,
+                "precision": 0.868,
+                "recall": 0.75,
+                "specificity": 0.87,
+                "f1_score": 0.805,
+                "invalid_labels": {
+                    "Unsubstantiated": [],
+                    "Substantiated": []
+                }
+            },
+            "without_relabelled": {
+                "G (Total)": 233,
+                "P (Substantiated)": 126,
+                "N (Unsubstantiated)": 107,
+                "TP": 95,
+                "FP": 9,
+                "TN": 98,
+                "FN": 31,
+                "accuracy": 0.828,
+                "precision": 0.913,
+                "recall": 0.754,
+                "specificity": 0.916,
+                "f1_score": 0.826,
                 "invalid_labels": {
                     "Unsubstantiated": [],
                     "Substantiated": []

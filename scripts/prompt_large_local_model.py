@@ -5,10 +5,10 @@ import os
 
 import create_prompts as c_p
 
-chunking = "256_20"
+chunking = "1024_20"
 only_text = True
 models = ["llama3.1:70b", "llama4:scout"]
-model = models[0]
+model = models[1]
 
 model_path = f"../data/dfs/{'only_text_' if only_text else ''}{chunking}/{model.replace(':','.')}/"
 # Create the directory if it doesn't exist

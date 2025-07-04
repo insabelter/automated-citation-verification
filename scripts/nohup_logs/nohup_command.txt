@@ -1,6 +1,8 @@
-nohup python prompt_large_local_model.py > prompt_large_local_model.log 2>&1 &
+nohup python prompt_large_local_model.py > prompt_large_local_model_only_text_1024_4_scout.log 2>&1 &
 
 ps aux | grep nohup
 
-4128690 full
-4155395 only_text
+1137146 256 full (skipped only_text log name)
+1140902 256 only_text (skipped only_text log name)
+1142783 1024 full
+1144162 1024 only_text
