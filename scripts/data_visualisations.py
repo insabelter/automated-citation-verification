@@ -284,7 +284,7 @@ def show_citation_function_sub_distribution_pie(df, show_totals=False):
     plt.title('Distribution of column: ' + "Citation Function: Sub")
     plt.show()
 
-def show_preds_vs_correct_preds_vs_total(data_dicts, titles):
+def show_preds_vs_correct_preds_vs_total(data_dicts, titles, title="Comparison of Accuracies, Predictions, Correct Predictions and Correct Totals per Label across Datasets", labels=['unsubstantiate', 'fully substantiate'], smaller_figures=False):
     """
     Plot the distribution of predictions, correct predictions, and total label counts for each dictionary.
 
@@ -303,13 +303,16 @@ def show_preds_vs_correct_preds_vs_total(data_dicts, titles):
     }
     """
     # Colors for the bars
-    colors = {'unsubstantiate': 'red', 'fully substantiate': 'green'}
+    colors = {labels[0]: 'red', labels[1]: 'green'}
 
     # Create subplots
-    fig, axes = plt.subplots(1, len(data_dicts), figsize=(18, 6), sharey=True)
+    if smaller_figures:
+        fig, axes = plt.subplots(1, len(data_dicts), figsize=(10, 6), sharey=True)
+        fig.suptitle(title, fontsize=12)
+    else:
+        fig, axes = plt.subplots(1, len(data_dicts), figsize=(18, 6), sharey=True)
+        fig.suptitle(title, fontsize=16)
 
-    # Add a heading above all diagrams
-    fig.suptitle("Comparison of Predictions, Correct Predictions and Correct Total Across Datasets", fontsize=16)
 
     # Fixed bar width
     bar_width = 0.6
@@ -341,6 +344,15 @@ def show_preds_vs_correct_preds_vs_total(data_dicts, titles):
         for bar, total, correct in zip(bars_total, total_preds, correct_preds):
             ax.text(bar.get_x() + bar.get_width() / 2, total, f'{total}', ha='center', va='bottom', fontsize=10)
             ax.text(bar.get_x() + bar.get_width() / 2, correct, f'{correct}', ha='center', va='bottom', fontsize=10, color='black')
+        
+        # Add accuracy text inside the correct predictions bars
+        for i, (bar, correct, correct_total) in enumerate(zip(bars_correct, correct_preds, correct_totals)):
+            if correct > 0:  # Only show accuracy if there are correct predictions
+                accuracy = correct / correct_total if correct_total > 0 else 0
+                # Position the text at the top of the correct predictions bar
+                text_y = correct * 0.9  # 90% of the bar height to keep it inside
+                ax.text(bar.get_x() + bar.get_width() / 2, text_y, f'{accuracy:.1%}', 
+                       ha='center', va='center', fontsize=10, color='white', weight='bold')
 
     # Add legend with gray color
     legend_handles = [

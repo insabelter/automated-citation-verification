@@ -160,3 +160,70 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
 #             preds_per_error_type[error_type]['false_class'] += 1
 
 #     return preds_per_error_type
+
+def display_model_results_table(model_results_dict, use_pandas=True):
+    """
+    Display model evaluation results as a formatted table.
+    
+    Parameters:
+    model_results_dict (dict): Dictionary where keys are model names and values are result dictionaries
+                              containing accuracy, precision, recall, specificity, and f1_score
+    
+    Returns:
+    pd.DataFrame: DataFrame with the results formatted as a table
+    """
+    # Extract the metrics we want to display
+    metrics = ['accuracy', 'precision', 'recall', 'specificity', 'f1_score']
+    
+    # Create a list to store the table data
+    table_data = []
+    
+    for model_name, results in model_results_dict.items():
+        row = [model_name]  # Start with model name
+        for metric in metrics:
+            if metric in results:
+                # Format as decimal with 3 decimal places
+                row.append(f"{results[metric]:.3f}")
+            else:
+                row.append("N/A")
+        table_data.append(row)
+    
+    # Create column headers
+    headers = ['Model'] + [metric.capitalize() for metric in metrics]
+    
+    # Display the table using tabulate
+    if not use_pandas:
+        print("Model Performance Comparison")
+        print("=" * 70)
+        print(tabulate(table_data, headers=headers, tablefmt='grid', stralign='center'))
+    
+    # Also create and return a DataFrame for further analysis
+    df_data = []
+    for model_name, results in model_results_dict.items():
+        row = {'Model': model_name}
+        for metric in metrics:
+            if metric in results:
+                row[metric.capitalize()] = results[metric]
+            else:
+                row[metric.capitalize()] = None
+        df_data.append(row)
+    
+    df = pd.DataFrame(df_data)
+    df.set_index('Model', inplace=True)
+    
+    if use_pandas:
+        display(df)
+
+def get_preds_results(results):
+    return {
+        "Unsubstantiated": { # negative class
+            "preds": results['TN'] + results['FN'],
+            "correct_preds": results['TN'],
+            "correct_total": results['N (Unsubstantiated)'],
+        },
+        "Substantiated": { # positive class
+            "preds": results['TP'] + results['FP'],
+            "correct_preds": results['TP'],
+            "correct_total": results['P (Substantiated)'],
+        },
+    }
