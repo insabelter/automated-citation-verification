@@ -52,7 +52,7 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
     assert G == P + N, f"Total G ({G}) does not equal P ({P}) + N ({N})"
     assert TP + FN == P, f"TP ({TP}) + FN ({FN}) does not equal P ({P})"
     assert TN + FP == N, f"TN ({TN}) + FP ({FP}) does not equal N ({N})"
-    assert G == 0, f"Total G ({G}) should not be 0"
+    assert G != 0, f"Total G ({G}) is 0, cannot calculate metrics"
 
     accuracy = (TP + TN) / G
     precision = TP / (TP + FP) if (TP + FP) > 0 else 0.0
