@@ -233,7 +233,19 @@ def get_preds_results(results):
 def eval_predictions_per_attribute_value(df, attribute, include_relabelled_partially):
     results = {}
     results['Total'] = eval_predictions(df, include_relabelled_partially=include_relabelled_partially)
-    for value in df[attribute].unique():
+    
+    # Get unique attribute values and sort them
+    attribute_values = df[attribute].unique()
+    
+    # Try to sort numerically first, fall back to alphabetical sorting
+    try:
+        # Attempt to convert to numbers and sort numerically
+        sorted_values = sorted(attribute_values, key=lambda x: float(x))
+    except (ValueError, TypeError):
+        # If conversion fails, sort alphabetically
+        sorted_values = sorted(attribute_values, key=lambda x: str(x))
+    
+    for value in sorted_values:
         df_value = df[df[attribute] == value]
         results_value = eval_predictions(df_value, include_relabelled_partially=include_relabelled_partially)
         results[value] = results_value

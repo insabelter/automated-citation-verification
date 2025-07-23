@@ -8,9 +8,10 @@ import create_prompts as c_p
 chunking = "1024_20"
 only_text = True
 models = ["llama3.1:70b", "llama4:scout"]
-model = models[1]
+model = models[0]
+ai_prompt = True
 
-model_path = f"../data/dfs/{'only_text_' if only_text else ''}{chunking}/{model.replace(':','.')}/"
+model_path = f"../data/dfs/{'only_text_' if only_text else ''}{chunking}/{model.replace(':','.')}/{'AI_prompt/' if ai_prompt else ''}"
 # Create the directory if it doesn't exist
 if not os.path.exists(model_path):
     os.makedirs(model_path)
@@ -40,7 +41,10 @@ def prompting_model(df, model, save_intermediate_results=False, save_every=10, i
             print(f"Processing: " + row['Reference Article ID'], flush=True)
 
             # Create the prompt
-            prompt = c_p.create_prompt(row)
+            if ai_prompt:
+                prompt = c_p.create_prompt_ai_improved(row)
+            else:
+                prompt = c_p.create_prompt(row)
             
             # Send the prompt and get the response
             response = send_prompt(prompt, model)

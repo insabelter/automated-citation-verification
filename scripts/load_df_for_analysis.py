@@ -1,12 +1,13 @@
 import pandas as pd
 import json
+import re
 
 def sort_df(df):
     df = df.sort_values(by=['Citing Article ID', 'Reference Article ID'], ascending=[True, True]).reset_index(drop=True)
     return df
 
-def load_df(chunking, only_text, model):
-    path = f"../data/dfs/{'only_text_' if only_text else ''}{chunking}/{model}/ReferenceErrorDetection_data_with_prompt_results.pkl"
+def load_df(chunking, only_text, model, ai_prompt=False):
+    path = f"../data/dfs/{'only_text_' if only_text else ''}{chunking}/{model}/{'AI_prompt/' if ai_prompt else ''}ReferenceErrorDetection_data_with_prompt_results.pkl"
     df = pd.read_pickle(path)
     return df
 
@@ -51,8 +52,24 @@ def reshape_model_classification(df):
         df.at[row.name, 'Label'] = df.at[row.name, 'Label']
     return df
 
+def add_claims_to_substantiate_min_max(df):
+    def extract_min_max(val):
+        if isinstance(val, str):
+            match = re.match(r"\[(\d+)(?:-(\d+))?\]", val)
+            if match:
+                min_val = int(match.group(1))
+                max_val = int(match.group(2)) if match.group(2) else min_val
+                return min_val, max_val
+        return None, None
+
+    min_max = df['Amount Claims to Substantiate'].apply(extract_min_max)
+    df['Amount Claims to Substantiate: Minimum'] = min_max.apply(lambda x: x[0])
+    df['Amount Claims to Substantiate: Maximum'] = min_max.apply(lambda x: x[1])
+    return df
+
 def load_df_for_analysis(chunking, only_text, model):
     df = load_df(chunking, only_text, model)
+    df = add_claims_to_substantiate_min_max(df)
     df = sort_df(df)
     df = reshape_model_classification(df)
     return df

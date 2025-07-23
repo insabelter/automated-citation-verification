@@ -507,7 +507,7 @@ def show_accuracy_by_attribute_values(results_dict, attribute_name, y_min=70):
                 # Add difference text for non-Total attributes
                 if attr_value != 'Total' and model_name in total_accuracies:
                     difference = accuracy - total_accuracies[model_name]
-                    if abs(difference) > 0.1:  # Only show if difference is meaningful
+                    if abs(difference) >= 0.1:  # Only show if difference is meaningful
                         diff_color = 'green' if difference > 0 else 'red'
                         sign = '+' if difference > 0 else ''
                         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 2.5,
