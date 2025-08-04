@@ -170,72 +170,44 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
 
 #     return preds_per_error_type
 
-def display_model_results_table(model_results_dict, use_pandas=True):
-    """
-    Display model evaluation results as a formatted table.
-    
-    Parameters:
-    model_results_dict (dict): Dictionary where keys are model names and values are result dictionaries
-                              containing accuracy, precision, recall, specificity, and f1_score
-    
-    Returns:
-    pd.DataFrame: DataFrame with the results formatted as a table
-    """
-    # Extract the metrics we want to display
-    metrics = ['accuracy', 'precision', 'recall', 'specificity', 'f1_score']
-    
-    # Create a list to store the table data
-    table_data = []
-    
-    for model_name, results in model_results_dict.items():
-        row = [model_name]  # Start with model name
-        for metric in metrics:
-            if metric in results:
-                # Format as decimal with 3 decimal places
-                row.append(f"{results[metric]:.3f}")
-            else:
-                row.append("N/A")
-        table_data.append(row)
-    
-    # Create column headers
-    headers = ['Model'] + [metric.capitalize() for metric in metrics]
-    
-    # Display the table using tabulate
-    if not use_pandas:
-        print("Model Performance Comparison")
-        print("=" * 70)
-        print(tabulate(table_data, headers=headers, tablefmt='grid', stralign='center'))
-    
-    # Also create and return a DataFrame for further analysis
+def display_model_results_table(model_results_dict):
+    # Create a list to store the DataFrame data
     df_data = []
+    
     for model_name, results in model_results_dict.items():
         row = {'Model': model_name}
-        for metric in metrics:
-            if metric in results:
-                row[metric.capitalize()] = results[metric]
-            else:
-                row[metric.capitalize()] = None
+        
+        # Extract metrics from the new schema
+        row['Balanced Accuracy'] = results.get('Balanced Accuracy', None)
+        row['Precision (Unsubstantiated)'] = results.get('Unsubstantiated', {}).get('Precision', None)
+        row['Recall (Unsubstantiated)'] = results.get('Unsubstantiated', {}).get('Recall', None)
+        row['F1 Score (Unsubstantiated)'] = results.get('Unsubstantiated', {}).get('F1 Score', None)
+        row['Precision (Substantiated)'] = results.get('Substantiated', {}).get('Precision', None)
+        row['Recall (Substantiated)'] = results.get('Substantiated', {}).get('Recall', None)
+        row['F1 Score (Substantiated)'] = results.get('Substantiated', {}).get('F1 Score', None)
+        
         df_data.append(row)
     
+    # Create DataFrame
     df = pd.DataFrame(df_data)
     df.set_index('Model', inplace=True)
     
-    if use_pandas:
-        display(df)
+    # Display the DataFrame
+    display(df)
 
-def get_preds_results(results):
-    return {
-        "Unsubstantiated": { # negative class
-            "preds": results['TN'] + results['FN'],
-            "correct_preds": results['TN'],
-            "correct_total": results['N (Unsubstantiated)'],
-        },
-        "Substantiated": { # positive class
-            "preds": results['TP'] + results['FP'],
-            "correct_preds": results['TP'],
-            "correct_total": results['P (Substantiated)'],
-        },
-    }
+# def get_preds_results(results):
+#     return {
+#         "Unsubstantiated": { # negative class
+#             "preds": results['TN'] + results['FN'],
+#             "correct_preds": results['TN'],
+#             "correct_total": results['N (Unsubstantiated)'],
+#         },
+#         "Substantiated": { # positive class
+#             "preds": results['TP'] + results['FP'],
+#             "correct_preds": results['TP'],
+#             "correct_total": results['P (Substantiated)'],
+#         },
+#     }
 
 def eval_predictions_per_attribute_value(df, attribute, include_relabelled_partially, group_numbers_from=False):
     results = {}
@@ -389,81 +361,130 @@ def eval_attribute_subset_vs_rest(df, attribute, attribute_values):
     rest_results = eval_predictions(rest_df, include_relabelled_partially=True)
     
     return {
-        'Subset': {
-            'Total': subset_results['G (Total)'],
-            'Correct': subset_results['TP'] + subset_results['TN'],
-        },
-        'Rest': {
-            'Total': rest_results['G (Total)'],
-            'Correct': rest_results['TP'] + rest_results['TN'],
-        },
+        'Subset': subset_results,
+        'Rest': rest_results,
     }
 
 def calc_significance_of_accuracy_difference(attribute_subset_rest_results):
     results = {}
 
-    x1 = attribute_subset_rest_results['Subset']['Correct']
-    x2 = attribute_subset_rest_results['Rest']['Correct']
-    n1 = attribute_subset_rest_results['Subset']['Total']
-    n2 = attribute_subset_rest_results['Rest']['Total']
-
-    z_stat, p_value = proportions_ztest([x1, x2], [n1, n2])
-    results['z_test'] = {
-        'z_statistic': z_stat,
-        'p_value': p_value
-    }
-
-    table = [[x1, n1 - x1],
-         [x2, n2 - x2]]
-    odds_ratio, p_value = fisher_exact(table)
-    results['fisher_exact'] = {
-        'odds_ratio': odds_ratio,
-        'p_value': p_value
-    }
+    subset_results = attribute_subset_rest_results['Subset']
+    rest_results = attribute_subset_rest_results['Rest']
+    
+    # Calculate significance for Total dataset (combining both labels)
+    total_subset_correct = subset_results['Substantiated']['True Classifications'] + subset_results['Unsubstantiated']['True Classifications']
+    total_subset_total = subset_results['Total']
+    total_rest_correct = rest_results['Substantiated']['True Classifications'] + rest_results['Unsubstantiated']['True Classifications']
+    total_rest_total = rest_results['Total']
+    
+    if total_subset_total > 0 and total_rest_total > 0:
+        total_table = [[total_subset_correct, total_subset_total - total_subset_correct],
+                       [total_rest_correct, total_rest_total - total_rest_correct]]
+        total_odds_ratio, total_p_value = fisher_exact(total_table)
+        results['Total'] = {
+            'odds_ratio': total_odds_ratio,
+            'p_value': total_p_value
+        }
+    
+    # Calculate significance for Substantiated label
+    sub_subset_correct = subset_results['Substantiated']['True Classifications']
+    sub_subset_total = subset_results['Substantiated']['Label Total']
+    sub_rest_correct = rest_results['Substantiated']['True Classifications']
+    sub_rest_total = rest_results['Substantiated']['Label Total']
+    
+    if sub_subset_total > 0 and sub_rest_total > 0:
+        sub_table = [[sub_subset_correct, sub_subset_total - sub_subset_correct],
+                     [sub_rest_correct, sub_rest_total - sub_rest_correct]]
+        sub_odds_ratio, sub_p_value = fisher_exact(sub_table)
+        results['Substantiated'] = {
+            'odds_ratio': sub_odds_ratio,
+            'p_value': sub_p_value
+        }
+    
+    # Calculate significance for Unsubstantiated label
+    unsub_subset_correct = subset_results['Unsubstantiated']['True Classifications']
+    unsub_subset_total = subset_results['Unsubstantiated']['Label Total']
+    unsub_rest_correct = rest_results['Unsubstantiated']['True Classifications']
+    unsub_rest_total = rest_results['Unsubstantiated']['Label Total']
+    
+    if unsub_subset_total > 0 and unsub_rest_total > 0:
+        unsub_table = [[unsub_subset_correct, unsub_subset_total - unsub_subset_correct],
+                       [unsub_rest_correct, unsub_rest_total - unsub_rest_correct]]
+        unsub_odds_ratio, unsub_p_value = fisher_exact(unsub_table)
+        results['Unsubstantiated'] = {
+            'odds_ratio': unsub_odds_ratio,
+            'p_value': unsub_p_value
+        }
 
     return results
 
-def display_significance_test_results(significance_results, required_p=0.1):
+def display_significance_test_results(significance_results):
     # Create table data
     table_data = []
     
     for attribute_value, test_results in significance_results.items():
-        # Check if this is the expected structure with statistical test results
-        if 'z_test' in test_results and 'fisher_exact' in test_results:
-            z_test = test_results['z_test']
-            fisher_test = test_results['fisher_exact']
+        # Check if this has the new structure with label-specific results
+        if 'Substantiated' in test_results or 'Unsubstantiated' in test_results or 'Total' in test_results:
+            # Get Total results
+            total_odds_ratio = "N/A"
+            total_p_value = "N/A"
+            if 'Total' in test_results:
+                total_odds_ratio = f"{test_results['Total']['odds_ratio']:.4f}"
+                total_p_value = f"{test_results['Total']['p_value']:.4f}"
+            
+            # Get Unsubstantiated results
+            unsub_odds_ratio = "N/A"
+            unsub_p_value = "N/A"
+            if 'Unsubstantiated' in test_results:
+                unsub_odds_ratio = f"{test_results['Unsubstantiated']['odds_ratio']:.4f}"
+                unsub_p_value = f"{test_results['Unsubstantiated']['p_value']:.4f}"
+            
+            # Get Substantiated results
+            sub_odds_ratio = "N/A"
+            sub_p_value = "N/A"
+            if 'Substantiated' in test_results:
+                sub_odds_ratio = f"{test_results['Substantiated']['odds_ratio']:.4f}"
+                sub_p_value = f"{test_results['Substantiated']['p_value']:.4f}"
             
             row = [
                 attribute_value,
-                f"{z_test['z_statistic']:.4f}",
-                f"{z_test['p_value']:.4f}",
-                f"{fisher_test['odds_ratio']:.4f}",
-                f"{fisher_test['p_value']:.4f}"
+                total_odds_ratio,
+                total_p_value,
+                unsub_odds_ratio,
+                unsub_p_value,
+                sub_odds_ratio,
+                sub_p_value
             ]
             table_data.append(row)
 
     # Create DataFrame
-    columns = ['Attribute Value', 'Z-statistic', 'Z-test P-value', 'Odds Ratio', 'Fisher P-value']
+    columns = ['Attribute Value', 'Total Odds Ratio', 'Total P-value',
+               'Unsubstantiated Odds Ratio', 'Unsubstantiated P-value', 
+               'Substantiated Odds Ratio', 'Substantiated P-value']
     df = pd.DataFrame(table_data, columns=columns)
     df.set_index('Attribute Value', inplace=True)
     
-    print("Statistical Significance Tests:")
-    print("=" * 50)
+    print("Statistical Significance Tests (Fisher Exact Test):")
+    print("=" * 60)
     
     # Apply color styling to the DataFrame
     def color_p_values(val):
         """Color p-values based on significance level"""
         try:
+            if val == "N/A":
+                return ''
             p_val = float(val)
-            if p_val < required_p:
+            if p_val <= 0.05:
                 return 'background-color: darkgreen; color: white'
+            elif p_val <= 0.2:
+                return 'background-color: darkorange; color: white'
             else:
                 return 'background-color: darkred; color: white'
         except (ValueError, TypeError):
             return ''
     
     # Apply styling only to p-value columns
-    styled_df = df.style.applymap(color_p_values, subset=['Z-test P-value', 'Fisher P-value'])
+    styled_df = df.style.map(color_p_values, subset=['Total P-value', 'Unsubstantiated P-value', 'Substantiated P-value'])
     display(styled_df)
     
     return df
