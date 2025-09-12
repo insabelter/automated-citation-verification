@@ -17,7 +17,7 @@ if not os.path.exists(model_path):
     os.makedirs(model_path)
 
 def send_prompt(prompt, model):
-    response = ollama.chat(model=model, messages=[{'role': 'user', 'content': prompt}])
+    response = ollama.chat(model=model, messages=[{'role': 'user', 'content': prompt}], options={"temperature": 0})
     return response['message']['content']
 
 def prompting_model(df, model, save_intermediate_results=False, save_every=10, ids_not_to_prompt=[]):

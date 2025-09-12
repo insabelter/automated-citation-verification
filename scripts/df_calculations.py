@@ -1,8 +1,6 @@
 from tabulate import tabulate
 import pandas as pd
 from IPython.display import display
-from statsmodels.stats.proportion import proportions_ztest
-from scipy.stats import fisher_exact
 
 def eval_predictions(df, include_relabelled_partially=False, include_not_originally_downloaded=True):
     G_Total = 0
@@ -54,7 +52,6 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
     assert G_Total == Sub_Correct_Total + Unsub_Correct_Total, f"Total G ({G_Total}) does not equal Sub_Correct_Total ({Sub_Correct_Total}) + Unsub_Correct_Total ({Unsub_Correct_Total})"
     assert Sub_True + Sub_False == Sub_Correct_Total, f"Sub_True ({Sub_True}) + Unsub_False ({Unsub_False}) does not equal Sub_Correct_Total ({Sub_Correct_Total})"
     assert Unsub_True + Unsub_False == Unsub_Correct_Total, f"Unsub_True ({Unsub_True}) + Sub_False ({Sub_False}) does not equal Unsub_Correct_Total ({Unsub_Correct_Total})"
-    assert G_Total != 0, f"Total G ({G_Total}) is 0, cannot calculate metrics"
 
     results = {
         'Total': G_Total,
@@ -62,7 +59,7 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
             'Label Total': Sub_Correct_Total,
             'True Classifications': Sub_True,
             'False Classifications': Sub_False,
-            'Accuracy': round(Sub_True / Sub_Correct_Total, 3),
+            'Accuracy': round(Sub_True / Sub_Correct_Total if Sub_Correct_Total > 0 else 0.0, 3),
             'Precision': round(Sub_True / (Sub_True + Unsub_False) if (Sub_True + Unsub_False) > 0 else 0.0, 3),
             'Recall': round(Sub_True / Sub_Correct_Total if Sub_Correct_Total > 0 else 0.0, 3),
             'F1 Score': 0,
@@ -72,13 +69,13 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
             'Label Total': Unsub_Correct_Total,
             'True Classifications': Unsub_True,
             'False Classifications': Unsub_False,
-            'Accuracy': round(Unsub_True / Unsub_Correct_Total, 3),
+            'Accuracy': round(Unsub_True / Unsub_Correct_Total if Unsub_Correct_Total > 0 else 0.0, 3),
             'Precision': round(Unsub_True / (Unsub_True + Sub_False) if (Unsub_True + Sub_False) > 0 else 0.0, 3),
             'Recall': round(Unsub_True / Unsub_Correct_Total if Unsub_Correct_Total > 0 else 0.0, 3),
             'F1 Score': 0,
             'Invalid_Labels': invalid_labels['Unsubstantiated']
         },
-        'Total Accuracy': round((Sub_True + Unsub_True) / G_Total, 3),
+        'Total Accuracy': round((Sub_True + Unsub_True) / G_Total if G_Total > 0 else 0.0, 3),
         'Balanced Accuracy': 0
     }
     results['Substantiated']['F1 Score'] = round(2 * ((results['Substantiated']['Precision'] * results['Substantiated']['Recall']) / (results['Substantiated']['Precision'] + results['Substantiated']['Recall'])) if (results['Substantiated']['Precision'] + results['Substantiated']['Recall']) > 0 else 0.0, 3)
@@ -352,6 +349,14 @@ def display_attribute_differences_to_total_table(results_dict, attribute, use_pa
     else:
         print(tabulate(df, headers=df.columns, tablefmt='grid', stralign='center'))
 
+# Evaluate per attribute value 
+def eval_per_attribute_value(df, attribute, attribute_values_per_group):
+    # attribute_groups: [('1', [1]), ('2', [2]), ('>= 3', [3, 4, 5, 6, 7, 8])]
+    results = {}
+    for group_name, attribute_values in attribute_values_per_group:
+        results[group_name] = eval_predictions(df[df[attribute].isin(attribute_values)])
+    return results
+
 def eval_attribute_subset_vs_rest(df, attribute, attribute_values):
     # Create subset and rest DataFrames
     subset_df = df[df[attribute].isin(attribute_values)]
@@ -364,130 +369,6 @@ def eval_attribute_subset_vs_rest(df, attribute, attribute_values):
         'Subset': subset_results,
         'Rest': rest_results,
     }
-
-def calc_significance_of_accuracy_difference(attribute_subset_rest_results):
-    results = {}
-
-    subset_results = attribute_subset_rest_results['Subset']
-    rest_results = attribute_subset_rest_results['Rest']
-    
-    # Calculate significance for Total dataset (combining both labels)
-    total_subset_correct = subset_results['Substantiated']['True Classifications'] + subset_results['Unsubstantiated']['True Classifications']
-    total_subset_total = subset_results['Total']
-    total_rest_correct = rest_results['Substantiated']['True Classifications'] + rest_results['Unsubstantiated']['True Classifications']
-    total_rest_total = rest_results['Total']
-    
-    if total_subset_total > 0 and total_rest_total > 0:
-        total_table = [[total_subset_correct, total_subset_total - total_subset_correct],
-                       [total_rest_correct, total_rest_total - total_rest_correct]]
-        total_odds_ratio, total_p_value = fisher_exact(total_table)
-        results['Total'] = {
-            'odds_ratio': total_odds_ratio,
-            'p_value': total_p_value
-        }
-    
-    # Calculate significance for Substantiated label
-    sub_subset_correct = subset_results['Substantiated']['True Classifications']
-    sub_subset_total = subset_results['Substantiated']['Label Total']
-    sub_rest_correct = rest_results['Substantiated']['True Classifications']
-    sub_rest_total = rest_results['Substantiated']['Label Total']
-    
-    if sub_subset_total > 0 and sub_rest_total > 0:
-        sub_table = [[sub_subset_correct, sub_subset_total - sub_subset_correct],
-                     [sub_rest_correct, sub_rest_total - sub_rest_correct]]
-        sub_odds_ratio, sub_p_value = fisher_exact(sub_table)
-        results['Substantiated'] = {
-            'odds_ratio': sub_odds_ratio,
-            'p_value': sub_p_value
-        }
-    
-    # Calculate significance for Unsubstantiated label
-    unsub_subset_correct = subset_results['Unsubstantiated']['True Classifications']
-    unsub_subset_total = subset_results['Unsubstantiated']['Label Total']
-    unsub_rest_correct = rest_results['Unsubstantiated']['True Classifications']
-    unsub_rest_total = rest_results['Unsubstantiated']['Label Total']
-    
-    if unsub_subset_total > 0 and unsub_rest_total > 0:
-        unsub_table = [[unsub_subset_correct, unsub_subset_total - unsub_subset_correct],
-                       [unsub_rest_correct, unsub_rest_total - unsub_rest_correct]]
-        unsub_odds_ratio, unsub_p_value = fisher_exact(unsub_table)
-        results['Unsubstantiated'] = {
-            'odds_ratio': unsub_odds_ratio,
-            'p_value': unsub_p_value
-        }
-
-    return results
-
-def display_significance_test_results(significance_results):
-    # Create table data
-    table_data = []
-    
-    for attribute_value, test_results in significance_results.items():
-        # Check if this has the new structure with label-specific results
-        if 'Substantiated' in test_results or 'Unsubstantiated' in test_results or 'Total' in test_results:
-            # Get Total results
-            total_odds_ratio = "N/A"
-            total_p_value = "N/A"
-            if 'Total' in test_results:
-                total_odds_ratio = f"{test_results['Total']['odds_ratio']:.4f}"
-                total_p_value = f"{test_results['Total']['p_value']:.4f}"
-            
-            # Get Unsubstantiated results
-            unsub_odds_ratio = "N/A"
-            unsub_p_value = "N/A"
-            if 'Unsubstantiated' in test_results:
-                unsub_odds_ratio = f"{test_results['Unsubstantiated']['odds_ratio']:.4f}"
-                unsub_p_value = f"{test_results['Unsubstantiated']['p_value']:.4f}"
-            
-            # Get Substantiated results
-            sub_odds_ratio = "N/A"
-            sub_p_value = "N/A"
-            if 'Substantiated' in test_results:
-                sub_odds_ratio = f"{test_results['Substantiated']['odds_ratio']:.4f}"
-                sub_p_value = f"{test_results['Substantiated']['p_value']:.4f}"
-            
-            row = [
-                attribute_value,
-                total_odds_ratio,
-                total_p_value,
-                unsub_odds_ratio,
-                unsub_p_value,
-                sub_odds_ratio,
-                sub_p_value
-            ]
-            table_data.append(row)
-
-    # Create DataFrame
-    columns = ['Attribute Value', 'Total Odds Ratio', 'Total P-value',
-               'Unsubstantiated Odds Ratio', 'Unsubstantiated P-value', 
-               'Substantiated Odds Ratio', 'Substantiated P-value']
-    df = pd.DataFrame(table_data, columns=columns)
-    df.set_index('Attribute Value', inplace=True)
-    
-    print("Statistical Significance Tests (Fisher Exact Test):")
-    print("=" * 60)
-    
-    # Apply color styling to the DataFrame
-    def color_p_values(val):
-        """Color p-values based on significance level"""
-        try:
-            if val == "N/A":
-                return ''
-            p_val = float(val)
-            if p_val <= 0.05:
-                return 'background-color: darkgreen; color: white'
-            elif p_val <= 0.2:
-                return 'background-color: darkorange; color: white'
-            else:
-                return 'background-color: darkred; color: white'
-        except (ValueError, TypeError):
-            return ''
-    
-    # Apply styling only to p-value columns
-    styled_df = df.style.map(color_p_values, subset=['Total P-value', 'Unsubstantiated P-value', 'Substantiated P-value'])
-    display(styled_df)
-    
-    return df
 
 def get_attribute_value_groups(df, attribute, group_numbers_from=False):
     attribute_values = df[attribute].unique()

@@ -1,6 +1,21 @@
 nohup python prompt_large_local_model.py > nohup_logs/prompt_large_local_model_only_text_ai_prompt_1024_3.1.log 2>&1 &
 
+prompt_large_local_model_only_text_ai_prompt_1024_3.1
+
 ps aux | grep nohup
 
-2183903 - 256
-2186348 - 1024
+-- 3.1:70b --
+256                 - 3955644
+256 only_text       - 3957441
+1024                - 3961152
+1024 only_text      - 3960031
+
+-- 4 scout --
+256                 - 3964219
+256 only_text       - 3965650
+1024                - 3967941
+1024 only_text      - 3966849
+
+AI prompt:
+3.1 256 only_text   - 3972184
+3.1 1024 only_text  - 3973912

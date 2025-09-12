@@ -1,0 +1,57 @@
+{
+    "te3l_no_prev_chunking": {
+        "full_model": {
+            "gpt-3.5-turbo-0125": {
+                "all_labels_exclude_not_available": {
+                    "accuracy": 0.57,
+                    "total": 244,
+                    "correct": 139,
+                    "false_predictions": 105,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 108,
+                            "unsubstantiate": 78,
+                            "partially substantiate": 15,
+                            "fully substantiate": 14,
+                            "invalid label": 1
+                        },
+                        "partially substantiate": {
+                            "total": 14,
+                            "unsubstantiate": 2,
+                            "partially substantiate": 7,
+                            "fully substantiate": 5,
+                            "invalid label": 0
+                        },
+                        "fully substantiate": {
+                            "total": 122,
+                            "unsubstantiate": 10,
+                            "partially substantiate": 58,
+                            "fully substantiate": 54,
+                            "invalid label": 0
+                        }
+                    }
+                },
+                "two_labels_exclude_not_available": {
+                    "accuracy": 0.828,
+                    "total": 244,
+                    "correct": 202,
+                    "false_predictions": 42,
+                    "type_predictions": {
+                        "unsubstantiate": {
+                            "total": 108,
+                            "unsubstantiate": 78,
+                            "fully substantiate": 29,
+                            "invalid label": 1
+                        },
+                        "fully substantiate": {
+                            "total": 136,
+                            "unsubstantiate": 12,
+                            "fully substantiate": 124,
+                            "invalid label": 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -19,10 +19,10 @@ def remove_json_colons(json_text):
 def find_label_within_non_json_text(text):
     if not 'label' in text.lower():
         return None
-    if 'substantiated' in text.lower():
-        return 'Substantiated'
-    elif 'unsubstantiated' in text.lower():
+    if 'unsubstantiated' in text.lower():
         return 'Unsubstantiated'
+    elif 'substantiated' in text.lower():
+        return 'Substantiated'
     return None
 
 # Add extra columns for the model classification label and explanation by extracting the information from the JSON
@@ -39,6 +39,7 @@ def reshape_model_classification(df):
             except (json.JSONDecodeError, KeyError) as e:
                 label = find_label_within_non_json_text(row['Model Classification'])
                 if label:
+                    print(f"Using extracted label ({label}) from non JSON text!")
                     df.at[row.name, 'Model Classification Label'] = label
                     df.at[row.name, 'Model Classification Explanation'] = row['Model Classification']
                 else:
