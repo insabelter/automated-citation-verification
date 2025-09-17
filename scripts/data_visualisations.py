@@ -373,10 +373,11 @@ def show_preds_vs_correct_preds_vs_total(data_dicts, titles, title="Comparison o
 def show_metrics_per_label(model_results, title="Model Performance Metrics by Label"):
     # Define colors for each metric
     colors = {
-        'Accuracy': '#2ca02c',    # Green
-        'Precision': '#d62728',   # Red
-        'Recall': '#1f77b4',      # Blue
-        'F1 Score': '#ff7f0e'     # Orange
+        'Accuracy': '#2ca02c',        # Green
+        'Balanced Accuracy': '#006400', # Dark Green
+        'Precision': '#d62728',       # Red
+        'Recall': '#1f77b4',          # Blue
+        'F1 Score': '#ff7f0e'         # Orange
     }
     
     # Create subplots - one for each model
@@ -390,19 +391,45 @@ def show_metrics_per_label(model_results, title="Model Performance Metrics by La
     fig.suptitle(title, fontsize=16)
     
     # Define bar positions and width
-    labels = ['Substantiated', 'Unsubstantiated']
-    metrics = ['Accuracy', 'Precision', 'Recall', 'F1 Score']
-    bar_width = 0.2
+    labels = ['Total', 'Substantiated', 'Unsubstantiated']
+    total_metrics = ['Accuracy', 'Balanced Accuracy']
+    label_metrics = ['Precision', 'Recall', 'F1 Score']
+    bar_width = 0.35
     
     # Plot for each model
     for idx, (model_name, results) in enumerate(model_results.items()):
         ax = axes[idx]
         
-        # Extract metrics for both labels
+        # Set up x positions for bars with reduced spacing between groups
+        x = np.array([0, 1.4, 2.8])  # Further reduced spacing between groups
+        
+        # Plot Total metrics (Accuracy and Balanced Accuracy)
+        total_values = []
+        for metric in total_metrics:
+            if metric == 'Accuracy':
+                value = results.get('Accuracy', 0) * 100
+            elif metric == 'Balanced Accuracy':
+                value = results.get('Balanced Accuracy', 0) * 100
+            else:
+                value = 0
+            total_values.append(value)
+        
+        # Plot Total bars
+        for i, metric in enumerate(total_metrics):
+            offset = (i - len(total_metrics)/2 + 0.5) * bar_width
+            bars = ax.bar(x[0] + offset, total_values[i], bar_width, 
+                         label=metric, color=colors[metric], alpha=0.8)
+            
+            # Add value labels on top of bars
+            if total_values[i] > 0:
+                ax.text(bars[0].get_x() + bars[0].get_width()/2, bars[0].get_height() + 1,
+                       f'{total_values[i]:.1f}%', ha='center', va='bottom', fontsize=10)
+        
+        # Extract metrics for both label types
         substantiated_metrics = []
         unsubstantiated_metrics = []
         
-        for metric in metrics:
+        for metric in label_metrics:
             # Get substantiated metrics
             if metric in results.get('Substantiated', {}):
                 substantiated_metrics.append(results['Substantiated'][metric] * 100)
@@ -415,27 +442,29 @@ def show_metrics_per_label(model_results, title="Model Performance Metrics by La
             else:
                 unsubstantiated_metrics.append(0)
         
-        # Set up x positions for bars
-        x = np.arange(len(labels))
-        
-        # Plot bars for each metric
-        for i, metric in enumerate(metrics):
-            offset = (i - len(metrics)/2 + 0.5) * bar_width
-            values = [substantiated_metrics[i], unsubstantiated_metrics[i]]
+        # Plot bars for label-specific metrics
+        for i, metric in enumerate(label_metrics):
+            offset = (i - len(label_metrics)/2 + 0.5) * bar_width
             
-            bars = ax.bar(x + offset, values, bar_width, 
-                         label=metric, color=colors[metric], alpha=0.8)
+            # Substantiated bars
+            bars_sub = ax.bar(x[1] + offset, substantiated_metrics[i], bar_width, 
+                             label=metric if idx == 0 else "", color=colors[metric], alpha=0.8)
+            
+            # Unsubstantiated bars
+            bars_unsub = ax.bar(x[2] + offset, unsubstantiated_metrics[i], bar_width, 
+                               color=colors[metric], alpha=0.8)
             
             # Add value labels on top of bars
-            for bar, value in zip(bars, values):
-                if value > 0:  # Only show label if there's a value
-                    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                           f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
+            if substantiated_metrics[i] > 0:
+                ax.text(bars_sub[0].get_x() + bars_sub[0].get_width()/2, bars_sub[0].get_height() + 1,
+                       f'{substantiated_metrics[i]:.1f}%', ha='center', va='bottom', fontsize=10)
+            
+            if unsubstantiated_metrics[i] > 0:
+                ax.text(bars_unsub[0].get_x() + bars_unsub[0].get_width()/2, bars_unsub[0].get_height() + 1,
+                       f'{unsubstantiated_metrics[i]:.1f}%', ha='center', va='bottom', fontsize=10)
         
         # Customize subplot
-        # Get balanced accuracy for the title
-        balanced_accuracy = results.get('Balanced Accuracy', 0)
-        ax.set_title(f'{model_name}\nBalanced Accuracy: {balanced_accuracy * 100:.1f}%', fontsize=14)
+        ax.set_title(f'{model_name}', fontsize=14)
         ax.set_ylabel('Percentage (%)', fontsize=12)
         ax.set_ylim(0, 100)
         ax.set_xticks(x)
@@ -495,269 +524,205 @@ def show_unsub_preds_per_error_type(data_dicts, titles):
     plt.tight_layout()
     plt.show()
 
-# def show_accuracy_by_attribute_values(results_dict, attribute_name, y_min=70):
-#     """
-#     Display accuracy results as a bar plot with bars grouped by model and colors representing attribute values.
-    
-#     Parameters:
-#     results_dict: Dictionary with structure {model_name: {attribute_value: {results...}}}
-#     attribute_name: The name of the attribute being analyzed
-#     y_min: Minimum value for y-axis (default: 60)
-#     """
-#     # Extract model names and attribute values
-#     model_names = list(results_dict.keys())
-    
-#     # Get all unique attribute values from the first model (excluding 'Total')
-#     first_model = list(results_dict.keys())[0]
-#     attribute_values = [val for val in results_dict[first_model].keys() if val != 'Total']
-#     # Add 'Total' at the beginning for better visualization
-#     attribute_values = ['Total'] + attribute_values
-    
-#     # Define colors for each attribute value (grey for Total, bright colors for others)
-#     bright_colors = [
-#         '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F',
-#         '#BB8FCE', '#85C1E9', '#82E0AA', '#F8C471', '#F1948A', '#AED6F1', '#A3E4D7', '#D5A6BD',
-#         '#7FB3D3', '#76D7C4', '#F9E79F', '#D7BDE2', '#A9CCE3', '#A9DFBF', '#FCF3CF', '#FADBD8',
-#         '#D6EAF8', '#D1F2EB', '#FDEAA7', '#E8DAEF', '#D4E6F1', '#D0ECE7', '#FEF9E7', '#FDEDEC'
-#     ]
-#     colors = ['#808080']  # Grey for Total
-#     colors.extend(bright_colors[:len(attribute_values)-1])  # Bright colors for the rest
-    
-#     # Set up the plot
-#     fig, ax = plt.subplots(figsize=(12, 8))
-    
-#     # Calculate bar positions with adaptive gaps between bars in a group
-#     bar_width = 0.7 / len(attribute_values)  # Adjust width based on number of attribute values
-#     # Adaptive gap: smaller gaps for more attribute values
-#     if len(attribute_values) <= 3:
-#         gap = 0.05
-#     elif len(attribute_values) <= 5:
-#         gap = 0.03
-#     elif len(attribute_values) <= 7:
-#         gap = 0.02
-#     else:
-#         gap = 0.01
-    
-#     x = np.arange(len(model_names))
-    
-#     # Store total accuracies for difference calculation
-#     total_accuracies = {}
-#     for model_name in model_names:
-#         if 'Total' in results_dict[model_name] and 'accuracy' in results_dict[model_name]['Total']:
-#             total_accuracies[model_name] = results_dict[model_name]['Total']['accuracy'] * 100
-#         else:
-#             total_accuracies[model_name] = 0
-    
-#     # Plot bars for each attribute value
-#     for i, attr_value in enumerate(attribute_values):
-#         accuracies = []
-#         for model_name in model_names:
-#             if attr_value in results_dict[model_name] and 'accuracy' in results_dict[model_name][attr_value]:
-#                 accuracy = results_dict[model_name][attr_value]['accuracy']
-#                 accuracies.append(accuracy * 100)  # Convert to percentage
-#             else:
-#                 accuracies.append(0)  # Default to 0 if not found
-        
-#         # Calculate offset for this attribute value's bars with gaps
-#         offset = (i - len(attribute_values)/2 + 0.5) * (bar_width + gap)
-        
-#         # Create bars
-#         bars = ax.bar(x + offset, accuracies, bar_width, 
-#                      label=attr_value, color=colors[i], alpha=0.9)
-        
-#         # Add value labels on top of bars
-#         for j, (bar, accuracy) in enumerate(zip(bars, accuracies)):
-#             if accuracy > 0:  # Only show label if there's a value
-#                 model_name = model_names[j]
-                
-#                 # Add percentage label
-#                 ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5,
-#                        f'{accuracy:.1f}%', ha='center', va='bottom', fontsize=11)
-                
-#                 # Add G (total) count at the bottom of the bar
-#                 if attr_value in results_dict[model_name] and 'G (Total)' in results_dict[model_name][attr_value]:
-#                     g_total = results_dict[model_name][attr_value]['G (Total)']
-#                     # Position text at the bottom of the bar (10% from bottom)
-#                     text_y = y_min + 1
-#                     ax.text(bar.get_x() + bar.get_width()/2, text_y,
-#                            f'{g_total}', ha='center', va='center', fontsize=10, 
-#                            color='black')
-                
-#                 # Add difference text for non-Total attributes
-#                 if attr_value != 'Total' and model_name in total_accuracies:
-#                     difference = accuracy - total_accuracies[model_name]
-#                     if abs(difference) > 0:  # Only show if difference is meaningful
-#                         diff_color = 'green' if difference > 0 else 'red'
-#                         sign = '+' if difference > 0 else ''
-#                         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 2.5,
-#                                f'{sign}{difference:.1f}%', ha='center', va='bottom', 
-#                                fontsize=10, color=diff_color, weight='bold')
-    
-#     # Customize the plot
-#     ax.set_xlabel('Models')
-#     ax.set_ylabel('Accuracy (%)')
-#     ax.set_title(f'Model Accuracy Comparison by "{attribute_name}"')
-#     ax.set_xticks(x)
-#     ax.set_xticklabels(model_names, rotation=45, ha='right')
-#     ax.legend(title=f'Attribute Values', loc='upper right')
-#     ax.grid(axis='y', alpha=0.3)
-    
-#     # Set y-axis range with space above 100% but don't show 105% on axis
-#     ax.set_ylim(y_min, 105)
-#     ax.set_yticks(range(y_min, 101, 5))  # Only show ticks up to 100%
-    
-#     plt.tight_layout()
-#     plt.show()
-
-
-def show_metrics_by_attribute_values(results_dict, attribute_name, label="Unsubstantiated"):
+def get_division_text_for_metric(metric_name, attr_results):
     """
-    Display accuracy, precision and recall for a specific label across attribute values for each model.
+    Calculate the division text for a given metric based on the attribute results.
+    
+    Parameters:
+    metric_name: The name of the metric (e.g., 'Accuracy', 'Substantiated Precision')
+    attr_results: The results dictionary for a specific attribute value
+    
+    Returns:
+    String representing the division calculation or empty string if not applicable
+    """
+    division_text = ""
+    
+    if metric_name == 'Accuracy':
+        # Accuracy = (True Classifications for both labels) / Total
+        sub_true = attr_results.get('Substantiated', {}).get('True Classifications', 0)
+        unsub_true = attr_results.get('Unsubstantiated', {}).get('True Classifications', 0)
+        total = attr_results.get('Total', 0)
+        if total > 0:
+            division_text = f"{sub_true + unsub_true} / {total}"
+    
+    elif metric_name.startswith('Substantiated'):
+        sub_results = attr_results.get('Substantiated', {})
+        if 'Precision' in metric_name:
+            # Precision = True Classifications / (True Classifications + False Classifications by other label)
+            true_class = sub_results.get('True Classifications', 0)
+            unsub_false = attr_results.get('Unsubstantiated', {}).get('False Classifications', 0)
+            total_preds = true_class + unsub_false
+            if total_preds > 0:
+                division_text = f"{true_class} / {total_preds}"
+        elif 'Recall' in metric_name:
+            # Recall = True Classifications / Label Total
+            true_class = sub_results.get('True Classifications', 0)
+            label_total = sub_results.get('Label Total', 0)
+            if label_total > 0:
+                division_text = f"{true_class} / {label_total}"
+    
+    elif metric_name.startswith('Unsubstantiated'):
+        unsub_results = attr_results.get('Unsubstantiated', {})
+        if 'Precision' in metric_name:
+            # Precision = True Classifications / (True Classifications + False Classifications by other label)
+            true_class = unsub_results.get('True Classifications', 0)
+            sub_false = attr_results.get('Substantiated', {}).get('False Classifications', 0)
+            total_preds = true_class + sub_false
+            if total_preds > 0:
+                division_text = f"{true_class} / {total_preds}"
+        elif 'Recall' in metric_name:
+            # Recall = True Classifications / Label Total
+            true_class = unsub_results.get('True Classifications', 0)
+            label_total = unsub_results.get('Label Total', 0)
+            if label_total > 0:
+                division_text = f"{true_class} / {label_total}"
+    
+    return division_text
+
+def show_metrics_by_attribute_values(results_dict, attribute_name, model_name):
+    """
+    Display one plot per metric (Accuracy, Balanced Accuracy, Unsubstantiated Precision/Recall/F1, Substantiated Precision/Recall/F1).
+    Each plot shows the values for that metric across Total and all attribute values.
     
     Parameters:
     results_dict: Dictionary with structure {model_name: {attribute_value: {results...}}}
     attribute_name: The name of the attribute being analyzed
-    label: The label for which to show metrics (default: "Unsubstantiated")
+    model_name: The specific model to analyze
     """
-    # Define colors for each metric
+    # Define colors for each metric (matching previous usage)
     colors = {
-        'Accuracy': '#2ca02c',    # Green
-        'Precision': '#d62728',   # Red
-        'Recall': '#1f77b4',      # Blue
+        'Accuracy': '#2ca02c',                    # Green
+        'Balanced Accuracy': '#006400',           # Dark Green
+        'Unsubstantiated Precision': '#d62728',   # Red
+        'Unsubstantiated Recall': '#1f77b4',      # Blue
+        'Unsubstantiated F1 Score': '#ff7f0e',    # Orange
+        'Substantiated Precision': '#d62728',     # Red
+        'Substantiated Recall': '#1f77b4',        # Blue
+        'Substantiated F1 Score': '#ff7f0e'       # Orange
     }
     
-    # Extract model names and attribute values
-    model_names = list(results_dict.keys())
+    # Get model results
+    model_results = results_dict[model_name]
     
-    # Get all unique attribute values from the first model (excluding 'Total')
-    first_model = list(results_dict.keys())[0]
-    attribute_values = [val for val in results_dict[first_model].keys() if val != 'Total']
-    # Add 'Total' at the beginning for better visualization
+    # Extract attribute values and ensure Total is first
+    attribute_values = [val for val in model_results.keys() if val != 'Total']
     attribute_values = ['Total'] + attribute_values
     
-    # Create subplots - one for each model
-    num_models = len(model_names)
-    fig, axes = plt.subplots(1, num_models, figsize=(8 * num_models, 6), sharey=True)
+    # Define the metrics to plot with their positions
+    metrics_to_plot = [
+        ('Accuracy', 0, 0),
+        ('Balanced Accuracy', 0, 1), 
+        ('Unsubstantiated Precision', 1, 0),
+        ('Unsubstantiated Recall', 1, 1),
+        ('Unsubstantiated F1 Score', 1, 2),
+        ('Substantiated Precision', 2, 0),
+        ('Substantiated Recall', 2, 1),
+        ('Substantiated F1 Score', 2, 2)
+    ]
     
-    # Handle case where there's only one model
-    if num_models == 1:
-        axes = [axes]
+    # Calculate grid dimensions (3 columns, 3 rows)
+    num_cols = 3
+    num_rows = 3
     
-    fig.suptitle(f'Accuracy, Precision and Recall ({label}) by "{attribute_name}"', fontsize=16)
+    # Create subplots
+    fig, axes = plt.subplots(num_rows, num_cols, figsize=(15, 4 * num_rows), sharey=True)
     
-    # Define bar positions and width
-    metrics = ['Accuracy', 'Precision', 'Recall']
-    bar_width = 0.25
+    # Handle different cases for axes array
+    if num_rows == 1:
+        if num_cols == 1:
+            axes = [axes]
+        else:
+            axes = axes.reshape(1, -1)
+    elif num_cols == 1:
+        axes = axes.reshape(-1, 1)
     
-    # Plot for each model
-    for idx, model_name in enumerate(model_names):
-        ax = axes[idx]
-        model_results = results_dict[model_name]
+    fig.suptitle(f'{model_name} - Metrics by "{attribute_name}"', fontsize=16)
+    
+    # Plot each metric
+    for metric_name, row, col in metrics_to_plot:
+        ax = axes[row, col]
         
-        # Extract metrics for each attribute value
-        accuracies = []
-        precisions = []
-        recalls = []
+        # Extract values for this metric across all attribute values
+        metric_values = []
         
         for attr_value in attribute_values:
-            if attr_value in model_results:
-                # Get metrics for the specified label
-                label_data = model_results[attr_value].get(label, {})
-                accuracy = label_data.get('Accuracy', 0) * 100
-                precision = label_data.get('Precision', 0) * 100
-                recall = label_data.get('Recall', 0) * 100
-                accuracies.append(accuracy)
-                precisions.append(precision)
-                recalls.append(recall)
+            attr_results = model_results.get(attr_value, {})
+            
+            if metric_name == 'Accuracy':
+                value = attr_results.get('Accuracy', 0) * 100
+            elif metric_name == 'Balanced Accuracy':
+                value = attr_results.get('Balanced Accuracy', 0) * 100
+            elif metric_name.startswith('Unsubstantiated'):
+                unsub_results = attr_results.get('Unsubstantiated', {})
+                if 'Precision' in metric_name:
+                    value = unsub_results.get('Precision', 0) * 100
+                elif 'Recall' in metric_name:
+                    value = unsub_results.get('Recall', 0) * 100
+                elif 'F1 Score' in metric_name:
+                    value = unsub_results.get('F1 Score', 0) * 100
+                else:
+                    value = 0
+            elif metric_name.startswith('Substantiated'):
+                sub_results = attr_results.get('Substantiated', {})
+                if 'Precision' in metric_name:
+                    value = sub_results.get('Precision', 0) * 100
+                elif 'Recall' in metric_name:
+                    value = sub_results.get('Recall', 0) * 100
+                elif 'F1 Score' in metric_name:
+                    value = sub_results.get('F1 Score', 0) * 100
+                else:
+                    value = 0
             else:
-                accuracies.append(0)
-                precisions.append(0)
-                recalls.append(0)
+                value = 0
+                
+            metric_values.append(value)
         
-        # Set up x positions for bars
+        # Get Total value for difference calculation
+        total_value = metric_values[0] if len(metric_values) > 0 else 0
+        
+        # Create bars
         x = np.arange(len(attribute_values))
-        
-        # Plot bars for accuracy, precision and recall
-        accuracy_bars = ax.bar(x - bar_width, accuracies, bar_width, 
-                              label='Accuracy', color=colors['Accuracy'], alpha=0.8)
-        precision_bars = ax.bar(x, precisions, bar_width, 
-                               label='Precision', color=colors['Precision'], alpha=0.8)
-        recall_bars = ax.bar(x + bar_width, recalls, bar_width, 
-                            label='Recall', color=colors['Recall'], alpha=0.8)
+        bars = ax.bar(x, metric_values, color=colors[metric_name], alpha=0.8)
         
         # Add value labels on top of bars
-        for bar, value in zip(accuracy_bars, accuracies):
-            if value > 0:  # Only show label if there's a value
+        for bar, value in zip(bars, metric_values):
+            if value > 0:
                 ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
                        f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
         
-        for bar, value in zip(precision_bars, precisions):
-            if value > 0:  # Only show label if there's a value
-                ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                       f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
-        
-        for bar, value in zip(recall_bars, recalls):
-            if value > 0:  # Only show label if there's a value
-                ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-                       f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
-        
-        # Add difference text inside bars (compared to total)
-        total_accuracy = accuracies[0] if len(accuracies) > 0 else 0  # Total is first element
-        total_precision = precisions[0] if len(precisions) > 0 else 0  # Total is first element
-        total_recall = recalls[0] if len(recalls) > 0 else 0  # Total is first element
-        
-        for i, (accuracy_bar, precision_bar, recall_bar, accuracy, precision, recall) in enumerate(zip(accuracy_bars, precision_bars, recall_bars, accuracies, precisions, recalls)):
-            attr_value = attribute_values[i]
-            
-            # Skip the Total bar itself (no difference to show)
-            if attr_value != 'Total' and accuracy > 0:
-                accuracy_diff = accuracy - total_accuracy
-                if abs(accuracy_diff) > 0.1:  # Only show if difference is meaningful
-                    sign = '+' if accuracy_diff > 0 else ''
-                    text_y = accuracy - 3  # Position at the very top of bar (3% from top)
-                    ax.text(accuracy_bar.get_x() + accuracy_bar.get_width()/2, text_y,
-                           f'{sign}{accuracy_diff:.1f}%', ha='center', va='center', 
-                           fontsize=10, color='black')
-            
-            if attr_value != 'Total' and precision > 0:
-                precision_diff = precision - total_precision
-                if abs(precision_diff) > 0.1:  # Only show if difference is meaningful
-                    sign = '+' if precision_diff > 0 else ''
-                    text_y = precision - 3  # Position at the very top of bar (3% from top)
-                    ax.text(precision_bar.get_x() + precision_bar.get_width()/2, text_y,
-                           f'{sign}{precision_diff:.1f}%', ha='center', va='center', 
-                           fontsize=10, color='black')
-            
-            if attr_value != 'Total' and recall > 0:
-                recall_diff = recall - total_recall
-                if abs(recall_diff) > 0.1:  # Only show if difference is meaningful
-                    sign = '+' if recall_diff > 0 else ''
-                    text_y = recall - 3  # Position at the very top of bar (3% from top)
-                    ax.text(recall_bar.get_x() + recall_bar.get_width()/2, text_y,
-                           f'{sign}{recall_diff:.1f}%', ha='center', va='center', 
+        # Add difference text inside bars (skip Total bar)
+        for i, (bar, value, attr_value) in enumerate(zip(bars, metric_values, attribute_values)):
+            if attr_value != 'Total' and value > 0:
+                diff = value - total_value
+                if abs(diff) > 0.1:  # Only show if difference is meaningful
+                    sign = '+' if diff > 0 else ''
+                    text_y = value - 6  # Position with consistent 6% spacing from top of bar
+                    ax.text(bar.get_x() + bar.get_width()/2, text_y,
+                           f'{sign}{diff:.1f}%', ha='center', va='center', 
                            fontsize=10, color='black')
         
-        # Add total count labels at the bottom of bars
-        for i, attr_value in enumerate(attribute_values):
-            if attr_value in model_results and 'Total' in model_results[attr_value]:
-                total_count = model_results[attr_value]['Total']
-                sub_count = model_results[attr_value].get('Substantiated', {}).get('Label Total', 0)
-                unsub_count = model_results[attr_value].get('Unsubstantiated', {}).get('Label Total', 0)
-                # Position text at the bottom
-                ax.text(i, 2, f'G={total_count}\nSub={sub_count}\nUnsub={unsub_count}', ha='center', va='bottom', 
-                       fontsize=9, color='black')
+        # Add division text at bottom of bars (skip F1 Score and Balanced Accuracy)
+        if 'F1 Score' not in metric_name and 'Balanced Accuracy' not in metric_name:
+            for i, (bar, attr_value) in enumerate(zip(bars, attribute_values)):
+                attr_results = model_results.get(attr_value, {})
+                division_text = get_division_text_for_metric(metric_name, attr_results)
+                
+                # Add division text at bottom of bar
+                if division_text:
+                    ax.text(bar.get_x() + bar.get_width()/2, 2,
+                           division_text, ha='center', va='bottom', 
+                           fontsize=8, color='black')
         
         # Customize subplot
-        ax.set_title(f'{model_name}', fontsize=14)
-        ax.set_ylabel('Percentage (%)', fontsize=12)
-        ax.set_ylim(0, 110)  # Increased upper limit to provide space for labels
+        ax.set_title(f'{metric_name}', fontsize=12)
+        ax.set_ylabel('Percentage (%)', fontsize=10)
+        ax.set_ylim(0, 110)  # Extra space for labels
         ax.set_xticks(x)
-        ax.set_xticklabels(attribute_values, rotation=45, ha='right')
+        ax.set_xticklabels(attribute_values, rotation=45, ha='right', fontsize=9)
         ax.grid(axis='y', alpha=0.3)
-        
-        # Add legend only to the first subplot
-        if idx == 0:
-            ax.legend(title=f'Metrics ({label})', loc='right')
+    
+    # Hide the unused subplot (first row, last column)
+    axes[0, 2].set_visible(False)
     
     plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit the heading
     plt.show()

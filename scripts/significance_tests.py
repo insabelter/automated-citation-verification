@@ -23,15 +23,13 @@ def _perform_fisher_exact_test(subset_correct, subset_false, rest_correct, rest_
     Returns:
         Dictionary with Fisher's exact test results or None if test cannot be performed
     """
-    if subset_false > 0 and rest_false > 0:
-        contingency_table = [[subset_correct, subset_false],
-                            [rest_correct, rest_false]]
-        odds_ratio, p_value = fisher_exact(contingency_table)
-        return {
-            'odds_ratio': odds_ratio,
-            'p_value': p_value
-        }
-    return None
+    contingency_table = [[subset_correct, subset_false],
+                        [rest_correct, rest_false]]
+    odds_ratio, p_value = fisher_exact(contingency_table)
+    return {
+        'odds_ratio': float(round(odds_ratio, 4)),
+        'p_value': float(round(p_value, 4))
+    }
 
 def calc_fisher_exact_total_sub_unsub(attribute_subset_rest_results):
     results = {}
@@ -166,8 +164,8 @@ def _perform_chi_squared_test(correct_counts, false_counts, attribute_values):
                 }
             
             return {
-                'chi2_statistic': chi2_stat,
-                'p_value': p_value,
+                'chi2_statistic': float(round(chi2_stat, 4)),
+                'p_value': float(round(p_value, 4)),
                 'degrees_of_freedom': dof,
                 'expected_frequencies': expected_dict
             }
@@ -319,7 +317,7 @@ def _extract_metric_from_results(results, metric_path):
     
     Args:
         results: Results dictionary from eval_predictions_per_attribute_value
-        metric_path: List describing path to metric (e.g., ['Total Accuracy'] or ['Substantiated', 'Accuracy'])
+        metric_path: List describing path to metric (e.g., ['Accuracy'] or ['Substantiated', 'Recall'])
     
     Returns:
         Metric value or None if not found
@@ -362,17 +360,15 @@ def calc_permutation_test_total_sub_unsub(df, attribute, group_numbers_from=Fals
     # Define all metrics to test
     metrics_to_test = {
         'Total': {
-            'Total Accuracy': ['Total Accuracy'],
+            'Accuracy': ['Accuracy'],
             'Balanced Accuracy': ['Balanced Accuracy']
         },
         'Substantiated': {
-            'Accuracy': ['Substantiated', 'Accuracy'],
             'Precision': ['Substantiated', 'Precision'],
             'Recall': ['Substantiated', 'Recall'],
             'F1 Score': ['Substantiated', 'F1 Score']
         },
         'Unsubstantiated': {
-            'Accuracy': ['Unsubstantiated', 'Accuracy'],
             'Precision': ['Unsubstantiated', 'Precision'],
             'Recall': ['Unsubstantiated', 'Recall'],
             'F1 Score': ['Unsubstantiated', 'F1 Score']
@@ -451,9 +447,9 @@ def calc_permutation_test_total_sub_unsub(df, attribute, group_numbers_from=Fals
                 
                 results[category][metric_name] = {
                     'p_value': p_value,
-                    'observed_variance': metric_data['observed_difference'],
-                    'average_variance': average_difference,
-                    'difference of variances': metric_data['observed_difference'] - average_difference,
+                    'observed_variance': float(round(metric_data['observed_difference'], 4)),
+                    'average_variance': float(round(average_difference, 4)),
+                    'difference of variances': float(round(metric_data['observed_difference'], 4) - float(round(average_difference, 4))),
                     'n_permutations': n_permutations,
                     'n_groups': len(attribute_values),
                     'observed_values': metric_data['observed_values']
@@ -475,12 +471,11 @@ def display_permutation_test_results(significance_results):
     # Define the desired row order
     metric_order = ['Balanced Accuracy', 'Accuracy', 'Precision', 'Recall', 'F1 Score']
     
-    # Collect all unique metric names across all categories (excluding Total Accuracy)
+    # Collect all unique metric names across all categories
     all_metrics = set()
     for category_results in significance_results.values():
         for metric_name in category_results.keys():
-            if metric_name != 'Total Accuracy':  # Exclude Total Accuracy as it will be merged with Accuracy
-                all_metrics.add(metric_name)
+            all_metrics.add(metric_name)
     
     # Use only metrics that exist in our data, in the specified order
     sorted_metrics = [metric for metric in metric_order if metric in all_metrics]
@@ -492,12 +487,7 @@ def display_permutation_test_results(significance_results):
         row = [metric_name]
         
         # Add Total columns (Var Diff and P-value)
-        # For Accuracy row, use Total Accuracy results if available
-        if metric_name == 'Accuracy' and 'Total' in significance_results and 'Total Accuracy' in significance_results['Total']:
-            total_results = significance_results['Total']['Total Accuracy']
-            row.append(f"{total_results['difference of variances']:.6f}")
-            row.append(f"{total_results['p_value']:.4f}")
-        elif 'Total' in significance_results and metric_name in significance_results['Total']:
+        if 'Total' in significance_results and metric_name in significance_results['Total']:
             total_results = significance_results['Total'][metric_name]
             row.append(f"{total_results['difference of variances']:.6f}")
             row.append(f"{total_results['p_value']:.4f}")
@@ -554,3 +544,44 @@ def display_permutation_test_results(significance_results):
     display(styled_df)
     
     return df
+
+# ------------ Extract only p-values from all results ------------
+def extract_p_values(significance_tests_results):
+    """
+    Extract only p-values from the significance tests results dictionary.
+    
+    Parameters:
+    significance_tests_results: Dictionary containing significance test results with structure:
+                               {attribute: {test_type: {group/label: {metric: {results...}}}}}
+    
+    Returns:
+    Dictionary with the same structure but containing only p-values
+    """
+    p_values_only = {}
+    
+    for attribute, tests in significance_tests_results.items():
+        p_values_only[attribute] = {}
+        
+        # Extract Fisher Exact p-values
+        if 'Fisher Exact' in tests:
+            p_values_only[attribute]['Fisher Exact'] = {}
+            for group, labels in tests['Fisher Exact'].items():
+                p_values_only[attribute]['Fisher Exact'][group] = {}
+                for label, results in labels.items():
+                    p_values_only[attribute]['Fisher Exact'][group][label] = float(results['p_value'])
+        
+        # Extract Chi-Squared p-values
+        if 'Chi-Squared' in tests:
+            p_values_only[attribute]['Chi-Squared'] = {}
+            for label, results in tests['Chi-Squared'].items():
+                p_values_only[attribute]['Chi-Squared'][label] = float(results['p_value'])
+        
+        # Extract Permutation Test p-values
+        if 'Permutation Test' in tests:
+            p_values_only[attribute]['Permutation Test'] = {}
+            for label, metrics in tests['Permutation Test'].items():
+                p_values_only[attribute]['Permutation Test'][label] = {}
+                for metric, results in metrics.items():
+                    p_values_only[attribute]['Permutation Test'][label][metric] = float(results['p_value'])
+    
+    return p_values_only

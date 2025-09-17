@@ -59,7 +59,6 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
             'Label Total': Sub_Correct_Total,
             'True Classifications': Sub_True,
             'False Classifications': Sub_False,
-            'Accuracy': round(Sub_True / Sub_Correct_Total if Sub_Correct_Total > 0 else 0.0, 3),
             'Precision': round(Sub_True / (Sub_True + Unsub_False) if (Sub_True + Unsub_False) > 0 else 0.0, 3),
             'Recall': round(Sub_True / Sub_Correct_Total if Sub_Correct_Total > 0 else 0.0, 3),
             'F1 Score': 0,
@@ -69,13 +68,13 @@ def eval_predictions(df, include_relabelled_partially=False, include_not_origina
             'Label Total': Unsub_Correct_Total,
             'True Classifications': Unsub_True,
             'False Classifications': Unsub_False,
-            'Accuracy': round(Unsub_True / Unsub_Correct_Total if Unsub_Correct_Total > 0 else 0.0, 3),
             'Precision': round(Unsub_True / (Unsub_True + Sub_False) if (Unsub_True + Sub_False) > 0 else 0.0, 3),
             'Recall': round(Unsub_True / Unsub_Correct_Total if Unsub_Correct_Total > 0 else 0.0, 3),
             'F1 Score': 0,
             'Invalid_Labels': invalid_labels['Unsubstantiated']
         },
-        'Total Accuracy': round((Sub_True + Unsub_True) / G_Total if G_Total > 0 else 0.0, 3),
+        'Accuracy': round((Sub_True + Unsub_True) / G_Total if G_Total > 0 else 0.0, 3),
+        'Error Rate': round((Sub_False + Unsub_False) / G_Total if G_Total > 0 else 0.0, 3),
         'Balanced Accuracy': 0
     }
     results['Substantiated']['F1 Score'] = round(2 * ((results['Substantiated']['Precision'] * results['Substantiated']['Recall']) / (results['Substantiated']['Precision'] + results['Substantiated']['Recall'])) if (results['Substantiated']['Precision'] + results['Substantiated']['Recall']) > 0 else 0.0, 3)
