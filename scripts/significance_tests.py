@@ -585,3 +585,164 @@ def extract_p_values(significance_tests_results):
                     p_values_only[attribute]['Permutation Test'][label][metric] = float(results['p_value'])
     
     return p_values_only
+
+def reorganize_p_values_by_test_type(significance_results):
+    reorganized = {
+        'Fisher Exact': {},
+        'Chi-Squared': {},
+        'Permutation Test': {}
+    }
+    
+    # Process each attribute
+    for attribute_name, tests in significance_results.items():
+        
+        # Process Fisher Exact tests - keep attribute name and values separate
+        if 'Fisher Exact' in tests:
+            for group_name, categories in tests['Fisher Exact'].items():
+                for category, p_value in categories.items():
+                    # Create hierarchy: category -> attribute_name -> group_name -> p_value
+                    if category not in reorganized['Fisher Exact']:
+                        reorganized['Fisher Exact'][category] = {}
+                    if attribute_name not in reorganized['Fisher Exact'][category]:
+                        reorganized['Fisher Exact'][category][attribute_name] = {}
+                    reorganized['Fisher Exact'][category][attribute_name][group_name] = p_value
+        
+        # Process Chi-Squared tests
+        if 'Chi-Squared' in tests:
+            for category, p_value in tests['Chi-Squared'].items():
+                if category not in reorganized['Chi-Squared']:
+                    reorganized['Chi-Squared'][category] = []
+                reorganized['Chi-Squared'][category].append((attribute_name, p_value))
+        
+        # Process Permutation Test
+        if 'Permutation Test' in tests:
+            for category, metrics in tests['Permutation Test'].items():
+                if category not in reorganized['Permutation Test']:
+                    reorganized['Permutation Test'][category] = {}
+                
+                for metric, p_value in metrics.items():
+                    if metric not in reorganized['Permutation Test'][category]:
+                        reorganized['Permutation Test'][category][metric] = []
+                    reorganized['Permutation Test'][category][metric].append((attribute_name, p_value))
+    
+    return reorganized
+
+# ------------ P-Value Corrections ------------
+def bonferroni_p_value_correction(p_value, num_tests, alpha=0.05):
+    adjusted_p_value = min(round(p_value * num_tests, 4), 1.0)   
+    return {
+        'Original p-value': p_value,
+        'Adjusted p-value': adjusted_p_value,
+        'Significant': 'Yes' if adjusted_p_value <= alpha else 'No'
+    }
+
+def apply_fisher_bonferroni_p_value_correction(label_set, fisher_exact_results):
+    results = {}
+    num_tests = len(fisher_exact_results[label_set])
+    for attribute in fisher_exact_results[label_set]:
+        for group_name in fisher_exact_results[label_set][attribute]:
+            if attribute not in results:
+                results[attribute] = {}
+            if group_name not in results[attribute]:
+                results[attribute][group_name] = {}
+
+            original_p_value = fisher_exact_results[label_set][attribute][group_name]
+            corrected = bonferroni_p_value_correction(original_p_value, num_tests)
+            results[attribute][group_name] = corrected
+    return results
+
+def display_fisher_bonferroni_results_table(results_with_adjusted_p_values):
+    # Convert nested dictionary to list of records
+    table_data = []
+    
+    for attribute_name, groups in results_with_adjusted_p_values.items():
+        for group_name, stats in groups.items():
+            table_data.append({
+                'Attribute Name': attribute_name,
+                'Attribute Value': group_name,
+                'Original p-value': stats['Original p-value'],
+                'Adjusted p-value': stats['Adjusted p-value'],
+                'Significant': stats['Significant']
+            })
+    
+    # Create DataFrame
+    if table_data:
+        df = pd.DataFrame(table_data)
+        
+        # Format p-values to 4 decimal places
+        df['Original p-value'] = df['Original p-value'].apply(lambda x: f"{x:.4f}")
+        df['Adjusted p-value'] = df['Adjusted p-value'].apply(lambda x: f"{x:.4f}")
+        
+        # Style the DataFrame with background colors and white text
+        def color_significant(val):
+            if val == 'Yes':
+                return 'background-color: darkgreen; color: white;'
+            elif val == 'No':
+                return 'background-color: darkred; color: white;'
+            return ''
+        
+        styled_df = df.style.map(color_significant, subset=['Significant'])
+        display(styled_df)
+    else:
+        print("No results available")
+
+def holm_p_value_correction(p_values, alpha=0.05):
+    # p_values: List of tuples (test_name, p_value)
+    sorted_p_values = sorted(p_values, key=lambda x: x[1])
+
+    rejected_null_hypotheses = []
+    accepted_null_hypotheses = []
+    one_accepted = False
+    for i, (test_name, p_value) in enumerate(sorted_p_values):
+        n = len(p_values)
+        adjusted_p_value = min((n - i) * p_value, 1.0)
+        if not one_accepted and adjusted_p_value <= alpha:
+            rejected_null_hypotheses.append((test_name, adjusted_p_value))
+        else:
+            one_accepted = True
+            accepted_null_hypotheses.append((test_name, adjusted_p_value))
+    return rejected_null_hypotheses, accepted_null_hypotheses
+
+def print_holm_correction_results_as_table(rejected_null_hypotheses, accepted_null_hypotheses, results, label_set):
+    # Combine all results into one DataFrame
+    all_data = []
+    
+    # Add rejected hypotheses
+    for test_name, adjusted_p_value in rejected_null_hypotheses:
+        original_p_value = dict(results[label_set])[test_name]
+        all_data.append({
+            'Test Name': test_name,
+            'Original p-value': original_p_value,
+            'Adjusted p-value': adjusted_p_value,
+            'Significant': 'Yes'
+        })
+    
+    # Add accepted hypotheses
+    for test_name, adjusted_p_value in accepted_null_hypotheses:
+        original_p_value = dict(results[label_set])[test_name]
+        all_data.append({
+            'Test Name': test_name,
+            'Original p-value': original_p_value,
+            'Adjusted p-value': adjusted_p_value,
+            'Significant': 'No'
+        })
+    
+    # Create and display DataFrame
+    if all_data:
+        df = pd.DataFrame(all_data)
+        # Format p-values to 4 decimal places
+        df['Original p-value'] = df['Original p-value'].apply(lambda x: f"{x:.4f}")
+        df['Adjusted p-value'] = df['Adjusted p-value'].apply(lambda x: f"{x:.4f}")
+        
+        # Style the DataFrame with background colors and white text
+        def color_significant(val):
+            if val == 'Yes':
+                return 'background-color: darkgreen; color: white;'
+            elif val == 'No':
+                return 'background-color: darkred; color: white;'
+            return ''
+        
+        styled_df = df.style.map(color_significant, subset=['Significant'])
+        display(styled_df)
+    else:
+        print("No test results available")
