@@ -1,6 +1,6 @@
 import pandas as pd
 from IPython.display import display
-from scipy.stats import fisher_exact, chi2_contingency, kruskal, mannwhitneyu
+from scipy.stats import fisher_exact, chi2_contingency
 import numpy as np
 import sys
 import os
@@ -23,8 +23,8 @@ def _perform_fisher_exact_test(subset_correct, subset_false, rest_correct, rest_
     Returns:
         Dictionary with Fisher's exact test results or None if test cannot be performed
     """
-    contingency_table = [[subset_correct, subset_false],
-                        [rest_correct, rest_false]]
+    contingency_table = [[subset_correct, rest_correct],
+                        [subset_false, rest_false]]
     odds_ratio, p_value = fisher_exact(contingency_table)
     return {
         'odds_ratio': float(round(odds_ratio, 4)),
@@ -124,7 +124,196 @@ def display_fishers_exact_test_results(significance_results):
             p_val = float(val)
             if p_val <= 0.05:
                 return 'background-color: darkgreen; color: white'
-            elif p_val <= 0.2:
+            elif p_val <= 0.1:
+                return 'background-color: darkorange; color: white'
+            else:
+                return 'background-color: darkred; color: white'
+        except (ValueError, TypeError):
+            return ''
+    
+    # Apply styling only to p-value columns
+    styled_df = df.style.map(color_p_values, subset=['Total P-value', 'Unsubstantiated P-value', 'Substantiated P-value'])
+    display(styled_df)
+    
+    return df
+
+# ----------- Fisher's Exact Test for All Attribute Groups -----------
+def _perform_fisher_exact_test_overall(correct_counts, false_counts, attribute_values):
+    """
+    Helper function to perform Fisher's exact test on a contingency table with multiple groups.
+    
+    Args:
+        correct_counts: List of correct prediction counts for each attribute value
+        false_counts: List of false prediction counts for each attribute value
+        attribute_values: List of attribute values corresponding to the counts
+    
+    Returns:
+        Dictionary with Fisher's exact test results or error information
+    """
+    if len(correct_counts) >= 2 and any(false_counts) and any(correct_counts):
+        # Create contingency table with rows as outcomes (correct/false) and columns as groups
+        contingency_table = [correct_counts, false_counts]
+        
+        try:
+            # Fisher's exact test can handle larger contingency tables
+            statistic, p_value = fisher_exact(contingency_table)
+            
+            return {
+                'odds_ratio' if len(correct_counts) == 2 else 'statistic': float(round(statistic, 4)) if statistic != float('inf') else float('inf'),
+                'p_value': float(round(p_value, 4)),
+                'n_groups': len(attribute_values)
+            }
+        except ValueError as e:
+            return {'error': str(e)}
+    
+    return None
+
+def calc_fisher_exact_overall_total_sub_unsub(attribute_results, attribute_values):
+    """
+    Performs Fisher's exact tests on contingency tables for Total, Substantiated, and Unsubstantiated predictions
+    across different attribute values. This performs an overall comparison across all attribute values,
+    similar to the chi-squared test functions.
+    
+    Args:
+        attribute_results: Dictionary with structure {attribute_value: {eval_predictions results...}}
+        attribute_values: List of attribute values to include in the test
+    
+    Returns:
+        Dictionary with Fisher's exact test results for Total, Substantiated, and Unsubstantiated
+    """
+    results = {}
+    
+    if len(attribute_values) < 2:
+        return results  # Need at least 2 groups for Fisher's exact test
+    
+    # Prepare data for Total dataset (combining both labels)
+    total_correct = []
+    total_false = []
+    
+    # Prepare data for Substantiated label
+    sub_correct = []
+    sub_false = []
+    
+    # Prepare data for Unsubstantiated label  
+    unsub_correct = []
+    unsub_false = []
+    
+    # Extract data for each attribute value
+    for attr_value in attribute_values:
+        if attr_value in attribute_results:
+            results_for_value = attribute_results[attr_value]
+            
+            # Total correct and false predictions (combining both labels)
+            total_correct_count = (results_for_value['Substantiated']['True Classifications'] + 
+                                 results_for_value['Unsubstantiated']['True Classifications'])
+            total_false_count = (results_for_value['Substantiated']['False Classifications'] + 
+                               results_for_value['Unsubstantiated']['False Classifications'])
+            
+            total_correct.append(total_correct_count)
+            total_false.append(total_false_count)
+            
+            # Substantiated predictions
+            sub_correct.append(results_for_value['Substantiated']['True Classifications'])
+            sub_false.append(results_for_value['Substantiated']['False Classifications'])
+            
+            # Unsubstantiated predictions
+            unsub_correct.append(results_for_value['Unsubstantiated']['True Classifications'])
+            unsub_false.append(results_for_value['Unsubstantiated']['False Classifications'])
+    
+    # Perform Fisher's exact tests using helper function
+    total_result = _perform_fisher_exact_test_overall(total_correct, total_false, attribute_values)
+    if total_result:
+        results['Total'] = total_result
+    
+    sub_result = _perform_fisher_exact_test_overall(sub_correct, sub_false, attribute_values)
+    if sub_result:
+        results['Substantiated'] = sub_result
+    
+    unsub_result = _perform_fisher_exact_test_overall(unsub_correct, unsub_false, attribute_values)
+    if unsub_result:
+        results['Unsubstantiated'] = unsub_result
+    
+    return results
+
+def display_fisher_exact_overall_test_results(significance_results):
+    """
+    Display Fisher's exact test results (overall comparison) in a formatted table with color-coded p-values.
+    
+    Args:
+        significance_results: Dictionary with structure {category: {test_results...}} 
+                             where category is 'Total', 'Substantiated', or 'Unsubstantiated'
+    
+    Returns:
+        pandas.DataFrame: The formatted results table
+    """
+    # Get Total results
+    total_stat_value = "N/A"
+    total_p_value = "N/A"
+    total_stat_name = "Statistic"  # Default name
+    if 'Total' in significance_results and 'error' not in significance_results['Total']:
+        if 'odds_ratio' in significance_results['Total']:
+            total_stat_value = f"{significance_results['Total']['odds_ratio']:.4f}" if significance_results['Total']['odds_ratio'] != float('inf') else "inf"
+            total_stat_name = "Odds Ratio"
+        elif 'statistic' in significance_results['Total']:
+            total_stat_value = f"{significance_results['Total']['statistic']:.4f}" if significance_results['Total']['statistic'] != float('inf') else "inf"
+            total_stat_name = "Statistic"
+        total_p_value = f"{significance_results['Total']['p_value']:.4f}"
+    
+    # Get Unsubstantiated results
+    unsub_stat_value = "N/A"
+    unsub_p_value = "N/A"
+    unsub_stat_name = "Statistic"  # Default name
+    if 'Unsubstantiated' in significance_results and 'error' not in significance_results['Unsubstantiated']:
+        if 'odds_ratio' in significance_results['Unsubstantiated']:
+            unsub_stat_value = f"{significance_results['Unsubstantiated']['odds_ratio']:.4f}" if significance_results['Unsubstantiated']['odds_ratio'] != float('inf') else "inf"
+            unsub_stat_name = "Odds Ratio"
+        elif 'statistic' in significance_results['Unsubstantiated']:
+            unsub_stat_value = f"{significance_results['Unsubstantiated']['statistic']:.4f}" if significance_results['Unsubstantiated']['statistic'] != float('inf') else "inf"
+            unsub_stat_name = "Statistic"
+        unsub_p_value = f"{significance_results['Unsubstantiated']['p_value']:.4f}"
+    
+    # Get Substantiated results
+    sub_stat_value = "N/A"
+    sub_p_value = "N/A"
+    sub_stat_name = "Statistic"  # Default name
+    if 'Substantiated' in significance_results and 'error' not in significance_results['Substantiated']:
+        if 'odds_ratio' in significance_results['Substantiated']:
+            sub_stat_value = f"{significance_results['Substantiated']['odds_ratio']:.4f}" if significance_results['Substantiated']['odds_ratio'] != float('inf') else "inf"
+            sub_stat_name = "Odds Ratio"
+        elif 'statistic' in significance_results['Substantiated']:
+            sub_stat_value = f"{significance_results['Substantiated']['statistic']:.4f}" if significance_results['Substantiated']['statistic'] != float('inf') else "inf"
+            sub_stat_name = "Statistic"
+        sub_p_value = f"{significance_results['Substantiated']['p_value']:.4f}"
+    
+    # Use the most specific stat name available (prioritize "Odds Ratio" if any category has it)
+    stat_column_name = "Odds Ratio" if any(name == "Odds Ratio" for name in [total_stat_name, unsub_stat_name, sub_stat_name]) else "Statistic"
+    
+    # Create single row of data
+    table_data = [[
+        total_stat_value,
+        total_p_value,
+        unsub_stat_value,
+        unsub_p_value,
+        sub_stat_value,
+        sub_p_value
+    ]]
+
+    # Create DataFrame with dynamic column names
+    columns = [f'Total {stat_column_name}', 'Total P-value',
+               f'Unsubstantiated {stat_column_name}', 'Unsubstantiated P-value', 
+               f'Substantiated {stat_column_name}', 'Substantiated P-value']
+    df = pd.DataFrame(table_data, columns=columns)
+    
+    # Apply color styling to the DataFrame
+    def color_p_values(val):
+        """Color p-values based on significance level"""
+        try:
+            if val == "N/A":
+                return ''
+            p_val = float(val)
+            if p_val <= 0.05:
+                return 'background-color: darkgreen; color: white'
+            elif p_val <= 0.1:
                 return 'background-color: darkorange; color: white'
             else:
                 return 'background-color: darkred; color: white'
@@ -297,7 +486,7 @@ def display_chi_squared_test_results(significance_results):
             p_val = float(val)
             if p_val <= 0.05:
                 return 'background-color: darkgreen; color: white'
-            elif p_val <= 0.2:
+            elif p_val <= 0.1:
                 return 'background-color: darkorange; color: white'
             else:
                 return 'background-color: darkred; color: white'
@@ -531,7 +720,7 @@ def display_permutation_test_results(significance_results):
             p_val = float(val)
             if p_val <= 0.05:
                 return 'background-color: darkgreen; color: white'
-            elif p_val <= 0.2:
+            elif p_val <= 0.1:
                 return 'background-color: darkorange; color: white'
             else:
                 return 'background-color: darkred; color: white'
@@ -569,7 +758,13 @@ def extract_p_values(significance_tests_results):
                 p_values_only[attribute]['Fisher Exact'][group] = {}
                 for label, results in labels.items():
                     p_values_only[attribute]['Fisher Exact'][group][label] = float(results['p_value'])
-        
+
+        # Extract Fisher Exact Overall p-values
+        if 'Fisher Exact Overall' in tests:
+            p_values_only[attribute]['Fisher Exact Overall'] = {}
+            for label, results in tests['Fisher Exact Overall'].items():
+                p_values_only[attribute]['Fisher Exact Overall'][label] = float(results['p_value'])
+
         # Extract Chi-Squared p-values
         if 'Chi-Squared' in tests:
             p_values_only[attribute]['Chi-Squared'] = {}
@@ -589,6 +784,7 @@ def extract_p_values(significance_tests_results):
 def reorganize_p_values_by_test_type(significance_results):
     reorganized = {
         'Fisher Exact': {},
+        'Fisher Exact Overall': {},
         'Chi-Squared': {},
         'Permutation Test': {}
     }
@@ -607,6 +803,13 @@ def reorganize_p_values_by_test_type(significance_results):
                         reorganized['Fisher Exact'][category][attribute_name] = {}
                     reorganized['Fisher Exact'][category][attribute_name][group_name] = p_value
         
+        # Process Fisher Exact Overall tests
+        if 'Fisher Exact Overall' in tests:
+            for category, p_value in tests['Fisher Exact Overall'].items():
+                if category not in reorganized['Fisher Exact Overall']:
+                    reorganized['Fisher Exact Overall'][category] = []
+                reorganized['Fisher Exact Overall'][category].append((attribute_name, p_value))
+                
         # Process Chi-Squared tests
         if 'Chi-Squared' in tests:
             for category, p_value in tests['Chi-Squared'].items():

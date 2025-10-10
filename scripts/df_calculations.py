@@ -2,7 +2,7 @@ from tabulate import tabulate
 import pandas as pd
 from IPython.display import display
 
-def eval_predictions(df, include_relabelled_partially=False, include_not_originally_downloaded=True):
+def eval_predictions(df, include_relabelled_partially=True, include_not_originally_downloaded=True):
     G_Total = 0
     Sub_Correct_Total = 0
     Unsub_Correct_Total = 0
@@ -225,22 +225,19 @@ def eval_predictions_per_attribute_value(df, attribute, include_relabelled_parti
     
     # If group_numbers_from is specified and values are numeric, group values
     if group_numbers_from is not False and values_are_numeric:
-        # Convert sorted_values to numbers for comparison
-        numeric_values = [float(x) for x in sorted_values]
-        
         # Process values below the threshold individually
         for value in sorted_values:
             numeric_value = float(value)
             if numeric_value < group_numbers_from:
                 df_value = df[df[attribute] == value]
                 results_value = eval_predictions(df_value, include_relabelled_partially=include_relabelled_partially)
-                results[value] = results_value
+                results[str(value)] = results_value
         
         # Group values >= threshold together
         values_to_group = [v for v in sorted_values if float(v) >= group_numbers_from]
         if values_to_group:
-            # Create a combined dataframe for all values >= threshold
-            df_grouped = df[df[attribute].apply(lambda x: float(x) >= group_numbers_from)]
+            # Create a combined dataframe for all values >= threshold using isin
+            df_grouped = df[df[attribute].isin(values_to_group)]
             results_grouped = eval_predictions(df_grouped, include_relabelled_partially=include_relabelled_partially)
             results[f">= {group_numbers_from}"] = results_grouped
     else:
@@ -248,7 +245,7 @@ def eval_predictions_per_attribute_value(df, attribute, include_relabelled_parti
         for value in sorted_values:
             df_value = df[df[attribute] == value]
             results_value = eval_predictions(df_value, include_relabelled_partially=include_relabelled_partially)
-            results[value] = results_value
+            results[str(value)] = results_value
     
     return results
 
@@ -354,7 +351,8 @@ def eval_per_attribute_value(df, attribute, attribute_values_per_group):
     # attribute_groups: [('1', [1]), ('2', [2]), ('>= 3', [3, 4, 5, 6, 7, 8])]
     results = {}
     for group_name, attribute_values in attribute_values_per_group:
-        results[group_name] = eval_predictions(df[df[attribute].isin(attribute_values)])
+        group_df = df[df[attribute].isin(attribute_values)]
+        results[group_name] = eval_predictions(group_df)
     return results
 
 def eval_attribute_subset_vs_rest(df, attribute, attribute_values):
