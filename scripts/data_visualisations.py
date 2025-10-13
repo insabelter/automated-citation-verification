@@ -123,7 +123,7 @@ def show_label_dist_comparison(label_dist, save_title=None):
         plt.savefig(f"plots/{save_title}.pdf", bbox_inches="tight")
     plt.show()
 
-def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pad=None, right_xlabel_pad=None):
+def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pad=None, right_xlabel_pad=None, attribute_value_name_changes=None):
     """
     Plot comparison of two distributions from a dictionary.
     
@@ -132,6 +132,14 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
     save_title: Optional title for saving the plot
     left_xlabel_pad: Optional padding for the left plot's x-axis label
     right_xlabel_pad: Optional padding for the right plot's x-axis label
+    attribute_value_name_changes: Optional dictionary for renaming attribute values
+        {
+            'attribute_name': {
+                'original_value1': 'Display Name 1',
+                'original_value2': 'Display Name 2'
+            },
+            ...
+        }
     """
     # Extract the two distributions
     keys = list(data_dict.keys())
@@ -150,8 +158,17 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
     for i, (title, distribution) in enumerate(data_dict.items()):
         ax = axes[i]
         
+        # Apply name changes if provided for this attribute
+        renamed_distribution = distribution.copy()
+        if attribute_value_name_changes and title in attribute_value_name_changes:
+            name_mapping = attribute_value_name_changes[title]
+            renamed_distribution = {}
+            for original_name, value in distribution.items():
+                display_name = name_mapping.get(original_name, original_name)
+                renamed_distribution[display_name] = value
+        
         # Convert to pandas Series for easier handling
-        series = pd.Series(distribution)
+        series = pd.Series(renamed_distribution)
         
         # Create bar plot
         bars = series.plot(kind='bar', ax=ax)
@@ -591,10 +608,10 @@ def show_preds_vs_correct_preds_vs_total(data_dicts, titles, title="Comparison o
 def show_metrics_per_label(model_results, title="Model Performance Metrics by Label", save_title=None):
     # Define colors for each metric
     colors = {
-        'Accuracy': '#2ca02c',        # Green
-        'Balanced Accuracy': '#006400', # Dark Green
+        'Accuracy': '#87ceeb',        # Light Blue
+        'Balanced Accuracy': '#1f77b4', # Blue
         'Precision': '#d62728',       # Red
-        'Recall': '#1f77b4',          # Blue
+        'Recall': '#2ca02c',          # Green
         'F1 Score': '#ff7f0e'         # Orange
     }
     
@@ -830,13 +847,13 @@ def show_metrics_by_attribute_values(results_dict, attribute_name, model_name, s
     """
     # Define colors for each metric (matching previous usage)
     colors = {
-        'Accuracy': '#2ca02c',                    # Green
-        'Balanced Accuracy': '#006400',           # Dark Green
+        'Accuracy': '#87ceeb',                    # Light Blue
+        'Balanced Accuracy': '#1f77b4',           # Blue
         'Unsubstantiated: Precision': '#d62728',   # Red
-        'Unsubstantiated: Recall': '#1f77b4',      # Blue
+        'Unsubstantiated: Recall': '#2ca02c',      # Green
         'Unsubstantiated: F1 Score': '#ff7f0e',    # Orange
         'Substantiated: Precision': '#d62728',     # Red
-        'Substantiated: Recall': '#1f77b4',        # Blue
+        'Substantiated: Recall': '#2ca02c',        # Green
         'Substantiated: F1 Score': '#ff7f0e'       # Orange
     }
     
@@ -980,7 +997,7 @@ def show_best_models_comparison(best_model_configs, model_names=None, title="Bes
     """
     # Define colors matching the existing color scheme
     colors = {
-        'Balanced Accuracy': '#006400',  # Dark Green (matching existing scheme)
+        'Balanced Accuracy': '#1f77b4',  # Blue (matching existing scheme)
         'Unsubstantiated F1': '#ff7f0e'  # Orange (matching existing scheme)
     }
     
@@ -1003,10 +1020,10 @@ def show_best_models_comparison(best_model_configs, model_names=None, title="Bes
     x = np.arange(len(models))
     
     # Create bars
-    bars1 = ax.bar(x - bar_width/2, unsub_f1_scores, bar_width,
-                   label='Unsubstantiated F1 Score', color=colors['Unsubstantiated F1'], alpha=0.8)
-    bars2 = ax.bar(x + bar_width/2, balanced_accuracies, bar_width, 
+    bars1 = ax.bar(x - bar_width/2, balanced_accuracies, bar_width, 
                    label='Balanced Accuracy', color=colors['Balanced Accuracy'], alpha=0.8)
+    bars2 = ax.bar(x + bar_width/2, unsub_f1_scores, bar_width,
+                   label='Unsubstantiated F1 Score', color=colors['Unsubstantiated F1'], alpha=0.8)
     
     # Add value labels on top of bars
     for bar in bars1:
@@ -1034,6 +1051,213 @@ def show_best_models_comparison(best_model_configs, model_names=None, title="Bes
     
     # Adjust layout and show
     plt.tight_layout()
+    if save_title:
+        plt.savefig(f"plots/{save_title}.pdf", bbox_inches="tight")
+    plt.show()
+
+def show_metrics_by_annotation_attributes(annotation_results_dict, save_title=None, attribute_names=None, attribute_value_orders=None):
+    """
+    Display metrics for each annotation attribute in a 2-column grid layout.
+    Shows Balanced Accuracy and Unsubstantiated F1 Score for Total and each attribute value.
+    
+    Parameters:
+    annotation_results_dict: Dictionary with structure:
+        {
+            'attribute_name': {
+                'Total': {'Balanced Accuracy': ..., 'Unsubstantiated': {'F1 Score': ...}},
+                'attribute_value1': {'Balanced Accuracy': ..., 'Unsubstantiated': {'F1 Score': ...}},
+                ...
+            }
+        }
+    save_title: Optional title for saving the plot
+    attribute_names: Optional dictionary mapping original attribute names to display names
+        {
+            'original_attribute_name': 'Display Attribute Name',
+            ...
+        }
+    attribute_value_orders: Optional dictionary defining the order and optionally renaming of attribute values for specific attributes
+        Can contain either lists (order only) or dictionaries (order + renaming):
+        {
+            'attribute_name': ['value1', 'value2', 'value3'],  # List: order only
+            'other_attribute': {                                # Dict: order + renaming
+                'original_value1': 'Display Name 1',
+                'original_value2': 'Display Name 2'
+            },
+            ...
+        }
+        Total is always plotted first regardless of this parameter.
+    """
+    # Define colors matching the existing color scheme
+    colors = {
+        'Balanced Accuracy': '#1f77b4',  # Blue (matching existing scheme)
+        'Unsubstantiated F1': '#ff7f0e'  # Orange (matching existing scheme)
+    }
+    
+    # Get attribute names - use order from attribute_names dict if provided
+    if attribute_names:
+        # Use the order from attribute_names dict, but only include attributes that exist in the data
+        attributes = [attr for attr in attribute_names.keys() if attr in annotation_results_dict]
+        # Add any remaining attributes from the data that aren't in attribute_names
+        remaining_attrs = [attr for attr in annotation_results_dict.keys() if attr not in attribute_names]
+        attributes.extend(remaining_attrs)
+    else:
+        attributes = list(annotation_results_dict.keys())
+    
+    num_attributes = len(attributes)
+    
+    # Calculate grid dimensions (2 columns)
+    num_cols = 2
+    num_rows = (num_attributes + 1) // 2  # Round up
+    
+    # Create subplots
+    fig, axes = plt.subplots(num_rows, num_cols, figsize=(16, 6 * num_rows))
+    
+    # Handle different cases for axes array
+    if num_rows == 1 and num_cols == 1:
+        axes = [axes]
+    elif num_rows == 1:
+        axes = axes.reshape(1, -1)
+    elif num_cols == 1:
+        axes = axes.reshape(-1, 1)
+    
+    if not save_title:
+        fig.suptitle('Model Performance by Annotation Attributes', fontsize=18)
+    
+    # Plot each attribute
+    for idx, attribute_name in enumerate(attributes):
+        row = idx // num_cols
+        col = idx % num_cols
+        ax = axes[row, col] if num_rows > 1 else axes[col]
+        
+        # Get display name for attribute
+        display_name = attribute_names.get(attribute_name, attribute_name) if attribute_names else attribute_name
+        
+        # Get attribute results
+        attr_data = annotation_results_dict[attribute_name]
+        
+        # Extract attribute values and ensure Total is first
+        attr_values_without_total = [val for val in attr_data.keys() if val != 'Total']
+        
+        # Apply custom ordering and renaming if provided for this attribute
+        attr_value_display_mapping = {}  # Maps original values to display values
+        if attribute_value_orders and attribute_name in attribute_value_orders:
+            order_info = attribute_value_orders[attribute_name]
+            
+            if isinstance(order_info, list):
+                # List format: order only, no renaming
+                ordered_values = order_info
+                # Use the custom order, but only include values that exist in the data
+                attr_values_ordered = [val for val in ordered_values if val in attr_values_without_total]
+                # Add any remaining values from the data that aren't in the custom order
+                remaining_values = [val for val in attr_values_without_total if val not in ordered_values]
+                attr_values_without_total = attr_values_ordered + remaining_values
+                
+            elif isinstance(order_info, dict):
+                # Dict format: order + renaming
+                ordered_values = list(order_info.keys())
+                # Store the display name mapping
+                attr_value_display_mapping = order_info
+                # Use the custom order, but only include values that exist in the data
+                attr_values_ordered = [val for val in ordered_values if val in attr_values_without_total]
+                # Add any remaining values from the data that aren't in the custom order
+                remaining_values = [val for val in attr_values_without_total if val not in ordered_values]
+                attr_values_without_total = attr_values_ordered + remaining_values
+        
+        attr_values = ['Total'] + attr_values_without_total
+        
+        # Extract metrics for each attribute value
+        balanced_accuracies = []
+        unsub_f1_scores = []
+        formatted_attr_values = []
+        
+        for attr_value in attr_values:
+            value_data = attr_data[attr_value]
+            
+            # Extract Balanced Accuracy (convert to percentage)
+            balanced_acc = value_data.get('Balanced Accuracy', 0) * 100
+            balanced_accuracies.append(balanced_acc)
+            
+            # Extract Unsubstantiated F1 Score (convert to percentage)
+            unsub_data = value_data.get('Unsubstantiated', {})
+            unsub_f1 = unsub_data.get('F1 Score', 0) * 100
+            unsub_f1_scores.append(unsub_f1)
+            
+            # Get total count for this attribute value and format the label
+            total_count = value_data.get('Total', 0)
+            
+            # Use display name if mapping is provided, otherwise use original name
+            display_value = attr_value_display_mapping.get(attr_value, attr_value)
+            formatted_label = f"{display_value}\n({total_count})"
+            formatted_attr_values.append(formatted_label)
+        
+        # Set width of bars and positions
+        bar_width = 0.35
+        x = np.arange(len(attr_values))
+        
+        # Create bars
+        bars1 = ax.bar(x - bar_width/2, balanced_accuracies, bar_width,
+                       label='Balanced Accuracy' if idx == 0 else "", 
+                       color=colors['Balanced Accuracy'], alpha=0.8)
+        bars2 = ax.bar(x + bar_width/2, unsub_f1_scores, bar_width,
+                       label='Unsubstantiated F1 Score' if idx == 0 else "", 
+                       color=colors['Unsubstantiated F1'], alpha=0.8)
+        
+        # Add value labels on top of bars
+        for bar, value in zip(bars1, balanced_accuracies):
+            if value > 0:
+                ax.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 0.5,
+                       f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
+        
+        for bar, value in zip(bars2, unsub_f1_scores):
+            if value > 0:
+                ax.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 0.5,
+                       f'{value:.1f}%', ha='center', va='bottom', fontsize=10)
+        
+        # Add difference text inside bars (skip Total bar)
+        total_balanced_acc = balanced_accuracies[0] if balanced_accuracies else 0
+        total_unsub_f1 = unsub_f1_scores[0] if unsub_f1_scores else 0
+        
+        for i, (bar1, bar2, balanced_acc, unsub_f1, attr_value) in enumerate(zip(bars1, bars2, balanced_accuracies, unsub_f1_scores, attr_values)):
+            if attr_value != 'Total' and balanced_acc > 0:
+                # Difference for Balanced Accuracy
+                diff_acc = balanced_acc - total_balanced_acc
+                if abs(diff_acc) > 0.1:
+                    sign = '+' if diff_acc > 0 else ''
+                    text_y = balanced_acc - 3  # Position near top of bar
+                    ax.text(bar1.get_x() + bar1.get_width()/2, text_y,
+                           f'{sign}{diff_acc:.1f}%', ha='center', va='center', 
+                           fontsize=9, color='black')
+            
+            if attr_value != 'Total' and unsub_f1 > 0:
+                # Difference for Unsubstantiated F1
+                diff_f1 = unsub_f1 - total_unsub_f1
+                if abs(diff_f1) > 0.1:
+                    sign = '+' if diff_f1 > 0 else ''
+                    text_y = unsub_f1 - 3  # Position near top of bar
+                    ax.text(bar2.get_x() + bar2.get_width()/2, text_y,
+                           f'{sign}{diff_f1:.1f}%', ha='center', va='center', 
+                           fontsize=9, color='black')
+        
+        # Customize subplot
+        ax.set_title(f'{display_name}', fontsize=14)
+        ax.set_ylabel('Percentage (%)', fontsize=12)
+        ax.set_ylim(0, 100)
+        ax.set_xticks(x)
+        ax.set_xticklabels(formatted_attr_values, rotation=45, ha='right', fontsize=10)
+        ax.grid(axis='y', alpha=0.3)
+        
+        # Add legend only to the first subplot
+        if idx == 0:
+            ax.legend(fontsize=12, loc='lower right')
+    
+    # Hide any unused subplots
+    if num_attributes % 2 == 1 and num_attributes > 1:
+        if num_rows > 1:
+            axes[num_rows - 1, num_cols - 1].set_visible(False)
+        else:
+            axes[num_cols - 1].set_visible(False)
+    
+    plt.tight_layout(rect=[0, 0, 1, 0.95])  # Adjust layout to fit the heading
     if save_title:
         plt.savefig(f"plots/{save_title}.pdf", bbox_inches="tight")
     plt.show()

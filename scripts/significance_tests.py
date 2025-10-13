@@ -949,3 +949,63 @@ def print_holm_correction_results_as_table(rejected_null_hypotheses, accepted_nu
         display(styled_df)
     else:
         print("No test results available")
+
+def generate_p_value_results_table(data, attribute_order=None):
+    """
+    Generate a table from p-value results data.
+    
+    Parameters:
+    - data: Dictionary with label sets as keys and attributes with original/adjusted p-values as values
+    - attribute_order: List specifying the order of attributes in rows. If None, uses alphabetical order.
+    
+    Returns:
+    - pandas DataFrame with attributes as rows and label sets with original/adjusted as columns
+    """
+    import pandas as pd
+    
+    # Extract all unique attributes and label sets
+    all_attributes = set()
+    label_sets = list(data.keys())
+    
+    for label_set_data in data.values():
+        all_attributes.update(label_set_data.keys())
+    
+    # Use provided order or sort alphabetically
+    if attribute_order is None:
+        attributes = sorted(all_attributes)
+    else:
+        # Use provided order and add any missing attributes at the end
+        attributes = [attr for attr in attribute_order if attr in all_attributes]
+        remaining = sorted(set(all_attributes) - set(attribute_order))
+        attributes.extend(remaining)
+    
+    # Sort label sets in specific order: "Total", "Substantiated", "Unsubstantiated"
+    desired_order = ["Total", "Substantiated", "Unsubstantiated"]
+    sorted_label_sets = [label for label in desired_order if label in label_sets]
+    # Add any remaining label sets not in the desired order
+    remaining_labels = [label for label in label_sets if label not in desired_order]
+    sorted_label_sets.extend(sorted(remaining_labels))
+    
+    # Create column names
+    columns = []
+    for label_set in sorted_label_sets:
+        columns.extend([f"{label_set} Original", f"{label_set} Adjusted"])
+    
+    # Initialize the table
+    table_data = []
+    
+    for attribute in attributes:
+        row = []
+        for label_set in sorted_label_sets:
+            if attribute in data[label_set]:
+                original = data[label_set][attribute]['original']
+                adjusted = data[label_set][attribute]['adjusted']
+                row.extend([original, adjusted])
+            else:
+                row.extend([None, None])
+        table_data.append(row)
+    
+    # Create DataFrame
+    df = pd.DataFrame(table_data, columns=columns, index=attributes)
+    
+    return df
