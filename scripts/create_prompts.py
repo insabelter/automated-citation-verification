@@ -118,3 +118,41 @@ Be concise, but ensure your explanation shows your reasoning clearly.
 """
     
     return prompt
+
+def create_prompt_suit(df_row, fixed_coverage=False, indications=None):
+    title = df_row['Citing Article Title']
+
+    statement = df_row["Corrected Statement"]
+    assert statement is not None and statement != '', "Statement cannot be None or empty"
+
+    prompt = f'''   
+You are an expert at understanding the capabilities and limitations of large language models, especially in the context of text classification tasks. 
+Your task is to determine and explain if a classifier LLM would be capable to successfully verify whether a reference article supports a given citation statement.  
+
+The classifier LLM will be given a citation statement from an article that cites a reference article.
+From this same reference article it will receive the additional information, including the title, the abstract of the article and the top 3 most relevant excerpts from the reference article. The relevance of the excerpts was previously determined by another large language model based on the citation statement.
+The statement sentence can contain multiple citations and can refer to multiple reference articles, which are all cited in IEEE style.
+The classifier LLM is given the number of the reference article that it should check ("Reference Number"). When for example the statement is "X is true [37, 38] and Y is false under certain conditions [39]", and the LLM is given the reference number 37, it should only check the first part of the statement that refers to the reference article 37.
+
+As the classification result, the classifier LLM should decide between the two labels "Substantiated" and "Unsubstantiated". 
+Further explanations of the labels are as follows: 
+"Substantiated": The reference article fully substantiates the relevant part of the presented citation statement. This means that only based on the information from the reference article, the statement does not contain errors and can be considered correct. 
+"Unsubstantiated": The reference article does not substantiate the relevant part of the presented citation statement. This could be because the statement is contradictory to, unrelated to, or simply missing from the reference article. All of these options would indicate that the citation is incorrect based on the cited references.
+    
+You should evaluate if the following citation statement is suited to be correctly classified by a classifier LLM, using your knowledge on the limitations of large language models. You do not get any of the information on the reference article so that you can focus on the characteristics of the citation itself. Please {'' if indications == 'any' else 'only '}answer “No” if there are{' strong' if indications == 'strong' else ' any' if indications == 'any' else ''} indications that the citation is not suited{'.' if indications == 'any' else ', because your response will be used to perform a selective classification'}.
+{'The selective classification coverage should be at around 85 \%' if fixed_coverage else ''}
+Format your answer in the following JSON format: 
+{{
+    "citation suited": “Yes”/”No” (based on your decision),
+    "explanation": <reasoning for your decision>
+}}
+Your explanation should be short and concise. 
+    
+# The citing article
+
+-- Title: {title} 
+
+-- Statement: {statement}
+'''
+
+    return prompt

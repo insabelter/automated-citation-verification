@@ -251,7 +251,7 @@ def eval_predictions_per_attribute_value(df, attribute, include_relabelled_parti
             # Create a combined dataframe for all values >= threshold using isin
             df_grouped = df[df[attribute].isin(values_to_group)]
             results_grouped = eval_predictions(df_grouped, include_relabelled_partially=include_relabelled_partially)
-            results[f">= {group_numbers_from}"] = results_grouped
+            results[f"≥ {group_numbers_from}"] = results_grouped
     else:
         # Process all values individually (original behavior)
         for value in sorted_values:
@@ -409,7 +409,7 @@ def get_attribute_value_groups(df, attribute, group_numbers_from=False):
         # Group values >= threshold together
         values_to_group = [value for value in sorted_values if float(value) >= group_numbers_from]
         if values_to_group:
-            group_name = f">= {group_numbers_from}"
+            group_name = f"≥ {group_numbers_from}"
             groups.append((group_name, values_to_group))
     else:
         # Process all values individually (original behavior)
