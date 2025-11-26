@@ -117,7 +117,7 @@ def show_label_dist_comparison(label_dist, save_title=None):
         plt.savefig(f"plots/{save_title}.pdf", bbox_inches="tight")
     plt.show()
 
-def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pad=None, right_xlabel_pad=None, attribute_value_name_changes=None):
+def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pad=None, right_xlabel_pad=None, attribute_value_name_changes=None, attribute_name_changes=None):
     """
     Plot comparison of two distributions from a dictionary.
     
@@ -132,6 +132,11 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
                 'original_value1': 'Display Name 1',
                 'original_value2': 'Display Name 2'
             },
+            ...
+        }
+    attribute_name_changes: Optional dictionary for renaming attribute names
+        {
+            'original_attribute_name': 'Display Attribute Name',
             ...
         }
     """
@@ -152,6 +157,9 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
     for i, (title, distribution) in enumerate(data_dict.items()):
         ax = axes[i]
         
+        # Apply attribute name changes if provided
+        display_title = attribute_name_changes.get(title, title) if attribute_name_changes else title
+        
         # Apply name changes if provided for this attribute
         renamed_distribution = distribution.copy()
         if attribute_value_name_changes and title in attribute_value_name_changes:
@@ -168,7 +176,7 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
         bars = series.plot(kind='bar', ax=ax)
         
         # Set title and labels
-        ax.set_title(f'{title}', fontsize=14)
+        ax.set_title(f'{display_title}', fontsize=14)
         
         # Apply custom padding for x-axis labels if specified
         if i == 0 and left_xlabel_pad is not None:
@@ -202,7 +210,7 @@ def show_distribution_dict_comparison(data_dict, save_title=None, left_xlabel_pa
         plt.savefig(f"plots/{save_title}.pdf", bbox_inches="tight")
     plt.show()
 
-def show_distribution(df, column_name, include_nan=True, sorting=None, save_title=None):
+def show_distribution(df, column_name, include_nan=True, sorting=None, save_title=None, display_name=None):
     # Count the occurrences of each source, including NaN values if specified
     source_counts = df[column_name].value_counts(dropna=(not include_nan))
 
@@ -216,9 +224,10 @@ def show_distribution(df, column_name, include_nan=True, sorting=None, save_titl
     # Plot the bar diagram
     plt.figure(figsize=(10, 6))
     ax = source_counts.plot(kind='bar')
+    title_name = display_name if display_name else column_name
     if not save_title:
-        plt.title('Distribution of column: ' + column_name)
-    plt.xlabel(column_name)
+        plt.title('Distribution of column: ' + title_name)
+    plt.xlabel(title_name)
     plt.ylabel('Count')
     ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
